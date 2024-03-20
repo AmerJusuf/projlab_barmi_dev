@@ -13,7 +13,8 @@ public class Main {
         System.out.println("Exiting test cases.");
         scanner.close();
     }
-
+    //test
+    // test merge from akos
     public static void callTest(int num) {
         Test test = new Test();
         switch(num){
