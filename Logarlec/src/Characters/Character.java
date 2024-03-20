@@ -19,7 +19,7 @@ public abstract class Character {
         if(currentRoom.isNeighbour(nextRoom)){
             boolean isAccepted = currentRoom.acceptCharacter(this);
             if(isAccepted){
-                currentRoom.remove(this);
+                currentRoom.removeCharacter(this);
                 this.setRoom(nextRoom);
             }
         }
