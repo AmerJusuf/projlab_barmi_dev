@@ -1,5 +1,14 @@
+import Characters.Student;
+import Rooms.BasicRoom;
+
 public class Test {
-    public void studentMoves() {}
+    public void studentMoves() {
+        System.out.println("Testing student move:");
+        BasicRoom currentRoom = new BasicRoom();
+        Student student = new Student(currentRoom);
+        BasicRoom nextRoom = new BasicRoom();
+        student.move(nextRoom);
+    }
 
     public void studentCannotMoveFullCapacity() {}
 
@@ -11,7 +20,7 @@ public class Test {
 
     public void instructorCanNotPickItemFullInventory() {}
 
-    public void studentPicksLogarlex() {}
+    public void studentPicksLogarlec() {}
 
     public void instructorCanNotPickLogarlec() {}
 
