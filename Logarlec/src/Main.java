@@ -14,6 +14,7 @@ public class Main {
         scanner.close();
     }
     //test
+    // test merge from akos
     public static void callTest(int num) {
         Test test = new Test();
         switch(num){
