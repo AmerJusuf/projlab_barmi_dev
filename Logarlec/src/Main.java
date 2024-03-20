@@ -24,58 +24,104 @@ public class Main {
                 test.studentCannotMoveFullCapacity();
                 break;
             case 3:
-                test.studentCannotMoveFullCapacity();
+                test.studentPicksItem();
                 break;
             case 4:
-                test.studentCannotMoveFullCapacity();
+                test.instructorPicksItem();
                 break;
             case 5:
-                test.studentCannotMoveFullCapacity();
+                test.studentCanNotPickItemFullInventory();
                 break;
             case 6:
-                test.studentCannotMoveFullCapacity();
+                test.instructorCanNotPickItemFullInventory();
                 break;
             case 7:
-                test.studentCannotMoveFullCapacity();
+                test.studentPicksLogarlec();
                 break;
             case 8:
-                test.studentCannotMoveFullCapacity();
+                test.instructorCanNotPickLogarlec();
                 break;
             case 9:
-                test.studentCannotMoveFullCapacity();
+                test.TVSZProtectsStudent();
                 break;
             case 10:
-                test.studentCannotMoveFullCapacity();
+                test.TVSZProtectsStudentThenExpires();
                 break;
             case 11:
-                test.studentCannotMoveFullCapacity();
+                test.camembertOpen();
                 break;
             case 12:
-                test.studentCannotMoveFullCapacity();
+                test.instructorKicksStudent();
                 break;
             case 13:
-                test.studentCannotMoveFullCapacity();
+                test.studentGetsCaughtButProtected();
                 break;
             case 14:
-                test.studentCannotMoveFullCapacity();
+                test.studentGetsCaught();
                 break;
             case 15:
-                test.studentCannotMoveFullCapacity();
+                test.instructorGetsCaught();
                 break;
             case 16:
-                test.studentCannotMoveFullCapacity();
+                test.studentGetsDisabledButProtected();
                 break;
             case 17:
-                test.studentCannotMoveFullCapacity();
+                test.studentGetsDisabled();
                 break;
             case 18:
-                test.studentCannotMoveFullCapacity();
+                test.onlyInstructorGetsDisabled();
                 break;
             case 19:
-                test.studentCannotMoveFullCapacity();
+                test.transistorSwitchOn();
                 break;
-
-
+            case 20:
+                test.transistorSwitchOff();
+                break;
+            case 21:
+                test.pairTransistorsBothNotPairedYet();
+                break;
+            case 22:
+                test.canNotPairTransistorsBecauseFirstIsPaired();
+                break;
+            case 23:
+                test.canNotPairTransistorsBecauseSecondIsPaired();
+                break;
+            case 24:
+                test.placeSecondTransistorAndMove();
+                break;
+            case 25:
+                test.placeFirstTransistorActiveAndPaired();
+                break;
+            case 26:
+                test.canNotPlaceTransistorBecauseNotActive();
+                break;
+            case 27:
+                test.canNotPlaceTransistorBecauseNotHaveAPair();
+                break;
+            case 28:
+                test.placeSecondTransistorActiveAndCanNotMoveBecauseOfCapacity();
+                break;
+            case 29:
+                test.poisonedRoomToxicatesCharacters();
+                break;
+            case 30:
+                test.mergeRooms();
+                break;
+            case 31:
+                test.splitRoom();
+                break;
+            case 32:
+                test.cursedRoomManagesDoors();
+                break;
+            case 33:
+                test.ragStunsInstructor();
+                break;
+            case 34:
+                test.beerProtectsStudent();
+                break;
+            case 35:
+                test.ragProtectsStudent();
+                break;
             default:
                 break;
         }
