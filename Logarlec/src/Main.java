@@ -18,7 +18,7 @@ public class Main {
         Test test = new Test();
         switch(num){
             case 1:
-                test.StudentMoves();
+                test.studentMoves();
                 break;
             default:
                 break;
@@ -27,8 +27,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
     }
-
-
+    
     public static void printTestCases(){
         System.out.println("Adja meg a futtatni kívánt teszt sorszámát:");
         System.out.println("0# Exit Test Cases");
