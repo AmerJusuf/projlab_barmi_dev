@@ -20,6 +20,62 @@ public class Main {
             case 1:
                 test.studentMoves();
                 break;
+            case 2:
+                test.studentCannotMoveFullCapacity();
+                break;
+            case 3:
+                test.studentCannotMoveFullCapacity();
+                break;
+            case 4:
+                test.studentCannotMoveFullCapacity();
+                break;
+            case 5:
+                test.studentCannotMoveFullCapacity();
+                break;
+            case 6:
+                test.studentCannotMoveFullCapacity();
+                break;
+            case 7:
+                test.studentCannotMoveFullCapacity();
+                break;
+            case 8:
+                test.studentCannotMoveFullCapacity();
+                break;
+            case 9:
+                test.studentCannotMoveFullCapacity();
+                break;
+            case 10:
+                test.studentCannotMoveFullCapacity();
+                break;
+            case 11:
+                test.studentCannotMoveFullCapacity();
+                break;
+            case 12:
+                test.studentCannotMoveFullCapacity();
+                break;
+            case 13:
+                test.studentCannotMoveFullCapacity();
+                break;
+            case 14:
+                test.studentCannotMoveFullCapacity();
+                break;
+            case 15:
+                test.studentCannotMoveFullCapacity();
+                break;
+            case 16:
+                test.studentCannotMoveFullCapacity();
+                break;
+            case 17:
+                test.studentCannotMoveFullCapacity();
+                break;
+            case 18:
+                test.studentCannotMoveFullCapacity();
+                break;
+            case 19:
+                test.studentCannotMoveFullCapacity();
+                break;
+
+
             default:
                 break;
         }
@@ -27,7 +83,7 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
         scanner.nextLine();
     }
-    
+
     public static void printTestCases(){
         System.out.println("Adja meg a futtatni kívánt teszt sorszámát:");
         System.out.println("0# Exit Test Cases");
@@ -37,7 +93,7 @@ public class Main {
         System.out.println("4# Instructor Picks Item");
         System.out.println("5# Student Can Not Pick Item - Full Inventory");
         System.out.println("6# Instructor Can Not Pick Item - Full Inventory");
-        System.out.println("7# Student Picks Logarlex");
+        System.out.println("7# Student Picks Logarlec");
         System.out.println("8# Instructor Can Not Pick Logarlec");
         System.out.println("9# TVSZ Protects Student");
         System.out.println("10# TVSZ Protects Student Then Expires");

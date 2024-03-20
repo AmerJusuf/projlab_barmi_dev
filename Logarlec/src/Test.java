@@ -11,7 +11,7 @@ public class Test {
 
     public void instructorCanNotPickItemFullInventory() {}
 
-    public void studentPicksLogarlex() {}
+    public void studentPicksLogarlec() {}
 
     public void instructorCanNotPickLogarlec() {}
 
