@@ -1,5 +1,6 @@
 package Game;
 
+import Characters.Student;
 import Rooms.IRoom;
 
 import java.util.List;
@@ -39,5 +40,9 @@ public class Labyrinth {
 
     public static void setGameState(GameState state) {
         gameState = state;
+    }
+
+    public void removeStudent(Student student) {
+        System.out.println("Student removed from labyrinth | Labyrinth: removeStudent(Student student)");
     }
 }
