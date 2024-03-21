@@ -1,6 +1,5 @@
 package Game;
 
-import Characters.Instructor;
 import Characters.Student;
 import Rooms.IRoom;
 
@@ -43,5 +42,9 @@ public class Labyrinth {
 
     public static void setGameState(GameState state) {
         gameState = state;
+    }
+
+    public void removeStudent(Student student) {
+        System.out.println("Student removed from labyrinth | Labyrinth: removeStudent(Student student)");
     }
 }
