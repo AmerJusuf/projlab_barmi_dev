@@ -1,4 +1,8 @@
+import Characters.Instructor;
 import Characters.Student;
+import Items.Camembert;
+import Items.Logarlec;
+import Items.TVSZ;
 import Rooms.BasicRoom;
 
 public class Test {
@@ -12,23 +16,94 @@ public class Test {
 
     public void studentCannotMoveFullCapacity() {}
 
-    public void studentPicksItem() {}
+    public void studentPicksItem() {
+        System.out.println("Testing student picks item:");
+        BasicRoom currentRoom = new BasicRoom();
+        Student student = new Student(currentRoom);
 
-    public void instructorPicksItem() {}
+        student.pickItem(new Camembert());
+    }
 
-    public void studentCanNotPickItemFullInventory() {}
+    public void instructorPicksItem() {
+        System.out.println("Testing instructor picks item:");
+        BasicRoom currentRoom = new BasicRoom();
+        Instructor instructor = new Instructor(currentRoom);
 
-    public void instructorCanNotPickItemFullInventory() {}
+        instructor.pickItem(new Camembert());
+    }
 
-    public void studentPicksLogarlec() {}
+    public void studentCanNotPickItemFullInventory() {
+        System.out.println("Testing student can not pick item full inventory:");
+        BasicRoom currentRoom = new BasicRoom();
+        Student student = new Student(currentRoom);
 
-    public void instructorCanNotPickLogarlec() {}
+        for (int i = 0; i < 5; i++) {
+            student.addItem(new Camembert());
+        }
 
-    public void TVSZProtectsStudent() {}
+        student.pickItem(new Camembert());
+    }
 
-    public void TVSZProtectsStudentThenExpires() {}
+    public void instructorCanNotPickItemFullInventory() {
+        System.out.println("Testing instructor can not pick item full inventory:");
+        BasicRoom currentRoom = new BasicRoom();
+        Instructor instructor = new Instructor(currentRoom);
 
-    public void camembertOpen() {}
+        for (int i = 0; i < 5; i++) {
+            instructor.addItem(new Camembert());
+        }
+
+        instructor.pickItem(new Camembert());
+    }
+
+    public void studentPicksLogarlec() {
+        System.out.println("Testing student picks logarlec:");
+        BasicRoom currentRoom = new BasicRoom();
+        Student student = new Student(currentRoom);
+
+        student.pickItem(new Logarlec());
+    }
+
+    public void instructorCanNotPickLogarlec() {
+        System.out.println("Testing instructor can not pick logarlec:");
+        BasicRoom currentRoom = new BasicRoom();
+        Instructor instructor = new Instructor(currentRoom);
+
+        instructor.pickItem(new Logarlec());
+    }
+
+    public void TVSZProtectsStudent() {
+        System.out.println("Testing TVSZ protects student:");
+        BasicRoom currentRoom = new BasicRoom();
+        Student student = new Student(currentRoom);
+        TVSZ tvsz = new TVSZ(3);
+        student.addItem(tvsz);
+        tvsz.setOwner(student);
+
+        tvsz.protectStudent();
+    }
+
+    public void TVSZProtectsStudentThenExpires() {
+        System.out.println("Testing TVSZ protects student then expires:");
+        BasicRoom currentRoom = new BasicRoom();
+        Student student = new Student(currentRoom);
+        TVSZ tvsz = new TVSZ(1);
+        student.addItem(tvsz);
+        tvsz.setOwner(student);
+
+        tvsz.protectStudent();
+    }
+
+    public void camembertOpen() {
+        System.out.println("Testing camembert open:");
+        BasicRoom currentRoom = new BasicRoom();
+        Student student = new Student(currentRoom);
+        Camembert camembert = new Camembert();
+        student.addItem(camembert);
+        camembert.setOwner(student);
+
+        camembert.open();
+    }
 
     public void instructorKicksStudent() {}
 
