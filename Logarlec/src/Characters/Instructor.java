@@ -3,6 +3,8 @@ package Characters;
 import Items.Item;
 import Rooms.BasicRoom;
 
+import java.util.List;
+
 public class Instructor extends Character{
 
     /**
@@ -45,4 +47,17 @@ public class Instructor extends Character{
     public void getCaught(){
         System.out.println("Instructors are is same room | Instructor: getCaught()");
     }
+
+    /**
+     * This method is used to kick all students in the room.
+     * It gets all the characters in the room and kicks them.
+     */
+    public void kickStudents(){
+        System.out.println("Instructor kicks student | Instructor: kickStudent()");
+        List<Character> characters = currentRoom.getCharacters();
+        for(Character character: characters){
+           character.getCaught();
+        }
+    }
+
 }
