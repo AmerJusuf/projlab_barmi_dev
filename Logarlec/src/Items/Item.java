@@ -1,5 +1,6 @@
 package Items;
 
+import Characters.Character;
 import Characters.Student;
 import Characters.Instructor;
 
@@ -12,11 +13,13 @@ public abstract class Item {
 
     public void pickedByStudent(Student student) {
         System.out.println("Item picked by student | Item: pickedByStudent(Student student)");
+        this.setOwner(student);
         student.addItem(this);
     }
 
     public void pickedByInstructor(Instructor instructor) {
         System.out.println("Item picked by instructor | Item: pickedByInstructor(Instructor instructor)");
+        this.setOwner(instructor);
         instructor.addItem(this);
     }
 
@@ -30,7 +33,7 @@ public abstract class Item {
         owner = null;
     }
 
-    public boolean protctsStudent() {
+    public boolean protectStudent() {
         System.out.println("Item does not protect student | Item: protectStudent()");
         return false;
     }
