@@ -2,6 +2,7 @@ import Characters.Instructor;
 import Characters.Student;
 import Items.Camembert;
 import Items.Logarlec;
+import Items.Rag;
 import Items.TVSZ;
 import Rooms.BasicRoom;
 
@@ -151,5 +152,12 @@ public class Test {
 
     public void beerProtectsStudent() {}
 
-    public void ragProtectsStudent() {}
+    public void ragProtectsStudent() {
+        System.out.println("Testing Rag protects student");
+        Rag rag =  new Rag();
+        Student owner = new Student(null);
+        owner.addItem(rag);
+        owner.getCaught();
+
+    }
 }

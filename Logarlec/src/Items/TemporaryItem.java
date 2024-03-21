@@ -11,5 +11,11 @@ public abstract class TemporaryItem extends Item {
         isActive = false;
     }
 
-    public void decreaseRoundsLeft() {}
+    public void decreaseRoundsLeft() {
+        roundsLeft--;
+    }
+    @Override
+    public void setIsActive(boolean po){
+        isActive = po;
+    }
 }
