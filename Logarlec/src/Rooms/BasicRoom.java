@@ -17,6 +17,7 @@ public class BasicRoom implements IRoom{
 
     //Teszteléshez kell ures konstruktor, vagy tesztben mindenhol inicializaljuk rendesen a BasicRoomot
     public BasicRoom(){
+        labyrinth = new Labyrinth();
         characters = new ArrayList<>();
         this.capacity = 10;
     }
@@ -85,7 +86,7 @@ public class BasicRoom implements IRoom{
     }
 
     public Labyrinth getLabyrinth(){
-        return null;
+        return this.labyrinth;
     }
 
     public void addItem(Item it){

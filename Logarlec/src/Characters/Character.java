@@ -3,6 +3,7 @@ package Characters;
 import Items.Item;
 import Rooms.BasicRoom;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Character {
@@ -11,6 +12,7 @@ public abstract class Character {
     protected boolean isPoisoned;
 
     public Character(BasicRoom currentRoom){
+        this.items = new ArrayList<>();
         this.currentRoom = currentRoom;
         this.isPoisoned = false;
     }

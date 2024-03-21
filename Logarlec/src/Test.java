@@ -112,7 +112,7 @@ public class Test {
         Student student = new Student(currentRoom);
         currentRoom.addCharacter(student);
         currentRoom.addCharacter(instructor);
-        instructor.kickStudent(student);
+        instructor.kickStudents();
     }
 
     public void studentGetsCaughtButProtected() {}
