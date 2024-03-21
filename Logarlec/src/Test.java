@@ -1,8 +1,6 @@
 import Characters.Instructor;
 import Characters.Student;
-import Items.Camembert;
-import Items.Logarlec;
-import Items.TVSZ;
+import Items.*;
 import Rooms.BasicRoom;
 
 public class Test {
@@ -11,10 +9,18 @@ public class Test {
         BasicRoom currentRoom = new BasicRoom();
         Student student = new Student(currentRoom);
         BasicRoom nextRoom = new BasicRoom();
+
         student.move(nextRoom);
     }
 
-    public void studentCannotMoveFullCapacity() {}
+    public void studentCannotMoveFullCapacity() {
+        System.out.println("Testing student cannot move because nextRoom is full:");
+        BasicRoom currentRoom = new BasicRoom();
+        Student student = new Student(currentRoom);
+        BasicRoom nextRoom = new BasicRoom(0);
+
+        student.move(nextRoom);
+    }
 
     public void studentPicksItem() {
         System.out.println("Testing student picks item:");
@@ -36,7 +42,6 @@ public class Test {
         System.out.println("Testing student can not pick item full inventory:");
         BasicRoom currentRoom = new BasicRoom();
         Student student = new Student(currentRoom);
-
         for (int i = 0; i < 5; i++) {
             student.addItem(new Camembert());
         }
@@ -48,7 +53,6 @@ public class Test {
         System.out.println("Testing instructor can not pick item full inventory:");
         BasicRoom currentRoom = new BasicRoom();
         Instructor instructor = new Instructor(currentRoom);
-
         for (int i = 0; i < 5; i++) {
             instructor.addItem(new Camembert());
         }
@@ -112,24 +116,81 @@ public class Test {
         Student student = new Student(currentRoom);
         currentRoom.addCharacter(student);
         currentRoom.addCharacter(instructor);
+
         instructor.kickStudents();
     }
 
-    public void studentGetsCaughtButProtected() {}
+    public void studentGetsCaughtButProtected() {
+        System.out.println("Testing student gets caught but protected:");
+        BasicRoom currentRoom = new BasicRoom();
+        Student student = new Student(currentRoom);
+        TVSZ tvsz = new TVSZ(2);
+        student.addItem(tvsz);
+        tvsz.setOwner(student);
 
-    public void studentGetsCaught() {}
+        student.getCaught();
+    }
 
-    public void instructorGetsCaught() {}
+    public void studentGetsCaught() {
+        System.out.println("Testing student gets caught:");
+        BasicRoom currentRoom = new BasicRoom();
+        Student student = new Student(currentRoom);
 
-    public void studentGetsDisabledButProtected() {}
+        student.getCaught();
+    }
 
-    public void studentGetsDisabled() {}
+    public void instructorGetsCaught() {
+        System.out.println("Testing instructor gets caught:");
+        BasicRoom currentRoom = new BasicRoom();
+        Instructor instructor = new Instructor(currentRoom);
 
-    public void onlyInstructorGetsDisabled() {}
+        instructor.getCaught();
+    }
 
-    public void transistorSwitchOn() {}
+    public void studentGetsDisabledButProtected() {
+        System.out.println("Testing student gets disabled but protected:");
+        BasicRoom currentRoom = new BasicRoom();
+        Student student = new Student(currentRoom);
+        FFP2 ffp2 = new FFP2();
+        student.addItem(ffp2);
+        ffp2.setOwner(student);
 
-    public void transistorSwitchOff() {}
+        student.disable();
+    }
+
+    public void studentGetsDisabled() {
+        System.out.println("Testing student gets disabled:");
+        BasicRoom currentRoom = new BasicRoom();
+        Student student = new Student(currentRoom);
+
+        student.disable();
+    }
+
+    public void onlyInstructorGetsDisabled() {
+        System.out.println("Testing only instructor gets disabled:");
+        BasicRoom currentRoom = new BasicRoom();
+        Instructor instructor = new Instructor(currentRoom);
+        Student student = new Student(currentRoom);
+
+        student.disableInstructor();
+        instructor.disableInstructor();
+    }
+
+    public void transistorSwitchOn() {
+        System.out.println("Testing transistor switch on:");
+        Transistor transistor = new Transistor();
+        transistor.setIsTurnedOn(false);
+
+        transistor.switchTransistor();
+    }
+
+    public void transistorSwitchOff() {
+        System.out.println("Testing transistor switch off:");
+        Transistor transistor = new Transistor();
+        transistor.setIsTurnedOn(true);
+
+        transistor.switchTransistor();
+    }
 
     public void pairTransistorsBothNotPairedYet() {}
 

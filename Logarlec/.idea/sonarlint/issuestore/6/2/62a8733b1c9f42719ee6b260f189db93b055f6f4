@@ -1,0 +1,13 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(† âöûÿÿÿÿ
+T
+java:S5993"9Change the visibility of this constructor to "protected".(›Ü¾Ìüÿÿÿÿ
+E	java:S106"+Replace this use of System.out by a logger.(°ŸÉÂüÿÿÿÿ
+@	java:S106."+Replace this use of System.out by a logger.(ßíÛÑ
+@	java:S1068"+Replace this use of System.out by a logger.(©Ç£¨
+@	java:S106I"+Replace this use of System.out by a logger.(•³üş
+@	java:S106U"+Replace this use of System.out by a logger.(¿ç¾Á
+@	java:S106d"+Replace this use of System.out by a logger.(ã•ùÀ
+M
+java:S1135|"2Complete the task associated to this TODO comment.(šğáøÿÿÿÿ
+F	java:S106‹"+Replace this use of System.out by a logger.(¦ÊÎÚùÿÿÿÿ

@@ -1,0 +1,63 @@
+
+o	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÞÄšË
+œ
+java:S11864"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ƒÈ²‚üÿÿÿÿ
+œ
+java:S11869"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¢¨€ôûÿÿÿÿ
+œ
+java:S1186E"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Œ“‡¤ýÿÿÿÿ
+œ
+java:S1186\"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ìÐ„Æÿÿÿÿÿ
+œ
+java:S1186`"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‰íŒçûÿÿÿÿ
+œ
+java:S1186i"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(–’¬Þÿÿÿÿÿ
+œ
+java:S1186l"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(à§êÚýÿÿÿÿ
+œ
+java:S1186p"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(á‚Ýàùÿÿÿÿ
+J
+java:S1172 "/Remove this unused method parameter "nextRoom".(Äç›£øÿÿÿÿ
+@	java:S106!"+Replace this use of System.out by a logger.(åÝÎ¥
+V	java:S125$"<This block of commented-out lines of code should be removed.(–“ÚÑýÿÿÿÿ
+U
+java:S1161'":Add the "@Override" annotation above this method signature(’ñÂ¾ûÿÿÿÿ
+E	java:S106("+Replace this use of System.out by a logger.(Ý¡öÛýÿÿÿÿ
+Q	java:S125,"<This block of commented-out lines of code should be removed.(ÆáÒÿ
+O
+java:S1161/":Add the "@Override" annotation above this method signature(¨¼ú0
+E	java:S1060"+Replace this use of System.out by a logger.(þÃ¢ïýÿÿÿÿ
+U
+java:S11619":Add the "@Override" annotation above this method signature(¢¨€ôûÿÿÿÿ
+U
+java:S1161=":Add the "@Override" annotation above this method signature(Ðò…Áøÿÿÿÿ
+U
+java:S1161A":Add the "@Override" annotation above this method signature(õÃÎÌùÿÿÿÿ
+U
+java:S1161E":Add the "@Override" annotation above this method signature(Œ“‡¤ýÿÿÿÿ
+U
+java:S1161I":Add the "@Override" annotation above this method signature(ù³ŽÝûÿÿÿÿ
+O
+java:S1161L":Add the "@Override" annotation above this method signature(ç±,
+P
+java:S1161P":Add the "@Override" annotation above this method signature(•öøà
+<
+java:S1168Q"&Return an empty array instead of null.(¥¹ï
+U
+java:S1161T":Add the "@Override" annotation above this method signature(…ñ·Íùÿÿÿÿ
+U
+java:S1161X":Add the "@Override" annotation above this method signature(âÁ¢£ÿÿÿÿÿ
+U
+java:S1161\":Add the "@Override" annotation above this method signature(ìÐ„Æÿÿÿÿÿ
+U
+java:S1161`":Add the "@Override" annotation above this method signature(‰íŒçûÿÿÿÿ
+U
+java:S1161e":Add the "@Override" annotation above this method signature(ú€Á·úÿÿÿÿ
+U
+java:S1161i":Add the "@Override" annotation above this method signature(–’¬Þÿÿÿÿÿ
+U
+java:S1161l":Add the "@Override" annotation above this method signature(à§êÚýÿÿÿÿ
+U
+java:S1161p":Add the "@Override" annotation above this method signature(á‚Ýàùÿÿÿÿ
+G
+java:S1068",Remove this unused "capacity" private field.(Ò—àçþÿÿÿÿ
