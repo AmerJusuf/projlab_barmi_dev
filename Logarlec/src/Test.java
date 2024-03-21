@@ -105,7 +105,15 @@ public class Test {
         camembert.open();
     }
 
-    public void instructorKicksStudent() {}
+    public void instructorKicksStudent() {
+        System.out.println("Testing instructor kicks student:");
+        BasicRoom currentRoom = new BasicRoom();
+        Instructor instructor = new Instructor(currentRoom);
+        Student student = new Student(currentRoom);
+        currentRoom.addCharacter(student);
+        currentRoom.addCharacter(instructor);
+        instructor.kickStudent(student);
+    }
 
     public void studentGetsCaughtButProtected() {}
 

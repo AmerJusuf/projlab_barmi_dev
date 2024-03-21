@@ -1,7 +1,10 @@
 package Rooms;
 
+import Characters.Character;
 import Game.Labyrinth;
 import Items.Item;
+
+import java.util.List;
 
 public interface IRoom {
     public default void mergeRooms(IRoom room){
@@ -26,7 +29,7 @@ public interface IRoom {
     public default boolean hasPlace(){
         return true;
     }
-    public default Character[] getCharacters(){
+    public default List<Character> getCharacters(){
         return null;
     }
 
