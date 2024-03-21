@@ -1,5 +1,6 @@
 package Game;
 
+import Characters.Instructor;
 import Characters.Student;
 import Rooms.IRoom;
 
