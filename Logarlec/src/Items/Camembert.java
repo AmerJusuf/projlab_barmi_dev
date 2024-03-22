@@ -24,10 +24,10 @@ public class Camembert extends Item {
     public void open() {
         System.out.println("Camembert opened | Camembert: open()");
         BasicRoom currentRoom = owner.getRoom();
-        //List<Character> characters = currentRoom.getCharacters();
+        List<Character> characters = currentRoom.getCharacters();
         owner.disable();
-        //for (Character ch : characters) {
-        //    ch.disable();
-        //}
+        for (Character ch : characters) {
+            ch.disable();
+        }
     }
 }
