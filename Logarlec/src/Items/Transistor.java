@@ -6,13 +6,12 @@ import Rooms.BasicRoom;
 public class Transistor extends Item{
     private boolean isTurnedOn;
     protected BasicRoom currentRoom;
-    public Transistor(boolean isTurnedOn) {
+    public Transistor() {
         super();
-        this.isTurnedOn = isTurnedOn;
     }
 
     public void setPairTransistor(Transistor transistor){
-        System.out.println(" Trying to pair transistor | Transistor: setPairTransistor(Transistor tr)");
+        System.out.println(" Trying to pair transistor | Transistor: setPairTransistor(Transistor transistor)");
 
     }
 
@@ -30,16 +29,16 @@ public class Transistor extends Item{
     }
 
     public void place(){
-        System.out.println(" Trying to place transistor | Transistor: place");
+        System.out.println(" Trying to place transistor | Transistor: place()");
 
     }
 
-    public void switchTr(){
-        System.out.println(" Trying to switch transistor | Transistor: switch");
+    public void switchTransistor(){
+        System.out.println(" Trying to switch transistor | Transistor: switchTransistor()");
 
     }
 
-    public boolean setIsTurnedOn(){
-        return true;
+    public void setIsTurnedOn(boolean isTurnedOn){
+        this.isTurnedOn = isTurnedOn;
     }
 }

@@ -5,7 +5,7 @@ public class Beer extends TemporaryItem {
         super();
     }
 
-    public boolean protetcStudent() {
+    public boolean protectStudent() {
         System.out.println("Beer protects student | Beer: protectStudent()");
         return true;
     }
