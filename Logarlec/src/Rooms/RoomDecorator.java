@@ -1,6 +1,10 @@
 package Rooms;
 
 import Characters.Character;
+import Game.Labyrinth;
+import Items.Item;
+
+import java.util.List;
 
 public abstract class RoomDecorator implements IRoom{
 
@@ -15,6 +19,5 @@ public abstract class RoomDecorator implements IRoom{
     }
 
     public void decorate(){
-
     }
 }

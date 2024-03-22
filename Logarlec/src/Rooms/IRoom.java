@@ -15,7 +15,7 @@ public interface IRoom {
     }
 
     public default int getCapacity(){
-        return 0;
+        return 5;
     }
 
     public default int getNumberOfCharacters(){
@@ -33,7 +33,7 @@ public interface IRoom {
         return null;
     }
 
-    public default IRoom[] getNeighbours(){
+    public default List<IRoom> getNeighbours(){
         return null;
     }
 
@@ -63,8 +63,7 @@ public interface IRoom {
 
     public default void addCharacter(Character character){}
 
-    public default int setCapacity(int i){
-        return 0;
+    public default void setCapacity(int i){
     }
 
     public default void addNeighbour(IRoom room){
