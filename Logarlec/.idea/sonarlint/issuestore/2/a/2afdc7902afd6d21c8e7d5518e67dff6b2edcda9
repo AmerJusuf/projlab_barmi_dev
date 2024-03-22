@@ -1,0 +1,25 @@
+
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÞÄšËJ$728abf41-53bf-4851-aba9-272278faf6e5
+Â
+java:S11864"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ƒÈ²‚üÿÿÿÿJ$48b1beae-f34c-474d-9634-8834c4af9f0a
+Â
+java:S11869"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¢¨€ôûÿÿÿÿJ$56427410-5b98-4d49-95b1-177325bf1d30
+Â
+java:S1186E"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Œ“‡¤ýÿÿÿÿJ$edb2ad85-3316-4f25-a1b5-d243ac59c0f9
+Â
+java:S1186\"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ìÐ„ÆÿÿÿÿÿJ$ba3a35f5-9914-4e9a-ab73-0f24e80daaf2
+Â
+java:S1186`"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‰íŒçûÿÿÿÿJ$ae94f910-14b4-4389-b8d7-60df40fb5da4
+Â
+java:S1186i"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(–’¬ÞÿÿÿÿÿJ$5fe174e5-2b71-4cf3-98d9-fa80fe002952
+Â
+java:S1186l"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(à§êÚýÿÿÿÿJ$b5ff407b-30d4-4dd3-a8cc-1db60345f3bb
+Â
+java:S1186p"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(á‚ÝàùÿÿÿÿJ$f0879b40-861a-4993-aa37-a6b49c873b7c
+f	java:S106!"+Replace this use of System.out by a logger.(åÝÎ¥J$2298af48-94bb-4df1-9d54-2908d8fb6422
+|	java:S125$"<This block of commented-out lines of code should be removed.(–“ÚÑýÿÿÿÿJ$3c8b749c-4877-45f9-8d9d-6b9c03a9088c
+k	java:S106("+Replace this use of System.out by a logger.(Ý¡öÛýÿÿÿÿJ$b077d6e1-20b5-4458-96da-fc5aae27e1ba
+w	java:S125,"<This block of commented-out lines of code should be removed.(ÆáÒÿJ$602d407d-ea77-471f-a34e-d8031b312dd2
+k	java:S1060"+Replace this use of System.out by a logger.(þÃ¢ïýÿÿÿÿJ$3216daf6-1f11-489a-b596-1a29aef09606
+m
+java:S1068",Remove this unused "capacity" private field.(Ò—àçþÿÿÿÿJ$b804e574-f3c2-4d2e-bb69-97aaad7c8138
