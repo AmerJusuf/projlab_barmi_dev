@@ -1,7 +1,14 @@
 import Characters.Instructor;
 import Characters.Student;
+import Game.Labyrinth;
 import Items.*;
 import Rooms.BasicRoom;
+import Rooms.CursedRoomDecorator;
+import Rooms.IRoom;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
 
 public class Test {
     public void studentMoves() {
@@ -102,6 +109,9 @@ public class Test {
         System.out.println("Testing camembert open:");
         BasicRoom currentRoom = new BasicRoom();
         Student student = new Student(currentRoom);
+        Instructor instructor = new Instructor(currentRoom);
+        currentRoom.addCharacter(student);
+        currentRoom.addCharacter(instructor);
         Camembert camembert = new Camembert();
         student.addItem(camembert);
         camembert.setOwner(student);
@@ -210,15 +220,140 @@ public class Test {
 
     public void poisonedRoomToxicatesCharacters() {}
 
-    public void mergeRooms() {}
+    public void mergeRooms() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("1# Test merge rooms success");
+        System.out.println("2# Test merge rooms fail");
+        switch (scanner.nextInt()) {
+            case 1:
+                merrgeRoomsSuccess();
+                break;
+            case 2:
+                mergeRoomsFail();
+                break;
+            default:
+                break;
+        }
+        scanner.close();
+    }
 
-    public void splitRoom() {}
+    public void merrgeRoomsSuccess() {
+        System.out.println("Testing merge rooms success:");
+        Labyrinth labyrinth = new Labyrinth();
+        BasicRoom room1 = new BasicRoom();
+        room1.setCapacity(7);
+        BasicRoom room2 = new BasicRoom();
+        room2.setCapacity(5);
+        Camembert camembert = new Camembert();
+        room2.addItem(camembert);
+        labyrinth.addRoom(room1);
+        labyrinth.addRoom(room2);
 
-    public void cursedRoomManagesDoors() {}
+        room1.mergeRooms(room2);
+    }
 
-    public void ragStunsInstructor() {}
+    public void mergeRoomsFail() {
+        System.out.println("Testing merge rooms fail:");
+        Labyrinth labyrinth = new Labyrinth();
+        BasicRoom room1 = new BasicRoom();
+        BasicRoom room2 = new BasicRoom();
+        Student student = new Student(room1);
+        room2.addCharacter(student);
+        labyrinth.addRoom(room1);
+        labyrinth.addRoom(room2);
 
-    public void beerProtectsStudent() {}
+        room1.mergeRooms(room2);
+    }
 
-    public void ragProtectsStudent() {}
+    public void splitRoom() {
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("1# Test split room success");
+        System.out.println("2# Test split room fail");
+        switch (scanner.nextInt()) {
+            case 1:
+                splitRoomSuccess();
+                break;
+            case 2:
+                splitRoomFail();
+                break;
+            default:
+                break;
+        }
+        scanner.close();
+    }
+
+    public void splitRoomSuccess() {
+        System.out.println("Testing split room success:");
+        Labyrinth labyrinth = new Labyrinth();
+        BasicRoom room = new BasicRoom();
+        CursedRoomDecorator cursedRoomDecorator = new CursedRoomDecorator(room);
+        cursedRoomDecorator.setCapacity(6);
+        Camembert camembert = new Camembert();
+        cursedRoomDecorator.addItem(camembert);
+        labyrinth.addRoom(room);
+
+        cursedRoomDecorator.splitRoom();
+    }
+
+    public void splitRoomFail() {
+        System.out.println("Testing split room fail:");
+        Labyrinth labyrinth = new Labyrinth();
+        BasicRoom room = new BasicRoom();
+        CursedRoomDecorator cursedRoomDecorator = new CursedRoomDecorator(room);
+        cursedRoomDecorator.setCapacity(6);
+        Camembert camembert = new Camembert();
+        cursedRoomDecorator.addItem(camembert);
+        Student student = new Student(room);
+        cursedRoomDecorator.addCharacter(student);
+        labyrinth.addRoom(room);
+
+        cursedRoomDecorator.splitRoom();
+    }
+
+    public void cursedRoomManagesDoors() {
+        System.out.println("Testing cursed room manages doors:");
+        BasicRoom room = new BasicRoom();
+        CursedRoomDecorator cursedRoomDecorator = new CursedRoomDecorator(room);
+        BasicRoom neighbour = new BasicRoom();
+        cursedRoomDecorator.setNeighbours(new ArrayList<IRoom>());
+        List<IRoom> neighbours = new ArrayList<>();
+        neighbours.add(neighbour);
+        cursedRoomDecorator.setHiddenNeighbours(neighbours);
+    }
+
+    public void ragStunsInstructor() {
+        System.out.println("Testing rag stuns instructor:");
+        BasicRoom room = new BasicRoom();
+        Instructor instructor = new Instructor(room);
+        Rag rag = new Rag();
+        Student student = new Student(room);
+        student.addItem(rag);
+        rag.setOwner(student);
+        room.addCharacter(instructor);
+        room.addCharacter(student);
+
+        rag.stunInstructor();
+    }
+
+    public void beerProtectsStudent() {
+        System.out.println("Testing beer protects student:");
+        BasicRoom room = new BasicRoom();
+        Student student = new Student(room);
+        Beer beer = new Beer();
+        student.addItem(beer);
+        beer.setOwner(student);
+
+        student.getCaught();
+    }
+
+    public void ragProtectsStudent() {
+        System.out.println("Testing rag protects student:");
+        BasicRoom room = new BasicRoom();
+        Student student = new Student(room);
+        Rag rag = new Rag();
+        student.addItem(rag);
+        rag.setOwner(student);
+
+        student.getCaught();
+    }
 }

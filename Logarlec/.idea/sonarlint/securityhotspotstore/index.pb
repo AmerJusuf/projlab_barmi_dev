@@ -21,3 +21,9 @@ C
 src/Items/TVSZ.java,6\6\66a658bbf4da794aaadb92a95da67ce8055b7c07
 I
 src/Items/Transistor.java,4\3\434d727c994fda3f5449e171d14302a9dff20d8a
+H
+src/Items/Camembert.java,0\b\0bca7255a303a2558766291377e98c6d13894c8d
+=
+src/Main.java,9\2\924f089edb4af5ee45c8a9d1129cd28e2b368138
+R
+"src/Rooms/CursedRoomDecorator.java,6\a\6aedbe8305c50fc4f4309afa123826dbb4722e53

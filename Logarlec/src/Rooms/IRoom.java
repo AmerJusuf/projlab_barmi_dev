@@ -61,6 +61,8 @@ public interface IRoom {
 
     }
 
+    public default void addCharacter(Character character){}
+
     public default int setCapacity(int i){
         return 0;
     }
@@ -68,12 +70,14 @@ public interface IRoom {
     public default void addNeighbour(IRoom room){
 
     }
-    public default void setNeighbour(IRoom[] room){
+    public default void setNeighbours(List<IRoom> neighbours){
 
     }
 
     public default void removeNeighbour(IRoom room){
 
     }
+
+
 
 }

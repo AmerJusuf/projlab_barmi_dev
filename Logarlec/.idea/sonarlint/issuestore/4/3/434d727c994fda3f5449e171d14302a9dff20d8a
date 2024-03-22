@@ -1,7 +1,7 @@
 
-¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Áã²¹ûÿÿÿÿ8»²ó•æ1J$18451f2b-dbde-41e2-a6e2-300e908eaf6a
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Áã²¹ûÿÿÿÿ8»²ó•æ1J$c5e0e8b3-7729-41d0-90f8-7e7210487229
 œ
-java:S1450"YRemove the "isTurnedOn" field and declare it as a local variable in the relevant methods.(¶Ò¶ê8Á²ó•æ1J$1d7a4cf8-584a-4771-8ea8-e7321c308483
-r	java:S106"+Replace this use of System.out by a logger.(ï™Œ ûÿÿÿÿ8Ã²ó•æ1J$3c10c3d5-12c5-4d23-a093-62b9ce0014f2
+java:S1450"YRemove the "isTurnedOn" field and declare it as a local variable in the relevant methods.(¶Ò¶ê8Á²ó•æ1J$3b06de4d-4543-480c-9193-69bdb65e1864
+r	java:S106"+Replace this use of System.out by a logger.(ï™Œ ûÿÿÿÿ8Ã²ó•æ1J$41747c17-5338-45f3-9cc5-06c916a53431
 q
-java:S1068".Remove this unused "isTurnedOn" private field.(¶Ò¶ê8Å²ó•æ1J$a446e01b-7202-4001-ba96-a49e39ad159a
+java:S1068".Remove this unused "isTurnedOn" private field.(¶Ò¶ê8Å²ó•æ1J$5d4164c2-bd89-469d-9eb1-58ed1e570d07
