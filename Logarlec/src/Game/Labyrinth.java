@@ -1,5 +1,6 @@
 package Game;
 
+import Characters.Instructor;
 import Characters.Student;
 import Rooms.IRoom;
 
@@ -9,12 +10,14 @@ public class Labyrinth {
     private static GameState gameState;
     private int starterNumberOfRooms;
     private List<IRoom> rooms;
+    private List<Student> students;
+    private List<Instructor> instructors;
 
     public void addRoom(IRoom room) {
         // Add room to the labyrinth
     }
 
-    public void RemoveRoom(IRoom room) {
+    public void removeRoom(IRoom room) {
         // Remove room from the labyrinth
     }
 
