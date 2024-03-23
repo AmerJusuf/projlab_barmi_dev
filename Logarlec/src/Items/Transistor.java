@@ -22,27 +22,34 @@ public class Transistor extends Item{
     }
 
     public void setPlaceLocation(BasicRoom basicRoom){
-        System.out.println(" Trying to place transistor | Transistor: setPlaceLocation(Basicroom basicroom)");
-        BasicRoom currentRoom =owner.getRoom();
+        System.out.println(" Trying to place transistor | Transistor: setPlaceLocation(BasicRoom basicRoom)");
+        placeLocation = basicRoom;
     }
 
     public BasicRoom getPlaceLocation() {
-        return owner.getRoom();
+        return placeLocation;
     }
 
     public void place(){
         System.out.println(" Trying to place transistor | Transistor: place()");
-        if(isTurnedOn){
-            if(pairTransistor.getPlaceLocation() == null) {
-                setPlaceLocation(owner.getRoom());
+        BasicRoom pl = pairTransistor.getPlaceLocation();
+        BasicRoom currRoom = owner.getRoom();
+        if(pairTransistor != null) {
+            if (pl != null) {
+                if (pl.hasPlace() && isTurnedOn) {
+                    setPlaceLocation(currRoom);
+                    owner.removeItem(this);
+                    owner.move(pl);
+                    owner.addItem(pairTransistor);
+                }
             }
-            else{
-
+            else if(isTurnedOn) {
+                setPlaceLocation(currRoom);
             }
         }
     }
 
-    public void switchTransistor(){
+    public void switchTransistor() {
         System.out.println("Switch transistor | Transistor: switchTransistor()");
         isTurnedOn = !isTurnedOn;
     }
