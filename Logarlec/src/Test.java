@@ -16,6 +16,7 @@ public class Test {
         BasicRoom currentRoom = new BasicRoom();
         Student student = new Student(currentRoom);
         BasicRoom nextRoom = new BasicRoom();
+        currentRoom.addNeighbour(nextRoom);
 
         student.move(nextRoom);
     }
@@ -25,6 +26,7 @@ public class Test {
         BasicRoom currentRoom = new BasicRoom();
         Student student = new Student(currentRoom);
         BasicRoom nextRoom = new BasicRoom(0);
+        currentRoom.addNeighbour(nextRoom);
 
         student.move(nextRoom);
     }

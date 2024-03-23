@@ -12,16 +12,14 @@ public class PoisonedRoomDecorator extends RoomDecorator{
         super(decoratedRoom);
     }
 
-
     public void toxicate(List<Character> characters){
         for(int i=0; i < characters.size(); i++){
-            //nem éri el a karakterek disable függvényét még, static?
-            //characters.get(i).disable();
+            decoratedRoom.getCharacters().get(i).disable();
         }
-        System.out.println("Room toxicated");
+        System.out.println("Room toxicated | PoisonedRoomDecorator: toxicate");
     }
 
-    /*public void splitRoom(){
+    public void splitRoom(){
         if(this.getCharacters().isEmpty()){
 
             PoisonedRoomDecorator newRoom = new PoisonedRoomDecorator(decoratedRoom);
@@ -30,23 +28,23 @@ public class PoisonedRoomDecorator extends RoomDecorator{
             newRoom.setCapacity(this.getCapacity());
 
             //Szomszédok felének átadása az új szobának
-            int halftheNeighbours = this.neighbours.size()/2;
+            int halftheNeighbours = decoratedRoom.getNeighbours().size()/2;
             for(int i=0; i < halftheNeighbours; i ++){
-                newRoom.addNeighbour(neighbours.get(i));
-                this.removeNeighbour(neighbours.get(i));
+                newRoom.addNeighbour(decoratedRoom.getNeighbours().get(i));
+                this.removeNeighbour(decoratedRoom.getNeighbours().get(i));
             }
             //Itemek felének átadása az új szobának
-            int halftheItems = this.items.size()/2;
+            int halftheItems = decoratedRoom.getItems().size()/2;
             for(int i=0; i<halftheItems; i++){
-                newRoom.addItem(items.get(i));
-                this.removeItem(items.get(i));
+                newRoom.addItem(decoratedRoom.getItems().get(i));
+                this.removeItem(decoratedRoom.getItems().get(i));
             }
-            labyrinth.addRoom(newRoom);
+            getLabyrinth().addRoom(newRoom);
 
-            System.out.println("Room splitted succesfully");
+            System.out.println("Room splitted succesfully | PoisonedRoomDecorator: splitRoom");
         }
         else{
-            System.out.println("Can not split room, because it contains characters");
+            System.out.println("Can not split room, because it contains characters | PoisonedRoomDecorator: splitRoom");
         }
-    }*/
+    }
 }
