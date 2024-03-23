@@ -30,6 +30,8 @@ public class Transistor extends Item{
         return placeLocation;
     }
 
+
+    //TODO: printelesek, pl nincs parja, van parja, tranzisztor lepteti a studentet stb
     public void place(){
         System.out.println(" Trying to place transistor | Transistor: place()");
         BasicRoom pl = pairTransistor.getPlaceLocation();

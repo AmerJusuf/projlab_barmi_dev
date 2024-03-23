@@ -1,13 +1,12 @@
 
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(† âöûÿÿÿÿ
+š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(† âöûÿÿÿÿJ$2efd849b-e4d0-4565-a17d-cfa9a081180e
+z
+java:S5993"9Change the visibility of this constructor to "protected".(›Ü¾ÌüÿÿÿÿJ$0720b7e9-c287-4922-b4d4-9a00a13971b8
+k	java:S106"+Replace this use of System.out by a logger.(°ŸÉÂüÿÿÿÿJ$5af799a4-6d5d-4b35-8cfe-5cecb5525485
+f	java:S106."+Replace this use of System.out by a logger.(ßíÛÑJ$940e74fa-24f7-46b6-88bd-837bee496fe0
+f	java:S1068"+Replace this use of System.out by a logger.(©Ç£¨J$cad8493b-344d-4b92-9f31-b8b4d9b30bce
+L	java:S106X"+Replace this use of System.out by a logger.(Ù÷ıÿÿÿÿ8ëéœëæ1
+G	java:S106c"+Replace this use of System.out by a logger.(ã•ùÀ8ìéœëæ1
 T
-java:S5993"9Change the visibility of this constructor to "protected".(›Ü¾Ìüÿÿÿÿ
-E	java:S106"+Replace this use of System.out by a logger.(°ŸÉÂüÿÿÿÿ
-@	java:S106."+Replace this use of System.out by a logger.(ßíÛÑ
-@	java:S1068"+Replace this use of System.out by a logger.(©Ç£¨
-@	java:S106I"+Replace this use of System.out by a logger.(•³üş
-@	java:S106U"+Replace this use of System.out by a logger.(¿ç¾Á
-@	java:S106d"+Replace this use of System.out by a logger.(ã•ùÀ
-M
-java:S1135|"2Complete the task associated to this TODO comment.(šğáøÿÿÿÿ
-F	java:S106‹"+Replace this use of System.out by a logger.(¦ÊÎÚùÿÿÿÿ
+java:S1135{"2Complete the task associated to this TODO comment.(šğáøÿÿÿÿ8íéœëæ1
+G	java:S106"+Replace this use of System.out by a logger.(¨ŞÛA8îéœëæ1

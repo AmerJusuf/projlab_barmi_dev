@@ -178,6 +178,7 @@ public class BasicRoom implements IRoom{
         System.out.println("Number of characters in the room is queryed! | BasicRoom: getNumberOfCharacters");
         return characters.size();
     }
+   //TODO Comment kiszedése
     //felesleges, mert a lista tudja, hogy mennyi elem van benne
     /*public void setNumberOfCharacters(int i){
 
@@ -263,9 +264,9 @@ public class BasicRoom implements IRoom{
      * A function to set neighbours to rooms.
      * @param room The list of rooms, where the current room will be added.
      */
-    public void setNeighbour(List<IRoom> room){
+    public void setNeighbours(List<IRoom> room){
         System.out.println("Neighbour set | BasicRoom: setNeighbour");
-        room.add(this);
+        room.add(this); //TODO rossz
     }
 
     /**

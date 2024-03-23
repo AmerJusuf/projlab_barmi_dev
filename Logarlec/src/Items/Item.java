@@ -86,9 +86,15 @@ public abstract class Item {
         return false;
     }
 
-    public void decreaseRoundsLeft() {}
+    public void decreaseRoundsLeft() {
+        //TODO: Ures fuggvenyek megkommentezese item osztalyba (miert igy stb)
+    }
 
-    public void setIsActive(boolean isActive) {}
+    public void setIsActive(boolean isActive) {
+        //TODO:
+    }
 
-    public void drop() {}
+    public void drop() {
+        //TODO: Implement drop method
+    }
 }

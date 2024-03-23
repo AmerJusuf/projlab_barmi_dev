@@ -1,25 +1,62 @@
 
-•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÞÄšËJ$728abf41-53bf-4851-aba9-272278faf6e5
-Â
-java:S11864"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ƒÈ²‚üÿÿÿÿJ$48b1beae-f34c-474d-9634-8834c4af9f0a
-Â
-java:S11869"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(¢¨€ôûÿÿÿÿJ$56427410-5b98-4d49-95b1-177325bf1d30
-Â
-java:S1186E"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Œ“‡¤ýÿÿÿÿJ$edb2ad85-3316-4f25-a1b5-d243ac59c0f9
-Â
-java:S1186\"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ìÐ„ÆÿÿÿÿÿJ$ba3a35f5-9914-4e9a-ab73-0f24e80daaf2
-Â
-java:S1186`"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(‰íŒçûÿÿÿÿJ$ae94f910-14b4-4389-b8d7-60df40fb5da4
-Â
-java:S1186i"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(–’¬ÞÿÿÿÿÿJ$5fe174e5-2b71-4cf3-98d9-fa80fe002952
-Â
-java:S1186l"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(à§êÚýÿÿÿÿJ$b5ff407b-30d4-4dd3-a8cc-1db60345f3bb
-Â
-java:S1186p"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(á‚ÝàùÿÿÿÿJ$f0879b40-861a-4993-aa37-a6b49c873b7c
-f	java:S106!"+Replace this use of System.out by a logger.(åÝÎ¥J$2298af48-94bb-4df1-9d54-2908d8fb6422
-|	java:S125$"<This block of commented-out lines of code should be removed.(–“ÚÑýÿÿÿÿJ$3c8b749c-4877-45f9-8d9d-6b9c03a9088c
-k	java:S106("+Replace this use of System.out by a logger.(Ý¡öÛýÿÿÿÿJ$b077d6e1-20b5-4458-96da-fc5aae27e1ba
-w	java:S125,"<This block of commented-out lines of code should be removed.(ÆáÒÿJ$602d407d-ea77-471f-a34e-d8031b312dd2
-k	java:S1060"+Replace this use of System.out by a logger.(þÃ¢ïýÿÿÿÿJ$3216daf6-1f11-489a-b596-1a29aef09606
-m
-java:S1068",Remove this unused "capacity" private field.(Ò—àçþÿÿÿÿJ$b804e574-f3c2-4d2e-bb69-97aaad7c8138
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ÞÄšËJ$549431d4-0238-489f-bc58-4898048851d5
+}
+java:S1161=":Add the "@Override" annotation above this method signature(µÊž²8­·¤½æ1J$5f410d31-dbfa-4900-8d98-0a2d23eeb761
+r	java:S106?"+Replace this use of System.out by a logger.(Ëáž¸øÿÿÿÿ8®·¤½æ1J$109f5f4d-9bed-4e70-98df-04ea14635263
+r	java:S106B"+Replace this use of System.out by a logger.(ÆÂ¿™úÿÿÿÿ8”èœëæ1J$c548596d-941e-47e6-8596-5c2c75a85a6c
+‚
+java:S1161L":Add the "@Override" annotation above this method signature(’ñÂ¾ûÿÿÿÿ8•èœëæ1J$b99f619e-4a5f-4e35-8014-7dfc42418c4c
+r	java:S106N"+Replace this use of System.out by a logger.(Ý¡öÛýÿÿÿÿ8–èœëæ1J$5876809c-a501-484c-9709-2278d1608634
+r	java:S106S"+Replace this use of System.out by a logger.(”üÓÑøÿÿÿÿ8–èœëæ1J$64f7295d-9085-435a-8b49-0e3de4bc70ea
+|
+java:S1161\":Add the "@Override" annotation above this method signature(¨¼ú08—èœëæ1J$06a5dc59-621c-4310-979f-a8e038bf0e16
+r	java:S106]"+Replace this use of System.out by a logger.(Èé£—ýÿÿÿÿ8—èœëæ1J$b16cb631-6051-406d-861a-30d4a684e353
+m	java:S106m"+Replace this use of System.out by a logger.(•°€¡8›èœëæ1J$e44dd32f-c264-4155-8a4b-741ec87b0015
+m	java:S106|"+Replace this use of System.out by a logger.(°®®Î8 èœëæ1J$0faf9f65-f4f3-4717-8b11-dc0e5ce111ac
+r	java:S106"+Replace this use of System.out by a logger.(ÿèÌûÿÿÿÿ8 èœëæ1J$efadf249-1f93-4ccc-a898-1135def30a18
+ƒ
+java:S1161‡":Add the "@Override" annotation above this method signature(¢¨€ôûÿÿÿÿ8¡èœëæ1J$c154a1f7-7227-44c9-9742-10c385f7ecde
+s	java:S106"+Replace this use of System.out by a logger.(‰Øšïøÿÿÿÿ8¦èœëæ1J$281d08f3-bba8-400e-8e20-1422b04fdad1
+s	java:S106 "+Replace this use of System.out by a logger.(¥°Üßûÿÿÿÿ8¦èœëæ1J$20ef3fa9-7444-4fed-948b-f624620761cf
+ƒ
+java:S1161¨":Add the "@Override" annotation above this method signature(Ðò…Áøÿÿÿÿ8§èœëæ1J$b5388421-2b0d-40ef-bd71-5cb72772fc50
+s	java:S106©"+Replace this use of System.out by a logger.(–ñ°½ûÿÿÿÿ8§èœëæ1J$7d471527-9b03-48c3-a951-477f82c845d1
+ƒ
+java:S1161±":Add the "@Override" annotation above this method signature(õÃÎÌùÿÿÿÿ8¨èœëæ1J$fd3f0741-440e-4b75-900b-5d6fde8e1b5d
+s	java:S106²"+Replace this use of System.out by a logger.(Œƒäžþÿÿÿÿ8¨èœëæ1J$4080ffaa-bf30-491f-854e-fe3600a77ab0
+ƒ
+java:S1161¿":Add the "@Override" annotation above this method signature(ù³ŽÝûÿÿÿÿ8©èœëæ1J$5043017b-b5fa-4a43-baa4-e8fb8849a584
+„	java:S125·"<This block of commented-out lines of code should be removed.(µ¿ú×ùÿÿÿÿ8©èœëæ1J$cdc6e47d-a2ec-49f5-8cd7-acdf2e963f49
+P
+java:S1135µ"2Complete the task associated to this TODO comment.(Àšäê8·à±ëæ1
+m	java:S106Á"+Replace this use of System.out by a logger.(´ñïi8ªèœëæ1J$8eec9576-b5d1-4a76-9959-671e1e320716
+n	java:S106Å"+Replace this use of System.out by a logger.(§×»ï8«èœëæ1J$50a41e1d-c0db-4592-afc1-2a05707c1c8e
+}
+java:S1161Î":Add the "@Override" annotation above this method signature(ç±,8«èœëæ1J$f04f30e3-6ead-442f-8cc4-344406a5be87
+ƒ
+java:S1161Ö":Add the "@Override" annotation above this method signature(«õïÙøÿÿÿÿ8¬èœëæ1J$892b107e-378e-472a-acd7-4a6d12cb1580
+ƒ
+java:S1161Þ":Add the "@Override" annotation above this method signature(âÁ¢£ÿÿÿÿÿ8¬èœëæ1J$a27bb10d-2ac0-4585-8a8f-8ea300b3111f
+ƒ
+java:S1161æ":Add the "@Override" annotation above this method signature(ìÐ„Æÿÿÿÿÿ8­èœëæ1J$d9bee8ae-d74e-4979-9f9e-28a2ce07cd5b
+n	java:S106ç"+Replace this use of System.out by a logger.(œ²·³8­èœëæ1J$ef3f058c-540d-4b76-8110-461d00d57b52
+ƒ
+java:S1161ï":Add the "@Override" annotation above this method signature(‰íŒçûÿÿÿÿ8®èœëæ1J$757c918c-76b6-44c6-9537-243c21b0cf9e
+s	java:S106ð"+Replace this use of System.out by a logger.(óÒ¢™úÿÿÿÿ8®èœëæ1J$8b2eb71a-52ec-49f0-b4de-9aff066a48cf
+ƒ
+java:S1161ø":Add the "@Override" annotation above this method signature(õþÑ¸ùÿÿÿÿ8¯èœëæ1J$6e2efbf0-a11e-467e-816f-782827d898b4
+s	java:S106ù"+Replace this use of System.out by a logger.(‰¾‘Öøÿÿÿÿ8¯èœëæ1J$d2343332-4f0b-4244-a124-9f3522972733
+ƒ
+java:S1161‚":Add the "@Override" annotation above this method signature(–’¬Þÿÿÿÿÿ8°èœëæ1J$d51ba8fb-3655-40e7-8225-8788a28e425c
+s	java:S106ƒ"+Replace this use of System.out by a logger.(…ÛßÀþÿÿÿÿ8°èœëæ1J$96fdcc53-90c5-4ce8-8031-74835546d26e
+ƒ
+java:S1161‹":Add the "@Override" annotation above this method signature(à¥Êÿÿÿÿÿ8œú«ëæ1J$25cda054-ebe3-4c30-90be-c87fd499fd31
+s	java:S106Œ"+Replace this use of System.out by a logger.(±Øùÿÿÿÿ8±èœëæ1J$fdec24ca-b2cb-42a8-8e41-64a344ad1321
+{
+java:S1135"2Complete the task associated to this TODO comment.(Ò‘•ÿÿÿÿÿÿ8œ«ëæ1J$20fe09ec-5d01-494c-93a2-8ad38acbd34c
+ƒ
+java:S1161”":Add the "@Override" annotation above this method signature(á‚Ýàùÿÿÿÿ8²èœëæ1J$aab62227-3d8e-4fe3-9c6c-32578b8866d7
+s	java:S106•"+Replace this use of System.out by a logger.(ËðÊ¾þÿÿÿÿ8²èœëæ1J$fdfa88e4-0f0b-4088-aa79-f50b3519d26d
+ƒ
+java:S1161":Add the "@Override" annotation above this method signature(û¬µ¶ýÿÿÿÿ8³èœëæ1J$7bea57d6-469b-499c-8250-af6c8f7691a4
+s	java:S106ž"+Replace this use of System.out by a logger.(­®°¢þÿÿÿÿ8³èœëæ1J$e93d3c57-e287-41e0-9fa9-78311ca3a95f

@@ -1,7 +1,11 @@
 
-¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Áã²¹ûÿÿÿÿ8»²ó•æ1J$c5e0e8b3-7729-41d0-90f8-7e7210487229
-œ
-java:S1450"YRemove the "isTurnedOn" field and declare it as a local variable in the relevant methods.(¶Ò¶ê8Á²ó•æ1J$3b06de4d-4543-480c-9193-69bdb65e1864
-r	java:S106"+Replace this use of System.out by a logger.(ï™Œ ûÿÿÿÿ8Ã²ó•æ1J$41747c17-5338-45f3-9cc5-06c916a53431
-q
-java:S1068".Remove this unused "isTurnedOn" private field.(¶Ò¶ê8Å²ó•æ1J$5d4164c2-bd89-469d-9eb1-58ed1e570d07
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Áã²¹ûÿÿÿÿ8»²ó•æ1J$56729309-b6da-4660-b126-918e32109e1f
+y
+java:S2589'"7Remove this expression which always evaluates to "true"(ÔÄŠm8Öø¡ëæ1J$9702b9d5-9e26-4bcc-9cb1-930749125f64
+~	java:S125"<This block of commented-out lines of code should be removed.(ÚËÚ…8Ùø¡ëæ1J$fc458dee-f56f-4a6f-8161-37a3e8fa18e1
+r	java:S106"+Replace this use of System.out by a logger.(ã’¹´øÿÿÿÿ8Ûø¡ëæ1J$efee786a-1f09-4c65-90f6-01a9cf00140c
+m	java:S106"+Replace this use of System.out by a logger.(ˆ²™8Ûø¡ëæ1J$5be902ff-0cd6-4e34-bc48-c6119e9fc8f7
+u
+java:S1135""2Complete the task associated to this TODO comment.(šîØŸ8Þé£ëæ1J$23e008c6-bd1b-4233-aa56-6810ab95ad50
+m	java:S106$"+Replace this use of System.out by a logger.(á¾¬‡8Üø¡ëæ1J$12ffb33a-2b6a-463e-b8dd-086572051151
+m	java:S1067"+Replace this use of System.out by a logger.(ÊÛë8ßø¡ëæ1J$5b7786f7-75b4-4da8-a073-5075f45240ef
