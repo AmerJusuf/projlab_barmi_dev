@@ -15,7 +15,6 @@ public class CursedRoomDecorator extends RoomDecorator{
     /**
      * The list containing the actual neighbours of the current room.
      */
-    List<IRoom> neighbours;
     public CursedRoomDecorator(IRoom decoratedRoom){
         super(decoratedRoom);
         hiddenNeighbours = new ArrayList<>();
@@ -34,22 +33,24 @@ public class CursedRoomDecorator extends RoomDecorator{
      */
     public void manageDoors(){
         //szomszédok megjelenítése
-        if(this.neighbours.isEmpty()){
+        if(decoratedRoom.getNeighbours().isEmpty()){
             for(int i = 0; i < hiddenNeighbours.size(); i++){
-                this.addNeighbour(neighbours.get(i));
-                this.hiddenNeighbours.remove(neighbours.get(i));
+                decoratedRoom.addNeighbour(getNeighbours().get(i));
+                this.hiddenNeighbours.remove(decoratedRoom.getNeighbours().get(i));
             }
+            System.out.println("Showing neighbours | CursedRoomDecorator: manageDoors");
         }
         //szomszédok elrejtése
         else{
-            for(int i = 0; i < this.neighbours.size(); i++){
-                this.hiddenNeighbours.add(neighbours.get(i));
-                this.removeNeighbour(neighbours.get(i));
+            for(int i = 0; i < decoratedRoom.getNeighbours().size(); i++){
+                this.hiddenNeighbours.add(decoratedRoom.getNeighbours().get(i));
+                decoratedRoom.removeNeighbour(getNeighbours().get(i));
             }
+            System.out.println("Hiding neighbour | CursedRoomDecorator: manageDoors");
         }
     }
 
-    /*public void splitRoom(){
+    public void splitRoom(){
         if(this.getCharacters().isEmpty()){
 
             CursedRoomDecorator newRoom = new CursedRoomDecorator(decoratedRoom);
@@ -58,23 +59,23 @@ public class CursedRoomDecorator extends RoomDecorator{
             newRoom.setCapacity(this.getCapacity());
 
             //Szomszédok felének átadása az új szobának
-            int halftheNeighbours = this.neighbours.size()/2;
+            int halftheNeighbours = decoratedRoom.getNeighbours().size()/2;
             for(int i=0; i < halftheNeighbours; i ++){
-                newRoom.addNeighbour(neighbours.get(i));
-                this.removeNeighbour(neighbours.get(i));
+                newRoom.addNeighbour(decoratedRoom.getNeighbours().get(i));
+                this.removeNeighbour(decoratedRoom.getNeighbours().get(i));
             }
             //Itemek felének átadása az új szobának
-            int halftheItems = this.items.size()/2;
+            int halftheItems = decoratedRoom.getItems().size()/2;
             for(int i=0; i<halftheItems; i++){
-                newRoom.addItem(items.get(i));
-                this.removeItem(items.get(i));
+                newRoom.addItem(decoratedRoom.getItems().get(i));
+                this.removeItem(decoratedRoom.getItems().get(i));
             }
-            labyrinth.addRoom(newRoom);
+            getLabyrinth().addRoom(newRoom);
 
-            System.out.println("Room splitted succesfully");
+            System.out.println("Room splitted succesfully | CursedRoomDecorator: splitRoom");
         }
         else{
-            System.out.println("Can not split room, because it contains characters");
+            System.out.println("Can not split room, because it contains characters | CursedRoomDecorator: splitRoom");
         }
-    }*/
+    }
 }

@@ -60,10 +60,10 @@ public class BasicRoom implements IRoom{
      */
     public boolean isNeighbour(IRoom nextRoom){
         if(this.neighbours.contains(nextRoom)){
-        System.out.println("nextRoom is neighbour: true ");
+        System.out.println("NextRoom is neighbour: true | BasicRoom: isNeighbour");
         return true;}
         else {
-            System.out.println("nextRoom is neighbour: false ");
+            System.out.println("NextRoom is neighbour: false | BasicRoom: isNeighbour");
             return false;
         }
     }
@@ -80,7 +80,7 @@ public class BasicRoom implements IRoom{
             return true;
         }
         else {
-            System.out.println("Character is not accepted because capacity is full | basicRoom.acceptCharacter()");
+            System.out.println("Character is not accepted because capacity is full | BasicRoom: acceptCharacter()");
             return false;
         }
     }
@@ -90,7 +90,7 @@ public class BasicRoom implements IRoom{
      * @param character The character to be removed.
      */
     public void removeCharacter(Character character) {
-        System.out.println("Character is removed from currentRoom");
+        System.out.println("Character is removed from currentRoom | BasicRoom: removeCharacter");
         characters.remove(character);
     }
 
@@ -110,21 +110,21 @@ public class BasicRoom implements IRoom{
                 //a nagyobb kapacitás lesz beállítva az összevont szobának
                 room.setCapacity(room.getCapacity()>this.getCapacity()?room.getCapacity():this.getCapacity());
                 //tárgyak átadása
-                for(int i=0; i<this.items.size(); i++){
-                    room.addItem(items.get(i));
-                    this.removeItem(items.get(i));
+                for(int i=0; i<this.getItems().size(); i++){
+                    room.addItem(this.getItems().get(i));
+                    this.removeItem(this.getItems().get(i));
                 }
                 //szomszédok átadása
-                for(int i = 0; i<this.neighbours.size(); i++){
-                    room.addNeighbour(neighbours.get(i));
-                    this.removeNeighbour(neighbours.get(i));
+                for(int i = 0; i<this.getNeighbours().size(); i++){
+                    room.addNeighbour(this.getNeighbours().get(i));
+                    this.removeNeighbour(this.getNeighbours().get(i));
                 }
-                labyrinth.removeRoom(this);
+                this.getLabyrinth().removeRoom(this);
             }
-            System.out.println("Rooms can not be merged, because they are not neighbours");
+            System.out.println("Rooms can not be merged, because they are not neighbours | BasicRoom: mergeRooms");
         }
         else{
-            System.out.println("Rooms can not be merged, because they contain characters");
+            System.out.println("Rooms can not be merged, because they contain characters | BasicRoom: mergeRooms");
         }
     }
 
@@ -141,23 +141,23 @@ public class BasicRoom implements IRoom{
         newRoom.setCapacity(this.getCapacity());
 
         //Szomszédok felének átadása az új szobának
-        int halftheNeighbours = this.neighbours.size()/2;
+        int halftheNeighbours = this.getNeighbours().size()/2;
         for(int i=0; i < halftheNeighbours; i ++){
-            newRoom.addNeighbour(neighbours.get(i));
-            this.removeNeighbour(neighbours.get(i));
+            newRoom.addNeighbour(this.getNeighbours().get(i));
+            this.removeNeighbour(this.getNeighbours().get(i));
         }
         //Itemek felének átadása az új szobának
-        int halftheItems = this.items.size()/2;
+        int halftheItems = this.getItems().size()/2;
         for(int i=0; i<halftheItems; i++){
-            newRoom.addItem(items.get(i));
-            this.removeItem(items.get(i));
+            newRoom.addItem(this.getItems().get(i));
+            this.removeItem(this.getItems().get(i));
         }
-        labyrinth.addRoom(newRoom);
+        this.getLabyrinth().addRoom(newRoom);
 
-            System.out.println("Room splitted succesfully");
+            System.out.println("Room splitted succesfully | BasicRoom: splitRoom");
         }
         else{
-            System.out.println("Can not split room, because it contains characters");
+            System.out.println("Can not split room, because it contains characters | BasicRoom: splitRoom");
         }
     }
 
@@ -166,7 +166,7 @@ public class BasicRoom implements IRoom{
      * @return The capacity.
      */
     public int getCapacity(){
-        System.out.println("Capacity is queryed");
+        System.out.println("Capacity is queryed | BasicRoom: getCapacity");
         return capacity;
     }
 
@@ -175,7 +175,7 @@ public class BasicRoom implements IRoom{
      * @return The number of the characters.
      */
     public int getNumberOfCharacters(){
-        System.out.println("Number of characters in the room is queryed!");
+        System.out.println("Number of characters in the room is queryed! | BasicRoom: getNumberOfCharacters");
         return characters.size();
     }
     //felesleges, mert a lista tudja, hogy mennyi elem van benne
@@ -189,11 +189,11 @@ public class BasicRoom implements IRoom{
      */
     public boolean hasPlace(){
         if(getCapacity()>getNumberOfCharacters()) {
-            System.out.println("The room has free space");
+            System.out.println("The room has free space | BasicRoom: hasPlace");
             return true;
         }
         else{
-            System.out.println("The room is full");
+            System.out.println("The room is full | BasicRoom: hasPlace");
             return false;
         }
     }
@@ -227,7 +227,7 @@ public class BasicRoom implements IRoom{
      * @param it The item to be added.
      */
     public void addItem(Item it){
-        System.out.println("Added new item!");
+        System.out.println("Added new item | BasicRoom: addItem");
         this.items.add(it);
     }
 
@@ -236,7 +236,7 @@ public class BasicRoom implements IRoom{
      * @param it The item to be removed.
      */
     public void removeItem(Item it){
-        System.out.println("Removed item");
+        System.out.println("Removed item | BasicRoom: removeItem");
         this.items.remove(it);
     }
 
@@ -245,7 +245,7 @@ public class BasicRoom implements IRoom{
      * @param i The new capacity.
      */
     public void setCapacity(int i){
-        System.out.println("Capacity modified");
+        System.out.println("Capacity modified | BasicRoom: setCapacity");
         capacity = i;
 
     }
@@ -255,7 +255,7 @@ public class BasicRoom implements IRoom{
      * @param room The room, which will be added as neighbour to the current room.
      */
     public void addNeighbour(IRoom room){
-        System.out.println("Neighbour added");
+        System.out.println("Neighbour added | BasicRoom: addNeighbour");
         this.neighbours.add(room);
     }
 
@@ -264,7 +264,7 @@ public class BasicRoom implements IRoom{
      * @param room The list of rooms, where the current room will be added.
      */
     public void setNeighbour(List<IRoom> room){
-        System.out.println("Neighbour set");
+        System.out.println("Neighbour set | BasicRoom: setNeighbour");
         room.add(this);
     }
 
@@ -273,7 +273,7 @@ public class BasicRoom implements IRoom{
      * @param room
      */
     public void removeNeighbour(IRoom room){
-        System.out.println("Neighbour removed");
+        System.out.println("Neighbour removed | BasicRoom: removeNeighbour");
         this.neighbours.remove(room);
     }
 
@@ -282,7 +282,7 @@ public class BasicRoom implements IRoom{
      * @param character
      */
     public void addCharacter(Character character){
-        System.out.println("Character added");
+        System.out.println("Character added | BasicRoom: addCharacter");
         characters.add(character);
     }
 }
