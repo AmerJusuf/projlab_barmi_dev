@@ -5,8 +5,10 @@ public class FFP2 extends TemporaryItem {
         super();
     }
 
+    @Override
     public boolean protectFromPoison() {
         System.out.println("FFP2 protects from poison | FFP2: protectFromPoison()");
+        setIsActive(true);
         return true;
     }
 }
