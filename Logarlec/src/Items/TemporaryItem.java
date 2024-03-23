@@ -4,13 +4,14 @@ public abstract class TemporaryItem extends Item {
     protected int roundsLeft;
     protected boolean isActive;
 
-    public TemporaryItem() {
+    protected TemporaryItem() {
         super();
         // nem tudom ide mi kellene
         roundsLeft = 3;
         isActive = false;
     }
 
+    @Override
     public void decreaseRoundsLeft() {
         roundsLeft--;
     }

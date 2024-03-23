@@ -10,6 +10,7 @@ public class Rag extends TemporaryItem {
         super();
     }
 
+    @Override
     public boolean protectStudent() {
         System.out.println("Rag protects student | Rag: protectStudent()");
         setIsActive(true);
@@ -17,6 +18,7 @@ public class Rag extends TemporaryItem {
         return true;
     }
 
+    @Override
     public boolean stunInstructor() {
         System.out.println("Rag stuns instructor | Rag: stunInstructor()");
         IRoom currentRoom = owner.getRoom();
