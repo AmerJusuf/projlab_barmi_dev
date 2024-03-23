@@ -15,10 +15,12 @@ public interface IRoom {
     }
 
     public default int getCapacity(){
+
         return 5;
     }
 
     public default int getNumberOfCharacters(){
+
         return 0;
     }
 
@@ -27,21 +29,26 @@ public interface IRoom {
     }
 
     public default boolean hasPlace(){
+
         return true;
     }
     public default List<Character> getCharacters(){
+
         return null;
     }
 
     public default List<IRoom> getNeighbours(){
+
         return null;
     }
 
     public default boolean isNeighbour(IRoom room){
+
         return false;
     }
 
     public default Labyrinth getLabyrinth(){
+
         return null;
     }
 
@@ -54,6 +61,7 @@ public interface IRoom {
     }
 
     public default boolean acceptCharacter(Character ch){
+
         return true;
     }
 
@@ -61,9 +69,12 @@ public interface IRoom {
 
     }
 
-    public default void addCharacter(Character character){}
+    public default void addCharacter(Character character){
+
+    }
 
     public default void setCapacity(int i){
+
     }
 
     public default void addNeighbour(IRoom room){
@@ -75,6 +86,11 @@ public interface IRoom {
 
     public default void removeNeighbour(IRoom room){
 
+    }
+
+    public default List<Item> getItems(){
+
+        return null;
     }
 
 
