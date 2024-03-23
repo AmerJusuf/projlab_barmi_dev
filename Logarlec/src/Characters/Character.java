@@ -70,8 +70,8 @@ public abstract class Character {
      * This method is used to drop all the items of the character.
      */
     public void dropAllItem(){
-        System.out.println("All items dropped by character | Character: dropAllItem()");
-        for(Item item : items){
+        List<Item> itemsCopy = new ArrayList<>(items);
+        for(Item item : itemsCopy){
             this.dropItem(item);
         }
     }
@@ -82,11 +82,10 @@ public abstract class Character {
      * @param item The item to be dropped from the character's collection.
      */
     public void dropItem(Item item){
-        System.out.println("Item dropped by character | Character: dropItem()");
         if(items.contains(item)){
-            item.setIsActive(false);
+            item.drop();
             this.removeItem(item);
-            item.removeOwner();
+            System.out.println("Item removed from character's inventory | Character: dropItem()");
             currentRoom.addItem(item);
         }
     }
@@ -136,12 +135,12 @@ public abstract class Character {
      * set as poisoned
      */
     public void disable(){
-        System.out.println("Character is disabled | Character: disable()");
         for(Item item : items){
            if(item.protectFromPoison()){
                return;
            }
         }
+        System.out.println("Character disabled | Character: disable()");
         this.dropAllItem();
         this.setPoisoned(true);
     }
