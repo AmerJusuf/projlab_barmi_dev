@@ -202,21 +202,72 @@ public class Test {
         transistor.switchTransistor();
     }
 
-    public void pairTransistorsBothNotPairedYet() {}
+    public void pairTransistorsBothNotPairedYet() {
+        System.out.println("Testing pair transistors, if both transistors are not paired yet:");
+        Transistor tr = new Transistor();
+        Transistor pair = new Transistor();
+        //pairTransistor majd kell
+        tr.setPairTransistor(pair);
+        tr.setPairTransistor(tr);
 
-    public void canNotPairTransistorsBecauseFirstIsPaired() {}
+    }
 
-    public void canNotPairTransistorsBecauseSecondIsPaired() {}
+    public void canNotPairTransistorsBecauseFirstIsPaired() {
+        System.out.println("Testing pair transistors and first transistor is paired:");
+        Transistor transistor = new Transistor();
+        //pairTransistor majd kell
+    }
 
-    public void placeSecondTransistorAndMove() {}
+    public void canNotPairTransistorsBecauseSecondIsPaired() {
+        System.out.println("Testing pair transistors and second transistor is paired:");
+        Transistor transistor = new Transistor();
+        //pairTransistor majd kell
+    }
 
-    public void placeFirstTransistorActiveAndPaired() {}
+    public void placeSecondTransistorAndMove() {
+        System.out.println("Testing place transistor and move:");
+        Transistor tr = new Transistor();
+        Transistor pairTransistor = new Transistor();
+        BasicRoom ptPlaceLocation = new BasicRoom();
+        Student owner = new Student(ptPlaceLocation);
 
-    public void canNotPlaceTransistorBecauseNotActive() {}
+        tr.place();
 
-    public void canNotPlaceTransistorBecauseNotHaveAPair() {}
+    }
 
-    public void placeSecondTransistorActiveAndCanNotMoveBecauseOfCapacity() {}
+    public void placeFirstTransistorActiveAndPaired() {
+        System.out.println("Testing place first transistor if active and paired:");
+        Transistor tr = new Transistor();
+        Transistor pairTransistor = new Transistor();
+        BasicRoom ptPlaceLocation = new BasicRoom();
+        Student owner = new Student(ptPlaceLocation);
+
+        tr.place();
+    }
+
+    public void canNotPlaceTransistorBecauseNotActive() {
+        System.out.println("Testing place transistor if not active:");
+        Transistor tr = new Transistor();
+
+        tr.place();
+    }
+
+    public void canNotPlaceTransistorBecauseNotHaveAPair() {
+        System.out.println("Testing place transistor if do not have pair:");
+        Transistor tr = new Transistor();
+
+        tr.place();
+    }
+
+    public void placeSecondTransistorActiveAndCanNotMoveBecauseOfCapacity() {
+        System.out.println("Testing place transistor if can not move because the room do not have enough capacity:");
+        Transistor tr = new Transistor();
+        Transistor pairTransistor = new Transistor();
+        BasicRoom ptPlaceLocation = new BasicRoom();
+        Student owner = new Student(ptPlaceLocation);
+
+        tr.place();
+    }
 
     public void poisonedRoomToxicatesCharacters() {}
 
