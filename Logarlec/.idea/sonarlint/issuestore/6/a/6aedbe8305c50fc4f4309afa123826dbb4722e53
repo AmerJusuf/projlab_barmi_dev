@@ -1,10 +1,18 @@
 
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ŞÄšË8¼İËÃæ1J$1250a5fe-8e53-46d2-b422-241b4625c7d2
-m	java:S106)"+Replace this use of System.out by a logger.(¾ĞüÖ8éêœëæ1J$e11f8a5e-2539-4299-be4d-01a3764c9b27
-r	java:S1061"+Replace this use of System.out by a logger.(á•†³ÿÿÿÿÿ8ëêœëæ1J$33088f4d-c880-4ada-beba-b9717a53b01d
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ŞÄšË8¼İËÃæ1J$1db9b0b1-76f7-4e96-88a3-74b0a73a1cbc
+m	java:S106)"+Replace this use of System.out by a logger.(¾ĞüÖ8éêœëæ1J$ea604195-354f-41a6-af48-c3fa24e0f5cb
+r	java:S1061"+Replace this use of System.out by a logger.(á•†³ÿÿÿÿÿ8ëêœëæ1J$3ca3cd22-854d-47fb-8f85-0c8b8c45d44a
 ‚
-java:S11615":Add the "@Override" annotation above this method signature(¢¨€ôûÿÿÿÿ8ìêœëæ1J$cdcfb9e8-fe5c-470b-b03c-3baae2aa08b1
-l	java:S106K"+Replace this use of System.out by a logger.(ô”‡8òêœëæ1J$47b2ca2c-2297-4852-9807-dae627d3676f
-l	java:S106N"+Replace this use of System.out by a logger.(¦§`8ôêœëæ1J$ad61f2cd-8cf4-488b-b44b-3c72e32d58c3
-}
-java:S1161R":Add the "@Override" annotation above this method signature(’ƒ¦î8¡Ø³‰ç1J$4e91f88d-ad86-4f08-982e-6c31e886a2d2
+java:S11615":Add the "@Override" annotation above this method signature(ƒÈ²‚üÿÿÿÿ8†±õŠç1J$0cbd7274-fc55-416f-af97-fe9c8c30a549
+T
+java:S11356"2Complete the task associated to this TODO comment.(ÎÆ£šùÿÿÿÿ8Õ¹·ç1
+‚
+java:S11619":Add the "@Override" annotation above this method signature(¢¨€ôûÿÿÿÿ8ìêœëæ1J$37f6f687-b6af-4f49-b0ed-3a954b018ac1
+l	java:S106O"+Replace this use of System.out by a logger.(ô”‡8òêœëæ1J$8ff1682c-752d-48d7-987f-368b86726dd7
+l	java:S106R"+Replace this use of System.out by a logger.(¦§`8ôêœëæ1J$88a855f5-f6ba-45b5-8844-7890d220dec2
+t
+java:S1128"1Remove this unused import 'Characters.Character'.(ÛÑæ¦8·’·ç1J$9e20dbc0-95ca-4050-85c8-1639617fd209
+s
+java:S1128"+Remove this unused import 'Game.Labyrinth'.(¨†íòÿÿÿÿÿ8·’·ç1J$95d0abae-59ea-4f80-ac59-f30f962f81b7
+o
+java:S1128"'Remove this unused import 'Items.Item'.(€ÂÇÕıÿÿÿÿ8·’·ç1J$1d2a7209-9934-4803-a1ec-4089b79eb512

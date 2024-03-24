@@ -1,7 +1,7 @@
 package Characters;
 
 import Items.Item;
-import Rooms.BasicRoom;
+import Rooms.IRoom;
 
 public class Student extends Character{
 
@@ -10,7 +10,7 @@ public class Student extends Character{
      *
      * @param currentRoom The room where the student is placed.
      */
-    public Student(BasicRoom currentRoom){
+    public Student(IRoom currentRoom){
         super(currentRoom);
     }
 

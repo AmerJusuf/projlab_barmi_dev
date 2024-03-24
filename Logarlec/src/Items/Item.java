@@ -8,13 +8,6 @@ public abstract class Item {
     protected Character owner;
 
     /**
-     * This constructor is used to create an Item object with no owner.
-     */
-    public Item() {
-        owner = null;
-    }
-
-    /**
      * This method is used to indicate that the item was picked by a student.
      * It sets the owner of the item to the specified student and adds the item to the student's collection.
      *

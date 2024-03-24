@@ -2,6 +2,7 @@ package Characters;
 
 import Items.Item;
 import Rooms.BasicRoom;
+import Rooms.IRoom;
 
 import java.util.List;
 
@@ -12,7 +13,7 @@ public class Instructor extends Character{
      *
      * @param currentRoom The room where the instructor is placed.
      */
-    public Instructor(BasicRoom currentRoom){
+    public Instructor(IRoom currentRoom){
         super(currentRoom);
     }
 

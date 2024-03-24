@@ -1,12 +1,14 @@
 
-š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(† âöûÿÿÿÿJ$2efd849b-e4d0-4565-a17d-cfa9a081180e
+š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(† âöûÿÿÿÿJ$ad0eff74-796d-443f-b676-e0b8403f2e30
 z
-java:S5993"9Change the visibility of this constructor to "protected".(›Ü¾ÌüÿÿÿÿJ$0720b7e9-c287-4922-b4d4-9a00a13971b8
-k	java:S106"+Replace this use of System.out by a logger.(°ŸÉÂüÿÿÿÿJ$5af799a4-6d5d-4b35-8cfe-5cecb5525485
-f	java:S106."+Replace this use of System.out by a logger.(ßíÛÑJ$940e74fa-24f7-46b6-88bd-837bee496fe0
-f	java:S1068"+Replace this use of System.out by a logger.(©Ç£¨J$cad8493b-344d-4b92-9f31-b8b4d9b30bce
-L	java:S106X"+Replace this use of System.out by a logger.(Ù÷ıÿÿÿÿ8ëéœëæ1
-G	java:S106c"+Replace this use of System.out by a logger.(ã•ùÀ8ìéœëæ1
-T
-java:S1135{"2Complete the task associated to this TODO comment.(šğáøÿÿÿÿ8íéœëæ1
-G	java:S106"+Replace this use of System.out by a logger.(¨ŞÛA8îéœëæ1
+java:S5993"9Change the visibility of this constructor to "protected".(²ËƒêıÿÿÿÿJ$1994e3e2-06dc-49d1-b22d-0cbd58ded7dc
+k	java:S106"+Replace this use of System.out by a logger.(°ŸÉÂüÿÿÿÿJ$3f77039f-8d7e-4ab7-a49e-c1812f752d7e
+f	java:S106/"+Replace this use of System.out by a logger.(ßíÛÑJ$1feb8d23-55d3-4299-85e0-6dbc15110e9d
+f	java:S1069"+Replace this use of System.out by a logger.(©Ç£¨J$bb4403b2-dab2-4e5b-944e-b00d9eff1072
+r	java:S106Y"+Replace this use of System.out by a logger.(Ù÷ıÿÿÿÿ8ëéœëæ1J$997af034-8bed-42ee-8bb3-75d686a521a1
+m	java:S106d"+Replace this use of System.out by a logger.(ã•ùÀ8ìéœëæ1J$78b66528-c6d3-4784-a569-4a7ec0bfa30c
+z
+java:S1135|"2Complete the task associated to this TODO comment.(šğáøÿÿÿÿ8íéœëæ1J$b2235166-eecc-4162-9188-c109330b4800
+m	java:S106"+Replace this use of System.out by a logger.(¨ŞÛA8îéœëæ1J$94ba4cb1-2d23-4daa-832f-92de7af25956
+t
+java:S1128",Remove this unused import 'Rooms.BasicRoom'.(Çêê½ÿÿÿÿÿ8û¶€ç1J$c4aab54b-500d-43d5-9f33-9b31c2fce402

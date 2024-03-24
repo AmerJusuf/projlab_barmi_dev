@@ -1,7 +1,7 @@
 
-¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Áã²¹ûÿÿÿÿ8Å’”‰ç1J$05160a89-00d0-4f30-9b33-d175d986d0b3
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Áã²¹ûÿÿÿÿ8Å’”‰ç1J$023a22a4-eb87-45cc-abe7-0780cee4fccd
 }
-java:S1161":Add the "@Override" annotation above this method signature(ü·Üº8Ì’”‰ç1J$b9a25225-6ec6-40a5-80dc-64af0e504670
-m	java:S106"+Replace this use of System.out by a logger.(ºüŠÛ8Ì’”‰ç1J$e25e97ba-9fdc-4aa5-b4f6-316f26ffbe4b
-r	java:S106&"+Replace this use of System.out by a logger.(ô™Üƒùÿÿÿÿ8Í’”‰ç1J$e0b7b9b0-6c83-451d-94f6-0be9117fe13a
-m	java:S106("+Replace this use of System.out by a logger.(ªÃ¦ã8Í’”‰ç1J$a5750376-8034-48df-aab1-78ffcf1d73ac
+java:S1161":Add the "@Override" annotation above this method signature(ü·Üº8Ì’”‰ç1J$4de8b2d0-cd9d-4ed3-928b-c274db2e2a13
+m	java:S106"+Replace this use of System.out by a logger.(ºüŠÛ8Ì’”‰ç1J$463d8259-1117-4a5d-a4a5-14d2b6860c0b
+r	java:S106""+Replace this use of System.out by a logger.(ô™Üƒùÿÿÿÿ8Í’”‰ç1J$66d53aaa-b3b0-4ad1-bee5-f041de628ad2
+m	java:S106$"+Replace this use of System.out by a logger.(ªÃ¦ã8Í’”‰ç1J$2973d5a8-1704-49a7-9e4c-da79afc08459

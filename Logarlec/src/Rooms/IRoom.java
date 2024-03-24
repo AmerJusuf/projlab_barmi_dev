@@ -7,92 +7,38 @@ import Items.Item;
 import java.util.List;
 
 public interface IRoom {
-    public default void mergeRooms(IRoom room){
+    void mergeRooms(IRoom room);
+    void splitRoom();
 
-    }
-    public default void splitRoom(){
+    int getCapacity();
 
-    }
+    int getNumberOfCharacters();
 
-    public default int getCapacity(){
+    boolean hasPlace();
+     List<Character> getCharacters();
 
-        return 5;
-    }
+     List<IRoom> getNeighbours();
 
-    public default int getNumberOfCharacters(){
+     boolean isNeighbour(IRoom room);
+     Labyrinth getLabyrinth();
 
-        return 0;
-    }
+     void addItem(Item it);
 
-    public default void setNumberOfCharacters(int i){
+     void removeItem(Item it);
+     boolean acceptCharacter(Character ch);
 
-    }
+     void removeCharacter(Character ch);
 
-    public default boolean hasPlace(){
+     void addCharacter(Character character);
 
-        return true;
-    }
-    public default List<Character> getCharacters(){
+     void setCapacity(int i);
 
-        return null;
-    }
+     void addNeighbour(IRoom room);
 
-    public default List<IRoom> getNeighbours(){
+     void setNeighbours(List<IRoom> neighbours);
 
-        return null;
-    }
+     void removeNeighbour(IRoom room);
 
-    public default boolean isNeighbour(IRoom room){
-
-        return false;
-    }
-
-    public default Labyrinth getLabyrinth(){
-
-        return null;
-    }
-
-    public default void addItem(Item it){
-
-    }
-
-    public default void removeItem(Item it){
-
-    }
-
-    public default boolean acceptCharacter(Character ch){
-
-        return true;
-    }
-
-    public default void removeCharacter(Character ch){
-
-    }
-
-    public default void addCharacter(Character character){
-
-    }
-
-    public default void setCapacity(int i){
-
-    }
-
-    public default void addNeighbour(IRoom room){
-
-    }
-    public default void setNeighbours(List<IRoom> neighbours){
-
-    }
-
-    public default void removeNeighbour(IRoom room){
-
-    }
-
-    public default List<Item> getItems(){
-
-        return null;
-    }
-
-
+     List<Item> getItems();
 
 }
