@@ -1,62 +1,59 @@
 
-•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ŞÄšËJ$549431d4-0238-489f-bc58-4898048851d5
+•	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ŞÄšËJ$30674518-1d03-451b-a5d1-f95939f7b295
 }
-java:S1161=":Add the "@Override" annotation above this method signature(µÊ²8­·¤½æ1J$5f410d31-dbfa-4900-8d98-0a2d23eeb761
-r	java:S106?"+Replace this use of System.out by a logger.(Ëá¸øÿÿÿÿ8®·¤½æ1J$109f5f4d-9bed-4e70-98df-04ea14635263
-r	java:S106B"+Replace this use of System.out by a logger.(ÆÂ¿™úÿÿÿÿ8”èœëæ1J$c548596d-941e-47e6-8596-5c2c75a85a6c
+java:S1161=":Add the "@Override" annotation above this method signature(µÊ²8­·¤½æ1J$4fce83aa-f4ac-4fec-9a61-121ccb45dbc4
+r	java:S106?"+Replace this use of System.out by a logger.(Ëá¸øÿÿÿÿ8®·¤½æ1J$2ce8d373-6ca7-42d1-9ae3-ec20dd7352e4
+r	java:S106B"+Replace this use of System.out by a logger.(ÆÂ¿™úÿÿÿÿ8”èœëæ1J$186c7c66-caf0-4889-bcc8-12871eb4a027
 ‚
-java:S1161L":Add the "@Override" annotation above this method signature(’ñÂ¾ûÿÿÿÿ8•èœëæ1J$b99f619e-4a5f-4e35-8014-7dfc42418c4c
-r	java:S106N"+Replace this use of System.out by a logger.(İ¡öÛıÿÿÿÿ8–èœëæ1J$5876809c-a501-484c-9709-2278d1608634
-r	java:S106S"+Replace this use of System.out by a logger.(”üÓÑøÿÿÿÿ8–èœëæ1J$64f7295d-9085-435a-8b49-0e3de4bc70ea
+java:S1161L":Add the "@Override" annotation above this method signature(’ñÂ¾ûÿÿÿÿ8•èœëæ1J$2869c92c-5379-4864-87fa-46efaa5570d4
+r	java:S106N"+Replace this use of System.out by a logger.(İ¡öÛıÿÿÿÿ8–èœëæ1J$bc8ebbd0-f647-4245-a8d4-cb9eff49d391
+r	java:S106S"+Replace this use of System.out by a logger.(”üÓÑøÿÿÿÿ8–èœëæ1J$36a6e957-ee50-4964-8bd6-ac41d9d68b33
 |
-java:S1161\":Add the "@Override" annotation above this method signature(¨¼ú08—èœëæ1J$06a5dc59-621c-4310-979f-a8e038bf0e16
-r	java:S106]"+Replace this use of System.out by a logger.(Èé£—ıÿÿÿÿ8—èœëæ1J$b16cb631-6051-406d-861a-30d4a684e353
-m	java:S106m"+Replace this use of System.out by a logger.(•°€¡8›èœëæ1J$e44dd32f-c264-4155-8a4b-741ec87b0015
-m	java:S106|"+Replace this use of System.out by a logger.(°®®Î8 èœëæ1J$0faf9f65-f4f3-4717-8b11-dc0e5ce111ac
-r	java:S106"+Replace this use of System.out by a logger.(ÿèÌûÿÿÿÿ8 èœëæ1J$efadf249-1f93-4ccc-a898-1135def30a18
+java:S1161\":Add the "@Override" annotation above this method signature(¨¼ú08—èœëæ1J$a9489082-3650-4927-a9d9-c6b0d9dec78e
+r	java:S106]"+Replace this use of System.out by a logger.(Èé£—ıÿÿÿÿ8—èœëæ1J$244f62bc-2979-49d2-9cb0-ec4dc3dbf486
+m	java:S106m"+Replace this use of System.out by a logger.(•°€¡8›èœëæ1J$f4920c46-1652-4fc9-bb57-eebbd698aec8
+m	java:S106|"+Replace this use of System.out by a logger.(°®®Î8 èœëæ1J$b7322ad1-fccb-4696-806a-68f692158961
+r	java:S106"+Replace this use of System.out by a logger.(ÿèÌûÿÿÿÿ8 èœëæ1J$210e5eb0-7dde-4547-b2ca-44083e14c696
 ƒ
-java:S1161‡":Add the "@Override" annotation above this method signature(¢¨€ôûÿÿÿÿ8¡èœëæ1J$c154a1f7-7227-44c9-9742-10c385f7ecde
-s	java:S106"+Replace this use of System.out by a logger.(‰Øšïøÿÿÿÿ8¦èœëæ1J$281d08f3-bba8-400e-8e20-1422b04fdad1
-s	java:S106 "+Replace this use of System.out by a logger.(¥°Üßûÿÿÿÿ8¦èœëæ1J$20ef3fa9-7444-4fed-948b-f624620761cf
+java:S1161‡":Add the "@Override" annotation above this method signature(¢¨€ôûÿÿÿÿ8¡èœëæ1J$b03bc45c-fc1a-44d0-b899-20ae07a55e02
+s	java:S106"+Replace this use of System.out by a logger.(‰Øšïøÿÿÿÿ8¦èœëæ1J$c598cd8a-213b-4b27-83b1-3133cc91ab4b
+s	java:S106 "+Replace this use of System.out by a logger.(¥°Üßûÿÿÿÿ8¦èœëæ1J$23d9e5b5-47a9-4535-a650-b4927e4263f8
 ƒ
-java:S1161¨":Add the "@Override" annotation above this method signature(Ğò…Áøÿÿÿÿ8§èœëæ1J$b5388421-2b0d-40ef-bd71-5cb72772fc50
-s	java:S106©"+Replace this use of System.out by a logger.(–ñ°½ûÿÿÿÿ8§èœëæ1J$7d471527-9b03-48c3-a951-477f82c845d1
+java:S1161¨":Add the "@Override" annotation above this method signature(Ğò…Áøÿÿÿÿ8§èœëæ1J$2784cd56-21b2-448a-bada-ea5691458430
+s	java:S106©"+Replace this use of System.out by a logger.(–ñ°½ûÿÿÿÿ8§èœëæ1J$09d7d941-5601-4c11-8004-045226c25b62
 ƒ
-java:S1161±":Add the "@Override" annotation above this method signature(õÃÎÌùÿÿÿÿ8¨èœëæ1J$fd3f0741-440e-4b75-900b-5d6fde8e1b5d
-s	java:S106²"+Replace this use of System.out by a logger.(Œƒäşÿÿÿÿ8¨èœëæ1J$4080ffaa-bf30-491f-854e-fe3600a77ab0
+java:S1161±":Add the "@Override" annotation above this method signature(õÃÎÌùÿÿÿÿ8¨èœëæ1J$c1fa60a3-c9ee-49c9-9af9-1ea1319371a4
+s	java:S106²"+Replace this use of System.out by a logger.(Œƒäşÿÿÿÿ8¨èœëæ1J$a1303e55-f569-48d6-93aa-0f0111ec07a1
 ƒ
-java:S1161¿":Add the "@Override" annotation above this method signature(ù³İûÿÿÿÿ8©èœëæ1J$5043017b-b5fa-4a43-baa4-e8fb8849a584
-„	java:S125·"<This block of commented-out lines of code should be removed.(µ¿ú×ùÿÿÿÿ8©èœëæ1J$cdc6e47d-a2ec-49f5-8cd7-acdf2e963f49
-P
-java:S1135µ"2Complete the task associated to this TODO comment.(Àšäê8·à±ëæ1
-m	java:S106Á"+Replace this use of System.out by a logger.(´ñïi8ªèœëæ1J$8eec9576-b5d1-4a76-9959-671e1e320716
-n	java:S106Å"+Replace this use of System.out by a logger.(§×»ï8«èœëæ1J$50a41e1d-c0db-4592-afc1-2a05707c1c8e
+java:S1161º":Add the "@Override" annotation above this method signature(ù³İûÿÿÿÿ8©èœëæ1J$ec63db04-e918-45cd-b30f-4a146667556b
+m	java:S106¼"+Replace this use of System.out by a logger.(´ñïi8ªèœëæ1J$42e586f8-85ce-4a31-92d0-978563c61bfe
+n	java:S106À"+Replace this use of System.out by a logger.(§×»ï8«èœëæ1J$90c3b336-46a7-47d1-a853-9294f045577d
 }
-java:S1161Î":Add the "@Override" annotation above this method signature(ç±,8«èœëæ1J$f04f30e3-6ead-442f-8cc4-344406a5be87
+java:S1161É":Add the "@Override" annotation above this method signature(ç±,8«èœëæ1J$bedc922b-d567-43a9-bc38-a3be42b5dfef
 ƒ
-java:S1161Ö":Add the "@Override" annotation above this method signature(«õïÙøÿÿÿÿ8¬èœëæ1J$892b107e-378e-472a-acd7-4a6d12cb1580
+java:S1161Ñ":Add the "@Override" annotation above this method signature(«õïÙøÿÿÿÿ8¬èœëæ1J$88abec32-7b96-459a-b0ed-59051cb9bece
 ƒ
-java:S1161Ş":Add the "@Override" annotation above this method signature(âÁ¢£ÿÿÿÿÿ8¬èœëæ1J$a27bb10d-2ac0-4585-8a8f-8ea300b3111f
+java:S1161Ù":Add the "@Override" annotation above this method signature(âÁ¢£ÿÿÿÿÿ8¬èœëæ1J$84e23ccf-68a4-48cb-92fa-5e285df1b10b
 ƒ
-java:S1161æ":Add the "@Override" annotation above this method signature(ìĞ„Æÿÿÿÿÿ8­èœëæ1J$d9bee8ae-d74e-4979-9f9e-28a2ce07cd5b
-n	java:S106ç"+Replace this use of System.out by a logger.(œ²·³8­èœëæ1J$ef3f058c-540d-4b76-8110-461d00d57b52
+java:S1161á":Add the "@Override" annotation above this method signature(ìĞ„Æÿÿÿÿÿ8­èœëæ1J$fdc701fe-686b-4449-aa33-b174027a1344
+n	java:S106â"+Replace this use of System.out by a logger.(œ²·³8­èœëæ1J$df8bc22c-4356-4126-9b58-aff79bf82f14
 ƒ
-java:S1161ï":Add the "@Override" annotation above this method signature(‰íŒçûÿÿÿÿ8®èœëæ1J$757c918c-76b6-44c6-9537-243c21b0cf9e
-s	java:S106ğ"+Replace this use of System.out by a logger.(óÒ¢™úÿÿÿÿ8®èœëæ1J$8b2eb71a-52ec-49f0-b4de-9aff066a48cf
+java:S1161ê":Add the "@Override" annotation above this method signature(‰íŒçûÿÿÿÿ8®èœëæ1J$30183984-a33c-4545-ad73-5ab1a334cf1d
+s	java:S106ë"+Replace this use of System.out by a logger.(óÒ¢™úÿÿÿÿ8®èœëæ1J$8a4881ec-6331-4325-bfaa-4f38b3426964
 ƒ
-java:S1161ø":Add the "@Override" annotation above this method signature(õşÑ¸ùÿÿÿÿ8¯èœëæ1J$6e2efbf0-a11e-467e-816f-782827d898b4
-s	java:S106ù"+Replace this use of System.out by a logger.(‰¾‘Öøÿÿÿÿ8¯èœëæ1J$d2343332-4f0b-4244-a124-9f3522972733
+java:S1161ó":Add the "@Override" annotation above this method signature(õşÑ¸ùÿÿÿÿ8¯èœëæ1J$e9a002d7-f5aa-49e8-983f-daaffae31844
+s	java:S106ô"+Replace this use of System.out by a logger.(‰¾‘Öøÿÿÿÿ8¯èœëæ1J$4e1cca13-af7b-408e-91b3-5c9d5e53ba67
 ƒ
-java:S1161‚":Add the "@Override" annotation above this method signature(–’¬Şÿÿÿÿÿ8°èœëæ1J$d51ba8fb-3655-40e7-8225-8788a28e425c
-s	java:S106ƒ"+Replace this use of System.out by a logger.(…ÛßÀşÿÿÿÿ8°èœëæ1J$96fdcc53-90c5-4ce8-8031-74835546d26e
+java:S1161ı":Add the "@Override" annotation above this method signature(–’¬Şÿÿÿÿÿ8°èœëæ1J$b4d317ff-42f7-42c1-bd47-93609258afd1
+s	java:S106ş"+Replace this use of System.out by a logger.(…ÛßÀşÿÿÿÿ8°èœëæ1J$0e896bc8-0429-4c7f-8556-a30f6aaca739
 ƒ
-java:S1161‹":Add the "@Override" annotation above this method signature(à¥Êÿÿÿÿÿ8œú«ëæ1J$25cda054-ebe3-4c30-90be-c87fd499fd31
-s	java:S106Œ"+Replace this use of System.out by a logger.(±Øùÿÿÿÿ8±èœëæ1J$fdec24ca-b2cb-42a8-8e41-64a344ad1321
+java:S1161†":Add the "@Override" annotation above this method signature(à¥Êÿÿÿÿÿ8œú«ëæ1J$03b08eb2-ae44-4d92-9a12-3da0ef98d94b
+s	java:S106‡"+Replace this use of System.out by a logger.(±Øùÿÿÿÿ8±èœëæ1J$33831920-04ea-483b-880e-62358194b244
 {
-java:S1135"2Complete the task associated to this TODO comment.(Ò‘•ÿÿÿÿÿÿ8œ«ëæ1J$20fe09ec-5d01-494c-93a2-8ad38acbd34c
+java:S1135ˆ"2Complete the task associated to this TODO comment.(Ò‘•ÿÿÿÿÿÿ8œ«ëæ1J$872caca1-1501-4d42-bdf8-de7bb1063974
 ƒ
-java:S1161”":Add the "@Override" annotation above this method signature(á‚İàùÿÿÿÿ8²èœëæ1J$aab62227-3d8e-4fe3-9c6c-32578b8866d7
-s	java:S106•"+Replace this use of System.out by a logger.(ËğÊ¾şÿÿÿÿ8²èœëæ1J$fdfa88e4-0f0b-4088-aa79-f50b3519d26d
+java:S1161":Add the "@Override" annotation above this method signature(á‚İàùÿÿÿÿ8²èœëæ1J$2560487f-6692-43d7-b19b-f3efe2ba57de
+s	java:S106"+Replace this use of System.out by a logger.(ËğÊ¾şÿÿÿÿ8²èœëæ1J$8f9024c3-faba-4b03-bdc5-a57a9c1de909
 ƒ
-java:S1161":Add the "@Override" annotation above this method signature(û¬µ¶ıÿÿÿÿ8³èœëæ1J$7bea57d6-469b-499c-8250-af6c8f7691a4
-s	java:S106"+Replace this use of System.out by a logger.(­®°¢şÿÿÿÿ8³èœëæ1J$e93d3c57-e287-41e0-9fa9-78311ca3a95f
+java:S1161˜":Add the "@Override" annotation above this method signature(û¬µ¶ıÿÿÿÿ8³èœëæ1J$0082c74e-88ca-4c07-87ed-5eb2530ebc58
+s	java:S106™"+Replace this use of System.out by a logger.(­®°¢şÿÿÿÿ8³èœëæ1J$d6f5a2b6-6fa6-461f-b881-64fe30dcf309

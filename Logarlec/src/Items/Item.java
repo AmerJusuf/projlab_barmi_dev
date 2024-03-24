@@ -86,15 +86,22 @@ public abstract class Item {
         return false;
     }
 
-    public void decreaseRoundsLeft() {
-        //TODO: Ures fuggvenyek megkommentezese item osztalyba (miert igy stb)
-    }
+    /** Empty method for the subclasses to override
+    */
+     public void decreaseRoundsLeft() {}
 
-    public void setIsActive(boolean isActive) {
-        //TODO:
-    }
+    /** Empty method for the subclasses to override
+    */
+     public void setIsActive(boolean isActive) {}
 
+    /**
+     * This method is used to drop the item.
+     * The transistor overrides this method, hence it cannot be dropped while active or paired
+     */
     public void drop() {
-        //TODO: Implement drop method
+        System.out.println("Item will be dropped | Item: drop()");
+        setIsActive(false);
+        owner.getRoom().addItem(this);
+        removeOwner();
     }
 }

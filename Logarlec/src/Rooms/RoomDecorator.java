@@ -18,6 +18,5 @@ public abstract class RoomDecorator implements IRoom{
         decoratedRoom.addCharacter(ch);
     }
 
-    public void decorate(){
-    }
+    public abstract void decorate();
 }

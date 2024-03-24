@@ -2,7 +2,6 @@ package Items;
 
 import Rooms.BasicRoom;
 
-//import java.util.List;
 public class Transistor extends Item{
     private boolean isTurnedOn;
     Transistor pairTransistor;
@@ -13,7 +12,7 @@ public class Transistor extends Item{
     }
 
     public void setPairTransistor(Transistor transistor){
-        System.out.println(" Trying to pair transistor | Transistor: setPairTransistor(Transistor transistor)");
+        System.out.println("Pair transistor set | Transistor: setPairTransistor(Transistor transistor)");
         pairTransistor = transistor;
     }
 
@@ -22,7 +21,7 @@ public class Transistor extends Item{
     }
 
     public void setPlaceLocation(BasicRoom basicRoom){
-        System.out.println(" Trying to place transistor | Transistor: setPlaceLocation(BasicRoom basicRoom)");
+        System.out.println("Transistor place location set | Transistor: setPlaceLocation(BasicRoom basicRoom)");
         placeLocation = basicRoom;
     }
 
@@ -30,29 +29,39 @@ public class Transistor extends Item{
         return placeLocation;
     }
 
-
-    //TODO: printelesek, pl nincs parja, van parja, tranzisztor lepteti a studentet stb
     public void place(){
-        System.out.println(" Trying to place transistor | Transistor: place()");
-        BasicRoom pl = pairTransistor.getPlaceLocation();
-        BasicRoom currRoom = owner.getRoom();
+        if(!isTurnedOn){
+            System.out.println("Transistor is not active: Cannot place | Transistor: place()");
+            return;
+        }
+        System.out.println("Trying to place transistor | Transistor: place()");
         if(pairTransistor != null) {
+            System.out.println("Transistor does have a pair | Transistor: place()");
+            BasicRoom pl = pairTransistor.getPlaceLocation();
+            BasicRoom currRoom = owner.getRoom();
             if (pl != null) {
-                if (pl.hasPlace() && isTurnedOn) {
+                System.out.println("Transistor's pair is placed in a room | Transistor: place()");
+                if (pl.hasPlace()) {
+                    System.out.println("Pair transistor's room has space | Transistor: place()");
+                    System.out.println("Placing second transistor, and moving Student | Transistor: place()");
                     setPlaceLocation(currRoom);
                     owner.removeItem(this);
                     owner.move(pl);
                     owner.addItem(pairTransistor);
                 }
             }
-            else if(isTurnedOn) {
+            else {
                 setPlaceLocation(currRoom);
             }
         }
     }
 
     public void switchTransistor() {
-        System.out.println("Switch transistor | Transistor: switchTransistor()");
+        if(isTurnedOn){
+            System.out.println("Switch transistor ON -> OFF | Transistor: switchTransistor()");
+        } else {
+            System.out.println("Switch transistor OFF -> ON | Transistor: switchTransistor()");
+        }
         isTurnedOn = !isTurnedOn;
     }
 
@@ -62,8 +71,23 @@ public class Transistor extends Item{
 
     public void pairTransistor(Transistor pair){
         if(pairTransistor != null && pair.getPairTransistor() != null){
+            System.out.println("None of them are paired yet | Transistor: pairTransistor()");
             setPairTransistor(pair);
             pair.setPairTransistor(this);
+        } else{
+            System.out.println("Atleast one of them is already paired | Transistor: pairTransistor()");
         }
     }
+
+    @Override
+    public void drop(){
+        if(isTurnedOn || pairTransistor != null){
+            System.out.println("Transistor is active or has Pair: Cannot drop | Transistor: drop()");
+        } else{
+            System.out.println("Transistor is dropped | Transistor: drop()");
+            owner.getRoom().addItem(this);
+            removeOwner();
+        }
+    }
+
 }

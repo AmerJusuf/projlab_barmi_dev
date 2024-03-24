@@ -33,8 +33,13 @@ public class TVSZ extends Item {
     /**
      * This method is used to decrease the number of saves left for the TVSZ.
      */
-    public void decreaseSavesLeft() {
+    private void decreaseSavesLeft() {
         savesLeft--;
         System.out.println("TVSZ saves left: " + savesLeft + " | TVSZ: decreaseSavesLeft()");
+        if (savesLeft == 0) {
+            System.out.println("TVSZ will be destroyed | TVSZ: decreaseSavesLeft()");
+            owner.removeItem(this);
+            removeOwner();
+        }
     }
 }

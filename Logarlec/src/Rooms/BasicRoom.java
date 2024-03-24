@@ -178,11 +178,6 @@ public class BasicRoom implements IRoom{
         System.out.println("Number of characters in the room is queryed! | BasicRoom: getNumberOfCharacters");
         return characters.size();
     }
-   //TODO Comment kiszedése
-    //felesleges, mert a lista tudja, hogy mennyi elem van benne
-    /*public void setNumberOfCharacters(int i){
-
-    }*/
 
     /**
      * Checks, whether a room has place available for characters.

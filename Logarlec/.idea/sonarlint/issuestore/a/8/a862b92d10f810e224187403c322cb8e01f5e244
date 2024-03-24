@@ -1,26 +1,10 @@
 
 œ
-java:S2293À"YReplace the type specification in this constructor call with the diamond operator ("<>").(Æã¡I8ù÷†ëæ1J$2d216d0d-081b-4990-8ee5-45129d8e393a
+java:S2293€"YReplace the type specification in this constructor call with the diamond operator ("<>").(Æã¡I8ù÷†ëæ1J$2d216d0d-081b-4990-8ee5-45129d8e393a
 ]
 java:S1220""Move this file to a named package.8º¯­œæ1J$e3efb089-dc24-4b64-87d4-650e6db19b71
 Å
-java:S1186Ï"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ñ‘¡8Ê¯­œæ1J$ef994cca-9740-4484-bf61-8fbc808afd86
-Å
-java:S1186Ñ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(à“È‰8Ê¯­œæ1J$a1815a8a-ab3f-4c6d-a2c4-7e08d1bdd154
-Å
-java:S1186Ó"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ñ×â™8Ê¯­œæ1J$dd8c4611-b1aa-4d01-af19-5863e7eaa1bd
-Ê
-java:S1186Õ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(Ô¤º¦şÿÿÿÿ8Ê¯­œæ1J$77d4d558-e0c9-45e3-8d78-5c68b57d70ca
-Ê
-java:S1186×"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ÓûÌºüÿÿÿÿ8Ê¯­œæ1J$148ffaa1-53d1-4ffd-a778-945af9bbb5e7
-Ê
-java:S1186Ù"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(İ°ˆ°şÿÿÿÿ8Ê¯­œæ1J$c80cbd32-2cf7-4ce5-b5c5-83ea68aa918b
-Å
-java:S1186Û"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(—•¨–8Ê¯­œæ1J$8815a0aa-3b19-4ad5-9c1e-61bfb23a35cb
-Ê
-java:S1186İ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(ˆ‚¡Äøÿÿÿÿ8Ê¯­œæ1J$2d1dc184-8173-48a2-8e42-a326ee44d0f9
-Å
-java:S1186ß"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(—ƒå8Ê¯­œæ1J$6551ab60-1f64-4109-a417-06a8155882c8
+java:S1186Ÿ"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(—ƒå8Ê¯­œæ1J$6551ab60-1f64-4109-a417-06a8155882c8
 m	java:S106"+Replace this use of System.out by a logger.(À×µš8Í¯­œæ1J$271fa69e-6f38-4e35-8817-964e641ee484
 m	java:S106"+Replace this use of System.out by a logger.(»ÊÊŸ8Ï¯­œæ1J$c6891fc1-68e7-439c-88eb-eca35c58653c
 r	java:S106#"+Replace this use of System.out by a logger.(¥ıñ€ûÿÿÿÿ8Ï¯­œæ1J$75a6f6ff-fd6b-4e43-8f47-552bb7fef5d1
@@ -43,15 +27,23 @@ s	java:S106®"+Replace this use of System.out by a logger.(õ‚ÃÕùÿÿÿÿ8Ù¯­œæ1J$
 n	java:S106¶"+Replace this use of System.out by a logger.(ş×ï‘8Ù¯­œæ1J$0c984083-4edf-418d-8c04-6479032f1c81
 s	java:S106À"+Replace this use of System.out by a logger.(ø©Ÿıÿÿÿÿ8Ú¯­œæ1J$ca5f5788-dc8e-4861-a3ad-43632ad3b39f
 s	java:S106È"+Replace this use of System.out by a logger.(Æ¸¹ÿÿÿÿÿ8İ¯­œæ1J$eb33bc46-d0a2-4ba6-aad4-ed7105327dcb
-n	java:S106ã"+Replace this use of System.out by a logger.(·¾õ8İ¯­œæ1J$39b91730-150c-4d67-9b35-22df3ed0320b
-s	java:S106ä"+Replace this use of System.out by a logger.(²Æîúÿÿÿÿ8Ş¯­œæ1J$ce2815e7-da2d-44a1-b91e-4bdb962a84b9
-s	java:S106ó"+Replace this use of System.out by a logger.(Èü´ğùÿÿÿÿ8ß¯­œæ1J$424157f6-8345-40d4-9393-552690774a97
-n	java:S106‚"+Replace this use of System.out by a logger.(‡Éà²8à¯­œæ1J$f7b500f0-140a-4112-acda-858790ad0d77
-s	java:S106"+Replace this use of System.out by a logger.(¡…’Åûÿÿÿÿ8à¯­œæ1J$2ef6b0d4-93b5-4eb5-8903-1ebbb07be901
-n	java:S106‘"+Replace this use of System.out by a logger.(½÷£8á¯­œæ1J$b3fe39e2-03a5-4ffe-acd5-25669c14ac83
-s	java:S106 "+Replace this use of System.out by a logger.(íä•ùÿÿÿÿ8á¯­œæ1J$7ebcf4b3-1a94-451c-b7b1-d633a6500fcc
-n	java:S106­"+Replace this use of System.out by a logger.(Œ‚©Ÿ8â¯­œæ1J$e40274d1-808d-4189-92ca-4bd7b1437c18
-s	java:S106¼"+Replace this use of System.out by a logger.(üÕäÙşÿÿÿÿ8ä¯­œæ1J$7c018c1c-2676-4c73-a73c-f0252a936c93
-s	java:S106Ç"+Replace this use of System.out by a logger.(éØ€­ıÿÿÿÿ8ò´®œæ1J$03c8336a-cfb3-429c-9382-c0239f671039
-n	java:S106Õ"+Replace this use of System.out by a logger.(©ÿ†Í8¦Õ°œæ1J$7045247c-f2c6-4d52-b137-5c8681128b48
-G	java:S106à"+Replace this use of System.out by a logger.(ÂïÀc8µéœëæ1
+H	java:S106Ğ"+Replace this use of System.out by a logger.(ì–í»8±§ ˆç1
+H	java:S106Ú"+Replace this use of System.out by a logger.(Ë«ƒĞ8´§ ˆç1
+G	java:S106â"+Replace this use of System.out by a logger.(²úúC8¶§ ˆç1
+M	java:S106ê"+Replace this use of System.out by a logger.(ßîüİıÿÿÿÿ8¸§ ˆç1
+H	java:S106ø"+Replace this use of System.out by a logger.(ŠĞ×ã8¼§ ˆç1
+M	java:S106…"+Replace this use of System.out by a logger.(’®ëŒûÿÿÿÿ8¿§ ˆç1
+H	java:S106Œ"+Replace this use of System.out by a logger.(ö¤—¹8À§ ˆç1
+M	java:S106“"+Replace this use of System.out by a logger.(ÇñâÚúÿÿÿÿ8Â§ ˆç1
+n	java:S106£"+Replace this use of System.out by a logger.(·¾õ8İ¯­œæ1J$39b91730-150c-4d67-9b35-22df3ed0320b
+s	java:S106¤"+Replace this use of System.out by a logger.(²Æîúÿÿÿÿ8Ş¯­œæ1J$ce2815e7-da2d-44a1-b91e-4bdb962a84b9
+s	java:S106³"+Replace this use of System.out by a logger.(Èü´ğùÿÿÿÿ8ß¯­œæ1J$424157f6-8345-40d4-9393-552690774a97
+n	java:S106Â"+Replace this use of System.out by a logger.(‡Éà²8à¯­œæ1J$f7b500f0-140a-4112-acda-858790ad0d77
+s	java:S106Ğ"+Replace this use of System.out by a logger.(¡…’Åûÿÿÿÿ8à¯­œæ1J$2ef6b0d4-93b5-4eb5-8903-1ebbb07be901
+n	java:S106Ñ"+Replace this use of System.out by a logger.(½÷£8á¯­œæ1J$b3fe39e2-03a5-4ffe-acd5-25669c14ac83
+M	java:S106à"+Replace this use of System.out by a logger.(íä•ùÿÿÿÿ8µéœëæ1
+n	java:S106í"+Replace this use of System.out by a logger.(Œ‚©Ÿ8â¯­œæ1J$e40274d1-808d-4189-92ca-4bd7b1437c18
+s	java:S106ü"+Replace this use of System.out by a logger.(üÕäÙşÿÿÿÿ8ä¯­œæ1J$7c018c1c-2676-4c73-a73c-f0252a936c93
+s	java:S106‡"+Replace this use of System.out by a logger.(éØ€­ıÿÿÿÿ8ò´®œæ1J$03c8336a-cfb3-429c-9382-c0239f671039
+n	java:S106•"+Replace this use of System.out by a logger.(©ÿ†Í8¦Õ°œæ1J$7045247c-f2c6-4d52-b137-5c8681128b48
+G	java:S106 "+Replace this use of System.out by a logger.(ÂïÀc8ò§ ˆç1

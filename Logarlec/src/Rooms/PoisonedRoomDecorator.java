@@ -47,4 +47,9 @@ public class PoisonedRoomDecorator extends RoomDecorator{
             System.out.println("Can not split room, because it contains characters | PoisonedRoomDecorator: splitRoom");
         }
     }
+
+    /**
+     * Empty, because the toxication is done when the room accepts a character
+     */
+    public void decorate(){}
 }
