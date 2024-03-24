@@ -208,22 +208,26 @@ public class Test {
         System.out.println("Testing pair transistors, if both transistors are not paired yet:");
         Transistor tr = new Transistor();
         Transistor pair = new Transistor();
-        //pairTransistor majd kell
-        tr.setPairTransistor(pair);
-        tr.setPairTransistor(tr);
+
+        tr.pairTransistor(pair);
+
 
     }
 
     public void canNotPairTransistorsBecauseFirstIsPaired() {
         System.out.println("Testing pair transistors and first transistor is paired:");
-        Transistor transistor = new Transistor();
-        //pairTransistor majd kell
+        Transistor tr = new Transistor();
+        Transistor pair = new Transistor();
+
+        tr.pairTransistor(pair);
     }
 
     public void canNotPairTransistorsBecauseSecondIsPaired() {
         System.out.println("Testing pair transistors and second transistor is paired:");
-        Transistor transistor = new Transistor();
-        //pairTransistor majd kell
+        Transistor tr = new Transistor();
+        Transistor pair = new Transistor();
+
+        tr.pairTransistor(pair);
     }
 
     public void placeSecondTransistorAndMove() {
@@ -232,6 +236,9 @@ public class Test {
         Transistor pairTransistor = new Transistor();
         BasicRoom ptPlaceLocation = new BasicRoom();
         Student owner = new Student(ptPlaceLocation);
+        tr.setPairTransistor(pairTransistor);
+        tr.setOwner(owner);
+        tr.setPlaceLocation(ptPlaceLocation);
 
         tr.place();
 
@@ -243,6 +250,9 @@ public class Test {
         Transistor pairTransistor = new Transistor();
         BasicRoom ptPlaceLocation = new BasicRoom();
         Student owner = new Student(ptPlaceLocation);
+        tr.setPairTransistor(pairTransistor);
+        tr.setOwner(owner);
+        tr.setPlaceLocation(ptPlaceLocation);
 
         tr.place();
     }
@@ -267,6 +277,9 @@ public class Test {
         Transistor pairTransistor = new Transistor();
         BasicRoom ptPlaceLocation = new BasicRoom();
         Student owner = new Student(ptPlaceLocation);
+        tr.setPairTransistor(pairTransistor);
+        tr.setOwner(owner);
+        tr.setPlaceLocation(ptPlaceLocation);
 
         tr.place();
     }

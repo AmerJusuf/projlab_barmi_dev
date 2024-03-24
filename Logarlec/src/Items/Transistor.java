@@ -57,4 +57,11 @@ public class Transistor extends Item{
     public void setIsTurnedOn(boolean isTurnedOn){
         this.isTurnedOn = isTurnedOn;
     }
+
+    public void pairTransistor(Transistor pair){
+        if(pairTransistor != null && pair.getPairTransistor() != null){
+            setPairTransistor(pair);
+            pair.setPairTransistor(this);
+        }
+    }
 }
