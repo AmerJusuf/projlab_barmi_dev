@@ -2,16 +2,17 @@ package Characters;
 
 import Items.Item;
 import Rooms.BasicRoom;
+import Rooms.IRoom;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public abstract class Character {
     protected List<Item> items;
-    protected BasicRoom currentRoom;
+    protected IRoom currentRoom;
     protected boolean isPoisoned;
 
-    public Character(BasicRoom currentRoom){
+    public Character(IRoom currentRoom){
         this.items = new ArrayList<>();
         this.currentRoom = currentRoom;
         this.isPoisoned = false;
@@ -24,7 +25,7 @@ public abstract class Character {
      *
      * @param nextRoom The room to move to.
      */
-    public void move(BasicRoom nextRoom){
+    public void move(IRoom nextRoom){
         System.out.println("Character is trying to move | Character: move(BasicRoom nextRoom)");
         if(currentRoom.isNeighbour(nextRoom)){
             boolean isAccepted = currentRoom.acceptCharacter(this);
@@ -93,11 +94,11 @@ public abstract class Character {
     /**
      * This method is used to set the room of the character.
      *
-     * @param basicRoom The room to be set for the character.
+     * @param room The room to be set for the character.
      */
-    public void setRoom(BasicRoom basicRoom){
+    public void setRoom(IRoom room){
         System.out.println("Room set for character | Character: setRoom(BasicRoom basicRoom)");
-        this.currentRoom = basicRoom;
+        this.currentRoom = room;
     }
 
     /**
@@ -105,7 +106,7 @@ public abstract class Character {
      *
      * @return The room of the character.
      */
-    public BasicRoom getRoom(){
+    public IRoom getRoom(){
         return currentRoom;
     }
 

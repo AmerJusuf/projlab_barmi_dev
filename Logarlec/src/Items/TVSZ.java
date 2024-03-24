@@ -23,10 +23,6 @@ public class TVSZ extends Item {
     public boolean protectStudent() {
         System.out.println("TVSZ protects student | TVSZ: protectStudent()");
         decreaseSavesLeft();
-        if (savesLeft == 0) {
-            owner.removeItem(this);
-            this.removeOwner();
-        }
         return true;
     }
 

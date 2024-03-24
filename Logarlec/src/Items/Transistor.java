@@ -1,14 +1,16 @@
 package Items;
 
 import Rooms.BasicRoom;
+import Rooms.IRoom;
 
 public class Transistor extends Item{
     private boolean isTurnedOn;
     Transistor pairTransistor;
-    protected BasicRoom placeLocation;
+    protected IRoom placeLocation;
     public Transistor() {
         super();
         isTurnedOn = false;
+        pairTransistor = null;
     }
 
     public void setPairTransistor(Transistor transistor){
@@ -20,12 +22,12 @@ public class Transistor extends Item{
         return pairTransistor;
     }
 
-    public void setPlaceLocation(BasicRoom basicRoom){
+    public void setPlaceLocation(IRoom room){
         System.out.println("Transistor place location set | Transistor: setPlaceLocation(BasicRoom basicRoom)");
-        placeLocation = basicRoom;
+        placeLocation = room;
     }
 
-    public BasicRoom getPlaceLocation() {
+    public IRoom getPlaceLocation() {
         return placeLocation;
     }
 
@@ -37,8 +39,8 @@ public class Transistor extends Item{
         System.out.println("Trying to place transistor | Transistor: place()");
         if(pairTransistor != null) {
             System.out.println("Transistor does have a pair | Transistor: place()");
-            BasicRoom pl = pairTransistor.getPlaceLocation();
-            BasicRoom currRoom = owner.getRoom();
+            IRoom pl = pairTransistor.getPlaceLocation();
+            IRoom currRoom = owner.getRoom();
             if (pl != null) {
                 System.out.println("Transistor's pair is placed in a room | Transistor: place()");
                 if (pl.hasPlace()) {
@@ -48,11 +50,16 @@ public class Transistor extends Item{
                     owner.removeItem(this);
                     owner.move(pl);
                     owner.addItem(pairTransistor);
+                } else {
+                    System.out.println("Cannot place: The room is full | Transistor: place()");
+
                 }
             }
             else {
                 setPlaceLocation(currRoom);
             }
+        } else{
+            System.out.println("Cannot place: Transistor does not have a pair | Transistor: place()");
         }
     }
 
@@ -70,12 +77,12 @@ public class Transistor extends Item{
     }
 
     public void pairTransistor(Transistor pair){
-        if(pairTransistor != null && pair.getPairTransistor() != null){
+        if(pairTransistor == null && pair.getPairTransistor() == null){
             System.out.println("None of them are paired yet | Transistor: pairTransistor()");
             setPairTransistor(pair);
             pair.setPairTransistor(this);
         } else{
-            System.out.println("Atleast one of them is already paired | Transistor: pairTransistor()");
+            System.out.println("Cannot pair: atleast one of them is already paired | Transistor: pairTransistor()");
         }
     }
 
