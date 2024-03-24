@@ -13,7 +13,13 @@ public abstract class TemporaryItem extends Item {
 
     @Override
     public void decreaseRoundsLeft() {
+        System.out.println("Rounds left decreased | TemporaryItem: decreaseRoundsLeft()");
         roundsLeft--;
+        if(roundsLeft == 0) {
+            System.out.println("Rounds left is 0, destroying item | TemporaryItem: decreaseRoundsLeft()");
+            owner.removeItem(this);
+            removeOwner();
+        }
     }
     @Override
     public void setIsActive(boolean po){

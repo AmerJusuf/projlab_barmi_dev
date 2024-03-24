@@ -36,6 +36,6 @@ public class Logarlec extends Item {
      * @param instructor The instructor who cannot pick the Logarlec.
      */
     public void pickedByInstructor(Instructor instructor) {
-        System.out.println("Logarlec does not picked by instructor | Logarlec: pickedByInstructor(Instructor instructor)");
+        System.out.println("Logarlec cannot be picked by instructor | Logarlec: pickedByInstructor(Instructor instructor)");
     }
 }

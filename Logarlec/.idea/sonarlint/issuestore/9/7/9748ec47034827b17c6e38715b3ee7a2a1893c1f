@@ -1,0 +1,19 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìÆ«úÿÿÿÿ
+n
+java:S1450
+"XRemove the "gameState" field and declare it as a local variable in the relevant methods.( íß…
+I
+java:S11720".Remove this unused method parameter "student".(İ©ûÿÿÿÿ
+@	java:S1061"+Replace this use of System.out by a logger.(Ğ¦Á‘
+C
+java:S1068
+"-Remove this unused "gameState" private field.( íß…
+M
+java:S1068"8Remove this unused "starterNumberOfRooms" private field.(ö¨“G
+?
+java:S1068")Remove this unused "rooms" private field.(âÄ”Ö
+B
+java:S1068",Remove this unused "students" private field.(™ÿš
+J
+java:S1068"/Remove this unused "instructors" private field.(Ïì‰§ÿÿÿÿÿ

@@ -33,3 +33,9 @@ C
 src/Items/Item.java,d\f\df83b11e482027e34a648472f26a4996ae8b9372
 L
 src/Items/TemporaryItem.java,c\f\cfa30e4b9927793b88b89b1f6376d64218679924
+B
+src/Items/Rag.java,4\1\41afdd5d9f998b9f6ce37c03d3769deba132f70d
+C
+src/Items/Beer.java,e\a\ea2aabda357d740efa391fffa924fd21eccb73b5
+G
+src/Game/Labyrinth.java,9\7\9748ec47034827b17c6e38715b3ee7a2a1893c1f

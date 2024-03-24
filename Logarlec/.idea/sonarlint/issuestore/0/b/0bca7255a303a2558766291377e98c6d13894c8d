@@ -1,17 +1,7 @@
 
 t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Áã²¹ûÿÿÿÿ
-U
-java:S1854"?Remove this useless assignment to local variable "currentRoom".(Ç´˜†
-E	java:S106"+Replace this use of System.out by a logger.( çìÃüÿÿÿÿ
-F
-java:S1481"0Remove this unused "currentRoom" local variable.(Ç´˜†
-Q	java:S125"<This block of commented-out lines of code should be removed.(µû‡è
-V	java:S125"<This block of commented-out lines of code should be removed.(ñé…¼ýÿÿÿÿ
-G
-java:S1128"1Remove this unused import 'Characters.Character'.(ÛÑæ¦
+E	java:S106"+Replace this use of System.out by a logger.( çìÃüÿÿÿÿ
 J
 java:S1128"/Remove this unused import 'Characters.Student'.(€•­ðùÿÿÿÿ
 M
 java:S1128"2Remove this unused import 'Characters.Instructor'.(Ð±£¢úÿÿÿÿ
-F
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ

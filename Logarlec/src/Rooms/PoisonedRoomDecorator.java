@@ -12,11 +12,9 @@ public class PoisonedRoomDecorator extends RoomDecorator{
         super(decoratedRoom);
     }
 
-    public void toxicate(List<Character> characters){
-        for(int i=0; i < characters.size(); i++){
-            decoratedRoom.getCharacters().get(i).disable();
-        }
+    public void toxicate(Character ch){
         System.out.println("Room toxicated | PoisonedRoomDecorator: toxicate");
+        ch.disable();
     }
 
     public void splitRoom(){
@@ -46,5 +44,20 @@ public class PoisonedRoomDecorator extends RoomDecorator{
         else{
             System.out.println("Can not split room, because it contains characters | PoisonedRoomDecorator: splitRoom");
         }
+    }
+
+    /**
+     * Empty, because the toxication is done when the room accepts a character
+     */
+    @Override
+    public void decorate(){}
+
+    @Override
+    public boolean acceptCharacter(Character ch){
+        boolean isAccepted = decoratedRoom.acceptCharacter(ch);
+        if(isAccepted){
+            toxicate(ch);
+        }
+        return isAccepted;
     }
 }

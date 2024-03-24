@@ -50,6 +50,10 @@ public class CursedRoomDecorator extends RoomDecorator{
         }
     }
 
+    public void mergeRooms(IRoom room){
+        //TODO SZAR
+    }
+
     public void splitRoom(){
         if(this.getCharacters().isEmpty()){
 
@@ -78,4 +82,11 @@ public class CursedRoomDecorator extends RoomDecorator{
             System.out.println("Can not split room, because it contains characters | CursedRoomDecorator: splitRoom");
         }
     }
+
+    public void decorate(){
+        manageDoors();
+    }
+
+
+
 }

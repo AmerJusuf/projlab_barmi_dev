@@ -1,10 +1,10 @@
 
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Áã²¹ûÿÿÿÿ
-U
-java:S1161":Add the "@Override" annotation above this method signature(‡–ëêýÿÿÿÿ
-E	java:S106"+Replace this use of System.out by a logger.(Öœ£‚ýÿÿÿÿ
-U
-java:S1161'":Add the "@Override" annotation above this method signature(öÃäÐÿÿÿÿÿ
-E	java:S106("+Replace this use of System.out by a logger.(Ó€ÚÇûÿÿÿÿ
-G
-java:S1128"1Remove this unused import 'Characters.Character'.(ÛÑæ¦
+š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Áã²¹ûÿÿÿÿJ$5c3ccf41-01ac-4688-b81b-648297ce4719
+{
+java:S1161":Add the "@Override" annotation above this method signature(‡–ëêýÿÿÿÿJ$44202fc0-ffa2-491c-b5ec-45037e91f48c
+k	java:S106"+Replace this use of System.out by a logger.(Öœ£‚ýÿÿÿÿJ$1a3aafa0-0549-46d8-9917-636b3d71543e
+{
+java:S1161&":Add the "@Override" annotation above this method signature(öÃäÐÿÿÿÿÿJ$da1bd78d-c7e6-4deb-a593-f9a78fde4458
+f	java:S106'"+Replace this use of System.out by a logger.(œìÛ»J$93b91cc8-d1e8-443b-bb92-d71f55bf202b
+m
+java:S1128"1Remove this unused import 'Characters.Character'.(ÛÑæ¦J$b3e0d40f-c46e-4291-a744-8b3d8b58ad69
