@@ -2,10 +2,7 @@ import Characters.Instructor;
 import Characters.Student;
 import Game.Labyrinth;
 import Items.*;
-import Rooms.BasicRoom;
-import Rooms.CursedRoomDecorator;
-import Rooms.IRoom;
-import Rooms.PoisonedRoomDecorator;
+import Rooms.*;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -386,28 +383,41 @@ public class Test {
             default:
                 break;
         }
-        scanner.close();
     }
 
     public void merrgeRoomsSuccess() {
         System.out.println("Testing merge rooms success:");
+        System.out.println("Merging a PoisonedRoomDecorator and a CursedRoomDecorator.");
         System.out.println("Setup test:");
         Labyrinth labyrinth = new Labyrinth();
-        BasicRoom room1 = new BasicRoom();
+        PoisonedRoomDecorator room1 = new PoisonedRoomDecorator(new BasicRoom());
         room1.setCapacity(7);
-        BasicRoom room2 = new BasicRoom();
+        CursedRoomDecorator room2 = new CursedRoomDecorator(new BasicRoom());
         room2.setCapacity(5);
+        room1.addNeighbour(room2);
+        room2.addNeighbour(room1);
         Camembert camembert = new Camembert();
+        room1.setLabyrinth(labyrinth);
+        room2.setLabyrinth(labyrinth);
         room2.addItem(camembert);
         labyrinth.addRoom(room1);
         labyrinth.addRoom(room2);
         System.out.println("Test:");
 
-        room1.mergeRooms(room2);
+        MergeRoomsVisitor visitor = new MergeRoomsVisitor(room1);
+        IRoom mergedRoom =  room2.acceptMerge(visitor);
+
+        //Print for test:
+        System.out.println("Print merged room type:");
+        IRoom iterator = mergedRoom;
+        while(iterator != null){
+            System.out.print("RoomType: " + iterator.getClass() + " | ");
+            iterator = iterator.getChild();
+        }
     }
 
     public void mergeRoomsFail() {
-        System.out.println("Testing merge rooms fail:");
+        System.out.println("Testing merge rooms fail, because it is not empty:");
         System.out.println("Setup test:");
         Labyrinth labyrinth = new Labyrinth();
         BasicRoom room1 = new BasicRoom();
@@ -418,7 +428,8 @@ public class Test {
         labyrinth.addRoom(room2);
         System.out.println("Test:");
 
-        room1.mergeRooms(room2);
+        MergeRoomsVisitor visitor = new MergeRoomsVisitor(room1);
+        room2.acceptMerge(visitor);
     }
 
     public void splitRoom() {
@@ -435,7 +446,6 @@ public class Test {
             default:
                 break;
         }
-        scanner.close();
     }
 
     public void splitRoomSuccess() {
@@ -479,9 +489,10 @@ public class Test {
         cursedRoomDecorator.setNeighbours(new ArrayList<IRoom>());
         List<IRoom> neighbours = new ArrayList<>();
         neighbours.add(neighbour);
+        cursedRoomDecorator.setHiddenNeighbours(neighbours);
         System.out.println("Test:");
 
-        cursedRoomDecorator.setHiddenNeighbours(neighbours);
+        cursedRoomDecorator.manageDoors();
     }
 
     public void ragStunsInstructor() {

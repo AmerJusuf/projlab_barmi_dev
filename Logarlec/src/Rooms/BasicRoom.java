@@ -28,7 +28,7 @@ public class BasicRoom implements IRoom{
     /**
      * The items, which can be found inside the room.
      */
-    protected List<Item> items;
+    private List<Item> items;
 
     //Teszteléshez kell ures konstruktor, vagy tesztben mindenhol inicializaljuk rendesen a BasicRoomot
 
@@ -39,6 +39,7 @@ public class BasicRoom implements IRoom{
         labyrinth = new Labyrinth();
         characters = new ArrayList<>();
         neighbours = new ArrayList<>();
+        items = new ArrayList<>();
         this.capacity = 10;
     }
 
@@ -50,11 +51,13 @@ public class BasicRoom implements IRoom{
         labyrinth = new Labyrinth();
         characters = new ArrayList<>();
         neighbours = new ArrayList<>();
+        items = new ArrayList<>();
         this.capacity = capacity;
     }
     public BasicRoom(int capacity, Labyrinth labyrinth){
         characters = new ArrayList<>();
         neighbours = new ArrayList<>();
+        items = new ArrayList<>();
         this.capacity = capacity;
         this.labyrinth = labyrinth;
     }
@@ -66,9 +69,10 @@ public class BasicRoom implements IRoom{
      */
     @Override
     public boolean isNeighbour(IRoom nextRoom){
-        if(this.neighbours.contains(nextRoom)){
+        if(this.neighbours.contains(nextRoom.getDecoratedRoom())){
         System.out.println("NextRoom is neighbour: true | BasicRoom: isNeighbour");
-        return true;}
+        return true;
+        }
         else {
             System.out.println("NextRoom is neighbour: false | BasicRoom: isNeighbour");
             return false;
@@ -103,46 +107,14 @@ public class BasicRoom implements IRoom{
         characters.remove(character);
     }
 
-    /**
-     * Merges the current room with an adjacent IRoom object.
-     * If neither of the two rooms contain characters, then the merge will be successful. The capacity of the merged room will be
-     * the bigger rooms capacity and the items and neighbours are passed to it.
-     * @param room The room, which will be merged with the current room.
-     */
-    //TODO SZAR
-    @Override
-    public void mergeRooms(IRoom room) {
-        if(this.getCharacters().isEmpty() && room.getCharacters().isEmpty()){
-            if(this.getCapacity() > room.getCapacity()){
-                this.setCapacity(this.getCapacity());
-                room.setCapacity(this.getCapacity());
-            }
-            else{
-                this.setCapacity(room.getCapacity());
-                room.setCapacity(room.getCapacity());
-            }
-            for(Item it : room.getItems()){
-                this.addItem(it);
-            }
-            for(Item it : this.getItems()){
-                room.addItem(it);
-            }
-            for(IRoom neighbour : room.getNeighbours()){
-                this.addNeighbour(neighbour);
-            }
-            for(IRoom neighbour : this.getNeighbours()){
-                room.addNeighbour(neighbour);
-            }
-            this.removeNeighbour(room);
-            room.removeNeighbour(this);
 
-            this.getLabyrinth().removeRoom(room);
-            System.out.println("Rooms merged succesfully | BasicRoom: mergeRooms");
-        }
-        else{
-            System.out.println("Can not merge rooms, because one of them contains characters | BasicRoom: mergeRooms");
-        }
+    /**
+     * Accepts merge from a visitor. (Used for merging rooms)
+     */
+    public IRoom acceptMerge(MergeRoomsVisitor visitor) {
+        return visitor.visit(this);
     }
+
 
     /**
      * Splits a room into two similar rooms. (If it does not contain any characters.) The items and neighbours are equally split.
@@ -241,6 +213,11 @@ public class BasicRoom implements IRoom{
         return this.labyrinth;
     }
 
+    @Override
+    public void setLabyrinth(Labyrinth labyrinth){
+        this.labyrinth = labyrinth;
+    }
+
     /**
      * Adds a new item to the items in the current room.
      * @param it The item to be added.
@@ -249,6 +226,14 @@ public class BasicRoom implements IRoom{
     public void addItem(Item it){
         System.out.println("Added new item | BasicRoom: addItem");
         this.items.add(it);
+    }
+
+    /**
+     * Sets the items of the current room.
+     * @param items The list of items, which will be added to the current room.
+     */
+    public void setItems(List<Item> items){
+        this.items = items;
     }
 
     /**
@@ -267,7 +252,7 @@ public class BasicRoom implements IRoom{
      */
     @Override
     public void setCapacity(int i){
-        System.out.println("Capacity modified | BasicRoom: setCapacity");
+        System.out.println("Capacity set to " + i +" | BasicRoom: setCapacity");
         capacity = i;
 
     }
@@ -302,9 +287,13 @@ public class BasicRoom implements IRoom{
         this.neighbours.remove(room);
     }
 
+    /**
+     * Returns the items in the current room.
+     * @return The items in the room.
+     */
     @Override
     public List<Item> getItems() {
-        return null;
+        return items;
     }
 
     /**
@@ -315,5 +304,20 @@ public class BasicRoom implements IRoom{
     public void addCharacter(Character character){
         System.out.println("Character added | BasicRoom: addCharacter");
         characters.add(character);
+    }
+
+    @Override
+    public IRoom getDecoratedRoom(){
+        return this;
+    }
+
+    @Override
+    public void decorate(){
+        //Do nothing
+    }
+
+    //for testing
+    public IRoom getChild(){
+        return null;
     }
 }

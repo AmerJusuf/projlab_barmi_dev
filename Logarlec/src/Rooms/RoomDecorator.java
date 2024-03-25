@@ -10,7 +10,7 @@ public abstract class RoomDecorator implements IRoom{
 
     IRoom decoratedRoom;
 
-    public RoomDecorator(IRoom decoratedRoom){
+    protected RoomDecorator(IRoom decoratedRoom){
         this.decoratedRoom = decoratedRoom;
     }
 
@@ -56,8 +56,18 @@ public abstract class RoomDecorator implements IRoom{
     }
 
     @Override
+    public void setLabyrinth(Labyrinth labyrinth){
+        decoratedRoom.setLabyrinth(labyrinth);
+    }
+
+    @Override
     public void addItem(Item it){
         decoratedRoom.addItem(it);
+    }
+
+    @Override
+    public void setItems(List<Item> items){
+        decoratedRoom.setItems(items);
     }
 
     @Override
@@ -86,11 +96,6 @@ public abstract class RoomDecorator implements IRoom{
     }
 
     @Override
-    public void mergeRooms(IRoom room){
-        decoratedRoom.mergeRooms(room);
-    }
-
-    @Override
     public void splitRoom(){
         decoratedRoom.splitRoom();
     }
@@ -110,4 +115,12 @@ public abstract class RoomDecorator implements IRoom{
         return decoratedRoom.getItems();
     }
 
+    @Override
+    public IRoom getDecoratedRoom(){
+        return decoratedRoom.getDecoratedRoom();
+    }
+
+    public IRoom getChild(){
+        return decoratedRoom;
+    }
 }
