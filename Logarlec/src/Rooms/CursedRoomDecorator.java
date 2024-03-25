@@ -1,9 +1,5 @@
 package Rooms;
 
-import Characters.Character;
-import Game.Labyrinth;
-import Items.Item;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,24 +30,26 @@ public class CursedRoomDecorator extends RoomDecorator{
     public void manageDoors(){
         //szomszédok megjelenítése
         if(decoratedRoom.getNeighbours().isEmpty()){
+            System.out.println("Neighbours hidden currently| CursedRoomDecorator: manageDoors");
             for(int i = 0; i < hiddenNeighbours.size(); i++){
-                decoratedRoom.addNeighbour(getNeighbours().get(i));
+                decoratedRoom.addNeighbour(hiddenNeighbours.get(i));
                 this.hiddenNeighbours.remove(decoratedRoom.getNeighbours().get(i));
             }
             System.out.println("Showing neighbours | CursedRoomDecorator: manageDoors");
         }
         //szomszédok elrejtése
         else{
+            System.out.println("Neighbours shown currently | CursedRoomDecorator: manageDoors");
             for(int i = 0; i < decoratedRoom.getNeighbours().size(); i++){
-                this.hiddenNeighbours.add(decoratedRoom.getNeighbours().get(i));
+                this.hiddenNeighbours.add(getNeighbours().get(i));
                 decoratedRoom.removeNeighbour(getNeighbours().get(i));
             }
             System.out.println("Hiding neighbour | CursedRoomDecorator: manageDoors");
         }
     }
 
-    public void mergeRooms(IRoom room){
-        //TODO SZAR
+    public IRoom acceptMerge(MergeRoomsVisitor visitor) {
+        return visitor.visit(this);
     }
 
     public void splitRoom(){
@@ -86,7 +84,5 @@ public class CursedRoomDecorator extends RoomDecorator{
     public void decorate(){
         manageDoors();
     }
-
-
 
 }

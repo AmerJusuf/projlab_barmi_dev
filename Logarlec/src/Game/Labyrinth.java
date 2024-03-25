@@ -4,6 +4,7 @@ import Characters.Instructor;
 import Characters.Student;
 import Rooms.IRoom;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Labyrinth {
@@ -13,12 +14,19 @@ public class Labyrinth {
     private List<Student> students;
     private List<Instructor> instructors;
 
+    //for testing
+    public Labyrinth() {
+        rooms = new ArrayList<>();
+        students = new ArrayList<>();
+        instructors = new ArrayList<>();
+    }
+
     public void addRoom(IRoom room) {
-        // Add room to the labyrinth
+        rooms.add(room);
     }
 
     public void removeRoom(IRoom room) {
-        // Remove room from the labyrinth
+        rooms.remove(room);
     }
 
     public void mergeAndSplit() {
@@ -47,5 +55,9 @@ public class Labyrinth {
 
     public void removeStudent(Student student) {
         System.out.println("Student removed from labyrinth | Labyrinth: removeStudent(Student student)");
+    }
+
+    public List<IRoom> getRooms() {
+        return rooms;
     }
 }

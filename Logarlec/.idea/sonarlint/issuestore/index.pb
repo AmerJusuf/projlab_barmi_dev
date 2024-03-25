@@ -39,3 +39,11 @@ C
 src/Items/Beer.java,e\a\ea2aabda357d740efa391fffa924fd21eccb73b5
 G
 src/Game/Labyrinth.java,9\7\9748ec47034827b17c6e38715b3ee7a2a1893c1f
+P
+ src/Rooms/MergeRoomsVisitor.java,7\e\7e109e87a0de35881e4bc99acb273d87fae58c94
+J
+src/Rooms/RoomVisitor.java,7\4\743b903b4c9165093a57759dce73e976b8927810
+O
+src/Rooms/MergeRoomVisitor.java,c\a\cab6d08332defb1bbe23db03861b69155537f447
+M
+src/Rooms/DummyDecorator.java,5\f\5fbdf4cf2ab28ac492bf475baa363336ded3af8d

@@ -1,10 +1,6 @@
 package Rooms;
 
 import Characters.Character;
-import Game.Labyrinth;
-import Items.Item;
-
-import java.util.List;
 
 public class PoisonedRoomDecorator extends RoomDecorator{
 
@@ -46,11 +42,17 @@ public class PoisonedRoomDecorator extends RoomDecorator{
         }
     }
 
+    public IRoom acceptMerge(MergeRoomsVisitor visitor) {
+        return visitor.visit(this);
+    }
+
     /**
      * Empty, because the toxication is done when the room accepts a character
      */
     @Override
-    public void decorate(){}
+    public void decorate(){
+        decoratedRoom.decorate();
+    }
 
     @Override
     public boolean acceptCharacter(Character ch){
@@ -60,4 +62,5 @@ public class PoisonedRoomDecorator extends RoomDecorator{
         }
         return isAccepted;
     }
+
 }

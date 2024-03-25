@@ -1,18 +1,10 @@
 
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ŞÄšË8¼İËÃæ1J$1db9b0b1-76f7-4e96-88a3-74b0a73a1cbc
-m	java:S106)"+Replace this use of System.out by a logger.(¾ĞüÖ8éêœëæ1J$ea604195-354f-41a6-af48-c3fa24e0f5cb
-r	java:S1061"+Replace this use of System.out by a logger.(á•†³ÿÿÿÿÿ8ëêœëæ1J$3ca3cd22-854d-47fb-8f85-0c8b8c45d44a
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ŞÄšË8¬£ôç1J$f82edaa8-b24a-4995-ae3b-6793ff595843
+r	java:S106!"+Replace this use of System.out by a logger.(óÜ½øÿÿÿÿ8º£ôç1J$be9c20df-07bc-450a-ac2b-0bfdd56a3453
+m	java:S106&"+Replace this use of System.out by a logger.(¾ĞüÖ8º£ôç1J$935cf50d-ba76-47ea-8a67-f6a410504bc1
+r	java:S106*"+Replace this use of System.out by a logger.(‰ÀÜÆıÿÿÿÿ8»£ôç1J$95a41e6d-8152-46f8-a874-256cd0d5f854
+r	java:S106/"+Replace this use of System.out by a logger.(á•†³ÿÿÿÿÿ8»£ôç1J$22700bd9-5c4c-47d9-9d74-dea77e2a344a
 ‚
-java:S11615":Add the "@Override" annotation above this method signature(ƒÈ²‚üÿÿÿÿ8†±õŠç1J$0cbd7274-fc55-416f-af97-fe9c8c30a549
-T
-java:S11356"2Complete the task associated to this TODO comment.(ÎÆ£šùÿÿÿÿ8Õ¹·ç1
-‚
-java:S11619":Add the "@Override" annotation above this method signature(¢¨€ôûÿÿÿÿ8ìêœëæ1J$37f6f687-b6af-4f49-b0ed-3a954b018ac1
-l	java:S106O"+Replace this use of System.out by a logger.(ô”‡8òêœëæ1J$8ff1682c-752d-48d7-987f-368b86726dd7
-l	java:S106R"+Replace this use of System.out by a logger.(¦§`8ôêœëæ1J$88a855f5-f6ba-45b5-8844-7890d220dec2
-t
-java:S1128"1Remove this unused import 'Characters.Character'.(ÛÑæ¦8·’·ç1J$9e20dbc0-95ca-4050-85c8-1639617fd209
-s
-java:S1128"+Remove this unused import 'Game.Labyrinth'.(¨†íòÿÿÿÿÿ8·’·ç1J$95d0abae-59ea-4f80-ac59-f30f962f81b7
-o
-java:S1128"'Remove this unused import 'Items.Item'.(€ÂÇÕıÿÿÿÿ8·’·ç1J$1d2a7209-9934-4803-a1ec-4089b79eb512
+java:S11617":Add the "@Override" annotation above this method signature(¢¨€ôûÿÿÿÿ8¼£ôç1J$e9a0b2d1-97b6-449f-80be-7ce75fb9f585
+l	java:S106M"+Replace this use of System.out by a logger.(ô”‡8¾£ôç1J$f20dadd1-6697-433f-908f-8ac267009ac8
+l	java:S106P"+Replace this use of System.out by a logger.(¦§`8¾£ôç1J$2f68c574-a7b2-4bd6-8b93-b77d426b772c
