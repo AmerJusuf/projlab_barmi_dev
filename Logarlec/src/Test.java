@@ -40,7 +40,7 @@ public class Test {
         Student student = new Student(currentRoom);
         System.out.println("Test:");
 
-        student.pickItem(new Camembert());
+        student.pickItem(new Camembert(false));
     }
 
     public void instructorPicksItem() {
@@ -50,7 +50,7 @@ public class Test {
         Instructor instructor = new Instructor(currentRoom);
         System.out.println("Test:");
 
-        instructor.pickItem(new Camembert());
+        instructor.pickItem(new Camembert(false));
     }
 
     public void studentCanNotPickItemFullInventory() {
@@ -59,11 +59,11 @@ public class Test {
         BasicRoom currentRoom = new BasicRoom();
         Student student = new Student(currentRoom);
         for (int i = 0; i < 5; i++) {
-            student.addItem(new Camembert());
+            student.addItem(new Camembert(false));
         }
         System.out.println("Test:");
 
-        student.pickItem(new Camembert());
+        student.pickItem(new Camembert(false));
     }
 
     public void instructorCanNotPickItemFullInventory() {
@@ -72,11 +72,11 @@ public class Test {
         BasicRoom currentRoom = new BasicRoom();
         Instructor instructor = new Instructor(currentRoom);
         for (int i = 0; i < 5; i++) {
-            instructor.addItem(new Camembert());
+            instructor.addItem(new Camembert(false));
         }
         System.out.println("Test:");
 
-        instructor.pickItem(new Camembert());
+        instructor.pickItem(new Camembert(false));
     }
 
     public void studentPicksLogarlec() {
@@ -86,7 +86,7 @@ public class Test {
         Student student = new Student(currentRoom);
         System.out.println("Test:");
 
-        student.pickItem(new Logarlec());
+        student.pickItem(new Logarlec(false));
     }
 
     public void instructorCanNotPickLogarlec() {
@@ -96,7 +96,7 @@ public class Test {
         Instructor instructor = new Instructor(currentRoom);
         System.out.println("Test:");
 
-        instructor.pickItem(new Logarlec());
+        instructor.pickItem(new Logarlec(false));
     }
 
     public void TVSZProtectsStudent() {
@@ -104,7 +104,7 @@ public class Test {
         System.out.println("Setup test:");
         BasicRoom currentRoom = new BasicRoom();
         Student student = new Student(currentRoom);
-        TVSZ tvsz = new TVSZ(3);
+        TVSZ tvsz = new TVSZ(false,3);
         student.addItem(tvsz);
         tvsz.setOwner(student);
         System.out.println("Test:");
@@ -117,7 +117,7 @@ public class Test {
         System.out.println("Setup test:");
         BasicRoom currentRoom = new BasicRoom();
         Student student = new Student(currentRoom);
-        TVSZ tvsz = new TVSZ(1);
+        TVSZ tvsz = new TVSZ(false,1);
         student.addItem(tvsz);
         tvsz.setOwner(student);
         System.out.println("Test:");
@@ -133,7 +133,7 @@ public class Test {
         Instructor instructor = new Instructor(currentRoom);
         currentRoom.addCharacter(student);
         currentRoom.addCharacter(instructor);
-        Camembert camembert = new Camembert();
+        Camembert camembert = new Camembert(false);
         student.addItem(camembert);
         camembert.setOwner(student);
         System.out.println("Test:");
@@ -159,7 +159,7 @@ public class Test {
         System.out.println("Setup test:");
         BasicRoom currentRoom = new BasicRoom();
         Student student = new Student(currentRoom);
-        TVSZ tvsz = new TVSZ(2);
+        TVSZ tvsz = new TVSZ(false,2);
         student.addItem(tvsz);
         tvsz.setOwner(student);
         System.out.println("Test:");
@@ -396,7 +396,7 @@ public class Test {
         room2.setCapacity(5);
         room1.addNeighbour(room2);
         room2.addNeighbour(room1);
-        Camembert camembert = new Camembert();
+        Camembert camembert = new Camembert(false);
         room1.setLabyrinth(labyrinth);
         room2.setLabyrinth(labyrinth);
         room2.addItem(camembert);
@@ -455,7 +455,7 @@ public class Test {
         BasicRoom room = new BasicRoom();
         CursedRoomDecorator cursedRoomDecorator = new CursedRoomDecorator(room);
         cursedRoomDecorator.setCapacity(6);
-        Camembert camembert = new Camembert();
+        Camembert camembert = new Camembert(false);
         cursedRoomDecorator.addItem(camembert);
         labyrinth.addRoom(room);
         System.out.println("Test:");
@@ -470,7 +470,7 @@ public class Test {
         BasicRoom room = new BasicRoom();
         CursedRoomDecorator cursedRoomDecorator = new CursedRoomDecorator(room);
         cursedRoomDecorator.setCapacity(6);
-        Camembert camembert = new Camembert();
+        Camembert camembert = new Camembert(false);
         cursedRoomDecorator.addItem(camembert);
         Student student = new Student(room);
         cursedRoomDecorator.addCharacter(student);

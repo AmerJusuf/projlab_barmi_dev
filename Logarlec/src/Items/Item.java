@@ -6,6 +6,7 @@ import Characters.Instructor;
 
 public abstract class Item {
     protected Character owner;
+    protected boolean isFake;
 
     /**
      * This method is used to indicate that the item was picked by a student.
@@ -96,5 +97,15 @@ public abstract class Item {
         setIsActive(false);
         owner.getRoom().addItem(this);
         removeOwner();
+    }
+
+    public void dropItemAt(int index){
+        System.out.println("Item will be dropped | Item: dropItemAt()");
+        //index számú item kiaktiválása
+        owner.getItems().get(index).setIsActive(false);
+        //tulajdonos index számú tárgyának szobához hozzáadása
+        owner.getRoom().addItem(owner.getItems().get(index));
+        //tulajdonos eltávolítása az index számú tárgyától
+        owner.getItems().get(index).removeOwner();
     }
 }

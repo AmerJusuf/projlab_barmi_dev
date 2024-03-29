@@ -9,6 +9,7 @@ public class Beer extends TemporaryItem {
     public boolean protectStudent() {
         System.out.println("Beer protects student | Beer: protectStudent()");
         setIsActive(true);
+        dropItemAt(1);
         return true;
     }
 }

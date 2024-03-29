@@ -10,11 +10,17 @@ import java.util.List;
 
 public class Camembert extends Item {
 
+
+    /*public Camembert() {
+        super();
+    }*/
     /**
      * This constructor is used to create a Camembert object.
+     * @param fake Determines whether a camembert object is fake or real.
      */
-    public Camembert() {
+    public Camembert(boolean fake){
         super();
+        isFake = fake;
     }
 
     /**
@@ -24,11 +30,16 @@ public class Camembert extends Item {
      */
     public void open() {
         System.out.println("Camembert opened | Camembert: open()");
-        IRoom currentRoom = owner.getRoom();
-        List<Character> characters = currentRoom.getCharacters();
-        owner.disable();
-        for (Character ch : characters) {
-            ch.disable();
+        if(isFake){
+            System.out.println("It is a fake camembert - no effect!");
+        }
+        else {
+            IRoom currentRoom = owner.getRoom();
+            List<Character> characters = currentRoom.getCharacters();
+            owner.disable();
+            for (Character ch : characters) {
+                ch.disable();
+            }
         }
     }
 }
