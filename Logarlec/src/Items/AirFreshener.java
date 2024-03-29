@@ -6,8 +6,11 @@ public class AirFreshener extends Item {
      */
     public AirFreshener(){super();}
 
+    /**
+     * This method is used to clean the current room from poison.
+     */
     public void unToxicateRoom(){
         System.out.println("AirFreshener used | AirFreshener: unToxicateRoom()");
-        throw new UnsupportedOperationException();
+        owner.getRoom().unToxicate();
     }
 }

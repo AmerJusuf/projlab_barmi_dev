@@ -3,15 +3,24 @@ package Rooms;
 import Characters.Character;
 
 public class PoisonedRoomDecorator extends RoomDecorator{
+    private boolean cleaned = false;
 
     public PoisonedRoomDecorator(IRoom decoratedRoom){
         super(decoratedRoom);
     }
 
+    /**
+     * If this room hasn't been cleaned previously, it poisons the character
+     * @param ch character to be poisoned
+     */
     public void toxicate(Character ch){
-        System.out.println("Room toxicated | PoisonedRoomDecorator: toxicate");
-        ch.disable();
+        if(!cleaned){
+            System.out.println("Poisoned room intoxicated character | PoisonedRoomDecorator: toxicate");
+            ch.disable();
+        }
     }
+
+
 
     public void splitRoom(){
         if(this.getCharacters().isEmpty()){
@@ -47,11 +56,19 @@ public class PoisonedRoomDecorator extends RoomDecorator{
     }
 
     /**
-     * Empty, because the toxication is done when the room accepts a character
+     * Empty, because the intoxication is done when the room accepts a character
      */
     @Override
     public void decorate(){
         decoratedRoom.decorate();
+    }
+
+    /**
+     * This method sets the state of this room to cleaned, so then the poison effect won't apply
+     */
+    @Override
+    public void unToxicate() {
+        cleaned = true;
     }
 
     @Override

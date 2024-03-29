@@ -51,6 +51,8 @@ public interface IRoom {
 
      void decorate();
 
+     void unToxicate();
+
      //for testing
     IRoom getChild();
 }
