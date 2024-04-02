@@ -1,6 +1,8 @@
 package Rooms;
 
 import Characters.Character;
+import Characters.Instructor;
+import Characters.Student;
 import Game.Labyrinth;
 import Items.Item;
 
@@ -76,6 +78,16 @@ public abstract class RoomDecorator implements IRoom{
     }
 
     @Override
+    public void acceptPickByStudent(Student st, Item item){
+        decoratedRoom.acceptPickByStudent(st, item);
+    }
+
+    @Override
+    public void acceptPickByInstructor(Instructor inst, Item item){
+        decoratedRoom.acceptPickByInstructor(inst, item);
+    }
+
+    @Override
     public boolean acceptCharacter(Character ch){
         return decoratedRoom.acceptCharacter(ch);
     }
@@ -108,6 +120,11 @@ public abstract class RoomDecorator implements IRoom{
     @Override
     public void setNeighbours(List<IRoom> neighbours){
         decoratedRoom.setNeighbours(neighbours);
+    }
+
+    @Override
+    public void makeSticky() {
+        decoratedRoom.makeSticky();
     }
 
     @Override

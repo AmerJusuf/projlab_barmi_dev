@@ -1,14 +1,14 @@
 
-š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(† âöûÿÿÿÿJ$2b033686-0d9b-490b-942f-78567109f940
+š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(† âöûÿÿÿÿJ$db3a085d-71fd-4915-ab78-e1ea3d77fafd
 z
-java:S5993"9Change the visibility of this constructor to "protected".(²ËƒêıÿÿÿÿJ$5276b22b-022c-4930-9566-fe1b2965a07c
-k	java:S106"+Replace this use of System.out by a logger.(°ŸÉÂüÿÿÿÿJ$9e3199f1-51b5-4f68-99d9-82d07e00e536
-f	java:S106/"+Replace this use of System.out by a logger.(ßíÛÑJ$7101b210-53c9-45d5-be14-2a0eaf1a6ea7
-f	java:S1069"+Replace this use of System.out by a logger.(©Ç£¨J$0758be94-02b8-454b-8767-3d34fc036a3e
-r	java:S106Y"+Replace this use of System.out by a logger.(Ù÷ıÿÿÿÿ8ëéœëæ1J$e2ce3852-979b-46e3-8570-a030e317fe22
-m	java:S106d"+Replace this use of System.out by a logger.(ã•ùÀ8ìéœëæ1J$3f1cd912-a815-4174-93d9-d561fd9f9591
+java:S5993"9Change the visibility of this constructor to "protected".(²ËƒêıÿÿÿÿJ$52b5c774-1782-461e-93d5-5fd56f513f94
+k	java:S106"+Replace this use of System.out by a logger.(°ŸÉÂüÿÿÿÿJ$2edb92ca-3dbf-42d7-a4a0-382a435b5e11
+f	java:S106/"+Replace this use of System.out by a logger.(ßíÛÑJ$a96fe6dc-f3a5-43fa-962b-ccb93eba8fde
+f	java:S1069"+Replace this use of System.out by a logger.(©Ç£¨J$dd8d1c72-f6c5-48d6-a4da-13341eee6c35
+r	java:S106Y"+Replace this use of System.out by a logger.(Ù÷ıÿÿÿÿ8ëéœëæ1J$b55dccd7-d2fb-4f9b-ad4f-f403265ee2de
+m	java:S106d"+Replace this use of System.out by a logger.(ã•ùÀ8ìéœëæ1J$0d9f3704-b8b2-4d95-a8d3-0fbd627be065
 z
-java:S1135|"2Complete the task associated to this TODO comment.(šğáøÿÿÿÿ8íéœëæ1J$c5f5e44d-d031-4199-9af1-e475f0556507
-m	java:S106"+Replace this use of System.out by a logger.(¨ŞÛA8îéœëæ1J$de0fb86e-8dae-4356-8564-a85619282da8
+java:S1135{"2Complete the task associated to this TODO comment.(šğáøÿÿÿÿ8íéœëæ1J$79dc2102-d847-45ed-b94b-727e112d9478
+m	java:S106"+Replace this use of System.out by a logger.(¨ŞÛA8îéœëæ1J$7da08475-64ab-4098-8223-c77afba69ba1
 t
-java:S1128",Remove this unused import 'Rooms.BasicRoom'.(Çêê½ÿÿÿÿÿ8û¶€ç1J$e0d43e26-73c5-4819-9915-6aaf77273ce4
+java:S1128",Remove this unused import 'Rooms.BasicRoom'.(Çêê½ÿÿÿÿÿ8û¶€ç1J$51aed030-f7c1-41ee-848d-74f8b7392bf3

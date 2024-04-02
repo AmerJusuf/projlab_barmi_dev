@@ -43,7 +43,7 @@ P
  src/Rooms/MergeRoomsVisitor.java,7\e\7e109e87a0de35881e4bc99acb273d87fae58c94
 J
 src/Rooms/RoomVisitor.java,7\4\743b903b4c9165093a57759dce73e976b8927810
-O
-src/Rooms/MergeRoomVisitor.java,c\a\cab6d08332defb1bbe23db03861b69155537f447
-M
-src/Rooms/DummyDecorator.java,5\f\5fbdf4cf2ab28ac492bf475baa363336ded3af8d
+R
+"src/Rooms/StickyRoomDecorator.java,0\3\0330a22191dded32b0ea1fcceafc58b6c46ebe83
+V
+&src/Rooms/DecoratorHandlerVisitor.java,3\1\31aaae3f8e4013cd206df05e1bd5999d8ea6dd27

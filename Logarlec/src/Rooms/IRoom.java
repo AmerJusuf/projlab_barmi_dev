@@ -1,13 +1,17 @@
 package Rooms;
 
 import Characters.Character;
+import Characters.Instructor;
+import Characters.Student;
 import Game.Labyrinth;
 import Items.Item;
 
 import java.util.List;
 
 public interface IRoom {
-    IRoom acceptMerge(MergeRoomsVisitor visitor);
+    IRoom acceptMerge(DecoratorHandlerVisitor visitor);
+
+    IRoom acceptUnToxicate(DecoratorHandlerVisitor visitor);
 
     void splitRoom();
 
@@ -28,6 +32,10 @@ public interface IRoom {
      void addItem(Item it);
 
      void removeItem(Item it);
+
+     void acceptPickByStudent(Student st, Item item);
+
+     void acceptPickByInstructor(Instructor inst, Item item);
 
      void setItems(List<Item> items);
 
@@ -50,6 +58,8 @@ public interface IRoom {
      IRoom getDecoratedRoom();
 
      void decorate();
+
+     void makeSticky();
 
      //for testing
     IRoom getChild();

@@ -8,11 +8,19 @@ public class PoisonedRoomDecorator extends RoomDecorator{
         super(decoratedRoom);
     }
 
+    /**
+     * Toxicate the character
+     * @param ch the character to toxicate
+     */
     public void toxicate(Character ch){
         System.out.println("Room toxicated | PoisonedRoomDecorator: toxicate");
         ch.disable();
     }
 
+    /**
+     * Splits the room into two rooms, the new room will be a PoisonedRoomDecorator
+     */
+    @Override
     public void splitRoom(){
         if(this.getCharacters().isEmpty()){
 
@@ -42,8 +50,14 @@ public class PoisonedRoomDecorator extends RoomDecorator{
         }
     }
 
-    public IRoom acceptMerge(MergeRoomsVisitor visitor) {
-        return visitor.visit(this);
+    @Override
+    public IRoom acceptMerge(DecoratorHandlerVisitor visitor) {
+        return visitor.visitForMerge(this);
+    }
+
+    @Override
+    public IRoom acceptUnToxicate(DecoratorHandlerVisitor visitor) {
+        return visitor.visitForUnToxicate(this);
     }
 
     /**

@@ -1,15 +1,15 @@
 
-š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìÆ«úÿÿÿÿJ$b253cd9c-036b-48cb-8924-aa0535767cf6
+š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìÆ«úÿÿÿÿJ$1e29dcd1-826a-4b78-a18d-42f0bc914e2e
 ”
-java:S1450"XRemove the "gameState" field and declare it as a local variable in the relevant methods.( íß…J$67112550-902b-45e1-969f-586836beb0c4
+java:S1450"XRemove the "gameState" field and declare it as a local variable in the relevant methods.( íß…J$b0f1c5c1-be8f-4fbb-8638-081e0fe9cbe3
 o
-java:S11728".Remove this unused method parameter "student".(İ©ûÿÿÿÿJ$5bd17848-e3b7-4644-9c39-79659e4492ca
-f	java:S1069"+Replace this use of System.out by a logger.(Ğ¦Á‘J$32105fe4-f26d-40e3-9b87-135bd3cb1ee5
+java:S11728".Remove this unused method parameter "student".(İ©ûÿÿÿÿJ$a8d2ece8-5544-4d69-9c35-7512c94c2191
+f	java:S1069"+Replace this use of System.out by a logger.(Ğ¦Á‘J$91260a7e-26ff-476e-87a1-f30366221d6e
 i
-java:S1068"-Remove this unused "gameState" private field.( íß…J$f819ed87-28aa-4f96-8b48-a0a5061a0ebe
+java:S1068"-Remove this unused "gameState" private field.( íß…J$a63874af-0b46-45d3-9c40-9c8f130f2c18
 s
-java:S1068"8Remove this unused "starterNumberOfRooms" private field.(ö¨“GJ$01e7d4cc-e62d-418d-8e2c-ae2ac2014ac4
+java:S1068"8Remove this unused "starterNumberOfRooms" private field.(ö¨“GJ$27afe1a2-b5e0-4d74-afb3-11e752d81d0c
 h
-java:S1068",Remove this unused "students" private field.(™ÿšJ$9af2a7ef-dd0a-446a-8dfa-b7e278776535
+java:S1068",Remove this unused "students" private field.(™ÿšJ$680b2045-d931-4761-aba4-98bc37962d57
 p
-java:S1068"/Remove this unused "instructors" private field.(Ïì‰§ÿÿÿÿÿJ$acf0ccc2-f71d-43f4-8b4b-37a7baa18692
+java:S1068"/Remove this unused "instructors" private field.(Ïì‰§ÿÿÿÿÿJ$30239c02-1c6f-47b7-8578-3e0a6f7ec6b2

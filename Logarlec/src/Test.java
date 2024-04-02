@@ -404,7 +404,7 @@ public class Test {
         labyrinth.addRoom(room2);
         System.out.println("Test:");
 
-        MergeRoomsVisitor visitor = new MergeRoomsVisitor(room1);
+        DecoratorHandlerVisitor visitor = new DecoratorHandlerVisitor(room1);
         IRoom mergedRoom =  room2.acceptMerge(visitor);
 
         //Print for test:
@@ -428,7 +428,7 @@ public class Test {
         labyrinth.addRoom(room2);
         System.out.println("Test:");
 
-        MergeRoomsVisitor visitor = new MergeRoomsVisitor(room1);
+        DecoratorHandlerVisitor visitor = new DecoratorHandlerVisitor(room1);
         room2.acceptMerge(visitor);
     }
 

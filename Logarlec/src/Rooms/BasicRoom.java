@@ -1,6 +1,8 @@
 package Rooms;
 
 import Characters.Character;
+import Characters.Instructor;
+import Characters.Student;
 import Game.Labyrinth;
 import Items.Item;
 
@@ -111,8 +113,8 @@ public class BasicRoom implements IRoom{
     /**
      * Accepts merge from a visitor. (Used for merging rooms)
      */
-    public IRoom acceptMerge(MergeRoomsVisitor visitor) {
-        return visitor.visit(this);
+    public IRoom acceptMerge(DecoratorHandlerVisitor visitor) {
+        return visitor.visitForMerge(this);
     }
 
 
@@ -247,6 +249,28 @@ public class BasicRoom implements IRoom{
     }
 
     /**
+     * Accepts a pick by a student.
+     * @param st The student, who picks the item.
+     * @param item The item, which is picked.
+     */
+    @Override
+    public void acceptPickByStudent(Student st, Item item){
+        System.out.println("Item pick accepted by room | BasicRoom: acceptPickByStudent");
+        item.pickedByStudent(st);
+    }
+
+    /**
+     * Accepts a pick by an instructor.
+     * @param inst The instructor, who picks the item.
+     * @param item The item, which is picked.
+     */
+    @Override
+    public void acceptPickByInstructor(Instructor inst, Item item){
+        System.out.println("Item pick accepted by room | BasicRoom: acceptPickByInstructor");
+        item.pickedByInstructor(inst);
+    }
+
+    /**
      * Sets the capacity of the current room.
      * @param i The new capacity.
      */
@@ -314,6 +338,19 @@ public class BasicRoom implements IRoom{
     @Override
     public void decorate(){
         //Do nothing
+    }
+
+    /**
+     * Makes the current room sticky.
+     */
+    @Override
+    public void makeSticky() {
+       StickyRoomDecorator stickyRoom = new StickyRoomDecorator(this);
+       DecoratorHandlerVisitor mergeRoomsVisitor = new DecoratorHandlerVisitor(this);
+       IRoom newRoom = stickyRoom.acceptMerge(mergeRoomsVisitor);
+
+       labyrinth.removeRoom(this);
+       labyrinth.addRoom(newRoom);
     }
 
     //for testing

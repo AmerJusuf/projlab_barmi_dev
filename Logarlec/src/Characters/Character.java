@@ -28,7 +28,7 @@ public abstract class Character {
     public void move(IRoom nextRoom){
         System.out.println("Character is trying to move | Character: move(BasicRoom nextRoom)");
         if(currentRoom.isNeighbour(nextRoom)){
-            boolean isAccepted = currentRoom.acceptCharacter(this);
+            boolean isAccepted = nextRoom.acceptCharacter(this);
             if(isAccepted){
                 currentRoom.removeCharacter(this);
                 this.setRoom(nextRoom);
