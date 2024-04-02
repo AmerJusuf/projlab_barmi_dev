@@ -16,11 +16,9 @@ public class Camembert extends Item {
     }*/
     /**
      * This constructor is used to create a Camembert object.
-     * @param fake Determines whether a camembert object is fake or real.
      */
-    public Camembert(boolean fake){
+    public Camembert(){
         super();
-        isFake = fake;
     }
 
     /**

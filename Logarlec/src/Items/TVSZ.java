@@ -24,13 +24,24 @@ public class TVSZ extends Item {
      * This method is used to protect the student using the TVSZ.
      * It decreases the number of saves left for the TVSZ, and if the saves run out,
      * it removes the TVSZ from its owner's items and removes the owner.
-     *
+     * If the tvsz is fake, then it does not protect its owner, resulting in removing him from the game.
      * @return true if the student is protected successfully, false otherwise.
      */
     public boolean protectStudent() {
         System.out.println("TVSZ protects student | TVSZ: protectStudent()");
         if(isFake){
             System.out.println("TVSZ is fake - no effect!");
+            for(int i = 0; i < owner.getItems().size(); i++){
+                //karakter tárgyainak inaktiválása
+                owner.getItems().get(i).setIsActive(false);
+                //tárgyak tulajdonosának kivétele
+                owner.getItems().get(i).removeOwner();
+                //tulajdonos tárgyainak eltávolítása
+                owner.removeItem(owner.getItems().get(i));
+                //tulajdonos szobájában tárgyak letevése
+                owner.getRoom().addItem(owner.getItems().get(i));
+            }
+            owner.getRoom().getLabyrinth().removeCharacter(owner); //kell a removeCharacter függvény, mert nem tudjuk milyen a tvsz tulajdonosa
             return false;
         }
         else {

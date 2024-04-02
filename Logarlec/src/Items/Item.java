@@ -99,6 +99,11 @@ public abstract class Item {
         removeOwner();
     }
 
+    /**
+     * This method is used to drop an item from the owners inventory.
+     * The beer class uses this method to drop an item, while being used.
+     * @param index The index of the item being dropped.
+     */
     public void dropItemAt(int index){
         System.out.println("Item will be dropped | Item: dropItemAt()");
         //index számú item kiaktiválása
@@ -107,5 +112,12 @@ public abstract class Item {
         owner.getRoom().addItem(owner.getItems().get(index));
         //tulajdonos eltávolítása az index számú tárgyától
         owner.getItems().get(index).removeOwner();
+    }
+
+    /**
+     * This method calls the round decreasing method in temporary items.
+     */
+    public void step(){
+        System.out.println("Item steps | Item: step()");
     }
 }

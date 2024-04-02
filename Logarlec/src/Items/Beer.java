@@ -9,7 +9,18 @@ public class Beer extends TemporaryItem {
     public boolean protectStudent() {
         System.out.println("Beer protects student | Beer: protectStudent()");
         setIsActive(true);
-        dropItemAt(1);
         return true;
+    }
+
+    @Override
+    public void decreaseRoundsLeft() {
+        System.out.println("Rounds left decreased | Beer: decreaseRoundsLeft()");
+        roundsLeft--;
+        dropItemAt(0);
+        if(roundsLeft == 0) {
+            System.out.println("Rounds left is 0, destroying item | TemporaryItem: decreaseRoundsLeft()");
+            owner.removeItem(this);
+            removeOwner();
+        }
     }
 }
