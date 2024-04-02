@@ -16,8 +16,6 @@ public abstract class RoomDecorator implements IRoom{
         this.decoratedRoom = decoratedRoom;
     }
 
-    public abstract void decorate();
-
     @Override
     public void addCharacter(Character ch){
         decoratedRoom.addCharacter(ch);
@@ -137,7 +135,38 @@ public abstract class RoomDecorator implements IRoom{
         return decoratedRoom.getDecoratedRoom();
     }
 
+    @Override
     public IRoom getChild(){
         return decoratedRoom;
     }
+
+    @Override
+    public void unToxicate(){
+        BasicRoom basicRoom = new BasicRoom();
+        basicRoom.setCapacity(this.getCapacity());
+        basicRoom.setItems(this.getItems());
+        basicRoom.setNeighbours(this.getNeighbours());
+        for(Character ch : this.getCharacters()){
+            basicRoom.addCharacter(ch);
+        }
+
+        DecoratorHandlerVisitor visitor = new DecoratorHandlerVisitor(basicRoom);
+        IRoom newUntoxicatedRoom = acceptUnToxicate(visitor);
+
+        visitor.handleNeighboursWhenReplacing(this, newUntoxicatedRoom);
+        getLabyrinth().replaceRooms(this, newUntoxicatedRoom);
+    }
+
+    @Override
+    public void mergeRooms(IRoom room){
+        DecoratorHandlerVisitor visitor = new DecoratorHandlerVisitor(room);
+        IRoom newMergedRoom = acceptMerge(visitor);
+
+        visitor.handleNeighboursWhenReplacing(this, newMergedRoom);
+        visitor.handleNeighboursWhenReplacing(room, newMergedRoom);
+        getLabyrinth().replaceRooms(this, newMergedRoom);
+        getLabyrinth().getRooms().remove(room);
+    }
+
+
 }

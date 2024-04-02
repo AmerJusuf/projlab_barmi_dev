@@ -13,6 +13,10 @@ public interface IRoom {
 
     IRoom acceptUnToxicate(DecoratorHandlerVisitor visitor);
 
+    void unToxicate();
+
+    void mergeRooms(IRoom room);
+
     void splitRoom();
 
     int getCapacity();

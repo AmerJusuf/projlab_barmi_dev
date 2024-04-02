@@ -117,6 +117,25 @@ public class BasicRoom implements IRoom{
         return visitor.visitForMerge(this);
     }
 
+    @Override
+    public IRoom acceptUnToxicate(DecoratorHandlerVisitor visitor) {
+        return visitor.visitForUnToxicate(this);
+    }
+
+    @Override
+    public void unToxicate() {
+        //Do nothing, basicroom does not need to be untoxicated, because it is the root element
+    }
+
+    @Override
+    public void mergeRooms(IRoom room) {
+        DecoratorHandlerVisitor visitor = new DecoratorHandlerVisitor(room);
+        IRoom newRoom = this.acceptMerge(visitor);
+
+        visitor.handleNeighboursWhenReplacing(this, newRoom);
+        getLabyrinth().replaceRooms(this, newRoom);
+    }
+
 
     /**
      * Splits a room into two similar rooms. (If it does not contain any characters.) The items and neighbours are equally split.

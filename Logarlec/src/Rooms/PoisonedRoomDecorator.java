@@ -23,7 +23,6 @@ public class PoisonedRoomDecorator extends RoomDecorator{
     @Override
     public void splitRoom(){
         if(this.getCharacters().isEmpty()){
-
             PoisonedRoomDecorator newRoom = new PoisonedRoomDecorator(decoratedRoom);
             this.addNeighbour(newRoom);
             newRoom.addNeighbour(this);

@@ -1,5 +1,6 @@
 package Rooms;
 
+import Characters.Character;
 import Items.Item;
 
 import java.util.ArrayList;
@@ -71,7 +72,6 @@ public class DecoratorHandlerVisitor implements RoomVisitor {
         return cursedRoom.decoratedRoom.acceptUnToxicate(new DecoratorHandlerVisitor(new CursedRoomDecorator(roomToHandle)));
     }
 
-
     /**
      * Visits a PoisonedRoomDecorator and visits the decoratedRoom.
      */
@@ -101,7 +101,6 @@ public class DecoratorHandlerVisitor implements RoomVisitor {
         return new ArrayList<>(combinedNeighbours);
     }
 
-
     /**
      * Sets up the room.
      * @param room The room to merge with
@@ -117,5 +116,14 @@ public class DecoratorHandlerVisitor implements RoomVisitor {
         roomToHandle.setNeighbours(newNeighbours);
     }
 
+    public void handleNeighboursWhenReplacing(IRoom oldRoom, IRoom newRoom){
+        List<IRoom> neighbours = oldRoom.getNeighbours();
+        for(IRoom neighbour : neighbours){
+            if(neighbour.isNeighbour(oldRoom)){
+                neighbour.removeNeighbour(oldRoom);
+                neighbour.addNeighbour(newRoom);
+            }
+        }
+    }
 }
 
