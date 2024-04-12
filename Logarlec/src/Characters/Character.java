@@ -119,11 +119,7 @@ public abstract class Character {
         this.isPoisoned = isPoisoned;
     }
 
-    public void nextRound(){
-        //TODO: Implement nextRound
-        //handle the next round
-        //clickevent listener?
-    }
+    public abstract void nextRound();
 
     public abstract void disableInstructor();
 

@@ -61,4 +61,8 @@ public class Instructor extends Character{
         }
     }
 
+    public void nextRound(){
+        System.out.println("Instructor next round | Instructor: nextRound()");
+    }
+
 }

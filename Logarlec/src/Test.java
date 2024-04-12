@@ -558,4 +558,25 @@ public class Test {
         }
     }
 
+    public void makeSticky() {
+        System.out.println("Testing make sticky:");
+        System.out.println("Setup test:");
+        Labyrinth labyrinth = new Labyrinth();
+        IRoom room = new PoisonedRoomDecorator(new CursedRoomDecorator(new BasicRoom()));
+        room.setCapacity(7);
+        room.setLabyrinth(labyrinth);
+        labyrinth.addRoom(room);
+
+        System.out.println("Test:");
+        room.makeSticky();
+        System.out.println(labyrinth.getRooms().size());
+        //Print for test:
+        System.out.println("Print makeSticky room type:");
+        IRoom iterator = labyrinth.getRooms().getFirst();
+        while(iterator != null){
+            System.out.print("RoomType: " + iterator.getClass() + " | ");
+            iterator = iterator.getChild();
+        }
+    }
+
 }

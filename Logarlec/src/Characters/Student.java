@@ -55,4 +55,9 @@ public class Student extends Character{
         currentRoom.removeCharacter(this);
         currentRoom.getLabyrinth().removeStudent(this);
     }
+
+    @Override
+    public void nextRound() {
+        System.out.println("Student next round | Student: nextRound()");
+    }
 }

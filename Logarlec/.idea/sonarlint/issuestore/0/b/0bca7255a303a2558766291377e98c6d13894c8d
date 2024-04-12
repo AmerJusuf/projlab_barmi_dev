@@ -1,7 +1,11 @@
 
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Áã²¹ûÿÿÿÿ
-E	java:S106"+Replace this use of System.out by a logger.( çìÃüÿÿÿÿ
-J
-java:S1128"/Remove this unused import 'Characters.Student'.(€•­ğùÿÿÿÿ
-M
-java:S1128"2Remove this unused import 'Characters.Instructor'.(Ğ±£¢úÿÿÿÿ
+š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Áã²¹ûÿÿÿÿJ$e36e7b2d-21d6-4016-a816-4cf98c286a45
+k	java:S106"+Replace this use of System.out by a logger.( çìÃüÿÿÿÿJ$d657f93e-21fd-4c4a-b14c-104e01fcd5bb
+O
+java:S1135"2Complete the task associated to this TODO comment.(®î½é8Ã¯…™í1
+t
+java:S1128",Remove this unused import 'Rooms.BasicRoom'.(Çêê½ÿÿÿÿÿ8Ûî˜í1J$e2ccdfe7-6938-4d3a-aad8-f9eaa88855e7
+p
+java:S1128"/Remove this unused import 'Characters.Student'.(€•­ğùÿÿÿÿJ$cf0709c9-0b4b-42aa-8dd5-7769193b8c48
+s
+java:S1128"2Remove this unused import 'Characters.Instructor'.(Ğ±£¢úÿÿÿÿJ$e00a051e-b22b-46ce-b0d8-b0e3fdc5f2f1

@@ -26,7 +26,7 @@ public class Camembert extends Item {
         System.out.println("Camembert opened | Camembert: open()");
         IRoom currentRoom = owner.getRoom();
         List<Character> characters = currentRoom.getCharacters();
-        owner.disable();
+        owner.disable(); //todo: szerintem nem kell
         for (Character ch : characters) {
             ch.disable();
         }

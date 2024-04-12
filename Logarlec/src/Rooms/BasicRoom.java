@@ -367,7 +367,7 @@ public class BasicRoom implements IRoom{
        StickyRoomDecorator stickyRoom = new StickyRoomDecorator(this);
        DecoratorHandlerVisitor mergeRoomsVisitor = new DecoratorHandlerVisitor(this);
        IRoom newRoom = stickyRoom.acceptMerge(mergeRoomsVisitor);
-
+    //TODO: nem basicroomot kéne mergelni hanem kulso decoratorral
        labyrinth.removeRoom(this);
        labyrinth.addRoom(newRoom);
     }

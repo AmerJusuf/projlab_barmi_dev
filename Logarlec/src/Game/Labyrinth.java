@@ -16,7 +16,7 @@ public class Labyrinth {
     private List<Student> students;
     private List<Instructor> instructors;
 
-    private List<Cleaner> cleaners;
+    //private List<Cleaner> cleaners; todo
 
     private List<Item> items;
 
@@ -109,12 +109,12 @@ public class Labyrinth {
             for (Instructor instructor : instructors) {
                 instructor.nextRound();
             }
-            for (Cleaner cleaner : cleaners) {
-                cleaner.nextRound();
-            }
-            for (Item item: items) {
-                item.step();
-            }
+//            for (Cleaner cleaner : cleaners) {
+//                cleaner.nextRound();
+//            }
+//            for (Item item: items) {
+//                item.step();
+//            }
             mergeAndSplitRandomly();
     }
 

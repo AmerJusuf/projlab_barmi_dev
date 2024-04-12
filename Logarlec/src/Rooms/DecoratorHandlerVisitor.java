@@ -116,6 +116,7 @@ public class DecoratorHandlerVisitor implements RoomVisitor {
         roomToHandle.setNeighbours(newNeighbours);
     }
 
+    //Todo mi van ha a regi szoba olyan szobanak a szomszedja, ami a régi szobának nem szomszédja?
     public void handleNeighboursWhenReplacing(IRoom oldRoom, IRoom newRoom){
         List<IRoom> neighbours = oldRoom.getNeighbours();
         for(IRoom neighbour : neighbours){
