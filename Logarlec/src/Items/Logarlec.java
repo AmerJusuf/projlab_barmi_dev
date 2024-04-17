@@ -8,11 +8,17 @@ import Game.Labyrinth;
 
 public class Logarlec extends Item {
 
+
+    /*public Logarlec() {
+        super();
+    }*/
     /**
      * This constructor is used to create a Logarlec object.
+     * @param fake Determines whether a Logarlec object is fake or real.
      */
-    public Logarlec() {
+    public Logarlec(boolean fake){
         super();
+        isFake = fake;
     }
 
 
@@ -27,7 +33,12 @@ public class Logarlec extends Item {
         System.out.println("Logarlec picked by student | Logarlec: pickedByStudent(Student student)");
         this.setOwner(student);
         student.addItem(this);
-        Labyrinth.setGameState(GameState.WIN);
+        if(isFake){
+            System.out.println("Logarlec is fake - no effect!");
+        }
+        else {
+            Labyrinth.setGameState(GameState.WIN);
+        }
     }
 
     /**
