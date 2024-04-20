@@ -1,0 +1,45 @@
+createRoom -id BR1 -capacity 5 -type BasicRoom
+createRoom -id BR2 -capacity 5 -type BasicRoom
+createRoom -id BR3 -capacity 5 -type BasicRoom
+createRoom -id BR4 -capacity 5 -type BasicRoom
+createRoom -id BR5 -capacity 5 -type BasicRoom
+createRoom -id BR6 -capacity 5 -type BasicRoom
+createRoom -id BR7 -capacity 5 -type BasicRoom
+createRoom -id BR8 -capacity 5 -type BasicRoom
+addNeighbour -r BR1 -r BR2
+addNeighbour -r BR2 -r BR1
+addNeighbour -r BR2 -r BR3
+addNeighbour -r BR2 -r BR5
+addNeighbour -r BR2 -r BR6
+addNeighbour -r BR2 -r BR7
+addNeighbour -r BR3 -r BR2
+addNeighbour -r BR3 -r BR4
+addNeighbour -r BR4 -r BR3
+addNeighbour -r BR4 -r BR5
+addNeighbour -r BR4 -r BR6
+addNeighbour -r BR5 -r BR2
+addNeighbour -r BR5 -r BR4
+addNeighbour -r BR5 -r BR6
+addNeighbour -r BR6 -r BR2
+addNeighbour -r BR6 -r BR4
+addNeighbour -r BR6 -r BR5
+addNeighbour -r BR7 -r BR2
+addNeighbour -r BR7 -r BR8
+addNeighbour -r BR8 -r BR7
+createCharacter -id I1 -type Instructor
+createCharacter -id S1 -type Student
+createItem -id TVSZ1 -type TVSZ -life 1
+createItem -id FFP21 -type FPP2
+createItem -id LOG1 -type Logarlec
+addItemToCharacter -it TVSZ -ch S1
+addItemToRoom -it FFP21 -r BR2
+addItemToRoom -it LOG1 -r BR3
+addCharacterToRoom -ch I1 -r BR1
+addCharacterToRoom -ch S1 -r BR7
+moveCharacter -ch I1 -r BR2
+pickItem -ch I1 -it FFP21
+moveCharacter -ch S1 -r BR2
+getCaught -ch S1
+moveCharacter -ch S1 -r BR3
+pickItem -ch S1 -it LOG1
+gameStatus

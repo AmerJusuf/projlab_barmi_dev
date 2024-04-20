@@ -1,0 +1,7 @@
+createCharacter -id S1 -type Student
+createItem -id B1 -type Beer
+toxicate -ch S1
+activate -it Beer
+nextRound
+CharacterStatus -ch S1
+ItemStatus -it B1

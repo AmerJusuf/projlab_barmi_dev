@@ -1,0 +1,6 @@
+createRoom -id BR1 -capacity 5 -type BasicRoom
+createRoom -id PR1 -capacity 5 -type PoisonedRoomDecorator
+createCharacter -id C1 -type Cleaner
+addCharacterToRoom -ch C1 -r BR1
+moveCharacter -ch C1 -r PR1
+roomStatus -r PR1

@@ -1,0 +1,7 @@
+createRoom -id BR1 -capacity 5 -type BasicRoom
+createCharacter -id C1 -type Cleaner
+createItem -id TVSZ1 -type TVSZ
+addCharacterToRoom -ch C1 -r BR1
+addItemToRoom -it TVSZ1 -r BR1
+pickItem -ch C1 -it TVSZ1
+characterStatus -ch C1

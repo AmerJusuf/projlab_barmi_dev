@@ -1,0 +1,8 @@
+createRoom -id BR1 -capacity 5 -type BasicRoom
+createRoom -id BR2 -capacity 5 -type BasicRoom
+createCharacter -id S1 -type Student
+addCharacterToRoom -ch S1 -r BR1
+addNeighbour -r BR1 -r BR2
+addNeighbour -r BR2 -r BR1
+mergeRooms -r BR1 -r BR2
+list
