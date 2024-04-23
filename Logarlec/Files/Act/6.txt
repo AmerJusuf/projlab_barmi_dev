@@ -1,0 +1,8 @@
+createRoom -r BR1 -capacity 2 -type BasicRoom
+createCharacter -ch S1 -type Student
+addCharacterToRoom -ch S1 -r BR1
+createItem -it LOG1 -type Logarlec
+addItemToRoom -it LOG1 -r BR1
+pickItem -ch S1 -it LOG1
+characterStatus -ch S1
+gameStatus

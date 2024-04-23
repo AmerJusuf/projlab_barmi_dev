@@ -1,0 +1,9 @@
+createRoom -r BR1 -capacity 2 -type BasicRoom
+createRoom -r BR2 -capacity 1 -type BasicRoom
+createCharacter -ch S1 -type Student
+addCharacterToRoom -ch S1 -r BR1
+createCharacter -ch S2 -type Student
+addCharacterToRoom -ch S2 -r BR2
+moveCharacter -ch S1 -r BR2
+roomStatus -r BR1
+roomStatus -r BR2

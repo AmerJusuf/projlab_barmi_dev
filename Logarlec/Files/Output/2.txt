@@ -1,0 +1,41 @@
+createRoom:
+Room: BR1
+Capacity: 2
+Type: BasicRoom
+Result: Successful/Fail
+
+createRoom:
+Room: BR2
+Capacity: 2
+Type: BasicRoom
+Result: Successful/Fail
+
+createCharacter:
+Character: S1
+Type: Student
+Result: Successful/Fail
+
+addCharacterToRoom:
+Character: S1
+Room: BR1
+Result: Successful/Fail
+
+moveCharacter:
+Character: S1
+SourceRoom: IDE KELL AZ HOGY A KARAKTER MELYIK SZOBABAN VAN BR2
+DestRoom: BR2
+Result: Successful/Fail
+
+ID-s:
+Room: BR1
+RoomType: A SZOBA TÍPUSA
+Characters: A SZOBÁBAN LÉVŐ KARAKTEREK ID-ja
+Items: A SZOBÁBAN LÉVŐ ITEMEK ID-ja
+Capacity: A SZOBÁBA KAPACITÁSA
+
+ID-s:
+Room: BR2
+RoomType: A SZOBA TÍPUSA
+Characters: A SZOBÁBAN LÉVŐ KARAKTEREK ID-ja
+Items: A SZOBÁBAN LÉVŐ ITEMEK ID-ja
+Capacity: A SZOBÁBA KAPACITÁSA
