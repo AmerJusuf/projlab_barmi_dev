@@ -1,0 +1,41 @@
+createRoom:
+Room: BR1
+Capacity: 2
+Type: BasicRoom
+Result: Successful
+
+createRoom:
+Room: BR2
+Capacity: 2
+Type: BasicRoom
+Result: Successful
+
+createCharacter:
+Character: S1
+Type: Student
+Result: Successful
+
+addCharacterToRoom:
+Character: S1
+Room: BR1
+Result: Successful
+
+moveCharacter:
+Character: S1
+SourceRoom: BR1
+DestRoom: BR2
+Result: Successful
+
+roomStatus:
+Room: BR1
+RoomType: BasicRoom
+Characters: 
+Items:
+Capacity: 2
+
+roomStatus:
+Room: BR2
+RoomType: BasicRoom
+Characters: S1
+Items:
+Capacity: 2

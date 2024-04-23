@@ -1,0 +1,70 @@
+createLabyrinth:
+Labyrinth: L1
+Result: Successful
+
+createRoom:
+Room: BR1
+Capacity: 3
+Type: BasicRoom
+Result: Successful
+
+createCharacter:
+Character: S1
+Type: Student
+Result: Successful
+
+addCharacterToRoom:
+Character: S1
+Room: BR1
+Result: Successful
+
+createCharacter:
+Character: I1
+Type: Instructor
+Result: Successful
+
+addCharacterToRoom:
+Character: I1
+Room: BR1
+Result: Successful
+
+createCharacter:
+Character: C1
+Type: Cleaner
+Result: Successful
+
+addCharacterToRoom:
+Character: C1
+Room: BR1
+Result: Successful
+
+addCharacterToLabyrinth:
+Labyrinth: L1
+Character:  S1
+Result: Successful
+
+addCharacterToLabyrinth:
+Labyrinth: L1
+Character:  I1
+Result: Successful
+
+addCharacterToLabyrinth:
+Labyrinth: L1
+Character:  C1
+Result: Successful
+
+getCaught:
+Character: S1
+Result: Successful
+
+getCaught:
+Character: I1
+Result: Fail
+
+getCaught:
+Character: C1
+Result: Fail
+
+ID-s:
+BR1
+I1, C1

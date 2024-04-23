@@ -1,0 +1,18 @@
+createRoom -r BR1 -capacity 2 -type BasicRoom
+createCharacter -ch S1 -type Student
+addCharacterToRoom -ch S1 -r BR1
+createItem -it CAM1 -type Camembert
+addItemToCharacter -it CAM1 -ch S1
+createItem -it CAM2 -type Camembert
+addItemToCharacter -it CAM2 -ch S1
+createItem -it CAM3 -type Camembert
+addItemToCharacter -it CAM3 -ch S1
+createItem -it CAM4 -type Camembert
+addItemToCharacter -it CAM4 -ch S1
+createItem -it CAM5 -type Camembert
+addItemToCharacter -it CAM5 -ch S1
+createItem -it CAM6 -type Camembert
+addItemToRoom -it CAM6 -r BR1
+pickItem -ch S1 -it CAM6
+characterStatus -ch S1
+roomStatus -r BR1
