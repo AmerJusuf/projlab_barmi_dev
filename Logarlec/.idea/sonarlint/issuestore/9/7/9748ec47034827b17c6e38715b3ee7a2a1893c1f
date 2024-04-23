@@ -1,15 +1,18 @@
 
-š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìÆ«úÿÿÿÿJ$b253cd9c-036b-48cb-8924-aa0535767cf6
-”
-java:S1450"XRemove the "gameState" field and declare it as a local variable in the relevant methods.( íß…J$67112550-902b-45e1-969f-586836beb0c4
-o
-java:S11728".Remove this unused method parameter "student".(İ©ûÿÿÿÿJ$5bd17848-e3b7-4644-9c39-79659e4492ca
-f	java:S1069"+Replace this use of System.out by a logger.(Ğ¦Á‘J$32105fe4-f26d-40e3-9b87-135bd3cb1ee5
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìÆ«úÿÿÿÿ8éõİé1J$a2d6430e-88f3-46b5-8681-f053568ac8b3
+N
+java:S1135"2Complete the task associated to this TODO comment.(¾îÈj8ŸÉší1
 i
-java:S1068"-Remove this unused "gameState" private field.( íß…J$f819ed87-28aa-4f96-8b48-a0a5061a0ebe
-s
-java:S1068"8Remove this unused "starterNumberOfRooms" private field.(ö¨“GJ$01e7d4cc-e62d-418d-8e2c-ae2ac2014ac4
-h
-java:S1068",Remove this unused "students" private field.(™ÿšJ$9af2a7ef-dd0a-446a-8dfa-b7e278776535
-p
-java:S1068"/Remove this unused "instructors" private field.(Ïì‰§ÿÿÿÿÿJ$acf0ccc2-f71d-43f4-8b4b-37a7baa18692
+java:S3010"&Remove this assignment of "gameState".(§«‹Ö8‡öİé1J$a40046e3-b4ee-4036-938e-b7f4e4270e98
+f
+java:S2119*"Save and re-use this "Random".(šŸ«íøÿÿÿÿ8öİé1J$7dd6b466-8433-48b7-a3dc-31e4c80e3892
+u
+java:S1135D"2Complete the task associated to this TODO comment.(ÀÛÙ„8õ”¢İé1J$d212316f-ada9-4d9f-a3ee-726f8a09eec0
+ƒ	java:S125p"<This block of commented-out lines of code should be removed.(Õ‹ş´ùÿÿÿÿ8Ÿ€Èší1J$4c6113bb-d9e9-4b75-be5d-56fb9533100c
+r	java:S106{"+Replace this use of System.out by a logger.(ıÒÜÈøÿÿÿÿ8•öİé1J$09242fa7-07a2-4ce7-a89a-1bae67f8e37e
+r	java:S106}"+Replace this use of System.out by a logger.(¦ôÜ÷ûÿÿÿÿ8•öİé1J$cbac9c18-0bbe-4e0c-9c0f-7c3f7b5bd235
+n	java:S106"+Replace this use of System.out by a logger.(Ğ¦Á‘8–öİé1J$7e2751bd-f915-4a63-b300-01650c6b0852
+z
+java:S1068"8Remove this unused "starterNumberOfRooms" private field.(ö¨“G8—öİé1J$6b5be199-1045-4503-be7d-d46634885d39
+q
+java:S1068")Remove this unused "items" private field.(ı›‘ÿÿÿÿÿ8¤€Èší1J$f0643f3c-9c0f-4402-9c70-66194a5069ea

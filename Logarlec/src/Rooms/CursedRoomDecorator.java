@@ -48,10 +48,20 @@ public class CursedRoomDecorator extends RoomDecorator{
         }
     }
 
-    public IRoom acceptMerge(MergeRoomsVisitor visitor) {
-        return visitor.visit(this);
+    @Override
+    public IRoom acceptMerge(DecoratorHandlerVisitor visitor) {
+        return visitor.visitForMerge(this);
     }
 
+    @Override
+    public IRoom acceptUnToxicate(DecoratorHandlerVisitor visitor) {
+        return visitor.visitForUnToxicate(this);
+    }
+
+    /**
+     * Splits the room into two, if it is possible.
+     */
+    @Override
     public void splitRoom(){
         if(this.getCharacters().isEmpty()){
 
