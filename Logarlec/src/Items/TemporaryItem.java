@@ -25,4 +25,12 @@ public abstract class TemporaryItem extends Item {
     public void setIsActive(boolean po){
         isActive = po;
     }
+
+    @Override
+    public void step() {
+        if(isActive){
+            decreaseRoundsLeft();
+            System.out.println("Item stepping | TemporaryItem: step()");
+        }
+    }
 }

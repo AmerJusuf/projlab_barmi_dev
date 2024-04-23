@@ -86,7 +86,7 @@ public class Test {
         Student student = new Student(currentRoom);
         System.out.println("Test:");
 
-        student.pickItem(new Logarlec());
+        student.pickItem(new Logarlec(false));
     }
 
     public void instructorCanNotPickLogarlec() {
@@ -96,7 +96,7 @@ public class Test {
         Instructor instructor = new Instructor(currentRoom);
         System.out.println("Test:");
 
-        instructor.pickItem(new Logarlec());
+        instructor.pickItem(new Logarlec(false));
     }
 
     public void TVSZProtectsStudent() {
@@ -104,7 +104,7 @@ public class Test {
         System.out.println("Setup test:");
         BasicRoom currentRoom = new BasicRoom();
         Student student = new Student(currentRoom);
-        TVSZ tvsz = new TVSZ(3);
+        TVSZ tvsz = new TVSZ(false,3);
         student.addItem(tvsz);
         tvsz.setOwner(student);
         System.out.println("Test:");
@@ -117,7 +117,7 @@ public class Test {
         System.out.println("Setup test:");
         BasicRoom currentRoom = new BasicRoom();
         Student student = new Student(currentRoom);
-        TVSZ tvsz = new TVSZ(1);
+        TVSZ tvsz = new TVSZ(false,1);
         student.addItem(tvsz);
         tvsz.setOwner(student);
         System.out.println("Test:");
@@ -159,7 +159,7 @@ public class Test {
         System.out.println("Setup test:");
         BasicRoom currentRoom = new BasicRoom();
         Student student = new Student(currentRoom);
-        TVSZ tvsz = new TVSZ(2);
+        TVSZ tvsz = new TVSZ(false,2);
         student.addItem(tvsz);
         tvsz.setOwner(student);
         System.out.println("Test:");
@@ -192,7 +192,7 @@ public class Test {
         System.out.println("Setup test:");
         BasicRoom currentRoom = new BasicRoom();
         Student student = new Student(currentRoom);
-        FFP2 ffp2 = new FFP2();
+        FFP2 ffp2 = new FFP2(false);
         student.addItem(ffp2);
         ffp2.setOwner(student);
         System.out.println("Test:");

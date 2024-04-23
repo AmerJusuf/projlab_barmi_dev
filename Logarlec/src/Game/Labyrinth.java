@@ -1,5 +1,6 @@
 package Game;
 
+import Characters.Character;
 import Characters.Instructor;
 import Characters.Student;
 import Items.Item;
@@ -141,6 +142,10 @@ public class Labyrinth {
             students.remove(student);
             System.out.println("Student removed from labyrinth | Labyrinth: removeStudent(Student student)");
         }
+    }
+    //szükség lesz rá, mert például a tvsz tulajdonosa hallgató vagy oktató is lehet (a removeStudent helyett)
+    public void removeCharacter(Character character){
+        System.out.println("Character removed from labyrinth | Labyrinth: removeCharacter(Character character)");
     }
 
     public List<IRoom> getRooms() {
