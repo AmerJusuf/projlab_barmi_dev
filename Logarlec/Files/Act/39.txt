@@ -1,0 +1,19 @@
+createRoom -r BR1 -capacity 5 -type BasicRoom
+createRoom -r BR2 -capacity 5 -type BasicRoom
+createCharacter -ch S1 -type Student
+createCharacter -ch C1 -type Cleaner
+addNeighbour -r BR1 -r BR2
+addNeighbour -r BR2 -r BR1
+addCharacterToRoom -ch S1 -r BR2
+addCharacterToRoom -ch C1 -r BR2
+moveCharacter -ch C1 -r BR1
+moveCharacter -ch S1 -r BR1
+moveCharacter -ch S1 -r BR2
+moveCharacter -ch S1 -r BR1
+moveCharacter -ch S1 -r BR2
+moveCharacter -ch S1 -r BR1
+moveCharacter -ch S1 -r BR2
+moveCharacter -ch S1 -r BR1
+moveCharacter -ch S1 -r BR2
+moveCharacter -ch S1 -r BR1
+roomStatus -r BR1

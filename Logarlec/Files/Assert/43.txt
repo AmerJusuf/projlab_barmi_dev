@@ -1,0 +1,33 @@
+createCharacter:
+Character: S1
+Type: Student
+Result: Successful
+
+createItem:
+Item: B1
+Type: Beer
+Fake: false
+Result: Successful
+
+toxicate:
+Character: S1
+Result: Successful
+
+activate:
+Item: B1
+Result: Successful
+
+nextRound:
+
+characterStatus:
+Character: S1
+CharacterType: Student
+Room: 
+Items:
+Toxicated: false
+
+itemStatus:
+Item: B1
+ItemType: Beer
+Owner/Room:
+Fake: false

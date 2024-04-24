@@ -1,0 +1,34 @@
+createRoom:
+Room: BR1
+Capacity: 5
+Type: BasicRoom
+Result: Successful
+
+createRoom:
+Room: PR1
+Capacity: 5
+Type: PoisonedRoom
+Result: Successful
+
+createCharacter:
+Character: C1
+Type: Cleaner
+Result: Successful
+
+addCharacterToRoom:
+Character: C1
+Room: BR1
+Result: Successful
+
+moveCharacter:
+Character: C1
+SourceRoom: BR1
+DestRoom: PR1
+Result: Successful
+
+roomStatus:
+Room: PR1
+RoomType: BasicRoom
+Characters: C1
+Items:
+Capacity: 5
