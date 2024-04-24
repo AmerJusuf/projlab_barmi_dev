@@ -86,7 +86,7 @@ public class Test {
         Student student = new Student(currentRoom);
         System.out.println("Test:");
 
-        student.pickItem(new Logarlec());
+        student.pickItem(new Logarlec(false));
     }
 
     public void instructorCanNotPickLogarlec() {
@@ -96,7 +96,7 @@ public class Test {
         Instructor instructor = new Instructor(currentRoom);
         System.out.println("Test:");
 
-        instructor.pickItem(new Logarlec());
+        instructor.pickItem(new Logarlec(false));
     }
 
     public void TVSZProtectsStudent() {
@@ -104,7 +104,7 @@ public class Test {
         System.out.println("Setup test:");
         BasicRoom currentRoom = new BasicRoom();
         Student student = new Student(currentRoom);
-        TVSZ tvsz = new TVSZ(3);
+        TVSZ tvsz = new TVSZ(false,3);
         student.addItem(tvsz);
         tvsz.setOwner(student);
         System.out.println("Test:");
@@ -117,7 +117,7 @@ public class Test {
         System.out.println("Setup test:");
         BasicRoom currentRoom = new BasicRoom();
         Student student = new Student(currentRoom);
-        TVSZ tvsz = new TVSZ(1);
+        TVSZ tvsz = new TVSZ(false,1);
         student.addItem(tvsz);
         tvsz.setOwner(student);
         System.out.println("Test:");
@@ -159,7 +159,7 @@ public class Test {
         System.out.println("Setup test:");
         BasicRoom currentRoom = new BasicRoom();
         Student student = new Student(currentRoom);
-        TVSZ tvsz = new TVSZ(2);
+        TVSZ tvsz = new TVSZ(false,2);
         student.addItem(tvsz);
         tvsz.setOwner(student);
         System.out.println("Test:");
@@ -192,7 +192,7 @@ public class Test {
         System.out.println("Setup test:");
         BasicRoom currentRoom = new BasicRoom();
         Student student = new Student(currentRoom);
-        FFP2 ffp2 = new FFP2();
+        FFP2 ffp2 = new FFP2(false);
         student.addItem(ffp2);
         ffp2.setOwner(student);
         System.out.println("Test:");
@@ -404,12 +404,11 @@ public class Test {
         labyrinth.addRoom(room2);
         System.out.println("Test:");
 
-        MergeRoomsVisitor visitor = new MergeRoomsVisitor(room1);
-        IRoom mergedRoom =  room2.acceptMerge(visitor);
+        room1.mergeRooms(room2);
 
         //Print for test:
         System.out.println("Print merged room type:");
-        IRoom iterator = mergedRoom;
+        IRoom iterator = room1.getLabyrinth().getRooms().get(0);
         while(iterator != null){
             System.out.print("RoomType: " + iterator.getClass() + " | ");
             iterator = iterator.getChild();
@@ -428,8 +427,7 @@ public class Test {
         labyrinth.addRoom(room2);
         System.out.println("Test:");
 
-        MergeRoomsVisitor visitor = new MergeRoomsVisitor(room1);
-        room2.acceptMerge(visitor);
+        room1.mergeRooms(room2);
     }
 
     public void splitRoom() {
@@ -536,4 +534,49 @@ public class Test {
 
         student.getCaught();
     }
+
+
+    public void untoxicateRoomSuccess() {
+        System.out.println("Testing merge rooms success:");
+        System.out.println("Merging a PoisonedRoomDecorator and a CursedRoomDecorator.");
+        System.out.println("Setup test:");
+        Labyrinth labyrinth = new Labyrinth();
+        IRoom room = new PoisonedRoomDecorator(new StickyRoomDecorator(new BasicRoom()));
+        room.setCapacity(7);
+        room.setLabyrinth(labyrinth);
+        labyrinth.addRoom(room);
+
+        System.out.println("Test:");
+        room.unToxicate();
+        System.out.println(labyrinth.getRooms().size());
+        //Print for test:
+        System.out.println("Print merged room type:");
+        IRoom iterator = labyrinth.getRooms().get(0);
+        while(iterator != null){
+            System.out.print("RoomType: " + iterator.getClass() + " | ");
+            iterator = iterator.getChild();
+        }
+    }
+
+    public void makeSticky() {
+        System.out.println("Testing make sticky:");
+        System.out.println("Setup test:");
+        Labyrinth labyrinth = new Labyrinth();
+        IRoom room = new PoisonedRoomDecorator(new CursedRoomDecorator(new BasicRoom()));
+        room.setCapacity(7);
+        room.setLabyrinth(labyrinth);
+        labyrinth.addRoom(room);
+
+        System.out.println("Test:");
+        room.makeSticky();
+        System.out.println(labyrinth.getRooms().size());
+        //Print for test:
+        System.out.println("Print makeSticky room type:");
+        IRoom iterator = labyrinth.getRooms().getFirst();
+        while(iterator != null){
+            System.out.print("RoomType: " + iterator.getClass() + " | ");
+            iterator = iterator.getChild();
+        }
+    }
+
 }

@@ -1,6 +1,8 @@
 package Rooms;
 
 import Characters.Character;
+import Characters.Instructor;
+import Characters.Student;
 import Game.Labyrinth;
 import Items.Item;
 
@@ -13,8 +15,6 @@ public abstract class RoomDecorator implements IRoom{
     protected RoomDecorator(IRoom decoratedRoom){
         this.decoratedRoom = decoratedRoom;
     }
-
-    public abstract void decorate();
 
     @Override
     public void addCharacter(Character ch){
@@ -76,6 +76,16 @@ public abstract class RoomDecorator implements IRoom{
     }
 
     @Override
+    public void acceptPickByStudent(Student st, Item item){
+        decoratedRoom.acceptPickByStudent(st, item);
+    }
+
+    @Override
+    public void acceptPickByInstructor(Instructor inst, Item item){
+        decoratedRoom.acceptPickByInstructor(inst, item);
+    }
+
+    @Override
     public boolean acceptCharacter(Character ch){
         return decoratedRoom.acceptCharacter(ch);
     }
@@ -111,6 +121,11 @@ public abstract class RoomDecorator implements IRoom{
     }
 
     @Override
+    public void makeSticky() {
+        decoratedRoom.makeSticky();
+    }
+
+    @Override
     public List<Item> getItems(){
         return decoratedRoom.getItems();
     }
@@ -120,7 +135,38 @@ public abstract class RoomDecorator implements IRoom{
         return decoratedRoom.getDecoratedRoom();
     }
 
+    @Override
     public IRoom getChild(){
         return decoratedRoom;
     }
+
+    @Override
+    public void unToxicate(){
+        BasicRoom basicRoom = new BasicRoom();
+        basicRoom.setCapacity(this.getCapacity());
+        basicRoom.setItems(this.getItems());
+        basicRoom.setNeighbours(this.getNeighbours());
+        for(Character ch : this.getCharacters()){
+            basicRoom.addCharacter(ch);
+        }
+
+        DecoratorHandlerVisitor visitor = new DecoratorHandlerVisitor(basicRoom);
+        IRoom newUntoxicatedRoom = acceptUnToxicate(visitor);
+
+        visitor.handleNeighboursWhenReplacing(this, newUntoxicatedRoom);
+        getLabyrinth().replaceRooms(this, newUntoxicatedRoom);
+    }
+
+    @Override
+    public void mergeRooms(IRoom room){
+        DecoratorHandlerVisitor visitor = new DecoratorHandlerVisitor(room);
+        IRoom newMergedRoom = acceptMerge(visitor);
+
+        visitor.handleNeighboursWhenReplacing(this, newMergedRoom);
+        visitor.handleNeighboursWhenReplacing(room, newMergedRoom);
+        getLabyrinth().replaceRooms(this, newMergedRoom);
+        getLabyrinth().getRooms().remove(room);
+    }
+
+
 }

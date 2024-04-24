@@ -10,8 +10,8 @@ public class PoisonedRoomDecorator extends RoomDecorator{
     }
 
     /**
-     * If this room hasn't been cleaned previously, it poisons the character
-     * @param ch character to be poisoned
+     * Toxicate the character
+     * @param ch the character to toxicate
      */
     public void toxicate(Character ch){
         if(!cleaned){
@@ -20,8 +20,10 @@ public class PoisonedRoomDecorator extends RoomDecorator{
         }
     }
 
-
-
+    /**
+     * Splits the room into two rooms, the new room will be a PoisonedRoomDecorator
+     */
+    @Override
     public void splitRoom(){
         if(this.getCharacters().isEmpty()){
 
@@ -51,8 +53,14 @@ public class PoisonedRoomDecorator extends RoomDecorator{
         }
     }
 
-    public IRoom acceptMerge(MergeRoomsVisitor visitor) {
-        return visitor.visit(this);
+    @Override
+    public IRoom acceptMerge(DecoratorHandlerVisitor visitor) {
+        return visitor.visitForMerge(this);
+    }
+
+    @Override
+    public IRoom acceptUnToxicate(DecoratorHandlerVisitor visitor) {
+        return visitor.visitForUnToxicate(this);
     }
 
     /**
