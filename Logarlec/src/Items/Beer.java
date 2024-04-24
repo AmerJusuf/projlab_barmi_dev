@@ -1,7 +1,11 @@
 package Items;
 
 public class Beer extends TemporaryItem {
-    public Beer() {
+    public Beer(boolean isFake) {
+        super(isFake);
+    }
+
+    public Beer(){
         super();
     }
 

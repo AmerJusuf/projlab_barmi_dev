@@ -15,6 +15,11 @@ public class Cleaner extends Character{
         super(currentRoom);
     }
 
+
+    public Cleaner(){
+        super();
+    }
+
     /**
      * This method is used to pick an item.
      * The cleaner however, can't pick up items, so it does nothing.
