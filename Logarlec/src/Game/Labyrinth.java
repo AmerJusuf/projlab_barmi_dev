@@ -1,6 +1,7 @@
 package Game;
 
 import Characters.Character;
+import Characters.Cleaner;
 import Characters.Instructor;
 import Characters.Student;
 import Items.Item;
@@ -17,7 +18,7 @@ public class Labyrinth {
     private List<Student> students;
     private List<Instructor> instructors;
 
-    //private List<Cleaner> cleaners; todo
+    private List<Cleaner> cleaners;
 
     private List<Item> items;
 
@@ -155,5 +156,21 @@ public class Labyrinth {
     public void replaceRooms(IRoom roomToRemove, IRoom roomToAdd) {
         rooms.remove(roomToRemove);
         rooms.add(roomToAdd);
+    }
+
+    public void addStudent(Student ch) {
+        students.add(ch);
+    }
+
+    public void addInstructor(Instructor ch) {
+        instructors.add(ch);
+    }
+
+    public void addCleaner(Cleaner ch) {
+        cleaners.add(ch);
+    }
+
+    public void addItem(Item it) {
+        items.add(it);
     }
 }

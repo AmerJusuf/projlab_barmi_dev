@@ -17,6 +17,10 @@ public class Instructor extends Character{
         super(currentRoom);
     }
 
+    public Instructor(){
+        super();
+    }
+
     /**
      * This method is used to pick an item.
      * It checks if the item is not null and if the instructor has less than 5 items.

@@ -4,9 +4,14 @@ public abstract class TemporaryItem extends Item {
     protected int roundsLeft;
     protected boolean isActive;
 
+    public TemporaryItem(boolean isFake) {
+        super(isFake);
+        roundsLeft = 3;
+        isActive = false;
+    }
+
     protected TemporaryItem() {
         super();
-        // nem tudom ide mi kellene
         roundsLeft = 3;
         isActive = false;
     }

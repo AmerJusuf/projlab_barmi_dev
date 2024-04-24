@@ -1,9 +1,8 @@
 package Items;
 
 public class FFP2 extends TemporaryItem {
-    public FFP2(boolean fake) {
-        super();
-        isFake = fake;
+    public FFP2(boolean isFake) {
+        super(isFake);
     }
 
     @Override

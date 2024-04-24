@@ -18,6 +18,11 @@ public abstract class Character {
         this.isPoisoned = false;
     }
 
+    public Character(){
+        this.items = new ArrayList<>();
+        this.isPoisoned = false;
+    }
+
     /** This method is used to move the character to the next room.
      * It checks if the next room is a neighbour of the current room.
      * If it is, it tries to move the character to the next room.

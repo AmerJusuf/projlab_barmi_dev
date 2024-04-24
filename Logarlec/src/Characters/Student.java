@@ -14,6 +14,11 @@ public class Student extends Character{
         super(currentRoom);
     }
 
+
+    public Student(){
+        super();
+    }
+
     /**
      * This method is used to pick an item.
      * It checks if the item is not null and if the student has less than 5 items.
