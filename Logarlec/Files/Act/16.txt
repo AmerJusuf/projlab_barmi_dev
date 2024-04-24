@@ -1,0 +1,5 @@
+createCharacter -ch S1 -type Student
+createRoom -r BR1 -capacity 5 -type BasicRoom
+addCharacterToRoom -ch S1 -r BR1
+disable -ch S1
+characterStatus -ch S1
