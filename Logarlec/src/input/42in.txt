@@ -1,5 +1,0 @@
-createRoom -id BR1 -capacity 5 -type BasicRoom
-createCharacter -id S1 -type Student
-addCharacterToRoom -ch S1 -r BR1
-splitRoom -r BR1
-list

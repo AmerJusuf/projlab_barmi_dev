@@ -1,6 +1,6 @@
-createRoom -id BR1 -capacity 5 -type BasicRoom
-createCharacter -id S1 -type Student
-createItem -id TVSZ1 -type TVSZ -life 2
+createRoom -r BR1 -capacity 5 -type BasicRoom
+createCharacter -ch S1 -type Student
+createItem -it TVSZ1 -type TVSZ -life 2
 addItemToRoom -it TVSZ1 -r BR1
 addCharacterToRoom -ch S1 -r BR1
 makeSticky -r BR1

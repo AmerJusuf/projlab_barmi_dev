@@ -1,11 +1,11 @@
-createRoom -id BR1 -capacity 5 -type BasicRoom
-createRoom -id BR2 -capacity 5 -type BasicRoom
-createRoom -id BR3 -capacity 5 -type BasicRoom
-createRoom -id BR4 -capacity 5 -type BasicRoom
-createRoom -id BR5 -capacity 5 -type BasicRoom
-createRoom -id BR6 -capacity 5 -type BasicRoom
-createRoom -id BR7 -capacity 5 -type BasicRoom
-createRoom -id BR8 -capacity 5 -type BasicRoom
+createRoom -r BR1 -capacity 5 -type BasicRoom
+createRoom -r BR2 -capacity 5 -type BasicRoom
+createRoom -r BR3 -capacity 5 -type BasicRoom
+createRoom -r BR4 -capacity 5 -type BasicRoom
+createRoom -r BR5 -capacity 5 -type BasicRoom
+createRoom -r BR6 -capacity 5 -type BasicRoom
+createRoom -r BR7 -capacity 5 -type BasicRoom
+createRoom -r BR8 -capacity 5 -type BasicRoom
 addNeighbour -r BR1 -r BR2
 addNeighbour -r BR2 -r BR1
 addNeighbour -r BR2 -r BR3
@@ -28,10 +28,10 @@ addNeighbour -r BR7 -r BR8
 addNeighbour -r BR8 -r BR7
 createCharacter -id I1 -type Instructor
 createCharacter -id S1 -type Student
-createItem -id TVSZ1 -type TVSZ -life 1
-createItem -id FFP21 -type FPP2
-createItem -id LOG1 -type Logarlec
-addItemToCharacter -it TVSZ -ch S1
+createItem -it TVSZ1 -type TVSZ -life 1
+createItem -it FFP21 -type FPP2
+createItem -it LOG1 -type Logarlec
+addItemToCharacter -it TVSZ1 -ch S1
 addItemToRoom -it FFP21 -r BR2
 addItemToRoom -it LOG1 -r BR3
 addCharacterToRoom -ch I1 -r BR1
