@@ -1,0 +1,8 @@
+createRoom -r BR1 -capacity 2 -type BasicRoom
+createCharacter -ch S1 -type Student
+addCharacterToRoom -ch S1 -r BR1
+createItem -it CAM1 -type Camembert
+addItemToRoom -it CAM1 -r BR1
+pickItem -ch S1 -it CAM1
+characterStatus -ch S1
+roomStatus -r BR1

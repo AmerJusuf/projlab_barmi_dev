@@ -123,6 +123,12 @@ public class Main {
             case 35:
                 test.ragProtectsStudent();
                 break;
+            case 36:
+                test.untoxicateRoomSuccess();
+                break;
+            case 37:
+                test.makeSticky();
+                break;
             default:
                 break;
         }
@@ -169,6 +175,8 @@ public class Main {
         System.out.println("33# Rag Stuns Instructor");
         System.out.println("34# Beer Protects Student");
         System.out.println("35# Rag Protects Student");
+        System.out.println("36# UntoxicateRoom Success");
+        System.out.println("37# MakeSticky");
     }
 
 }

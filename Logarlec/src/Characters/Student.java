@@ -24,7 +24,7 @@ public class Student extends Character{
     public void pickItem(Item item) {
         System.out.println("Student picks item | Student: pickItem(Item item)");
         if (item != null && items.size() < 5) {
-            item.pickedByStudent(this);
+            currentRoom.acceptPickByStudent(this, item);
         }
     }
 
@@ -54,5 +54,10 @@ public class Student extends Character{
         this.dropAllItem();
         currentRoom.removeCharacter(this);
         currentRoom.getLabyrinth().removeStudent(this);
+    }
+
+    @Override
+    public void nextRound() {
+        System.out.println("Student next round | Student: nextRound()");
     }
 }

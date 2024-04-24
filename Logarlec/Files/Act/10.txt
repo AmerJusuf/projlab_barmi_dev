@@ -1,0 +1,9 @@
+createRoom -r BR1 -capacity 2 -type BasicRoom
+createCharacter -ch S1 -type Student
+addCharacterToRoom -ch S1 -r BR1
+createItem -it CAM1 -type Camembert
+addItemToCharacter -it CAM1 -ch S1
+createItem -it TVSZ1 -type TVSZ
+addItemToCharacter -it TVSZ1 -ch S1
+openCamembert -it CAM1
+characterStatus -ch S1

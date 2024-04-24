@@ -27,7 +27,7 @@ public class Instructor extends Character{
     public void pickItem(Item item){
         System.out.println("Instructor picks item | Instructor: pickItem(Item item)");
         if(item != null && items.size() < 5){
-            item.pickedByInstructor(this);
+            currentRoom.acceptPickByInstructor(this, item);
         }
     }
 
@@ -59,6 +59,10 @@ public class Instructor extends Character{
         for(Character character: characters){
            character.getCaught();
         }
+    }
+
+    public void nextRound(){
+        System.out.println("Instructor next round | Instructor: nextRound()");
     }
 
 }
