@@ -1,11 +1,15 @@
 package TestLogic;
 
 import Characters.Character;
+import Characters.Cleaner;
 import Characters.Instructor;
 import Characters.Student;
 import Game.Labyrinth;
-import Items.Item;
+import Items.*;
+import Rooms.BasicRoom;
 import Rooms.IRoom;
+import Rooms.PoisonedRoomDecorator;
+import Rooms.StickyRoomDecorator;
 
 import java.io.*;
 import java.util.HashMap;
@@ -14,13 +18,14 @@ import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import static com.sun.org.apache.bcel.internal.Repository.instanceOf;
+
 
 public class TestLogic {
 
     private static final Map<String, Pattern> commandPatterns = new HashMap<>();
 
     static {
+        //JUSUF
         commandPatterns.put("loadMap", Pattern.compile("loadMap\\s+-file\\s+(\\S+)"));              // NINCS IMPLEMENTÁLVA
         commandPatterns.put("createLabyrinth", Pattern.compile("createLabyrinth\\s+-id\\s+(\\S+)"));
         commandPatterns.put("addCharacterToLabyrinth", Pattern.compile("addCharacterToLabyrinth\\s+-lab\\s+(\\S+)\\s+-ch\\s+(\\S+)"));
@@ -45,29 +50,37 @@ public class TestLogic {
         commandPatterns.put("openCamembert", Pattern.compile("openCamembert\\s+-it\\s+(\\S+)"));
         commandPatterns.put("unToxicateRoomAirFreshener", Pattern.compile("unToxicateRoomAirFreshener\\s+-it\\s+(\\S+)"));
         commandPatterns.put("activate", Pattern.compile("activate\\s+-it\\s+(\\S+)"));
+        //JUSUF VEGE
 
-
+        //VIGYETEK
         commandPatterns.put("createTransistor", Pattern.compile("createTransistor\\s+-it\\s+(\\S+)(\\s+-active)?(\\s+-paired)?"));
         commandPatterns.put("setPairTransistor", Pattern.compile("setPairTransistor\\s+-it\\s+(\\S+)\\s+-it\\s+(\\S+)"));
         commandPatterns.put("placeTransistor", Pattern.compile("placeTransistor\\s+-it\\s+(\\S+)"));
         commandPatterns.put("switchTransistor", Pattern.compile("switchTransistor\\s+-it\\s+(\\S+)"));
+        //VIGYETEK VEGE
 
+
+        //JUSUF
         commandPatterns.put("addNeighbour", Pattern.compile("addNeighbour\\s+-r\\s+(\\S+)\\s+-r\\s+(\\S+)"));
         commandPatterns.put("mergeRooms", Pattern.compile("mergeRooms\\s+-r\\s+(\\S+)\\s+-r\\s+(\\S+)"));
         commandPatterns.put("splitRoom", Pattern.compile("splitRoom\\s+-r\\s+(\\S+)"));
         commandPatterns.put("getNeighbours", Pattern.compile("getNeighbours\\s+-r\\s+(\\S+)"));
         commandPatterns.put("makeSticky", Pattern.compile("makeSticky\\s+-r\\s+(\\S+)"));
+        //JUSUF VEGE
 
+
+        //VIGYETEK
         commandPatterns.put("list", Pattern.compile("list"));
         commandPatterns.put("roomStatus", Pattern.compile("roomStatus\\s+-r\\s+(\\S+)"));
         commandPatterns.put("characterStatus", Pattern.compile("characterStatus\\s+-ch\\s+(\\S+)"));
         commandPatterns.put("itemStatus", Pattern.compile("itemStatus\\s+-it\\s+(\\S+)"));
 
+
         commandPatterns.put("gameStatus", Pattern.compile("gameStatus"));
         commandPatterns.put("nextRound", Pattern.compile("nextRound"));
         commandPatterns.put("skipTurn", Pattern.compile("skipTurn"));
         commandPatterns.put("startGame", Pattern.compile("startGame"));
-
+        //VIGYETEK VEGE
 
 
         // AZ ELEJÉN A              loadMap NINCS IMPLEMENTÁLVA
@@ -187,7 +200,7 @@ public class TestLogic {
 
 
     //Celszeru masik osztalyba, de felolem maradhat (A.J)
-    private static Map<Integer, Labyrinth> labyrinthMap = new HashMap<>();
+    private static Labyrinth labyrinth;
     private static Map<Integer, Character> charactersMap = new HashMap<>();
 
     private static Map<Integer, IRoom> roomsMap = new HashMap<>();
@@ -215,27 +228,26 @@ public class TestLogic {
                 switch (commandName) {
                     case "loadMap":
                         String fileName = matcher.group(1);
-
+                        //TODO
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("file: ").append(fileName).append("\n");
                         outputBuilder.append("Result: Successful/Fail").append("\n");
-
                         break;
+
                     case "createLabyrinth":
                         labyrinthId = matcher.group(1);
 
-                        labyrinthMap.put(Integer.parseInt(labyrinthId), new Labyrinth());
+                        labyrinth = new Labyrinth();
 
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Labyrinth: ").append(labyrinthId).append("\n");
                         outputBuilder.append("Result: Successful").append("\n");
-
                         break;
+
                     case "addCharacterToLabyrinth":
                         labyrinthId = matcher.group(1);
                         characterId = matcher.group(2);
 
-                        Labyrinth labyrinth = labyrinthMap.get(Integer.parseInt(labyrinthId));
                         Character ch = charactersMap.get(Integer.parseInt(characterId));
                         if(ch instanceof Student) {
                             labyrinth.addStudent((Student) ch);
@@ -243,44 +255,59 @@ public class TestLogic {
                             labyrinth.addInstructor((Instructor) ch);
                         } else if( ch instanceof Cleaner) {
                             labyrinth.addCleaner((Cleaner) ch);
+                        } else {
+                            throw new RuntimeException("Invalid character id");
                         }
 
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Labyrinth: ").append(labyrinthId).append("\n");
                         outputBuilder.append("Character: ").append(characterId).append("\n");
-                        outputBuilder.append("Result: Successful/Fail").append("\n");
-
+                        outputBuilder.append("Result: Successful").append("\n");
                         break;
+
                     case "addItemToCharacter":
                         itemId = matcher.group(1);
                         characterId = matcher.group(2);
 
+                        Character character = charactersMap.get(Integer.parseInt(characterId));
+                        Item item = itemsMap.get(Integer.parseInt(itemId));
+                        character.addItem(item);
+                        labyrinth.addItem(item); // Kell ha pl. nextRoundot is akarunk ellenőrizni (Ne kelljen +1 addItemToLab)
+
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Item: ").append(itemId).append("\n");
                         outputBuilder.append("Character: ").append(characterId).append("\n");
-                        outputBuilder.append("Result: Successful/Fail").append("\n");
-
+                        outputBuilder.append("Result: Successful").append("\n");
                         break;
+
                     case "addItemToRoom":
                         itemId = matcher.group(1);
                         roomId = matcher.group(2);
 
+                        Item itemToAdd = itemsMap.get(Integer.parseInt(itemId));
+                        IRoom room = roomsMap.get(Integer.parseInt(roomId));
+                        room.addItem(itemToAdd);
+
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Item: ").append(itemId).append("\n");
                         outputBuilder.append("Room: ").append(roomId).append("\n");
-                        outputBuilder.append("Result: Successful/Fail").append("\n");
-
+                        outputBuilder.append("Result: Successful").append("\n");
                         break;
+
                     case "addCharacterToRoom":
                         String charId = matcher.group(1);
-                        String roomToAdd = matcher.group(2);
+                        String roomID = matcher.group(2);
+
+                        Character characterToAdd = charactersMap.get(Integer.parseInt(charId));
+                        IRoom roomToAdd = roomsMap.get(Integer.parseInt(roomID));
+                        roomToAdd.addCharacter(characterToAdd);
 
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Character: ").append(charId).append("\n");
-                        outputBuilder.append("Room: ").append(roomToAdd).append("\n");
-                        outputBuilder.append("Result: Successful/Fail").append("\n");
-
+                        outputBuilder.append("Room: ").append(roomID).append("\n");
+                        outputBuilder.append("Result: Successful").append("\n");
                         break;
+
                     case "createRoom":
                         roomId = matcher.group(1);
                         int capacity = Integer.parseInt(matcher.group(2));
@@ -290,13 +317,21 @@ public class TestLogic {
                         else
                             roomType = matcher.group(4);
 
+                        if(roomType.equalsIgnoreCase("PoisonedRoom")) {
+                            roomsMap.put(Integer.parseInt(roomId), new PoisonedRoomDecorator(new BasicRoom(capacity)));
+                        } else if(roomType.equalsIgnoreCase("StickyRoom")) {
+                            roomsMap.put(Integer.parseInt(roomId), new StickyRoomDecorator(new BasicRoom(capacity)));
+                        } else {
+                            roomsMap.put(Integer.parseInt(roomId), new BasicRoom(capacity));
+                        }
+
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Room: ").append(roomId).append("\n");
                         outputBuilder.append("Capacity: ").append(capacity).append("\n");
                         outputBuilder.append("Type: ").append(roomType).append("\n");
-                        outputBuilder.append("Result: Successful/Fail").append("\n");
-
+                        outputBuilder.append("Result: Successful").append("\n");
                         break;
+
                     case "createCharacter":
                         characterId = matcher.group(1);
                         String characterType;
@@ -305,20 +340,31 @@ public class TestLogic {
                         else
                             characterType = matcher.group(3);
 
+                       if(characterType.equalsIgnoreCase("Instructor")) {
+                            charactersMap.put(Integer.parseInt(characterId), new Instructor());
+                        } else if(characterType.equalsIgnoreCase("Cleaner")) {
+                            charactersMap.put(Integer.parseInt(characterId), new Cleaner());
+                        } else {
+                            charactersMap.put(Integer.parseInt(characterId), new Student());
+                        }
+
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Character: ").append(characterId).append("\n");
                         outputBuilder.append("Type: ").append(characterType).append("\n");
-                        outputBuilder.append("Result: Successful/Fail").append("\n");
+                        outputBuilder.append("Result: Successful").append("\n");
 
                         break;
                     case "addRoomToLabyrinth":
                         labyrinthId = matcher.group(1);
                         roomId = matcher.group(2);
 
+                        IRoom iroom = roomsMap.get(Integer.parseInt(roomId));
+                        labyrinth.addRoom(iroom);
+
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Labyrinth: ").append(labyrinthId).append("\n");
                         outputBuilder.append("Room: ").append(roomId).append("\n");
-                        outputBuilder.append("Result: Successful/Fail").append("\n");
+                        outputBuilder.append("Result: Successful").append("\n");
 
                         break;
                     case "createItem":
@@ -333,6 +379,26 @@ public class TestLogic {
                         if (matcher.group(3) != null)
                             life = Integer.parseInt(matcher.group(3));
 
+                        if(itemType.equalsIgnoreCase("TVSZ")) {
+                            itemsMap.put(Integer.parseInt(itemId), new TVSZ(fake, life));
+                        } else if(itemType.equalsIgnoreCase("AirFreshener")) {
+                            itemsMap.put(Integer.parseInt(itemId), new AirFreshener(fake));
+                        } else if(itemType.equalsIgnoreCase("Camembert")) {
+                            itemsMap.put(Integer.parseInt(itemId), new Camembert(fake));
+                        } else if(itemType.equalsIgnoreCase("Transistor")) {
+                            itemsMap.put(Integer.parseInt(itemId), new Transistor(fake));
+                        } else if (itemType.equalsIgnoreCase("Logarlec")) {
+                            itemsMap.put(Integer.parseInt(itemId), new Logarlec(fake));
+                        } else if(itemType.equalsIgnoreCase("FFP2")){
+                            itemsMap.put(Integer.parseInt(itemId), new FFP2(fake));
+                        } else if(itemType.equalsIgnoreCase("Beer")){
+                            itemsMap.put(Integer.parseInt(itemId), new Beer(fake));
+                        } else if(itemType.equalsIgnoreCase("Rag")){
+                            itemsMap.put(Integer.parseInt(itemId), new Rag(fake));
+                        } else {
+                            throw new RuntimeException("Invalid item ID");
+                        }
+
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Item: ").append(itemId).append("\n");
                         outputBuilder.append("Type: ").append(itemType).append("\n");
@@ -340,8 +406,8 @@ public class TestLogic {
                         if (itemType.equals("TVSZ")) {
                             outputBuilder.append("Life: ").append(life).append("\n");
                         }
-                        outputBuilder.append("Result: Successful/Fail").append("\n");
-
+                        outputBuilder.append("Result: Successful").append("\n");
+                        //TODO: doksiba mashogy van idk mit beszéltetek azota (A.J)
                         break;
                     case "moveCharacter":
                         characterId = matcher.group(1);
@@ -351,7 +417,7 @@ public class TestLogic {
                         outputBuilder.append("Character: ").append(characterId).append("\n");
                         outputBuilder.append("SourceRoom: IDE KELL AZ HOGY A KARAKTER MELYIK SZOBABAN VAN ").append(roomToMove).append("\n");
                         outputBuilder.append("DestRoom: ").append(roomToMove).append("\n");
-                        outputBuilder.append("Result: Successful/Fail").append("\n");
+                        outputBuilder.append("Result: Successful").append("\n");
 
                         break;
                     case "pickItem":

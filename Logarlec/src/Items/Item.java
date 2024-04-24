@@ -8,6 +8,16 @@ public abstract class Item {
     protected Character owner;
     protected boolean isFake;
 
+    Item(){
+        this.owner = null;
+        this.isFake = false;
+    }
+
+    Item(boolean isFake){
+        this.owner = null;
+        this.isFake = isFake;
+    }
+
     /**
      * This method is used to indicate that the item was picked by a student.
      * It sets the owner of the item to the specified student and adds the item to the student's collection.

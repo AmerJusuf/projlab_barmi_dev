@@ -7,6 +7,13 @@ public class Transistor extends Item{
     private boolean isTurnedOn;
     Transistor pairTransistor;
     protected IRoom placeLocation;
+
+    public Transistor(boolean isFake){
+        super(isFake);
+        isTurnedOn = false;
+        pairTransistor = null;
+    }
+
     public Transistor() {
         super();
         isTurnedOn = false;

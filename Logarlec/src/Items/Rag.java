@@ -10,6 +10,9 @@ public class Rag extends TemporaryItem {
         super();
     }
 
+    public Rag(boolean isFake) {
+        super(isFake);
+    }
     @Override
     public boolean protectStudent() {
         System.out.println("Rag protects student | Rag: protectStudent()");

@@ -1,12 +1,16 @@
 
-š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(† âöûÿÿÿÿJ$03ff63bc-2087-4a1b-adb5-0c6af0067830
-z
-java:S5993"9Change the visibility of this constructor to "protected".(²ËƒêıÿÿÿÿJ$60cb170b-16fd-46db-be0b-76fbfacf5629
-k	java:S106"+Replace this use of System.out by a logger.(°ŸÉÂüÿÿÿÿJ$26796f4d-4e94-4d1d-be19-b12adfde69a1
-f	java:S106/"+Replace this use of System.out by a logger.(ßíÛÑJ$b3635226-0f8c-4915-ac9b-737a916bb451
-f	java:S1069"+Replace this use of System.out by a logger.(©Ç£¨J$9b8a9405-0903-439a-bbcf-0354d935b650
-r	java:S106Y"+Replace this use of System.out by a logger.(Ù÷ıÿÿÿÿ8ëéœëæ1J$518ee9b7-a66e-4707-8c60-b5ad6e10b9e3
-m	java:S106d"+Replace this use of System.out by a logger.(ã•ùÀ8ìéœëæ1J$b06e8ff2-38c1-44ab-a76f-ffa39db979d5
-m	java:S106‹"+Replace this use of System.out by a logger.(¨ŞÛA8ÊÄ—í1J$81d8d23e-ceec-44b5-9ad1-06c80e524951
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(† âöûÿÿÿÿ8¹¬‹ñ1J$8ecc14cb-58f0-45ea-b8bc-112237ed08f5
+
+java:S5993"9Change the visibility of this constructor to "protected".(²Ëƒêıÿÿÿÿ8Â¬‹ñ1J$a36e259a-a501-4459-9c0e-d8af8b0b36f9
+|
+java:S5993"9Change the visibility of this constructor to "protected".(ï·Ù€8óÕ¸ñ1J$81686d82-c5a9-4a6f-957c-9f546248845d
+r	java:S106""+Replace this use of System.out by a logger.(°ŸÉÂüÿÿÿÿ8Æ¬‹ñ1J$8e142d96-1a51-414b-9c72-e420c3beec4f
+m	java:S1064"+Replace this use of System.out by a logger.(ßíÛÑ8Ç¬‹ñ1J$b425048d-7eac-48a9-a73b-596d8410cc22
+m	java:S106>"+Replace this use of System.out by a logger.(©Ç£¨8È¬‹ñ1J$7c0c965d-1df1-44aa-b81b-5c064a8fa6e4
+r	java:S106^"+Replace this use of System.out by a logger.(Ù÷ıÿÿÿÿ8Ê¬‹ñ1J$166a191f-31d6-48b7-b979-b51eaacdd74d
+m	java:S106i"+Replace this use of System.out by a logger.(ã•ùÀ8Ê¬‹ñ1J$bd509248-f7ca-48d5-bf8d-e26b3147063c
+{
+java:S1135€"2Complete the task associated to this TODO comment.(šğáøÿÿÿÿ8Ì¬‹ñ1J$55bfb3eb-0fc3-4e98-874d-f394ac5df1cf
+m	java:S106”"+Replace this use of System.out by a logger.(¨ŞÛA8Ì¬‹ñ1J$b2dc0c75-0cfb-47e1-904b-8b9bce6c2cab
 t
-java:S1128",Remove this unused import 'Rooms.BasicRoom'.(Çêê½ÿÿÿÿÿ8‘ÊÄ—í1J$d7f17951-0cac-4ef0-8926-6bbec45e999f
+java:S1128",Remove this unused import 'Rooms.BasicRoom'.(Çêê½ÿÿÿÿÿ8Í¬‹ñ1J$56287039-25af-43d3-976d-35ca9d85f823
