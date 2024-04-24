@@ -1,9 +1,20 @@
+package TestLogic;
+
+import Characters.Character;
+import Characters.Instructor;
+import Characters.Student;
+import Game.Labyrinth;
+import Items.Item;
+import Rooms.IRoom;
+
 import java.io.*;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import static com.sun.org.apache.bcel.internal.Repository.instanceOf;
 
 public class TestLogic {
 
@@ -175,6 +186,16 @@ public class TestLogic {
     }
 
 
+    //Celszeru masik osztalyba, de felolem maradhat (A.J)
+    private static Map<Integer, Labyrinth> labyrinthMap = new HashMap<>();
+    private static Map<Integer, Character> charactersMap = new HashMap<>();
+
+    private static Map<Integer, IRoom> roomsMap = new HashMap<>();
+
+    private static Map<Integer, Item> itemsMap = new HashMap<>();
+
+
+
     public static String processCommand(String inputCommand) {
         StringBuilder outputBuilder = new StringBuilder();
 
@@ -203,14 +224,26 @@ public class TestLogic {
                     case "createLabyrinth":
                         labyrinthId = matcher.group(1);
 
+                        labyrinthMap.put(Integer.parseInt(labyrinthId), new Labyrinth());
+
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Labyrinth: ").append(labyrinthId).append("\n");
-                        outputBuilder.append("Result: Successful/Fail").append("\n");
+                        outputBuilder.append("Result: Successful").append("\n");
 
                         break;
                     case "addCharacterToLabyrinth":
                         labyrinthId = matcher.group(1);
                         characterId = matcher.group(2);
+
+                        Labyrinth labyrinth = labyrinthMap.get(Integer.parseInt(labyrinthId));
+                        Character ch = charactersMap.get(Integer.parseInt(characterId));
+                        if(ch instanceof Student) {
+                            labyrinth.addStudent((Student) ch);
+                        } else if( ch instanceof Instructor) {
+                            labyrinth.addInstructor((Instructor) ch);
+                        } else if( ch instanceof Cleaner) {
+                            labyrinth.addCleaner((Cleaner) ch);
+                        }
 
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Labyrinth: ").append(labyrinthId).append("\n");

@@ -156,4 +156,16 @@ public class Labyrinth {
         rooms.remove(roomToRemove);
         rooms.add(roomToAdd);
     }
+
+    public void addStudent(Student ch) {
+        students.add(ch);
+    }
+
+    public void addInstructor(Instructor ch) {
+        instructors.add(ch);
+    }
+
+    public void addCleaner(Cleaner ch) {
+        cleaners.add(ch);
+    }
 }

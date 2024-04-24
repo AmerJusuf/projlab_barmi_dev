@@ -1,12 +1,12 @@
 
-š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(† âöûÿÿÿÿJ$36ae88ca-b341-4a14-87ce-fa89f0641cc8
+š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(† âöûÿÿÿÿJ$03ff63bc-2087-4a1b-adb5-0c6af0067830
 z
-java:S5993"9Change the visibility of this constructor to "protected".(²ËƒêıÿÿÿÿJ$942b35df-49ba-471d-8e1b-f81ee00603fd
-k	java:S106"+Replace this use of System.out by a logger.(°ŸÉÂüÿÿÿÿJ$7ebbe17b-6215-4fc5-b205-5f0d3231ba08
-f	java:S106/"+Replace this use of System.out by a logger.(ßíÛÑJ$d92a5b57-1bfa-44b1-89ff-ca2319cdac5b
-f	java:S1069"+Replace this use of System.out by a logger.(©Ç£¨J$d26a1225-f0a8-4f76-b61c-c9f58228fd46
-r	java:S106Y"+Replace this use of System.out by a logger.(Ù÷ıÿÿÿÿ8ëéœëæ1J$43141d03-f311-4179-b1f0-8a53a7444d2d
-m	java:S106d"+Replace this use of System.out by a logger.(ã•ùÀ8ìéœëæ1J$a3042f80-e483-47f5-9616-b6459b6e67b8
-m	java:S106‹"+Replace this use of System.out by a logger.(¨ŞÛA8ÊÄ—í1J$2a22fa4f-3c6d-4e83-a7ac-64b3f6f31220
+java:S5993"9Change the visibility of this constructor to "protected".(²ËƒêıÿÿÿÿJ$60cb170b-16fd-46db-be0b-76fbfacf5629
+k	java:S106"+Replace this use of System.out by a logger.(°ŸÉÂüÿÿÿÿJ$26796f4d-4e94-4d1d-be19-b12adfde69a1
+f	java:S106/"+Replace this use of System.out by a logger.(ßíÛÑJ$b3635226-0f8c-4915-ac9b-737a916bb451
+f	java:S1069"+Replace this use of System.out by a logger.(©Ç£¨J$9b8a9405-0903-439a-bbcf-0354d935b650
+r	java:S106Y"+Replace this use of System.out by a logger.(Ù÷ıÿÿÿÿ8ëéœëæ1J$518ee9b7-a66e-4707-8c60-b5ad6e10b9e3
+m	java:S106d"+Replace this use of System.out by a logger.(ã•ùÀ8ìéœëæ1J$b06e8ff2-38c1-44ab-a76f-ffa39db979d5
+m	java:S106‹"+Replace this use of System.out by a logger.(¨ŞÛA8ÊÄ—í1J$81d8d23e-ceec-44b5-9ad1-06c80e524951
 t
-java:S1128",Remove this unused import 'Rooms.BasicRoom'.(Çêê½ÿÿÿÿÿ8‘ÊÄ—í1J$c394bf4b-170b-4042-a645-d75149da1cb1
+java:S1128",Remove this unused import 'Rooms.BasicRoom'.(Çêê½ÿÿÿÿÿ8‘ÊÄ—í1J$d7f17951-0cac-4ef0-8926-6bbec45e999f

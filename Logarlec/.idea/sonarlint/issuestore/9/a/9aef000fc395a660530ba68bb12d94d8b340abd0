@@ -1,0 +1,81 @@
+
+	java:S112z"FDefine and throw a dedicated exception instead of using a generic one.( şòëÿÿÿÿÿ8‘«¡‹ñ1J$133ded8a-db13-47fa-8a67-6185fbf54a98
+	java:S112ª"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8’«¡‹ñ1J$9ea21d47-394b-4e8f-ad36-a8e5d29905ca
+‹
+java:S1192¨"GDefine a constant instead of duplicating this literal "Type: " 3 times.(ó¶“º8”«¡‹ñ1J$b73030a5-09de-4b4b-8e1b-cb19cc041cdd
+
+java:S1192İ"YDefine a constant instead of duplicating this literal "Result: Successful/Fail" 27 times.(ù†ç8”«¡‹ñ1J$e3aa1390-869a-45b0-99d1-73fdbd95a8bd
+–
+java:S1192ú"MDefine a constant instead of duplicating this literal "Character: " 14 times.(ë•øÅúÿÿÿÿ8”«¡‹ñ1J$dfc147dd-c937-4c0d-8da9-106ea69c1f41
+•
+java:S1192æ"LDefine a constant instead of duplicating this literal "Labyrinth: " 3 times.(Á€‡óÿÿÿÿÿ8”«¡‹ñ1J$7c23a788-c1ec-4054-b65a-8f9967225924
+‹
+java:S1192"GDefine a constant instead of duplicating this literal "Room: " 9 times.(¾—ÖÏ8”«¡‹ñ1J$e5540f1f-32b3-4c28-82cd-08e530d1d353
+‰
+java:S1192o"FDefine a constant instead of duplicating this literal "Files" 3 times.(ï«í½8”«¡‹ñ1J$b7182d8a-73e6-43c7-beec-abbb4cfc3b34
+’
+java:S1192E"JDefine a constant instead of duplicating this literal "startGame" 3 times.(¶ÇÕîúÿÿÿÿ8”«¡‹ñ1J$308ca875-850a-48d7-82e1-099ae49aaee2
+Œ
+java:S1192D"IDefine a constant instead of duplicating this literal "skipTurn" 3 times.(ïÎş®8”«¡‹ñ1J$6b607114-532f-45e4-bd45-8a9006977bd8
+
+java:S1192C"JDefine a constant instead of duplicating this literal "nextRound" 3 times.(Ã¶¸8•«¡‹ñ1J$2e0edba5-f536-4b8e-833f-e96f718c4040
+‘
+java:S1192ƒ"HDefine a constant instead of duplicating this literal "Item: " 13 times.(ÒÃ˜‡ùÿÿÿÿ8•«¡‹ñ1J$ce7e9e64-f67d-4785-9e0d-94f940c244f9
+§
+java:S1192ş"cDefine a constant instead of duplicating this literal "A KELETKEZÅ ROOMID / null ha fail" 3 times.(˜í„ş8•«¡‹ñ1J$451b741b-0666-419a-8290-a35007fadf35
+“
+java:S1192B"KDefine a constant instead of duplicating this literal "gameStatus" 3 times.(ó•Æ€øÿÿÿÿ8•«¡‹ñ1J$af39405f-c79e-4c6c-ab57-9fb1a38b7989
+œ	java:S135—"YReduce the total number of break and continue statements in this loop to use at most one.(É‚8•«¡‹ñ1J$358488f8-3221-4666-beb2-278a21ae5256
+¤
+java:S1488ê"[Immediately return this expression instead of assigning it to the temporary variable "res".(¾¨˜úûÿÿÿÿ8—«¡‹ñ1J$17836e04-a979-4b3d-a5ed-afa0808c40ff
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(œÙÃ¡8›«¡‹ñ1J$a2f19efc-941e-4ad1-bb5b-8b84ee46f372
+•
+java:S2095‘"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(ëÎáæıÿÿÿÿ8»«¡‹ñ1J$8c007594-3ec7-4e63-9735-9a4a187b4e97
+
+java:S2095’"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(—¾­»8»«¡‹ñ1J$89a9f4ad-f849-4dcc-9bac-32f27c5c4339
+m	java:S106T"+Replace this use of System.out by a logger.(„‘×ø8Ï«¡‹ñ1J$4f3c3302-5f27-4d52-95bc-524d5d252bab
+m	java:S106_"+Replace this use of System.out by a logger.(‡®¦ã8Ğ«¡‹ñ1J$47e39ba6-c42c-4739-8c9d-052a708aeca0
+š
+java:S3776f"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(òÖˆÿùÿÿÿÿ8Ñ«¡‹ñ1J$9c8a3fdc-62c3-4c3e-acda-8de5333c41af
+r	java:S106i"+Replace this use of System.out by a logger.(¿Èıùÿÿÿÿ8Ò«¡‹ñ1J$9646fd30-5ef5-4f11-abe1-ae580d3f4b87
+r	java:S106p"+Replace this use of System.out by a logger.( ô¬ûÿÿÿÿ8Ó«¡‹ñ1J$c772fc2a-829a-4afc-ab1d-9a7acb2c9359
+~	java:S125r"<This block of commented-out lines of code should be removed.(­„ÅÆ8Ó«¡‹ñ1J$9d1ddf9f-8632-41f4-811e-77760f595da8
+r	java:S106t"+Replace this use of System.out by a logger.(ÖËŞ­øÿÿÿÿ8Ó«¡‹ñ1J$4544d801-b25f-495b-9247-ccb0d77966a6
+r	java:S106y"+Replace this use of System.out by a logger.(¨ØÎûÿÿÿÿ8Õ«¡‹ñ1J$7ac59e22-2ef7-49fe-971d-458b86468444
+n	java:S106"+Replace this use of System.out by a logger.(±¾ú¼8×«¡‹ñ1J$b2b309df-3d34-4cbd-b2fc-032a41ea4126
+–
+java:S1871›"MThis branch's code block is the same as the block for the branch on line 152.(…Ğÿ¡ÿÿÿÿÿ8Ø«¡‹ñ1J$7d67843d-5711-42d0-9df6-fd9ab007e20e
+s	java:S106¤"+Replace this use of System.out by a logger.(ÑõÀûÿÿÿÿ8Ù«¡‹ñ1J$3e55cf82-0da9-4e58-9afa-363eaf74f730
+s	java:S106¦"+Replace this use of System.out by a logger.(ß¢€™ûÿÿÿÿ8Ù«¡‹ñ1J$d7b1e6d8-f9f7-4831-b306-f864d8adf77e
+‘	java:S100¯"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ„ö­8Ù«¡‹ñ1J$7e4984ed-fdb5-45ec-9633-d6b82a76b9b7
+–
+java:S3776Ç"RRefactor this method to reduce its Cognitive Complexity from 42 to the 15 allowed.(ÅÛÄ”8Ü«¡‹ñ1J$60405653-0535-4f59-9014-fbe64e7ae99f
+Œ
+java:S1871Ö"IThis case's code block is the same as the block for the case on line 588.(¦Ûù8ß«¡‹ñ1J$2e89db09-73d7-4c1e-a99d-f767ec0e5f47
+Œ
+java:S1871‘"IThis case's code block is the same as the block for the case on line 377.(éÈÏ!8à«¡‹ñ1J$abf88c76-4f8e-477a-8a20-623ddcbad507
+
+java:S1871"IThis case's code block is the same as the block for the case on line 377.(ô™óĞ8ß«¡‹ñ1J$59906274-f2d8-4f8a-b187-c63d120581bd
+
+java:S1871‰"IThis case's code block is the same as the block for the case on line 377.(©êãŠ8ß«¡‹ñ1J$a962a08e-4313-40ef-930a-a1398af171bc
+
+java:S1871™"IThis case's code block is the same as the block for the case on line 377.(ÂñØë8ß«¡‹ñ1J$6d0bea4a-a55d-4197-9771-7272eebcea77
+
+java:S1871¹"IThis case's code block is the same as the block for the case on line 425.(Ù£É8ß«¡‹ñ1J$0ce3b8ca-c8f5-4c58-b414-310daf0910c6
+
+java:S1871±"IThis case's code block is the same as the block for the case on line 425.(²°Ü8ß«¡‹ñ1J$8ad55e87-2d39-4b30-a7ee-f48376f20312
+j	java:S131×""Add a default case to this switch.(€±Öøÿÿÿÿ8á«¡‹ñ1J$753bddfc-7632-4c7d-be3d-759132c6f932
+‹
+java:S1479×"BReduce the number of non-empty switch cases from 39 to at most 30.(€±Öøÿÿÿÿ8á«¡‹ñ1J$ee3f86fa-c56a-4312-adcb-1bf972f0df11
+Œ
+java:S6201ğ"HReplace this instanceof check and cast with 'instanceof Student student'(’èËñ8å«¡‹ñ1J$087e5995-b3de-452d-9de0-7f5b3aceb6c0
+’
+java:S6201ò"NReplace this instanceof check and cast with 'instanceof Instructor instructor'(É©Íú8¡»ÙŒñ1J$b3bfbbab-0bc8-4a95-a9f1-f9b1d52e6df0
+	java:S125ğ"<This block of commented-out lines of code should be removed.(ôşÜš8ù«¡‹ñ1J$d67e2da4-6dbe-44b0-82e2-7bd82ba080b9
+„	java:S125à"<This block of commented-out lines of code should be removed.(ûÜ³Åıÿÿÿÿ8ƒ¬¡‹ñ1J$4b381361-2f6e-45b1-9b4f-0cbcac2f3d2f
+o
+java:S1068Á",Remove this unused "roomsMap" private field.(±¨ía8…¬¡‹ñ1J$93349a98-ca4f-43a8-8ebe-4380ae29fb9c
+u
+java:S1068Ã",Remove this unused "itemsMap" private field.(ç§óøÿÿÿÿ8…¬¡‹ñ1J$e6652866-b8ff-4eb3-94b4-9e0542b29c36
+‹
+java:S6541Ç"ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 323 to 64, Complexity from 52 to 14, Nesting Level from 4 to 2, Number of Variables from 30 to 6.(ÅÛÄ”8…¬¡‹ñ1J$4b5a6814-5eb1-4552-9861-8a29303cd747
