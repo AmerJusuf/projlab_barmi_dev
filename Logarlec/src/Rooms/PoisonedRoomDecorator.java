@@ -4,6 +4,7 @@ import Characters.Character;
 
 public class PoisonedRoomDecorator extends RoomDecorator{
     private boolean cleaned = false;
+    // TODO ehelyett lehet kéne valami jobb megoldás
 
     public PoisonedRoomDecorator(IRoom decoratedRoom){
         super(decoratedRoom);

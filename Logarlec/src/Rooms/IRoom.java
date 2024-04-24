@@ -63,8 +63,6 @@ public interface IRoom {
 
      void decorate();
 
-     void unToxicate();
-
      void makeSticky();
 
      //for testing
