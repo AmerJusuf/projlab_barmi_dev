@@ -1,0 +1,30 @@
+createRoom:
+Room: BR1
+Capacity: 5
+Type: BasicRoom
+Result: Successful
+
+createTransistor:
+Item: TR1
+Active: True
+Paired: False
+Result: Successful
+
+createCharacter:
+Character: S1
+Type: Student
+Result: Successful
+
+addCharacterToRoom:
+Character: S1
+Room: BR1
+Result: Successful
+
+addItemToCharacter:
+Item: TR1
+Character: S1
+Result: Successful
+
+switchTransistor:
+Item: TR1
+Active: false

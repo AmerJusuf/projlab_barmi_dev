@@ -1,0 +1,6 @@
+createRoom -r BR1 -capacity 5 -type BasicRoom
+createTransistor -it TR1 -active
+createCharacter -ch S1 -type Student
+addCharacterToRoom -ch S1 -r BR1
+addItemToCharacter -it TR1 -ch S1
+switchTransistor -it TR1
