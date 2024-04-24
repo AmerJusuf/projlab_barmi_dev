@@ -1,0 +1,4 @@
+createLabyrinth -lab L1
+createRoom -r PR1 -capacity 5 -type PoisonedRoom
+splitRoom -r PR1
+list
