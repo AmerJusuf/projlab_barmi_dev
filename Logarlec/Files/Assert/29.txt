@@ -1,0 +1,19 @@
+createLabyrinth:
+Labyrinth: L1
+Result: Successful
+
+createRoom:
+Room: PR1
+Capacity: 5
+Type: PoisonedRoom
+Result: Successful
+
+splitRoom:
+Room: PR1
+NewRoom1:: PR2
+NewRoom2: PR3
+Result: Successful
+
+ID-s:
+L1
+PR2, PR3
