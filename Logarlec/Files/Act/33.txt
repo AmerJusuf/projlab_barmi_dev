@@ -1,0 +1,10 @@
+createRoom -r BR1 -capacity 5 -type BasicRoom
+createRoom -r PR1 -capacity 5 -type PoisonedRoom
+createCharacter -ch S1 -type Student
+createItem -it FFP1 -type FFP2 
+addNeighbour -r BR1 -r PR1
+addNeighbour -r PR1 -r BR1
+addCharacterToRoom -ch S1 -r BR1
+addItemToCharacter -it FFP1 -ch S1
+moveCharacter -ch S1 -r PR1
+characterStatus -ch S1
