@@ -1,0 +1,5 @@
+createLabyrinth -lab L1
+createRoom -r BR1 -capacity 5 -type BasicRoom
+createRoom -r PR1 -capacity 5 -type PoisonedRoom
+mergeRooms -r BR1 -r PR1
+list
