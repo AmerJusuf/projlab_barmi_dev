@@ -63,6 +63,14 @@ public class Student extends Character{
 
     @Override
     public void nextRound() {
+        //while !move
+            // pickitem
+            // pickItem
+
+            // dropitem
+            // useItem
+            // move -> round is over
+
         System.out.println("Student next round | Student: nextRound()");
     }
 }

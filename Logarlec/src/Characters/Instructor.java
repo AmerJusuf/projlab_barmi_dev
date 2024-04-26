@@ -66,6 +66,10 @@ public class Instructor extends Character{
     }
 
     public void nextRound(){
+        // dropItem
+        // pickitem
+        // Move to neighbour room (Lowest index)
+        // kickStudents
         System.out.println("Instructor next round | Instructor: nextRound()");
     }
 
