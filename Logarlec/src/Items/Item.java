@@ -130,4 +130,16 @@ public abstract class Item {
     public void step(){
         System.out.println("Item steps | Item: step()");
     }
+
+    public boolean isFake(){
+        if(isFake){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+    public abstract boolean getisActive();
+
 }

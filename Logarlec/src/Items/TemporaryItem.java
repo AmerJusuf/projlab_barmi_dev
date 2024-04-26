@@ -38,4 +38,9 @@ public abstract class TemporaryItem extends Item {
             System.out.println("Item stepping | TemporaryItem: step()");
         }
     }
+
+    @Override
+    public boolean getisActive(){
+        return isActive;
+    }
 }

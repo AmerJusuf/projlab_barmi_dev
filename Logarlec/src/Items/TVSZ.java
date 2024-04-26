@@ -50,6 +50,11 @@ public class TVSZ extends Item {
         }
     }
 
+    @Override
+    public boolean getisActive() {
+        return false;
+    }
+
     /**
      * This method is used to decrease the number of saves left for the TVSZ.
      */

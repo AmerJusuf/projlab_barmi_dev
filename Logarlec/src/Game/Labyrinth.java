@@ -20,14 +20,11 @@ public class Labyrinth {
 
     private List<Cleaner> cleaners;
 
-    private List<Item> items;
 
-    //for testing
     public Labyrinth() {
         rooms = new ArrayList<>();
         students = new ArrayList<>();
         instructors = new ArrayList<>();
-        items = new ArrayList<>();
     }
 
     public void addRoom(IRoom room) {
@@ -48,6 +45,7 @@ public class Labyrinth {
         boolean splitDone = false;
 
         while (!mergeDone){
+            // canMergeAnyRoom()
             if (rooms.get(idx1).getNumberOfCharacters() == 0) {
                 IRoom neighbour = getAcceptableNeighbour(rooms.get(idx1));
                 merge(idx1, rooms.indexOf(neighbour));
@@ -58,6 +56,7 @@ public class Labyrinth {
         }
 
         while (!splitDone){
+            // canMergeAnyRoom()
             if (rooms.get(idx2).getNumberOfCharacters() == 0) {
                 split(idx2);
                 splitDone = true;
@@ -105,17 +104,16 @@ public class Labyrinth {
     public void nextRound() {
             for (Student student : students) {
                 student.nextRound();
-                triggerKickStudents();
+                triggerKickStudents(); //TODO
             }
             for (Instructor instructor : instructors) {
                 instructor.nextRound();
             }
-//            for (Cleaner cleaner : cleaners) {
-//                cleaner.nextRound();
-//            }
-//            for (Item item: items) {
-//                item.step();
-//            }
+            for (Cleaner cleaner : cleaners) {
+                cleaner.nextRound();
+            }
+           // Osszes szoba tarygara es osszes karakterek targyaira step() fuggveny meghivasa
+
             mergeAndSplitRandomly();
     }
 
@@ -171,7 +169,21 @@ public class Labyrinth {
         cleaners.add(ch);
     }
 
-    public void addItem(Item it) {
-        items.add(it);
+    public void stepItems(){
+        for(Student student : students){
+            for(Item item : student.getItems()){
+                item.step();
+            }
+        }
+        for ( Instructor instructor : instructors){
+            for(Item item : instructor.getItems()){
+                item.step();
+            }
+        }
+        for ( IRoom room : rooms){
+            for(Item item : room.getItems()){
+                item.step();
+            }
+        }
     }
 }

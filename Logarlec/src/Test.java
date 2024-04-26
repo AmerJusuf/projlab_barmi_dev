@@ -572,7 +572,7 @@ public class Test {
         System.out.println(labyrinth.getRooms().size());
         //Print for test:
         System.out.println("Print makeSticky room type:");
-        IRoom iterator = labyrinth.getRooms().getFirst();
+        IRoom iterator = labyrinth.getRooms().get(0);
         while(iterator != null){
             System.out.print("RoomType: " + iterator.getClass() + " | ");
             iterator = iterator.getChild();

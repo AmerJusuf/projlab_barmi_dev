@@ -15,9 +15,9 @@ public interface IRoom {
 
     void unToxicate();
 
-    void mergeRooms(IRoom room);
+    IRoom mergeRooms(IRoom room);
 
-    void splitRoom();
+    List<IRoom> splitRoom();
 
     int getCapacity();
 
@@ -63,7 +63,7 @@ public interface IRoom {
 
      void decorate();
 
-     void makeSticky();
+     IRoom makeSticky();
 
      //for testing
     IRoom getChild();

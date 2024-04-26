@@ -26,6 +26,11 @@ public class Camembert extends Item {
         super(isFake);
     }
 
+    @Override
+    public boolean getisActive() {
+        return false;
+    }
+
     /**
      * This method is used to open the Camembert.
      * It retrieves the current room of the owner, disables the owner,
