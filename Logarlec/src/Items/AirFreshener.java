@@ -6,6 +6,11 @@ public class AirFreshener extends Item {
      */
     public AirFreshener(boolean isFake){super(isFake);}
 
+    @Override
+    public boolean getisActive() {
+        return false;
+    }
+
     /**
      * This method is used to clean the current room from poison.
      */
