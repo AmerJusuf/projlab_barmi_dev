@@ -1,18 +1,16 @@
 
-¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìÆ«úÿÿÿÿ8ÏÎ¾²ñ1J$87d2a089-10a1-412d-b207-014742f0dbc7
-i
-java:S3010"&Remove this assignment of "gameState".(§«‹Ö8æÎ¾²ñ1J$85085074-100a-46f1-b207-c758de150f97
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìÆ«úÿÿÿÿ8ÏÎ¾²ñ1J$c73d659b-e21c-478c-bcc9-4a1e67bc377d
 f
-java:S2119)"Save and re-use this "Random".(šŸ«íøÿÿÿÿ8éÎ¾²ñ1J$4fdeb083-5437-4a2d-8fe5-e20bdbcf924b
+java:S2119)"Save and re-use this "Random".(šŸ«íøÿÿÿÿ8ÁÌ€Şñ1J$32dc1975-ff7b-448c-9eea-44d1b8e6483e
 u
-java:S1135E"2Complete the task associated to this TODO comment.(ÀÛÙ„8ëÎ¾²ñ1J$ef0625d5-8f33-461e-af5b-e569980154ec
+java:S1135E"2Complete the task associated to this TODO comment.(ÀÛÙ„8ÅÌ€Şñ1J$d020fed2-c3d8-4267-afdb-b9b272448871
 u
-java:S1135l"2Complete the task associated to this TODO comment.(ã¬£ñ8ûÆİñ1J$4d74f59b-9e71-465d-8fe7-583fe46fbe2c
-r	java:S106{"+Replace this use of System.out by a logger.(ıÒÜÈøÿÿÿÿ8îÎ¾²ñ1J$1f7e45ae-0d24-45cf-ba6e-f8d0a366b3fb
-r	java:S106}"+Replace this use of System.out by a logger.(¦ôÜ÷ûÿÿÿÿ8ïÎ¾²ñ1J$b0406920-e31f-402b-a763-acc2c284e814
-n	java:S106"+Replace this use of System.out by a logger.(Ğ¦Á‘8ğÎ¾²ñ1J$0d91413f-74ad-4b04-ba26-88c7cae834a6
+java:S1135l"2Complete the task associated to this TODO comment.(ã¬£ñ8ÈÌ€Şñ1J$31ece9da-13e4-4355-9451-660932608b5b
+r	java:S106{"+Replace this use of System.out by a logger.(ıÒÜÈøÿÿÿÿ8ğÎ¾²ñ1J$8c483e0b-5194-4bed-bde4-d0e7849ccd73
+r	java:S106}"+Replace this use of System.out by a logger.(¦ôÜ÷ûÿÿÿÿ8ñÎ¾²ñ1J$ecca87bf-ace1-486f-9680-c4c3507f0893
+n	java:S106"+Replace this use of System.out by a logger.(Ğ¦Á‘8ÍÌ€Şñ1J$8649a3ae-8a3f-418a-b693-aa6bcacd3508
 s
-java:S1172’"0Remove this unused method parameter "character".(¨¼ú08ğÎ¾²ñ1J$f880f28a-3a4e-4dfa-a265-76ee13f57e4d
-n	java:S106“"+Replace this use of System.out by a logger.(“áà†8ñÎ¾²ñ1J$b8b75a35-3814-43a9-a9b2-2d1525425703
+java:S1172”"0Remove this unused method parameter "character".(¨¼ú08ğÎ¾²ñ1J$b9414d2f-e412-42e6-a22c-e1a1d3046657
+n	java:S106•"+Replace this use of System.out by a logger.(“áà†8ÏÌ€Şñ1J$29ba3af6-b2a1-409d-84b2-55b98074fc53
 z
-java:S1068"8Remove this unused "starterNumberOfRooms" private field.(ö¨“G8óÎ¾²ñ1J$edc02701-c21b-4824-bfa0-c41f9d4e74d5
+java:S1068"8Remove this unused "starterNumberOfRooms" private field.(ö¨“G8ÕÌ€Şñ1J$fb603002-8e5f-408c-ba12-9da1a0798a7e

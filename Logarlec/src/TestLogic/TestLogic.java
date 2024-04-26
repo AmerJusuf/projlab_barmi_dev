@@ -121,11 +121,11 @@ public class TestLogic {
             String directory = System.getProperty("user.dir");
 
             String fileName = commandOrFileName;
-            String fileInPath = directory + File.separator + "Logarlec" + File.separator + "Files" + File.separator + "Act" + File.separator + fileName + ".txt";
+            String fileInPath = directory + File.separator + "Files" + File.separator + "Act" + File.separator + fileName + ".txt";
             System.out.println(fileInPath);
 
             //String fileStartCharacter = fileName.substring(0, 1);
-            String fileOutputPath = directory + File.separator + "Logarlec" + File.separator + "Files" + File.separator + "Output" + File.separator + fileName + ".txt";
+            String fileOutputPath = directory + File.separator + "Files" + File.separator + "Output" + File.separator + fileName + ".txt";
             System.out.println(fileOutputPath);
 
             try {
