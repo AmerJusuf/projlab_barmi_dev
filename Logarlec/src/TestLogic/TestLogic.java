@@ -321,6 +321,7 @@ public class TestLogic {
                             Character characterToAdd = charactersMap.get(charId);
                             IRoom roomToAdd = roomsMap.get(roomID);
                             roomToAdd.addCharacter(characterToAdd);
+                            characterToAdd.setRoom(roomToAdd);
                         }
 
                         outputBuilder.append(commandName).append(":").append("\n");
@@ -465,24 +466,25 @@ public class TestLogic {
 
                         Character characterToMove;
                         String sourceRoom = "";
-                        if (!roomsMap.containsKey(roomToMove)) {
+                        if (!roomsMap.containsKey(roomToMove) || !charactersMap.containsKey(characterId)) {
                             result = fail;
                         } else {
                             result = success;
                             characterToMove = charactersMap.get(characterId);
-                            for (Map.Entry<String, IRoom> roomEntry : roomsMap.entrySet()) {
-                                if (roomEntry.getValue().getCharacters().contains(characterToMove)) {
+                            IRoom room = roomsMap.get(roomToMove);
+                            IRoom srcRoom = characterToMove.getRoom();
+                            for(Map.Entry<String, IRoom> entryRow : roomsMap.entrySet()) {
+                                if (entry.getValue().equals(srcRoom)) {
                                     sourceRoom = entry.getKey();
-                                    roomEntry.getValue().removeCharacter(characterToMove);
-                                    roomsMap.get(roomToMove).addCharacter(characterToMove);
                                     break;
                                 }
                             }
+                            characterToMove.move(room);
                         }
 
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Character: ").append(characterId).append("\n");
-                        outputBuilder.append("SourceRoom: " + sourceRoom).append(roomToMove).append("\n");
+                        outputBuilder.append("SourceRoom: ").append(sourceRoom).append("\n");
                         outputBuilder.append("DestRoom: ").append(roomToMove).append("\n");
                         outputBuilder.append("Result: " + result).append("\n");
                         break;
