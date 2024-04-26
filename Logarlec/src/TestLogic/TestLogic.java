@@ -25,7 +25,7 @@ public class TestLogic {
     static {
         //JUSUF
         commandPatterns.put("loadMap", Pattern.compile("loadMap\\s+-file\\s+(\\S+)"));              // NINCS IMPLEMENTÁLVA
-        commandPatterns.put("createLabyrinth", Pattern.compile("createLabyrinth\\s+-id\\s+(\\S+)"));
+        commandPatterns.put("createLabyrinth", Pattern.compile("createLabyrinth\\s+-lab\\s+(\\S+)"));
         commandPatterns.put("addCharacterToLabyrinth", Pattern.compile("addCharacterToLabyrinth\\s+-lab\\s+(\\S+)\\s+-ch\\s+(\\S+)"));
         commandPatterns.put("addItemToCharacter", Pattern.compile("addItemToCharacter\\s+-it\\s+(\\S+)\\s+-ch\\s+(\\S+)"));
         commandPatterns.put("addItemToRoom", Pattern.compile("addItemToRoom\\s+-it\\s+(\\S+)\\s+-r\\s+(\\S+)"));
@@ -121,11 +121,11 @@ public class TestLogic {
             String directory = System.getProperty("user.dir");
 
             String fileName = commandOrFileName;
-            String fileInPath = directory + File.separator + "Files" + File.separator + "Act" + File.separator + fileName + ".txt";
+            String fileInPath = directory + File.separator + "Logarlec" + File.separator + "Files" + File.separator + "Act" + File.separator + fileName + ".txt";
             System.out.println(fileInPath);
 
             //String fileStartCharacter = fileName.substring(0, 1);
-            String fileOutputPath = directory + File.separator + "Files" + File.separator + "Output" + File.separator + fileName + ".txt";
+            String fileOutputPath = directory + File.separator + "Logarlec" + File.separator + "Files" + File.separator + "Output" + File.separator + fileName + ".txt";
             System.out.println(fileOutputPath);
 
             try {
@@ -204,9 +204,7 @@ public class TestLogic {
     private static Map<String, Character> charactersMap = new HashMap<>();
 
     private static Map<String, IRoom> roomsMap = new HashMap<>();
-
     private static Map<String, Item> itemsMap = new HashMap<>();
-
 
 
 
@@ -344,7 +342,6 @@ public class TestLogic {
                         else
                             roomType = matcher.group(4);
 
-
                         if (roomsMap.containsKey(roomId)) {
                             result = fail;
                         } else {
@@ -356,6 +353,7 @@ public class TestLogic {
                             } else {
                                 roomsMap.put(roomId, new BasicRoom(capacity));
                             }
+
                         }
 
                         outputBuilder.append(commandName).append(":").append("\n");
@@ -385,6 +383,7 @@ public class TestLogic {
                             } else {
                                 charactersMap.put(characterId, new Student());
                             }
+
                         }
 
                         outputBuilder.append(commandName).append(":").append("\n");
@@ -425,6 +424,7 @@ public class TestLogic {
                         int life = 0;
                         if (matcher.group(3) != null)
                             life = Integer.parseInt(matcher.group(3));
+
 
                         if (itemsMap.containsKey(itemId)) {
                             result = fail;
@@ -1059,10 +1059,12 @@ public class TestLogic {
 
                     case "gameStatus":
                         outputBuilder.append(commandName).append(":").append("\n");
-                        outputBuilder.append("Status: ").append("WIN / PLAYING / LOOSE").append("\n");
+                        outputBuilder.append("Status: ").append(labyrinth.getGameState()).append("\n");
 
                         break;
                     case "nextRound":
+                        labyrinth.nextRound();
+
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("VALAMI KIÍRÁS XD").append("\n");
 
