@@ -1,7 +1,11 @@
 
-š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(† âöûÿÿÿÿJ$a89b1119-906e-4b43-813b-52c50f05275f
-f	java:S106 "+Replace this use of System.out by a logger.(äçë›J$e684f61c-e022-416a-9b8b-4d602bd983ba
-k	java:S106+"+Replace this use of System.out by a logger.(»ØÇóÿÿÿÿÿJ$043fa240-ca8b-4cc4-b565-6fa9d0bb07c8
-f	java:S1065"+Replace this use of System.out by a logger.(€„æòJ$f4507d08-1ac9-4879-9b89-3c98928313ef
-k	java:S106="+Replace this use of System.out by a logger.(Ü™“—úÿÿÿÿJ$3c7a0076-43a9-41fd-8901-bc0117ad6a63
-r	java:S106E"+Replace this use of System.out by a logger.(¼²”Èúÿÿÿÿ8´‘Æ—í1J$d683a33a-5a7e-4502-8fa9-61ce09a30f7e
+š	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(† âöûÿÿÿÿJ$b57a4799-f7be-4f7b-a4d8-7379f19ca898
+f	java:S106 "+Replace this use of System.out by a logger.(äçë›J$53cba704-49b1-4acc-afb1-cd9e0aa7202d
+k	java:S106+"+Replace this use of System.out by a logger.(»ØÇóÿÿÿÿÿJ$9a986a4c-c557-493c-b218-e9aa8aab83cd
+f	java:S1065"+Replace this use of System.out by a logger.(€„æòJ$fdc76c08-5570-498c-a057-c2fc2ba45ce0
+k	java:S106="+Replace this use of System.out by a logger.(Ü™“—úÿÿÿÿJ$6520f3ef-1be3-4516-b116-500e3206038e
+}
+java:S1161D":Add the "@Override" annotation above this method signature(ôÕëì8¦Þ—Ýñ1J$5dab84a0-2a76-4ad0-b01f-8b2e9343d0cb
+r	java:S106I"+Replace this use of System.out by a logger.(¼²”Èúÿÿÿÿ8´‘Æ—í1J$9a21e04e-ba60-4567-9b88-ba4f4d977fb4
+t
+java:S1128",Remove this unused import 'Rooms.BasicRoom'.(Çêê½ÿÿÿÿÿ8§Þ—Ýñ1J$c8f9427b-ad16-4def-bf2b-dc3ec92b8e96

@@ -53,3 +53,5 @@ K
 src/Characters/Cleaner.java,8\e\8e2b6c84c83116ba81361b9fc305d6c49367d835
 K
 src/Items/AirFreshener.java,9\5\9520abb8d5189c987aa4361e936911e8ac2165e8
+?
+Files/Act/2.txt,a\a\aadcaef8f47cacbf160cd85d15daf6789a5d72ac

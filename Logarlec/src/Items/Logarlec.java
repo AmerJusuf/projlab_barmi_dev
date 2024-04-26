@@ -49,4 +49,9 @@ public class Logarlec extends Item {
     public void pickedByInstructor(Instructor instructor) {
         System.out.println("Logarlec cannot be picked by instructor | Logarlec: pickedByInstructor(Instructor instructor)");
     }
+
+    @Override
+    public boolean getisActive() {
+        return false;
+    }
 }

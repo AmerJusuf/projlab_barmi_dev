@@ -104,4 +104,9 @@ public class Transistor extends Item{
         }
     }
 
+    @Override
+    public boolean getisActive() {
+        return false;
+    }
+
 }

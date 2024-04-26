@@ -106,8 +106,8 @@ public abstract class RoomDecorator implements IRoom{
     }
 
     @Override
-    public void splitRoom(){
-        decoratedRoom.splitRoom();
+    public List<IRoom> splitRoom(){
+        return decoratedRoom.splitRoom();
     }
 
     @Override
@@ -121,8 +121,8 @@ public abstract class RoomDecorator implements IRoom{
     }
 
     @Override
-    public void makeSticky() {
-        decoratedRoom.makeSticky();
+    public IRoom makeSticky() {
+        return decoratedRoom.makeSticky();
     }
 
     @Override
@@ -158,7 +158,7 @@ public abstract class RoomDecorator implements IRoom{
     }
 
     @Override
-    public void mergeRooms(IRoom room){
+    public IRoom mergeRooms(IRoom room){
         DecoratorHandlerVisitor visitor = new DecoratorHandlerVisitor(room);
         IRoom newMergedRoom = acceptMerge(visitor);
 
@@ -166,6 +166,8 @@ public abstract class RoomDecorator implements IRoom{
         visitor.handleNeighboursWhenReplacing(room, newMergedRoom);
         getLabyrinth().replaceRooms(this, newMergedRoom);
         getLabyrinth().getRooms().remove(room);
+
+        return newMergedRoom; //It could be a void method, returning for test cases and prototype
     }
 
 

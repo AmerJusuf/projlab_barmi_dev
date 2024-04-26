@@ -139,4 +139,7 @@ public abstract class Item {
             return false;
         }
     }
+
+    public abstract boolean getisActive();
+
 }
