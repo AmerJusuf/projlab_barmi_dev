@@ -128,12 +128,13 @@ public class BasicRoom implements IRoom{
     }
 
     @Override
-    public void mergeRooms(IRoom room) {
+    public IRoom mergeRooms(IRoom room) {
         DecoratorHandlerVisitor visitor = new DecoratorHandlerVisitor(room);
         IRoom newRoom = this.acceptMerge(visitor);
 
         visitor.handleNeighboursWhenReplacing(this, newRoom);
         getLabyrinth().replaceRooms(this, newRoom);
+        return newRoom; //It could be a void method, returning for test cases and prototype
     }
 
 
@@ -142,33 +143,33 @@ public class BasicRoom implements IRoom{
      * The capacity remains the same and a new room is added to the labyrinth in case of a successful split.
      */
     @Override
-    public void splitRoom(){
+    public List<IRoom> splitRoom(){
+        List<IRoom> newRooms = new ArrayList<>();
         if(this.getCharacters().isEmpty()){
-
-        BasicRoom newRoom = new BasicRoom();
-        this.addNeighbour(newRoom);
-        newRoom.addNeighbour(this);
-        newRoom.setCapacity(this.getCapacity());
-
-        //Szomszédok felének átadása az új szobának
-        int halftheNeighbours = this.getNeighbours().size()/2;
-        for(int i=0; i < halftheNeighbours; i ++){
-            newRoom.addNeighbour(this.getNeighbours().get(i));
-            this.removeNeighbour(this.getNeighbours().get(i));
-        }
-        //Itemek felének átadása az új szobának
-        int halftheItems = this.getItems().size()/2;
-        for(int i=0; i<halftheItems; i++){
-            newRoom.addItem(this.getItems().get(i));
-            this.removeItem(this.getItems().get(i));
-        }
-        this.getLabyrinth().addRoom(newRoom);
-
+            BasicRoom newRoom = new BasicRoom();
+            this.addNeighbour(newRoom);
+            newRoom.addNeighbour(this);
+            newRoom.setCapacity(this.getCapacity());
+            //Szomszédok felének átadása az új szobának
+            int halftheNeighbours = this.getNeighbours().size()/2;
+            for(int i=0; i < halftheNeighbours; i ++){
+                newRoom.addNeighbour(this.getNeighbours().get(i));
+                this.removeNeighbour(this.getNeighbours().get(i));
+            }
+            //Itemek felének átadása az új szobának
+            int halftheItems = this.getItems().size()/2;
+            for(int i=0; i<halftheItems; i++){
+                newRoom.addItem(this.getItems().get(i));
+                this.removeItem(this.getItems().get(i));
+            }
+            this.getLabyrinth().addRoom(newRoom);
+            newRooms.add(this);
+            newRooms.add(newRoom);
             System.out.println("Room splitted succesfully | BasicRoom: splitRoom");
-        }
-        else{
+        }else {
             System.out.println("Can not split room, because it contains characters | BasicRoom: splitRoom");
         }
+        return newRooms; //It could be a void method, returning for test cases and prototype
     }
 
     /**
@@ -363,13 +364,16 @@ public class BasicRoom implements IRoom{
      * Makes the current room sticky.
      */
     @Override
-    public void makeSticky() {
+    public IRoom makeSticky() {
        StickyRoomDecorator stickyRoom = new StickyRoomDecorator(this);
        DecoratorHandlerVisitor mergeRoomsVisitor = new DecoratorHandlerVisitor(this);
        IRoom newRoom = stickyRoom.acceptMerge(mergeRoomsVisitor);
-    //TODO: nem basicroomot kéne mergelni hanem kulso decoratorral
+       //TODO: nem basicroomot kéne mergelni hanem kulso decoratorral
+
+        //TODO: Itt eleg lenne egy " new StickyRoomDecorator(this)", merge helyett?? xd
        labyrinth.removeRoom(this);
        labyrinth.addRoom(newRoom);
+       return newRoom; //It coudl be a void method, it returns the newRoom for testing
     }
 
     //for testing

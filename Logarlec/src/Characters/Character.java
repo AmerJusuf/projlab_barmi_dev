@@ -152,4 +152,13 @@ public abstract class Character {
 
 
     public abstract void getCaught();
+
+    public boolean getPoisoned(){
+        if(this.isPoisoned){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
 }

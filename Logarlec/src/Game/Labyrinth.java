@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Labyrinth {
-    private static GameState gameState;
+    private static GameState gameState = GameState.PLAYING;
     private int starterNumberOfRooms;
     private List<IRoom> rooms;
     private List<Student> students;
@@ -20,15 +20,12 @@ public class Labyrinth {
 
     private List<Cleaner> cleaners;
 
-    private List<Item> items;
-
     //for testing
     public Labyrinth() {
         rooms = new ArrayList<>();
         students = new ArrayList<>();
         instructors = new ArrayList<>();
         items = new ArrayList<>();
-        gameState = GameState.PLAYING;
     }
 
     public void addRoom(IRoom room) {
@@ -49,6 +46,7 @@ public class Labyrinth {
         boolean splitDone = false;
 
         while (!mergeDone){
+            // canMergeAnyRoom()
             if (rooms.get(idx1).getNumberOfCharacters() == 0) {
                 IRoom neighbour = getAcceptableNeighbour(rooms.get(idx1));
                 merge(idx1, rooms.indexOf(neighbour));
@@ -59,6 +57,7 @@ public class Labyrinth {
         }
 
         while (!splitDone){
+            // canMergeAnyRoom()
             if (rooms.get(idx2).getNumberOfCharacters() == 0) {
                 split(idx2);
                 splitDone = true;
@@ -106,17 +105,16 @@ public class Labyrinth {
     public void nextRound() {
             for (Student student : students) {
                 student.nextRound();
-                triggerKickStudents();
+                triggerKickStudents(); //TODO
             }
             for (Instructor instructor : instructors) {
                 instructor.nextRound();
             }
-//            for (Cleaner cleaner : cleaners) {
-//                cleaner.nextRound();
-//            }
-//            for (Item item: items) {
-//                item.step();
-//            }
+            for (Cleaner cleaner : cleaners) {
+                cleaner.nextRound();
+            }
+           // Osszes szoba tarygara es osszes karakterek targyaira step() fuggveny meghivasa
+
             mergeAndSplitRandomly();
     }
 
@@ -137,6 +135,8 @@ public class Labyrinth {
     public static void setGameState(GameState state) {
         gameState = state;
     }
+
+    public GameState getGameState() {return gameState;}
 
     public void removeStudent(Student student) {
         if(students.contains(student)){
@@ -170,7 +170,21 @@ public class Labyrinth {
         cleaners.add(ch);
     }
 
-    public void addItem(Item it) {
-        items.add(it);
+    public void stepItems(){
+        for(Student student : students){
+            for(Item item : student.getItems()){
+                item.step();
+            }
+        }
+        for ( Instructor instructor : instructors){
+            for(Item item : instructor.getItems()){
+                item.step();
+            }
+        }
+        for ( IRoom room : rooms){
+            for(Item item : room.getItems()){
+                item.step();
+            }
+        }
     }
 }
