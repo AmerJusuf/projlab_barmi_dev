@@ -863,42 +863,195 @@ public class TestLogic {
 
                     case "list":
                         outputBuilder.append(commandName).append(":").append("\n");
-                        outputBuilder.append("LabirynthId KELLENEK IDE ").append("\n");
-                        outputBuilder.append("RoomId-k KELLENEK IDE ").append("\n");
-                        outputBuilder.append("CharacterId-k KELLENEK IDE ").append("\n");
-                        outputBuilder.append("ItemId-k KELLENEK IDE ").append("\n");
 
-                        break;
+                        // Room IDs
+                        outputBuilder.append("Rooms: ");
+                        for (Integer rooms : roomsMap.keySet()) {
+                            outputBuilder.append(rooms).append(", ");
+                        }
+                        outputBuilder.append("\n");
+
+                        // Character IDs
+                        outputBuilder.append("Characters: ");
+                        for (Integer characters : charactersMap.keySet()) {
+                            outputBuilder.append(characters).append(", ");
+                        }
+                        outputBuilder.append("\n");
+
+                        // Item IDs
+                        outputBuilder.append("Items: ");
+                        for (Integer items : itemsMap.keySet()) {
+                            outputBuilder.append(items).append(", ");
+                        }
+                        outputBuilder.append("\n");
+
+
+                    break;
                     case "roomStatus":
                         roomId = matcher.group(1);
 
-                        outputBuilder.append("ID-s:").append("\n");
-                        outputBuilder.append("Room: ").append(roomId).append("\n");
-                        outputBuilder.append("RoomType: ").append("A SZOBA TÍPUSA").append("\n");
-                        outputBuilder.append("Characters: ").append("A SZOBÁBAN LÉVŐ KARAKTEREK ID-ja").append("\n");
-                        outputBuilder.append("Items: ").append("A SZOBÁBAN LÉVŐ ITEMEK ID-ja").append("\n");
-                        outputBuilder.append("Capacity: ").append("A SZOBÁBA KAPACITÁSA").append("\n");
+                        // létezik-e a szoba
+                        if (!roomsMap.containsKey(roomId)) {
+                            outputBuilder.append("Room not found").append("\n");
+                            break;
+                        }
 
+                        room = roomsMap.get(roomId);
+
+                        // Szobatípus eldöntése - ha nem akarunk instanceof-ot, ez egy alternatív eldöntési módzser
+                        if (roomId.startsWith("B")) {
+                            roomType = "BasicRoom";
+                        } else if (roomId.startsWith("C")) {
+                            roomType = "CursedRoomDecorator";
+                        } else if (roomId.startsWith("P")) {
+                            roomType = "PoisonedRoomPoisonedRoomDecorator";
+                        } else if (roomId.startsWith("S")) {
+                            roomType = "StickyRoomDecorator";
+                        } else {
+                            roomType = "Unknown";
+                        }
+
+                        //Szoba karaktereiből kivesszük az ID-t
+                        List<Character> charactersInRoom = room.getCharacters();
+                        List<String> characterIds = new ArrayList<>();
+                        for (Character c : charactersInRoom) {
+                            // ID from the charactersMap
+                            for (Map.Entry<Integer, Character> charEntry : charactersMap.entrySet()) {
+                                if (charEntry.getValue().equals(c)) {
+                                    characterIds.add(String.valueOf(charEntry.getKey()));
+                                    break;  // Exit the loop after finding the ID
+                                }
+                            }
+                        }
+                        // Tárgyakból kivesszük az ID-t
+                        List<Item> itemsInRoom = room.getItems();
+                        List<String> itemIds = new ArrayList<>();
+                        for (Item i : itemsInRoom) {
+                            // item's ID from the itemsMap
+                            for (Map.Entry<Integer, Item> itemEntry : itemsMap.entrySet()) {
+                                if (itemEntry.getValue().equals(i)) {
+                                    itemIds.add(String.valueOf(itemEntry.getKey()));
+                                    break;  // Exit the loop after finding the ID
+                                }
+                            }
+                        }
+
+                        capacity = room.getCapacity();
+
+                        outputBuilder.append("Room ID: ").append(roomId).append("\n");
+                        outputBuilder.append("Room Type: ").append(roomType).append("\n");
+                        outputBuilder.append("Characters: ").append(String.join(" ", characterIds)).append("\n");
+                        outputBuilder.append("Items: ").append(String.join(" ", itemIds)).append("\n");
+                        outputBuilder.append("Capacity: ").append(capacity).append("\n");
+                        outputBuilder.append("Result: Successful").append("\n");
                         break;
+
                     case "characterStatus":
                         characterId = matcher.group(1);
 
+                        // Check if the character exists in the charactersMap
+                        if (!charactersMap.containsKey(characterId)) {
+                            outputBuilder.append("Character not found").append("\n");
+                            break;
+                        }
+
+                        character = charactersMap.get(characterId);
+
+                        // karakter típus eldöntése
+                        if (character instanceof Student) {
+                            characterType = "Student";
+                        } else if (character instanceof Instructor) {
+                            characterType = "Instructor";
+                        } else if (character instanceof Cleaner) {
+                            characterType = "Cleaner";
+                        } else {
+                            characterType = "Unknown";
+                        }
+
+                        // Karakter tárgyai
+                        List<Item> characterItemIds = character.getItems();
+                        List<String> charitemIds = new ArrayList<>();
+                        for (Item i : characterItemIds) {
+                            // item's ID
+                            for (Map.Entry<Integer, Item> itemEntry : itemsMap.entrySet()) {
+                                if (itemEntry.getValue().equals(i)) {
+                                    charitemIds.add(String.valueOf(itemEntry.getKey()));
+                                    break;  // Exit the loop after finding the ID
+                                }
+                            }
+                        }
+
+                        String characterRoomId = "";
+                        for (Map.Entry<Integer, IRoom> roomEntry : roomsMap.entrySet()) {
+                                room = roomEntry.getValue();
+                            if (room.getCharacters().contains(character)) {
+                                characterRoomId = entry.getKey();
+                                break;
+                            }
+                        }
+
+
+                        boolean toxicated = character.getPoisoned();
+
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Character: ").append(characterId).append("\n");
-                        outputBuilder.append("CharacterType: ").append("A KARAKTER TÍPUSA").append("\n");
-                        outputBuilder.append("Room: ").append("A SZOBA ID-JA AHOL A KARAKTER VAN").append("\n");
-                        outputBuilder.append("Items: ").append("A KARAKTER ITEMEINEK ID-JA").append("\n");
-                        outputBuilder.append("Toxicated: ").append("TRUE / FALSE AZ ÁLLAPOTNAK MEGFELELŐEN").append("\n");
+                        outputBuilder.append("CharacterType: ").append(characterType).append("\n");
+                        outputBuilder.append("Room: ").append(characterRoomId).append("\n");
+                        outputBuilder.append("Items: ").append(String.join(", ", charitemIds)).append("\n");
+                        outputBuilder.append("Toxicated: ").append(toxicated).append("\n");
 
                         break;
                     case "itemStatus":
                         itemId = matcher.group(1);
 
+                        // Check if the item exists in the itemsMap
+                        if (!itemsMap.containsKey(itemId)) {
+                            outputBuilder.append("Item not found").append("\n");
+                            break;
+                        }
+
+                        item = itemsMap.get(itemId);
+                        if (item instanceof TVSZ) {
+                            itemType = "TVSZ";
+                        } else if (item instanceof AirFreshener) {
+                            itemType = "AirFreshener";
+                        } else if (item instanceof Camembert) {
+                            itemType = "Camembert";
+                        } else if (item instanceof Transistor) {
+                            itemType = "Transistor";
+                        } else if (item instanceof Logarlec) {
+                            itemType = "Logarlec";
+                        } else if (item instanceof FFP2) {
+                            itemType = "FFP2";
+                        } else if (item instanceof Beer) {
+                            itemType = "Beer";
+                        } else if (item instanceof Rag) {
+                            itemType = "Rag";
+                        } else {
+                            throw new RuntimeException("Invalid item type");
+                        }
+                        String owner = "";
+                        boolean isFake = item.isFake();
+
+                        // A tárgy szobában vagy karakternél van (Id lesz kiírva stringként)
+                        for (Map.Entry<Integer, Character> characterEntry : charactersMap.entrySet()) {
+                            if (characterEntry.getValue().getItems().contains(item)) {
+                                owner = String.valueOf(characterEntry.getKey()); // owned by a character
+                                break;
+                            }
+                        }
+                        for (Map.Entry<Integer, IRoom> roomEntry : roomsMap.entrySet()) {
+                            if (roomEntry.getValue().getItems().contains(item)) {
+                                owner = String.valueOf(roomEntry.getKey()); // placed in a room
+                                break;
+                            }
+                        }
+
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Item: ").append(itemId).append("\n");
-                        outputBuilder.append("ItemType: ").append("AZ ITEM TÍPUSA").append("\n");
-                        outputBuilder.append("Owner/Room: ").append("A SZOBA / KARAKTER ID-JA AHOL AZ ITEM VAN").append("\n");
-                        outputBuilder.append("Fake: ").append("TRUE / FALSE").append("\n");
+                        outputBuilder.append("ItemType: ").append(itemType).append("\n");
+                        outputBuilder.append("Owner/Room: ").append(owner).append("\n");
+                        outputBuilder.append("Fake: ").append(isFake).append("\n");
 
                         break;
 
