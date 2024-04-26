@@ -705,7 +705,6 @@ public class TestLogic {
 
                     case "createTransistor":
                         itemId = matcher.group(1);
-
                         boolean active = false;
                         if (matcher.group(2) != null)
                             active = true;
@@ -714,27 +713,45 @@ public class TestLogic {
                         if (matcher.group(3) != null)
                             paired = true;
 
+                        Transistor newTransistor = new Transistor();
+                        newTransistor.setIsTurnedOn(active);
+                        itemsMap.put(itemId, newTransistor);
+
+                        if (paired) {
+                            Transistor pair = new Transistor();
+                            String pairId = itemId + "_pair";
+                            newTransistor.setPairTransistor(pair);
+                            pair.setPairTransistor(newTransistor);
+                            itemsMap.put(pairId, pair);
+                        }
 
 
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Item: ").append(itemId).append("\n");
                         outputBuilder.append("Active: ").append(active).append("\n");
                         outputBuilder.append("Paired: ").append(paired).append("\n");
-                        outputBuilder.append("Result: Successful/Fail").append("\n");
+                        outputBuilder.append("Result: Successful").append("\n");
 
                         break;
                     case "setPairTransistor":
                         String tr1 = matcher.group(1);
                         String tr2 = matcher.group(2);
+                        Transistor transistor1 = (Transistor) itemsMap.get(tr1);
+                        Transistor transistor2 = (Transistor) itemsMap.get(tr2);
+
+                        if (transistor1 != null && transistor2 != null && transistor1.getPairTransistor() == null && transistor2.getPairTransistor() == null) {
+                            transistor1.setPairTransistor(transistor2);
+                            transistor2.setPairTransistor(transistor1);
+                        }
 
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Pair1: ").append(tr1).append("\n");
                         outputBuilder.append("Pair2: ").append(tr2).append("\n");
                         outputBuilder.append("Result: Successful/Fail").append("\n");
-
                         break;
                     case "placeTransistor":
                         itemId = matcher.group(1);
+
 
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Item: ").append(itemId).append("\n");
