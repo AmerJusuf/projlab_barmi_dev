@@ -717,6 +717,8 @@ public class TestLogic {
                         if (matcher.group(3) != null)
                             paired = true;
 
+
+
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Item: ").append(itemId).append("\n");
                         outputBuilder.append("Active: ").append(active).append("\n");
@@ -745,6 +747,9 @@ public class TestLogic {
                         break;
                     case "switchTransistor":
                         itemId = matcher.group(1);
+
+                        Transistor switchTransistor = (Transistor) itemsMap.get(Integer.parseInt(itemId));
+                        switchTransistor.switchTransistor();
 
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Item: ").append(itemId).append("\n");
