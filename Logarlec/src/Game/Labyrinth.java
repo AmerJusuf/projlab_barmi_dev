@@ -12,7 +12,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Labyrinth {
-    private static GameState gameState;
+    private static GameState gameState = GameState.PLAYING;
     private int starterNumberOfRooms;
     private List<IRoom> rooms;
     private List<Student> students;
@@ -28,7 +28,6 @@ public class Labyrinth {
         students = new ArrayList<>();
         instructors = new ArrayList<>();
         items = new ArrayList<>();
-        gameState = GameState.PLAYING;
     }
 
     public void addRoom(IRoom room) {
@@ -137,6 +136,8 @@ public class Labyrinth {
     public static void setGameState(GameState state) {
         gameState = state;
     }
+
+    public GameState getGameState() {return gameState;}
 
     public void removeStudent(Student student) {
         if(students.contains(student)){
