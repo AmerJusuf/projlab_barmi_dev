@@ -20,12 +20,11 @@ public class Labyrinth {
 
     private List<Cleaner> cleaners;
 
-    //for testing
+
     public Labyrinth() {
         rooms = new ArrayList<>();
         students = new ArrayList<>();
         instructors = new ArrayList<>();
-        items = new ArrayList<>();
     }
 
     public void addRoom(IRoom room) {
