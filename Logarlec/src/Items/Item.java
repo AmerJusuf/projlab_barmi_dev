@@ -130,4 +130,6 @@ public abstract class Item {
     public void step(){
         System.out.println("Item steps | Item: step()");
     }
+
+    public abstract boolean getisActive();
 }

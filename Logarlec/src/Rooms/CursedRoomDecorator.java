@@ -62,9 +62,9 @@ public class CursedRoomDecorator extends RoomDecorator{
      * Splits the room into two, if it is possible.
      */
     @Override
-    public void splitRoom(){
+    public List<IRoom> splitRoom(){
+        List<IRoom> newRooms = new ArrayList<>();
         if(this.getCharacters().isEmpty()){
-
             CursedRoomDecorator newRoom = new CursedRoomDecorator(decoratedRoom);
             this.addNeighbour(newRoom);
             newRoom.addNeighbour(this);
@@ -83,12 +83,14 @@ public class CursedRoomDecorator extends RoomDecorator{
                 this.removeItem(decoratedRoom.getItems().get(i));
             }
             getLabyrinth().addRoom(newRoom);
-
+            newRooms.add(newRoom);
+            newRooms.add(this);
             System.out.println("Room splitted succesfully | CursedRoomDecorator: splitRoom");
         }
         else{
             System.out.println("Can not split room, because it contains characters | CursedRoomDecorator: splitRoom");
         }
+        return newRooms;
     }
 
     public void decorate(){

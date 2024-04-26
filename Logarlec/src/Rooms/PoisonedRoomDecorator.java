@@ -2,6 +2,9 @@ package Rooms;
 
 import Characters.Character;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class PoisonedRoomDecorator extends RoomDecorator{
 
     public PoisonedRoomDecorator(IRoom decoratedRoom){
@@ -21,7 +24,8 @@ public class PoisonedRoomDecorator extends RoomDecorator{
      * Splits the room into two rooms, the new room will be a PoisonedRoomDecorator
      */
     @Override
-    public void splitRoom(){
+    public List<IRoom> splitRoom(){
+        List<IRoom> newRooms = new ArrayList<>();
         if(this.getCharacters().isEmpty()){
             PoisonedRoomDecorator newRoom = new PoisonedRoomDecorator(decoratedRoom);
             this.addNeighbour(newRoom);
@@ -41,12 +45,14 @@ public class PoisonedRoomDecorator extends RoomDecorator{
                 this.removeItem(decoratedRoom.getItems().get(i));
             }
             getLabyrinth().addRoom(newRoom);
-
+            newRooms.add(newRoom);
+            newRooms.add(this);
             System.out.println("Room splitted succesfully | PoisonedRoomDecorator: splitRoom");
         }
         else{
             System.out.println("Can not split room, because it contains characters | PoisonedRoomDecorator: splitRoom");
         }
+        return newRooms;
     }
 
     @Override
