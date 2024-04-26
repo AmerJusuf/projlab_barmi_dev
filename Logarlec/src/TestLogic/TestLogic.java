@@ -9,10 +9,7 @@ import Items.*;
 import Rooms.*;
 
 import java.io.*;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -866,33 +863,34 @@ public class TestLogic {
                         break;
                     }
 
-                    case "list":
+                    case "list": {
                         outputBuilder.append(commandName).append(":").append("\n");
 
                         // Room IDs
                         outputBuilder.append("Rooms: ");
-                        for (Integer rooms : roomsMap.keySet()) {
+                        for (String rooms : roomsMap.keySet()) {
                             outputBuilder.append(rooms).append(", ");
                         }
                         outputBuilder.append("\n");
 
                         // Character IDs
                         outputBuilder.append("Characters: ");
-                        for (Integer characters : charactersMap.keySet()) {
+                        for (String characters : charactersMap.keySet()) {
                             outputBuilder.append(characters).append(", ");
                         }
                         outputBuilder.append("\n");
 
                         // Item IDs
                         outputBuilder.append("Items: ");
-                        for (Integer items : itemsMap.keySet()) {
+                        for (String items : itemsMap.keySet()) {
                             outputBuilder.append(items).append(", ");
                         }
                         outputBuilder.append("\n");
 
 
-                    break;
-                    case "roomStatus":
+                        break;
+                    }
+                    case "roomStatus": {
                         roomId = matcher.group(1);
 
                         // létezik-e a szoba
@@ -900,8 +898,8 @@ public class TestLogic {
                             outputBuilder.append("Room not found").append("\n");
                             break;
                         }
-
-                        room = roomsMap.get(roomId);
+                        String roomType = "";
+                        IRoom room = roomsMap.get(roomId);
 
                         // Szobatípus eldöntése - ha nem akarunk instanceof-ot, ez egy alternatív eldöntési módzser
                         if (roomId.startsWith("B")) {
@@ -921,7 +919,7 @@ public class TestLogic {
                         List<String> characterIds = new ArrayList<>();
                         for (Character c : charactersInRoom) {
                             // ID from the charactersMap
-                            for (Map.Entry<Integer, Character> charEntry : charactersMap.entrySet()) {
+                            for (Map.Entry<String, Character> charEntry : charactersMap.entrySet()) {
                                 if (charEntry.getValue().equals(c)) {
                                     characterIds.add(String.valueOf(charEntry.getKey()));
                                     break;  // Exit the loop after finding the ID
@@ -933,7 +931,7 @@ public class TestLogic {
                         List<String> itemIds = new ArrayList<>();
                         for (Item i : itemsInRoom) {
                             // item's ID from the itemsMap
-                            for (Map.Entry<Integer, Item> itemEntry : itemsMap.entrySet()) {
+                            for (Map.Entry<String, Item> itemEntry : itemsMap.entrySet()) {
                                 if (itemEntry.getValue().equals(i)) {
                                     itemIds.add(String.valueOf(itemEntry.getKey()));
                                     break;  // Exit the loop after finding the ID
@@ -941,7 +939,7 @@ public class TestLogic {
                             }
                         }
 
-                        capacity = room.getCapacity();
+                        int capacity = room.getCapacity();
 
                         outputBuilder.append("Room ID: ").append(roomId).append("\n");
                         outputBuilder.append("Room Type: ").append(roomType).append("\n");
@@ -950,8 +948,9 @@ public class TestLogic {
                         outputBuilder.append("Capacity: ").append(capacity).append("\n");
                         outputBuilder.append("Result: Successful").append("\n");
                         break;
+                    }
 
-                    case "characterStatus":
+                    case "characterStatus": {
                         characterId = matcher.group(1);
 
                         // Check if the character exists in the charactersMap
@@ -960,8 +959,8 @@ public class TestLogic {
                             break;
                         }
 
-                        character = charactersMap.get(characterId);
-
+                        Character character = charactersMap.get(characterId);
+                        String characterType = "";
                         // karakter típus eldöntése
                         if (character instanceof Student) {
                             characterType = "Student";
@@ -978,7 +977,7 @@ public class TestLogic {
                         List<String> charitemIds = new ArrayList<>();
                         for (Item i : characterItemIds) {
                             // item's ID
-                            for (Map.Entry<Integer, Item> itemEntry : itemsMap.entrySet()) {
+                            for (Map.Entry<String, Item> itemEntry : itemsMap.entrySet()) {
                                 if (itemEntry.getValue().equals(i)) {
                                     charitemIds.add(String.valueOf(itemEntry.getKey()));
                                     break;  // Exit the loop after finding the ID
@@ -986,9 +985,10 @@ public class TestLogic {
                             }
                         }
 
+
                         String characterRoomId = "";
-                        for (Map.Entry<Integer, IRoom> roomEntry : roomsMap.entrySet()) {
-                                room = roomEntry.getValue();
+                        for (Map.Entry<String, IRoom> roomEntry : roomsMap.entrySet()) {
+                            IRoom room = roomEntry.getValue();
                             if (room.getCharacters().contains(character)) {
                                 characterRoomId = entry.getKey();
                                 break;
@@ -1006,7 +1006,8 @@ public class TestLogic {
                         outputBuilder.append("Toxicated: ").append(toxicated).append("\n");
 
                         break;
-                    case "itemStatus":
+                    }
+                    case "itemStatus": {
                         itemId = matcher.group(1);
 
                         // Check if the item exists in the itemsMap
@@ -1015,7 +1016,8 @@ public class TestLogic {
                             break;
                         }
 
-                        item = itemsMap.get(itemId);
+                        Item item = itemsMap.get(itemId);
+                        String itemType = "";
                         if (item instanceof TVSZ) {
                             itemType = "TVSZ";
                         } else if (item instanceof AirFreshener) {
@@ -1039,13 +1041,13 @@ public class TestLogic {
                         boolean isFake = item.isFake();
 
                         // A tárgy szobában vagy karakternél van (Id lesz kiírva stringként)
-                        for (Map.Entry<Integer, Character> characterEntry : charactersMap.entrySet()) {
+                        for (Map.Entry<String, Character> characterEntry : charactersMap.entrySet()) {
                             if (characterEntry.getValue().getItems().contains(item)) {
                                 owner = String.valueOf(characterEntry.getKey()); // owned by a character
                                 break;
                             }
                         }
-                        for (Map.Entry<Integer, IRoom> roomEntry : roomsMap.entrySet()) {
+                        for (Map.Entry<String, IRoom> roomEntry : roomsMap.entrySet()) {
                             if (roomEntry.getValue().getItems().contains(item)) {
                                 owner = String.valueOf(roomEntry.getKey()); // placed in a room
                                 break;
@@ -1059,7 +1061,7 @@ public class TestLogic {
                         outputBuilder.append("Fake: ").append(isFake).append("\n");
 
                         break;
-
+                    }
 
 
                     case "gameStatus":
