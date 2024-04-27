@@ -56,18 +56,9 @@ public class Cleaner extends Character{
     public void moveCharacters(){
         System.out.println("Cleaner moves characters ouf of the room | Cleaner: moveCharacters()");
         List<Character> characters = currentRoom.getCharacters();
-        List<IRoom> neighbours = currentRoom.getNeighbours();
         for(Character character: characters){
-            if(character != this && !character.isPoisoned){
-                boolean isAccepted = false;
-                for(IRoom room : neighbours){
-                    isAccepted = room.acceptCharacter(this);
-                    if(isAccepted){
-                        currentRoom.removeCharacter(character);
-                        character.setRoom(room);
-                        break;
-                    }
-                }
+            if(character != this){
+                character.moveToRandom();
             }
         }
     }
