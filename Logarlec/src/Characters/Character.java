@@ -161,4 +161,22 @@ public abstract class Character {
             return false;
         }
     }
+
+    /**
+     * This method moves the character to a neighbouring room,
+     * if any of them have a space for this character,
+     * and if the character is not poisoned
+     */
+    public void moveToRandom(){
+        if(isPoisoned)
+            return;
+        List<IRoom> neighbours = currentRoom.getNeighbours();
+        for(IRoom neighbour : neighbours){
+            if(neighbour.acceptCharacter(this)){
+                currentRoom.removeCharacter(this);
+                this.setRoom(neighbour);
+                break;
+            }
+        }
+    }
 }
