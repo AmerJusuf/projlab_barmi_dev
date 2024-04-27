@@ -248,7 +248,7 @@ public class TestLogic {
                         labyrinthId = matcher.group(1);
                         characterId = matcher.group(2);
 
-                        if( !charactersMap.containsKey(characterId)) {
+                        if (!charactersMap.containsKey(characterId)) {
                             result = fail;
                         } else {
                             result = success;
@@ -274,9 +274,9 @@ public class TestLogic {
                         itemId = matcher.group(1);
                         characterId = matcher.group(2);
 
-                        if(!charactersMap.containsKey(characterId) || !itemsMap.containsKey(itemId)){
+                        if (!charactersMap.containsKey(characterId) || !itemsMap.containsKey(itemId)) {
                             result = fail;
-                        }else {
+                        } else {
                             result = success;
                             Character character = charactersMap.get(characterId);
                             Item item = itemsMap.get(itemId);
@@ -294,7 +294,7 @@ public class TestLogic {
                         itemId = matcher.group(1);
                         roomId = matcher.group(2);
 
-                        if(!itemsMap.containsKey(itemId) || !roomsMap.containsKey(roomId)) {
+                        if (!itemsMap.containsKey(itemId) || !roomsMap.containsKey(roomId)) {
                             result = fail;
                         } else {
                             result = success;
@@ -314,7 +314,7 @@ public class TestLogic {
                         String charId = matcher.group(1);
                         String roomID = matcher.group(2);
 
-                        if(!charactersMap.containsKey(charId) || !roomsMap.containsKey(roomID)) {
+                        if (!charactersMap.containsKey(charId) || !roomsMap.containsKey(roomID)) {
                             result = fail;
                         } else {
                             result = success;
@@ -395,7 +395,7 @@ public class TestLogic {
                         labyrinthId = matcher.group(1);
                         roomId = matcher.group(2);
 
-                        if(!roomsMap.containsKey(roomId)) {
+                        if (!roomsMap.containsKey(roomId)) {
                             result = fail;
                         } else {
                             result = success;
@@ -531,7 +531,7 @@ public class TestLogic {
                     case "setPoisoned": {
                         characterId = matcher.group(1);
 
-                        if(!charactersMap.containsKey(characterId)) {
+                        if (!charactersMap.containsKey(characterId)) {
                             result = fail;
                         } else {
                             result = success;
@@ -548,7 +548,7 @@ public class TestLogic {
                     case "disable": {
                         characterId = matcher.group(1);
 
-                        if(!charactersMap.containsKey(characterId)) {
+                        if (!charactersMap.containsKey(characterId)) {
                             result = fail;
                         } else {
                             result = success;
@@ -585,7 +585,7 @@ public class TestLogic {
                     case "toxicate": {
                         characterId = matcher.group(1);
 
-                        if(!charactersMap.containsKey(characterId)) {
+                        if (!charactersMap.containsKey(characterId)) {
                             result = fail;
                         } else {
                             result = success;
@@ -603,7 +603,7 @@ public class TestLogic {
                     case "stunInstructor": {
                         characterId = matcher.group(1);
 
-                        if(!charactersMap.containsKey(characterId)) {
+                        if (!charactersMap.containsKey(characterId)) {
                             result = fail;
                         } else {
                             result = success;
@@ -622,13 +622,13 @@ public class TestLogic {
                         itemId = matcher.group(1);
 
                         String isActive = "null";
-                        if(!itemsMap.containsKey(itemId)) {
+                        if (!itemsMap.containsKey(itemId)) {
                             result = fail;
                         } else {
                             result = success;
                             Item item = itemsMap.get(itemId);
                             item.step();
-                            if ( item.getisActive() ) {
+                            if (item.getisActive()) {
                                 isActive = "true";
                             } else {
                                 isActive = "false";
@@ -647,11 +647,11 @@ public class TestLogic {
                     case "openCamembert": {
                         itemId = matcher.group(1);
 
-                        if(!itemsMap.containsKey(itemId)) {
+                        if (!itemsMap.containsKey(itemId)) {
                             result = fail;
                         } else {
                             result = success;
-                            if(itemsMap.get(itemId) instanceof Camembert) {
+                            if (itemsMap.get(itemId) instanceof Camembert) {
                                 Camembert cm = (Camembert) itemsMap.get(itemId);
                                 cm.open();
                             }
@@ -668,11 +668,11 @@ public class TestLogic {
                     case "unToxicateRoomAirFreshener": {
                         itemId = matcher.group(1);
 
-                        if ( !itemsMap.containsKey(itemId) ) {
+                        if (!itemsMap.containsKey(itemId)) {
                             result = fail;
                         } else {
                             result = success;
-                            if ( itemsMap.get(itemId) instanceof AirFreshener ) {
+                            if (itemsMap.get(itemId) instanceof AirFreshener) {
                                 AirFreshener af = (AirFreshener) itemsMap.get(itemId);
                                 af.unToxicateRoom();
                             }
@@ -688,7 +688,7 @@ public class TestLogic {
                     case "activate": {
                         itemId = matcher.group(1);
 
-                        if(!itemsMap.containsKey(itemId)) {
+                        if (!itemsMap.containsKey(itemId)) {
                             result = fail;
                         } else {
                             result = success;
@@ -713,16 +713,22 @@ public class TestLogic {
                         if (matcher.group(3) != null)
                             paired = true;
 
-                        Transistor newTransistor = new Transistor();
-                        newTransistor.setIsTurnedOn(active);
-                        itemsMap.put(itemId, newTransistor);
+                        if (itemsMap.containsKey(itemId)) {
+                            result = fail;
+                        }
+                        else {
+                            result = success;
+                            Transistor newTransistor = new Transistor();
+                            newTransistor.setIsTurnedOn(active);
+                            itemsMap.put(itemId, newTransistor);
 
-                        if (paired) {
-                            Transistor pair = new Transistor();
-                            String pairId = itemId + "_pair";
-                            newTransistor.setPairTransistor(pair);
-                            pair.setPairTransistor(newTransistor);
-                            itemsMap.put(pairId, pair);
+                            if (paired) {
+                                Transistor pair = new Transistor();
+                                String pairId = itemId + "_pair";
+                                newTransistor.setPairTransistor(pair);
+                                pair.setPairTransistor(newTransistor);
+                                itemsMap.put(pairId, pair);
+                            }
                         }
 
 
@@ -730,44 +736,68 @@ public class TestLogic {
                         outputBuilder.append("Item: ").append(itemId).append("\n");
                         outputBuilder.append("Active: ").append(active).append("\n");
                         outputBuilder.append("Paired: ").append(paired).append("\n");
-                        outputBuilder.append("Result: Successful").append("\n");
+                        outputBuilder.append("Result: " + result).append("\n");
 
                         break;
                     case "setPairTransistor":
                         String tr1 = matcher.group(1);
                         String tr2 = matcher.group(2);
+                        if(!itemsMap.containsKey(tr1) || !itemsMap.containsKey(tr2)) {
+                            result = fail;
+                            outputBuilder.append(commandName).append(":").append("\n");
+                            outputBuilder.append("Pair1: ").append(tr1).append("\n");
+                            outputBuilder.append("Pair2: ").append(tr2).append("\n");
+                            outputBuilder.append("Result: " + result).append("\n");
+                            break;
+                        }
                         Transistor transistor1 = (Transistor) itemsMap.get(tr1);
                         Transistor transistor2 = (Transistor) itemsMap.get(tr2);
 
-                        if (transistor1 != null && transistor2 != null && transistor1.getPairTransistor() == null && transistor2.getPairTransistor() == null) {
+                        if (!transistor1.getisActive() || !transistor2.getisActive() || transistor1.getPairTransistor() != null || transistor2.getPairTransistor() != null) {
+                            result = fail;
+                        }
+                        else {
+                            result = success;
                             transistor1.setPairTransistor(transistor2);
                             transistor2.setPairTransistor(transistor1);
-                        }
 
+                        }
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Pair1: ").append(tr1).append("\n");
                         outputBuilder.append("Pair2: ").append(tr2).append("\n");
-                        outputBuilder.append("Result: Successful/Fail").append("\n");
+                        outputBuilder.append("Result: " + result).append("\n");
                         break;
                     case "placeTransistor":
                         itemId = matcher.group(1);
 
+                        if (!itemsMap.containsKey(itemId)) {
+                            result = fail;
+                        }
+                        else {
+                            result = success;
+                            Transistor placeTransistor = (Transistor) itemsMap.get(itemId);
+                        }
 
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Item: ").append(itemId).append("\n");
                         outputBuilder.append("Location: ").append("A SZOBA ID_JA AHOVA LETESZEM").append("\n");
-                        outputBuilder.append("Result: Successful/Fail").append("\n");
+                        outputBuilder.append("Result: " + result).append("\n");
 
                         break;
                     case "switchTransistor":
                         itemId = matcher.group(1);
 
-                        Transistor switchTransistor = (Transistor) itemsMap.get(Integer.parseInt(itemId));
-                        switchTransistor.switchTransistor();
-
+                        if (!itemsMap.containsKey(itemId)) {
+                            result = fail;
+                        }
+                        else {
+                            result = success;
+                            Transistor switchTransistor = (Transistor) itemsMap.get(itemId);
+                            switchTransistor.switchTransistor();
+                        }
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Item: ").append(itemId).append("\n");
-                        outputBuilder.append("Active: true/false EZT MAJD AZ ALAPAN HOGY MI").append("\n");
+                        outputBuilder.append("Result: " + result).append("\n");
 
                         break;
 
