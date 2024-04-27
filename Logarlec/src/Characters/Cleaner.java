@@ -70,4 +70,15 @@ public class Cleaner extends Character{
         System.out.println("Cleaner ventilated room | Cleaner: unToxicateRoom()");
         currentRoom.unToxicate();
     }
+
+    /**
+     * This method implements the cleaners behaviour
+     * It gets called in every round
+     */
+    @Override
+    public void nextRound(){
+        System.out.println("Cleaner nextRound | Cleaner: nextRound()");
+        moveToRandom();
+        moveCharacters();
+    }
 }

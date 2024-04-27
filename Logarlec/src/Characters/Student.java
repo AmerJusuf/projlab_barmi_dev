@@ -5,6 +5,7 @@ import Rooms.IRoom;
 
 public class Student extends Character{
 
+    private boolean isCaught = false;
     /**
      * This constructor is used to create a Student object.
      *
@@ -51,10 +52,17 @@ public class Student extends Character{
      */
     public void getCaught(){
         System.out.println("Student is caught | Student: getCaught()");
+        isCaught = true;
+    }
+
+    /**
+     * A régi getCaught logikája ide lett kiszervezve, hogy egy körben csak egyszer fusson le
+     */
+    public void gotCaught(){
         for(Item item: items){
-           if(item.protectStudent()){
-               return;
-           }
+            if(item.protectStudent()){
+                return;
+            }
         }
         this.dropAllItem();
         currentRoom.removeCharacter(this);
@@ -62,7 +70,16 @@ public class Student extends Character{
     }
 
     @Override
-    public void nextRound() {
+    public void nextRound(){
+        if(isCaught){
+            gotCaught();
+            isCaught = false;
+        }
+        boolean endTurn = false;
+        while(!endTurn){
+            System.out.println("Students round, waiting for commands | Student: nextRound()");
+            endTurn = true;
+        }
         //while !move
             // pickitem
             // pickItem
