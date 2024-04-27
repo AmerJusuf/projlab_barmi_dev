@@ -13,7 +13,7 @@ createItem:
 Item: TVSZ1
 Type: TVSZ
 Fake: false
-SavesLeft: 2
+Life: 2
 Result: Successful
 
 addCharacterToRoom:

@@ -502,13 +502,33 @@ public class TestLogic {
                     case "pickItem": {
                         characterId = matcher.group(1);
                         itemId = matcher.group(2);
+                        Character character = charactersMap.get(characterId);
+                        Item item = itemsMap.get(itemId);
+                        String characterType = "";
+                        String itemType = "";
 
-                        if (!charactersMap.containsKey(characterId) || !itemsMap.containsKey(itemId)) {
+                        if(itemId.startsWith("LOG")){
+                            itemType = "Logarlec";
+                        }
+                        else {
+                            itemType = "Not a logarlec";
+                        }
+
+                        if(characterId.startsWith("S")){
+                            characterType = "Student";
+                        }
+                        else if(characterId.startsWith("I")){
+                            characterType = "Instructor";
+                        }
+                        else{
+                            characterType = "Cleaner";
+                        }
+
+                        if (!charactersMap.containsKey(characterId) || !itemsMap.containsKey(itemId) || character.getItems().size()>=5 || (itemType.equals("Logarlec") && characterType.equals("Instructor")) || characterType.equals("Cleaner")) {
                             result = fail;
                         } else {
                             result = success;
-                            Character character = charactersMap.get(characterId);
-                            Item item = itemsMap.get(itemId);
+
                             character.pickItem(item);
                         }
 
@@ -575,12 +595,13 @@ public class TestLogic {
 
                     case "getCaught": {
                         characterId = matcher.group(1);
+                        Character character = charactersMap.get(characterId);
 
-                        if (!charactersMap.containsKey(characterId)) {
+                        if (!charactersMap.containsKey(characterId) || (!character.getItems().stream().anyMatch(item -> item instanceof TVSZ)))
+                        {
                             result = fail;
                         } else {
                             result = success;
-                            Character character = charactersMap.get(characterId);
                             character.getCaught();
                         }
 
@@ -778,23 +799,24 @@ public class TestLogic {
                         outputBuilder.append("Pair2: ").append(tr2).append("\n");
                         outputBuilder.append("Result: " + result).append("\n");
                         break;
-                    case "placeTransistor":
+                    case "placeTransistor":{
                         itemId = matcher.group(1);
+                        Transistor placeTransistor = (Transistor) itemsMap.get(itemId);
+                        //ezt nem lesz fun tesztelni
 
                         if (!itemsMap.containsKey(itemId)) {
                             result = fail;
                         }
                         else {
                             result = success;
-                            Transistor placeTransistor = (Transistor) itemsMap.get(itemId);
                         }
 
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Item: ").append(itemId).append("\n");
-                        outputBuilder.append("Location: ").append("A SZOBA ID_JA AHOVA LETESZEM").append("\n");
+                        outputBuilder.append("Location: ").append("Elég nehéz lenne lekérni a szobáját:(").append("\n");
                         outputBuilder.append("Result: " + result).append("\n");
 
-                        break;
+                        break;}
                     case "switchTransistor":
                         itemId = matcher.group(1);
 
@@ -926,21 +948,21 @@ public class TestLogic {
                         // Room IDs
                         outputBuilder.append("Rooms: ");
                         for (String rooms : roomsMap.keySet()) {
-                            outputBuilder.append(rooms).append(", ");
+                            outputBuilder.append(rooms).append(" ");
                         }
                         outputBuilder.append("\n");
 
                         // Character IDs
                         outputBuilder.append("Characters: ");
                         for (String characters : charactersMap.keySet()) {
-                            outputBuilder.append(characters).append(", ");
+                            outputBuilder.append(characters).append(" ");
                         }
                         outputBuilder.append("\n");
 
                         // Item IDs
                         outputBuilder.append("Items: ");
                         for (String items : itemsMap.keySet()) {
-                            outputBuilder.append(items).append(", ");
+                            outputBuilder.append(items).append(" ");
                         }
                         outputBuilder.append("\n");
 
@@ -1121,18 +1143,21 @@ public class TestLogic {
                     }
 
 
-                    case "gameStatus":
+                    case "gameStatus":{
+                        Labyrinth l = new Labyrinth();
                         outputBuilder.append(commandName).append(":").append("\n");
-                        outputBuilder.append("Status: ").append(labyrinth.getGameState()).append("\n");
+                        outputBuilder.append("Status: ").append(l.getGameState()).append("\n");
 
-                        break;
-                    case "nextRound":
-                        labyrinth.nextRound();
+                        break;}
+                    case "nextRound": {
+                        Labyrinth l = new Labyrinth();
+                        l.nextRound();
 
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("VALAMI KIÍRÁS XD").append("\n");
 
                         break;
+                    }
                     case "skipTurn":
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Character: ").append("KARAKTER ID-JA").append("\n");

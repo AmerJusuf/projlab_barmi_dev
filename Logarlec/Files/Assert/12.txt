@@ -1,90 +1,91 @@
 createLabyrinth:
 Labyrinth: L1
 Result: Successful
- 
+
 createRoom:
 Room: BR1
 Capacity: 5
 Type: BasicRoom
 Result: Successful
- 
+
 createRoom:
 Room: BR2
 Capacity: 5
 Type: BasicRoom
 Result: Successful
- 
+
 addNeighbour:
 Room: BR1
 Neighbour: BR2
- 
+
 addNeighbour:
 Room: BR2
 Neighbour: BR1
- 
+
 createCharacter:
 Character: I1
 Type: Instructor
 Result: Successful
- 
+
 createCharacter:
 Character: S1
 Type: Student
 Result: Successful
- 
+
 createCharacter:
 Character: C1
 Type: Cleaner
 Result: Successful
- 
+
 addCharacterToRoom:
 Character: I1
 Room: BR1
 Result: Successful
- 
+
 addCharacterToRoom:
 Character: S1
 Room: BR2
 Result: Successful
- 
+
 addCharacterToRoom:
 Character: C1
 Room: BR2
 Result: Successful
- 
+
 addCharacterToLabyrinth:
 Labyrinth: L1
-Character:  I1
+Character: I1
 Result: Successful
- 
+
 addCharacterToLabyrinth:
 Labyrinth: L1
-Character:  S1
+Character: S1
 Result: Successful
- 
+
 addCharacterToLabyrinth:
 Labyrinth: L1
-Character:  C1
+Character: C1
 Result: Successful
- 
+
 createItem:
 Item: TVSZ1
 Type: TVSZ
+Fake: false
+Life: 0
 Result: Successful
- 
+
 addItemToCharacter:
 Item: TVSZ1
 Character: S1
 Result: Successful
- 
+
 moveCharacter:
 Character: I1
 SourceRoom: BR1
 DestRoom: BR2
 Result: Successful
- 
-ID-s:
-L1
-BR1, BR2
-I1, S1, C1
-TVSZ1
+
+list:
+Rooms: BR1 BR2
+Characters: I1 S1 C1
+Items: TVSZ1

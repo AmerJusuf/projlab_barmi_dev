@@ -27,4 +27,4 @@ Result: Successful
 
 switchTransistor:
 Item: TR1
-Active: false
+Result: Successful

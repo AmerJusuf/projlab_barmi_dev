@@ -30,8 +30,21 @@ Type: Instructor
 Result: Successful
 
 createItem:
-Item: RAG1
-Type: Rag
+Item: B1
+Type: Beer
+Fake: false
+Result: Successful
+
+createItem:
+Item: FFP21
+Type: FFP2
+Fake: false
+Result: Successful
+
+createItem:
+Item: FFP22
+Type: FFP2
+Fake: false
 Result: Successful
 
 addNeighbour:
@@ -78,7 +91,7 @@ Character: S1
 Result: Successful
 
 addItemToCharacter:
-Item: BEER1
+Item: RAG1
 Character: S1
 Result: Successful
 
@@ -93,8 +106,7 @@ SourceRoom: BR1
 DestRoom: BR2
 Result: Successful
 	
-ID-s:
-L1
-BR1,BR2
-S1,I1,I2
-FFP2
+list:
+Rooms: BR1 BR2
+Characters: S1,I1,I2
+Items: FFP2

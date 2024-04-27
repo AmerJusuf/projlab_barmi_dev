@@ -1,6 +1,6 @@
 createRoom -r BR1 -capacity 5 -type BasicRoom
 createCharacter -ch C1 -type Cleaner
-createItem -it TVSZ1 -type TVSZ
+createItem -it TVSZ1 -type TVSZ -life 2
 addCharacterToRoom -ch C1 -r BR1
 addItemToRoom -it TVSZ1 -r BR1
 pickItem -ch C1 -it TVSZ1

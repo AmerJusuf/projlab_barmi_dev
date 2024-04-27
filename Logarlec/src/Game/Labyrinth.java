@@ -25,6 +25,7 @@ public class Labyrinth {
         rooms = new ArrayList<>();
         students = new ArrayList<>();
         instructors = new ArrayList<>();
+        cleaners = new ArrayList<>();
     }
 
     public void addRoom(IRoom room) {

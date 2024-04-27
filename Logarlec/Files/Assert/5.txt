@@ -96,3 +96,5 @@ roomStatus:
 Room: BR1
 RoomType: BasicRoom
 Characters: S1
+Items: CAM6
+Capacity: 2

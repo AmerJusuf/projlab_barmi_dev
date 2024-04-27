@@ -19,7 +19,7 @@ Result: Successful
 createCharacter:
 Character: S1
 Type: Student
-Result: Successful 
+Result: Successful
 
 addCharacterToRoom:
 Character: S1

@@ -1,0 +1,33 @@
+createRoom:
+Room: BR1
+Capacity: 2
+Type: BasicRoom
+Result: Successful
+
+createCharacter:
+Character: I1
+Type: Instructor
+Result: Successful
+
+addCharacterToRoom:
+Character: I1
+Room: BR1
+Result: Successful
+
+createItem:
+Item: LOG1
+Type: Logarlec
+Fake: false
+Result: Successful
+
+pickItem:
+Item: LOG1
+Character: I1
+Result: Fail
+
+characterStatus:
+Character: I1
+CharacterType: Instructor
+Room: BR1
+Items: 
+Toxicated: false

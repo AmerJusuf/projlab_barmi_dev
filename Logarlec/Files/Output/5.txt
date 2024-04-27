@@ -83,7 +83,7 @@ Result: Successful
 pickItem:
 Item: CAM6
 Character: S1
-Result: Successful
+Result: Fail
 
 characterStatus:
 Character: S1
