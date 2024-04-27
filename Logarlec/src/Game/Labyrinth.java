@@ -128,7 +128,6 @@ public class Labyrinth {
     public void nextRound() {
             for (Student student : students) {
                 student.nextRound();
-                triggerKickStudents(); //TODO
             }
             for (Instructor instructor : instructors) {
                 instructor.nextRound();
@@ -146,12 +145,6 @@ public class Labyrinth {
             System.out.println("Students won!");
         } else {
             System.out.println("Students lost!");
-        }
-    }
-
-    private void triggerKickStudents(){
-        for (Instructor instructor : instructors) {
-            instructor.kickStudents();
         }
     }
 

@@ -1134,13 +1134,15 @@ public class TestLogic {
 
                         break;
                     case "skipTurn":
+
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Character: ").append("KARAKTER ID-JA").append("\n");
 
                         break;
                     case "startGame":
+                        labyrinth.startGame();
                         outputBuilder.append(commandName).append(":").append("\n");
-                        outputBuilder.append("VALAMI KIÍRÁS XD").append("\n");
+                        outputBuilder.append("Game started!").append("\n");
                         break;
 
 
