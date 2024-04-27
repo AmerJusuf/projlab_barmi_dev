@@ -29,5 +29,5 @@ characterStatus:
 Character: I1
 CharacterType: Instructor
 Room: BR1
-Items:
+Items: 
 Toxicated: false

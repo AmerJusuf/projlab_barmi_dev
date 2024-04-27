@@ -44,12 +44,12 @@ roomStatus:
 Room: BR1
 RoomType: BasicRoom
 Characters: S1
-Items:
+Items: 
 Capacity: 2
 
 roomStatus:
 Room: BR2
 RoomType: BasicRoom
 Characters: S2
-Items:
+Items: 
 Capacity: 1
