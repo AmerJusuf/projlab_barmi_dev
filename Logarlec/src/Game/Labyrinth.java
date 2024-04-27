@@ -44,29 +44,47 @@ public class Labyrinth {
         boolean mergeDone = false;
         boolean splitDone = false;
 
-        while (!mergeDone){
-            // canMergeAnyRoom()
-            if (rooms.get(idx1).getNumberOfCharacters() == 0) {
-                IRoom neighbour = getAcceptableNeighbour(rooms.get(idx1));
-                merge(idx1, rooms.indexOf(neighbour));
-                mergeDone = true;
-            } else {
-                idx1 = rand.nextInt(rooms.size());
+        while (!mergeDone) {
+            if (canMergeAnyRoom()) {
+                if (rooms.get(idx1).getNumberOfCharacters() == 0) {
+                    IRoom neighbour = getAcceptableNeighbour(rooms.get(idx1));
+                    merge(idx1, rooms.indexOf(neighbour));
+                    mergeDone = true;
+                } else {
+                    idx1 = rand.nextInt(rooms.size());
+                }
             }
         }
 
-        while (!splitDone){
-            // canMergeAnyRoom()
-            if (rooms.get(idx2).getNumberOfCharacters() == 0) {
-                split(idx2);
-                splitDone = true;
-            } else {
-                idx2 = rand.nextInt(rooms.size());
+        while (!splitDone) {
+            if (canMergeAnyRoom()) {
+                if (rooms.get(idx2).getNumberOfCharacters() == 0) {
+                    split(idx2);
+                    splitDone = true;
+                } else {
+                    idx2 = rand.nextInt(rooms.size());
+                }
             }
         }
-
         //TODO: ha elfogytak az indexek break, fuggveny a mergelheto szobakra
+    }
 
+    private boolean hasEmptyNeighbour(IRoom room) {
+        for (IRoom neighbour : room.getNeighbours()) {
+            if (neighbour.getNumberOfCharacters() == 0) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean canMergeAnyRoom() {
+        for (IRoom room : rooms) {
+            if (room.getNumberOfCharacters() == 0 && hasEmptyNeighbour(room)) {
+                return true;
+            }
+        }
+        return false;
     }
 
     private IRoom getAcceptableNeighbour(IRoom room) {
