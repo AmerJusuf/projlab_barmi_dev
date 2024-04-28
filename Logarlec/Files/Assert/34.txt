@@ -45,6 +45,10 @@ SourceRoom: BR1
 DestRoom: PR1
 Result: Successful
 
+unToxicateRoomAirFreshener:
+Item: AIR1
+Result: Successful
+
 roomStatus:
 Room: PR1
 RoomType: BasicRoom
