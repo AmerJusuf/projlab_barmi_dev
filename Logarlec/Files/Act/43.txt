@@ -1,4 +1,4 @@
-createCharacter -id S1 -type Student
+createCharacter -ch S1 -type Student
 createItem -it B1 -type Beer
 toxicate -ch S1
 activate -it B1

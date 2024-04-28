@@ -3,6 +3,7 @@ package Rooms;
 import Characters.Character;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class PoisonedRoomDecorator extends RoomDecorator{
@@ -51,6 +52,7 @@ public class PoisonedRoomDecorator extends RoomDecorator{
         }
         else{
             System.out.println("Can not split room, because it contains characters | PoisonedRoomDecorator: splitRoom");
+            return Collections.emptyList();
         }
         return newRooms;
     }

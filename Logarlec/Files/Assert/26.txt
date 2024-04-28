@@ -30,7 +30,7 @@ Result: Successful
 addNeighbour:
 Room: BR1
 Neighbour: BR2
-	
+
 addNeighbour:
 Room: BR2
 Neighbour: BR1
@@ -72,13 +72,13 @@ DestRoom: BR2
 Result: Successful
 
 addCharacterToRoom:
-Character: S1
+Character: S2
 Room: BR1
 Result: Successful
 
 placeTransistor:
 Item: TR2
-Location: BR2
+Location: 
 Result: Fail
 
 characterStatus:

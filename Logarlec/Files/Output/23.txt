@@ -7,18 +7,23 @@ Result: Successful
 createTransistor:
 Item: TR1
 Active: true
-Paired: true
+Paired: false
 Result: Successful
 
 createTransistor:
 Item: TR2
 Active: true
-Paired: true
+Paired: false
 Result: Successful
 
 createCharacter:
 Character: S1
 Type: Student
+Result: Successful
+
+setPairTransistor:
+Pair1: TR1
+Pair2: TR2
 Result: Successful
 
 addCharacterToRoom:
@@ -38,12 +43,12 @@ Result: Successful
 
 placeTransistor:
 Item: TR1
-Location: 
-Result: Fail
+Location: BR1
+Result: Successful
 
 characterStatus:
 Character: S1
 CharacterType: Student
 Room: BR1
-Items: TR1, TR2
+Items: TR2
 Toxicated: false

@@ -7,11 +7,17 @@ Result: Successful
 createTransistor:
 Item: TR1
 Active: true
-Paired: true
+Paired: false
 Result: Successful
 
 createTransistor:
 Item: TR2
+Active: true
+Paired: false
+Result: Successful
+
+createTransistor:
+Item: TR3
 Active: true
 Paired: false
 Result: Successful
@@ -38,5 +44,10 @@ Result: Successful
 
 setPairTransistor:
 Pair1: TR1
-Pair2: TR2
+Pair2: TR3
 Result: Successful
+
+setPairTransistor:
+Pair1: TR1
+Pair2: TR2
+Result: Fail

@@ -16,10 +16,10 @@ Result: Successful
 
 splitRoom:
 Room: BR1
-NewRoom1: BR1_split1
-NewRoom2: BR1_split2
+NewRoom1:
+NewRoom2:
 Result: Fail
 
 ID-s:
-
+BR1
 S1

@@ -38,7 +38,7 @@ Result: Successful
 addNeighbour:
 Room: BR1
 Neighbour: BR2
-	
+
 addNeighbour:
 Room: BR2
 Neighbour: BR1
@@ -60,18 +60,18 @@ Result: Successful
 
 addCharacterToLabyrinth:
 Labyrinth: L1
-Character:  S1
+Character: S1
 Result: Successful
 
 addCharacterToLabyrinth:
 Labyrinth: L1
-Character:  I1
+Character: I1
 Result: Successful
 
 addCharacterToLabyrinth:
 Labyrinth: L1
-Character:  I2
-Result: Successful 
+Character: I2
+Result: Successful
 
 addItemToCharacter:
 Item: RAG1
@@ -88,14 +88,14 @@ characterStatus:
 Character: I1
 CharacterType: Instructor
 Room: BR2
-Items:
+Items: 
 Toxicated: true
 
 characterStatus:
 Character: I2
 CharacterType: Instructor
 Room: BR2
-Items:
+Items: 
 Toxicated: true
 
 ID-s:
