@@ -46,6 +46,7 @@ public class TestLogic {
         commandPatterns.put("unToxicateRoomAirFreshener", Pattern.compile("unToxicateRoomAirFreshener\\s+-it\\s+(\\S+)"));
         commandPatterns.put("activate", Pattern.compile("activate\\s+-it\\s+(\\S+)"));
 
+
         commandPatterns.put("createTransistor", Pattern.compile("createTransistor\\s+-it\\s+(\\S+)(\\s+-active)?(\\s+-paired)?"));
         commandPatterns.put("setPairTransistor", Pattern.compile("setPairTransistor\\s+-it\\s+(\\S+)\\s+-it\\s+(\\S+)"));
         commandPatterns.put("placeTransistor", Pattern.compile("placeTransistor\\s+-it\\s+(\\S+)"));
