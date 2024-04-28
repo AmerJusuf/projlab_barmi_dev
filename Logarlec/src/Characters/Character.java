@@ -149,6 +149,8 @@ public abstract class Character {
 
     public abstract void getCaught();
 
+    public void gotCaught(){}
+
     public boolean getPoisoned(){
         if(this.isPoisoned){
             return true;

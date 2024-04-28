@@ -22,7 +22,7 @@ public class TestLogic {
 
     static {
         commandPatterns.put("runAllScripts", Pattern.compile("runAllScripts"));
-        commandPatterns.put("loadMap", Pattern.compile("loadMap\\s+-file\\s+(\\S+)"));              // NINCS IMPLEMENTÁLVA
+        commandPatterns.put("loadMap", Pattern.compile("loadMap\\s+-file\\s+(\\S+)"));
         commandPatterns.put("createLabyrinth", Pattern.compile("createLabyrinth\\s+-lab\\s+(\\S+)"));
         commandPatterns.put("addCharacterToLabyrinth", Pattern.compile("addCharacterToLabyrinth\\s+-lab\\s+(\\S+)\\s+-ch\\s+(\\S+)"));
         commandPatterns.put("addItemToCharacter", Pattern.compile("addItemToCharacter\\s+-it\\s+(\\S+)\\s+-ch\\s+(\\S+)"));
@@ -32,7 +32,7 @@ public class TestLogic {
         commandPatterns.put("createCharacter", Pattern.compile("createCharacter\\s+-ch\\s+(\\S+)\\s*(-type\\s+(\\S+))?"));
         commandPatterns.put("addRoomToLabyrinth", Pattern.compile("addRoomToLabyrinth\\s+-lab\\s+(\\S+)\\s+-r\\s+(\\S+)"));
 
-        commandPatterns.put("createItem", Pattern.compile("createItem\\s+-it\\s+(\\S+)\\s+-type\\s+(\\S+)(?:\\s+-fake)?(?:\\s+-life\\s+(\\d+))?"));     // Ez elég érdekes
+        commandPatterns.put("createItem", Pattern.compile("createItem\\s+-it\\s+(\\S+)\\s+-type\\s+(\\S+)(?:\\s+-fake)?(?:\\s+-life\\s+(\\d+))?"));
 
         commandPatterns.put("moveCharacter", Pattern.compile("moveCharacter\\s+-ch\\s+(\\S+)\\s+-r\\s+(\\S+)"));
         commandPatterns.put("pickItem", Pattern.compile("pickItem\\s+-ch\\s+(\\S+)\\s+-it\\s+(\\S+)"));
@@ -634,7 +634,7 @@ public class TestLogic {
                             result = fail;
                         } else {
                             result = success;
-                            character.getCaught();
+                            character.gotCaught(); //Át lett írva getCaughtról
 
                             for(Map.Entry<String, Character> entryRow : charactersMap.entrySet()) {
                                 String chId = entryRow.getKey();
