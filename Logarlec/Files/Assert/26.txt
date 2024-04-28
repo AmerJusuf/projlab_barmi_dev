@@ -72,7 +72,7 @@ DestRoom: BR2
 Result: Successful
 
 addCharacterToRoom:
-Character: S1
+Character: S2
 Room: BR1
 Result: Successful
 
