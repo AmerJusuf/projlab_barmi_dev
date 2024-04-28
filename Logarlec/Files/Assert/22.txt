@@ -22,6 +22,11 @@ Active: True
 Paired: True
 Result: Successful
 
+setPairTransistor:
+Pair1: TR1
+Pair2: TR2
+Result: Successful
+
 addNeighbour:
 Room: BR1
 Neighbour: BR2
