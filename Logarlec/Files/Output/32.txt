@@ -98,7 +98,7 @@ Room: BR2
 Items: 
 Toxicated: false
 
-list:
-Rooms: BR1 BR2 
-Characters: I1 I2 S1 
-Items: RAG1 
+ID-s:
+BR1, BR2
+I1, I2, S1
+RAG1

@@ -18,7 +18,7 @@ createItem:
 Item: TVSZ1
 Type: TVSZ
 Fake: false
-Life: 3
+SavesLeft: 3
 Result: Successful
 
 addItemToCharacter:
@@ -28,10 +28,10 @@ Result: Successful
 
 getCaught:
 Character: S1
-Result: Fail
+Result: Successful
 
 itemStatus:
 Item: TVSZ1
 ItemType: TVSZ
-Owner/Room: S1
+Owner/Room: 
 Fake: false

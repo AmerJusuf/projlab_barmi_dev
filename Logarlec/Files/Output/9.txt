@@ -28,11 +28,6 @@ Result: Successful
 
 getCaught:
 Character: S1
-Result: Fail
+Result: Successful
 
-characterStatus:
-Character: S1
-CharacterType: Student
-Room: BR1
-Items: 
-Toxicated: false
+Character not found

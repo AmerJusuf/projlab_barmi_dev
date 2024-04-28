@@ -37,6 +37,8 @@ public class Labyrinth {
     }
 
     public void mergeAndSplitRandomly() {
+        if(rooms.size() < 2) return; // Ha nincs elég szoba, akkor nem lehet mergelni és splittelni
+
         // Merge and split rooms
         Random rand = new Random();
         int idx1 = rand.nextInt(rooms.size());

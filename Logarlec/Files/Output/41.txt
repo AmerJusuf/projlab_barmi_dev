@@ -34,7 +34,6 @@ Room2: BR2
 MergedRoom: BR1BR2
 Result: Successful
 
-list:
-Rooms: BR1BR2 
-Characters: S1 
-Items: 
+ID-s:
+BR1BR2
+S1

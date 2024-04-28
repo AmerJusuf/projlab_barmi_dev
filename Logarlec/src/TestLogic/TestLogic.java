@@ -21,6 +21,7 @@ public class TestLogic {
 
     static {
         //JUSUF
+        commandPatterns.put("runAllScripts", Pattern.compile("runAllScripts"));
         commandPatterns.put("loadMap", Pattern.compile("loadMap\\s+-file\\s+(\\S+)"));              // NINCS IMPLEMENTÁLVA
         commandPatterns.put("createLabyrinth", Pattern.compile("createLabyrinth\\s+-lab\\s+(\\S+)"));
         commandPatterns.put("addCharacterToLabyrinth", Pattern.compile("addCharacterToLabyrinth\\s+-lab\\s+(\\S+)\\s+-ch\\s+(\\S+)"));
@@ -119,6 +120,7 @@ public class TestLogic {
             System.out.println(output); // Print output to console
         }
         else {
+            System.out.println("Processing commands from file: " + commandOrFileName);
             String directory = System.getProperty("user.dir");
 
             String fileName = commandOrFileName;
@@ -231,35 +233,41 @@ public class TestLogic {
             if (matcher.matches()) {
                 // Extract parameters based on matched pattern
                 switch (commandName) {
-                    case "runAllScipts":{
+                    case "runAllScripts": {
                         incorrectFiles = new ArrayList<>();
-                        for(int i = 2; i < 45; i++){
+                        for (int i = 2; i < 45; i++) {
                             String fileName = Integer.toString(i);
+                            roomsMap = new HashMap<>();
+                            charactersMap = new HashMap<>();
+                            itemsMap = new HashMap<>();
+                            labyrinth = new Labyrinth();
                             processCommandsFromFile(fileName, true);
                         }
 
-                            String directory = System.getProperty("user.dir");
-                            String fileName = "IncorrectFiles";
-                            String fileOutputPath = directory + File.separator + "Files" + File.separator + "Output" + File.separator + fileName + ".txt";
-                            System.out.println(fileOutputPath);
-                            try {
-                                FileWriter writer = new FileWriter(fileOutputPath);
-                                for( int i : incorrectFiles){
-                                    writer.write(i + "\n");
-                                }
-                                writer.close();
-                            } catch (IOException e) {
-                                throw new RuntimeException(e);
+                        String directory = System.getProperty("user.dir");
+                        String fileName = "IncorrectFiles";
+                        String fileOutputPath = directory + File.separator + "Files" + File.separator + "Output" + File.separator + fileName + ".txt";
+                        System.out.println(fileOutputPath);
+                        try {
+                            FileWriter writer = new FileWriter(fileOutputPath);
+                            for (int i : incorrectFiles) {
+                                writer.write(i + "\n");
                             }
+                            writer.close();
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                        break;
                     }
 
-                    case "loadMap":
+                    case "loadMap": {
                         String fileName = matcher.group(1);
                         //TODO
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("file: ").append(fileName).append("\n");
                         outputBuilder.append("Result: Successful/Fail").append("\n");
                         break;
+                    }
 
                     case "createLabyrinth": {
                         labyrinthId = matcher.group(1);
@@ -948,8 +956,12 @@ public class TestLogic {
                             newRoomID1 = roomId + "_split1";
                             newRoomID2 = roomId + "_split2";
                             roomsMap.remove(roomId);
-                            roomsMap.put(newRoomID1, newRooms.get(0));
-                            roomsMap.put(newRoomID2, newRooms.get(1));
+                            if (newRooms.size() == 2) {
+                                roomsMap.put(newRoomID1, newRooms.get(0));
+                                roomsMap.put(newRoomID2, newRooms.get(1));
+                            } else {
+                                result = fail;
+                            }
                         }
 
                         outputBuilder.append(commandName).append(":").append("\n");
