@@ -4,7 +4,9 @@ createTransistor -it TR1 -active -paired
 createTransistor -it TR2 -active -paired
 createCharacter -ch S1 -type Student
 addCharacterToRoom -ch S1 -r BR1
-addItemToRoom -it TR2 -r BR2
 addItemToCharacter -it TR1 -ch S1
+addItemToCharacter -it TR2 -ch S1
 placeTransistor -it TR1
+moveCharacter -ch S1 -r BR2
+placeTransistor -it TR2
 characterStatus -ch S1
