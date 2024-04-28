@@ -54,9 +54,9 @@ public class Transistor extends Item{
                     //System.out.println("Pair transistor's room has space | Transistor: place()");
                     //System.out.println("Placing second transistor, and moving Student | Transistor: place()");
                     setPlaceLocation(currRoom);
-                    owner.removeItem(this);
                     owner.move(pl);
                     owner.addItem(pairTransistor);
+                    owner.removeItem(this);
                 } else {
                     //System.out.println("Cannot place: The room is full | Transistor: place()");
 

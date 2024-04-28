@@ -40,7 +40,7 @@ public class TestLogic {
         commandPatterns.put("setPoisoned", Pattern.compile("setPoisoned\\s+-ch\\s+(\\S+)"));
         commandPatterns.put("disable", Pattern.compile("disable\\s+-ch\\s+(\\S+)"));
         commandPatterns.put("getCaught", Pattern.compile("getCaught\\s+-ch\\s+(\\S+)"));
-        commandPatterns.put("toxicate", Pattern.compile("toxicate\\s+-ch\\s+(\\S+)"));
+        commandPatterns.put("toxicate", Pattern.compile("toxicate\\s+-r\\s+(\\S+)"));
         commandPatterns.put("stunInstructor", Pattern.compile("stunInstructor\\s+-ch\\s+(\\S+)"));
         commandPatterns.put("stepItem", Pattern.compile("stepItem\\s+-it\\s+(\\S+)"));
         commandPatterns.put("openCamembert", Pattern.compile("openCamembert\\s+-it\\s+(\\S+)"));
@@ -665,20 +665,20 @@ public class TestLogic {
                     }
 
 
-                    //TODO ...
-                    case "toxicate": {
-                        characterId = matcher.group(1);
 
-                        if (!charactersMap.containsKey(characterId)) {
+                    case "toxicate": {
+                        roomId = matcher.group(1);
+
+                        if (!roomsMap.containsKey(roomId)) {
                             result = fail;
                         } else {
                             result = success;
-                            Character character = charactersMap.get(characterId);
-                            character.disable();
+                            IRoom room = roomsMap.get(roomId);
+
                         }
 
                         outputBuilder.append(commandName).append(":").append("\n");
-                        outputBuilder.append("Character: ").append(characterId).append("\n");
+                        outputBuilder.append("Room: ").append(roomId).append("\n");
                         outputBuilder.append("Result: " + result).append("\n");
 
                         break;

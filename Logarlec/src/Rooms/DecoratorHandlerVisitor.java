@@ -116,7 +116,12 @@ public class DecoratorHandlerVisitor implements RoomVisitor {
         roomToHandle.setNeighbours(newNeighbours);
     }
 
-    //Todo mi van ha a regi szoba olyan szobanak a szomszedja, ami a régi szobának nem szomszédja?
+
+    /**
+     * Handles the neighbours of a room when replacing it.
+     * @param oldRoom The room to replace
+     * @param newRoom The room to replace with
+     */
     public void handleNeighboursWhenReplacing(IRoom oldRoom, IRoom newRoom){
         List<IRoom> neighbours = oldRoom.getNeighbours();
         for(IRoom neighbour : neighbours){
@@ -124,6 +129,14 @@ public class DecoratorHandlerVisitor implements RoomVisitor {
                 neighbour.removeNeighbour(oldRoom);
                 neighbour.addNeighbour(newRoom);
             }
+        }
+        for(IRoom room : roomToHandle.getLabyrinth().getRooms()){
+           for(IRoom neighbour : room.getNeighbours()){
+               if(neighbour.equals(oldRoom)){
+                   room.removeNeighbour(oldRoom);
+                   room.addNeighbour(newRoom);
+               }
+           }
         }
     }
 }

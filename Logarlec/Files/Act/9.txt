@@ -1,6 +1,8 @@
+createLabyrinth -lab L1
 createRoom -r BR1 -capacity 2 -type BasicRoom
 createCharacter -ch S1 -type Student
 addCharacterToRoom -ch S1 -r BR1
+addCharacterToLabyrinth -lab L1 -ch S1
 createItem -it TVSZ1 -type TVSZ -life 1
 addItemToCharacter -it TVSZ1 -ch S1
 getCaught -ch S1

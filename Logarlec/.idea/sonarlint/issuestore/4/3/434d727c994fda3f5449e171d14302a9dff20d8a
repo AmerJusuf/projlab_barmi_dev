@@ -1,21 +1,21 @@
 
-¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Áã²¹ûÿÿÿÿ8üˆÚç1J$6393ab76-127d-4cc7-b3be-9b190b370d2f
-]	java:S125"<This block of commented-out lines of code should be removed.(ÈäÒıÿÿÿÿ8üÜ“¤ò1
-]	java:S125!"<This block of commented-out lines of code should be removed.(ÜÍÏĞüÿÿÿÿ8ıÜ“¤ò1
-X	java:S125+"<This block of commented-out lines of code should be removed.(«ñ·¢8ıÜ“¤ò1
-]	java:S125."<This block of commented-out lines of code should be removed.(İ§ëèûÿÿÿÿ8şÜ“¤ò1
-X	java:S1250"<This block of commented-out lines of code should be removed.(’³ø8şÜ“¤ò1
-]	java:S1254"<This block of commented-out lines of code should be removed.(ú²Ùúÿÿÿÿ8ÿÜ“¤ò1
-]	java:S1256"<This block of commented-out lines of code should be removed.(çöÛáüÿÿÿÿ8ÿÜ“¤ò1
-X	java:S125="<This block of commented-out lines of code should be removed.(¹¿à¨8€İ“¤ò1
-]	java:S125E"<This block of commented-out lines of code should be removed.(·Êûıÿÿÿÿ8€İ“¤ò1
-x
-java:S3923J"[Remove this conditional structure or edit its code blocks so that they're not all the same.(€‡œÀ8İ“¤ò1
-X	java:S125K"<This block of commented-out lines of code should be removed.(¬ø‰8İ“¤ò1
-X	java:S125M"<This block of commented-out lines of code should be removed.(¤ñ‡È8İ“¤ò1
-X	java:S125X"<This block of commented-out lines of code should be removed.(Ä¨Ñ–8‚İ“¤ò1
-]	java:S125\"<This block of commented-out lines of code should be removed.(êõûÿÿÿÿ8ƒİ“¤ò1
-]	java:S125c"<This block of commented-out lines of code should be removed.(ÈùÃ¹úÿÿÿÿ8ƒİ“¤ò1
-]	java:S125e"<This block of commented-out lines of code should be removed.(¢ùè¸şÿÿÿÿ8ƒİ“¤ò1
-N
-java:S1128",Remove this unused import 'Rooms.BasicRoom'.(Çêê½ÿÿÿÿÿ8„İ“¤ò1
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Áã²¹ûÿÿÿÿ8üˆÚç1J$40663754-4b5e-403d-86cf-c7560e16cfc1
+ƒ	java:S125"<This block of commented-out lines of code should be removed.(ÈäÒıÿÿÿÿ8üÜ“¤ò1J$0a206572-e410-49e2-90bf-3da4bc757ab0
+ƒ	java:S125!"<This block of commented-out lines of code should be removed.(ÜÍÏĞüÿÿÿÿ8ıÜ“¤ò1J$738f6507-9a74-4b8b-80dc-cec90aa867ec
+~	java:S125+"<This block of commented-out lines of code should be removed.(«ñ·¢8ıÜ“¤ò1J$341af683-b80d-4d9b-9a95-14ca2b53f978
+ƒ	java:S125."<This block of commented-out lines of code should be removed.(İ§ëèûÿÿÿÿ8şÜ“¤ò1J$cb55eaa2-68b9-4467-9e84-7c8d88c66e2f
+~	java:S1250"<This block of commented-out lines of code should be removed.(’³ø8şÜ“¤ò1J$2697c83e-c561-4d98-a67c-d2e414120e13
+ƒ	java:S1254"<This block of commented-out lines of code should be removed.(ú²Ùúÿÿÿÿ8ÿÜ“¤ò1J$7d1fae05-a16a-4206-96d9-e87b49b0710a
+ƒ	java:S1256"<This block of commented-out lines of code should be removed.(çöÛáüÿÿÿÿ8ÿÜ“¤ò1J$885ffce2-64d3-4c7a-a6c9-3ce3857f20ae
+~	java:S125="<This block of commented-out lines of code should be removed.(¹¿à¨8€İ“¤ò1J$c794830d-b5c7-4616-8fd0-c9375f54ab6f
+ƒ	java:S125E"<This block of commented-out lines of code should be removed.(·Êûıÿÿÿÿ8€İ“¤ò1J$6f12a195-cf52-4757-82b7-350202b34c90
+
+java:S3923J"[Remove this conditional structure or edit its code blocks so that they're not all the same.(€‡œÀ8İ“¤ò1J$c22ff08e-5ece-47b7-b0b2-4d50f6a632aa
+~	java:S125K"<This block of commented-out lines of code should be removed.(¬ø‰8İ“¤ò1J$7ae11be7-39ff-47fb-84ea-dd9bcd179385
+~	java:S125M"<This block of commented-out lines of code should be removed.(¤ñ‡È8İ“¤ò1J$fc524d5c-0866-4fbd-b78f-af7d38335c8a
+~	java:S125X"<This block of commented-out lines of code should be removed.(Ä¨Ñ–8‚İ“¤ò1J$6270c2ab-2d60-4e10-adaf-0bf93d83e308
+ƒ	java:S125\"<This block of commented-out lines of code should be removed.(êõûÿÿÿÿ8ƒİ“¤ò1J$2057ed3a-db9d-4889-9814-183c68c0c2f4
+ƒ	java:S125c"<This block of commented-out lines of code should be removed.(ÈùÃ¹úÿÿÿÿ8ƒİ“¤ò1J$5e4f77d6-bc20-47a3-8def-8b9d1ebe05d1
+ƒ	java:S125e"<This block of commented-out lines of code should be removed.(¢ùè¸şÿÿÿÿ8ƒİ“¤ò1J$ca1494a1-0631-4bdf-b8ad-c5a03e095c1e
+t
+java:S1128",Remove this unused import 'Rooms.BasicRoom'.(Çêê½ÿÿÿÿÿ8„İ“¤ò1J$c1fa7713-71a5-4ba8-9008-9a236d2dec2d
