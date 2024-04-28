@@ -13,7 +13,7 @@ createItem:
 Item: TVSZ1
 Type: TVSZ
 Fake: false
-Life: 2
+SavesLeft: 2
 Result: Successful
 
 addCharacterToRoom:
@@ -35,5 +35,5 @@ characterStatus:
 Character: C1
 CharacterType: Cleaner
 Room: BR1
-Items:
+Items: 
 Toxicated: false

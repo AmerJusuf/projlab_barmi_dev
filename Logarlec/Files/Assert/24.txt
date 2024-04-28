@@ -6,14 +6,19 @@ Result: Successful
 
 createTransistor:
 Item: TR1
-Active: False
-Paired: True
+Active: True
+Paired: False
 Result: Successful
 
 createTransistor:
 Item: TR2
-Active: False
-Paired: True
+Active: True
+Paired: False
+Result: Successful
+
+setPairTransistor:
+Pair1: TR1
+Pair2: TR2
 Result: Successful
 
 createCharacter:
@@ -36,9 +41,13 @@ Item: TR2
 Character: S1
 Result: Successful
 
+switchTransistor:
+Item: TR1
+Result: Successful
+
 placeTransistor:
 Item: TR1
-Location: BR1
+Location: 
 Result: Fail
 
 characterStatus:

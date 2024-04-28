@@ -15,8 +15,8 @@ addCharacterToRoom -ch I2 -r BR2
 addCharacterToLabyrinth -lab L1 -ch S1
 addCharacterToLabyrinth -lab L1 -ch I1
 addCharacterToLabyrinth -lab L1 -ch I2
-addItemToCharacter -it FFP1 -ch S1
-addItemToCharacter -it BEER1 -ch S1
-addItemToCharacter -it FFP2 -ch S1
+addItemToCharacter -it FFP21 -ch S1
+addItemToCharacter -it B1 -ch S1
+addItemToCharacter -it FFP22 -ch S1
 moveCharacter -ch S1 -r BR2
 list

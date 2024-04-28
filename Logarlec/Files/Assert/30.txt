@@ -34,7 +34,7 @@ Result: Successful
 addNeighbour:
 Room: BR1
 Neighbour: BR2
-	
+
 addNeighbour:
 Room: BR2
 Neighbour: BR1
@@ -65,16 +65,20 @@ SourceRoom: BR1
 DestRoom: BR2
 Result: Successful
 
+getCaught:
+Character: S1
+Result: Successful
+
 characterStatus:
-Character: I1	
+Character: I1
 CharacterType: Instructor
 Room: BR2
-Items:
+Items: 
 Toxicated: true
 
 characterStatus:
 Character: I2
 CharacterType: Instructor
 Room: BR2
-Items:
+Items: 
 Toxicated: true

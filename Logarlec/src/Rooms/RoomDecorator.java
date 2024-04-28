@@ -141,7 +141,7 @@ public abstract class RoomDecorator implements IRoom{
     }
 
     @Override
-    public void unToxicate(){
+    public IRoom unToxicate(){
         BasicRoom basicRoom = new BasicRoom();
         basicRoom.setCapacity(this.getCapacity());
         basicRoom.setItems(this.getItems());
@@ -155,19 +155,25 @@ public abstract class RoomDecorator implements IRoom{
 
         visitor.handleNeighboursWhenReplacing(this, newUntoxicatedRoom);
         getLabyrinth().replaceRooms(this, newUntoxicatedRoom);
+
+        return newUntoxicatedRoom;
     }
 
     @Override
-    public IRoom mergeRooms(IRoom room){
-        DecoratorHandlerVisitor visitor = new DecoratorHandlerVisitor(room);
-        IRoom newMergedRoom = acceptMerge(visitor);
+    public IRoom mergeRooms(IRoom room) {
+        if (room.getCharacters().isEmpty() && this.getCharacters().isEmpty()) {
+            DecoratorHandlerVisitor visitor = new DecoratorHandlerVisitor(room);
+            IRoom newMergedRoom = acceptMerge(visitor);
 
-        visitor.handleNeighboursWhenReplacing(this, newMergedRoom);
-        visitor.handleNeighboursWhenReplacing(room, newMergedRoom);
-        getLabyrinth().replaceRooms(this, newMergedRoom);
-        getLabyrinth().getRooms().remove(room);
+            visitor.handleNeighboursWhenReplacing(this, newMergedRoom);
+            visitor.handleNeighboursWhenReplacing(room, newMergedRoom);
+            getLabyrinth().replaceRooms(this, newMergedRoom);
+            getLabyrinth().getRooms().remove(room);
 
-        return newMergedRoom; //It could be a void method, returning for test cases and prototype
+            return newMergedRoom; //It could be a void method, returning for test cases and prototype
+        } else {
+            return null;
+        }
     }
 
 

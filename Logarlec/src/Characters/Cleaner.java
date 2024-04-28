@@ -63,12 +63,13 @@ public class Cleaner extends Character{
         }
     }
 
+
     /**
      * This method is used to clean the current room from poison.
      */
-    public void unToxicateRoom(){
+    public IRoom unToxicateRoom(){
         System.out.println("Cleaner ventilated room | Cleaner: unToxicateRoom()");
-        currentRoom.unToxicate();
+        return currentRoom.unToxicate();
     }
 
     /**

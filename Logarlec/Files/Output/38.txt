@@ -32,11 +32,11 @@ moveCharacter:
 Character: C1
 SourceRoom: BR1
 DestRoom: PR1
-Result: Fail
+Result: Successful
 
 roomStatus:
 Room: PR1
-RoomType: PoisonedRoomPoisonedRoomDecorator
-Characters: 
+RoomType: PoisonedRoom
+Characters: C1
 Items: 
 Capacity: 5

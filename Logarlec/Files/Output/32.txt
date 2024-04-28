@@ -84,19 +84,23 @@ SourceRoom: BR1
 DestRoom: BR2
 Result: Successful
 
+getCaught:
+Character: S1
+Result: Fail
+
 characterStatus:
 Character: I1
 CharacterType: Instructor
 Room: BR2
 Items: 
-Toxicated: false
+Toxicated: true
 
 characterStatus:
 Character: I2
 CharacterType: Instructor
 Room: BR2
 Items: 
-Toxicated: false
+Toxicated: true
 
 ID-s:
 BR1, BR2

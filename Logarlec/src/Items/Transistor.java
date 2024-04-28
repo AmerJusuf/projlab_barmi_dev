@@ -63,6 +63,7 @@ public class Transistor extends Item{
                 }
             }
             else {
+                owner.removeItem(this);
                 setPlaceLocation(currRoom);
             }
         } else{

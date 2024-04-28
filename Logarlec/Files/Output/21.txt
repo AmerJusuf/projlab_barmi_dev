@@ -13,7 +13,13 @@ Result: Successful
 createTransistor:
 Item: TR2
 Active: true
-Paired: true
+Paired: false
+Result: Successful
+
+createTransistor:
+Item: TR3
+Active: true
+Paired: false
 Result: Successful
 
 createCharacter:
@@ -34,6 +40,11 @@ Result: Successful
 addItemToCharacter:
 Item: TR2
 Character: S1
+Result: Successful
+
+setPairTransistor:
+Pair1: TR1
+Pair2: TR3
 Result: Successful
 
 setPairTransistor:

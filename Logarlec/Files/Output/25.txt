@@ -27,8 +27,8 @@ Result: Successful
 
 placeTransistor:
 Item: TR1
-Location: BR1
-Result: Successful
+Location: 
+Result: Fail
 
 characterStatus:
 Character: S1

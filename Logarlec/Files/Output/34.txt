@@ -21,6 +21,12 @@ Type: AirFreshener
 Fake: false
 Result: Successful
 
+createItem:
+Item: FFP2
+Type: FFP2
+Fake: false
+Result: Successful
+
 addNeighbour:
 Room: BR1
 Neighbour: PR1
@@ -39,15 +45,24 @@ Item: AIR1
 Character: S1
 Result: Successful
 
+addItemToCharacter:
+Item: FFP2
+Character: S1
+Result: Successful
+
 moveCharacter:
 Character: S1
 SourceRoom: BR1
 DestRoom: PR1
-Result: Fail
+Result: Successful
+
+unToxicateRoomAirFreshener:
+Item: AIR1
+Result: Successful
 
 roomStatus:
 Room: PR1
-RoomType: PoisonedRoomPoisonedRoomDecorator
-Characters: 
+RoomType: BasicRoom
+Characters: S1
 Items: 
 Capacity: 5

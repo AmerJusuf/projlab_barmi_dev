@@ -28,7 +28,7 @@ Result: Successful
 addNeighbour:
 Room: BR1
 Neighbour: PR1
-	
+
 addNeighbour:
 Room: PR1
 Neighbour: BR1
@@ -58,7 +58,7 @@ characterStatus:
 Character: S1
 CharacterType: Student
 Room: PR1
-Items:
+Items: 
 Toxicated: true
 
 moveCharacter:
@@ -71,7 +71,7 @@ characterStatus:
 Character: I1
 CharacterType: Instructor
 Room: PR1
-Items:
+Items: 
 Toxicated: true
 
 moveCharacter:
@@ -84,5 +84,5 @@ characterStatus:
 Character: C1
 CharacterType: Cleaner
 Room: PR1
-Items:
-Toxicated: false
+Items: 
+Toxicated: True

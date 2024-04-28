@@ -31,9 +31,9 @@ Neighbour: BR1
 mergeRooms:
 Room1: BR1
 Room2: BR2
-MergedRoom: BR1BR2
-Result: Successful
+MergedRoom:
+Result: Fail
 
 ID-s:
-BR1BR2
+BR1, BR2
 S1

@@ -13,7 +13,7 @@ public interface IRoom {
 
     IRoom acceptUnToxicate(DecoratorHandlerVisitor visitor);
 
-    void unToxicate();
+    IRoom unToxicate();
 
     IRoom mergeRooms(IRoom room);
 
