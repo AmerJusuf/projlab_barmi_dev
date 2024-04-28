@@ -86,7 +86,8 @@ public class Student extends Character{
 
             if (TestLogic.writeToFile) {
                 String input = TestLogic.continueProcessCommandsFromFile();
-                if(input.equals("skipTurn:\n")){
+                System.out.println("nextRound while !!!" + input + "!!!");
+                if(input.equals("skipTurn:\n\n")){
                     endTurn = true;
                 }
                 fileContent = fileContent.concat(input);

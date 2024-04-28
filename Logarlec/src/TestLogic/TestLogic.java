@@ -1247,7 +1247,7 @@ public class TestLogic {
                         labyrinth.nextRound();
                         for(IRoom room: labyrinth.getRooms()){
                             if(!roomsMap.containsValue(room)){
-                                roomsMap.put("splitted", room);
+                                roomsMap.put("splitted".concat(String.valueOf(roomsMap.size()+1)), room);
                             }
                         }
 
