@@ -37,29 +37,40 @@ Character: S1
 Room: BR1
 Result: Successful
 
-addCharacterToRoom:
-Character: S2
-Room: BR2
-Result: Successful
-
-addItemToRoom:
-Item: TR2
-Room: BR2
+addItemToCharacter:
+Item: TR1
+Character: S1
 Result: Successful
 
 addItemToCharacter:
-Item: TR1
+Item: TR2
 Character: S1
 Result: Successful
 
 placeTransistor:
 Item: TR1
 Location: BR1
+Result: Successful
+
+moveCharacter:
+Character: S1
+SourceRoom: BR1
+DestRoom: BR2
+Result: Successful
+
+addCharacterToRoom:
+Character: S1
+Room: BR1
+Result: Successful
+
+placeTransistor:
+Item: TR2
+Location: BR2
 Result: Fail
 
 characterStatus:
 Character: S1
 CharacterType: Student
-Room: BR1
-Items: TR1
+Room: BR2
+Items: TR2
 Toxicated: false
