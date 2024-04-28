@@ -20,7 +20,6 @@ public class TestLogic {
     private static final Map<String, Pattern> commandPatterns = new HashMap<>();
 
     static {
-        //JUSUF
         commandPatterns.put("runAllScripts", Pattern.compile("runAllScripts"));
         commandPatterns.put("loadMap", Pattern.compile("loadMap\\s+-file\\s+(\\S+)"));              // NINCS IMPLEMENTÁLVA
         commandPatterns.put("createLabyrinth", Pattern.compile("createLabyrinth\\s+-lab\\s+(\\S+)"));
@@ -46,47 +45,27 @@ public class TestLogic {
         commandPatterns.put("openCamembert", Pattern.compile("openCamembert\\s+-it\\s+(\\S+)"));
         commandPatterns.put("unToxicateRoomAirFreshener", Pattern.compile("unToxicateRoomAirFreshener\\s+-it\\s+(\\S+)"));
         commandPatterns.put("activate", Pattern.compile("activate\\s+-it\\s+(\\S+)"));
-        //JUSUF VEGE
 
-        //ZOLI
         commandPatterns.put("createTransistor", Pattern.compile("createTransistor\\s+-it\\s+(\\S+)(\\s+-active)?(\\s+-paired)?"));
         commandPatterns.put("setPairTransistor", Pattern.compile("setPairTransistor\\s+-it\\s+(\\S+)\\s+-it\\s+(\\S+)"));
         commandPatterns.put("placeTransistor", Pattern.compile("placeTransistor\\s+-it\\s+(\\S+)"));
         commandPatterns.put("switchTransistor", Pattern.compile("switchTransistor\\s+-it\\s+(\\S+)"));
-        //ZOLI VEGE
 
-
-        //JUSUF
         commandPatterns.put("addNeighbour", Pattern.compile("addNeighbour\\s+-r\\s+(\\S+)\\s+-r\\s+(\\S+)"));
         commandPatterns.put("mergeRooms", Pattern.compile("mergeRooms\\s+-r\\s+(\\S+)\\s+-r\\s+(\\S+)"));
         commandPatterns.put("splitRoom", Pattern.compile("splitRoom\\s+-r\\s+(\\S+)"));
         commandPatterns.put("getNeighbours", Pattern.compile("getNeighbours\\s+-r\\s+(\\S+)"));
         commandPatterns.put("makeSticky", Pattern.compile("makeSticky\\s+-r\\s+(\\S+)"));
-        //JUSUF VEGE
 
-
-        //BOTI
         commandPatterns.put("list", Pattern.compile("list"));
         commandPatterns.put("roomStatus", Pattern.compile("roomStatus\\s+-r\\s+(\\S+)"));
         commandPatterns.put("characterStatus", Pattern.compile("characterStatus\\s+-ch\\s+(\\S+)"));
         commandPatterns.put("itemStatus", Pattern.compile("itemStatus\\s+-it\\s+(\\S+)"));
-        //BOTI VEGE
 
-
-        //GERI
         commandPatterns.put("gameStatus", Pattern.compile("gameStatus"));
         commandPatterns.put("nextRound", Pattern.compile("nextRound"));
         commandPatterns.put("skipTurn", Pattern.compile("skipTurn"));
         commandPatterns.put("startGame", Pattern.compile("startGame"));
-        //GERI VEGE
-
-
-        // AZ ELEJÉN A              loadMap NINCS IMPLEMENTÁLVA
-
-        // NINCS IMPLEMENTÁLVA:
-                    // NEXTROUND
-                    // SKIPTURN
-                    // STARTGAME
     }
 
     public static void main(String[] args) {
@@ -245,13 +224,17 @@ public class TestLogic {
                         }
 
                         String directory = System.getProperty("user.dir");
-                        String fileName = "IncorrectFiles";
+                        String fileName = "AllScriptsResult";
                         String fileOutputPath = directory + File.separator + "Files" + File.separator + "Output" + File.separator + fileName + ".txt";
                         System.out.println(fileOutputPath);
                         try {
                             FileWriter writer = new FileWriter(fileOutputPath);
-                            for (int i : incorrectFiles) {
-                                writer.write(i + "\n");
+                            for (int i = 2; i < 45; i++) {
+                                if (incorrectFiles.contains(i)){
+                                    writer.write(i + ": Incorrect\n");
+                                } else {
+                                    writer.write(i + ": Correct\n");
+                                }
                             }
                             writer.close();
                         } catch (IOException e) {
@@ -390,7 +373,6 @@ public class TestLogic {
                             } else {
                                 roomsMap.put(roomId, new BasicRoom(capacity));
                             }
-
                         }
 
                         outputBuilder.append(commandName).append(":").append("\n");
@@ -1087,8 +1069,6 @@ public class TestLogic {
 
                         // Szobatípus eldöntése - ha nem akarunk instanceof-ot, ez egy alternatív eldöntési módzser
 
-
-
                         if (room instanceof BasicRoom) {
                             roomType = "BasicRoom";
                         } else if (room instanceof CursedRoomDecorator) {
@@ -1100,8 +1080,6 @@ public class TestLogic {
                         } else {
                             roomType = "Unknown";
                         }
-
-
 
 
                         //Szoba karaktereiből kivesszük az ID-t
@@ -1279,21 +1257,11 @@ public class TestLogic {
                         outputBuilder.append("VALAMI KIÍRÁS XD").append("\n");
                         break;
 
-
-
-                        // AZÉRT AZ ALJÁN LÉVŐT HASZNÁLOM MERT KELL EGY VISSZATÉRÉS MINDENKÉPPEN
-                        /*
-                    default:
-                        outputBuilder.append("Invalid command: ").append(inputCommand).append("\n");
-                        break;
-                         */
-
                 }
                 return outputBuilder.toString();
             }
         }
 
-        // If no matching command pattern is found
         String res = outputBuilder.append("Invalid command: ").append(inputCommand).append("\n").toString();
         return res;
     }
