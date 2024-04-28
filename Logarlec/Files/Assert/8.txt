@@ -24,11 +24,11 @@ Character:  S1
 Result: Successful
 
 createItem:
-	Item: TVSZ1
-	Type: TVSZ
-	Fake: false
-	SavesLeft: 1
-	Result: Successful
+Item: TVSZ1
+Type: TVSZ
+Fake: false
+SavesLeft: 3
+Result: Successful
 
 addItemToCharacter:
 Item: TVSZ1
