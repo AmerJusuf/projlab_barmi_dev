@@ -124,7 +124,7 @@ public abstract class Character {
         this.isPoisoned = isPoisoned;
     }
 
-    public abstract void nextRound();
+    public abstract String nextRound();
 
     public abstract void disableInstructor();
 

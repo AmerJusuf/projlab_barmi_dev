@@ -18,6 +18,7 @@ import java.util.regex.Pattern;
 public class TestLogic {
 
     private static final Map<String, Pattern> commandPatterns = new HashMap<>();
+    public static boolean writeToFile = false;
 
     static {
         //JUSUF
@@ -97,23 +98,31 @@ public class TestLogic {
         while (!input.equals("exit")) {
             if (input.startsWith("runScript ")) {
                 String filename = input.substring(10).trim();
-                processCommandsFromFile(filename, true); // Process commands from file and write output to file
+                processCommandsFromFile(filename); // Process commands from file and write output to file
+                writeToFile = true;
             } else {
-                processCommandsFromFile(input, false); // Process command from console and write output to console
+                processCommandsFromFile(input); // Process command from console and write output to console
+                writeToFile = false;
             }
             System.out.println("\nEnter commands or 'runScript <filename>' to process commands from a file, or 'exit' to quit:");
             input = scanner.nextLine();
-
-            roomsMap = new HashMap<>();
-            charactersMap = new HashMap<>();
-            itemsMap = new HashMap<>();
-            labyrinth = new Labyrinth();
+//
+//            roomsMap = new HashMap<>();
+//            charactersMap = new HashMap<>();
+//            itemsMap = new HashMap<>();
+//            labyrinth = new Labyrinth();
         }
 
         scanner.close();
     }
 
-    public static void processCommandsFromFile(String commandOrFileName, boolean writeToFile) {
+    private static Scanner scanner;
+
+    public static String continueProcessCommandsFromFile(){
+        return(processCommand(scanner.nextLine()) + "\n");
+    }
+
+    public static void processCommandsFromFile(String commandOrFileName) {
         if (!writeToFile) {
             String output = processCommand(commandOrFileName);
             System.out.println(output); // Print output to console
@@ -122,11 +131,11 @@ public class TestLogic {
             String directory = System.getProperty("user.dir");
 
             String fileName = commandOrFileName;
-            String fileInPath = directory + File.separator + "Files" + File.separator + "Act" + File.separator + fileName + ".txt";
+            String fileInPath = directory + File.separator + "Logarlec" + File.separator + "Files" + File.separator + "Act" + File.separator + fileName + ".txt";
             System.out.println(fileInPath);
 
             //String fileStartCharacter = fileName.substring(0, 1);
-            String fileOutputPath = directory + File.separator + "Files" + File.separator + "Output" + File.separator + fileName + ".txt";
+            String fileOutputPath = directory + File.separator + "Logarlec" + File.separator + "Files" + File.separator + "Output" + File.separator + fileName + ".txt";
             System.out.println(fileOutputPath);
 
             try {
@@ -136,7 +145,7 @@ public class TestLogic {
                     throw new RuntimeException("File not found");
                 }
 
-                Scanner scanner = new Scanner(file);
+                scanner = new Scanner(file);
 
                 String fileContent = "";
                 while (scanner.hasNextLine()) {
@@ -153,7 +162,7 @@ public class TestLogic {
 
 
                 // Compare the two files
-                String fileAssertPath = directory + File.separator + "Files" + File.separator + "Assert" + File.separator + fileName + ".txt";
+                String fileAssertPath = directory + File.separator + "Logarlec" + File.separator + "Files" + File.separator + "Assert" + File.separator + fileName + ".txt";
                 System.out.println(fileAssertPath);
 
                 BufferedReader reader1 = new BufferedReader(new FileReader(fileOutputPath));
@@ -1136,7 +1145,7 @@ public class TestLogic {
                     case "skipTurn":
 
                         outputBuilder.append(commandName).append(":").append("\n");
-                        outputBuilder.append("Character: ").append("KARAKTER ID-JA").append("\n");
+                        //outputBuilder.append("Character: ").append("KARAKTER ID-JA").append("\n");
 
                         break;
                     case "startGame":

@@ -125,19 +125,22 @@ public class Labyrinth {
         endGame();
     }
 
-    public void nextRound() {
+    public String nextRound() {
+        String fileContent = "";
             for (Student student : students) {
                 student.nextRound();
             }
             for (Instructor instructor : instructors) {
                 instructor.nextRound();
             }
-            for (Cleaner cleaner : cleaners) {
-                cleaner.nextRound();
-            }
+            if(cleaners != null)
+                for (Cleaner cleaner : cleaners) {
+                    cleaner.nextRound();
+                }
            // Osszes szoba tarygara es osszes karakterek targyaira step() fuggveny meghivasa
 
             mergeAndSplitRandomly();
+            return fileContent;
     }
 
     public void endGame() {

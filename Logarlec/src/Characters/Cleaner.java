@@ -76,9 +76,10 @@ public class Cleaner extends Character{
      * It gets called in every round
      */
     @Override
-    public void nextRound(){
+    public String nextRound(){
         System.out.println("Cleaner nextRound | Cleaner: nextRound()");
         moveToRandom();
         moveCharacters();
+        return "";
     }
 }

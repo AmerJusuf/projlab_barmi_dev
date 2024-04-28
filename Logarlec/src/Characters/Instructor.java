@@ -70,12 +70,15 @@ public class Instructor extends Character{
      * It gets called in every round
      */
     @Override
-    public void nextRound(){
+    public String nextRound(){
         System.out.println("Instructor next round | Instructor: nextRound()");
         moveToRandom();
-        dropItem(items.get(0));
-        pickItem(currentRoom.getItems().get(0));
+        if(!items.isEmpty())
+            dropItem(items.get(0));
+        if(!currentRoom.getItems().isEmpty())
+            pickItem(currentRoom.getItems().get(0));
         kickStudents();
+        return "";
     }
 
 }
