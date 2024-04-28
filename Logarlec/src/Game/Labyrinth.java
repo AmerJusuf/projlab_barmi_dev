@@ -211,4 +211,9 @@ public class Labyrinth {
             }
         }
     }
+
+    //Only for testing
+    public List<Student> getStudents() {
+        return students;
+    }
 }

@@ -28,7 +28,7 @@ Result: Successful
 
 getCaught:
 Character: S1
-Result: Successful
+Result: Fail
 
 itemStatus:
 Item: TVSZ1
