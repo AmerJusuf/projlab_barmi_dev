@@ -30,9 +30,11 @@ Neighbour: BR1
 
 mergeRooms:
 Room1: BR1
-Room2:: BR2
+Room2: BR2
 MergedRoom:
 Result: Fail
 
-ID-s:
-BR1, BR2
+list:
+Rooms: BR1 BR2
+Characters:
+Items:

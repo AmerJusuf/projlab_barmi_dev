@@ -25,6 +25,7 @@ public class Labyrinth {
         rooms = new ArrayList<>();
         students = new ArrayList<>();
         instructors = new ArrayList<>();
+        cleaners = new ArrayList<>();
     }
 
     public void addRoom(IRoom room) {
@@ -36,6 +37,8 @@ public class Labyrinth {
     }
 
     public void mergeAndSplitRandomly() {
+        if(rooms.size() < 2) return; // Ha nincs elég szoba, akkor nem lehet mergelni és splittelni
+
         // Merge and split rooms
         Random rand = new Random();
         int idx1 = rand.nextInt(rooms.size());
@@ -205,5 +208,10 @@ public class Labyrinth {
                 item.step();
             }
         }
+    }
+
+    //Only for testing
+    public List<Student> getStudents() {
+        return students;
     }
 }

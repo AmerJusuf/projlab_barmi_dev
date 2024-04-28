@@ -17,12 +17,6 @@ Type: BasicRoom
 Result: Successful
 
 createRoom:
-Room: BR3
-Capacity: 5
-Type: BasicRoom
-Result: Successful
-
-createRoom:
 Room: BR4
 Capacity: 5
 Type: BasicRoom
@@ -101,7 +95,7 @@ Room: BR5
 Neighbour: BR2
 
 addNeighbour:
-	Room: BR5
+Room: BR5
 Neighbour: BR4
 
 addNeighbour:
@@ -142,7 +136,7 @@ createItem:
 Item: TVSZ1
 Type: TVSZ
 Fake: false
-SavesLeft: 1
+Life: 1
 Result: Successful
 
 createItem:

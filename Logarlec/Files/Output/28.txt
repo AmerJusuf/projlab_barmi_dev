@@ -1,0 +1,24 @@
+createLabyrinth:
+Labyrinth: L1
+Result: Successful
+
+createRoom:
+Room: BR1
+Capacity: 5
+Type: BasicRoom
+Result: Successful
+
+createRoom:
+Room: PR1
+Capacity: 5
+Type: PoisonedRoom
+Result: Successful
+
+mergeRooms:
+Room1: BR1
+Room2: PR1
+MergedRoom: BR1PR1
+Result: Successful
+
+ID-s:
+BR1PR1

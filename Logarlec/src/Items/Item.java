@@ -61,6 +61,15 @@ public abstract class Item {
     }
 
     /**
+     * This method is used to get the owner of the item.
+     *
+     * @return The owner of the item.
+     */
+    public Character getOwner(){
+        return owner;
+    }
+
+    /**
      * This method is used to indicate that the item does not protect the student.
      *
      * @return false as the item does not protect the student.

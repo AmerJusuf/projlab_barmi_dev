@@ -1,5 +1,6 @@
 createLabyrinth -lab L1
 createRoom -r BR1 -capacity 3 -type BasicRoom
+addRoomToLabyrinth -lab L1 -r BR1
 createCharacter -ch S1 -type Student
 addCharacterToRoom -ch S1 -r BR1
 createCharacter -ch I1 -type Instructor

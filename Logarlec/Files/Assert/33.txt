@@ -18,6 +18,7 @@ Result: Successful
 createItem:
 Item: FFP1
 Type: FFP2
+Fake: false
 Result: Successful
 
 addNeighbour:

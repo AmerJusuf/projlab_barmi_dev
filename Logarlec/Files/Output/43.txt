@@ -1,0 +1,22 @@
+Invalid command: createCharacter -id S1 -type Student
+
+createItem:
+Item: B1
+Type: Beer
+Fake: false
+Result: Successful
+
+toxicate:
+Character: S1
+Result: Fail
+
+activate:
+Item: B1
+Result: Successful
+
+nextRound:
+VALAMI KIÍRÁS XD
+
+Invalid command: CharacterStatus -ch S1
+
+Invalid command: ItemStatus -it B1

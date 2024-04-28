@@ -38,16 +38,12 @@ public class Camembert extends Item {
      */
     public void open() {
         System.out.println("Camembert opened | Camembert: open()");
-        if(isFake){
-            System.out.println("It is a fake camembert - no effect!");
-        }
-        else {
+
             IRoom currentRoom = owner.getRoom();
             List<Character> characters = currentRoom.getCharacters();
             owner.disable();
             for (Character ch : characters) {
                 ch.disable();
             }
-        }
     }
 }
