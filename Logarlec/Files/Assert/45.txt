@@ -111,6 +111,10 @@ Room: BR6
 Neighbour: BR4
 
 addNeighbour:
+Room: BR6
+Neighbour: BR5
+
+addNeighbour:
 Room: BR7
 Neighbour: BR2
 
