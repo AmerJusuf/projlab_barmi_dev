@@ -55,3 +55,13 @@ K
 src/Items/AirFreshener.java,9\5\9520abb8d5189c987aa4361e936911e8ac2165e8
 ?
 Files/Act/2.txt,a\a\aadcaef8f47cacbf160cd85d15daf6789a5d72ac
+B
+Files/Output/2.txt,7\d\7db62a9f594bf31a14d9fd50427dfb69d7e5a478
+B
+Files/Assert/2.txt,4\1\41b1acca19505582c2e1e966d5414f05dd349c3f
+B
+Files/Output/3.txt,3\1\31dec7ee7586e9b650e905807eef8bc23d214212
+B
+Files/Assert/3.txt,2\0\20253261a11e60284ebd73f82eee8094e8367447
+?
+Files/Act/3.txt,d\0\d0f908257d298e916a49528a9600eb0acd38a077
