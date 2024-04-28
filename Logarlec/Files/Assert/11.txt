@@ -57,11 +57,11 @@ getCaught:
 Character: S1
 Result: Successful
 
-getCaught:
+getCaught: 
 Character: I1
 Result: Fail
 
-getCaught:
+getCaught: 
 Character: C1
 Result: Fail
 

@@ -88,7 +88,7 @@ public class BasicRoom implements IRoom{
      */
     @Override
     public boolean acceptCharacter(Character character) {
-        if(this.getCapacity()>=this.getNumberOfCharacters()) {
+        if(this.getCapacity()>this.getNumberOfCharacters()) {
             System.out.println("Character accepted for nextRoom | BasicRoom: acceptCharacter()");
             characters.add(character);
             return true;
@@ -277,6 +277,7 @@ public class BasicRoom implements IRoom{
     public void acceptPickByStudent(Student st, Item item){
         System.out.println("Item pick accepted by room | BasicRoom: acceptPickByStudent");
         item.pickedByStudent(st);
+        items.remove(item);
     }
 
     /**
@@ -288,6 +289,7 @@ public class BasicRoom implements IRoom{
     public void acceptPickByInstructor(Instructor inst, Item item){
         System.out.println("Item pick accepted by room | BasicRoom: acceptPickByInstructor");
         item.pickedByInstructor(inst);
+        items.remove(item);
     }
 
     /**

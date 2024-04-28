@@ -10,3 +10,5 @@ G	java:S106Y"+Replace this use of System.out by a logger.(ßˆŸÃ8âğÊ²ñ1
 L	java:S106j"+Replace this use of System.out by a logger.(Îü¶²ıÿÿÿÿ8âğÊ²ñ1
 L	java:S106v"+Replace this use of System.out by a logger.(’Í„Áúÿÿÿÿ8ãğÊ²ñ1
 H	java:S106ƒ"+Replace this use of System.out by a logger.(¸õª«8äğÊ²ñ1
+_
+java:S1126‡"AReplace this if-then-else statement by a single return statement.(Ñ·Š8Œ’½şñ1

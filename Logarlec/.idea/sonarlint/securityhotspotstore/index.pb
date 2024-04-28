@@ -65,3 +65,13 @@ B
 Files/Assert/3.txt,2\0\20253261a11e60284ebd73f82eee8094e8367447
 ?
 Files/Act/3.txt,d\0\d0f908257d298e916a49528a9600eb0acd38a077
+B
+Files/Assert/4.txt,a\0\a0b6defa0a2bba576dfc5055a2fd4bee0605a5be
+B
+Files/Output/4.txt,6\3\63d02790a0cefe82576559ef6a3695942dbe3ee0
+B
+Files/Output/5.txt,1\1\116adafb413c46915052728ec2dbb5afb0f9fe8f
+B
+Files/Assert/5.txt,3\0\3018b824728749639870745bf05d99600734f6bf
+B
+Files/Assert/6.txt,0\a\0abd75c241da925a7f066150b966bcfcedd7fd85

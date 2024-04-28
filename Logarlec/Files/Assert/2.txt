@@ -10,6 +10,10 @@ Capacity: 2
 Type: BasicRoom
 Result: Successful
 
+addNeighbour:
+Room: BR1
+Neighbour: BR2
+
 createCharacter:
 Character: S1
 Type: Student
@@ -30,12 +34,12 @@ roomStatus:
 Room: BR1
 RoomType: BasicRoom
 Characters: 
-Items:
+Items: 
 Capacity: 2
 
 roomStatus:
 Room: BR2
 RoomType: BasicRoom
 Characters: S1
-Items:
+Items: 
 Capacity: 2

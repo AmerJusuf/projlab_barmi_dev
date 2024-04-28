@@ -101,9 +101,13 @@ public class TestLogic {
             } else {
                 processCommandsFromFile(input, false); // Process command from console and write output to console
             }
-
             System.out.println("\nEnter commands or 'runScript <filename>' to process commands from a file, or 'exit' to quit:");
             input = scanner.nextLine();
+
+            roomsMap = new HashMap<>();
+            charactersMap = new HashMap<>();
+            itemsMap = new HashMap<>();
+            labyrinth = new Labyrinth();
         }
 
         scanner.close();
@@ -160,9 +164,11 @@ public class TestLogic {
                 boolean areEqual = true;
                 while (line1 != null || line2 != null) {
                     if (line1 == null || line2 == null) {
+                        System.out.println("Output: " +line1 + "\nAssert: " + line2);
                         areEqual = false;
                         break;
                     } else if (!line1.equalsIgnoreCase(line2)) {
+                        System.out.println("Output: " +line1 + "\nAssert: " + line2);
                         areEqual = false;
                         break;
                     }
@@ -474,12 +480,15 @@ public class TestLogic {
                             IRoom room = roomsMap.get(roomToMove);
                             IRoom srcRoom = characterToMove.getRoom();
                             for(Map.Entry<String, IRoom> entryRow : roomsMap.entrySet()) {
-                                if (entry.getValue().equals(srcRoom)) {
-                                    sourceRoom = entry.getKey();
+                                if (entryRow.getValue().equals(srcRoom)) {
+                                    sourceRoom = entryRow.getKey();
                                     break;
                                 }
                             }
                             characterToMove.move(room);
+                            if(characterToMove.getRoom() == srcRoom) {
+                                result = fail;
+                            }
                         }
 
                         outputBuilder.append(commandName).append(":").append("\n");
@@ -808,17 +817,16 @@ public class TestLogic {
                         String room2 = matcher.group(2);
 
                         if(!roomsMap.containsKey(room1) || !roomsMap.containsKey(room2)) {
-                            result = fail;
+                            throw new RuntimeException("Room not found");
                         } else {
-                            result = success;
                             IRoom r1 = roomsMap.get(room1);
                             IRoom r2 = roomsMap.get(room2);
                             r1.addNeighbour(r2);
                         }
 
                         outputBuilder.append(commandName).append(":").append("\n");
-                        outputBuilder.append("Room1: ").append(room1).append("\n");
-                        outputBuilder.append("Result: " + result).append("\n");
+                        outputBuilder.append("Room: ").append(room1).append("\n");
+                        outputBuilder.append("Neighbour: " + room2).append("\n");
                         break;
                     }
 
@@ -882,8 +890,8 @@ public class TestLogic {
                         IRoom room = roomsMap.get(roomId);
                         List<IRoom> neighbours = room.getNeighbours();
                         for (Map.Entry<String, IRoom> roomEntry : roomsMap.entrySet()) {
-                            if (neighbours.contains(entry.getValue())) {
-                                neighboursID += entry.getKey() + " ";
+                            if (neighbours.contains(roomEntry.getValue())) {
+                                neighboursID += roomEntry.getKey() + " ";
                             }
                         }
 
@@ -990,12 +998,12 @@ public class TestLogic {
 
                         int capacity = room.getCapacity();
 
-                        outputBuilder.append("Room ID: ").append(roomId).append("\n");
-                        outputBuilder.append("Room Type: ").append(roomType).append("\n");
+                        outputBuilder.append(commandName).append(":").append("\n");
+                        outputBuilder.append("Room: ").append(roomId).append("\n");
+                        outputBuilder.append("RoomType: ").append(roomType).append("\n");
                         outputBuilder.append("Characters: ").append(String.join(" ", characterIds)).append("\n");
                         outputBuilder.append("Items: ").append(String.join(" ", itemIds)).append("\n");
                         outputBuilder.append("Capacity: ").append(capacity).append("\n");
-                        outputBuilder.append("Result: Successful").append("\n");
                         break;
                     }
 
@@ -1039,7 +1047,7 @@ public class TestLogic {
                         for (Map.Entry<String, IRoom> roomEntry : roomsMap.entrySet()) {
                             IRoom room = roomEntry.getValue();
                             if (room.getCharacters().contains(character)) {
-                                characterRoomId = entry.getKey();
+                                characterRoomId = roomEntry.getKey();
                                 break;
                             }
                         }
