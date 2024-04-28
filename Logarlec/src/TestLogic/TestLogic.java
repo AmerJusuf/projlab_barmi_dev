@@ -1245,9 +1245,14 @@ public class TestLogic {
                         break;}
                     case "nextRound": {
                         labyrinth.nextRound();
+                        for(IRoom room: labyrinth.getRooms()){
+                            if(!roomsMap.containsValue(room)){
+                                roomsMap.put("splitted", room);
+                            }
+                        }
 
                         outputBuilder.append(commandName).append(":").append("\n");
-                        outputBuilder.append("VALAMI KIÍRÁS XD").append("\n");
+                        outputBuilder.append("nextRound done!").append("\n");
 
                         break;
                     }
