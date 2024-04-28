@@ -69,7 +69,7 @@ roomStatus:
 Room: BR1
 RoomType: BasicRoom
 Characters: C1
-Items:
+Items: 
 Capacity: 5
 
 roomStatus:
