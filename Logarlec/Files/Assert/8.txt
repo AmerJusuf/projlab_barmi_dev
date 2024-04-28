@@ -20,7 +20,7 @@ Result: Successful
 
 addCharacterToLabyrinth:
 Labyrinth: L1
-Character:  S1
+Character: S1
 Result: Successful
 
 createItem:

@@ -6,9 +6,7 @@ Type: Beer
 Fake: false
 Result: Successful
 
-toxicate:
-Character: S1
-Result: Fail
+Invalid command: toxicate -ch S1
 
 activate:
 Item: B1
