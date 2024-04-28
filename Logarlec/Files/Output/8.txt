@@ -1,3 +1,7 @@
+createLabyrinth:
+Labyrinth: L1
+Result: Successful
+
 createRoom:
 Room: BR1
 Capacity: 2
@@ -14,6 +18,11 @@ Character: S1
 Room: BR1
 Result: Successful
 
+addCharacterToLabyrinth:
+Labyrinth: L1
+Character: S1
+Result: Successful
+
 createItem:
 Item: TVSZ1
 Type: TVSZ
@@ -28,10 +37,10 @@ Result: Successful
 
 getCaught:
 Character: S1
-Result: Successful
+Result: Fail
 
 itemStatus:
 Item: TVSZ1
 ItemType: TVSZ
-Owner/Room: 
+Owner/Room: S1
 Fake: false
