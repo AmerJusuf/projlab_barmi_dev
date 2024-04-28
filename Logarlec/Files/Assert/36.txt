@@ -23,7 +23,7 @@ Result: Successful
 addNeighbour:
 Room: BR1
 Neighbour: BR2
-	
+
 addNeighbour:
 Room: BR2
 Neighbour: BR1
@@ -51,6 +51,6 @@ Result: Successful
 roomStatus:
 Room: BR1
 RoomType: BasicRoom
-Characters: C1, S1
+Characters: S1 C1
 Items: 
 Capacity: 5
