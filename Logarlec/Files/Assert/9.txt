@@ -1,3 +1,7 @@
+createLabyrinth:
+Labyrinth: L1
+Result: Successful
+
 createRoom:
 Room: BR1
 Capacity: 2
@@ -12,6 +16,11 @@ Result: Successful
 addCharacterToRoom:
 Character: S1
 Room: BR1
+Result: Successful
+
+addCharacterToLabyrinth:
+Labyrinth: L1
+Character:  S1
 Result: Successful
 
 createItem:
