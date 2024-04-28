@@ -38,7 +38,7 @@ Result: Successful
 
 placeTransistor:
 Item: TR1
-Location: BR1
+Location: 
 Result: Fail
 
 characterStatus:

@@ -30,7 +30,7 @@ Result: Successful
 addNeighbour:
 Room: BR1
 Neighbour: BR2
-	
+
 addNeighbour:
 Room: BR2
 Neighbour: BR1
@@ -38,7 +38,7 @@ Neighbour: BR1
 createCharacter:
 Character: S1
 Type: Student
-Result: Successful 
+Result: Successful
 
 addCharacterToRoom:
 Character: S1
