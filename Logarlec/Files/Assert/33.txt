@@ -24,7 +24,7 @@ Result: Successful
 addNeighbour:
 Room: BR1
 Neighbour: PR1
-	
+
 addNeighbour:
 Room: PR1
 Neighbour: BR1
@@ -42,7 +42,7 @@ Result: Successful
 moveCharacter:
 Character: S1
 SourceRoom: BR1
-DestRoom: BR2
+DestRoom: PR1
 Result: Successful
 
 characterStatus:

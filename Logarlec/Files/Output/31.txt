@@ -86,19 +86,19 @@ Character: I2
 Result: Successful
 
 addItemToCharacter:
-Item: FFP1
+Item: FFP21
 Character: S1
-Result: Fail
+Result: Successful
 
 addItemToCharacter:
-Item: BEER1
+Item: B1
 Character: S1
-Result: Fail
+Result: Successful
 
 addItemToCharacter:
-Item: FFP2
+Item: FFP22
 Character: S1
-Result: Fail
+Result: Successful
 
 moveCharacter:
 Character: S1

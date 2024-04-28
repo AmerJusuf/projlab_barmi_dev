@@ -50,7 +50,7 @@ Result: Successful
 addNeighbour:
 Room: BR1
 Neighbour: BR2
-	
+
 addNeighbour:
 Room: BR2
 Neighbour: BR1
@@ -72,31 +72,31 @@ Result: Successful
 
 addCharacterToLabyrinth:
 Labyrinth: L1
-Character:  S1
+Character: S1
 Result: Successful
 
 addCharacterToLabyrinth:
 Labyrinth: L1
-Character:  I1
+Character: I1
 Result: Successful
 
 addCharacterToLabyrinth:
 Labyrinth: L1
-Character:  I2
+Character: I2
 Result: Successful
 
 addItemToCharacter:
-Item: FFP1
+Item: FFP21
 Character: S1
 Result: Successful
 
 addItemToCharacter:
-Item: RAG1
+Item: B1
 Character: S1
 Result: Successful
 
 addItemToCharacter:
-Item: FFP2
+Item: FFP22
 Character: S1
 Result: Successful
 
@@ -105,8 +105,8 @@ Character: S1
 SourceRoom: BR1
 DestRoom: BR2
 Result: Successful
-	
-list:
-Rooms: BR1 BR2
-Characters: S1,I1,I2
-Items: FFP2
+
+ID-s:
+BR1, BR2
+I1, I2, S1
+FFP21, FFP22, B1
