@@ -45,5 +45,5 @@ characterStatus:
 Character: S1
 CharacterType: Student
 Room: BR1
-Items: TR1, TR2
+Items: TR2
 Toxicated: false

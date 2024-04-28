@@ -854,7 +854,7 @@ public class TestLogic {
                     case "placeTransistor":{
                         itemId = matcher.group(1);
                         Transistor transistor = (Transistor) itemsMap.get(itemId);
-                        //ezt nem lesz fun tesztelni
+                        Character character = (Character) itemsMap.get(itemId).getOwner();
 
                         String roomID = "";
                         if (!itemsMap.containsKey(itemId)) {
@@ -863,6 +863,9 @@ public class TestLogic {
                         else {
                             transistor.place();
                             result = success;
+                            if(character.getItems().contains(transistor)){
+                                result = fail;
+                            }
                         }
                         IRoom locationRoom = transistor.getOwner().getRoom();
                         for(Map.Entry<String, IRoom> entryRow : roomsMap.entrySet()) {

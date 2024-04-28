@@ -2,6 +2,8 @@ createRoom -r BR1 -capacity 5 -type BasicRoom
 createRoom -r BR2 -capacity 5 -type BasicRoom
 createTransistor -it TR1 -active -paired
 createTransistor -it TR2 -active -paired
+addNeighbour -r BR1 -r BR2
+addNeighbour -r BR2 -r BR1
 createCharacter -ch S1 -type Student
 addCharacterToRoom -ch S1 -r BR1
 addItemToCharacter -it TR1 -ch S1

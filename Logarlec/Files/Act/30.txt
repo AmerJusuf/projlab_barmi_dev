@@ -11,5 +11,6 @@ addCharacterToRoom -ch I1 -r BR2
 addCharacterToRoom -ch I2 -r BR2
 addItemToCharacter -it RAG1 -ch S1
 moveCharacter -ch S1 -r BR2
+getCaught -ch S1
 characterStatus -ch I1
 characterStatus -ch I2
