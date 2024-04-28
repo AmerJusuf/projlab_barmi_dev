@@ -38,12 +38,12 @@ Result: Successful
 
 placeTransistor:
 Item: TR1
-Location: BR1
-Result: Successful
+Location: 
+Result: Fail
 
 characterStatus:
 Character: S1
 CharacterType: Student
 Room: BR1
-Items: TR2
+Items: TR1, TR2
 Toxicated: false

@@ -806,13 +806,13 @@ public class TestLogic {
                             newTransistor.setIsTurnedOn(active);
                             itemsMap.put(itemId, newTransistor);
 
-                            if (paired) {
-                                Transistor pair = new Transistor();
-                                String pairId = itemId + "_pair";
-                                newTransistor.setPairTransistor(pair);
-                                pair.setPairTransistor(newTransistor);
-                                itemsMap.put(pairId, pair);
-                            }
+//                            if (paired) {
+//                                Transistor pair = new Transistor();
+//                                String pairId = itemId + "_pair";
+//                                newTransistor.setPairTransistor(pair);
+//                                pair.setPairTransistor(newTransistor);
+//                                itemsMap.put(pairId, pair);
+//                            }
                         }
 
 
@@ -867,7 +867,7 @@ public class TestLogic {
                                 result = fail;
                             }
                         }
-                        IRoom locationRoom = transistor.getOwner().getRoom();
+                        IRoom locationRoom = transistor.getPlaceLocation();
                         for(Map.Entry<String, IRoom> entryRow : roomsMap.entrySet()) {
                             if (entryRow.getValue().equals(locationRoom)) {
                                 roomID = entryRow.getKey();
