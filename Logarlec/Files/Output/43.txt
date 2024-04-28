@@ -1,4 +1,7 @@
-Invalid command: createCharacter -id S1 -type Student
+createCharacter:
+Character: S1
+Type: Student
+Result: Successful
 
 createItem:
 Item: B1

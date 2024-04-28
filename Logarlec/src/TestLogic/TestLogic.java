@@ -805,14 +805,6 @@ public class TestLogic {
                             Transistor newTransistor = new Transistor();
                             newTransistor.setIsTurnedOn(active);
                             itemsMap.put(itemId, newTransistor);
-
-//                            if (paired) {
-//                                Transistor pair = new Transistor();
-//                                String pairId = itemId + "_pair";
-//                                newTransistor.setPairTransistor(pair);
-//                                pair.setPairTransistor(newTransistor);
-//                                itemsMap.put(pairId, pair);
-//                            }
                         }
 
 
