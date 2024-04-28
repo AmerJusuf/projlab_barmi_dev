@@ -91,7 +91,7 @@ Character: S1
 Result: Successful
 
 addItemToCharacter:
-Item: RAG1
+Item: B1
 Character: S1
 Result: Successful
 
@@ -105,8 +105,8 @@ Character: S1
 SourceRoom: BR1
 DestRoom: BR2
 Result: Successful
-	
+
 ID-s:
-Rooms: BR1 BR2
-Characters: S1 I1 I2
-Items: FFP21 FFP22
+BR1, BR2
+I1, I2, S1
+FFP21, FFP22, B1
