@@ -106,7 +106,7 @@ SourceRoom: BR1
 DestRoom: BR2
 Result: Successful
 
-list:
-Rooms: BR1 BR2 
-Characters: I1 I2 S1 
-Items: FFP21 FFP22 B1 
+ID-s:
+BR1, BR2
+I1, I2, S1
+FFP21, FFP22, B1

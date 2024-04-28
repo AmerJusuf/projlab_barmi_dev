@@ -21,6 +21,7 @@ public class TestLogic {
 
     static {
         //JUSUF
+        commandPatterns.put("runAllScripts", Pattern.compile("runAllScripts"));
         commandPatterns.put("loadMap", Pattern.compile("loadMap\\s+-file\\s+(\\S+)"));              // NINCS IMPLEMENTÁLVA
         commandPatterns.put("createLabyrinth", Pattern.compile("createLabyrinth\\s+-lab\\s+(\\S+)"));
         commandPatterns.put("addCharacterToLabyrinth", Pattern.compile("addCharacterToLabyrinth\\s+-lab\\s+(\\S+)\\s+-ch\\s+(\\S+)"));
@@ -96,6 +97,10 @@ public class TestLogic {
 
         while (!input.equals("exit")) {
             if (input.startsWith("runScript ")) {
+                roomsMap = new HashMap<>();
+                charactersMap = new HashMap<>();
+                itemsMap = new HashMap<>();
+                labyrinth = new Labyrinth();
                 String filename = input.substring(10).trim();
                 processCommandsFromFile(filename, true); // Process commands from file and write output to file
             } else {
@@ -103,15 +108,11 @@ public class TestLogic {
             }
             System.out.println("\nEnter commands or 'runScript <filename>' to process commands from a file, or 'exit' to quit:");
             input = scanner.nextLine();
-
-            roomsMap = new HashMap<>();
-            charactersMap = new HashMap<>();
-            itemsMap = new HashMap<>();
-            labyrinth = new Labyrinth();
         }
-
         scanner.close();
     }
+
+    static List<Integer> incorrectFiles = new ArrayList<>();
 
     public static void processCommandsFromFile(String commandOrFileName, boolean writeToFile) {
         if (!writeToFile) {
@@ -119,6 +120,7 @@ public class TestLogic {
             System.out.println(output); // Print output to console
         }
         else {
+            System.out.println("Processing commands from file: " + commandOrFileName);
             String directory = System.getProperty("user.dir");
 
             String fileName = commandOrFileName;
@@ -179,6 +181,7 @@ public class TestLogic {
                 if (areEqual) {
                     System.out.println("Two files have same content.");
                 } else {
+                    incorrectFiles.add(Integer.parseInt(fileName));
                     System.out.println("Two files have different content.");
                 }
 
@@ -202,7 +205,6 @@ public class TestLogic {
     }
 
 
-    //Celszeru masik osztalyba, de felolem maradhat (A.J)
     private static Labyrinth labyrinth;
     private static Map<String, Character> charactersMap = new HashMap<>();
 
@@ -231,13 +233,41 @@ public class TestLogic {
             if (matcher.matches()) {
                 // Extract parameters based on matched pattern
                 switch (commandName) {
-                    case "loadMap":
+                    case "runAllScripts": {
+                        incorrectFiles = new ArrayList<>();
+                        for (int i = 2; i < 45; i++) {
+                            String fileName = Integer.toString(i);
+                            roomsMap = new HashMap<>();
+                            charactersMap = new HashMap<>();
+                            itemsMap = new HashMap<>();
+                            labyrinth = new Labyrinth();
+                            processCommandsFromFile(fileName, true);
+                        }
+
+                        String directory = System.getProperty("user.dir");
+                        String fileName = "IncorrectFiles";
+                        String fileOutputPath = directory + File.separator + "Files" + File.separator + "Output" + File.separator + fileName + ".txt";
+                        System.out.println(fileOutputPath);
+                        try {
+                            FileWriter writer = new FileWriter(fileOutputPath);
+                            for (int i : incorrectFiles) {
+                                writer.write(i + "\n");
+                            }
+                            writer.close();
+                        } catch (IOException e) {
+                            throw new RuntimeException(e);
+                        }
+                        break;
+                    }
+
+                    case "loadMap": {
                         String fileName = matcher.group(1);
                         //TODO
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("file: ").append(fileName).append("\n");
                         outputBuilder.append("Result: Successful/Fail").append("\n");
                         break;
+                    }
 
                     case "createLabyrinth": {
                         labyrinthId = matcher.group(1);
@@ -287,6 +317,7 @@ public class TestLogic {
                             Character character = charactersMap.get(characterId);
                             Item item = itemsMap.get(itemId);
                             character.addItem(item);
+                            item.setOwner(character);
                         }
 
                         outputBuilder.append(commandName).append(":").append("\n");
@@ -408,6 +439,7 @@ public class TestLogic {
                             result = success;
                             IRoom iroom = roomsMap.get(roomId);
                             labyrinth.addRoom(iroom);
+                            iroom.setLabyrinth(labyrinth);
                         }
 
                         outputBuilder.append(commandName).append(":").append("\n");
@@ -460,7 +492,7 @@ public class TestLogic {
                         outputBuilder.append("Type: ").append(itemType).append("\n");
                         outputBuilder.append("Fake: ").append(fake).append("\n");
                         if (itemType.equals("TVSZ")) {
-                            outputBuilder.append("Life: ").append(life).append("\n");
+                            outputBuilder.append("SavesLeft: ").append(life).append("\n");
                         }
                         outputBuilder.append("Result: " + result).append("\n");
                         break;
@@ -597,12 +629,32 @@ public class TestLogic {
                         characterId = matcher.group(1);
                         Character character = charactersMap.get(characterId);
 
-                        if (!charactersMap.containsKey(characterId) || (!character.getItems().stream().anyMatch(item -> item instanceof TVSZ)))
+                        boolean caught = false;
+                        if (!charactersMap.containsKey(characterId))
                         {
                             result = fail;
                         } else {
                             result = success;
                             character.getCaught();
+
+                            for(Map.Entry<String, Character> entryRow : charactersMap.entrySet()) {
+                                String chId = entryRow.getKey();
+                                if (chId.equals(characterId)){
+                                    if( labyrinth.getStudents().contains(entryRow.getValue()) ) {
+                                        result = fail;
+                                    } else {
+                                       caught = true;
+                                    }
+                                    break;
+                                }
+                            }
+
+                            if(!(character instanceof Student)){
+                                result = fail;
+                            }
+                        }
+                        if(caught && result.equals(success)){
+                            charactersMap.remove(characterId);
                         }
 
                         outputBuilder.append(commandName).append(":").append("\n");
@@ -801,22 +853,33 @@ public class TestLogic {
                         break;
                     case "placeTransistor":{
                         itemId = matcher.group(1);
-                        Transistor placeTransistor = (Transistor) itemsMap.get(itemId);
+                        Transistor transistor = (Transistor) itemsMap.get(itemId);
                         //ezt nem lesz fun tesztelni
 
+                        String roomID = "";
                         if (!itemsMap.containsKey(itemId)) {
                             result = fail;
                         }
                         else {
+                            transistor.place();
                             result = success;
                         }
+                        IRoom locationRoom = transistor.getOwner().getRoom();
+                        for(Map.Entry<String, IRoom> entryRow : roomsMap.entrySet()) {
+                            if (entryRow.getValue().equals(locationRoom)) {
+                                roomID = entryRow.getKey();
+                                break;
+                            }
+                        }
+
 
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Item: ").append(itemId).append("\n");
-                        outputBuilder.append("Location: ").append("Elég nehéz lenne lekérni a szobáját:(").append("\n");
+                        outputBuilder.append("Location: ").append(roomID).append("\n");
                         outputBuilder.append("Result: " + result).append("\n");
 
-                        break;}
+                        break;
+                    }
                     case "switchTransistor":
                         itemId = matcher.group(1);
 
@@ -893,8 +956,12 @@ public class TestLogic {
                             newRoomID1 = roomId + "_split1";
                             newRoomID2 = roomId + "_split2";
                             roomsMap.remove(roomId);
-                            roomsMap.put(newRoomID1, newRooms.get(0));
-                            roomsMap.put(newRoomID2, newRooms.get(1));
+                            if (newRooms.size() == 2) {
+                                roomsMap.put(newRoomID1, newRooms.get(0));
+                                roomsMap.put(newRoomID2, newRooms.get(1));
+                            } else {
+                                result = fail;
+                            }
                         }
 
                         outputBuilder.append(commandName).append(":").append("\n");
@@ -943,26 +1010,44 @@ public class TestLogic {
                     }
 
                     case "list": {
-                        outputBuilder.append(commandName).append(":").append("\n");
+                        outputBuilder.append("ID-s").append(":").append("\n");
 
                         // Room IDs
-                        outputBuilder.append("Rooms: ");
+                       // outputBuilder.append("Rooms: ");
+                        int counter = 0;
                         for (String rooms : roomsMap.keySet()) {
-                            outputBuilder.append(rooms).append(" ");
+                            if (counter == 0) {
+                                outputBuilder.append(rooms);
+                                counter++;
+                            } else {
+                                outputBuilder.append(", ").append(rooms);
+                            }
                         }
                         outputBuilder.append("\n");
 
                         // Character IDs
-                        outputBuilder.append("Characters: ");
+                      //  outputBuilder.append("Characters: ");
+                        counter = 0;
                         for (String characters : charactersMap.keySet()) {
-                            outputBuilder.append(characters).append(" ");
+                            if(counter == 0) {
+                                outputBuilder.append(characters);
+                                counter++;
+                            } else {
+                                outputBuilder.append(", ").append(characters);
+                            }
                         }
                         outputBuilder.append("\n");
 
                         // Item IDs
-                        outputBuilder.append("Items: ");
+                       // outputBuilder.append("Items: ");
+                        counter = 0;
                         for (String items : itemsMap.keySet()) {
-                            outputBuilder.append(items).append(" ");
+                            if(counter == 0) {
+                                outputBuilder.append(items);
+                                counter++;
+                            } else {
+                                outputBuilder.append(", ").append(items);
+                            }
                         }
                         outputBuilder.append("\n");
 

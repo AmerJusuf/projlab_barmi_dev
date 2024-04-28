@@ -14,7 +14,5 @@ NewRoom1: PR1_split1
 NewRoom2: PR1_split2
 Result: Successful
 
-list:
-Rooms: PR1_split1 PR1_split2 
-Characters: 
-Items: 
+ID-s:
+PR1_split1, PR1_split2

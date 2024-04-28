@@ -14,9 +14,16 @@ Character: S1
 Room: BR1
 Result: Successful
 
-Invalid command: createItem -it FFP1-type FFP2
+createItem:
+Item: FFP1
+Type: FFP2
+Fake: false
+Result: Successful
 
-Invalid command: addItemToCharacter -it FFP1-ch S1
+addItemToCharacter:
+Item: FFP1
+Character: S1
+Result: Successful
 
 disable:
 Character: S1
@@ -26,5 +33,5 @@ characterStatus:
 Character: S1
 CharacterType: Student
 Room: BR1
-Items: 
-Toxicated: true
+Items: FFP1
+Toxicated: false

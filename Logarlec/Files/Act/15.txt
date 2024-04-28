@@ -1,7 +1,7 @@
 createCharacter -ch S1 -type Student
 createRoom -r BR1 -capacity 5 -type BasicRoom
 addCharacterToRoom -ch S1 -r BR1
-createItem -it FFP1-type FFP2
-addItemToCharacter -it FFP1-ch S1
+createItem -it FFP1 -type FFP2
+addItemToCharacter -it FFP1 -ch S1
 disable -ch S1
 characterStatus -ch S1

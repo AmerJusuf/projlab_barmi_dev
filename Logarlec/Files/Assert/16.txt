@@ -13,11 +13,11 @@ addCharacterToRoom:
 Character: S1
 Room: BR1
 Result: Successful
- 
+
 disable:
 Character: S1
 Result: Successful
- 
+
 characterStatus:
 Character: S1
 CharacterType: Student

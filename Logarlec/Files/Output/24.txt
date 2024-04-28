@@ -38,7 +38,7 @@ Result: Successful
 
 placeTransistor:
 Item: TR1
-Location: Elég nehéz lenne lekérni a szobáját:(
+Location: BR1
 Result: Successful
 
 characterStatus:

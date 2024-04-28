@@ -71,7 +71,7 @@ createItem:
 Item: TVSZ1
 Type: TVSZ
 Fake: false
-Life: 0
+SavesLeft: 0
 Result: Successful
 
 addItemToCharacter:
@@ -85,7 +85,7 @@ SourceRoom: BR1
 DestRoom: BR2
 Result: Successful
 
-list:
-Rooms: BR1 BR2
-Characters: I1 S1 C1
-Items: TVSZ1
+ID-s:
+BR1, BR2
+I1, S1, C1
+TVSZ1

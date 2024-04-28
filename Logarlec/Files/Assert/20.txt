@@ -35,7 +35,7 @@ addItemToCharacter:
 Item: TR2
 Character: S1
 Result: Successful
- 
+
 setPairTransistor:
 Pair1: TR1
 Pair2: TR2

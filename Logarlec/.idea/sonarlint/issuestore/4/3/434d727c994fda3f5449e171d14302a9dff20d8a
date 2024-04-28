@@ -1,18 +1,21 @@
 
 ¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Áã²¹ûÿÿÿÿ8üˆÚç1J$6393ab76-127d-4cc7-b3be-9b190b370d2f
-r	java:S106"+Replace this use of System.out by a logger.(Ï¶®ÿÿÿÿÿ8…‰Úç1J$d5bc4470-f9cc-4a83-b683-fed8f478a29a
-m	java:S106!"+Replace this use of System.out by a logger.(¡¿Ôş8†‰Úç1J$b97eb4da-d583-486b-ac4f-0fc7122db805
-r	java:S106+"+Replace this use of System.out by a logger.(ÎÊ¸Òıÿÿÿÿ8†‰Úç1J$210b2621-19f1-46f4-bcce-00ed9053899e
-m	java:S106."+Replace this use of System.out by a logger.(á¾¬‡8†‰Úç1J$9da81dae-3e3d-49d8-ae73-842b48f88741
-m	java:S1060"+Replace this use of System.out by a logger.(ı¡»¹8‡‰Úç1J$3eab05aa-a4fb-4e76-b753-477d1fc773a2
-m	java:S1064"+Replace this use of System.out by a logger.(§¿È›8‡‰Úç1J$9232be91-219a-43b6-8d17-3fc240618a10
-l	java:S1066"+Replace this use of System.out by a logger.(šğ–d8ˆ‰Úç1J$89cc3a32-382d-4668-b25f-3f1485399c95
-r	java:S1067"+Replace this use of System.out by a logger.(¸†æãıÿÿÿÿ8ˆ‰Úç1J$c6cfcbf5-2b90-4426-8fbe-c3752446c0ab
-r	java:S106="+Replace this use of System.out by a logger.(±“Ğíûÿÿÿÿ8ˆ‰Úç1J$122a0f26-86e5-4683-b55f-ce32327c33b7
-m	java:S106E"+Replace this use of System.out by a logger.(ö„õ™8‰‰Úç1J$407acd1d-57e7-4e6a-bfbf-0de9b1960539
-r	java:S106K"+Replace this use of System.out by a logger.(ÓÓˆ¼şÿÿÿÿ8‰‰Úç1J$5ae6d7b9-67d2-4681-8ed1-a33cf12dd7ff
-l	java:S106M"+Replace this use of System.out by a logger.(±ÉâD8Š‰Úç1J$44c967aa-cc1b-48b2-b223-f545ba3e2960
-r	java:S106X"+Replace this use of System.out by a logger.(…ºìšøÿÿÿÿ8Š‰Úç1J$8e66aa81-fd9a-4f87-8c56-e3196ef60091
-r	java:S106\"+Replace this use of System.out by a logger.(¼Ñöãüÿÿÿÿ8Š‰Úç1J$322cff99-2816-4799-9f48-28cf942354d4
-r	java:S106c"+Replace this use of System.out by a logger.(·„Õşÿÿÿÿ8‹‰Úç1J$37072615-c1a3-41bf-9511-cd7e7d3fb037
-m	java:S106e"+Replace this use of System.out by a logger.(òô¿‘8ò¤íç1J$84ace819-cbd3-48bf-ae03-e02528e1fa82
+]	java:S125"<This block of commented-out lines of code should be removed.(ÈäÒıÿÿÿÿ8üÜ“¤ò1
+]	java:S125!"<This block of commented-out lines of code should be removed.(ÜÍÏĞüÿÿÿÿ8ıÜ“¤ò1
+X	java:S125+"<This block of commented-out lines of code should be removed.(«ñ·¢8ıÜ“¤ò1
+]	java:S125."<This block of commented-out lines of code should be removed.(İ§ëèûÿÿÿÿ8şÜ“¤ò1
+X	java:S1250"<This block of commented-out lines of code should be removed.(’³ø8şÜ“¤ò1
+]	java:S1254"<This block of commented-out lines of code should be removed.(ú²Ùúÿÿÿÿ8ÿÜ“¤ò1
+]	java:S1256"<This block of commented-out lines of code should be removed.(çöÛáüÿÿÿÿ8ÿÜ“¤ò1
+X	java:S125="<This block of commented-out lines of code should be removed.(¹¿à¨8€İ“¤ò1
+]	java:S125E"<This block of commented-out lines of code should be removed.(·Êûıÿÿÿÿ8€İ“¤ò1
+x
+java:S3923J"[Remove this conditional structure or edit its code blocks so that they're not all the same.(€‡œÀ8İ“¤ò1
+X	java:S125K"<This block of commented-out lines of code should be removed.(¬ø‰8İ“¤ò1
+X	java:S125M"<This block of commented-out lines of code should be removed.(¤ñ‡È8İ“¤ò1
+X	java:S125X"<This block of commented-out lines of code should be removed.(Ä¨Ñ–8‚İ“¤ò1
+]	java:S125\"<This block of commented-out lines of code should be removed.(êõûÿÿÿÿ8ƒİ“¤ò1
+]	java:S125c"<This block of commented-out lines of code should be removed.(ÈùÃ¹úÿÿÿÿ8ƒİ“¤ò1
+]	java:S125e"<This block of commented-out lines of code should be removed.(¢ùè¸şÿÿÿÿ8ƒİ“¤ò1
+N
+java:S1128",Remove this unused import 'Rooms.BasicRoom'.(Çêê½ÿÿÿÿÿ8„İ“¤ò1

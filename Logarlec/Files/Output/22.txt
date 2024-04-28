@@ -44,7 +44,7 @@ Result: Successful
 
 placeTransistor:
 Item: TR1
-Location: A SZOBA ID_JA AHOVA LETESZEM
+Location: BR1
 Result: Successful
 
 characterStatus:
