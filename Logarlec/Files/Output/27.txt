@@ -52,37 +52,37 @@ moveCharacter:
 Character: S1
 SourceRoom: BR1
 DestRoom: PR1
-Result: Fail
+Result: Successful
 
 characterStatus:
 Character: S1
 CharacterType: Student
-Room: BR1
+Room: PR1
 Items: 
-Toxicated: false
+Toxicated: true
 
 moveCharacter:
 Character: I1
 SourceRoom: BR1
 DestRoom: PR1
-Result: Fail
+Result: Successful
 
 characterStatus:
 Character: I1
 CharacterType: Instructor
-Room: BR1
+Room: PR1
 Items: 
-Toxicated: false
+Toxicated: true
 
 moveCharacter:
 Character: C1
 SourceRoom: BR1
 DestRoom: PR1
-Result: Fail
+Result: Successful
 
 characterStatus:
 Character: C1
 CharacterType: Cleaner
-Room: BR1
+Room: PR1
 Items: 
-Toxicated: false
+Toxicated: true

@@ -2,10 +2,12 @@ createRoom -r BR1 -capacity 5 -type BasicRoom
 createRoom -r PR1 -capacity 5 -type PoisonedRoom
 createCharacter -ch S1 -type Student
 createItem -it AIR1 -type AirFreshener
+createItem -it FFP2 -type FFP2
 addNeighbour -r BR1 -r PR1
 addNeighbour -r PR1 -r BR1
 addCharacterToRoom -ch S1 -r BR1
 addItemToCharacter -it AIR1 -ch S1
+addItemToCharacter -it FFP2 -ch S1
 moveCharacter -ch S1 -r PR1
 unToxicateRoomAirFreshener -it AIR1
 roomStatus -r PR1

@@ -141,7 +141,7 @@ public abstract class RoomDecorator implements IRoom{
     }
 
     @Override
-    public void unToxicate(){
+    public IRoom unToxicate(){
         BasicRoom basicRoom = new BasicRoom();
         basicRoom.setCapacity(this.getCapacity());
         basicRoom.setItems(this.getItems());
@@ -155,6 +155,8 @@ public abstract class RoomDecorator implements IRoom{
 
         visitor.handleNeighboursWhenReplacing(this, newUntoxicatedRoom);
         getLabyrinth().replaceRooms(this, newUntoxicatedRoom);
+
+        return newUntoxicatedRoom;
     }
 
     @Override

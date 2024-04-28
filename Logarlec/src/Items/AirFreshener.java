@@ -1,5 +1,7 @@
 package Items;
 
+import Rooms.IRoom;
+
 public class AirFreshener extends Item {
     /**
      * This constructor is used to create an AirFreshener object.
@@ -14,8 +16,8 @@ public class AirFreshener extends Item {
     /**
      * This method is used to clean the current room from poison.
      */
-    public void unToxicateRoom(){
+    public IRoom unToxicateRoom(){
         System.out.println("AirFreshener used | AirFreshener: unToxicateRoom()");
-        owner.getRoom().unToxicate();
+        return owner.getRoom().unToxicate();
     }
 }

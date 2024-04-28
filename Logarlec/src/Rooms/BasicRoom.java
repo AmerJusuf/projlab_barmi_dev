@@ -72,7 +72,7 @@ public class BasicRoom implements IRoom{
      */
     @Override
     public boolean isNeighbour(IRoom nextRoom){
-        if(this.neighbours.contains(nextRoom.getDecoratedRoom())){
+        if(this.neighbours.contains(nextRoom)){
         System.out.println("NextRoom is neighbour: true | BasicRoom: isNeighbour");
         return true;
         } else {
@@ -123,8 +123,9 @@ public class BasicRoom implements IRoom{
     }
 
     @Override
-    public void unToxicate() {
+    public IRoom unToxicate() {
         //Do nothing, basicroom does not need to be untoxicated, because it is the root element
+        return this;
     }
 
     @Override

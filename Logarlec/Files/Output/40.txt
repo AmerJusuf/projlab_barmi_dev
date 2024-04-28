@@ -1,7 +1,7 @@
 createRoom:
-Room: BR1
+Room: SR1
 Capacity: 5
-Type: BasicRoom
+Type: StickyRoom
 Result: Successful
 
 createCharacter:
@@ -18,26 +18,22 @@ Result: Successful
 
 addItemToRoom:
 Item: TVSZ1
-Room: BR1
+Room: SR1
 Result: Successful
 
 addCharacterToRoom:
 Character: S1
-Room: BR1
-Result: Successful
-
-makeSticky:
-Room: BR1
+Room: SR1
 Result: Successful
 
 pickItem:
 Item: TVSZ1
 Character: S1
-Result: Successful
+Result: Fail
 
 characterStatus:
 Character: S1
 CharacterType: Student
-Room: BR1
-Items: TVSZ1
+Room: SR1
+Items: 
 Toxicated: false

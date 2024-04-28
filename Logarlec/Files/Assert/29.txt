@@ -15,4 +15,4 @@ NewRoom2: PR1_split2
 Result: Successful
 
 ID-s:
-PR1_split1, PR1_split2
+ PR1_split2,  PR1_split1

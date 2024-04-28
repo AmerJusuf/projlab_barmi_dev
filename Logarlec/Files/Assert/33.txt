@@ -48,6 +48,6 @@ Result: Successful
 characterStatus:
 Character: S1
 CharacterType: Student
-Room: BR2
-Items:
+Room: PR1
+Items: FFP1
 Toxicated: false

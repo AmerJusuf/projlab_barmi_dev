@@ -385,6 +385,8 @@ public class TestLogic {
                                 roomsMap.put(roomId, new PoisonedRoomDecorator(new BasicRoom(capacity)));
                             } else if (roomType.equalsIgnoreCase("StickyRoom")) {
                                 roomsMap.put(roomId, new StickyRoomDecorator(new BasicRoom(capacity)));
+                            } else if (roomType.equalsIgnoreCase("CursedRoom")){
+                                roomsMap.put(roomId, new CursedRoomDecorator(new BasicRoom(capacity)));
                             } else {
                                 roomsMap.put(roomId, new BasicRoom(capacity));
                             }
@@ -562,6 +564,10 @@ public class TestLogic {
                             result = success;
 
                             character.pickItem(item);
+                            String asd = "";
+                            if(!character.getItems().contains(item)){
+                                result = fail;
+                            }
                         }
 
                         outputBuilder.append(commandName).append(":").append("\n");
@@ -758,13 +764,23 @@ public class TestLogic {
                             result = success;
                             if (itemsMap.get(itemId) instanceof AirFreshener) {
                                 AirFreshener af = (AirFreshener) itemsMap.get(itemId);
-                                af.unToxicateRoom();
+                                IRoom oldRoom = af.getOwner().getRoom();
+                                IRoom newRoom = af.unToxicateRoom();
+                                String oldRoomID = "";
+                                for (Map.Entry<String, IRoom> entryRow : roomsMap.entrySet()) {
+                                    if (entryRow.getValue().equals(oldRoom)) {
+                                        oldRoomID = entryRow.getKey();
+                                        break;
+                                    }
+                                }
+                                roomsMap.remove(oldRoomID);
+                                roomsMap.put(oldRoomID, newRoom);
                             }
                         }
 
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Item: ").append(itemId).append("\n");
-                        outputBuilder.append("Result: Successful/Fail").append("\n");
+                        outputBuilder.append("Result: ").append(result).append("\n");
 
                         break;
                     }
@@ -1070,17 +1086,23 @@ public class TestLogic {
                         IRoom room = roomsMap.get(roomId);
 
                         // Szobatípus eldöntése - ha nem akarunk instanceof-ot, ez egy alternatív eldöntési módzser
-                        if (roomId.startsWith("B")) {
+
+
+
+                        if (room instanceof BasicRoom) {
                             roomType = "BasicRoom";
-                        } else if (roomId.startsWith("C")) {
-                            roomType = "CursedRoomDecorator";
-                        } else if (roomId.startsWith("P")) {
-                            roomType = "PoisonedRoomPoisonedRoomDecorator";
-                        } else if (roomId.startsWith("S")) {
-                            roomType = "StickyRoomDecorator";
+                        } else if (room instanceof CursedRoomDecorator) {
+                            roomType = "CursedRoom";
+                        } else if (room instanceof PoisonedRoomDecorator) {
+                            roomType = "PoisonedRoom";
+                        } else if (room instanceof StickyRoomDecorator) {
+                            roomType = "StickyRoom";
                         } else {
                             roomType = "Unknown";
                         }
+
+
+
 
                         //Szoba karaktereiből kivesszük az ID-t
                         List<Character> charactersInRoom = room.getCharacters();
