@@ -74,8 +74,7 @@ public class BasicRoom implements IRoom{
         if(this.neighbours.contains(nextRoom.getDecoratedRoom())){
         System.out.println("NextRoom is neighbour: true | BasicRoom: isNeighbour");
         return true;
-        }
-        else {
+        } else {
             System.out.println("NextRoom is neighbour: false | BasicRoom: isNeighbour");
             return false;
         }

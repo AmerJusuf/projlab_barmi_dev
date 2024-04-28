@@ -1,7 +1,10 @@
-createRoom -r BR1 -capacity 5 -type BasicRoom
-createRoom -r BR2 -capacity 1 -type BasicRoom
+createRoom -r BR1 -capacity 1 -type BasicRoom
+createRoom -r BR2 -capacity 5 -type BasicRoom
 createTransistor -it TR1 -active -paired
 createTransistor -it TR2 -active -paired
+setPairTransistor -it TR1 -it TR2
+addNeighbour -r BR1 -r BR2
+addNeighbour -r BR2 -r BR1
 createCharacter -ch S1 -type Student
 createCharacter -ch S2 -type Student
 addCharacterToRoom -ch S1 -r BR1
