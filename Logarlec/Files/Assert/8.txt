@@ -1,3 +1,7 @@
+createLabyrinth:
+Labyrinth: L1
+Result: Successful
+
 createRoom:
 Room: BR1
 Capacity: 2
@@ -14,12 +18,17 @@ Character: S1
 Room: BR1
 Result: Successful
 
-createItem:
-Item: TVSZ1
-Type: TVSZ
-Fake: false
-SavesLeft: 3
+addCharacterToLabyrinth:
+Labyrinth: L1
+Character:  S1
 Result: Successful
+
+createItem:
+	Item: TVSZ1
+	Type: TVSZ
+	Fake: false
+	SavesLeft: 1
+	Result: Successful
 
 addItemToCharacter:
 Item: TVSZ1
