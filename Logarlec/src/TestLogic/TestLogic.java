@@ -190,7 +190,7 @@ public class TestLogic {
                 if (areEqual) {
                     System.out.println("Two files have same content.");
                 } else {
-                    incorrectFiles.add(Integer.parseInt(fileName));
+                    incorrectFiles.add(Integer.valueOf(fileName));
                     System.out.println("Two files have different content.");
                 }
 
@@ -250,12 +250,13 @@ public class TestLogic {
                             charactersMap = new HashMap<>();
                             itemsMap = new HashMap<>();
                             labyrinth = new Labyrinth();
-                            processCommandsFromFile(fileName, true);
+                            writeToFile = true;
+                            processCommandsFromFile(fileName);
                         }
 
                         String directory = System.getProperty("user.dir");
                         String fileName = "IncorrectFiles";
-                        String fileOutputPath = directory + File.separator + "Files" + File.separator + "Output" + File.separator + fileName + ".txt";
+                        String fileOutputPath = directory + File.separator + "Logarlec" + File.separator + "Files" + File.separator + "Output" + File.separator + fileName + ".txt";
                         System.out.println(fileOutputPath);
                         try {
                             FileWriter writer = new FileWriter(fileOutputPath);
@@ -1238,15 +1239,12 @@ public class TestLogic {
 
 
                     case "gameStatus":{
-                        Labyrinth l = new Labyrinth();
                         outputBuilder.append(commandName).append(":").append("\n");
-                        outputBuilder.append("Status: ").append(l.getGameState()).append("\n");
+                        outputBuilder.append("Status: ").append(labyrinth.getGameState()).append("\n");
 
                         break;}
                     case "nextRound": {
-                        Labyrinth l = new Labyrinth();
-                        l.nextRound();
-                        //labyrinth.nextRound();
+                        labyrinth.nextRound();
 
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("VALAMI KIÍRÁS XD").append("\n");
