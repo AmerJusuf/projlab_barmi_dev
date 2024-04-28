@@ -2,9 +2,9 @@ createRoom -r BR1 -capacity 5 -type BasicRoom
 createRoom -r CR1 -capacity 5 -type CursedRoom
 createCharacter -ch S1 -type Student
 createItem -it AIR1 -type AirFreshener
-addNeighbour -r BR1 -r PR1
-addNeighbour -r PR1 -r BR1
+addNeighbour -r BR1 -r CR1
+addNeighbour -r CR1 -r BR1
 addCharacterToRoom -ch S1 -r BR1
 addItemToCharacter -it AIR1 -ch S1
-moveCharacter -ch S1 -r PR1
-roomStatus -r PR1
+moveCharacter -ch S1 -r CR1
+roomStatus -r CR1

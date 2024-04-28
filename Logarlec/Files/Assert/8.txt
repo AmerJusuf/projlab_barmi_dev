@@ -18,7 +18,7 @@ createItem:
 Item: TVSZ1
 Type: TVSZ
 Fake: false
-SavesLeft: 3
+Life: 3
 Result: Successful
 
 addItemToCharacter:
@@ -30,9 +30,8 @@ getCaught:
 Character: S1
 Result: Fail
 
-characterStatus:
-Character: S1
-CharacterType: Student
-Room: BR1
-Items: TVSZ1
-Toxicated: false
+itemStatus:
+Item: TVSZ1
+ItemType: TVSZ
+Owner/Room: S1
+Fake: false

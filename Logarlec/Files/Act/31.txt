@@ -4,9 +4,9 @@ createRoom -r BR2 -capacity 5 -type BasicRoom
 createCharacter -ch S1 -type Student
 createCharacter -ch I1 -type Instructor
 createCharacter -ch I2 -type Instructor
-createItem -it BEER1 -type Beer
-createItem -it FFP1 -type FFP2
-createItem -it FFP2 -type FFP2
+createItem -it B1 -type Beer
+createItem -it FFP21 -type FFP2
+createItem -it FFP22 -type FFP2
 addNeighbour -r BR1 -r BR2
 addNeighbour -r BR2 -r BR1
 addCharacterToRoom -ch S1 -r BR1

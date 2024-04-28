@@ -28,6 +28,7 @@ Result: Successful
 createItem:
 Item: RAG1
 Type: Rag
+Fake: false
 Result: Successful
 
 addNeighbour:

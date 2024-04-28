@@ -28,7 +28,7 @@ Result: Successful
 pickItem:
 Item: LOG1
 Character: S1
-Result: Success
+Result: Successful
 
 characterStatus:
 Character: S1

@@ -25,8 +25,8 @@ Room: BR1
 Neighbour: BR2
 
 addNeighbour:
-Room: BR1
-Neighbour: BR2
+Room: BR2
+Neighbour: BR1
 
 addCharacterToRoom:
 Character: S1
@@ -101,6 +101,6 @@ Result: Successful
 roomStatus:
 Room: BR1
 RoomType: StickyRoom
-Characters: C1, S1
+Characters: C1 S1
 Items:
 Capacity: 5
