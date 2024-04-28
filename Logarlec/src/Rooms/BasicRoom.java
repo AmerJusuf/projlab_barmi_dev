@@ -7,6 +7,7 @@ import Game.Labyrinth;
 import Items.Item;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class BasicRoom implements IRoom{
@@ -167,6 +168,7 @@ public class BasicRoom implements IRoom{
             System.out.println("Room splitted succesfully | BasicRoom: splitRoom");
         }else {
             System.out.println("Can not split room, because it contains characters | BasicRoom: splitRoom");
+            return Collections.emptyList();
         }
         return newRooms; //It could be a void method, returning for test cases and prototype
     }
