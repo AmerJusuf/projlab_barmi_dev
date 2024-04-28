@@ -18,7 +18,7 @@ createItem:
 Item: TVSZ1
 Type: TVSZ
 Fake: false
-Life: 3
+SavesLeft: 3
 Result: Successful
 
 addItemToCharacter:

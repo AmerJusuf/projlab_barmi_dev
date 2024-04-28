@@ -1,100 +1,100 @@
 
-	java:S112Š"FDefine and throw a dedicated exception instead of using a generic one.( şòëÿÿÿÿÿ8†ôÁ¥ò1J$6ac56f05-b793-49e0-8291-44b4da6ffe7d
-	java:S112½"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8‡ôÁ¥ò1J$d6e6c33e-017e-4546-86f2-0097af32530d
-	java:S112‚"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8‡ôÁ¥ò1J$2af4669c-3bcd-433e-ab84-f784cf01f4ad
-	java:S112«"FDefine and throw a dedicated exception instead of using a generic one.(ĞĞ–Áûÿÿÿÿ8‡ôÁ¥ò1J$bcaab75f-e7ee-4cd3-b064-371b3bc6a14a
-‰	java:S112æ"FDefine and throw a dedicated exception instead of using a generic one.(çÂ8‡ôÁ¥ò1J$2c7e285d-7533-44d8-9dd4-a7d345d6b32a
-	java:S112‰"FDefine and throw a dedicated exception instead of using a generic one.(»ã¦Ëøÿÿÿÿ8‡ôÁ¥ò1J$a689047b-876a-413f-8164-2f0722332858
-‰	java:S112²	"FDefine and throw a dedicated exception instead of using a generic one.(÷µµµ8‡ôÁ¥ò1J$7b1a2a99-c838-47c0-bd4f-f7f6b9a7478d
+	java:S112Š"FDefine and throw a dedicated exception instead of using a generic one.( şòëÿÿÿÿÿ8†ôÁ¥ò1J$d0f1c56e-9e49-413f-bd27-10957cfe859b
+	java:S112½"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8‡ôÁ¥ò1J$6985eca4-55f5-473a-be16-980ba8c673fd
+	java:S112‚"FDefine and throw a dedicated exception instead of using a generic one.(Ò‚Òéüÿÿÿÿ8‡ôÁ¥ò1J$3fd66c60-593f-4724-aa08-eab2bce4d570
+	java:S112«"FDefine and throw a dedicated exception instead of using a generic one.(ĞĞ–Áûÿÿÿÿ8‡ôÁ¥ò1J$c3666ffe-68cc-440a-9094-7d15557df91f
+‰	java:S112æ"FDefine and throw a dedicated exception instead of using a generic one.(çÂ8‡ôÁ¥ò1J$86b563f6-a770-4d01-9670-c5930062a44b
+	java:S112‰"FDefine and throw a dedicated exception instead of using a generic one.(»ã¦Ëøÿÿÿÿ8‡ôÁ¥ò1J$6a5aa39d-ab09-47b5-b32c-1813e68b9baf
+‰	java:S112²	"FDefine and throw a dedicated exception instead of using a generic one.(÷µµµ8‡ôÁ¥ò1J$39b140bf-d90d-4bf4-ac25-4d8477530b0d
 Œ
-java:S1192–"HDefine a constant instead of duplicating this literal "Student" 3 times.(À›Î8ŒôÁ¥ò1J$ee710b93-6c89-4009-be3c-0864efd12c15
+java:S1192–"HDefine a constant instead of duplicating this literal "Student" 3 times.(À›Î8ŒôÁ¥ò1J$a850c2d1-34f8-4c3a-babe-e95d96e11c5a
 ‹
-java:S1192"GDefine a constant instead of duplicating this literal "Type: " 3 times.(ó¶“º8ŒôÁ¥ò1J$0fe96f36-1977-44bd-9870-cdf3bf1269da
+java:S1192"GDefine a constant instead of duplicating this literal "Type: " 3 times.(ó¶“º8ŒôÁ¥ò1J$adc76754-be0c-4a8b-865d-479f8cb30c0a
 ”
-java:S1192"KDefine a constant instead of duplicating this literal "Instructor" 4 times.(˜õ´Óıÿÿÿÿ8ŒôÁ¥ò1J$4857888a-8d14-4de4-8fb1-f867433fd57c
+java:S1192"KDefine a constant instead of duplicating this literal "Instructor" 4 times.(˜õ´Óıÿÿÿÿ8ŒôÁ¥ò1J$386c9dc0-9ce6-4744-a717-eb7f92c1e048
 –
-java:S1192°"MDefine a constant instead of duplicating this literal "Character: " 14 times.(ë•øÅúÿÿÿÿ8ŒôÁ¥ò1J$f3dcb2fc-b56b-42d1-8f2c-8f933abbd153
+java:S1192°"MDefine a constant instead of duplicating this literal "Character: " 14 times.(ë•øÅúÿÿÿÿ8ŒôÁ¥ò1J$d6ffaed0-d2fd-4597-a398-bee631eecd73
 ‘
-java:S1192"NDefine a constant instead of duplicating this literal "runAllScripts" 3 times.(ÜøÅô8ŒôÁ¥ò1J$bc511644-4b6b-4a69-acbd-7395125cf70b
+java:S1192"NDefine a constant instead of duplicating this literal "runAllScripts" 3 times.(ÜøÅô8ŒôÁ¥ò1J$61e8936e-58e9-41f8-a163-c2421d68f2dd
 •
-java:S1192–"LDefine a constant instead of duplicating this literal "Labyrinth: " 3 times.(Á€‡óÿÿÿÿÿ8ŒôÁ¥ò1J$941e5205-b38b-4b60-b38a-644cc8b766cf
+java:S1192–"LDefine a constant instead of duplicating this literal "Labyrinth: " 3 times.(Á€‡óÿÿÿÿÿ8ŒôÁ¥ò1J$00cafac6-85d8-4e44-be18-40e82b3f7141
 Œ
-java:S1192Ù"HDefine a constant instead of duplicating this literal "Room: " 10 times.(¾—ÖÏ8ôÁ¥ò1J$9d2ca882-1b04-4084-b8bd-b6686a1d5ee8
+java:S1192Ù"HDefine a constant instead of duplicating this literal "Room: " 10 times.(¾—ÖÏ8ôÁ¥ò1J$fee7d774-ce8a-49ea-80d4-cf54f9e131a9
 ‰
-java:S1192"FDefine a constant instead of duplicating this literal "Files" 4 times.(ï«í½8ôÁ¥ò1J$6d53ca94-f852-4ae2-b531-0eb5d7ada5ed
+java:S1192"FDefine a constant instead of duplicating this literal "Files" 4 times.(ï«í½8ôÁ¥ò1J$f0484aae-a2a7-41fe-a546-64d87d6e3fed
 
-java:S1192İ"IDefine a constant instead of duplicating this literal "Logarlec" 4 times.(Ä×¯½8ôÁ¥ò1J$b047fcf9-7371-4a83-ab94-76a575f17332
+java:S1192İ"IDefine a constant instead of duplicating this literal "Logarlec" 4 times.(Ä×¯½8ôÁ¥ò1J$c5d2c00f-deae-49e3-93cc-ffc0c43ada84
 ’
-java:S1192P"JDefine a constant instead of duplicating this literal "startGame" 3 times.(¶ÇÕîúÿÿÿÿ8ôÁ¥ò1J$67e93aa2-b404-44fe-8903-96a8a94469d3
+java:S1192P"JDefine a constant instead of duplicating this literal "startGame" 3 times.(¶ÇÕîúÿÿÿÿ8ôÁ¥ò1J$44ea85b8-3536-4b73-b085-6b67b08d883b
 Œ
-java:S1192O"IDefine a constant instead of duplicating this literal "skipTurn" 3 times.(ïÎş®8ôÁ¥ò1J$821e5bef-52db-4807-8e1e-1d5bec92d0d8
+java:S1192O"IDefine a constant instead of duplicating this literal "skipTurn" 3 times.(ïÎş®8ôÁ¥ò1J$28667c2b-0731-450e-ae4a-c954ac990d07
 
-java:S1192N"JDefine a constant instead of duplicating this literal "nextRound" 3 times.(Ã¶¸8ôÁ¥ò1J$0cfd8500-dc02-46c4-879e-edeb2f684c51
+java:S1192N"JDefine a constant instead of duplicating this literal "nextRound" 3 times.(Ã¶¸8ôÁ¥ò1J$9fb62680-7430-4b54-b395-6b176249df78
 ‘
-java:S1192Ä"HDefine a constant instead of duplicating this literal "Item: " 13 times.(ÒÃ˜‡ùÿÿÿÿ8ôÁ¥ò1J$7c8a1077-470f-4a21-b8e1-0e1e8272f606
+java:S1192Ä"HDefine a constant instead of duplicating this literal "Item: " 13 times.(ÒÃ˜‡ùÿÿÿÿ8ôÁ¥ò1J$767725cd-5bd7-4d15-ac55-e6eca6b96c4b
 ‘
-java:S1192 "HDefine a constant instead of duplicating this literal "Cleaner" 4 times.(Ç˜Ìúÿÿÿÿ8ôÁ¥ò1J$33636cb6-0ce6-461d-99c5-4d9b021260d7
+java:S1192 "HDefine a constant instead of duplicating this literal "Cleaner" 4 times.(Ç˜Ìúÿÿÿÿ8ôÁ¥ò1J$9d060063-256b-4641-a673-7d626247f707
 “
-java:S1192M"KDefine a constant instead of duplicating this literal "gameStatus" 3 times.(ó•Æ€øÿÿÿÿ8ôÁ¥ò1J$53df4830-d9cc-4081-a73c-888a7f126953
+java:S1192M"KDefine a constant instead of duplicating this literal "gameStatus" 3 times.(ó•Æ€øÿÿÿÿ8ôÁ¥ò1J$716236bd-d311-46e0-81be-93b62cb41cd9
 “
-java:S1192±"JDefine a constant instead of duplicating this literal "Result: " 27 times.(‡˜Ûãùÿÿÿÿ8ôÁ¥ò1J$917fca3c-ef01-47cf-a21a-4fc2b72878c6
-œ	java:S135§"YReduce the total number of break and continue statements in this loop to use at most one.(É‚8ôÁ¥ò1J$defe5264-ef51-4ae7-a4b4-c7f1b1d7cd37
+java:S1192±"JDefine a constant instead of duplicating this literal "Result: " 27 times.(‡˜Ûãùÿÿÿÿ8ôÁ¥ò1J$03fe9d91-e809-4b47-a0e9-d60126bc2798
+œ	java:S135§"YReduce the total number of break and continue statements in this loop to use at most one.(É‚8ôÁ¥ò1J$fd200523-bb1f-4cdc-be25-0357737624fc
 _
-java:S1643×"Use a StringBuilder instead.(–Ñÿ8‘ôÁ¥ò1J$7521c7cb-f6f4-4a73-94ec-a15e7ae509bd
+java:S1643×"Use a StringBuilder instead.(–Ñÿ8‘ôÁ¥ò1J$c12607af-b765-48d6-a032-d1ca0c398913
 ¤
-java:S1488÷	"[Immediately return this expression instead of assigning it to the temporary variable "res".(¾¨˜úûÿÿÿÿ8’ôÁ¥ò1J$e658efb6-cd21-408e-a7d4-9d979ef0fba6
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(œÙÃ¡8˜ôÁ¥ò1J$263c12e4-a00c-4ec9-9d7b-d5f55afc4d36
-•
-java:S2095¡"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(ëÎáæıÿÿÿÿ8ìõÁ¥ò1J$51dfe3f4-c332-41cb-842d-8a1209382fc0
+java:S1488÷	"[Immediately return this expression instead of assigning it to the temporary variable "res".(¾¨˜úûÿÿÿÿ8’ôÁ¥ò1J$6ac72a4d-46fd-4d22-b473-e006ca0015ab
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(œÙÃ¡8˜ôÁ¥ò1J$e0eb76ec-c66d-4f35-82cb-c1359ed8c73c
 
-java:S2095¢"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(—¾­»8ìõÁ¥ò1J$15306b4b-644c-4fba-92a3-df65eee4d9ea
-m	java:S106_"+Replace this use of System.out by a logger.(„‘×ø8úõÁ¥ò1J$f9bdcf5f-dc56-4b68-a7b4-06bf35bd5a4e
-m	java:S106m"+Replace this use of System.out by a logger.(‡®¦ã8üõÁ¥ò1J$1b12ea94-6083-41bd-8d1a-0b7e644701be
+java:S2095¢"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(—¾­»8ìõÁ¥ò1J$5ca97021-8bad-4246-ab71-7547849cefbd
+•
+java:S2095¡"LUse try-with-resources or close this "BufferedReader" in a "finally" clause.(ëÎáæıÿÿÿÿ8ìõÁ¥ò1J$9b7b707b-c6dc-4f29-afa0-d75a0004227e
+m	java:S106_"+Replace this use of System.out by a logger.(„‘×ø8úõÁ¥ò1J$b66bcd46-2777-453b-b702-c2f09ef54fd9
+m	java:S106m"+Replace this use of System.out by a logger.(‡®¦ã8üõÁ¥ò1J$4e8ec852-c86a-490e-827e-d9cf804b0684
 š
-java:S3776u"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(òÖˆÿùÿÿÿÿ8ıõÁ¥ò1J$6456c376-dc8a-482f-b3fe-52e0599026d7
-r	java:S106x"+Replace this use of System.out by a logger.(¿Èıùÿÿÿÿ8ıõÁ¥ò1J$e1160d96-7b11-4fe0-a9ca-e7620022c75a
-r	java:S106{"+Replace this use of System.out by a logger.(ºß³§şÿÿÿÿ8ıõÁ¥ò1J$34878d6f-54ed-459b-8e42-dffe25b686d8
-s	java:S106€"+Replace this use of System.out by a logger.( ô¬ûÿÿÿÿ8şõÁ¥ò1J$ed33760a-844c-402b-b125-d1bfe166a2d9
-	java:S125‚"<This block of commented-out lines of code should be removed.(­„ÅÆ8şõÁ¥ò1J$e459890e-726d-4f6e-81db-6725ee39c624
-s	java:S106„"+Replace this use of System.out by a logger.(ÖËŞ­øÿÿÿÿ8şõÁ¥ò1J$43d371f6-6c36-458a-a33d-9c8793c5b36b
-s	java:S106‰"+Replace this use of System.out by a logger.(¨ØÎûÿÿÿÿ8€öÁ¥ò1J$7d2bef40-4a18-4ec9-b17d-1da40d8f2cfa
-n	java:S106Ÿ"+Replace this use of System.out by a logger.(±¾ú¼8öÁ¥ò1J$1ee9c74a-4b0f-455d-86e0-2351e0ae31c5
+java:S3776u"RRefactor this method to reduce its Cognitive Complexity from 19 to the 15 allowed.(òÖˆÿùÿÿÿÿ8ıõÁ¥ò1J$fef115c1-5cbd-4c3d-9e9c-c910eabed8de
+r	java:S106x"+Replace this use of System.out by a logger.(¿Èıùÿÿÿÿ8ıõÁ¥ò1J$93b2a795-1573-4a19-9eb3-15c98d8821d8
+r	java:S106{"+Replace this use of System.out by a logger.(ºß³§şÿÿÿÿ8ıõÁ¥ò1J$28454c78-bf57-460b-9d74-8744416a6795
+s	java:S106€"+Replace this use of System.out by a logger.( ô¬ûÿÿÿÿ8şõÁ¥ò1J$d28de34b-c43a-42f9-b8b3-7723d92b1a97
+	java:S125‚"<This block of commented-out lines of code should be removed.(­„ÅÆ8şõÁ¥ò1J$4fa3b360-312c-46f6-80c4-43b7f42c6bf1
+s	java:S106„"+Replace this use of System.out by a logger.(ÖËŞ­øÿÿÿÿ8şõÁ¥ò1J$26016b04-522f-42d3-9825-0cdc2afac3d7
+s	java:S106‰"+Replace this use of System.out by a logger.(¨ØÎûÿÿÿÿ8€öÁ¥ò1J$bd67f896-4e62-4fd1-807f-a6880c34d07e
+n	java:S106Ÿ"+Replace this use of System.out by a logger.(±¾ú¼8öÁ¥ò1J$cd4b1b1f-b0ec-4f9c-88f1-2657a3f919ec
 –
-java:S1871¬"MThis branch's code block is the same as the block for the branch on line 168.(…Ğÿ¡ÿÿÿÿÿ8‚öÁ¥ò1J$e8adb725-67a0-4d02-91ea-228221ecabfd
-s	java:S106©"+Replace this use of System.out by a logger.(­˜‘şÿÿÿÿ8‚öÁ¥ò1J$ac801d4a-6cba-4130-aeee-05fdc0183408
-s	java:S106­"+Replace this use of System.out by a logger.(­˜‘şÿÿÿÿ8‚öÁ¥ò1J$4a7ae06e-f35b-42ab-aa24-0072dfbe3cf7
-s	java:S106¶"+Replace this use of System.out by a logger.(ÑõÀûÿÿÿÿ8ƒöÁ¥ò1J$8f74769e-d9c9-4b9b-90d0-3688efe5a8ea
-s	java:S106¹"+Replace this use of System.out by a logger.(ß¢€™ûÿÿÿÿ8ƒöÁ¥ò1J$34e798f4-5d31-47d9-abbc-21692e958019
-‘	java:S100Â"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ„ö­8ƒöÁ¥ò1J$b89acfd5-7d4d-4338-8214-8e7796077e5a
+java:S1871¬"MThis branch's code block is the same as the block for the branch on line 168.(…Ğÿ¡ÿÿÿÿÿ8‚öÁ¥ò1J$3cbadf23-ce7f-43fc-b987-15dfe8400852
+s	java:S106©"+Replace this use of System.out by a logger.(­˜‘şÿÿÿÿ8‚öÁ¥ò1J$95dfed32-92e1-4abe-a06a-b53caa203b09
+s	java:S106­"+Replace this use of System.out by a logger.(­˜‘şÿÿÿÿ8‚öÁ¥ò1J$fe198538-9765-445d-a7e8-eae39a5ceaa9
+s	java:S106¶"+Replace this use of System.out by a logger.(ÑõÀûÿÿÿÿ8ƒöÁ¥ò1J$596994ca-a0d6-4bc7-8c58-1834210231ac
+s	java:S106¹"+Replace this use of System.out by a logger.(ß¢€™ûÿÿÿÿ8ƒöÁ¥ò1J$b5f904fb-68d0-4206-a0f6-a33caf323c9f
+‘	java:S100Â"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(Æ„ö­8ƒöÁ¥ò1J$00dd2e7e-67ae-45f2-a897-982fc165e945
 —
-java:S3776Ø"SRefactor this method to reduce its Cognitive Complexity from 481 to the 15 allowed.(ÅÛÄ”8‡öÁ¥ò1J$abec4a05-769f-4f6a-830c-4ea1bcbfce1f
+java:S3776Ø"SRefactor this method to reduce its Cognitive Complexity from 481 to the 15 allowed.(ÅÛÄ”8‡öÁ¥ò1J$bfd6ea0e-b81a-4311-a5a7-4285445f846b
 ƒ
-java:S1854Ü":Remove this useless assignment to local variable "result".(ğª¤Éüÿÿÿÿ8ŠöÁ¥ò1J$49ea1601-80fc-4f9a-8c96-739283b35ca0
+java:S1854Ü":Remove this useless assignment to local variable "result".(ğª¤Éüÿÿÿÿ8ŠöÁ¥ò1J$9f769425-1c08-4182-ba42-bf40bcbc6f74
 ƒ
-java:S1854ô":Remove this useless assignment to local variable "result".(ßı«¥úÿÿÿÿ8ŠöÁ¥ò1J$2c7d15cc-2bf8-43b9-a41c-8825876530d7
+java:S1854ô":Remove this useless assignment to local variable "result".(ßı«¥úÿÿÿÿ8ŠöÁ¥ò1J$eeb40d4d-4f7c-419b-8e12-b01172ee3105
 ~
-java:S1854ö":Remove this useless assignment to local variable "result".(ĞÀÀû8ŠöÁ¥ò1J$95de3ba6-38d8-497e-8a4f-96ebb3194b2a
-j	java:S131ë""Add a default case to this switch.(€±Öøÿÿÿÿ8öÁ¥ò1J$f6aa23a3-8018-4940-9025-18f1a229e0a8
+java:S1854ö":Remove this useless assignment to local variable "result".(ĞÀÀû8ŠöÁ¥ò1J$fa663c3c-198d-4d4c-b399-cbc1a4dfc31d
+j	java:S131ë""Add a default case to this switch.(€±Öøÿÿÿÿ8öÁ¥ò1J$6dc6b008-252d-4528-b580-62e8c367208f
 ‹
-java:S1479ë"BReduce the number of non-empty switch cases from 40 to at most 30.(€±Öøÿÿÿÿ8öÁ¥ò1J$b76eb51f-eec1-4e07-be61-ac9cf17fa692
-s	java:S106ú"+Replace this use of System.out by a logger.(ÖËŞ­øÿÿÿÿ8öÁ¥ò1J$70dfc483-76c8-47ee-bcf9-628ac5fb07dc
+java:S1479ë"BReduce the number of non-empty switch cases from 40 to at most 30.(€±Öøÿÿÿÿ8öÁ¥ò1J$75741240-0612-4260-99cc-5fdc4b65471c
+s	java:S106ú"+Replace this use of System.out by a logger.(ÖËŞ­øÿÿÿÿ8öÁ¥ò1J$d03e382f-6592-4f2e-b13a-212d8deb4f72
 v
-java:S1135‰"2Complete the task associated to this TODO comment.(…ïœ†8‘öÁ¥ò1J$9f78913c-0a95-4bd3-b07d-c64bdf4b84f9
+java:S1135‰"2Complete the task associated to this TODO comment.(…ïœ†8‘öÁ¥ò1J$faf85ada-9a64-4b0f-907d-9b93bce06c80
 Œ
-java:S6201¤"HReplace this instanceof check and cast with 'instanceof Student student'(’èËñ8’öÁ¥ò1J$961ccd27-fb72-40d3-bcb6-c64dc981e9d8
+java:S6201¤"HReplace this instanceof check and cast with 'instanceof Student student'(’èËñ8’öÁ¥ò1J$0699a32d-258d-4f47-b0a6-8182daf67239
 ’
-java:S6201¦"NReplace this instanceof check and cast with 'instanceof Instructor instructor'(É©Íú8’öÁ¥ò1J$24eac57b-6c95-49f6-81ed-34d1407b2fcb
+java:S6201¦"NReplace this instanceof check and cast with 'instanceof Instructor instructor'(É©Íú8’öÁ¥ò1J$f163c38b-2b64-423b-aa0e-361d46a2febe
 ‘
-java:S6201¨"HReplace this instanceof check and cast with 'instanceof Cleaner cleaner'(Ù—ÛÏşÿÿÿÿ8“öÁ¥ò1J$f8d3f8d6-da33-4125-b2a0-e3f944cef70c
+java:S6201¨"HReplace this instanceof check and cast with 'instanceof Cleaner cleaner'(Ù—ÛÏşÿÿÿÿ8“öÁ¥ò1J$950e3e9a-f62d-460f-99fe-4e02a2d90c0c
 {
-java:S1135œ"2Complete the task associated to this TODO comment.(“»È°ûÿÿÿÿ8¤öÁ¥ò1J$68d609f0-71f7-4d4b-91bc-fdb4f0a5d3c6
+java:S1135œ"2Complete the task associated to this TODO comment.(“»È°ûÿÿÿÿ8¤öÁ¥ò1J$76dfef8e-03c7-4f51-983d-1756fab56323
 
-java:S6201â"EReplace this instanceof check and cast with 'instanceof Camembert cm'(œ–ëÒıÿÿÿÿ8¦öÁ¥ò1J$19c1a691-0367-49f0-b5d9-95c6a2b673ec
+java:S6201â"EReplace this instanceof check and cast with 'instanceof Camembert cm'(œ–ëÒıÿÿÿÿ8¦öÁ¥ò1J$adb697dd-8d32-4d8c-b71c-60044d83fa09
 Œ
-java:S6201÷"HReplace this instanceof check and cast with 'instanceof AirFreshener af'(¬ö”£8§öÁ¥ò1J$3c23ec6a-df91-4972-9c48-c4fe81e95a3c
-	java:S125ø"<This block of commented-out lines of code should be removed.(­…­†8³öÁ¥ò1J$1c931ede-a104-4859-9382-72121f3e059b
-„	java:S125…"<This block of commented-out lines of code should be removed.(Ò¿©±úÿÿÿÿ8³öÁ¥ò1J$f85d8ba5-8c74-4a87-9e6f-ba5a631cb181
-	java:S125’"<This block of commented-out lines of code should be removed.(èÑ‚8´öÁ¥ò1J$b60120d7-526b-480a-858b-ad32482dab1e
-„	java:S125í	"<This block of commented-out lines of code should be removed.(ûÜ³Åıÿÿÿÿ8¿öÁ¥ò1J$807d79c0-0406-48b7-b819-767cfbec1709
+java:S6201÷"HReplace this instanceof check and cast with 'instanceof AirFreshener af'(¬ö”£8§öÁ¥ò1J$31e2aeda-3fa9-4e21-8a34-45e9122b7e90
+	java:S125ø"<This block of commented-out lines of code should be removed.(­…­†8³öÁ¥ò1J$420f1313-a4d2-4052-b573-fef0b9249141
+„	java:S125…"<This block of commented-out lines of code should be removed.(Ò¿©±úÿÿÿÿ8³öÁ¥ò1J$66f3a59b-ac52-4a9d-81dd-b13bf272c251
+	java:S125’"<This block of commented-out lines of code should be removed.(èÑ‚8´öÁ¥ò1J$3ed66f07-ea50-4328-9861-a21f107f8e9c
+„	java:S125í	"<This block of commented-out lines of code should be removed.(ûÜ³Åıÿÿÿÿ8¿öÁ¥ò1J$80e1ef79-75fa-47aa-bacd-9404914bcf9d
 
-java:S6541Ø"ÈA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 871 to 64, Complexity from 172 to 14, Nesting Level from 7 to 2, Number of Variables from 130 to 6.(ÅÛÄ”8ÀöÁ¥ò1J$081521ea-8578-42d6-a914-682cf0ce82bb
+java:S6541Ø"ÈA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 871 to 64, Complexity from 172 to 14, Nesting Level from 7 to 2, Number of Variables from 130 to 6.(ÅÛÄ”8ÀöÁ¥ò1J$402a3228-e4ba-4c20-b560-72fab094f33b
