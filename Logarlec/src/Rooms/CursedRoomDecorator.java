@@ -1,6 +1,7 @@
 package Rooms;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class CursedRoomDecorator extends RoomDecorator{
@@ -89,6 +90,7 @@ public class CursedRoomDecorator extends RoomDecorator{
         }
         else{
             System.out.println("Can not split room, because it contains characters | CursedRoomDecorator: splitRoom");
+            return Collections.emptyList();
         }
         return newRooms;
     }

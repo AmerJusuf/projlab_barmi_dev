@@ -806,13 +806,13 @@ public class TestLogic {
                             newTransistor.setIsTurnedOn(active);
                             itemsMap.put(itemId, newTransistor);
 
-                            if (paired) {
-                                Transistor pair = new Transistor();
-                                String pairId = itemId + "_pair";
-                                newTransistor.setPairTransistor(pair);
-                                pair.setPairTransistor(newTransistor);
-                                itemsMap.put(pairId, pair);
-                            }
+//                            if (paired) {
+//                                Transistor pair = new Transistor();
+//                                String pairId = itemId + "_pair";
+//                                newTransistor.setPairTransistor(pair);
+//                                pair.setPairTransistor(newTransistor);
+//                                itemsMap.put(pairId, pair);
+//                            }
                         }
 
 
@@ -854,7 +854,7 @@ public class TestLogic {
                     case "placeTransistor":{
                         itemId = matcher.group(1);
                         Transistor transistor = (Transistor) itemsMap.get(itemId);
-                        //ezt nem lesz fun tesztelni
+                        Character character = (Character) itemsMap.get(itemId).getOwner();
 
                         String roomID = "";
                         if (!itemsMap.containsKey(itemId)) {
@@ -863,8 +863,11 @@ public class TestLogic {
                         else {
                             transistor.place();
                             result = success;
+                            if(character.getItems().contains(transistor)){
+                                result = fail;
+                            }
                         }
-                        IRoom locationRoom = transistor.getOwner().getRoom();
+                        IRoom locationRoom = transistor.getPlaceLocation();
                         for(Map.Entry<String, IRoom> entryRow : roomsMap.entrySet()) {
                             if (entryRow.getValue().equals(locationRoom)) {
                                 roomID = entryRow.getKey();
@@ -918,7 +921,7 @@ public class TestLogic {
                     case "mergeRooms": {
                         String room1 = matcher.group(1);
                         String room2 = matcher.group(2);
-                        String mergedRoomID = "null";
+                        String mergedRoomID = "";
 
 
                         if (!roomsMap.containsKey(room1) || !roomsMap.containsKey(room2)) {
@@ -927,16 +930,23 @@ public class TestLogic {
                             result = success;
                             IRoom r1 = roomsMap.get(room1);
                             IRoom r2 = roomsMap.get(room2);
-                            mergedRoomID = room1 + room2;
-                            roomsMap.put(mergedRoomID, r1.mergeRooms(r2));
-                            roomsMap.remove(room1);
-                            roomsMap.remove(room2);
+
+                            IRoom iroom = r1.mergeRooms(r2);
+                            if(iroom != null) {
+                                mergedRoomID = room1 + room2;
+                                roomsMap.put(mergedRoomID, iroom);
+                                roomsMap.remove(room1);
+                                roomsMap.remove(room2);
+                                mergedRoomID = " " + room1 + room2;
+                            } else {
+                                result = fail;
+                            }
                         }
 
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Room1: ").append(room1).append("\n");
                         outputBuilder.append("Room2: ").append(room2).append("\n");
-                        outputBuilder.append("MergedRoom: ").append(mergedRoomID).append("\n");
+                        outputBuilder.append("MergedRoom:").append(mergedRoomID).append("\n");
                         outputBuilder.append("Result: " + result).append("\n");
 
                         break;
@@ -945,18 +955,20 @@ public class TestLogic {
                     case "splitRoom": {
                         roomId = matcher.group(1);
 
-                        String newRoomID1 = "null";
-                        String newRoomID2 = "null";
+                        String newRoomID1 = "";
+                        String newRoomID2 = "";
                         if (!roomsMap.containsKey(roomId)) {
                             result = fail;
                         } else {
                             result = success;
                             IRoom room = roomsMap.get(roomId);
                             List<IRoom> newRooms = room.splitRoom();
-                            newRoomID1 = roomId + "_split1";
-                            newRoomID2 = roomId + "_split2";
-                            roomsMap.remove(roomId);
-                            if (newRooms.size() == 2) {
+
+
+                            if (!newRooms.isEmpty()) {
+                                newRoomID1 = " " + roomId + "_split1";
+                                newRoomID2 = " " + roomId + "_split2";
+                                roomsMap.remove(roomId);
                                 roomsMap.put(newRoomID1, newRooms.get(0));
                                 roomsMap.put(newRoomID2, newRooms.get(1));
                             } else {
@@ -966,8 +978,8 @@ public class TestLogic {
 
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Room: ").append(roomId).append("\n");
-                        outputBuilder.append("NewRoom1: ").append(newRoomID1).append("\n");
-                        outputBuilder.append("NewRoom2: ").append(newRoomID2).append("\n");
+                        outputBuilder.append("NewRoom1:").append(newRoomID1).append("\n");
+                        outputBuilder.append("NewRoom2:").append(newRoomID2).append("\n");
                         outputBuilder.append("Result: " + result).append("\n");
                         break;
                     }

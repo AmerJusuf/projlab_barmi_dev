@@ -7,6 +7,7 @@ import Game.Labyrinth;
 import Items.Item;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class BasicRoom implements IRoom{
@@ -74,8 +75,7 @@ public class BasicRoom implements IRoom{
         if(this.neighbours.contains(nextRoom.getDecoratedRoom())){
         System.out.println("NextRoom is neighbour: true | BasicRoom: isNeighbour");
         return true;
-        }
-        else {
+        } else {
             System.out.println("NextRoom is neighbour: false | BasicRoom: isNeighbour");
             return false;
         }
@@ -168,6 +168,7 @@ public class BasicRoom implements IRoom{
             System.out.println("Room splitted succesfully | BasicRoom: splitRoom");
         }else {
             System.out.println("Can not split room, because it contains characters | BasicRoom: splitRoom");
+            return Collections.emptyList();
         }
         return newRooms; //It could be a void method, returning for test cases and prototype
     }

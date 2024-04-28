@@ -39,4 +39,4 @@ Result: Successful
 setPairTransistor:
 Pair1: TR1
 Pair2: TR2
-Result: Fail
+Result: Successful
