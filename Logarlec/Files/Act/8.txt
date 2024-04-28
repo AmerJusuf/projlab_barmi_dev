@@ -4,4 +4,4 @@ addCharacterToRoom -ch S1 -r BR1
 createItem -it TVSZ1 -type TVSZ -life 3
 addItemToCharacter -it TVSZ1 -ch S1
 getCaught -ch S1
-characterStatus -ch S1
+itemStatus -it TVSZ1

@@ -10,10 +10,9 @@ Result: Successful
 
 splitRoom:
 Room: PR1
-NewRoom1:: PR2
+NewRoom1: PR2
 NewRoom2: PR3
 Result: Successful
 
-ID-s:
-L1
-PR2, PR3
+list:
+PR2 PR3

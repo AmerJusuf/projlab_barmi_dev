@@ -24,11 +24,9 @@ addNeighbour:
 Room: BR1
 Neighbour: BR2
 
-
 addNeighbour:
 Room: BR2
 Neighbour: BR1
-
 
 addCharacterToRoom:
 Character: S1

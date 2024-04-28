@@ -16,10 +16,9 @@ Result: Successful
 
 mergeRooms:
 Room1: BR1
-Room2:: PR1
+Room2: PR1
 MergedRoom: BPR1
 Result: Successful
 
-ID-s:
-L1
+list:
 BPR1

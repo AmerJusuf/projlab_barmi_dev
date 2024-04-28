@@ -15,6 +15,14 @@ Character: C1
 Type: Cleaner
 Result: Successful
 
+addNeighbour:
+Room: BR1
+Neighbour: PR1
+
+addNeighbour:
+Room: PR1
+Neighbour: BR1
+
 addCharacterToRoom:
 Character: C1
 Room: BR1

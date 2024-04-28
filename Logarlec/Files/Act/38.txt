@@ -1,6 +1,8 @@
 createRoom -r BR1 -capacity 5 -type BasicRoom
 createRoom -r PR1 -capacity 5 -type PoisonedRoom
 createCharacter -ch C1 -type Cleaner
+addNeighbour -r BR1 -r PR1
+addNeighbour -r PR1 -r BR1
 addCharacterToRoom -ch C1 -r BR1
 moveCharacter -ch C1 -r PR1
 roomStatus -r PR1

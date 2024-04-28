@@ -1,0 +1,20 @@
+createLabyrinth:
+Labyrinth: L1
+Result: Successful
+
+createRoom:
+Room: PR1
+Capacity: 5
+Type: PoisonedRoom
+Result: Successful
+
+splitRoom:
+Room: PR1
+NewRoom1: PR1_split1
+NewRoom2: PR1_split2
+Result: Successful
+
+list:
+Rooms: PR1_split1 PR1_split2 
+Characters: 
+Items: 

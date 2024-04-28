@@ -178,7 +178,7 @@ public class BasicRoom implements IRoom{
      */
     @Override
     public int getCapacity(){
-        System.out.println("Capacity is queryed | BasicRoom: getCapacity");
+        //System.out.println("Capacity is queryed | BasicRoom: getCapacity");
         return capacity;
     }
 

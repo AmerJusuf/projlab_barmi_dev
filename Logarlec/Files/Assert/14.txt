@@ -58,7 +58,7 @@ SourceRoom: BR1
 DestRoom: BR2
 Result: Successful
  
-ID-s:
-L1
-BR1, BR2
-I1, I2
+list:
+Rooms: BR1 BR2
+Characters: I1 I2
+Items:
