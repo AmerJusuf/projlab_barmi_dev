@@ -54,7 +54,7 @@ public class Labyrinth {
             if (canMergeAnyRoom()) {
                 if (rooms.get(idx1).getNumberOfCharacters() == 0) {
                     IRoom neighbour = getAcceptableNeighbour(rooms.get(idx1));
-                    if (neighbour != null) { // Biztosítjuk, hogy a szomszéd létezik
+                    if (neighbour != null) {
                         merge(idx1, rooms.indexOf(neighbour));
                         mergeDone = true;
                     }
@@ -71,9 +71,9 @@ public class Labyrinth {
                 split(idx2);
                 splitDone = true;
             } else {
-                idx2 = rand.nextInt(rooms.size()); // Új index, ha a korábbi nem volt megfelelő
+                idx2 = rand.nextInt(rooms.size());
             }
-            currentAttempts++; // Növeljük a próbálkozások számát
+            currentAttempts++;
         }
         //TODO: ha elfogytak az indexek break, fuggveny a mergelheto szobakra
     }

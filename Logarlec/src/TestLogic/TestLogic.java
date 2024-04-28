@@ -806,15 +806,14 @@ public class TestLogic {
                             newTransistor.setIsTurnedOn(active);
                             itemsMap.put(itemId, newTransistor);
 
-                            if (paired) {
-                                Transistor pair = new Transistor();
-                                String pairId = itemId + "_pair";
-                                newTransistor.setPairTransistor(pair);
-                                pair.setPairTransistor(newTransistor);
-                                itemsMap.put(pairId, pair);
-                            }
+                            //if (paired) {
+                            //    Transistor pair = new Transistor();
+                            //    String pairId = itemId + "_pair";
+                            //    newTransistor.setPairTransistor(pair);
+                            //    pair.setPairTransistor(newTransistor);
+                            //    itemsMap.put(pairId, pair);
+                            //}
                         }
-
 
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Item: ").append(itemId).append("\n");
