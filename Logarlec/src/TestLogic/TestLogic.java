@@ -224,7 +224,7 @@ public class TestLogic {
                 switch (commandName) {
                     case "runAllScripts": {
                         incorrectFiles = new ArrayList<>();
-                        for (int i = 2; i < 45; i++) {
+                        for (int i = 2; i <= 45; i++) {
                             String fileName = Integer.toString(i);
                             roomsMap = new HashMap<>();
                             charactersMap = new HashMap<>();
@@ -240,7 +240,7 @@ public class TestLogic {
                         System.out.println(fileOutputPath);
                         try {
                             FileWriter writer = new FileWriter(fileOutputPath);
-                            for (int i = 2; i < 45; i++) {
+                            for (int i = 2; i <= 45; i++) {
                                 if (incorrectFiles.contains(i)){
                                     writer.write(i + ": Incorrect\n");
                                 } else {
