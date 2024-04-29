@@ -34,8 +34,8 @@
 35: Correct
 36: Correct
 37: Correct
-38: Incorrect
-39: Incorrect
+38: Correct
+39: Correct
 40: Correct
 41: Correct
 42: Correct

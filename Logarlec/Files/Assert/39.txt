@@ -100,7 +100,7 @@ Result: Successful
 
 roomStatus:
 Room: BR1
-RoomType: StickyRoom
+RoomType: BasicRoom
 Characters: C1 S1
-Items:
+Items: 
 Capacity: 5
