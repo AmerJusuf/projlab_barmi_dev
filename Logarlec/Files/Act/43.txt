@@ -1,7 +1,35 @@
+createLabyrinth -lab L1
+createCharacter -ch I1 -type Instructor
+createCharacter -ch C1 -type Cleaner
 createCharacter -ch S1 -type Student
-createItem -it B1 -type Beer
-toxicate -ch S1
-activate -it B1
+addCharacterToLabyrinth -lab L1 -ch I1
+addCharacterToLabyrinth -lab L1 -ch C1
+addCharacterToLabyrinth -lab L1 -ch S1
+createRoom -r BR1 -capacity 2 -type BasicRoom
+createRoom -r BR2 -capacity 2 -type BasicRoom
+createRoom -r BR3 -capacity 2 -type BasicRoom
+createRoom -r BR4 -capacity 2 -type BasicRoom
+createRoom -r BR5 -capacity 2 -type BasicRoom
+createRoom -r BR6 -capacity 2 -type BasicRoom
+addNeighbour -r BR1 -r BR2
+addNeighbour -r BR2 -r BR1
+addNeighbour -r BR3 -r BR4
+addNeighbour -r BR4 -r BR3
+addNeighbour -r BR5 -r BR6
+addNeighbour -r BR6 -r BR5
+addRoomToLabyrinth -lab L1 -r BR1
+addRoomToLabyrinth -lab L1 -r BR2
+addRoomToLabyrinth -lab L1 -r BR3
+addRoomToLabyrinth -lab L1 -r BR4
+addRoomToLabyrinth -lab L1 -r BR5
+addRoomToLabyrinth -lab L1 -r BR6
+addCharacterToRoom -ch I1 -r BR1
+addCharacterToRoom -ch C1 -r BR3
+addCharacterToRoom -ch S1 -r BR5
 nextRound
-CharacterStatus -ch S1
-ItemStatus -it B1
+moveCharacter -ch S1 -r BR6
+skipTurn
+characterStatus -ch I1
+characterStatus -ch C1
+characterStatus -ch S1
+list

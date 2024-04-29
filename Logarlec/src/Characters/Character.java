@@ -124,11 +124,7 @@ public abstract class Character {
         this.isPoisoned = isPoisoned;
     }
 
-    public void nextRound(){
-        //TODO: Implement nextRound
-        //handle the next round
-        //clickevent listener?
-    }
+    public abstract String nextRound();
 
     public abstract void disableInstructor();
 
@@ -153,12 +149,32 @@ public abstract class Character {
 
     public abstract void getCaught();
 
+    public void gotCaught(){}
+
     public boolean getPoisoned(){
         if(this.isPoisoned){
             return true;
         }
         else{
             return false;
+        }
+    }
+
+    /**
+     * This method moves the character to a neighbouring room,
+     * if any of them have a space for this character,
+     * and if the character is not poisoned
+     */
+    public void moveToRandom(){
+        if(isPoisoned)
+            return;
+        List<IRoom> neighbours = currentRoom.getNeighbours();
+        for(IRoom neighbour : neighbours){
+            if(neighbour.acceptCharacter(this)){
+                currentRoom.removeCharacter(this);
+                this.setRoom(neighbour);
+                break;
+            }
         }
     }
 }

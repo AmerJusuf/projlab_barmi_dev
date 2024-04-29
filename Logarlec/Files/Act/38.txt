@@ -1,8 +1,13 @@
+createLabyrinth -lab L1
 createRoom -r BR1 -capacity 5 -type BasicRoom
 createRoom -r PR1 -capacity 5 -type PoisonedRoom
+addRoomToLabyrinth -lab L1 -r BR1
+addRoomToLabyrinth -lab L1 -r PR1
 createCharacter -ch C1 -type Cleaner
+addCharacterToLabyrinth -lab L1 -ch C1
 addNeighbour -r BR1 -r PR1
 addNeighbour -r PR1 -r BR1
 addCharacterToRoom -ch C1 -r BR1
-moveCharacter -ch C1 -r PR1
+nextRound
 roomStatus -r PR1
+list

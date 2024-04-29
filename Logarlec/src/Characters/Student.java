@@ -2,9 +2,13 @@ package Characters;
 
 import Items.Item;
 import Rooms.IRoom;
+import TestLogic.TestLogic;
+
+import java.util.Scanner;
 
 public class Student extends Character{
 
+    private boolean isCaught = false;
     /**
      * This constructor is used to create a Student object.
      *
@@ -51,10 +55,17 @@ public class Student extends Character{
      */
     public void getCaught(){
         System.out.println("Student is caught | Student: getCaught()");
+        isCaught = true;
+    }
+
+    /**
+     * A régi getCaught logikája ide lett kiszervezve, hogy egy körben csak egyszer fusson le
+     */
+    public void gotCaught(){
         for(Item item: items){
-           if(item.protectStudent()){
-               return;
-           }
+            if(item.protectStudent()){
+                return;
+            }
         }
         this.dropAllItem();
         currentRoom.removeCharacter(this);
@@ -62,7 +73,33 @@ public class Student extends Character{
     }
 
     @Override
-    public void nextRound() {
+    public String nextRound(){
+        System.out.println("entering Student nextRound | Student: nextRound()");
+        if(isCaught){
+            gotCaught();
+            isCaught = false;
+        }
+        String fileContent = "";
+        boolean endTurn = false;
+        do{
+            System.out.println("nextRound while     Enter commands or 'runScript <filename>' to process commands from a file, or 'exit' to quit:");
+
+            if (TestLogic.writeToFile) {
+                String input = TestLogic.continueProcessCommandsFromFile();
+                if(input.equals("skipTurn:\n\n")){
+                    endTurn = true;
+                }
+                fileContent = fileContent.concat(input);
+            } else {
+                Scanner scanner = new Scanner(System.in);
+                String input = scanner.nextLine();
+                if(input.equals("skipTurn")){
+                    endTurn = true;
+                }
+                TestLogic.processCommandsFromFile(input); // Process command from console and write output to console
+            }
+        }
+        while(!endTurn);
         //while !move
             // pickitem
             // pickItem
@@ -72,5 +109,6 @@ public class Student extends Character{
             // move -> round is over
 
         System.out.println("Student next round | Student: nextRound()");
+        return fileContent;
     }
 }

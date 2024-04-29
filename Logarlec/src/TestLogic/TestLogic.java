@@ -18,10 +18,11 @@ import java.util.regex.Pattern;
 public class TestLogic {
 
     private static final Map<String, Pattern> commandPatterns = new HashMap<>();
+    public static boolean writeToFile = false;
 
     static {
         commandPatterns.put("runAllScripts", Pattern.compile("runAllScripts"));
-        commandPatterns.put("loadMap", Pattern.compile("loadMap\\s+-file\\s+(\\S+)"));              // NINCS IMPLEMENTÁLVA
+        commandPatterns.put("loadMap", Pattern.compile("loadMap\\s+-file\\s+(\\S+)"));
         commandPatterns.put("createLabyrinth", Pattern.compile("createLabyrinth\\s+-lab\\s+(\\S+)"));
         commandPatterns.put("addCharacterToLabyrinth", Pattern.compile("addCharacterToLabyrinth\\s+-lab\\s+(\\S+)\\s+-ch\\s+(\\S+)"));
         commandPatterns.put("addItemToCharacter", Pattern.compile("addItemToCharacter\\s+-it\\s+(\\S+)\\s+-ch\\s+(\\S+)"));
@@ -31,7 +32,7 @@ public class TestLogic {
         commandPatterns.put("createCharacter", Pattern.compile("createCharacter\\s+-ch\\s+(\\S+)\\s*(-type\\s+(\\S+))?"));
         commandPatterns.put("addRoomToLabyrinth", Pattern.compile("addRoomToLabyrinth\\s+-lab\\s+(\\S+)\\s+-r\\s+(\\S+)"));
 
-        commandPatterns.put("createItem", Pattern.compile("createItem\\s+-it\\s+(\\S+)\\s+-type\\s+(\\S+)(?:\\s+-fake)?(?:\\s+-life\\s+(\\d+))?"));     // Ez elég érdekes
+        commandPatterns.put("createItem", Pattern.compile("createItem\\s+-it\\s+(\\S+)\\s+-type\\s+(\\S+)(?:\\s+-fake)?(?:\\s+-life\\s+(\\d+))?"));
 
         commandPatterns.put("moveCharacter", Pattern.compile("moveCharacter\\s+-ch\\s+(\\S+)\\s+-r\\s+(\\S+)"));
         commandPatterns.put("pickItem", Pattern.compile("pickItem\\s+-ch\\s+(\\S+)\\s+-it\\s+(\\S+)"));
@@ -82,9 +83,11 @@ public class TestLogic {
                 itemsMap = new HashMap<>();
                 labyrinth = new Labyrinth();
                 String filename = input.substring(10).trim();
-                processCommandsFromFile(filename, true); // Process commands from file and write output to file
+                processCommandsFromFile(filename); // Process commands from file and write output to file
+                writeToFile = true;
             } else {
-                processCommandsFromFile(input, false); // Process command from console and write output to console
+                processCommandsFromFile(input); // Process command from console and write output to console
+                writeToFile = false;
             }
             System.out.println("\nEnter commands or 'runScript <filename>' to process commands from a file, or 'exit' to quit:");
             input = scanner.nextLine();
@@ -94,7 +97,13 @@ public class TestLogic {
 
     static List<Integer> incorrectFiles = new ArrayList<>();
 
-    public static void processCommandsFromFile(String commandOrFileName, boolean writeToFile) {
+    private static Scanner scanner;
+
+    public static String continueProcessCommandsFromFile(){
+        return(processCommand(scanner.nextLine()) + "\n");
+    }
+
+    public static void processCommandsFromFile(String commandOrFileName) {
         if (!writeToFile) {
             String output = processCommand(commandOrFileName);
             System.out.println(output); // Print output to console
@@ -118,7 +127,7 @@ public class TestLogic {
                     throw new RuntimeException("File not found");
                 }
 
-                Scanner scanner = new Scanner(file);
+                scanner = new Scanner(file);
 
                 String fileContent = "";
                 while (scanner.hasNextLine()) {
@@ -161,7 +170,7 @@ public class TestLogic {
                 if (areEqual) {
                     System.out.println("Two files have same content.");
                 } else {
-                    incorrectFiles.add(Integer.parseInt(fileName));
+                    incorrectFiles.add(Integer.valueOf(fileName));
                     System.out.println("Two files have different content.");
                 }
 
@@ -215,13 +224,14 @@ public class TestLogic {
                 switch (commandName) {
                     case "runAllScripts": {
                         incorrectFiles = new ArrayList<>();
-                        for (int i = 2; i < 45; i++) {
+                        for (int i = 2; i <= 45; i++) {
                             String fileName = Integer.toString(i);
                             roomsMap = new HashMap<>();
                             charactersMap = new HashMap<>();
                             itemsMap = new HashMap<>();
                             labyrinth = new Labyrinth();
-                            processCommandsFromFile(fileName, true);
+                            writeToFile = true;
+                            processCommandsFromFile(fileName);
                         }
 
                         String directory = System.getProperty("user.dir");
@@ -230,7 +240,7 @@ public class TestLogic {
                         System.out.println(fileOutputPath);
                         try {
                             FileWriter writer = new FileWriter(fileOutputPath);
-                            for (int i = 2; i < 45; i++) {
+                            for (int i = 2; i <= 45; i++) {
                                 if (incorrectFiles.contains(i)){
                                     writer.write(i + ": Incorrect\n");
                                 } else {
@@ -624,7 +634,7 @@ public class TestLogic {
                             result = fail;
                         } else {
                             result = success;
-                            character.getCaught();
+                            character.gotCaught(); //Át lett írva getCaughtról
 
                             for(Map.Entry<String, Character> entryRow : charactersMap.entrySet()) {
                                 String chId = entryRow.getKey();
@@ -1234,28 +1244,33 @@ public class TestLogic {
 
 
                     case "gameStatus":{
-                        Labyrinth l = new Labyrinth();
                         outputBuilder.append(commandName).append(":").append("\n");
-                        outputBuilder.append("Status: ").append(l.getGameState()).append("\n");
+                        outputBuilder.append("Status: ").append(labyrinth.getGameState()).append("\n");
 
                         break;}
                     case "nextRound": {
-                        Labyrinth l = new Labyrinth();
-                        l.nextRound();
+                        labyrinth.nextRound();
+                        for(IRoom room: labyrinth.getRooms()){
+                            if(!roomsMap.containsValue(room)){
+                                roomsMap.put("splitted".concat(String.valueOf(roomsMap.size()+1)), room);
+                            }
+                        }
 
                         outputBuilder.append(commandName).append(":").append("\n");
-                        outputBuilder.append("VALAMI KIÍRÁS XD").append("\n");
+                        outputBuilder.append("nextRound done!").append("\n");
 
                         break;
                     }
                     case "skipTurn":
+
                         outputBuilder.append(commandName).append(":").append("\n");
-                        outputBuilder.append("Character: ").append("KARAKTER ID-JA").append("\n");
+                        //outputBuilder.append("Character: ").append("KARAKTER ID-JA").append("\n");
 
                         break;
                     case "startGame":
+                        labyrinth.startGame();
                         outputBuilder.append(commandName).append(":").append("\n");
-                        outputBuilder.append("VALAMI KIÍRÁS XD").append("\n");
+                        outputBuilder.append("Game started!").append("\n");
                         break;
 
                 }
