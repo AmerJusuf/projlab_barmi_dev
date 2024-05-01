@@ -15,6 +15,9 @@ public class BeerView implements ActionListener {
     ImageIcon defIcon;
     ImageIcon activeIcon;
 
+    JButton pickButton;
+    JButton dropButton;
+
     public BeerView() {
         panel.setBackground(Color.LIGHT_GRAY);
         panel.setPreferredSize(new Dimension(200, 60));
@@ -32,6 +35,18 @@ public class BeerView implements ActionListener {
         activeButton.setFocusable(false);
         panel.add(activeButton);
 
+        pickButton = new JButton("Pick");
+        pickButton.addActionListener(this);
+        pickButton.setFocusable(false);
+        pickButton.setVisible(false);
+        panel.add(pickButton);
+
+        dropButton = new JButton("Drop");
+        dropButton.addActionListener(this);
+        dropButton.setFocusable(false);
+        dropButton.setVisible(false);
+        panel.add(dropButton);
+
         panel.setVisible(true);
     }
 
@@ -47,6 +62,12 @@ public class BeerView implements ActionListener {
             System.out.println("Button clicked");
             label.setIcon(activeIcon);
             activeButton.setEnabled(false);
+        }
+        if (e.getSource() == pickButton) {
+            System.out.println("Picked");
+        }
+        if (e.getSource() == dropButton) {
+            System.out.println("Dropped");
         }
     }
 }

@@ -8,14 +8,15 @@ import java.awt.event.ActionListener;
 public class FFP2View implements ActionListener {
     JPanel panel = new JPanel();
 
-
-    JButton activeButton;
-
     JLabel label;
 
     ImageIcon defIcon;
     ImageIcon activeIcon;
     ImageIcon fakeIcon;
+
+    JButton activeButton;
+    JButton pickButton;
+    JButton dropButton;
 
     public FFP2View(boolean isFake) {
         panel.setBackground(Color.LIGHT_GRAY);
@@ -39,10 +40,21 @@ public class FFP2View implements ActionListener {
 
 
         activeButton = new JButton("Activate");
-        //activeButton.setBounds(0, 0, 50, 50);
         activeButton.addActionListener(this);
         activeButton.setFocusable(false);
         panel.add(activeButton);
+
+        pickButton = new JButton("Pick");
+        pickButton.addActionListener(this);
+        pickButton.setFocusable(false);
+        pickButton.setVisible(false);
+        panel.add(pickButton);
+
+        dropButton = new JButton("Drop");
+        dropButton.addActionListener(this);
+        dropButton.setFocusable(false);
+        dropButton.setVisible(false);
+        panel.add(dropButton);
 
         panel.setVisible(true);
     }
@@ -53,6 +65,12 @@ public class FFP2View implements ActionListener {
             System.out.println("Button clicked");
             label.setIcon(activeIcon);
             activeButton.setEnabled(false);
+        }
+        if (e.getSource() == pickButton) {
+            System.out.println("Picked");
+        }
+        if (e.getSource() == dropButton) {
+            System.out.println("Dropped");
         }
     }
 }

@@ -18,6 +18,8 @@ public class TransistorView implements ActionListener {
     JButton activate;
     JButton pair;
     JButton place;
+    JButton pickButton;
+    JButton dropButton;
 
     boolean isActive = false;
     boolean isPlaced = false;
@@ -53,6 +55,18 @@ public class TransistorView implements ActionListener {
         place.setFocusable(false);
         panel.add(place);
 
+        pickButton = new JButton("Pick");
+        pickButton.addActionListener(this);
+        pickButton.setFocusable(false);
+        pickButton.setVisible(false);
+        panel.add(pickButton);
+
+        dropButton = new JButton("Drop");
+        dropButton.addActionListener(this);
+        dropButton.setFocusable(false);
+        dropButton.setVisible(false);
+        panel.add(dropButton);
+
         panel.setVisible(true);
     }
 
@@ -68,15 +82,21 @@ public class TransistorView implements ActionListener {
             label.setIcon(activeIcon);
             isActive = true;
         }
-        else if (e.getSource() == pair && isActive) {
+        if (e.getSource() == pair && isActive) {
             System.out.println("Button pair clicked");
             label.setIcon(pairedIcon);
             isPaired = true;
         }
-        else if (e.getSource() == place && isActive && isPaired) {
+        if (e.getSource() == place && isActive && isPaired) {
             System.out.println("Button placed clicked");
             label.setIcon(placedIcon);
             isPlaced = true;
+        }
+        if (e.getSource() == pickButton) {
+            System.out.println("Picked");
+        }
+        if (e.getSource() == dropButton) {
+            System.out.println("Dropped");
         }
     }
 }
