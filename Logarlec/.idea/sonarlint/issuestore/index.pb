@@ -239,3 +239,17 @@ C
 Files/Output/43.txt,4\8\4863d861e0c1e8395c6a02e815580dbb75b638bc
 Q
 !Files/Output/AllScriptsResult.txt,9\c\9c89eba084be062684c5159eef418108312b50bc
+K
+src/View/MenuView/Menu.java,7\6\76cb1d21811dff8df9a1e316b8e42a8cef6e49c8
+S
+#src/View/WindowView/PlayerView.java,a\4\a43ab1fe358a15c57cd62b3452330f9f862f2a43
+S
+#src/View/WindowView/MainWindow.java,5\2\52ed610769ab8b78fc6b9654127f3009d4ce1790
+Q
+!src/View/WindowView/RoomView.java,1\8\18ac7b065538656d5415b4ee19d12ed8f27d8277
+O
+src/View/ItemView/FFP2View.java,3\a\3a905dc8da0a5a7cbae1d3c29f5981912221fefa
+W
+'src/View/ItemView/AirFreshenerView.java,3\7\37813c23fcf5c09eb3ca5eb60be93cc0ef3def9b
+U
+%src/View/ItemView/TransistorView.java,a\0\a00bac23e142720d5eace6b8dbfbaf422bb2424f

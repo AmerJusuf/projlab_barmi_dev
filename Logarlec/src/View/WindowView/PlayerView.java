@@ -1,13 +1,16 @@
 package  View.WindowView;
 
+import Characters.Character;
 import  View.ItemView.*;
 
 import javax.swing.*;
 import java.awt.*;
 
 public class PlayerView {
-    JPanel panel = new JPanel();
 
+    Character character;
+    JPanel panel = new JPanel();
+    JLabel iconLabel;
     JLabel title;
 
     FFP2View ffp2View = new FFP2View(false);
@@ -18,13 +21,18 @@ public class PlayerView {
     TVSZView tvszView = new TVSZView(false);
     TransistorView transistorView = new TransistorView();
 
-    public PlayerView(String curTitle)
+    final ImageIcon STUDENT_ICON = new ImageIcon("Icons/student.png");
+    final ImageIcon INSTRUCTOR_ICON = new ImageIcon("Icons/instructor.png");
+    final ImageIcon CLEANER_ICON = new ImageIcon("Icons/cleaner.png");
+
+    public PlayerView(Character ch)
     {
-        //panel.setPreferredSize(new Dimension(200, 360));
+        character = ch;
+        setLabel();
         panel.setBackground(Color.LIGHT_GRAY);
         panel.setLayout(new GridLayout(6, 1, 5, 5));
 
-        title = new JLabel(curTitle);
+        title = new JLabel("asd");
         title.setHorizontalAlignment(JLabel.CENTER);
         title.setVisible(true);
         panel.add(title);
@@ -41,5 +49,23 @@ public class PlayerView {
 
 
         panel.setVisible(true);
+    }
+
+
+    private void setLabel(){
+        if(character instanceof Characters.Student){
+            iconLabel = new JLabel(STUDENT_ICON);
+        }
+        else if(character instanceof Characters.Instructor){
+            iconLabel = new JLabel(INSTRUCTOR_ICON);
+        }
+        else if(character instanceof Characters.Cleaner){
+            iconLabel = new JLabel(CLEANER_ICON);
+        }
+    }
+
+
+    public JLabel getIcon(){
+        return iconLabel;
     }
 }
