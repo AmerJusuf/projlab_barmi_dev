@@ -6,6 +6,8 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class TransistorView implements ActionListener {
+
+
     JPanel panel = new JPanel();
 
     JLabel label;
@@ -18,17 +20,20 @@ public class TransistorView implements ActionListener {
     JButton activate;
     JButton pair;
     JButton place;
-    JButton pickButton;
+
     JButton dropButton;
 
     boolean isActive = false;
     boolean isPlaced = false;
     boolean isPaired = false;
 
+    //asd
+    JPanel pickItemPanel;
+    JButton pickButton;
+
     public TransistorView() {
         panel.setBackground(Color.LIGHT_GRAY);
         panel.setPreferredSize(new Dimension(200, 60));
-
 
         defIcon = new ImageIcon("Icons/transistor.png");
         activeIcon = new ImageIcon("Icons/transistoractive.png");
@@ -55,11 +60,11 @@ public class TransistorView implements ActionListener {
         place.setFocusable(false);
         panel.add(place);
 
-        pickButton = new JButton("Pick");
-        pickButton.addActionListener(this);
-        pickButton.setFocusable(false);
-        pickButton.setVisible(false);
-        panel.add(pickButton);
+//        pickButton = new JButton("Pick");
+//        pickButton.addActionListener(this);
+//        pickButton.setFocusable(false);
+//        pickButton.setVisible(false);
+//        panel.add(pickButton);
 
         dropButton = new JButton("Drop");
         dropButton.addActionListener(this);
@@ -99,4 +104,19 @@ public class TransistorView implements ActionListener {
             System.out.println("Dropped");
         }
     }
+
+    public JPanel getPickItemPanel() {
+        pickItemPanel = new JPanel();
+        pickItemPanel.setBackground(Color.LIGHT_GRAY);
+        pickItemPanel.add(new JLabel(defIcon));
+        pickButton = new JButton("Pick");
+        pickButton.addActionListener(this);
+        pickButton.setFocusable(false);
+        pickButton.setVisible(true);
+        pickItemPanel.add(pickButton);
+
+        pickItemPanel.setVisible(true);
+        return pickItemPanel;
+    }
+
 }

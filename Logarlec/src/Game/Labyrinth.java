@@ -131,6 +131,7 @@ public class Labyrinth {
     public String nextRound() {
         String fileContent = "";
             for (Student student : students) {
+                //currentPlayer
                 student.nextRound();
             }
             for (Instructor instructor : instructors) {
