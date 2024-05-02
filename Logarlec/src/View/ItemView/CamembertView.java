@@ -16,7 +16,6 @@ public class CamembertView implements ActionListener {
 
     ImageIcon defIcon;
 
-
     JButton pickButton;
     JButton dropButton;
     JButton openButton;
@@ -30,7 +29,7 @@ public class CamembertView implements ActionListener {
         defIcon = new ImageIcon("Icons/camembert.png");
 
         label = new JLabel();
-        label.setIcon(defIcon);
+        setLabel();
         label.setVisible(true);
         panel.add(label);
 
@@ -59,6 +58,7 @@ public class CamembertView implements ActionListener {
         return panel;
     }
 
+    public void setLabel()  { label.setIcon(defIcon); }
 
     @Override
     public void actionPerformed(ActionEvent e) {

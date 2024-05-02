@@ -26,9 +26,7 @@ public class TransistorView implements ActionListener {
     JButton pickButton;
     JButton dropButton;
 
-    
     JPanel pickItemPanel;
-
 
     public TransistorView(Transistor tr) {
         transistor = tr;
@@ -42,7 +40,7 @@ public class TransistorView implements ActionListener {
         placedIcon = new ImageIcon("Icons/transistorplaced.png");
 
         label = new JLabel();
-        label.setIcon(defIcon);
+        setLabel();
         label.setVisible(true);
         panel.add(label);
 
@@ -81,23 +79,34 @@ public class TransistorView implements ActionListener {
         return panel;
     }
 
+    public void setLabel() {
+        if (transistor.getOwner() == null)
+            label.setIcon(defIcon);
+        else if (transistor.getisActive())
+            label.setIcon(activeIcon);
+        else if (transistor.getPairTransistor() != null)
+            label.setIcon(pairedIcon);
+        else if (transistor.getPlaceLocation() != null)
+            label.setIcon(placedIcon);
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == activate) {
             System.out.println("Button activevate clicked");
-            label.setIcon(activeIcon);
             transistor.setIsTurnedOn(true);
+            setLabel();
         }
         if (e.getSource() == pair && transistor.getisActive()) {
             System.out.println("Button pair clicked");
-            label.setIcon(pairedIcon);
+            setLabel();
 
             // BEALLITANI A MASIK TRANSISTORT PARNAK
             //transistor.setPairTransistor();
         }
         if (e.getSource() == place && transistor.getisActive() && transistor.getPairTransistor() != null) {
             System.out.println("Button placed clicked");
-            label.setIcon(placedIcon);
+            setLabel();
 
             // BEALLITANI A SZOBAT
             //transistor.setPlaceLocation();

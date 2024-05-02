@@ -55,6 +55,8 @@ public class TVSZ extends Item {
         return false;
     }
 
+    public int getSavesLeft() { return savesLeft; }
+
     /**
      * This method is used to decrease the number of saves left for the TVSZ.
      */

@@ -30,17 +30,20 @@ public class BeerView implements ActionListener {
         defIcon = new ImageIcon("Icons/beer.png");
         activeIcon = new ImageIcon("Icons/beeractive.png");
 
+//        label = new JLabel();
+//        label.setIcon(defIcon);
+//        label.setVisible(true);
+//        panel.add(label);
+//
+//        label = new JLabel();
+//        label.setIcon(activeIcon);
+//        label.setVisible(false);
+//        panel.add(label);
+
         label = new JLabel();
-        label.setIcon(defIcon);
+        setLabel();
         label.setVisible(true);
         panel.add(label);
-
-        label = new JLabel();
-        label.setIcon(activeIcon);
-        label.setVisible(false);
-        panel.add(label);
-
-
 
         /*
         activeButton = new JButton("Activate");
@@ -65,9 +68,15 @@ public class BeerView implements ActionListener {
         panel.setVisible(true);
     }
 
-    public JPanel getPanel()
-    {
-        return panel;
+    public JPanel getPanel() { return panel; }
+
+    public void setLabel() {
+        if (beer.getOwner() == null)
+            label.setIcon(defIcon);
+        else if (beer.getisActive())
+            label.setIcon(activeIcon);
+        else
+            label.setIcon(defIcon);
     }
 
 
@@ -85,7 +94,7 @@ public class BeerView implements ActionListener {
         }
         if (e.getSource() == dropButton) {
             System.out.println("Dropped");
-            label.setIcon(defIcon);
+            setLabel();
         }
     }
 }

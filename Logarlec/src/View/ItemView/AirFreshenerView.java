@@ -15,7 +15,7 @@ public class AirFreshenerView implements ActionListener {
     JLabel label;
 
     ImageIcon defIcon;
-    ImageIcon placedIcon;
+    //ImageIcon placedIcon;
 
     JButton pickButton;
     JButton dropButton;
@@ -28,16 +28,12 @@ public class AirFreshenerView implements ActionListener {
         panel.setPreferredSize(new Dimension(200, 60));
 
         defIcon = new ImageIcon("Icons/airfreshener.png");
-        placedIcon = new ImageIcon("Icons/airfreshenerplaced.png");
+        //placedIcon = new ImageIcon("Icons/airfreshenerplaced.png");
+
 
         label = new JLabel();
-        label.setIcon(defIcon);
+        setLabel();
         label.setVisible(true);
-        panel.add(label);
-
-        label = new JLabel();
-        label.setIcon(placedIcon);
-        label.setVisible(false);
         panel.add(label);
 
 
@@ -68,6 +64,8 @@ public class AirFreshenerView implements ActionListener {
         return panel;
     }
 
+    public void setLabel()  { label.setIcon(defIcon); }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == pickButton) {
@@ -78,7 +76,6 @@ public class AirFreshenerView implements ActionListener {
         }
         if (e.getSource() == useButton) {
             System.out.println("Place");
-            label.setIcon(placedIcon);
         }
     }
 }
