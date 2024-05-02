@@ -22,14 +22,12 @@ public class LogarlecView implements ActionListener {
     public LogarlecView(Logarlec l) {
         logarlec = l;
 
-        label = new JLabel();
         defIcon = new ImageIcon("Icons/logarlec.png");
         fakeIcon = new ImageIcon("Icons/logarlecfake.png");
 
-        if (logarlec.isFake())
-            label.setIcon(fakeIcon);
-        else
-            label.setIcon(defIcon);
+        label = new JLabel();
+        setLabel();
+        label.setVisible(true);
         panel.add(label);
 
         pickButton = new JButton("Pick");
@@ -47,8 +45,13 @@ public class LogarlecView implements ActionListener {
         panel.setVisible(true);
     }
 
-    public JPanel getPanel() {
-        return panel;
+    public JPanel getPanel() { return panel; }
+
+    public void setLabel() {
+        if (logarlec.isFake())
+            label.setIcon(fakeIcon);
+        else
+            label.setIcon(defIcon);
     }
 
     @Override

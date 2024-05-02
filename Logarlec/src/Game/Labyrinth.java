@@ -432,7 +432,7 @@ public class Labyrinth {
                 boolean isFake = new Random().nextBoolean();
                 switch (j){
                     case 0: {
-                        room.addItem(new AirFreshener(isFake));
+                        room.addItem(new AirFreshener());
                         break;
                     }
                     case 1: {

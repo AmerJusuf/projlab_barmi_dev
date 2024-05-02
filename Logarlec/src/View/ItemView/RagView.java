@@ -30,12 +30,7 @@ public class RagView implements ActionListener {
         activeIcon = new ImageIcon("Icons/ragactive.png");
 
         label = new JLabel();
-        label.setIcon(defIcon);
-        label.setVisible(true);
-        panel.add(label);
-
-        label = new JLabel();
-        label.setIcon(activeIcon);
+        setLabel();
         label.setVisible(false);
         panel.add(label);
 
@@ -59,6 +54,14 @@ public class RagView implements ActionListener {
     {
         return panel;
     }
+
+    public void setLabel() {
+        if (rag.getOwner() == null)
+            label.setIcon(defIcon);
+        else if (rag.getisActive())
+            label.setIcon(activeIcon);
+    }
+
 
     @Override
     public void actionPerformed(ActionEvent e) {

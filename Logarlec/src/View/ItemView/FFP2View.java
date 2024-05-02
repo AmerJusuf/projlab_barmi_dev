@@ -35,10 +35,7 @@ public class FFP2View implements ActionListener {
         fakeIcon = new ImageIcon("Icons/ffp2fake.png");
 
         label = new JLabel();
-        if (ffp2.isFake())
-            label.setIcon(fakeIcon);
-        else
-            label.setIcon(defIcon);
+        setLabel();
         label.setVisible(true);
         panel.add(label);
 
@@ -59,10 +56,17 @@ public class FFP2View implements ActionListener {
         panel.setVisible(true);
     }
 
-    public JPanel getPanel()
-    {
-        return panel;
+    public JPanel getPanel()  { return panel; }
+
+    public void setLabel() {
+        if (ffp2.getOwner() == null)
+            label.setIcon(defIcon);
+        else if (ffp2.isFake())
+            label.setIcon(fakeIcon);
+        else if (ffp2.getisActive())
+            label.setIcon(activeIcon);
     }
+
 
     @Override
     public void actionPerformed(ActionEvent e) {

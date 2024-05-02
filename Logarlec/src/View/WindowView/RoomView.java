@@ -2,13 +2,12 @@ package  View.WindowView;
 
 import Characters.Character;
 import Items.*;
+import Rooms.*;
 import Game.Labyrinth;
-import Rooms.IRoom;
 import View.ItemView.AirFreshenerView;
 import View.ItemView.TransistorView;
 
 import javax.swing.*;
-import javax.swing.border.Border;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;

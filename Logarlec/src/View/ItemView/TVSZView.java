@@ -36,10 +36,7 @@ public class TVSZView implements ActionListener {
         threeLifeIcon = new ImageIcon("Icons/tvsz3life.png");
 
         label = new JLabel();
-        if (tvsz.isFake())
-            label.setIcon(fakeIcon);
-        else
-            label.setIcon(defIcon);
+        setLabel();
         label.setVisible(true);
         panel.add(label);
 
@@ -59,6 +56,19 @@ public class TVSZView implements ActionListener {
     }
 
     public JPanel getPanel() { return panel; }
+
+    public void setLabel() {
+        if (tvsz.getOwner() == null)
+            label.setIcon(defIcon);
+        else if (tvsz.isFake())
+            label.setIcon(fakeIcon);
+        else if (tvsz.getSavesLeft() == 1)
+            label.setIcon(oneLifeIcon);
+        else if (tvsz.getSavesLeft() == 2)
+            label.setIcon(twoLifeIcon);
+        else if (tvsz.getSavesLeft() == 3)
+            label.setIcon(threeLifeIcon);
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
