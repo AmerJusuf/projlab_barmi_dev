@@ -4,8 +4,11 @@ import Characters.Character;
 import Characters.Cleaner;
 import Characters.Instructor;
 import Characters.Student;
-import Items.Item;
+import Items.*;
+import Rooms.BasicRoom;
+import Rooms.CursedRoomDecorator;
 import Rooms.IRoom;
+import Rooms.PoisonedRoomDecorator;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,12 +23,28 @@ public class Labyrinth {
 
     private List<Cleaner> cleaners;
 
+    public static Student currentPlayer;
 
     public Labyrinth() {
         rooms = new ArrayList<>();
         students = new ArrayList<>();
         instructors = new ArrayList<>();
         cleaners = new ArrayList<>();
+    }
+
+    public Labyrinth(List<Student> students){
+        this.students = students;
+        instructors = new ArrayList<>();
+        for(int i = 0; i < (students.size()*2); i++){
+            Instructor instructor = new Instructor();
+            instructors.add(instructor);
+        }
+        cleaners = new ArrayList<>();
+        for(int i = 0; i < students.size(); i++){
+            Cleaner cleaner = new Cleaner();
+            cleaners.add(cleaner);
+        }
+        generateMap();
     }
 
     public void addRoom(IRoom room) {
@@ -117,9 +136,7 @@ public class Labyrinth {
         room.splitRoom();
     }
 
-    public void generateMap() {
-        // Generate the map
-    }
+
 
     public void startGame() {
         while (gameState == GameState.PLAYING) {
@@ -131,7 +148,7 @@ public class Labyrinth {
     public String nextRound() {
         String fileContent = "";
             for (Student student : students) {
-                //currentPlayer
+                currentPlayer = student;
                 student.nextRound();
             }
             for (Instructor instructor : instructors) {
@@ -144,6 +161,7 @@ public class Labyrinth {
            // Osszes szoba tarygara es osszes karakterek targyaira step() fuggveny meghivasa
 
             mergeAndSplitRandomly();
+            stepItems();
             return fileContent;
     }
 
@@ -215,4 +233,235 @@ public class Labyrinth {
     public List<Student> getStudents() {
         return students;
     }
+
+
+    public void generateMap() {
+        rooms = new ArrayList<>();
+
+        //Row1
+        BasicRoom room1 = new BasicRoom(3);
+        CursedRoomDecorator room2 = new CursedRoomDecorator(new BasicRoom(4));
+        BasicRoom room3 = new BasicRoom(5);
+        PoisonedRoomDecorator room4 = new PoisonedRoomDecorator(new BasicRoom(3));
+        BasicRoom room5 = new BasicRoom(2);
+
+        //Row2
+        PoisonedRoomDecorator room6 = new PoisonedRoomDecorator(new BasicRoom(3));
+        BasicRoom room7 = new BasicRoom(4);
+        CursedRoomDecorator room8 = new CursedRoomDecorator(new BasicRoom(5));
+        BasicRoom room9 = new BasicRoom(3);
+        BasicRoom room10 = new BasicRoom(2);
+
+        //Row3
+        BasicRoom room11 = new BasicRoom(3);
+        BasicRoom room12 = new BasicRoom(4);
+        CursedRoomDecorator room13 = new CursedRoomDecorator(new BasicRoom(5));
+        PoisonedRoomDecorator room14 = new PoisonedRoomDecorator(new BasicRoom(3));
+        BasicRoom room15 = new BasicRoom(2);
+
+        //Row4
+        BasicRoom room16 = new BasicRoom(3);
+        PoisonedRoomDecorator room17 = new PoisonedRoomDecorator(new BasicRoom(4));
+        BasicRoom room18 = new BasicRoom(5);
+        CursedRoomDecorator room19 = new CursedRoomDecorator(new BasicRoom(3));
+        BasicRoom room20 = new BasicRoom(2);
+
+        //Row5
+        BasicRoom room21 = new BasicRoom(3);
+        BasicRoom room22 = new BasicRoom(4);
+        CursedRoomDecorator room23 = new CursedRoomDecorator(new BasicRoom(5));
+        BasicRoom room24 = new BasicRoom(3);
+        PoisonedRoomDecorator room25 = new PoisonedRoomDecorator(new BasicRoom(2));
+
+
+        //Adding neighbours
+        room1.addNeighbour(room6);
+        room1.addNeighbour(room2);
+
+        //room2.addNeighbour(room1);
+        room2.addNeighbour(room7);
+        room2.addNeighbour(room3);
+
+        room3.addNeighbour(room2);
+        //room3.addNeighbour(room8);
+        room3.addNeighbour(room4);
+
+        room4.addNeighbour(room3);
+        room4.addNeighbour(room9);
+        //room4.addNeighbour(room5);
+
+        room5.addNeighbour(room4);
+        room5.addNeighbour(room10);
+
+        room6.addNeighbour(room1);
+        room6.addNeighbour(room11);
+        room6.addNeighbour(room7);
+
+        //room7.addNeighbour(room2);
+        room7.addNeighbour(room6);
+        room7.addNeighbour(room12);
+        room7.addNeighbour(room8);
+
+        room8.addNeighbour(room3);
+        //room8.addNeighbour(room7);
+        room8.addNeighbour(room13);
+        room8.addNeighbour(room9);
+
+        room9.addNeighbour(room4);
+        room9.addNeighbour(room8);
+        //room9.addNeighbour(room14);
+        room9.addNeighbour(room10);
+
+        room10.addNeighbour(room5);
+        room10.addNeighbour(room9);
+        //room10.addNeighbour(room15);
+
+        room11.addNeighbour(room6);
+        room11.addNeighbour(room16);
+        //room11.addNeighbour(room12);
+
+        room12.addNeighbour(room7);
+        room12.addNeighbour(room11);
+        //room12.addNeighbour(room17);
+        room12.addNeighbour(room13);
+
+        room13.addNeighbour(room8);
+        //room13.addNeighbour(room12);
+        room13.addNeighbour(room18);
+        room13.addNeighbour(room14);
+
+        room14.addNeighbour(room9);
+        room14.addNeighbour(room13);
+        room14.addNeighbour(room19);
+        //room14.addNeighbour(room15);
+
+        room15.addNeighbour(room10);
+        //room15.addNeighbour(room14);
+        room15.addNeighbour(room20);
+
+        //room16.addNeighbour(room11);
+        room16.addNeighbour(room21);
+        room16.addNeighbour(room17);
+
+        room17.addNeighbour(room12);
+        room17.addNeighbour(room16);
+        room17.addNeighbour(room22);
+        //room17.addNeighbour(room18);
+
+        room18.addNeighbour(room13);
+        //room18.addNeighbour(room17);
+        room18.addNeighbour(room23);
+        room18.addNeighbour(room19);
+
+        room19.addNeighbour(room14);
+        room19.addNeighbour(room18);
+        room19.addNeighbour(room24);
+        //room19.addNeighbour(room20);
+
+        room20.addNeighbour(room15);
+        //room20.addNeighbour(room19);
+        room20.addNeighbour(room25);
+
+        room21.addNeighbour(room16);
+        room21.addNeighbour(room22);
+
+        room22.addNeighbour(room17);
+        //room22.addNeighbour(room21);
+        room22.addNeighbour(room23);
+
+        room23.addNeighbour(room18);
+        room23.addNeighbour(room22);
+        //room23.addNeighbour(room24);
+
+        room24.addNeighbour(room19);
+       // room24.addNeighbour(room23);
+        room24.addNeighbour(room25);
+
+        room25.addNeighbour(room20);
+        room25.addNeighbour(room24);
+
+        //add each room to rooms
+
+        rooms.add(room1);
+        rooms.add(room2);
+        rooms.add(room3);
+        rooms.add(room4);
+        rooms.add(room5);
+        rooms.add(room6);
+        rooms.add(room7);
+        rooms.add(room8);
+        rooms.add(room9);
+        rooms.add(room10);
+        rooms.add(room11);
+        rooms.add(room12);
+        rooms.add(room13);
+        rooms.add(room14);
+        rooms.add(room15);
+        rooms.add(room16);
+        rooms.add(room17);
+        rooms.add(room18);
+        rooms.add(room19);
+        rooms.add(room20);
+        rooms.add(room21);
+        rooms.add(room22);
+        rooms.add(room23);
+        rooms.add(room24);
+        rooms.add(room25);
+
+
+        //add characters to rooms
+        for(int i = 0; i < students.size(); i++){
+            int j = i % 5;
+            rooms.get(24-j).addCharacter(students.get(i));
+        }
+
+        for(int i = 0; i < instructors.size(); i++){
+            int j = i % 5;
+            rooms.get(j).addCharacter(instructors.get(i));
+        }
+
+        for (int i = 0; i < cleaners.size(); i++) {
+            int j = new Random().nextInt(0,24);
+            rooms.get(j).addCharacter(cleaners.get(i));
+        }
+
+        //add items to rooms
+        for (IRoom room : rooms) {
+            for(int i = 0; i < 5; i++){
+                int j = new Random().nextInt(0, 6);
+                boolean isFake = new Random().nextBoolean();
+                switch (j){
+                    case 0: {
+                        room.addItem(new AirFreshener(isFake));
+                        break;
+                    }
+                    case 1: {
+                        room.addItem(new Beer(isFake));
+                        break;
+                    }
+                    case 2: {
+                        room.addItem(new Camembert(isFake));
+                        break;
+                    }
+                    case 3: {
+                        room.addItem(new FFP2(isFake));
+                        break;
+                    }
+                    case 4: {
+                        room.addItem(new Rag(isFake));
+                        break;
+                    }
+                    case 5: {
+                        room.addItem(new Transistor(isFake));
+                    }
+                    case 6: {
+                        room.addItem(new TVSZ(isFake,3));
+                    }
+                }
+            }
+        }
+        rooms.get(10).addItem(new Logarlec(false));
+        rooms.get(6).addItem(new Logarlec(true));
+    }
+
 }

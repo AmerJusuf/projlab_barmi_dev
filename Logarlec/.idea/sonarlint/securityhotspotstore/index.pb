@@ -253,3 +253,7 @@ W
 'src/View/ItemView/AirFreshenerView.java,3\7\37813c23fcf5c09eb3ca5eb60be93cc0ef3def9b
 U
 %src/View/ItemView/TransistorView.java,a\0\a00bac23e142720d5eace6b8dbfbaf422bb2424f
+N
+src/View/ItemView/RagView.java,3\5\35dae4393a19f71c657ad0fd61df2b0fb0d16422
+U
+%src/View/WindowView/RoomNodeView.java,c\d\cd7b26001efe0a8267f5f5326a3d22f393d5b649

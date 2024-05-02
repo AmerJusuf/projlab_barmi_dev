@@ -1,16 +1,50 @@
 
-¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìÆ«úÿÿÿÿ8—£Ç¢ò1J$15a2499e-8046-4c64-a937-1cd047db8c31
-•
-java:S3776'"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(…†Óá8Ü£Ç¢ò1J$dd9b68a6-be1a-4527-b9bf-ec8e14e79821
-f
-java:S2119+"Save and re-use this "Random".(šŸ«íøÿÿÿÿ8Ş£Ç¢ò1J$c91e8272-7b2e-4bab-83a2-452a973036c6
+›
+java:S1104"YMake currentPlayer a static final constant or non-public and provide accessors if needed.(º¨¶+8½ÖŸÏó1J$a35c5477-c637-46f8-89dc-8ef0eb16ca7b
 u
-java:S1135N"2Complete the task associated to this TODO comment.(ÀÛÙ„8à£Ç¢ò1J$063aee75-1185-4840-83fd-90ee12fa9b5f
-s	java:S106˜"+Replace this use of System.out by a logger.(ıÒÜÈøÿÿÿÿ8ñ£Ç¢ò1J$fc6c0184-af17-4c02-96f9-44860c160514
-s	java:S106š"+Replace this use of System.out by a logger.(¦ôÜ÷ûÿÿÿÿ8˜ı ó1J$a2f87710-db0c-48bb-9260-3af4f991a2b5
-n	java:S106§"+Replace this use of System.out by a logger.(Ğ¦Á‘8ò£Ç¢ò1J$80957d54-550c-4c11-b3bc-cc9e7c3b3600
+java:S1444"3Make this "public static currentPlayer" field final(º¨¶+8¿ÖŸÏó1J$6518efeb-6d4d-4d14-a41a-f48e3e2758d1
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ìÆ«úÿÿÿÿ8—£Ç¢ò1J$9b06d9fd-477b-4e9a-8a66-45b349f5caf9
+•
+java:S3776:"RRefactor this method to reduce its Cognitive Complexity from 17 to the 15 allowed.(…†Óá8Ü£Ç¢ò1J$c39f3679-d4c0-4ee5-ba47-b16c556202c2
+f
+java:S2119>"Save and re-use this "Random".(šŸ«íøÿÿÿÿ8Ş£Ç¢ò1J$cb526856-8106-4961-ab62-040d7648af5b
+u
+java:S1135a"2Complete the task associated to this TODO comment.(ÀÛÙ„8à£Ç¢ò1J$1691163d-96c5-42b4-b7d7-a8635bfafada
+
+java:S2696—"6Make the enclosing method "static" or remove this set.(Ÿó£±ÿÿÿÿÿ8ËŞŸÏó1J$cf83d216-f6b8-4a1d-8d93-461de379be23
+s	java:S106ª"+Replace this use of System.out by a logger.(ıÒÜÈøÿÿÿÿ8ò£Ç¢ò1J$d599e621-995b-4b8b-a076-cd65cdb2add6
+s	java:S106¬"+Replace this use of System.out by a logger.(¦ôÜ÷ûÿÿÿÿ8˜ı ó1J$2d855eaf-b473-4118-b903-c55590bbfa3e
+n	java:S106¹"+Replace this use of System.out by a logger.(Ğ¦Á‘8ÕŞŸÏó1J$93c12a6b-deaf-4606-a371-f69f7d223234
 s
-java:S1172«"0Remove this unused method parameter "character".(¨¼ú08ó£Ç¢ò1J$feed9a3d-9033-4af7-a604-22b2f1af1999
-n	java:S106¬"+Replace this use of System.out by a logger.(“áà†8ó£Ç¢ò1J$a338b82a-3fb8-4f55-98f0-8f17be0cc06e
+java:S1172½"0Remove this unused method parameter "character".(¨¼ú08ó£Ç¢ò1J$47ca7628-9b71-40b0-82a2-02fe6cb7db92
+n	java:S106¾"+Replace this use of System.out by a logger.(“áà†8ó£Ç¢ò1J$5dc93cd9-d38b-4f72-bd99-85ee7eb1174c
+	java:S125™"<This block of commented-out lines of code should be removed.(‡â‹8ïŞŸÏó1J$f218f7cd-a334-409e-9d1c-3d2e03f80bc5
+„	java:S125"<This block of commented-out lines of code should be removed.(¿¤Ë™üÿÿÿÿ8ğŞŸÏó1J$9d5adefd-e824-4c17-8e9e-857cc58a94dc
+„	java:S125£"<This block of commented-out lines of code should be removed.(¤¨‘Çşÿÿÿÿ8ñŞŸÏó1J$f3cdfb0e-e0a9-40bd-9dcc-4684a429905d
+~	java:S125¬"<This block of commented-out lines of code should be removed.(Ù­œ*8òŞŸÏó1J$e4373ca5-7e31-4e88-b849-4dea519bc44f
+„	java:S125²"<This block of commented-out lines of code should be removed.(“½ãÎÿÿÿÿÿ8óŞŸÏó1J$55610a6f-4626-4e92-8b83-2faf9980b78d
+„	java:S125¸"<This block of commented-out lines of code should be removed.(ú¯™°şÿÿÿÿ8ôŞŸÏó1J$b452b0c8-825d-4710-80f7-7d019c9591fb
+„	java:S125½"<This block of commented-out lines of code should be removed.(¶ä–úÿÿÿÿ8õŞŸÏó1J$c7bb2026-a3ac-4d2e-b39d-b7fa2d235ed3
+„	java:S125Á"<This block of commented-out lines of code should be removed.(´—éËüÿÿÿÿ8öŞŸÏó1J$2a2af786-13f0-45ed-b1ea-9b8b85453f18
+„	java:S125Å"<This block of commented-out lines of code should be removed.(¡Š¬ëıÿÿÿÿ8÷ŞŸÏó1J$4e3cdeef-48e1-4ad7-ba7d-afd71a6b35d6
+„	java:S125É"<This block of commented-out lines of code should be removed.(İÖäˆÿÿÿÿÿ8øŞŸÏó1J$f26fe47b-9e06-4d48-9ece-2520e84a79b7
+	java:S125Ğ"<This block of commented-out lines of code should be removed.(õàâƒ8ùŞŸÏó1J$6f9cc040-b60f-4c2a-adc7-ca2f3ef11fbc
+„	java:S125Ó"<This block of commented-out lines of code should be removed.(ŒÊıùÿÿÿÿ8ùŞŸÏó1J$ea673140-c16f-44b5-a12c-943414314be9
+„	java:S125Ö"<This block of commented-out lines of code should be removed.(ÇĞ´æüÿÿÿÿ8úŞŸÏó1J$33113a67-3f9f-413a-be12-20f6561fdc53
+~	java:S125İ"<This block of commented-out lines of code should be removed.(‚¾ƒI8ûŞŸÏó1J$c6d1aa82-541a-49ba-8327-474869071e66
+	java:S125à"<This block of commented-out lines of code should be removed.(ñüÀ—8üŞŸÏó1J$e6c369f5-2840-4c0f-b7c7-759666afcb16
+	java:S125ç"<This block of commented-out lines of code should be removed.(…™Ñ¢8ıŞŸÏó1J$ef71f6d6-7bf7-4fc5-a9c8-db9eece0a720
+	java:S125ê"<This block of commented-out lines of code should be removed.(ƒ³ÍÉ8şŞŸÏó1J$835ba4d3-3dcc-41f5-b6c4-29f9487e1842
+~	java:S125ñ"<This block of commented-out lines of code should be removed.(ñ±Ø8ÿŞŸÏó1J$6f9bf582-e332-4d79-acaf-4de75ae2dad9
+„	java:S125ö"<This block of commented-out lines of code should be removed.(Ê”Â’ÿÿÿÿÿ8€ßŸÏó1J$4cbae83d-d5df-4a50-93d5-f4fabec41a41
+„	java:S125ù"<This block of commented-out lines of code should be removed.(èÆ©Íúÿÿÿÿ8ßŸÏó1J$5d541190-d945-4b25-894a-8cf90991e7f1
+b
+java:S2119¨"Save and re-use this "Random".(äõ½ñ8…ßŸÏó1J$612cce88-5688-45e7-a774-654c8adf59b3
+b
+java:S2119¯"Save and re-use this "Random".(ş£û8‡ßŸÏó1J$62860fee-3cd7-4c66-9824-b61560635a13
+g
+java:S2119°"Save and re-use this "Random".(áöÿâùÿÿÿÿ8ˆßŸÏó1J$6214d7df-81ed-44b8-92c5-8cbd5c387624
+	java:S128Æ"LEnd this switch case with an unconditional break, return or throw statement.(Ó‚ï8ŒßŸÏó1J$79fb7b94-f19f-4922-8b00-d2d00e6cd890
+j	java:S131±""Add a default case to this switch.(Åİ¶Ìøÿÿÿÿ8ßŸÏó1J$a3ab19c0-f47d-4fd7-9f30-26bf8577fab3
 z
-java:S1068"8Remove this unused "starterNumberOfRooms" private field.(ö¨“G8÷£Ç¢ò1J$d4209f27-32cb-4f68-9693-c2e7fc0f6ace
+java:S1068"8Remove this unused "starterNumberOfRooms" private field.(ö¨“G8÷£Ç¢ò1J$4bb8cbdf-64ec-4f40-8a90-671ed238fad4
