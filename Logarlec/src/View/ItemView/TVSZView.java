@@ -1,11 +1,15 @@
 package View.ItemView;
 
+import Items.TVSZ;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class TVSZView implements ActionListener {
+    TVSZ tvsz;
+
     JPanel panel = new JPanel();
 
     JLabel label;
@@ -40,10 +44,15 @@ public class TVSZView implements ActionListener {
         dropButton = new JButton("Drop");
         dropButton.addActionListener(this);
         dropButton.setFocusable(false);
-        dropButton.setVisible(false);
+        dropButton.setVisible(true);
         panel.add(dropButton);
 
         panel.setVisible(true);
+    }
+
+    public JPanel getPanel()
+    {
+        return panel;
     }
 
     @Override

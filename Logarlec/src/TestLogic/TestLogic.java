@@ -464,7 +464,7 @@ public class TestLogic {
                             if (itemType.equalsIgnoreCase("TVSZ")) {
                                 itemsMap.put(itemId, new TVSZ(fake, life));
                             } else if (itemType.equalsIgnoreCase("AirFreshener")) {
-                                itemsMap.put(itemId, new AirFreshener(fake));
+                                itemsMap.put(itemId, new AirFreshener());
                             } else if (itemType.equalsIgnoreCase("Camembert")) {
                                 itemsMap.put(itemId, new Camembert(fake));
                             } else if (itemType.equalsIgnoreCase("Transistor")) {

@@ -1,10 +1,14 @@
 package View.ItemView;
 
+import Items.Logarlec;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class LogarlecView implements ActionListener {
+    Logarlec logarlec;
+
     JPanel panel = new JPanel();
 
     JLabel label;
@@ -15,12 +19,14 @@ public class LogarlecView implements ActionListener {
     JButton pickButton;
     JButton dropButton;
 
-    LogarlecView(boolean isFake) {
+    public LogarlecView(Logarlec l) {
+        logarlec = l;
+
         label = new JLabel();
         defIcon = new ImageIcon("Icons/logarlec.png");
         fakeIcon = new ImageIcon("Icons/logarlecfake.png");
 
-        if (isFake)
+        if (logarlec.isFake())
             label.setIcon(fakeIcon);
         else
             label.setIcon(defIcon);
@@ -39,6 +45,10 @@ public class LogarlecView implements ActionListener {
         panel.add(dropButton);
 
         panel.setVisible(true);
+    }
+
+    public JPanel getPanel() {
+        return panel;
     }
 
     @Override

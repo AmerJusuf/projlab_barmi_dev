@@ -1,9 +1,7 @@
 package  View.WindowView;
 
 import Characters.Character;
-import Items.AirFreshener;
-import Items.Item;
-import Items.Transistor;
+import Items.*;
 import Rooms.IRoom;
 import View.ItemView.AirFreshenerView;
 import View.ItemView.TransistorView;
@@ -16,6 +14,9 @@ import java.awt.event.ActionListener;
 
 public class RoomView implements ActionListener {
     IRoom room;
+    AirFreshener airFreshener = new AirFreshener();
+    Transistor transistor = new Transistor();
+
     JPanel panel = new JPanel();
     JLabel title;
     JButton moveButton;
@@ -23,7 +24,7 @@ public class RoomView implements ActionListener {
 
     //currentPLayer.getRoom() == room -> stayButton, amugymeg move
 
-    RoomView(IRoom room, int i)
+    public RoomView(IRoom room, int i)
     {
         this.room = room;
         if(i == 0){
@@ -78,11 +79,11 @@ public class RoomView implements ActionListener {
         {
             if( item instanceof AirFreshener)
             {
-                AirFreshenerView airFreshenerView = new AirFreshenerView();
+                AirFreshenerView airFreshenerView = new AirFreshenerView(airFreshener);
                 itemListPanel.add(airFreshenerView.getPanel());
             } else if( item instanceof Transistor)
             {
-                TransistorView transistorView = new TransistorView();
+                TransistorView transistorView = new TransistorView(transistor);
                 itemListPanel.add(transistorView.getPickItemPanel());
             }
             itemListPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));

@@ -1,11 +1,15 @@
 package View.ItemView;
 
+import Items.Rag;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class RagView implements ActionListener {
+    Rag rag;
+
     JPanel panel = new JPanel();
 
     JLabel label;
@@ -16,7 +20,9 @@ public class RagView implements ActionListener {
     JButton pickButton;
     JButton dropButton;
 
-    public RagView() {
+    public RagView(Rag r) {
+        rag = r;
+
         panel.setBackground(Color.LIGHT_GRAY);
         panel.setPreferredSize(new Dimension(200, 60));
 
@@ -26,6 +32,11 @@ public class RagView implements ActionListener {
         label = new JLabel();
         label.setIcon(defIcon);
         label.setVisible(true);
+        panel.add(label);
+
+        label = new JLabel();
+        label.setIcon(activeIcon);
+        label.setVisible(false);
         panel.add(label);
 
 
@@ -38,7 +49,7 @@ public class RagView implements ActionListener {
         dropButton = new JButton("Drop");
         dropButton.addActionListener(this);
         dropButton.setFocusable(false);
-        dropButton.setVisible(false);
+        dropButton.setVisible(true);
         panel.add(dropButton);
 
         panel.setVisible(true);
