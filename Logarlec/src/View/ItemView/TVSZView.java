@@ -15,21 +15,29 @@ public class TVSZView implements ActionListener {
     JLabel label;
 
     ImageIcon defIcon;
-    ImageIcon fakeItem;
+    ImageIcon fakeIcon;
+    ImageIcon oneLifeIcon;
+    ImageIcon twoLifeIcon;
+    ImageIcon threeLifeIcon;
 
     JButton pickButton;
     JButton dropButton;
 
-    public TVSZView(boolean IsFake) {
+    public TVSZView(TVSZ t) {
+        tvsz = t;
+
         panel.setBackground(Color.LIGHT_GRAY);
         panel.setPreferredSize(new Dimension(200, 60));
 
         defIcon = new ImageIcon("Icons/tvsz.png");
-        fakeItem = new ImageIcon("Icons/tvszfake.png");
+        fakeIcon = new ImageIcon("Icons/tvszfake.png");
+        oneLifeIcon = new ImageIcon("Icons/tvsz1life.png");
+        twoLifeIcon = new ImageIcon("Icons/tvsz2life.png");
+        threeLifeIcon = new ImageIcon("Icons/tvsz3life.png");
 
         label = new JLabel();
-        if (IsFake)
-            label.setIcon(fakeItem);
+        if (tvsz.isFake())
+            label.setIcon(fakeIcon);
         else
             label.setIcon(defIcon);
         label.setVisible(true);
@@ -50,10 +58,7 @@ public class TVSZView implements ActionListener {
         panel.setVisible(true);
     }
 
-    public JPanel getPanel()
-    {
-        return panel;
-    }
+    public JPanel getPanel() { return panel; }
 
     @Override
     public void actionPerformed(ActionEvent e) {

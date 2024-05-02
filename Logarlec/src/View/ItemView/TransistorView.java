@@ -23,11 +23,12 @@ public class TransistorView implements ActionListener {
     JButton pair;
     JButton place;
 
+    JButton pickButton;
     JButton dropButton;
 
-    //asd
+    
     JPanel pickItemPanel;
-    JButton pickButton;
+
 
     public TransistorView(Transistor tr) {
         transistor = tr;
@@ -37,8 +38,8 @@ public class TransistorView implements ActionListener {
 
         defIcon = new ImageIcon("Icons/transistor.png");
         activeIcon = new ImageIcon("Icons/transistoractive.png");
-        placedIcon = new ImageIcon("Icons/transistorplaced.png");
         pairedIcon = new ImageIcon("Icons/transistorpaired.png");
+        placedIcon = new ImageIcon("Icons/transistorplaced.png");
 
         label = new JLabel();
         label.setIcon(defIcon);
@@ -60,16 +61,16 @@ public class TransistorView implements ActionListener {
         place.setFocusable(false);
         panel.add(place);
 
-//        pickButton = new JButton("Pick");
-//        pickButton.addActionListener(this);
-//        pickButton.setFocusable(false);
-//        pickButton.setVisible(false);
-//        panel.add(pickButton);
+        pickButton = new JButton("Pick");
+        pickButton.addActionListener(this);
+        pickButton.setFocusable(false);
+        pickButton.setVisible(false);
+        panel.add(pickButton);
 
         dropButton = new JButton("Drop");
         dropButton.addActionListener(this);
         dropButton.setFocusable(false);
-        dropButton.setVisible(false);
+        dropButton.setVisible(true);
         panel.add(dropButton);
 
         panel.setVisible(true);

@@ -32,7 +32,7 @@ public class PlayerView {
     LogarlecView logarlecView = new LogarlecView(logarlec);
     RagView ragView = new RagView(rag);
     TransistorView transistorView = new TransistorView(transistor);
-    TVSZView tvszView = new TVSZView(false);
+    TVSZView tvszView = new TVSZView(tvsz);
 
 
     final ImageIcon STUDENT_ICON = new ImageIcon("Icons/student.png");
