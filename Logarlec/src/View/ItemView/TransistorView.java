@@ -1,12 +1,14 @@
 package View.ItemView;
 
+import Items.Transistor;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class TransistorView implements ActionListener {
-
+    Transistor transistor;
 
     JPanel panel = new JPanel();
 
@@ -21,24 +23,23 @@ public class TransistorView implements ActionListener {
     JButton pair;
     JButton place;
 
+    JButton pickButton;
     JButton dropButton;
 
-    boolean isActive = false;
-    boolean isPlaced = false;
-    boolean isPaired = false;
-
-    //asd
+    
     JPanel pickItemPanel;
-    JButton pickButton;
 
-    public TransistorView() {
+
+    public TransistorView(Transistor tr) {
+        transistor = tr;
+
         panel.setBackground(Color.LIGHT_GRAY);
         panel.setPreferredSize(new Dimension(200, 60));
 
         defIcon = new ImageIcon("Icons/transistor.png");
         activeIcon = new ImageIcon("Icons/transistoractive.png");
-        placedIcon = new ImageIcon("Icons/transistorplaced.png");
         pairedIcon = new ImageIcon("Icons/transistorpaired.png");
+        placedIcon = new ImageIcon("Icons/transistorplaced.png");
 
         label = new JLabel();
         label.setIcon(defIcon);
@@ -60,16 +61,16 @@ public class TransistorView implements ActionListener {
         place.setFocusable(false);
         panel.add(place);
 
-//        pickButton = new JButton("Pick");
-//        pickButton.addActionListener(this);
-//        pickButton.setFocusable(false);
-//        pickButton.setVisible(false);
-//        panel.add(pickButton);
+        pickButton = new JButton("Pick");
+        pickButton.addActionListener(this);
+        pickButton.setFocusable(false);
+        pickButton.setVisible(false);
+        panel.add(pickButton);
 
         dropButton = new JButton("Drop");
         dropButton.addActionListener(this);
         dropButton.setFocusable(false);
-        dropButton.setVisible(false);
+        dropButton.setVisible(true);
         panel.add(dropButton);
 
         panel.setVisible(true);
@@ -85,17 +86,21 @@ public class TransistorView implements ActionListener {
         if (e.getSource() == activate) {
             System.out.println("Button activevate clicked");
             label.setIcon(activeIcon);
-            isActive = true;
+            transistor.setIsTurnedOn(true);
         }
-        if (e.getSource() == pair && isActive) {
+        if (e.getSource() == pair && transistor.getisActive()) {
             System.out.println("Button pair clicked");
             label.setIcon(pairedIcon);
-            isPaired = true;
+
+            // BEALLITANI A MASIK TRANSISTORT PARNAK
+            //transistor.setPairTransistor();
         }
-        if (e.getSource() == place && isActive && isPaired) {
+        if (e.getSource() == place && transistor.getisActive() && transistor.getPairTransistor() != null) {
             System.out.println("Button placed clicked");
             label.setIcon(placedIcon);
-            isPlaced = true;
+
+            // BEALLITANI A SZOBAT
+            //transistor.setPlaceLocation();
         }
         if (e.getSource() == pickButton) {
             System.out.println("Picked");
