@@ -34,10 +34,12 @@ public class Labyrinth {
 
     public Labyrinth(List<Student> students){
         this.students = students;
+        instructors = new ArrayList<>();
         for(int i = 0; i < (students.size()*2); i++){
             Instructor instructor = new Instructor();
             instructors.add(instructor);
         }
+        cleaners = new ArrayList<>();
         for(int i = 0; i < students.size(); i++){
             Cleaner cleaner = new Cleaner();
             cleaners.add(cleaner);
@@ -159,6 +161,7 @@ public class Labyrinth {
            // Osszes szoba tarygara es osszes karakterek targyaira step() fuggveny meghivasa
 
             mergeAndSplitRandomly();
+            stepItems();
             return fileContent;
     }
 
@@ -377,6 +380,35 @@ public class Labyrinth {
         room25.addNeighbour(room20);
         room25.addNeighbour(room24);
 
+        //add each room to rooms
+
+        rooms.add(room1);
+        rooms.add(room2);
+        rooms.add(room3);
+        rooms.add(room4);
+        rooms.add(room5);
+        rooms.add(room6);
+        rooms.add(room7);
+        rooms.add(room8);
+        rooms.add(room9);
+        rooms.add(room10);
+        rooms.add(room11);
+        rooms.add(room12);
+        rooms.add(room13);
+        rooms.add(room14);
+        rooms.add(room15);
+        rooms.add(room16);
+        rooms.add(room17);
+        rooms.add(room18);
+        rooms.add(room19);
+        rooms.add(room20);
+        rooms.add(room21);
+        rooms.add(room22);
+        rooms.add(room23);
+        rooms.add(room24);
+        rooms.add(room25);
+
+
         //add characters to rooms
         for(int i = 0; i < students.size(); i++){
             int j = i % 5;
@@ -430,7 +462,6 @@ public class Labyrinth {
         }
         rooms.get(10).addItem(new Logarlec(false));
         rooms.get(6).addItem(new Logarlec(true));
-
-
     }
+
 }

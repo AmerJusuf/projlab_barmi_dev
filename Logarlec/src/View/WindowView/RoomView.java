@@ -1,9 +1,11 @@
 package  View.WindowView;
 
 import Characters.Character;
+import Game.Labyrinth;
 import Items.AirFreshener;
 import Items.Item;
 import Items.Transistor;
+import Rooms.BasicRoom;
 import Rooms.IRoom;
 import View.ItemView.AirFreshenerView;
 import View.ItemView.TransistorView;
@@ -101,10 +103,12 @@ public class RoomView implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == moveButton) {
-            System.out.println("Move");
+            Labyrinth.currentPlayer.setMoveButtonClicked(true);
+            Labyrinth.currentPlayer.move(new BasicRoom(0)); //TODO: must be the selected room
         }
         if (e.getSource() == stayButton) {
             System.out.println("Stay");
+            Labyrinth.currentPlayer.setMoveButtonClicked(true);
         }
     }
 }

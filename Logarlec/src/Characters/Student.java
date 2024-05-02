@@ -113,15 +113,15 @@ public class Student extends Character{
     @Override
     public String nextRound(){
         moveButtonClicked = false;
-        while (!moveButtonClicked){
-            // pickitem
-            // pickItem
-            // dropitem
-            // useItem
-            // move -> round is over
-        }
+        while (!moveButtonClicked){}
 
-
-        return null;
+        return ""; //TODO: void
     }
+
+    public void setMoveButtonClicked(boolean moveButtonClicked) {
+        this.moveButtonClicked = moveButtonClicked;
+    }
+
+
+
 }
