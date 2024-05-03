@@ -65,17 +65,9 @@ public class PlayerView {
         panel.setVisible(true);
     }
 
-
+    //így már nincs típusellenőrzés, minden karakter osztályába belekerült a getIcon függvény a megfelelő ikonnal
     private void setLabel(){
-        if(character instanceof Characters.Student){
-            iconLabel = new JLabel(STUDENT_ICON);
-        }
-        else if(character instanceof Characters.Instructor){
-            iconLabel = new JLabel(INSTRUCTOR_ICON);
-        }
-        else if(character instanceof Characters.Cleaner){
-            iconLabel = new JLabel(CLEANER_ICON);
-        }
+        iconLabel = new JLabel((Icon) character.getIcon());
     }
 
 

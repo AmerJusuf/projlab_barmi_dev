@@ -1,9 +1,9 @@
 package Characters;
 
 import Items.Item;
-import Rooms.BasicRoom;
 import Rooms.IRoom;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -177,5 +177,7 @@ public abstract class Character {
             }
         }
     }
+
+    public abstract JLabel getIcon();
 
 }

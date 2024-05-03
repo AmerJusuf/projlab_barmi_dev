@@ -3,6 +3,8 @@ package Characters;
 import Items.Item;
 import Rooms.IRoom;
 
+import javax.swing.*;
+
 public class Student extends Character{
 
     boolean moveButtonClicked = false;
@@ -68,6 +70,11 @@ public class Student extends Character{
         this.dropAllItem();
         currentRoom.removeCharacter(this);
         currentRoom.getLabyrinth().removeStudent(this);
+    }
+
+    @Override
+    public JLabel getIcon() {
+        return new JLabel("student.png");
     }
 
 //    @Override

@@ -3,6 +3,7 @@ package Characters;
 import Items.Item;
 import Rooms.IRoom;
 
+import javax.swing.*;
 import java.util.List;
 
 public class Cleaner extends Character{
@@ -83,5 +84,10 @@ public class Cleaner extends Character{
         moveCharacters();
         unToxicateRoom();
         return "";
+    }
+
+    @Override
+    public JLabel getIcon() {
+        return new JLabel("cleaner.png");
     }
 }

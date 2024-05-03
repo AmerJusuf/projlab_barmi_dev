@@ -4,6 +4,7 @@ import Items.Item;
 import Rooms.BasicRoom;
 import Rooms.IRoom;
 
+import javax.swing.*;
 import java.util.List;
 
 public class Instructor extends Character{
@@ -51,6 +52,11 @@ public class Instructor extends Character{
      */
     public void getCaught(){
         System.out.println("Instructors are is same room | Instructor: getCaught()");
+    }
+
+    @Override
+    public JLabel getIcon() {
+        return new JLabel("instructor.png");
     }
 
     /**
