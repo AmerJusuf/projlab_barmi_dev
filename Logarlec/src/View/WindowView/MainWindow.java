@@ -42,7 +42,7 @@ public class MainWindow extends JFrame {
 
         gbc.fill = GridBagConstraints.BOTH;
         gbc.insets = insets;
-        this.add(map.panel, gbc);
+        this.add(map, gbc);
 
 
 

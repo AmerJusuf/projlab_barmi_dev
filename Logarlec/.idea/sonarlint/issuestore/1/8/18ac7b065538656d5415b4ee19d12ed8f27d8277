@@ -1,9 +1,12 @@
 
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8±ÕÙÏó1J$b9272993-01f2-441a-a06a-f20dcc53ae86
-~	java:S125("<This block of commented-out lines of code should be removed.(ÔŒïÂ8ÌÕÙÏó1J$e14521c3-db34-4abc-8d85-829f34ea0d69
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8±ÕÙÏó1J$e8328afa-8657-48f5-9ac1-e3a6a1175435
+~	java:S125("<This block of commented-out lines of code should be removed.(ÔŒïÂ8ÌÕÙÏó1J$9aed1e08-64a1-48f0-b56f-0f7b83f28207
 „
-java:S3252)"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ó±æÉ8ÍÕÙÏó1J$ac921ba9-09a1-474f-bc1f-c18953a6a8d5
-•	java:S100`"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( Î¿ûÿÿÿÿ8ÙÕÙÏó1J$c80cb681-0a45-4848-9749-34a7b3951103
+java:S3252)"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ó±æÉ8ÍÕÙÏó1J$d3113b85-df6c-446a-a90a-1c7591399695
+•	java:S100a"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( Î¿ûÿÿÿÿ8ÙÕÙÏó1J$dee775c9-db5e-4a13-ae57-7bebbd147e8f
+r	java:S106k"+Replace this use of System.out by a logger.(Û¯şÿÿÿÿ8ÜÕÙÏó1J$2223b845-31d7-424a-adc7-a943a114c1df
 u
-java:S1135k"2Complete the task associated to this TODO comment.(ÖÌÊ£8­ËÜÏó1J$f67039f5-9f5f-4b1a-ac0b-a581b4020e66
-m	java:S106n"+Replace this use of System.out by a logger.(ÒÑŠ8ÜÕÙÏó1J$22c816cf-a6a6-4dd0-8ead-f34997fed977
+java:S1135n"2Complete the task associated to this TODO comment.(ÖÌÊ£8É“ªÔó1J$ffe30be3-2f7d-4633-a649-d316b215931f
+m	java:S106r"+Replace this use of System.out by a logger.(ÒÑŠ8¸Ú˜Ôó1J$9f06551d-ceb9-4149-8d86-4f0b8db45ce4
+y
+java:S1128"6Remove this unused import 'javax.swing.border.Border'.(şŒ©ƒ8æ²ƒÔó1J$df5da095-5315-483f-ae2a-0a321c3335b7

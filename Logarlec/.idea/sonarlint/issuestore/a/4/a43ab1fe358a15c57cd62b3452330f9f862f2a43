@@ -1,9 +1,9 @@
 
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8«Áİ¢ó1J$f7cf0a9d-44a6-424a-a304-1d52eb9a38f1
-	java:S116"WRename this field "STUDENT_ICON" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°…šÂıÿÿÿÿ8µÁİ¢ó1J$62c8880e-e04f-4ec7-bdd4-fb6f4a3a26a0
-¡	java:S116"ZRename this field "INSTRUCTOR_ICON" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·ÎÁıÿÿÿÿ8µÁİ¢ó1J$d5711420-7388-4516-90c7-fa1b422ffbd9
-™	java:S116"WRename this field "CLEANER_ICON" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ışçÏ8µÁİ¢ó1J$ac265001-8f97-435d-bb69-881c3a79b121
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8«Áİ¢ó1J$04fc4828-a946-48fd-bb54-30fdce172896
+	java:S116"WRename this field "STUDENT_ICON" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°…šÂıÿÿÿÿ8µÁİ¢ó1J$77691693-3ee5-4424-ba33-8bdb26d9258c
+¡	java:S116"ZRename this field "INSTRUCTOR_ICON" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·ÎÁıÿÿÿÿ8µÁİ¢ó1J$bb155b26-eda5-49a0-b256-09d19e381841
+™	java:S116"WRename this field "CLEANER_ICON" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ışçÏ8µÁİ¢ó1J$c43dea20-231f-457c-b3c9-2f0342d5c286
 „
-java:S3252$"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ó±æÉ8ºÁİ¢ó1J$9ec2df3c-bbcc-40b0-9609-68f405c0c998
-~	java:S125)"<This block of commented-out lines of code should be removed.(‡…8»Áİ¢ó1J$436f1282-96c7-4fe3-a650-61187533b789
-ƒ	java:S125."<This block of commented-out lines of code should be removed.(ØÉóßıÿÿÿÿ8¼Áİ¢ó1J$f6f6dcdb-7e54-40a6-aede-edd0e27ec99c
+java:S3252$"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ó±æÉ8ºÁİ¢ó1J$d829e83c-52be-45e9-921f-034f5cec1292
+~	java:S125)"<This block of commented-out lines of code should be removed.(‡…8»Áİ¢ó1J$3fcab1f0-99cc-4e3d-b749-23783f44660c
+ƒ	java:S125."<This block of commented-out lines of code should be removed.(ØÉóßıÿÿÿÿ8¼Áİ¢ó1J$aea2a77f-93cf-42e8-849c-47671c48b1ca

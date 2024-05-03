@@ -1,18 +1,18 @@
 
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8‘’¦¤ó1J$092bc9e6-c292-44d8-b09a-cd8c31e53f26
-ƒ	java:S125"<This block of commented-out lines of code should be removed.(ˆæâÕúÿÿÿÿ8”’¦¤ó1J$334433a0-c5e9-4f85-a8e6-d140d756d8d9
-~	java:S125"<This block of commented-out lines of code should be removed.(óšàÉ8•’¦¤ó1J$15ac9bc4-e38b-40b3-a0ae-ff7b1e44e144
-ƒ	java:S125R"<This block of commented-out lines of code should be removed.(»ô£þüÿÿÿÿ8—’¦¤ó1J$960320bd-8292-4da8-9d04-62028a4265bb
-ƒ	java:S125f"<This block of commented-out lines of code should be removed.(ˆ»ŽÛûÿÿÿÿ8™’¦¤ó1J$2fb4b61d-494e-4634-bdde-f90e1bc3c736
-~	java:S125s"<This block of commented-out lines of code should be removed.(‹‘ä8»€¿¤ó1J$d42f052b-3f36-486e-bf11-196e0cd18cae
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8‘’¦¤ó1J$a785e2ae-6d27-4ff8-a57c-182fadf7868f
+ƒ	java:S125"<This block of commented-out lines of code should be removed.(ˆæâÕúÿÿÿÿ8”’¦¤ó1J$a3e509fe-3544-4110-8be6-2eec1c62636f
+~	java:S125"<This block of commented-out lines of code should be removed.(óšàÉ8•’¦¤ó1J$a65a4efe-9312-4650-93b7-8700a5d69113
+ƒ	java:S125R"<This block of commented-out lines of code should be removed.(»ô£þüÿÿÿÿ8—’¦¤ó1J$679a8d1f-5c31-4656-8d54-729f75287b6a
+ƒ	java:S125f"<This block of commented-out lines of code should be removed.(ˆ»ŽÛûÿÿÿÿ8™’¦¤ó1J$6e524404-f7df-4aec-ac2b-5802f5af7f27
+~	java:S125s"<This block of commented-out lines of code should be removed.(‹‘ä8»€¿¤ó1J$d510f765-9cd4-4c01-9e7b-add08315fea4
 Œ
-java:S3252”"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(ºÀœx8š’¦¤ó1J$a5074e11-c6ac-40ea-927a-e126f3418a88
-	java:S125™"<This block of commented-out lines of code should be removed.(‚”Ë8š’¦¤ó1J$503bf9d0-30f2-4cd2-b690-db83c01975e1
-w
-java:S1128"/Remove this unused import 'Items.AirFreshener'.(…ß…úÿÿÿÿÿ8½Ä½¤ó1J$f461c825-0880-4aee-90ed-a4e4712529cf
-o
-java:S1128"'Remove this unused import 'Items.FFP2'.(‚¢¦‘ùÿÿÿÿ8½Ä½¤ó1J$ced93cdf-9383-47cc-8376-c8616b8e5f67
-y
-java:S1128"6Remove this unused import 'javax.swing.border.Border'.(þŒ©ƒ8¾Ä½¤ó1J$ee99e945-4f34-4168-a2bb-8684b0d38624
-s
-java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8¾Ä½¤ó1J$ac565b81-cad9-4cde-a9ce-d8af629ed7c1
+java:S3252”"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(ºÀœx8š’¦¤ó1J$210663de-5dda-4205-9e91-22dc7c31cc69
+	java:S125™"<This block of commented-out lines of code should be removed.(‚”Ë8š’¦¤ó1J$2832ca99-d6bb-4bbb-a257-99ce4e013905
+Q
+java:S1128"/Remove this unused import 'Items.AirFreshener'.(…ß…úÿÿÿÿÿ8µÐÂÙó1
+I
+java:S1128"'Remove this unused import 'Items.FFP2'.(‚¢¦‘ùÿÿÿÿ8µÐÂÙó1
+S
+java:S1128"6Remove this unused import 'javax.swing.border.Border'.(þŒ©ƒ8¶ÐÂÙó1
+M
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8¶ÐÂÙó1

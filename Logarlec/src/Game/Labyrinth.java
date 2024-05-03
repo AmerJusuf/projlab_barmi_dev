@@ -413,16 +413,19 @@ public class Labyrinth {
         for(int i = 0; i < students.size(); i++){
             int j = i % 5;
             rooms.get(24-j).addCharacter(students.get(i));
+            students.get(i).setRoom(rooms.get(24-j));
         }
 
         for(int i = 0; i < instructors.size(); i++){
             int j = i % 5;
             rooms.get(j).addCharacter(instructors.get(i));
+            instructors.get(i).setRoom(rooms.get(j));
         }
 
         for (int i = 0; i < cleaners.size(); i++) {
             int j = new Random().nextInt(0,24);
             rooms.get(j).addCharacter(cleaners.get(i));
+            cleaners.get(i).setRoom(rooms.get(j));
         }
 
         //add items to rooms

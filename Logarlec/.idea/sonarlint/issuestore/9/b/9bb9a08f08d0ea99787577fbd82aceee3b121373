@@ -1,0 +1,18 @@
+
+ˆ
+java:S2184`"ECast one of the operands of this subtraction operation to a "double".(¨êË¢8òÊÄòó1J$ef280154-70b7-4348-a104-991e1c7cab4d
+ˆ
+java:S2184a"ECast one of the operands of this subtraction operation to a "double".(•ú…¸8òÊÄòó1J$d5ac607e-fc36-487c-b362-84882bede918
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8Ø½Îñó1J$8d32a94a-2a44-4a98-9d77-944d4c115717
+s
+java:S1948"+Make "labyrinth" transient or serializable.(Ïşƒ‰ÿÿÿÿÿ8ú½Îñó1J$989b79ec-c900-49e4-b68f-1888ec7c6040
+j
+java:S1948""Make "nodes" private or transient.(¢ÈÈ‰ûÿÿÿÿ8ú½Îñó1J$92e8daac-31c9-497d-aec1-76b503677a59
+ƒ	java:S125A"<This block of commented-out lines of code should be removed.(œ˜ˆ—ıÿÿÿÿ8µŸ„òó1J$a6fb3bf0-fc5f-4b5e-a731-7707ec419f57
+t
+java:S1128	"1Remove this unused import 'java.awt.geom.Line2D'.(ìôÆÆ8Š«ßòó1J$d5f62e4f-9e61-4246-92b8-fbb055294937
+y
+java:S1128
+"1Remove this unused import 'java.awt.geom.Path2D'.(ŠŒõ›øÿÿÿÿ8Š«ßòó1J$3dbe4810-a969-47cd-82eb-a6f0c855e8d7
+u
+java:S1128"2Remove this unused import 'java.awt.geom.Point2D'.(ˆÕ­Ü8Š«ßòó1J$a5591f40-d11e-49b5-a7a3-345f2ef5cd56

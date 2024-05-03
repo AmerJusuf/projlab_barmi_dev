@@ -111,9 +111,16 @@ public class Student extends Character{
 //    }
 
     @Override
-    public String nextRound(){
+    public String nextRound()  {
         moveButtonClicked = false;
-        while (!moveButtonClicked){}
+        while (!moveButtonClicked){
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            System.out.println("Student next round | Student: nextRound()");
+        }
 
         return ""; //TODO: void
     }
