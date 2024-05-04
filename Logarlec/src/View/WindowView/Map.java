@@ -18,6 +18,8 @@ public class Map extends JPanel {
     List<RoomNodeView> nodes;
 int borderToLeft = 150;
 int borderToRight = 60;
+int topBorder = 150;
+int bottomBorder = 60;
 
 
     public Map() {
@@ -27,12 +29,16 @@ int borderToRight = 60;
         Student st3 = new Student();
         Student st4 = new Student();
         students = List.of(st, st2, st3, st4);
-        labyrinth = new Labyrinth(students);
+        labyrinth = new Labyrinth(students, this);
 
         setPreferredSize(new Dimension(500, 500));
         setBackground(Color.LIGHT_GRAY);
-        setBorder(BorderFactory.createEmptyBorder(150, borderToLeft, 60, borderToRight));
+        setBorder(BorderFactory.createEmptyBorder(topBorder, borderToLeft, bottomBorder, borderToRight));
         setLayout(new GridLayout(5, 5, 20, 20));
+
+        //start labyrinth on thread
+        Thread labyrinthThread = new Thread(() -> labyrinth.startGame());
+        labyrinthThread.start();
 
     }
 
@@ -52,7 +58,13 @@ int borderToRight = 60;
             RoomNodeView currentNode = nodes.get(i);
             List<IRoom> neighbors = labyrinth.getRooms().get(i).getNeighbours();
             for (IRoom neighbor : neighbors) {
-                int neighborIndex = labyrinth.getRooms().indexOf(neighbor);
+                int neighborIndex = labyrinth.getRooms().indexOf(neighbor); //safety i guess
+                for (int j = 0; j < nodes.size(); j++) {
+                    if(nodes.get(j).getRoom().equals(neighbor)) {
+                        neighborIndex = j;
+                        break;
+                    }
+                }
                 RoomNodeView neighborNode = nodes.get(neighborIndex);
                 currentNode.addNeighbourRoom(neighborNode);
 
@@ -71,12 +83,15 @@ int borderToRight = 60;
         g2d.setColor(Color.BLACK);
 
         // Calculate cell size
-        int cellWidth = (getWidth() - borderToLeft - borderToRight) / 5; // Considering the gaps in the GridLayout
-        int cellHeight = (getHeight()) / 5;
+        int cellWidth = (getWidth() - borderToLeft - borderToRight + 20) / 5; // Considering the gaps in the GridLayout
+        int cellHeight = (getHeight() - topBorder - bottomBorder + 20) / 5;
 
         // Calculate positions of the centers of the cells
         int fromIndex = nodes.indexOf(from);
         int toIndex = nodes.indexOf(to);
+
+        //draw a circle on 0,0 to debug
+
 
         int fromCol = fromIndex % 5;
         int fromRow = fromIndex / 5;
@@ -84,10 +99,10 @@ int borderToRight = 60;
         int toRow = toIndex / 5;
 
         // Calculate coordinates of the center of the cells
-        int x1 = (fromCol * cellWidth) + (from.getWidth() / 2) + borderToLeft + 20; // Adjusted for border
-        int y1 = (fromRow * cellHeight) + (from.getHeight() / 2); // Adjusted for border
-        int x2 = (toCol * cellWidth) + (to.getWidth() / 2) + borderToLeft + 20; // Adjusted for border
-        int y2 = (toRow * cellHeight) + (to.getHeight() / 2); // Adjusted for border
+        int x1 = (fromCol * cellWidth) + borderToLeft + from.getWidth() + 30; // Adjusted for border
+        int y1 = (fromRow * cellHeight) + topBorder + from.getHeight() + 30; // Adjusted for border
+        int x2 = (toCol * cellWidth) + borderToLeft + from.getWidth() + 30; // Adjusted for border
+        int y2 = (toRow * cellHeight) + topBorder + from.getHeight() + 30; // Adjusted for border
 
         // Draw line
         g2d.drawLine(x1, y1, x2, y2);
@@ -96,12 +111,13 @@ int borderToRight = 60;
         double dx = x2 - x1;
         double dy = y2 - y1;
         double angle = Math.atan2(dy, dx);
-        int len = (int) Math.sqrt(dx*dx + dy*dy);
+        int len = (int) Math.sqrt(dx*dx + dy*dy) - 40;
         g2d.translate(x1, y1);
         g2d.rotate(angle);
-        g2d.fillPolygon(new int[]{len, len-5, len-5, len}, new int[]{0, -5, 5, 0}, 4);
+        g2d.fillPolygon(new int[]{70, 70-20, 70-20, 70}, new int[]{0, -20, 20, 0}, 4);
         g2d.rotate(-angle);
         g2d.translate(-x1, -y1);
+
     }
 
 

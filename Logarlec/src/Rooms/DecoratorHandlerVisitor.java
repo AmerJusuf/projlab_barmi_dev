@@ -3,10 +3,7 @@ package Rooms;
 import Characters.Character;
 import Items.Item;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class DecoratorHandlerVisitor implements RoomVisitor {
 
@@ -123,21 +120,27 @@ public class DecoratorHandlerVisitor implements RoomVisitor {
      * @param newRoom The room to replace with
      */
     public void handleNeighboursWhenReplacing(IRoom oldRoom, IRoom newRoom){
-        List<IRoom> neighbours = oldRoom.getNeighbours();
-        for(IRoom neighbour : neighbours){
+        List<IRoom> neighbours = new ArrayList<>(oldRoom.getNeighbours());
+        for(Iterator<IRoom> iterator = neighbours.iterator(); iterator.hasNext();) {
+            IRoom neighbour = iterator.next();
             if(neighbour.isNeighbour(oldRoom)){
                 neighbour.removeNeighbour(oldRoom);
                 neighbour.addNeighbour(newRoom);
             }
         }
-        for(IRoom room : roomToHandle.getLabyrinth().getRooms()){
-           for(IRoom neighbour : room.getNeighbours()){
-               if(neighbour.equals(oldRoom)){
-                   room.removeNeighbour(oldRoom);
-                   room.addNeighbour(newRoom);
-               }
-           }
+
+        List<IRoom> rooms = roomToHandle.getLabyrinth().getRooms();
+        for(IRoom room : rooms){
+            List<IRoom> roomNeighbours = new ArrayList<>(room.getNeighbours());
+            for(Iterator<IRoom> iterator = roomNeighbours.iterator(); iterator.hasNext();) {
+                IRoom neighbour = iterator.next();
+                if(neighbour.equals(oldRoom)){
+                    room.removeNeighbour(oldRoom);
+                    room.addNeighbour(newRoom);
+                }
+            }
         }
     }
+
 }
 

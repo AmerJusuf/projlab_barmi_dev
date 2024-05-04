@@ -101,13 +101,19 @@ public class RoomView implements ActionListener {
     }
 
 
+    static public boolean moveButtonClicked = false;
+
+    static public boolean isMoveButtonClicked() {
+        return moveButtonClicked;
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == moveButton) {
             System.out.println("Move");
             SwingUtilities.invokeLater(() -> {
-                Labyrinth.currentPlayer.setMoveButtonClicked(true);
-                Labyrinth.currentPlayer.move(new BasicRoom(0)); //TODO: must be the selected room
+                moveButtonClicked = true;
+                Labyrinth.currentPlayer.move(this.room);
             });
         }
         if (e.getSource() == stayButton) {

@@ -9,6 +9,8 @@ import Rooms.BasicRoom;
 import Rooms.CursedRoomDecorator;
 import Rooms.IRoom;
 import Rooms.PoisonedRoomDecorator;
+import View.WindowView.MainWindow;
+import View.WindowView.Map;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +26,8 @@ public class Labyrinth {
     private List<Cleaner> cleaners;
 
     public static Student currentPlayer;
+
+    private Map map;
 
     public Labyrinth() {
         rooms = new ArrayList<>();
@@ -45,6 +49,23 @@ public class Labyrinth {
             cleaners.add(cleaner);
         }
         generateMap();
+    }
+
+    public Labyrinth(List<Student> students, Map map){
+        this.students = students;
+        instructors = new ArrayList<>();
+        for(int i = 0; i < (students.size()*2); i++){
+            Instructor instructor = new Instructor();
+            instructors.add(instructor);
+        }
+        cleaners = new ArrayList<>();
+        for(int i = 0; i < students.size(); i++){
+            Cleaner cleaner = new Cleaner();
+            cleaners.add(cleaner);
+        }
+        this.map = map;
+        generateMap();
+
     }
 
     public void addRoom(IRoom room) {
@@ -141,8 +162,14 @@ public class Labyrinth {
     public void startGame() {
         while (gameState == GameState.PLAYING) {
             nextRound();
+            map.repaint();
         }
         endGame();
+    }
+
+    private int round = 0;
+    public int getRound() {
+        return round;
     }
 
     public String nextRound() {
@@ -162,6 +189,7 @@ public class Labyrinth {
 
             mergeAndSplitRandomly();
             stepItems();
+            round++;
             return fileContent;
     }
 
@@ -379,6 +407,9 @@ public class Labyrinth {
 
         room25.addNeighbour(room20);
         room25.addNeighbour(room24);
+
+        room9.addNeighbour(room15);
+        room1.addNeighbour(room7);
 
         //add each room to rooms
 

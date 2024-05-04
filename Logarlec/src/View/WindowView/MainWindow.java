@@ -30,7 +30,7 @@ public class MainWindow extends JFrame {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         this.setSize(screenSize.width, screenSize.height - 50);
 
-        Map map = new Map();
+       Map map = new Map();
 
 
         gbc.gridx = 0;
