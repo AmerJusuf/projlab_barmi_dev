@@ -85,7 +85,7 @@ public class RoomNodeView extends JPanel {
         height = getHeight() / 3;
 
         // Calculate maximum size
-        int maxSize = 70;
+        int maxSize = 100;
 
         // Draw circle image
         int imageWidth = Math.min(maxSize, width);
@@ -93,16 +93,16 @@ public class RoomNodeView extends JPanel {
         g.drawImage(circleImage, 0, 0, imageWidth, imageHeight, this);
 
         // Draw room types underneath the circle
-        int iconWidth = Math.min(maxSize, (width - 10) / 3); // Adjust position
-        int iconHeight = Math.min(maxSize, (height - 80)); // Adjust position
+        int iconWidth = Math.min(maxSize, (width - 10) / 3) + 30; // Adjust position
+        int iconHeight = Math.min(maxSize, (height - 80)) + 30; // Adjust position
         if (poisoned) {
-            g.drawImage(new ImageIcon("Icons/poison.png").getImage(), 10, 80, iconWidth, iconHeight, this);
+            g.drawImage(new ImageIcon("Icons/poison.png").getImage(), -10, 30, iconWidth, iconHeight, this);
         }
         if (cursed) {
-            g.drawImage(new ImageIcon("Icons/cursed.png").getImage(), 40, 80, iconWidth, iconHeight, this);
+            g.drawImage(new ImageIcon("Icons/cursed.png").getImage(), 20, 30, iconWidth, iconHeight, this);
         }
         if (sticky) {
-            g.drawImage(new ImageIcon("Icons/sticky.png").getImage(), 70, 80, iconWidth, iconHeight, this);
+            g.drawImage(new ImageIcon("Icons/sticky.png").getImage(), 55, 30, iconWidth - 20, iconHeight, this);
         }
     }
 
