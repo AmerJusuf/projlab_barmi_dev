@@ -1,10 +1,18 @@
 
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8‘’¦¤ó1J$8f5bf31d-e089-4deb-a450-d7576f8fd95e
-ƒ	java:S125"<This block of commented-out lines of code should be removed.(ˆæâÕúÿÿÿÿ8”’¦¤ó1J$8cdfcb8b-d57b-48e2-8c39-f7e84a4b3a39
-~	java:S125"<This block of commented-out lines of code should be removed.(óšàÉ8•’¦¤ó1J$0b44fad1-6e1f-430c-ba5e-9dd83b96d885
-ƒ	java:S125R"<This block of commented-out lines of code should be removed.(»ô£þüÿÿÿÿ8—’¦¤ó1J$4c77643d-98de-4662-bea6-5028b087458f
-ƒ	java:S125f"<This block of commented-out lines of code should be removed.(ˆ»ŽÛûÿÿÿÿ8™’¦¤ó1J$c5b5c61d-98de-4deb-b5d7-885e2bdeea47
-~	java:S125s"<This block of commented-out lines of code should be removed.(‹‘ä8»€¿¤ó1J$2c49cb0c-3fe8-4740-9571-250a27f2fe6d
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8‘’¦¤ó1J$f3766408-f642-406e-a4f0-70f0eb43c85e
+ƒ	java:S125"<This block of commented-out lines of code should be removed.(ˆæâÕúÿÿÿÿ8”’¦¤ó1J$b47c9675-68d1-4009-9e88-99c1a9d1b26d
+~	java:S125"<This block of commented-out lines of code should be removed.(óšàÉ8•’¦¤ó1J$13e3d8ab-e8a6-478f-b8f2-fc9473bebd9d
+ƒ	java:S125R"<This block of commented-out lines of code should be removed.(»ô£þüÿÿÿÿ8—’¦¤ó1J$c88947c3-c827-4322-bbd0-c96603df01da
+ƒ	java:S125f"<This block of commented-out lines of code should be removed.(ˆ»ŽÛûÿÿÿÿ8™’¦¤ó1J$7afb8d66-5e54-42c7-b7fe-05cbcd90541f
+~	java:S125s"<This block of commented-out lines of code should be removed.(‹‘ä8»€¿¤ó1J$dfea71df-59c6-4ce7-b4b2-30449b25e2f2
 Œ
-java:S3252”"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(ºÀœx8š’¦¤ó1J$75c3fd4c-cc5a-410e-9617-5f1cd7e140dc
-	java:S125™"<This block of commented-out lines of code should be removed.(‚”Ë8š’¦¤ó1J$506dbf91-73e3-4175-aef4-697cfd54d7b0
+java:S3252”"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(ºÀœx8š’¦¤ó1J$bea903b4-36f9-4dc0-9d11-7ec91ba1ed01
+	java:S125™"<This block of commented-out lines of code should be removed.(‚”Ë8š’¦¤ó1J$0aeb74fe-aef5-48bd-992c-a5709516a024
+w
+java:S1128"/Remove this unused import 'Items.AirFreshener'.(…ß…úÿÿÿÿÿ8ü„ú ô1J$6835feec-21c6-4b12-aa67-a613a938943a
+o
+java:S1128"'Remove this unused import 'Items.FFP2'.(‚¢¦‘ùÿÿÿÿ8ü„ú ô1J$fd37b618-c059-4e76-8de3-7399aefa5f17
+y
+java:S1128"6Remove this unused import 'javax.swing.border.Border'.(þŒ©ƒ8ý„ú ô1J$9acf531f-c182-460e-9b5f-65cae8521373
+s
+java:S1128"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8ý„ú ô1J$4851e86c-3bf1-4944-8e5e-2eaa47b2d69c

@@ -5,14 +5,12 @@ import Characters.Cleaner;
 import Characters.Instructor;
 import Characters.Student;
 import Items.*;
-import Rooms.BasicRoom;
-import Rooms.CursedRoomDecorator;
-import Rooms.IRoom;
-import Rooms.PoisonedRoomDecorator;
+import Rooms.*;
 import View.WindowView.MainWindow;
 import View.WindowView.Map;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
@@ -106,15 +104,15 @@ public class Labyrinth {
 
         currentAttempts = 0; // Visszaállítjuk a próbálkozások számát a split művelethez
 
-        while (!splitDone && currentAttempts < maxAttempts) {
-            if (rooms.get(idx2).getNumberOfCharacters() == 0) {
-                split(idx2);
-                splitDone = true;
-            } else {
-                idx2 = rand.nextInt(rooms.size()); // Új index, ha a korábbi nem volt megfelelő
-            }
-            currentAttempts++; // Növeljük a próbálkozások számát
-        }
+//        while (!splitDone && currentAttempts < maxAttempts) {
+//            if (rooms.get(idx2).getNumberOfCharacters() == 0) {
+//                split(idx2);
+//                splitDone = true;
+//            } else {
+//                idx2 = rand.nextInt(rooms.size()); // Új index, ha a korábbi nem volt megfelelő
+//            }
+//            currentAttempts++; // Növeljük a próbálkozások számát
+//        }
         //TODO: ha elfogytak az indexek break, fuggveny a mergelheto szobakra
     }
 
@@ -162,6 +160,8 @@ public class Labyrinth {
     public void startGame() {
         while (gameState == GameState.PLAYING) {
             nextRound();
+            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+            map.removeAll();
             map.repaint();
         }
         endGame();
@@ -187,7 +187,10 @@ public class Labyrinth {
                 }
            // Osszes szoba tarygara es osszes karakterek targyaira step() fuggveny meghivasa
 
-            mergeAndSplitRandomly();
+           mergeAndSplitRandomly();
+
+
+
             stepItems();
             round++;
             return fileContent;
@@ -439,6 +442,10 @@ public class Labyrinth {
         rooms.add(room24);
         rooms.add(room25);
 
+
+        for(IRoom room: rooms){
+            room.setLabyrinth(this);
+        }
 
         //add characters to rooms
         for(int i = 0; i < students.size(); i++){

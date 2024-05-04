@@ -27,9 +27,9 @@ public class RoomNodeView extends JPanel {
         this.setPreferredSize(new Dimension(100, 100)); // Adjust size as needed
         this.setBackground(Color.WHITE);
         this.setOpaque(false);
-        this.poisoned = false;
-        this.cursed = false;
-        this.sticky = false;
+        this.poisoned = true;
+        this.cursed = true;
+        this.sticky = true;
 
 
         // Load circle image
@@ -48,9 +48,9 @@ public class RoomNodeView extends JPanel {
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         // Create labels for room types
-        JLabel poisonedLabel = new JLabel(new ImageIcon("poisoned.jpg"));
-        JLabel cursedLabel = new JLabel(new ImageIcon("cursed.jpg"));
-        JLabel stickyLabel = new JLabel(new ImageIcon("sticky.jpg"));
+        JLabel poisonedLabel = new JLabel(new ImageIcon("Icons/poisoned.jpg"));
+        JLabel cursedLabel = new JLabel(new ImageIcon("Icons/cursed.jpg"));
+        JLabel stickyLabel = new JLabel(new ImageIcon("Icons/sticky.jpg"));
 
 
 
@@ -81,23 +81,31 @@ public class RoomNodeView extends JPanel {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        width = getWidth()/3;
-        height = getHeight()/3;
+        width = getWidth() / 3;
+        height = getHeight() / 3;
+
+        // Calculate maximum size
+        int maxSize = 70;
+
         // Draw circle image
-        g.drawImage(circleImage, 0, 0, width,height, this);
+        int imageWidth = Math.min(maxSize, width);
+        int imageHeight = Math.min(maxSize, height);
+        g.drawImage(circleImage, 0, 0, imageWidth, imageHeight, this);
 
         // Draw room types underneath the circle
+        int iconWidth = Math.min(maxSize, (width - 10) / 3); // Adjust position
+        int iconHeight = Math.min(maxSize, (height - 80)); // Adjust position
         if (poisoned) {
-            g.drawImage(new ImageIcon("poisoned.jpg").getImage(), 10, 80, this);
+            g.drawImage(new ImageIcon("Icons/poison.png").getImage(), 10, 80, iconWidth, iconHeight, this);
         }
         if (cursed) {
-            g.drawImage(new ImageIcon("cursed.jpg").getImage(), 40, 80, this);
+            g.drawImage(new ImageIcon("Icons/cursed.png").getImage(), 40, 80, iconWidth, iconHeight, this);
         }
         if (sticky) {
-            g.drawImage(new ImageIcon("sticky.jpg").getImage(), 70, 80, this);
+            g.drawImage(new ImageIcon("Icons/sticky.png").getImage(), 70, 80, iconWidth, iconHeight, this);
         }
-
     }
+
 
 
     public IRoom getRoom() {

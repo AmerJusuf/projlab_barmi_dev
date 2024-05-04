@@ -1,22 +1,23 @@
 
 ˆ
-java:S2184o"ECast one of the operands of this subtraction operation to a "double".(¨êË¢8ÓÒü‡ô1J$cd98ab37-f114-487d-a557-e5ab5dcf7a4e
+java:S2184u"ECast one of the operands of this subtraction operation to a "double".(¨êË¢8ÛñÕ¢ô1J$fe2be9a3-2fcd-4289-9c32-d0a8e83bac1b
 ˆ
-java:S2184p"ECast one of the operands of this subtraction operation to a "double".(•ú…¸8ÓÒü‡ô1J$75c0c7fc-2ebf-4f76-91cb-ebdd8242802f
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8ÔÒü‡ô1J$e02ab02b-103f-46b5-a674-ca8d18e67098
+java:S2184v"ECast one of the operands of this subtraction operation to a "double".(•ú…¸8ÛñÕ¢ô1J$e3262738-fe6e-4ab1-a46f-c36c5c4032e3
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8ÜñÕ¢ô1J$58d55323-fe1c-4979-8f06-c2c1dfbdf148
 s
-java:S1948"+Make "labyrinth" transient or serializable.(Ïşƒ‰ÿÿÿÿÿ8ôÓü‡ô1J$70d3b8e8-efce-4d81-8549-d0d17c1239b3
+java:S1948"+Make "labyrinth" transient or serializable.(Ïşƒ‰ÿÿÿÿÿ8­óÕ¢ô1J$b6cce035-f743-436e-84f8-d83a9ebf821c
 j
-java:S1948""Make "nodes" private or transient.(¢ÈÈ‰ûÿÿÿÿ8ôÓü‡ô1J$e5d1d176-136d-4829-8f65-037ba8034906
-ƒ	java:S125M"<This block of commented-out lines of code should be removed.(œ˜ˆ—ıÿÿÿÿ8ıÓü‡ô1J$c1ef91b9-bfe3-415a-b255-082465ad9bb0
+java:S1948""Make "nodes" private or transient.(¢ÈÈ‰ûÿÿÿÿ8­óÕ¢ô1J$0ab8c4fa-76f1-48b8-8c3d-90e991fd638f
+r	java:S1063"+Replace this use of System.out by a logger.(é­úúÿÿÿÿ8´óÕ¢ô1J$dca2a356-e4f6-4334-a554-b01631a60d4d
+ƒ	java:S125S"<This block of commented-out lines of code should be removed.(œ˜ˆ—ıÿÿÿÿ8¶óÕ¢ô1J$3913b178-6ce9-4929-b77b-f86055899c6a
 
-java:S1854r"7Remove this useless assignment to local variable "len".(È‡áúÿÿÿÿ8ıÓü‡ô1J$5a2e144a-286d-4b20-82ad-42b0c2b6ddf5
+java:S1854x"7Remove this useless assignment to local variable "len".(È‡áúÿÿÿÿ8·óÕ¢ô1J$548850e9-b0b5-4e57-801f-722840ba0325
 p
-java:S1481r"(Remove this unused "len" local variable.(È‡áúÿÿÿÿ8€Ôü‡ô1J$6688a0c7-bfed-4bf1-b298-c2dcd14f2f0d
+java:S1481x"(Remove this unused "len" local variable.(È‡áúÿÿÿÿ8ºóÕ¢ô1J$bc60ab27-c6ff-4123-9a79-0313ed65448e
 t
-java:S1128	"1Remove this unused import 'java.awt.geom.Line2D'.(ìôÆÆ8Ôü‡ô1J$d2273011-8dd8-431b-9ebe-f00363f720e1
+java:S1128	"1Remove this unused import 'java.awt.geom.Line2D'.(ìôÆÆ8­×¢ô1J$0be665f6-ae1b-451d-9769-4fd6900def86
 y
 java:S1128
-"1Remove this unused import 'java.awt.geom.Path2D'.(ŠŒõ›øÿÿÿÿ8Ôü‡ô1J$8ca6b1d2-2af4-4de7-835f-46c9c73713bb
+"1Remove this unused import 'java.awt.geom.Path2D'.(ŠŒõ›øÿÿÿÿ8­×¢ô1J$510f3602-faf2-482d-aafc-d087ae2be015
 u
-java:S1128"2Remove this unused import 'java.awt.geom.Point2D'.(ˆÕ­Ü8Ôü‡ô1J$53fc9a7b-b4b6-44c6-bede-e39779eecb0d
+java:S1128"2Remove this unused import 'java.awt.geom.Point2D'.(ˆÕ­Ü8­×¢ô1J$cc0cea55-ba23-49b6-b033-8750971c1f5f

@@ -11,6 +11,7 @@ public class DecoratorHandlerVisitor implements RoomVisitor {
 
     public DecoratorHandlerVisitor(IRoom roomToMerge) {
         this.roomToHandle = roomToMerge;
+        roomToHandle.setLabyrinth(roomToMerge.getLabyrinth());
     }
 
     /**
@@ -24,6 +25,7 @@ public class DecoratorHandlerVisitor implements RoomVisitor {
         }
         setupRoomToHandle(room);
         System.out.println("Rooms merged successfully | DecoratorHandlerVisitor: visit(BasicRoom)");
+
         return roomToHandle;
     }
 
@@ -120,15 +122,6 @@ public class DecoratorHandlerVisitor implements RoomVisitor {
      * @param newRoom The room to replace with
      */
     public void handleNeighboursWhenReplacing(IRoom oldRoom, IRoom newRoom){
-        List<IRoom> neighbours = new ArrayList<>(oldRoom.getNeighbours());
-        for(Iterator<IRoom> iterator = neighbours.iterator(); iterator.hasNext();) {
-            IRoom neighbour = iterator.next();
-            if(neighbour.isNeighbour(oldRoom)){
-                neighbour.removeNeighbour(oldRoom);
-                neighbour.addNeighbour(newRoom);
-            }
-        }
-
         List<IRoom> rooms = roomToHandle.getLabyrinth().getRooms();
         for(IRoom room : rooms){
             List<IRoom> roomNeighbours = new ArrayList<>(room.getNeighbours());

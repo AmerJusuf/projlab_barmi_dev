@@ -46,7 +46,9 @@ int bottomBorder = 60;
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
+
         nodes = new ArrayList<>();
+        System.out.println("nUMBER OF ROOMS" + labyrinth.getRooms().size());
         for (IRoom room : labyrinth.getRooms()) {
             RoomNodeView roomNodeView = new RoomNodeView(room);
             nodes.add(roomNodeView);
@@ -56,7 +58,7 @@ int bottomBorder = 60;
         // Add neighbors to nodes
         for (int i = 0; i < nodes.size(); i++) {
             RoomNodeView currentNode = nodes.get(i);
-            List<IRoom> neighbors = labyrinth.getRooms().get(i).getNeighbours();
+            List<IRoom> neighbors = currentNode.getRoom().getNeighbours();
             for (IRoom neighbor : neighbors) {
                 int neighborIndex = labyrinth.getRooms().indexOf(neighbor); //safety i guess
                 for (int j = 0; j < nodes.size(); j++) {
@@ -65,11 +67,15 @@ int bottomBorder = 60;
                         break;
                     }
                 }
-                RoomNodeView neighborNode = nodes.get(neighborIndex);
-                currentNode.addNeighbourRoom(neighborNode);
+                if(neighborIndex != -1) {
+                    RoomNodeView neighborNode = nodes.get(neighborIndex);
+                    currentNode.addNeighbourRoom(neighborNode);
+                    drawArrowBetweenRooms(currentNode, neighborNode, g);
+                }
+
 
                 // Draw line and arrow from currentNode to neighborNode
-               drawArrowBetweenRooms(currentNode, neighborNode, g);
+
             }
         }
 

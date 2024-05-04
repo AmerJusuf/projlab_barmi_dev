@@ -1,17 +1,17 @@
 
 ”
-java:S1104"QMake width a static final constant or non-public and provide accessors if needed.(øÂ½8Ñòó1J$4f04a8db-6a3f-4582-a298-ddcc0f67f6a2
+java:S1104"QMake width a static final constant or non-public and provide accessors if needed.(øÂ½8Ñòó1J$ad0e22a6-2403-41ef-85fa-f1564d97300c
 •
-java:S1104"RMake height a static final constant or non-public and provide accessors if needed.(ñ½8á¹òó1J$9da99e4c-a453-46df-9415-e43653836435
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8Òòó1J$b0dfb492-4672-4981-ab18-ee8cc5362127
+java:S1104"RMake height a static final constant or non-public and provide accessors if needed.(ñ½8á¹òó1J$b81348cc-a202-4138-990e-26e2893d4841
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8Òòó1J$9c80ed0c-b41c-423a-96ae-57543be79410
 q
-java:S2387"."width" is the name of a field in "Component".(øÂ½8İòó1J$36af265e-db8d-4344-8761-9b8bec40710c
+java:S2387"."width" is the name of a field in "Component".(øÂ½8İòó1J$15ff1f50-c69c-4315-a118-9b0dd51a500f
 r
-java:S2387"/"height" is the name of a field in "Component".(ñ½8ğ¹òó1J$7a5bf36d-80b1-42bd-9a40-23a7ca1c2662
+java:S2387"/"height" is the name of a field in "Component".(ñ½8ğ¹òó1J$59f01813-b2f4-42e6-b251-82998b7408dc
 n
-java:S1948"&Make "room" transient or serializable.(²úŒ„øÿÿÿÿ8ô»êóó1J$977f7c2f-2c60-42a2-967b-aa3961f25478
+java:S1948"&Make "room" transient or serializable.(²úŒ„øÿÿÿÿ8ô»êóó1J$c6d58d2e-c1eb-4d2a-a805-fd4cd4f2d129
 p
-java:S1948"-Make "circleImage" transient or serializable.(Ì§şê8Şòó1J$046fff65-f592-4da6-b67a-3a39eeb02373
-r	java:S106+"+Replace this use of System.out by a logger.(å²È©ùÿÿÿÿ8áòó1J$ed5bfc01-95dd-4292-866e-e25982cab8e8
-\
-java:S1128":Remove this unused import 'java.awt.geom.AffineTransform'.(˜ÊÊ¡ıÿÿÿÿ8€ôÄ…ô1
+java:S1948"-Make "circleImage" transient or serializable.(Ì§şê8Şòó1J$38c26243-4e0d-4d3e-9733-1e125c2a1b32
+r	java:S106+"+Replace this use of System.out by a logger.(å²È©ùÿÿÿÿ8áòó1J$565b9571-abc0-42f1-9519-932427e5e89e
+‚
+java:S1128":Remove this unused import 'java.awt.geom.AffineTransform'.(˜ÊÊ¡ıÿÿÿÿ8€ôÄ…ô1J$e3fe1170-090a-4d0f-87e1-df3ba2bb357d

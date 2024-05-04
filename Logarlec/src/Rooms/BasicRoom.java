@@ -134,6 +134,7 @@ public class BasicRoom implements IRoom{
         IRoom newRoom = this.acceptMerge(visitor);
 
         visitor.handleNeighboursWhenReplacing(this, newRoom);
+        getLabyrinth().removeRoom(room);
         getLabyrinth().replaceRooms(this, newRoom);
         return newRoom; //It could be a void method, returning for test cases and prototype
     }

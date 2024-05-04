@@ -115,11 +115,10 @@ public class Student extends Character{
     public String nextRound()  {
         while (!RoomView.isMoveButtonClicked()){
             try {
-                Thread.sleep(1000);
+                Thread.sleep(10);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            System.out.println("Student next round | Student: nextRound()");
         }
         RoomView.moveButtonClicked = false;
         System.out.println("OVER | Student: nextRound()");
