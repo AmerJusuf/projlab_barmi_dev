@@ -124,7 +124,7 @@ public abstract class Character {
         this.isPoisoned = isPoisoned;
     }
 
-    public abstract String nextRound();
+    public abstract String nextRound() throws InterruptedException;
 
     public abstract void disableInstructor();
 

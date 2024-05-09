@@ -5,12 +5,12 @@ import Characters.Cleaner;
 import Characters.Instructor;
 import Characters.Student;
 import Items.*;
-import Rooms.BasicRoom;
-import Rooms.CursedRoomDecorator;
-import Rooms.IRoom;
-import Rooms.PoisonedRoomDecorator;
+import Rooms.*;
+import View.WindowView.MainWindow;
+import View.WindowView.Map;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
@@ -24,6 +24,8 @@ public class Labyrinth {
     private List<Cleaner> cleaners;
 
     public static Student currentPlayer;
+
+    private Map map;
 
     public Labyrinth() {
         rooms = new ArrayList<>();
@@ -45,6 +47,23 @@ public class Labyrinth {
             cleaners.add(cleaner);
         }
         generateMap();
+    }
+
+    public Labyrinth(List<Student> students, Map map){
+        this.students = students;
+        instructors = new ArrayList<>();
+        for(int i = 0; i < (students.size()*2); i++){
+            Instructor instructor = new Instructor();
+            instructors.add(instructor);
+        }
+        cleaners = new ArrayList<>();
+        for(int i = 0; i < students.size(); i++){
+            Cleaner cleaner = new Cleaner();
+            cleaners.add(cleaner);
+        }
+        this.map = map;
+        generateMap();
+
     }
 
     public void addRoom(IRoom room) {
@@ -85,15 +104,15 @@ public class Labyrinth {
 
         currentAttempts = 0; // Visszaállítjuk a próbálkozások számát a split művelethez
 
-        while (!splitDone && currentAttempts < maxAttempts) {
-            if (rooms.get(idx2).getNumberOfCharacters() == 0) {
-                split(idx2);
-                splitDone = true;
-            } else {
-                idx2 = rand.nextInt(rooms.size()); // Új index, ha a korábbi nem volt megfelelő
-            }
-            currentAttempts++; // Növeljük a próbálkozások számát
-        }
+//        while (!splitDone && currentAttempts < maxAttempts) {
+//            if (rooms.get(idx2).getNumberOfCharacters() == 0) {
+//                split(idx2);
+//                splitDone = true;
+//            } else {
+//                idx2 = rand.nextInt(rooms.size()); // Új index, ha a korábbi nem volt megfelelő
+//            }
+//            currentAttempts++; // Növeljük a próbálkozások számát
+//        }
         //TODO: ha elfogytak az indexek break, fuggveny a mergelheto szobakra
     }
 
@@ -141,8 +160,16 @@ public class Labyrinth {
     public void startGame() {
         while (gameState == GameState.PLAYING) {
             nextRound();
+            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+            map.removeAll();
+            map.repaint();
         }
         endGame();
+    }
+
+    private int round = 0;
+    public int getRound() {
+        return round;
     }
 
     public String nextRound() {
@@ -160,8 +187,12 @@ public class Labyrinth {
                 }
            // Osszes szoba tarygara es osszes karakterek targyaira step() fuggveny meghivasa
 
-            mergeAndSplitRandomly();
+           mergeAndSplitRandomly();
+
+
+
             stepItems();
+            round++;
             return fileContent;
     }
 
@@ -380,6 +411,9 @@ public class Labyrinth {
         room25.addNeighbour(room20);
         room25.addNeighbour(room24);
 
+        room9.addNeighbour(room15);
+        room1.addNeighbour(room7);
+
         //add each room to rooms
 
         rooms.add(room1);
@@ -409,20 +443,27 @@ public class Labyrinth {
         rooms.add(room25);
 
 
+        for(IRoom room: rooms){
+            room.setLabyrinth(this);
+        }
+
         //add characters to rooms
         for(int i = 0; i < students.size(); i++){
             int j = i % 5;
             rooms.get(24-j).addCharacter(students.get(i));
+            students.get(i).setRoom(rooms.get(24-j));
         }
 
         for(int i = 0; i < instructors.size(); i++){
             int j = i % 5;
             rooms.get(j).addCharacter(instructors.get(i));
+            instructors.get(i).setRoom(rooms.get(j));
         }
 
         for (int i = 0; i < cleaners.size(); i++) {
             int j = new Random().nextInt(0,24);
             rooms.get(j).addCharacter(cleaners.get(i));
+            cleaners.get(i).setRoom(rooms.get(j));
         }
 
         //add items to rooms

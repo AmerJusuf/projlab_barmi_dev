@@ -3,6 +3,7 @@ package Characters;
 import Items.Item;
 import Rooms.IRoom;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cleaner extends Character{
@@ -53,11 +54,11 @@ public class Cleaner extends Character{
      * The characters are moved to a neighbouring room, if it has free space, if all
      * neighbouring rooms are full, the remaining characters stay in this room.
      */
-    public void moveCharacters(){
-        System.out.println("Cleaner moves characters ouf of the room | Cleaner: moveCharacters()");
-        List<Character> characters = currentRoom.getCharacters();
-        for(Character character: characters){
-            if(character != this){
+    public void moveCharacters() {
+        System.out.println("Cleaner moves characters out of the room | Cleaner: moveCharacters()");
+        List<Character> characters = new ArrayList<>(currentRoom.getCharacters());
+        for (Character character : characters) {
+            if (character != this) {
                 character.moveToRandom();
             }
         }

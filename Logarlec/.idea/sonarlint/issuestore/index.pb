@@ -257,3 +257,7 @@ N
 src/View/ItemView/RagView.java,3\5\35dae4393a19f71c657ad0fd61df2b0fb0d16422
 U
 %src/View/WindowView/RoomNodeView.java,c\d\cd7b26001efe0a8267f5f5326a3d22f393d5b649
+L
+src/View/WindowView/Map.java,9\b\9bb9a08f08d0ea99787577fbd82aceee3b121373
+T
+$src/View/ItemView/CamembertView.java,8\a\8ad2642c6a67e0853af8b60b4f105362e885d744

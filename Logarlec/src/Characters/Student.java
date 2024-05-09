@@ -2,6 +2,7 @@ package Characters;
 
 import Items.Item;
 import Rooms.IRoom;
+import View.WindowView.RoomView;
 
 public class Student extends Character{
 
@@ -111,10 +112,16 @@ public class Student extends Character{
 //    }
 
     @Override
-    public String nextRound(){
-        moveButtonClicked = false;
-        while (!moveButtonClicked){}
-
+    public String nextRound()  {
+        while (!RoomView.isMoveButtonClicked()){
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        RoomView.moveButtonClicked = false;
+        System.out.println("OVER | Student: nextRound()");
         return ""; //TODO: void
     }
 

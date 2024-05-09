@@ -30,7 +30,7 @@ public class MainWindow extends JFrame {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         this.setSize(screenSize.width, screenSize.height - 50);
 
-        Map map = new Map();
+       Map map = new Map();
 
 
         gbc.gridx = 0;
@@ -42,7 +42,7 @@ public class MainWindow extends JFrame {
 
         gbc.fill = GridBagConstraints.BOTH;
         gbc.insets = insets;
-        this.add(map.panel, gbc);
+        this.add(map, gbc);
 
 
 
