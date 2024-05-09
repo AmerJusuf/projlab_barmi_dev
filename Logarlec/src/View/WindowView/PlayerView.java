@@ -25,7 +25,7 @@ public class PlayerView {
     JLabel iconLabel;
     JLabel title;
 
-    //AirFreshenerView airFreshenerView = new AirFreshenerView(airFreshener);
+    AirFreshenerView airFreshenerView = new AirFreshenerView(airFreshener);
     BeerView beerView = new BeerView(beer);
     CamembertView camembertView = new CamembertView(camembert);
     FFP2View ffp2View = new FFP2View(ffp2);
@@ -52,11 +52,12 @@ public class PlayerView {
         panel.add(title);
 
 
-        panel.add(ffp2View.getPanel());
-        //panel.add(airFreshenerView.getPanel());
-        panel.add(beerView.getPanel());
-        panel.add(camembertView.getPanel());
-        //panel.add(ragView.getPanel());
+        //panel.add(ffp2View.getPanel());
+        panel.add(airFreshenerView.getPanel());
+        panel.add(logarlecView.getPanel());
+        //panel.add(beerView.getPanel());
+        //panel.add(camembertView.getPanel());
+        panel.add(ragView.getPanel());
         panel.add(tvszView.getPanel());
         panel.add(transistorView.getPanel());
 
