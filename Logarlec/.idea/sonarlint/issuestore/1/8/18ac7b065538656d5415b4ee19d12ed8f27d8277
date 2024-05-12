@@ -1,22 +1,16 @@
 
 Ÿ
-java:S1104h"]Make moveButtonClicked a static final constant or non-public and provide accessors if needed.(‘ïº	8Ø»‡ô1J$29e3ea8c-fbb9-4ad4-b984-a5584a3fad3b
+java:S1104m"]Make moveButtonClicked a static final constant or non-public and provide accessors if needed.(‘ïº	8Šğ®âö1J$9784fbf3-a968-4403-ae0a-0f7c1abc0566
 y
-java:S1444h"7Make this "public static moveButtonClicked" field final(‘ïº	8Ø»‡ô1J$93611587-db78-4c8d-98f6-f13b642c620b
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8Ø»‡ô1J$f84c6ba2-ea72-43af-a6ff-6dacba307ced
-~	java:S125("<This block of commented-out lines of code should be removed.(ÔŒïÂ8¢Ø»‡ô1J$c1eca41c-9432-4cd4-b960-bf7b52cb14f2
+java:S1444m"7Make this "public static moveButtonClicked" field final(‘ïº	8‹ğ®âö1J$5ffdf134-18e6-4ff5-92a3-b4246fd11e70
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8Œğ®âö1J$3da1a1f1-95a0-48f4-88d6-fd202fa5a831
 „
-java:S3252)"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ó±æÉ8¢Ø»‡ô1J$517306d8-7f9d-4848-9f54-b988091d48ae
-•	java:S100a"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.( Î¿ûÿÿÿÿ8¨Ø»‡ô1J$f608390b-93fa-40b6-bbb7-c7c41166ba0c
+java:S3252%"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ó±æÉ8šğ®âö1J$21c9f197-a4d6-45da-b4d0-f53b4fbb7db8
 ‡
-java:S1124h"EReorder the modifiers to comply with the Java Language Specification.(‘ïº	8©Ø»‡ô1J$d699d246-e2b9-4e8e-9652-0192a6f28051
+java:S1124m"EReorder the modifiers to comply with the Java Language Specification.(‘ïº	8 ğ®âö1J$2fbb2e31-f4fa-42f1-8217-3e58451cbf55
 ˆ
-java:S1124j"EReorder the modifiers to comply with the Java Language Specification.(ŞäÅÖ8€¾Å‡ô1J$ba8c9608-739a-405b-ab58-664ab7333069
-r	java:S106q"+Replace this use of System.out by a logger.(Û¯şÿÿÿÿ8ªØ»‡ô1J$27077ec7-f931-47f3-9844-2f82d6aa5fa7
+java:S1124o"EReorder the modifiers to comply with the Java Language Specification.(ŞäÅÖ8¡ğ®âö1J$30f0e0fc-0b53-4811-8f51-47d90defd209
+r	java:S106v"+Replace this use of System.out by a logger.(Û¯şÿÿÿÿ8¢ğ®âö1J$a1f5cf38-ae13-4951-aeba-f37f868f2b68
 ~
-java:S2696s"6Make the enclosing method "static" or remove this set.(²íô şÿÿÿÿ8«Ø»‡ô1J$2b4c8902-50ed-4d1d-b053-ff6fe704c9cd
-m	java:S106x"+Replace this use of System.out by a logger.(ÒÑŠ8œë»‡ô1J$4acc1040-53b9-4d87-a24e-b51ba30892d5
-t
-java:S1128",Remove this unused import 'Rooms.BasicRoom'.(Çêê½ÿÿÿÿÿ8¬Ø»‡ô1J$de3d3c08-5e84-44d3-9631-f264e244fb2e
-y
-java:S1128"6Remove this unused import 'javax.swing.border.Border'.(şŒ©ƒ8­Ø»‡ô1J$04fc3708-fb55-42a8-917b-994e6b04c1c5
+java:S2696x"6Make the enclosing method "static" or remove this set.(²íô şÿÿÿÿ8¢ğ®âö1J$3e95949d-013a-4961-8e05-748c381f4777
+m	java:S106}"+Replace this use of System.out by a logger.(ÒÑŠ8£ğ®âö1J$e6539702-79ee-410d-8b06-6dcd2eaa9383

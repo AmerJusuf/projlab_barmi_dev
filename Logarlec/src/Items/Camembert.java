@@ -36,6 +36,7 @@ public class Camembert extends Item {
      * It retrieves the current room of the owner, disables the owner,
      * and disables other characters in the same room.
      */
+    @Override
     public void open() {
         System.out.println("Camembert opened | Camembert: open()");
 

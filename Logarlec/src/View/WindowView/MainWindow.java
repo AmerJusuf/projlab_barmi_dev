@@ -8,14 +8,18 @@ import Items.FFP2;
 import Items.Transistor;
 import Rooms.BasicRoom;
 import Rooms.IRoom;
+import View.IView;
+import View.ItemView.ItemView;
 
 import javax.swing.*;
 import javax.swing.border.Border;
 import java.awt.*;
+import java.util.HashMap;
 import java.util.List;
 
 public class MainWindow extends JFrame {
-
+    List<IView> views;
+    static java.util.Map<Object, IView> viewsByObjects = new HashMap<>();
 
     public MainWindow() {
         this.setTitle("Best Game Ever");
@@ -109,8 +113,8 @@ public class MainWindow extends JFrame {
         room.addItem(tr6);
         room.addItem(tr7);
         room.addItem(tr8);
-        RoomView roomV = new RoomView(room, 0);
-        roomV.panel.setPreferredSize(new Dimension(350, 200));
+        RoomView roomV = new RoomView(room);
+        roomV.getPanel().setPreferredSize(new Dimension(350, 200));
 
         //roomV.panel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 40));
 
@@ -123,12 +127,12 @@ public class MainWindow extends JFrame {
         gbcRooms.weighty = 1.0;
         gbcRooms.insets = new Insets(0, 0, 0, 10);
         gbcRooms.fill = GridBagConstraints.BOTH;
-        roomsPanel.add(roomV.panel, gbcRooms); //
+        roomsPanel.add(roomV.getPanel(), gbcRooms); //
 
 
 
         IRoom room2 = new BasicRoom(4);
-        RoomView roomV2 = new RoomView(room2, 1);
+        RoomView roomV2 = new RoomView(room2);
 
 
         gbcRooms.gridx = 1;
@@ -139,7 +143,7 @@ public class MainWindow extends JFrame {
         gbcRooms.weighty = 1.0;
         gbcRooms.insets = new Insets(0, 10, 0, 0);
         gbcRooms.fill = GridBagConstraints.BOTH;
-       roomsPanel.add(roomV2.panel, gbcRooms); //
+       roomsPanel.add(roomV2.getPanel(), gbcRooms); //
 
 
         this.add(roomsPanel, gbc);
@@ -154,6 +158,19 @@ public class MainWindow extends JFrame {
         this.setVisible(true);
     }
 
+    public void addView(IView view) {
+        views.add(view);
+    }
+
+    public void removeView(IView view) {
+        views.remove(view);
+    }
+
+    public void updateAllViews() {
+        for (IView view : views) {
+            view.update();
+        }
+    }
 
 
 }

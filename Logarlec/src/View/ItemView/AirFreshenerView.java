@@ -7,75 +7,38 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AirFreshenerView implements ActionListener {
-    AirFreshener airFreshener;
-
-    JPanel panel = new JPanel();
-
-    JLabel label;
-
-    ImageIcon defIcon;
-    //ImageIcon placedIcon;
-
-    JButton pickButton;
-    JButton dropButton;
-    JButton useButton;
+public class AirFreshenerView extends ItemView {
+    private JButton useButton;
+    private ImageIcon icon = new ImageIcon("src/Assets/airfreshener.png");
 
     public AirFreshenerView(AirFreshener air) {
-        airFreshener = air;
-
-        panel.setBackground(Color.LIGHT_GRAY);
-        panel.setPreferredSize(new Dimension(200, 60));
-
-        defIcon = new ImageIcon("Icons/airfreshener.png");
-        //placedIcon = new ImageIcon("Icons/airfreshenerplaced.png");
-
-
-        label = new JLabel();
-        setLabel();
-        label.setVisible(true);
-        panel.add(label);
-
-
-
-        pickButton = new JButton("Pick");
-        pickButton.addActionListener(this);
-        pickButton.setFocusable(false);
-        pickButton.setVisible(false);
-        panel.add(pickButton);
-
-        useButton = new JButton("Place");
-        useButton.addActionListener(this);
-        useButton.setFocusable(false);
-        useButton.setVisible(true);
-        panel.add(useButton);
-
-        dropButton = new JButton("Drop");
-        dropButton.addActionListener(this);
-        dropButton.setFocusable(false);
-        dropButton.setVisible(true);
-        panel.add(dropButton);
-
-        panel.setVisible(true);
+       super(air, new ImageIcon("src/Assets/airfreshener.png"));
     }
-
-    public JPanel getPanel()
-    {
-        return panel;
-    }
-
-    public void setLabel()  { label.setIcon(defIcon); }
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == pickButton) {
-            System.out.println("Picked");
-        }
-        if (e.getSource() == dropButton) {
-            System.out.println("Dropped");
-        }
+        super.actionPerformed(e);
         if (e.getSource() == useButton) {
-            System.out.println("Place");
+            System.out.println("AirFreshener used | AirFreshenerView: actionPerformed(ActionEvent e)");
+            item.unToxicateRoom();
         }
+    }
+
+    @Override
+    void uniqueButtons() {
+        useButton = new JButton("Use");
+        useButton.addActionListener(this);
+        useButton.setFocusable(false);
+        useButton.setVisible(false);
+        panel.add(useButton);
+    }
+
+    @Override
+    void setUniqueButtonsVisibility(boolean visibility) {
+        useButton.setVisible(visibility);
+    }
+
+    public void updateItemIcon(boolean isActive) {
+        label.setIcon(icon);
     }
 }

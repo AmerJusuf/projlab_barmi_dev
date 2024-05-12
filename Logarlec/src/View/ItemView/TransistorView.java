@@ -7,43 +7,43 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class TransistorView implements ActionListener {
-    Transistor transistor;
+public class TransistorView extends ItemView {
+    private final Transistor transistor; //Only the transistor
 
-    JPanel panel = new JPanel();
-
-    JLabel label;
-
-    ImageIcon defIcon;
-    ImageIcon activeIcon;
-    ImageIcon placedIcon;
-    ImageIcon pairedIcon;
+    ImageIcon defIcon = new ImageIcon("Icons/transistor.png");
+    ImageIcon activeIcon = new ImageIcon("Icons/transistoractive.png");;
+    ImageIcon pairedIcon = new ImageIcon("Icons/transistorpaired.png");;
+    ImageIcon placedIcon = new ImageIcon("Icons/transistorplaced.png");;
 
     JButton activate;
     JButton pair;
     JButton place;
 
-    JButton pickButton;
-    JButton dropButton;
-
-    JPanel pickItemPanel;
-
     public TransistorView(Transistor tr) {
+        super(tr, new ImageIcon("Icons/transistor.png"));
         transistor = tr;
+    }
 
-        panel.setBackground(Color.LIGHT_GRAY);
-        panel.setPreferredSize(new Dimension(200, 60));
 
-        defIcon = new ImageIcon("Icons/transistor.png");
-        activeIcon = new ImageIcon("Icons/transistoractive.png");
-        pairedIcon = new ImageIcon("Icons/transistorpaired.png");
-        placedIcon = new ImageIcon("Icons/transistorplaced.png");
+    @Override
+    public void actionPerformed(ActionEvent e) {
+        if (e.getSource() == activate) {
+            System.out.println("Button activevate clicked");
+            transistor.setIsTurnedOn(true);
+        }
+        if (e.getSource() == pair && transistor.getisActive()) {
+            System.out.println("Button pair clicked");
+            //TODO: Studentnek fuggveny ami osszeparositja a nala levo ket aktiv transzisztort
 
-        label = new JLabel();
-        setLabel();
-        label.setVisible(true);
-        panel.add(label);
+        }
+        if (e.getSource() == place && transistor.getisActive() && transistor.getPairTransistor() != null) {
+            System.out.println("Button placed clicked");
+            item.placeTransistor();
+        }
+    }
 
+    @Override
+    void uniqueButtons() {
         activate = new JButton("Activate");
         activate.addActionListener(this);
         activate.setFocusable(false);
@@ -58,79 +58,26 @@ public class TransistorView implements ActionListener {
         place.addActionListener(this);
         place.setFocusable(false);
         panel.add(place);
-
-        pickButton = new JButton("Pick");
-        pickButton.addActionListener(this);
-        pickButton.setFocusable(false);
-        pickButton.setVisible(false);
-        panel.add(pickButton);
-
-        dropButton = new JButton("Drop");
-        dropButton.addActionListener(this);
-        dropButton.setFocusable(false);
-        dropButton.setVisible(true);
-        panel.add(dropButton);
-
-        panel.setVisible(true);
-    }
-
-    public JPanel getPanel()
-    {
-        return panel;
-    }
-
-    public void setLabel() {
-        if (transistor.getOwner() == null)
-            label.setIcon(defIcon);
-        else if (transistor.getisActive())
-            label.setIcon(activeIcon);
-        else if (transistor.getPairTransistor() != null)
-            label.setIcon(pairedIcon);
-        else if (transistor.getPlaceLocation() != null)
-            label.setIcon(placedIcon);
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == activate) {
-            System.out.println("Button activevate clicked");
-            transistor.setIsTurnedOn(true);
-            setLabel();
-        }
-        if (e.getSource() == pair && transistor.getisActive()) {
-            System.out.println("Button pair clicked");
-            setLabel();
-
-            // BEALLITANI A MASIK TRANSISTORT PARNAK
-            //transistor.setPairTransistor();
-        }
-        if (e.getSource() == place && transistor.getisActive() && transistor.getPairTransistor() != null) {
-            System.out.println("Button placed clicked");
-            setLabel();
-
-            // BEALLITANI A SZOBAT
-            //transistor.setPlaceLocation();
-        }
-        if (e.getSource() == pickButton) {
-            System.out.println("Picked");
-        }
-        if (e.getSource() == dropButton) {
-            System.out.println("Dropped");
-        }
+    void setUniqueButtonsVisibility(boolean visibility) {
+        activate.setVisible(visibility);
+        pair.setVisible(visibility);
+        place.setVisible(visibility);
     }
 
-    public JPanel getPickItemPanel() {
-        pickItemPanel = new JPanel();
-        pickItemPanel.setBackground(Color.LIGHT_GRAY);
-        pickItemPanel.add(new JLabel(defIcon));
-        pickButton = new JButton("Pick");
-        pickButton.addActionListener(this);
-        pickButton.setFocusable(false);
-        pickButton.setVisible(true);
-        pickItemPanel.add(pickButton);
-
-        pickItemPanel.setVisible(true);
-        return pickItemPanel;
+    @Override
+    void updateItemIcon(boolean isActive) {
+        if(isActive){
+            label.setIcon(activeIcon);
+        } else if(transistor.getPairTransistor() != null){
+            label.setIcon(pairedIcon);
+        } else if(transistor.getPlaceLocation() != null){
+            label.setIcon(placedIcon);
+        } else {
+            label.setIcon(defIcon);
+        }
     }
 
 }

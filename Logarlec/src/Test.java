@@ -289,7 +289,7 @@ public class Test {
         pairTransistor.setPlaceLocation(ptPlaceLocation);
         System.out.println("Test:");
 
-        tr.place();
+        tr.placeTransistor();
 
     }
 
@@ -305,7 +305,7 @@ public class Test {
         tr.setIsTurnedOn(true);
         System.out.println("Test:");
 
-        tr.place();
+        tr.placeTransistor();
     }
 
     public void canNotPlaceTransistorBecauseNotActive() {
@@ -319,7 +319,7 @@ public class Test {
         tr.setOwner(owner);
         System.out.println("Test:");
 
-        tr.place();
+        tr.placeTransistor();
     }
 
     public void canNotPlaceTransistorBecauseNotHaveAPair() {
@@ -332,7 +332,7 @@ public class Test {
         tr.setIsTurnedOn(true);
         System.out.println("Test:");
 
-        tr.place();
+        tr.placeTransistor();
     }
 
     public void placeSecondTransistorActiveAndCanNotMoveBecauseOfCapacity() {
@@ -350,7 +350,7 @@ public class Test {
         pairTransistor.setPlaceLocation(ptPlaceLocation);
         System.out.println("Test:");
 
-        tr.place();
+        tr.placeTransistor();
     }
 
     public void poisonedRoomToxicatesCharacters() {

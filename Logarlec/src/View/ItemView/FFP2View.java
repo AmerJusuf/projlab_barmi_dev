@@ -9,72 +9,33 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class FFP2View implements ActionListener {
-    FFP2 ffp2;
-
-    JPanel panel = new JPanel();
-
-    JLabel label;
-
-    ImageIcon defIcon;
-    ImageIcon activeIcon;
-    ImageIcon fakeIcon;
-
-
-    JButton pickButton;
-    JButton dropButton;
+public class FFP2View extends ItemView {
+    ImageIcon defIcon = new ImageIcon("Icons/ffp2.png");
+    ImageIcon activeIcon = new ImageIcon("Icons/ffp2active.png");
+    ImageIcon fakeIcon = new ImageIcon("Icons/ffp2fake.png");
 
     public FFP2View(FFP2 f) {
-        ffp2 = f;
-
-        panel.setBackground(Color.LIGHT_GRAY);
-        panel.setPreferredSize(new Dimension(200, 60));
-
-        defIcon = new ImageIcon("Icons/ffp2.png");
-        activeIcon = new ImageIcon("Icons/ffp2active.png");
-        fakeIcon = new ImageIcon("Icons/ffp2fake.png");
-
-        label = new JLabel();
-        setLabel();
-        label.setVisible(true);
-        panel.add(label);
-
-
-
-        pickButton = new JButton("Pick");
-        pickButton.addActionListener(this);
-        pickButton.setFocusable(false);
-        pickButton.setVisible(false);
-        panel.add(pickButton);
-
-        dropButton = new JButton("Drop");
-        dropButton.addActionListener(this);
-        dropButton.setFocusable(false);
-        dropButton.setVisible(true);
-        panel.add(dropButton);
-
-        panel.setVisible(true);
+        super(f, f.isFake() ? new ImageIcon("Icons/ffp2fake.png") : new ImageIcon("Icons/ffp2.png"));
     }
-
-    public JPanel getPanel()  { return panel; }
-
-    public void setLabel() {
-        if (ffp2.getOwner() == null)
-            label.setIcon(defIcon);
-        else if (ffp2.isFake())
-            label.setIcon(fakeIcon);
-        else if (ffp2.getisActive())
-            label.setIcon(activeIcon);
-    }
-
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == pickButton) {
-            System.out.println("Picked");
-        }
-        if (e.getSource() == dropButton) {
-            System.out.println("Dropped");
+    void uniqueButtons() {
+        // No unique buttons
+    }
+
+    @Override
+    void setUniqueButtonsVisibility(boolean visibility) {
+        // No unique buttons
+    }
+
+    @Override
+    void updateItemIcon(boolean isActive) {
+        if(item.isFake()){
+            label.setIcon(fakeIcon);
+        } else if(isActive){
+            label.setIcon(activeIcon);
+        } else {
+            label.setIcon(defIcon);
         }
     }
 }

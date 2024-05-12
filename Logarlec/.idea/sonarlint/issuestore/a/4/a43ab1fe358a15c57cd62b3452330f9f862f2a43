@@ -1,9 +1,10 @@
 
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8«Áİ¢ó1J$04fc4828-a946-48fd-bb54-30fdce172896
-	java:S116"WRename this field "STUDENT_ICON" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°…šÂıÿÿÿÿ8µÁİ¢ó1J$77691693-3ee5-4424-ba33-8bdb26d9258c
-¡	java:S116"ZRename this field "INSTRUCTOR_ICON" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·ÎÁıÿÿÿÿ8µÁİ¢ó1J$bb155b26-eda5-49a0-b256-09d19e381841
-™	java:S116"WRename this field "CLEANER_ICON" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ışçÏ8µÁİ¢ó1J$c43dea20-231f-457c-b3c9-2f0342d5c286
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8«Áİ¢ó1J$c9f36b9f-366b-4d07-ad7f-ad2e9f3da856
+	java:S116&"WRename this field "STUDENT_ICON" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°…šÂıÿÿÿÿ8µÁİ¢ó1J$8ef5555f-f3cc-488d-87e3-64418a020dd1
+¡	java:S116'"ZRename this field "INSTRUCTOR_ICON" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·ÎÁıÿÿÿÿ8µÁİ¢ó1J$653a27d2-2436-45c1-97b0-67f09623793c
+™	java:S116("WRename this field "CLEANER_ICON" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ışçÏ8µÁİ¢ó1J$4e287f85-3912-42a7-9b64-39948cfdc13c
+~	java:S125"<This block of commented-out lines of code should be removed.(Ş£¿â8òÁ·âö1J$2933f657-9d96-4548-b12e-bc21bc6c4494
 „
-java:S3252$"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ó±æÉ8ºÁİ¢ó1J$d829e83c-52be-45e9-921f-034f5cec1292
-~	java:S125)"<This block of commented-out lines of code should be removed.(‡…8»Áİ¢ó1J$3fcab1f0-99cc-4e3d-b749-23783f44660c
-ƒ	java:S125."<This block of commented-out lines of code should be removed.(ØÉóßıÿÿÿÿ8¼Áİ¢ó1J$aea2a77f-93cf-42e8-849c-47671c48b1ca
+java:S32522"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ó±æÉ8ºÁİ¢ó1J$a231c9d1-14ac-43ea-875c-a4c7f4e0c01c
+ƒ	java:S1258"<This block of commented-out lines of code should be removed.(“ïèÿÿÿÿÿ8õÁ·âö1J$999e08cc-05ef-486b-9c1f-4f884efa05ea
+ƒ	java:S125;"<This block of commented-out lines of code should be removed.(ùŞû‚ùÿÿÿÿ8öÁ·âö1J$561453ad-ffaa-4b88-a7e6-3b06dc41cdb5

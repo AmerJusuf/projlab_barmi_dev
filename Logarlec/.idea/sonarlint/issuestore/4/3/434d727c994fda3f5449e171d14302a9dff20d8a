@@ -1,21 +1,19 @@
 
-¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Áã²¹ûÿÿÿÿ8üˆÚç1J$6d774188-d934-4c02-b7a7-3d852a96c66e
-ƒ	java:S125"<This block of commented-out lines of code should be removed.(ÈäÒıÿÿÿÿ8üÜ“¤ò1J$979bac09-2542-4fe5-99ed-3dd83d8cebfd
-ƒ	java:S125!"<This block of commented-out lines of code should be removed.(ÜÍÏĞüÿÿÿÿ8ıÜ“¤ò1J$592d308b-8d42-4c87-aa69-03e53ede3bc7
-~	java:S125+"<This block of commented-out lines of code should be removed.(«ñ·¢8ıÜ“¤ò1J$26185a3d-51cf-4036-af52-be39b4cae849
-ƒ	java:S125."<This block of commented-out lines of code should be removed.(İ§ëèûÿÿÿÿ8şÜ“¤ò1J$eeaeb80f-9219-4f0a-a2d9-a15936a4cdc3
-~	java:S1250"<This block of commented-out lines of code should be removed.(’³ø8şÜ“¤ò1J$ad9307dd-92b8-4a89-8114-f4f7fd8a2faa
-ƒ	java:S1254"<This block of commented-out lines of code should be removed.(ú²Ùúÿÿÿÿ8ÿÜ“¤ò1J$32fba00c-3644-43bf-8dd6-401ac0cdbc72
-ƒ	java:S1256"<This block of commented-out lines of code should be removed.(çöÛáüÿÿÿÿ8ÿÜ“¤ò1J$befe23e8-4694-4e76-ae62-e2df10a77cc2
-~	java:S125="<This block of commented-out lines of code should be removed.(¹¿à¨8€İ“¤ò1J$b779f560-8a17-4254-b4ea-cdb86cae3876
-ƒ	java:S125F"<This block of commented-out lines of code should be removed.(·Êûıÿÿÿÿ8€İ“¤ò1J$e11e29a0-b362-4266-a3e4-ebf923638db7
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(Áã²¹ûÿÿÿÿ8üˆÚç1J$bf1fbe94-b4c6-45d3-b837-24fc8c592568
+ƒ	java:S125"<This block of commented-out lines of code should be removed.(ÈäÒıÿÿÿÿ8üÜ“¤ò1J$033f57b8-232a-43e2-b07b-31f39f753f22
+ƒ	java:S125!"<This block of commented-out lines of code should be removed.(ÜÍÏĞüÿÿÿÿ8ıÜ“¤ò1J$e647c48f-5e28-471a-9932-cabbdedb242f
+~	java:S125,"<This block of commented-out lines of code should be removed.(«ñ·¢8ıÜ“¤ò1J$0baa0b37-08ca-4065-863e-c7ed8bb5f8d8
+ƒ	java:S125/"<This block of commented-out lines of code should be removed.(İ§ëèûÿÿÿÿ8şÜ“¤ò1J$967c875e-e14a-44ab-b543-78e75cd7fcea
+~	java:S1251"<This block of commented-out lines of code should be removed.(’³ø8şÜ“¤ò1J$606a35cc-d61f-47e4-8db3-07d3107fc9fa
+ƒ	java:S1255"<This block of commented-out lines of code should be removed.(ú²Ùúÿÿÿÿ8ÿÜ“¤ò1J$7eabb5fe-4e5f-4a8f-8e51-95ba8fc739a1
+ƒ	java:S1257"<This block of commented-out lines of code should be removed.(çöÛáüÿÿÿÿ8ÿÜ“¤ò1J$69afe989-9c01-4ec4-9d48-a174c7bfd1ca
+~	java:S125>"<This block of commented-out lines of code should be removed.(¹¿à¨8€İ“¤ò1J$c2f49516-7c28-457f-b291-0f5a444f9c1d
+ƒ	java:S125G"<This block of commented-out lines of code should be removed.(·Êûıÿÿÿÿ8€İ“¤ò1J$c8f98a35-aed0-4b3b-a26b-bc5602042e33
 
-java:S3923K"[Remove this conditional structure or edit its code blocks so that they're not all the same.(€‡œÀ8İ“¤ò1J$0d7e1a4f-8115-458f-8862-a9dbc9d5a3c8
-~	java:S125L"<This block of commented-out lines of code should be removed.(¬ø‰8İ“¤ò1J$1bbaed98-f6f6-4cc6-9dca-7303fc846917
-~	java:S125N"<This block of commented-out lines of code should be removed.(¤ñ‡È8İ“¤ò1J$a0b648d7-4163-4075-b8f0-649dad4cc8ab
-~	java:S125Y"<This block of commented-out lines of code should be removed.(Ä¨Ñ–8‚İ“¤ò1J$b7cca741-0d0e-4358-9df1-7d09f0a268af
-ƒ	java:S125]"<This block of commented-out lines of code should be removed.(êõûÿÿÿÿ8ƒİ“¤ò1J$2cf54746-608d-4819-b8f2-a32238f04e4b
-ƒ	java:S125d"<This block of commented-out lines of code should be removed.(ÈùÃ¹úÿÿÿÿ8ƒİ“¤ò1J$950998f9-f9f6-4385-8aba-2278ec42a38b
-ƒ	java:S125f"<This block of commented-out lines of code should be removed.(¢ùè¸şÿÿÿÿ8ƒİ“¤ò1J$3d266278-2964-4cac-946b-66ff584d7575
-t
-java:S1128",Remove this unused import 'Rooms.BasicRoom'.(Çêê½ÿÿÿÿÿ8‰óó«ò1J$8fd3c678-955d-4d45-81c9-ce398da996ab
+java:S3923L"[Remove this conditional structure or edit its code blocks so that they're not all the same.(€‡œÀ8İ“¤ò1J$213b7694-ce97-48ee-ac37-c0dea04299aa
+~	java:S125M"<This block of commented-out lines of code should be removed.(¬ø‰8İ“¤ò1J$7d38d6d3-1e07-47e9-8be3-303d88ac9099
+~	java:S125O"<This block of commented-out lines of code should be removed.(¤ñ‡È8İ“¤ò1J$05495881-3f85-4ca7-b7c9-f17bc58f31a1
+~	java:S125Z"<This block of commented-out lines of code should be removed.(Ä¨Ñ–8‚İ“¤ò1J$c42f5f07-1c2e-48b7-bbdf-bcd82a5288d5
+ƒ	java:S125^"<This block of commented-out lines of code should be removed.(êõûÿÿÿÿ8ƒİ“¤ò1J$96781977-a043-46f4-b5aa-19d7e0e46589
+ƒ	java:S125e"<This block of commented-out lines of code should be removed.(ÈùÃ¹úÿÿÿÿ8ƒİ“¤ò1J$bb9adcd1-638c-4a05-82d2-3ad9fbc67f17
+ƒ	java:S125g"<This block of commented-out lines of code should be removed.(¢ùè¸şÿÿÿÿ8ƒİ“¤ò1J$8462cb35-8427-4fd1-949b-75b01a64e15a

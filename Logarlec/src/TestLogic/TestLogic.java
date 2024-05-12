@@ -862,7 +862,7 @@ public class TestLogic {
                             result = fail;
                         }
                         else {
-                            transistor.place();
+                            transistor.placeTransistor();
                             result = success;
                             if(character.getItems().contains(transistor)){
                                 result = fail;

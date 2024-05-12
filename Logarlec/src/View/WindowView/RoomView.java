@@ -1,61 +1,76 @@
 package  View.WindowView;
 
 import Characters.Character;
-import Items.*;
+import Items.Item;
 import Rooms.*;
 import Game.Labyrinth;
-import View.ItemView.AirFreshenerView;
-import View.ItemView.TransistorView;
+import View.IView;
+import View.ItemView.ItemView;
+import com.sun.tools.javac.Main;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class RoomView implements ActionListener {
-    IRoom room;
-    AirFreshener airFreshener = new AirFreshener();
-    Transistor transistor = new Transistor();
+public class RoomView implements ActionListener, IView {
+    private IRoom room;
 
-    JPanel panel = new JPanel();
-    JLabel title;
-    JButton moveButton;
-    JButton stayButton;
+    private JPanel panel = new JPanel();
+    private JLabel title;
+    private JButton moveButton;
+    private JButton stayButton;
 
     //currentPLayer.getRoom() == room -> stayButton, amugymeg move
 
-    public RoomView(IRoom room, int i)
+    public RoomView(IRoom room)
     {
         this.room = room;
-        if(i == 0){
-            title = new JLabel("CurrentRoom");
-            moveButton = new JButton("Stay");
+        if(Labyrinth.currentPlayer.getRoom() == room){
+            title = new JLabel("Current Room");
         } else {
             title = new JLabel("DestinationRoom");
-            moveButton = new JButton("Move");
         }
         panel.setBackground(Color.LIGHT_GRAY);
         panel.setLayout(new GridLayout(4, 1, 0, 0));
-       // title = new JLabel("RoomView");
+
         title.setHorizontalAlignment(JLabel.CENTER);
         title.setVisible(true);
         panel.add(title);
 
         handlePlayerPanel();
         handleItemPanel();
+        initializeButtons();
+
+
+        panel.setVisible(true);
+    }
+
+    private void initializeButtons(){
+        stayButton = new JButton("Stay");
+        stayButton.setFocusable(false);
+        stayButton.setPreferredSize(new Dimension(80, 30));
+        stayButton.setVisible(false);
+        stayButton.addActionListener(this);
+
+        moveButton = new JButton("Move");
+        moveButton.setFocusable(false);
+        moveButton.setPreferredSize(new Dimension(80, 30));
+        moveButton.setVisible(false);
+        moveButton.addActionListener(this);
+
+        if(Labyrinth.currentPlayer.getRoom() == room){
+            stayButton.setVisible(true);
+            moveButton.setVisible(false);
+        } else {
+            stayButton.setVisible(false);
+            moveButton.setVisible(true);
+        }
 
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         buttonPanel.setBackground(Color.LIGHT_GRAY);
-
-
-        moveButton.setFocusable(false);
-        moveButton.setPreferredSize(new Dimension(80, 30));
-        moveButton.setVisible(true);
-        moveButton.addActionListener(this);
         buttonPanel.add(moveButton);
         panel.add(buttonPanel);
-
-        panel.setVisible(true);
     }
 
     private void handlePlayerPanel(){
@@ -76,24 +91,15 @@ public class RoomView implements ActionListener {
         JPanel itemListPanel = new JPanel();
         itemListPanel.setBackground(Color.LIGHT_GRAY);
         itemListPanel.setLayout(new BoxLayout(itemListPanel, BoxLayout.X_AXIS));
-        for( Item item : room.getItems())
+        for(Item item : room.getItems())
         {
-            if( item instanceof AirFreshener)
-            {
-                AirFreshenerView airFreshenerView = new AirFreshenerView(airFreshener);
-                itemListPanel.add(airFreshenerView.getPanel());
-            } else if( item instanceof Transistor)
-            {
-                TransistorView transistorView = new TransistorView(transistor);
-                itemListPanel.add(transistorView.getPickItemPanel());
-            }
-            itemListPanel.setLayout(new FlowLayout(FlowLayout.LEFT, 10, 10));
+            itemListPanel.add(MainWindow.viewsByObjects.get(item).getPanel());
         }
         JScrollPane scrollPane = new JScrollPane(itemListPanel);
         panel.add(scrollPane);
     }
 
-    public void UpdateRoom(IRoom room)
+    public void setRoom(IRoom room)
     {
         this.room = room;
 
@@ -120,4 +126,24 @@ public class RoomView implements ActionListener {
             Labyrinth.currentPlayer.setMoveButtonClicked(true);
         }
     }
+
+    @Override
+    public void update() {
+        panel.removeAll();
+        if(Labyrinth.currentPlayer.getRoom() == room){
+            stayButton.setVisible(true);
+            moveButton.setVisible(false);
+        } else {
+            stayButton.setVisible(false);
+            moveButton.setVisible(true);
+        }
+        handleItemPanel();
+        handlePlayerPanel();
+        initializeButtons();
+    }
+
+    public JPanel getPanel() {
+        return panel;
+    }
+
 }

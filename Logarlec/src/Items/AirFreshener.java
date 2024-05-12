@@ -18,6 +18,7 @@ public class AirFreshener extends Item {
     /**
      * This method is used to clean the current room from poison.
      */
+    @Override
     public IRoom unToxicateRoom(){
         System.out.println("AirFreshener used | AirFreshener: unToxicateRoom()");
         return owner.getRoom().unToxicate();

@@ -38,7 +38,8 @@ public class Transistor extends Item{
         return placeLocation;
     }
 
-    public void place(){
+    @Override
+    public void placeTransistor(){
         if(!isTurnedOn){
             //System.out.println("Transistor is not active: Cannot place | Transistor: place()");
             return;

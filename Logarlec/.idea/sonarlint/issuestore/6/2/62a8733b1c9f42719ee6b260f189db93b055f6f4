@@ -12,5 +12,3 @@ m	java:S106i"+Replace this use of System.out by a logger.(ã•ùÀ8ªò÷¡ó1J$972a51
 m	java:S106"+Replace this use of System.out by a logger.(¨ŞÛA8¬ò÷¡ó1J$35a12752-49a6-413b-b6d8-f2aa013bfeed
 …
 java:S1126›"AReplace this if-then-else statement by a single return statement.(­ŒÇõ8­ò÷¡ó1J$23ffdcc4-846c-4bda-8f31-350a41d06fc9
-t
-java:S1128",Remove this unused import 'Rooms.BasicRoom'.(Çêê½ÿÿÿÿÿ8®ò÷¡ó1J$1d12cc83-9260-4e63-b619-52f72533308d

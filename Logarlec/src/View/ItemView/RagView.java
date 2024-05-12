@@ -7,69 +7,32 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class RagView implements ActionListener {
-    Rag rag;
+public class RagView extends ItemView {
 
-    JPanel panel = new JPanel();
+    ImageIcon defIcon = new ImageIcon("Icons/rag.png");;
+    ImageIcon activeIcon = new ImageIcon("Icons/ragactive.png");;
 
-    JLabel label;
-
-    ImageIcon defIcon;
-    ImageIcon activeIcon;
-
-    JButton pickButton;
-    JButton dropButton;
 
     public RagView(Rag r) {
-        rag = r;
-
-        panel.setBackground(Color.LIGHT_GRAY);
-        panel.setPreferredSize(new Dimension(200, 60));
-
-        defIcon = new ImageIcon("Icons/rag.png");
-        activeIcon = new ImageIcon("Icons/ragactive.png");
-
-        label = new JLabel();
-        setLabel();
-        label.setVisible(false);
-        panel.add(label);
-
-
-        pickButton = new JButton("Pick");
-        pickButton.addActionListener(this);
-        pickButton.setFocusable(false);
-        pickButton.setVisible(false);
-        panel.add(pickButton);
-
-        dropButton = new JButton("Drop");
-        dropButton.addActionListener(this);
-        dropButton.setFocusable(false);
-        dropButton.setVisible(true);
-        panel.add(dropButton);
-
-        panel.setVisible(true);
+        super(r, new ImageIcon("Icons/rag.png"));
     }
-
-    public JPanel getPanel()
-    {
-        return panel;
-    }
-
-    public void setLabel() {
-        if (rag.getOwner() == null)
-            label.setIcon(defIcon);
-        else if (rag.getisActive())
-            label.setIcon(activeIcon);
-    }
-
 
     @Override
-    public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == pickButton) {
-            System.out.println("Picked");
-        }
-        if (e.getSource() == dropButton) {
-            System.out.println("Dropped");
+    void uniqueButtons() {
+        // No unique buttons
+    }
+
+    @Override
+    void setUniqueButtonsVisibility(boolean visibility) {
+        // No unique buttons
+    }
+
+    @Override
+    void updateItemIcon(boolean isActive) {
+        if(isActive){
+            label.setIcon(activeIcon);
+        } else {
+            label.setIcon(defIcon);
         }
     }
 }

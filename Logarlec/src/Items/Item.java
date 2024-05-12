@@ -3,10 +3,13 @@ package Items;
 import Characters.Character;
 import Characters.Student;
 import Characters.Instructor;
+import Controller.Notifiable;
+import Rooms.IRoom;
 
 public abstract class Item {
     protected Character owner;
     protected boolean isFake;
+    protected Notifiable controller;
 
     Item(){
         this.owner = null;
@@ -16,6 +19,10 @@ public abstract class Item {
     Item(boolean isFake){
         this.owner = null;
         this.isFake = isFake;
+    }
+
+    public void setController(Notifiable controller){
+        this.controller = controller;
     }
 
     /**
@@ -141,14 +148,30 @@ public abstract class Item {
     }
 
     public boolean isFake(){
-        if(isFake){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return isFake;
     }
 
+    /**
+     * This method is used to indicate that the item does not toxicate the room.
+     * The airfreshener overrides this method, hence it can unToxicate the room.
+     */
+    public IRoom unToxicateRoom(){
+        System.out.println("Item does not toxicate | Item: unToxicateRoom()");
+        return null;
+    }
+
+    /**
+     * This method is used to open the camembert.
+     * The Camembert overrides this method
+     */
+    public void open(){}
+
     public abstract boolean getisActive();
+
+    /**
+     * This method is used to place a transistor.
+     * The transistor overrides this method, hence it can be placed in a room.
+     */
+    public void placeTransistor(){}
 
 }

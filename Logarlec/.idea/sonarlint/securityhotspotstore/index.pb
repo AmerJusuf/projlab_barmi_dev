@@ -261,3 +261,17 @@ L
 src/View/WindowView/Map.java,9\b\9bb9a08f08d0ea99787577fbd82aceee3b121373
 T
 $src/View/ItemView/CamembertView.java,8\a\8ad2642c6a67e0853af8b60b4f105362e885d744
+O
+src/View/ItemView/ItemView.java,c\6\c669b7f23d29c03ed77f5353608f5c98fd3ca01f
+C
+src/View/IView.java,a\3\a31ada7909c396c3cd9b104122ac3abf30723f16
+O
+src/View/ItemView/BeerView.java,4\8\488ef2fc2fcc4bbbda6997c31f4c22f4dcc3ebc2
+S
+#src/View/ItemView/LogarlecView.java,5\e\5efd6c12048b3b278ff685b468a791dad779b86b
+O
+src/View/ItemView/TVSZView.java,4\d\4da57ec52ee9771e1339b6922f71cf7c0329d021
+N
+src/Controller/Controller.java,8\4\843f8be76b6a227716374e2d5b795a714de3d8ad
+N
+src/Controller/Notifiable.java,b\7\b712d27855a7f03a2e8962e36d4de1e991637326
