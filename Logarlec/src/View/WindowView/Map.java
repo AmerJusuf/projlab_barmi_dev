@@ -4,6 +4,7 @@ import Characters.Student;
 import Controller.Notifiable;
 import Game.Labyrinth;
 import Rooms.IRoom;
+import TestLogic.TestLogic;
 import View.CharacterView.StudentView;
 import View.IView;
 
@@ -14,6 +15,7 @@ import java.awt.geom.Path2D;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Map extends JPanel implements IView {
     private Labyrinth labyrinth;
@@ -149,5 +151,12 @@ int bottomBorder = 60;
     @Override
     public JLabel getLabel() {
         return null;
+    }
+
+    public void loadMap(String fileName){
+        if(fileName == null){
+            fileName = "default.map";
+        }
+        labyrinth = TestLogic.getAndLoadLabyrinth(fileName);
     }
 }

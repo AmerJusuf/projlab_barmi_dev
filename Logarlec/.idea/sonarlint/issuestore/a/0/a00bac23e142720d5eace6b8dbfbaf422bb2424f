@@ -1,17 +1,0 @@
-
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á©ã°8ı¢©»ö1J$2ebd4682-fe1c-46fb-9e7d-5702661d5a82
-d
-java:S1116"Remove this empty statement.(ƒÜÂ§ÿÿÿÿÿ8£©»ö1J$6e80794c-6de9-43b2-935b-78bd340926c4
-d
-java:S1116"Remove this empty statement.(ÊÕ—»úÿÿÿÿ8£©»ö1J$5cb58b90-9f63-4c57-a1d8-b8617a3bf845
-d
-java:S1116"Remove this empty statement.(—ñ¤‰øÿÿÿÿ8£©»ö1J$99d4e270-f891-4e4e-abb3-1ab17816205f
-l	java:S106%"+Replace this use of System.out by a logger.(î¶‰8‘£©»ö1J$4dab62c3-8a88-404a-a7d3-48d213485e68
-r	java:S106)"+Replace this use of System.out by a logger.(¹‡Ë˜ıÿÿÿÿ8“£©»ö1J$93a29f64-eeb0-4732-a26a-ad06dc327b2a
-z
-java:S1135*"2Complete the task associated to this TODO comment.(“ô»èıÿÿÿÿ8æØª»ö1J$b6c5edcc-f913-466e-9494-8ecc7c3abc28
-m	java:S106."+Replace this use of System.out by a logger.(ï¢¬Ô8—£©»ö1J$ce5c08fe-a2e7-4781-acd9-3f459c697e39
-B
-java:S1128"%Remove this unused import 'java.awt'.(ï´µ©8Ÿí»÷1
-W
-java:S1128	":Remove this unused import 'java.awt.event.ActionListener'.(Ìä¹8Ÿí»÷1
