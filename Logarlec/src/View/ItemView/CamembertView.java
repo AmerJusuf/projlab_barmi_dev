@@ -28,12 +28,14 @@ public class CamembertView extends ItemView {
         openButton = new JButton("Open");
         openButton.addActionListener(this);
         openButton.setFocusable(false);
+        openButton.setVisible(false);
         panel.add(openButton);
     }
 
     @Override
     void setUniqueButtonsVisibility(boolean visibility) {
         openButton.setVisible(visibility);
+        panel.repaint();
     }
 
     public void updateItemIcon(boolean isActive) {

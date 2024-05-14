@@ -62,8 +62,7 @@ public class MainWindow extends JFrame {
         gbc.gridy = 1;
 
 
-        RoomView roomSrc = new RoomView(Labyrinth.currentPlayer.getRoom());
-        roomSrc.getPanel().setPreferredSize(new Dimension(350, 200));
+
         gbcRooms.gridx = 0;
         gbcRooms.gridy = 0;
         gbcRooms.gridwidth = 1;
@@ -71,14 +70,13 @@ public class MainWindow extends JFrame {
         gbcRooms.weightx = 0.5;
         gbcRooms.weighty = 1.0;
         gbcRooms.insets = new Insets(0, 0, 0, 10);
-        gbcRooms.fill = GridBagConstraints.BOTH;roomsPanel.add(roomSrc.getPanel(), gbcRooms);
-
+        gbcRooms.fill = GridBagConstraints.BOTH;
+        RoomView roomSrc = new RoomView(Labyrinth.currentPlayer.getRoom());
+        roomSrc.getPanel().setPreferredSize(new Dimension(350, 200));
+        roomsPanel.add(roomSrc.getPanel(), gbcRooms);
         //roomV.panel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 40));
 
 
-
-        IRoom room2 = new BasicRoom(4);
-        RoomView roomV2 = new RoomView(room2);
 
         gbcRooms.gridx = 1;
         gbcRooms.gridy = 0;

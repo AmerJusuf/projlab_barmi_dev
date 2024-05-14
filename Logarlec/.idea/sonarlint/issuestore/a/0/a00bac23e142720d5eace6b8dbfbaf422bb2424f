@@ -1,13 +1,17 @@
 
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á©ã°8ı¢©»ö1J$5e53b1b4-3285-42ae-8354-132599da946d
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á©ã°8ı¢©»ö1J$dc4f7a54-91aa-4189-9c93-cd303f898b24
 d
-java:S1116"Remove this empty statement.(ƒÜÂ§ÿÿÿÿÿ8£©»ö1J$652daa64-fb49-4692-bbf4-295a101aa7c8
+java:S1116"Remove this empty statement.(ƒÜÂ§ÿÿÿÿÿ8£©»ö1J$8302614b-87f9-4ebe-9e7e-a45859e6156f
 d
-java:S1116"Remove this empty statement.(ÊÕ—»úÿÿÿÿ8£©»ö1J$1ade2fe2-717a-4df1-aa59-f019a9a3c000
+java:S1116"Remove this empty statement.(ÊÕ—»úÿÿÿÿ8£©»ö1J$5d450fb4-0f41-4254-983c-09e3edfcfaa3
 d
-java:S1116"Remove this empty statement.(—ñ¤‰øÿÿÿÿ8£©»ö1J$1bd4c328-ce40-4cc2-a60c-67a2fb7c8c70
-l	java:S106"+Replace this use of System.out by a logger.(î¶‰8‘£©»ö1J$440abd14-9d94-4bb2-af51-31e6314541bc
-r	java:S106#"+Replace this use of System.out by a logger.(¹‡Ë˜ıÿÿÿÿ8“£©»ö1J$1cfab9f9-0c5b-41ae-aedc-8fe0e20ab485
+java:S1116"Remove this empty statement.(—ñ¤‰øÿÿÿÿ8£©»ö1J$56e9a55b-69d0-4c48-885a-94e27f47a5b1
+l	java:S106"+Replace this use of System.out by a logger.(î¶‰8‘£©»ö1J$b4e0f18a-996c-4223-bbbb-4d208e48abb5
+r	java:S106#"+Replace this use of System.out by a logger.(¹‡Ë˜ıÿÿÿÿ8“£©»ö1J$874252d4-3423-49d5-8489-eec1d6b5bac7
 z
-java:S1135$"2Complete the task associated to this TODO comment.(“ô»èıÿÿÿÿ8æØª»ö1J$2b9587e5-d8a8-43f8-b8d0-4272a39cf65f
-m	java:S106("+Replace this use of System.out by a logger.(ï¢¬Ô8—£©»ö1J$c1f4cee6-d641-488f-ab5c-8717d9882a77
+java:S1135$"2Complete the task associated to this TODO comment.(“ô»èıÿÿÿÿ8æØª»ö1J$b2f41ec0-42d5-4b67-8f83-2ddaac163ab9
+m	java:S106("+Replace this use of System.out by a logger.(ï¢¬Ô8—£©»ö1J$5bf0164a-75b6-4057-a223-d961f675ded2
+h
+java:S1128"%Remove this unused import 'java.awt'.(ï´µ©8€‘Û·÷1J$d6fa3c91-bcf0-4666-a2ac-944bf4ec8cc1
+}
+java:S1128":Remove this unused import 'java.awt.event.ActionListener'.(Ìä¹8€‘Û·÷1J$9d9f3fe3-9dd6-4c6b-b968-c61c34322271

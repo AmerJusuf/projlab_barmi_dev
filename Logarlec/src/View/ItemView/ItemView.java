@@ -41,13 +41,30 @@ public abstract class ItemView implements IView, ActionListener {
 
         uniqueButtons();
 
-        if(item.getOwner() == null){
+//        if(item.getOwner() == null && Labyrinth.currentPlayer.getRoom().getItems().contains(item)){
+//            pickButton.setVisible(true);
+//        } else {
+//            dropButton.setVisible(true);
+//            setUniqueButtonsVisibility(true);
+//        }
+//        update();
+        if(item.getOwner() == null && Labyrinth.currentPlayer.getRoom().getItems().contains(item)){
             pickButton.setVisible(true);
-        } else {
+            dropButton.setVisible(false);
+            setUniqueButtonsVisibility(false);
+        } else if (item.getOwner() == null && !Labyrinth.currentPlayer.getRoom().getItems().contains(item)){
+            pickButton.setVisible(false);
+            dropButton.setVisible(false);
+            setUniqueButtonsVisibility(false);
+           // updateItemIcon(item.getisActive());
+        }else if(item.getOwner() != null){
+            pickButton.setVisible(false);
             dropButton.setVisible(true);
             setUniqueButtonsVisibility(true);
+           // updateItemIcon(item.getisActive());
         }
         panel.setVisible(true);
+
     }
 
     @Override
@@ -75,16 +92,22 @@ public abstract class ItemView implements IView, ActionListener {
 
     @Override
     public void update() {
-        if(item.getOwner() == null){
+        if(item.getOwner() == null && Labyrinth.currentPlayer.getRoom().getItems().contains(item)){
             pickButton.setVisible(true);
             dropButton.setVisible(false);
             setUniqueButtonsVisibility(false);
-        } else {
+        } else if (item.getOwner() == null && !Labyrinth.currentPlayer.getRoom().getItems().contains(item)){
+            pickButton.setVisible(false);
+            dropButton.setVisible(false);
+            setUniqueButtonsVisibility(false);
+            updateItemIcon(item.getisActive());
+        }else if(item.getOwner() != null){
             pickButton.setVisible(false);
             dropButton.setVisible(true);
             setUniqueButtonsVisibility(true);
             updateItemIcon(item.getisActive());
         }
+        panel.updateUI();
     }
 
     @Override

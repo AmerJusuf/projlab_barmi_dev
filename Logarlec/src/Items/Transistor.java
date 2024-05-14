@@ -12,6 +12,7 @@ public class Transistor extends Item{
         super(isFake);
         isTurnedOn = false;
         pairTransistor = null;
+        owner = null;
     }
 
     public Transistor() {

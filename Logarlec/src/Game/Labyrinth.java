@@ -14,6 +14,7 @@ import View.ItemView.*;
 import View.WindowView.MainWindow;
 import View.WindowView.Map;
 import View.WindowView.RoomNodeView;
+import View.WindowView.RoomView;
 import com.sun.tools.javac.Main;
 
 import java.util.ArrayList;
@@ -330,6 +331,7 @@ public class Labyrinth {
         MainWindow.viewsByObjects.put(room14, new RoomNodeView(room14, true ,false ,false));
 
         BasicRoom room15 = new BasicRoom(2);
+        RoomNodeView roomNodeView15 = new RoomNodeView(room15, false ,false ,false);
         MainWindow.viewsByObjects.put(room15, new RoomNodeView(room15, false ,false ,false));
 
         //Row4
@@ -346,25 +348,30 @@ public class Labyrinth {
         MainWindow.viewsByObjects.put(room19, new RoomNodeView(room19, false ,true ,false));
 
         BasicRoom room20 = new BasicRoom(2);
-        MainWindow.viewsByObjects.put(room20, new RoomNodeView(room20, false ,false ,false));
+        RoomNodeView roomNodeView20 = new RoomNodeView(room20, false ,false ,false);
+        MainWindow.viewsByObjects.put(room20, roomNodeView20);
 
         //Row5
         BasicRoom room21 = new BasicRoom(3);
-        MainWindow.viewsByObjects.put(room21, new RoomNodeView(room21, false ,false ,false));
+        RoomNodeView roomNodeView21 = new RoomNodeView(room21, false ,false ,false);
+        MainWindow.viewsByObjects.put(room21, roomNodeView21);
 
         BasicRoom room22 = new BasicRoom(4);
-        MainWindow.viewsByObjects.put(room22, new RoomNodeView(room22, false ,false ,false));
+        RoomNodeView roomNodeView22 = new RoomNodeView(room22, false ,false ,false);
+        MainWindow.viewsByObjects.put(room22, roomNodeView22);
 
         CursedRoomDecorator room23 = new CursedRoomDecorator(new BasicRoom(5));
-        MainWindow.viewsByObjects.put(room23, new RoomNodeView(room23, false ,true ,false));
+        RoomNodeView roomNodeView23 = new RoomNodeView(room23, false ,true ,false);
+        MainWindow.viewsByObjects.put(room23, roomNodeView23);
 
         BasicRoom room24 = new BasicRoom(3);
-        MainWindow.viewsByObjects.put(room24, new RoomNodeView(room24, false ,false ,false));
+        RoomNodeView roomNodeView24 = new RoomNodeView(room24, false ,false ,false);
+        MainWindow.viewsByObjects.put(room24, roomNodeView24);
 
         PoisonedRoomDecorator room25 = new PoisonedRoomDecorator(new BasicRoom(2));
         RoomNodeView roomNodeView25 = new RoomNodeView(room25, true ,false ,false);
         MainWindow.viewsByObjects.put(room25, roomNodeView25);
-        RoomNodeView.lastClickedRoom = roomNodeView25;
+        RoomNodeView.lastClickedRoom = roomNodeView15;
 
         //Adding neighbours
         room1.addNeighbour(room6);
@@ -540,43 +547,50 @@ public class Labyrinth {
                     case 0: {
                         AirFreshener airFreshener = new AirFreshener();
                         room.addItem(airFreshener);
-                        MainWindow.viewsByObjects.put(airFreshener, new AirFreshenerView(airFreshener));
+                        AirFreshenerView airFreshenerView = new AirFreshenerView(airFreshener);
+                        MainWindow.viewsByObjects.put(airFreshener, airFreshenerView);
                         break;
                     }
                     case 1: {
                         Beer beer = new Beer(isFake);
                         room.addItem(beer);
-                        MainWindow.viewsByObjects.put(beer, new BeerView(beer));
+                        BeerView beerView = new BeerView(beer);
+                        MainWindow.viewsByObjects.put(beer, beerView);
                         break;
                     }
                     case 2: {
                         Camembert camembert = new Camembert(isFake);
                         room.addItem(camembert);
-                        MainWindow.viewsByObjects.put(camembert, new CamembertView(camembert));
+                        CamembertView camembertView = new CamembertView(camembert);
+                        MainWindow.viewsByObjects.put(camembert, camembertView);
                         break;
                     }
                     case 3: {
                         FFP2 ffp2 = new FFP2(isFake);
                         room.addItem(ffp2);
-                        MainWindow.viewsByObjects.put(ffp2, new FFP2View(ffp2));
+                        FFP2View ffp2View = new FFP2View(ffp2);
+                        MainWindow.viewsByObjects.put(ffp2, ffp2View);
                         break;
                     }
                     case 4: {
                         Rag rag = new Rag(isFake);
                         room.addItem(rag);
-                        MainWindow.viewsByObjects.put(rag, new RagView(rag));
+                        RagView ragView = new RagView(rag);
+                        MainWindow.viewsByObjects.put(rag, ragView);
                         break;
                     }
                     case 5: {
                         Transistor transistor = new Transistor(isFake);
                         room.addItem(transistor);
-                        MainWindow.viewsByObjects.put(transistor, new TransistorView(transistor));
+                        TransistorView transistorView = new TransistorView(transistor);
+                        MainWindow.viewsByObjects.put(transistor, transistorView);
                         break;
                     }
                     case 6: {
                         TVSZ tvsz = new TVSZ(isFake,3);
                         room.addItem(tvsz);
-                        MainWindow.viewsByObjects.put(tvsz, new TVSZView(tvsz));
+                        TVSZView tvszView = new TVSZView(tvsz);
+                        MainWindow.viewsByObjects.put(tvsz, tvszView);
                     }
                 }
             }

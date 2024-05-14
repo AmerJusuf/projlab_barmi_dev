@@ -36,6 +36,7 @@ public class AirFreshenerView extends ItemView {
     @Override
     void setUniqueButtonsVisibility(boolean visibility) {
         useButton.setVisible(visibility);
+
     }
 
     public void updateItemIcon(boolean isActive) {

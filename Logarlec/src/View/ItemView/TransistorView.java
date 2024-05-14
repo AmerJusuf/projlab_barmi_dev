@@ -47,16 +47,19 @@ public class TransistorView extends ItemView {
         activate = new JButton("Activate");
         activate.addActionListener(this);
         activate.setFocusable(false);
+        activate.setVisible(false);
         panel.add(activate);
 
         pair = new JButton("Pair");
         pair.addActionListener(this);
         pair.setFocusable(false);
+        pair.setVisible(false);
         panel.add(pair);
 
         place = new JButton("Place");
         place.addActionListener(this);
         place.setFocusable(false);
+        place.setVisible(false);
         panel.add(place);
     }
 

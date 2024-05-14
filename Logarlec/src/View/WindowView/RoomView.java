@@ -30,6 +30,9 @@ public class RoomView implements ActionListener, IView {
         } else {
             title = new JLabel("DestinationRoom");
         }
+//        if(RoomNodeView.lastClickedRoom.getRoom() == room){
+//            title = new JLabel("DestinationRoom");
+//        }
         panel.setBackground(Color.LIGHT_GRAY);
         panel.setLayout(new GridLayout(4, 1, 0, 0));
 
