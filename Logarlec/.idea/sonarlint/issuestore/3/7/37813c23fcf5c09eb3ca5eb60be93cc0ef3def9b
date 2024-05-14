@@ -1,7 +1,7 @@
 
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á©ã°8µ†õ¹ö1J$09b6f623-2c08-487f-b037-fd8d266a2052
-r	java:S106"+Replace this use of System.out by a logger.(®¾áµúÿÿÿÿ8¼†õ¹ö1J$8d55ba04-009e-4e94-bd4d-6d754f913276
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(á©ã°8µ†õ¹ö1J$09b738ce-b001-42df-97de-c242bbbf2d91
+r	java:S106"+Replace this use of System.out by a logger.(®¾áµúÿÿÿÿ8¼†õ¹ö1J$97c64ea6-6a9c-4659-8a87-4f699e53bf68
 h
-java:S1128"%Remove this unused import 'java.awt'.(ï´µ©8ÕõÏåö1J$a198f4b7-cc2c-4fe2-9248-75ff23e3ffc4
+java:S1128"%Remove this unused import 'java.awt'.(ï´µ©8ÕõÏåö1J$952c035a-7d49-48af-8af4-4179d94bfda1
 }
-java:S1128":Remove this unused import 'java.awt.event.ActionListener'.(Ìä¹8×õÏåö1J$7f78c296-0a4c-4cd3-9196-0b463b233e02
+java:S1128":Remove this unused import 'java.awt.event.ActionListener'.(Ìä¹8×õÏåö1J$1a5a5ebd-2415-4a9b-a971-0073dc73bcd8

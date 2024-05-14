@@ -81,6 +81,7 @@ public class Transistor extends Item{
             //System.out.println("Switch transistor OFF -> ON | Transistor: switchTransistor()");
         }
         isTurnedOn = !isTurnedOn;
+        controller.notifyModelChanged();
     }
 
     public void setIsTurnedOn(boolean isTurnedOn){
@@ -95,6 +96,7 @@ public class Transistor extends Item{
         } else{
             //System.out.println("Cannot pair: atleast one of them is already paired | Transistor: pairTransistor()");
         }
+        controller.notifyModelChanged();
     }
 
     @Override

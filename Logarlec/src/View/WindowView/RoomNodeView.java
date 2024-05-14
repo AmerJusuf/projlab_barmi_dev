@@ -26,7 +26,8 @@ public class RoomNodeView extends JPanel implements IView {
 
     public static RoomNodeView lastClickedRoom = null;
 
-    public RoomNodeView(IRoom room, boolean poisoned, boolean cursed, boolean sticky) {
+
+    public RoomNodeView(IRoom room, boolean poisoned, boolean cursed, boolean sticky, Notifiable control) {
         this.room = room;
         this.setPreferredSize(new Dimension(100, 100)); // Adjust size as needed
         this.setBackground(Color.WHITE);
@@ -34,7 +35,7 @@ public class RoomNodeView extends JPanel implements IView {
         this.poisoned = poisoned;
         this.cursed = cursed;
         this.sticky = sticky;
-
+        this.controller = control;
 
         // Load circle image
         circleImage = new ImageIcon("Icons/basicroom.png").getImage();
@@ -42,6 +43,7 @@ public class RoomNodeView extends JPanel implements IView {
         this.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                System.out.println("Clicked");
                 lastClickedRoom = RoomNodeView.this;
                 controller.notifyModelChanged();
             }

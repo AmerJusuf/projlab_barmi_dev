@@ -1,5 +1,6 @@
 package View.ItemView;
 
+import Game.Labyrinth;
 import Items.Camembert;
 
 import javax.swing.*;
@@ -18,7 +19,12 @@ public class CamembertView extends ItemView {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == openButton) {
+        if (e.getSource() == pickButton) {
+            Labyrinth.currentPlayer.pickItem(item);
+        } else if (e.getSource() == dropButton) {
+            Labyrinth.currentPlayer.dropItem(item);
+        }
+        else if (e.getSource() == openButton) {
             item.open();
         }
     }

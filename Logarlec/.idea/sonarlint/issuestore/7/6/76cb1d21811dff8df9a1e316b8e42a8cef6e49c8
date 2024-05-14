@@ -1,24 +1,20 @@
 
-t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.( Ë½Íûÿÿÿÿ
-E
-java:S2387"*"title" is the name of a field in "Frame".(ñÕúŒşÿÿÿÿ
-^
-java:S3252"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(ºÀœx
-Y
-java:S1854H">Remove this useless assignment to local variable "mainWindow".(ÿ²çÁúÿÿÿÿ
-[
-java:S1854L"ERemove this useless assignment to local variable "descriptionWindow".(×ÚÄõ
-W
-java:S1854P"ARemove this useless assignment to local variable "controlWindow".(æ À›
-@	java:S106G"+Replace this use of System.out by a logger.(ĞÀ…Ô
-J
-java:S1481H"/Remove this unused "mainWindow" local variable.(ÿ²çÁúÿÿÿÿ
-@	java:S106K"+Replace this use of System.out by a logger.(ƒÜ©Å
-L
-java:S1481L"6Remove this unused "descriptionWindow" local variable.(×ÚÄõ
-V	java:S125M"<This block of commented-out lines of code should be removed.(Á’ëØúÿÿÿÿ
-@	java:S106O"+Replace this use of System.out by a logger.(Çß¹»
-H
-java:S1481P"2Remove this unused "controlWindow" local variable.(æ À›
-V	java:S125Q"<This block of commented-out lines of code should be removed.(Á’ëØúÿÿÿÿ
-E	java:S106S"+Replace this use of System.out by a logger.(¬¶ÏÁúÿÿÿÿ
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.( Ë½Íûÿÿÿÿ8èˆßº÷1J$6b10df98-4799-4c94-845c-a59e232bd444
+r
+java:S2387"*"title" is the name of a field in "Frame".(ñÕúŒşÿÿÿÿ8ïˆßº÷1J$1b4ce1c5-4593-41cc-a427-71ce62191272
+‹
+java:S3252"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(ºÀœx8òˆßº÷1J$0d6f944a-d674-4588-9eb0-070813a4adec
+ˆ
+java:S1854Q"ERemove this useless assignment to local variable "descriptionWindow".(×ÚÄõ8öˆßº÷1J$2f7b9268-d172-48ad-accc-1b48cff8d6f7
+„
+java:S1854U"ARemove this useless assignment to local variable "controlWindow".(æ À›8öˆßº÷1J$7ce9f280-abab-4c02-b8cf-d7b3b8fc64ef
+m	java:S106I"+Replace this use of System.out by a logger.(ĞÀ…Ô8÷ˆßº÷1J$9f002df7-8a8d-463c-8bcc-5db059a93867
+m	java:S106P"+Replace this use of System.out by a logger.(ƒÜ©Å8øˆßº÷1J$287c9796-859d-44ae-b12a-5d57622b9ccb
+y
+java:S1481Q"6Remove this unused "descriptionWindow" local variable.(×ÚÄõ8øˆßº÷1J$6d5f1637-cc31-49bc-81c9-7d3a8e7bc5d2
+ƒ	java:S125R"<This block of commented-out lines of code should be removed.(Á’ëØúÿÿÿÿ8øˆßº÷1J$f8d57bab-39a7-4c90-a37e-6d572699f0dc
+m	java:S106T"+Replace this use of System.out by a logger.(Çß¹»8ùˆßº÷1J$c7661c1a-0d29-4ad6-93e9-1d63d09fad09
+u
+java:S1481U"2Remove this unused "controlWindow" local variable.(æ À›8ùˆßº÷1J$a75471e5-4b75-4dc4-a54d-c47ad1b95a49
+ƒ	java:S125V"<This block of commented-out lines of code should be removed.(Á’ëØúÿÿÿÿ8ùˆßº÷1J$b5fc87c4-0535-428a-8a44-5b74e5f67a70
+r	java:S106X"+Replace this use of System.out by a logger.(¬¶ÏÁúÿÿÿÿ8ùˆßº÷1J$ab343273-43b9-41f8-8b12-be73803d5219

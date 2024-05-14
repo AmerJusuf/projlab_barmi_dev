@@ -1,6 +1,7 @@
 package View.WindowView;
 
 import Characters.Student;
+import Controller.Notifiable;
 import Game.Labyrinth;
 import Rooms.IRoom;
 import View.CharacterView.StudentView;
@@ -24,14 +25,16 @@ int topBorder = 150;
 int bottomBorder = 60;
 
 
-    public Map() {
+
+    public Map(Notifiable controller) {
         List<Student> students = new ArrayList<>();
         Student st = new Student();
         Student st2 = new Student();
         Student st3 = new Student();
         Student st4 = new Student();
         students = List.of(st, st2, st3, st4);
-        labyrinth = new Labyrinth(students, this);
+        labyrinth = new Labyrinth(students, this, controller);
+        labyrinth.setControllerToItems();
 //        if(Labyrinth.currentPlayer == null) {
 //            Labyrinth.currentPlayer = st;
 //        }
@@ -53,7 +56,6 @@ int bottomBorder = 60;
         super.paintComponent(g);
 
         nodes = new ArrayList<>();
-        System.out.println("nUMBER OF ROOMS" + labyrinth.getRooms().size());
         for (IRoom room : labyrinth.getRooms()) {
             RoomNodeView roomNodeView = (RoomNodeView) MainWindow.viewsByObjects.get(room);
             nodes.add(roomNodeView);

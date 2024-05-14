@@ -13,9 +13,9 @@ public abstract class ItemView implements IView, ActionListener {
     protected JPanel panel;
     protected JLabel label;
 
-    private JButton pickButton;
+    protected JButton pickButton;
 
-    private JButton dropButton;
+    protected JButton dropButton;
 
     public ItemView(Item item, ImageIcon icon) {
         this.item = item;
@@ -70,9 +70,9 @@ public abstract class ItemView implements IView, ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == pickButton) {
-            item.pickedByStudent(Labyrinth.currentPlayer);
+            Labyrinth.currentPlayer.pickItem(item);
         } else if (e.getSource() == dropButton) {
-            item.drop();
+            Labyrinth.currentPlayer.dropItem(item);
         }
     }
 
