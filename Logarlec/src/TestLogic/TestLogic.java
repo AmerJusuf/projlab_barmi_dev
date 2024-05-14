@@ -119,11 +119,7 @@ public class TestLogic {
     }
 
     public static void processCommandsFromFile(String commandOrFileName) {
-        if (!writeToFile) {
-            String output = processCommand(commandOrFileName);
-            System.out.println(output); // Print output to console
-        }
-        else if(readMap){
+        if(readMap){
             System.out.println("Reading map from file: " + commandOrFileName);
             String directory = System.getProperty("user.dir");
 
@@ -148,6 +144,10 @@ public class TestLogic {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+        }
+        else if (!writeToFile) {
+            String output = processCommand(commandOrFileName);
+            System.out.println(output); // Print output to console
         }
         else {
             System.out.println("Processing commands from file: " + commandOrFileName);

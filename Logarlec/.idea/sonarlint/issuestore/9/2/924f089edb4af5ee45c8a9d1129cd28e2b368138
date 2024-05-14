@@ -1,11 +1,11 @@
 
 V
-java:S1220""Move this file to a named package.J$bb8d3916-1551-40f4-a1fa-0d823428065f
+java:S1220""Move this file to a named package.J$6ce70aa0-614d-444a-ac55-b27c1546ec0e
 {
-java:S1854"8Remove this useless assignment to local variable "menu".(”œ¨ê8•ÛÝ•÷1J$84a4364c-863d-439e-b579-001a63ac21f4
+java:S1854"8Remove this useless assignment to local variable "menu".(”œ¨ê8–‡“»÷1J$1f1c5af4-9c0a-4369-9f65-481512f6c100
 l
-java:S1481")Remove this unused "menu" local variable.(”œ¨ê8˜ÛÝ•÷1J$aad0e764-4ca5-4b57-b063-06096c11bd4d
-X	java:S125
-"<This block of commented-out lines of code should be removed.(‹Éÿ¼8Ö²«¹÷1
+java:S1481")Remove this unused "menu" local variable.(”œ¨ê8š‡“»÷1J$1cabd1e7-ed21-4c48-b931-e07e7a10d2fb
+~	java:S125
+"<This block of commented-out lines of code should be removed.(‹Éÿ¼8š‡“»÷1J$72fa8225-2a32-426c-a2f1-117caef0da8f
 ~
-java:S1479"BReduce the number of non-empty switch cases from 38 to at most 30.(’ÎÁÄJ$5cbe9d61-9bb6-4796-a7a9-007213500387
+java:S1479"BReduce the number of non-empty switch cases from 38 to at most 30.(’ÎÁÄJ$333a7a1d-ca84-437e-951f-f48db31f507e

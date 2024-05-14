@@ -18,26 +18,31 @@ import java.util.Scanner;
 
 public class Map extends JPanel implements IView {
     private Labyrinth labyrinth;
+    private boolean useBakedInData = false;
 
     List<RoomNodeView> nodes;
-int borderToLeft = 150;
-int borderToRight = 60;
-int topBorder = 150;
-int bottomBorder = 60;
+    int borderToLeft = 150;
+    int borderToRight = 60;
+    int topBorder = 150;
+    int bottomBorder = 60;
 
 
     public Map() {
-        List<Student> students = new ArrayList<>();
-        Student st = new Student();
-        Student st2 = new Student();
-        Student st3 = new Student();
-        Student st4 = new Student();
-        students = List.of(st, st2, st3, st4);
-        labyrinth = new Labyrinth(students, this);
+        if(useBakedInData) {
+            List<Student> students = new ArrayList<>();
+            Student st = new Student();
+            Student st2 = new Student();
+            Student st3 = new Student();
+            Student st4 = new Student();
+            students = List.of(st, st2, st3, st4);
+            labyrinth = new Labyrinth(students, this);
 //        if(Labyrinth.currentPlayer == null) {
 //            Labyrinth.currentPlayer = st;
 //        }
-
+        }
+        else{
+            loadMap("test1");
+        }
 
         setPreferredSize(new Dimension(500, 500));
         setBackground(Color.LIGHT_GRAY);
@@ -156,5 +161,6 @@ int bottomBorder = 60;
             fileName = "default.map";
         }
         labyrinth = TestLogic.getAndLoadLabyrinth(fileName);
+        labyrinth.setMap(this);
     }
 }

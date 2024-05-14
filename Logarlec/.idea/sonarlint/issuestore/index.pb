@@ -281,3 +281,13 @@ Y
 )src/View/CharacterView/CharacterView.java,7\9\79a2a1b11a3a1fbd302b7fb21763cef62cacbc73
 Z
 *src/View/CharacterView/InstructorView.java,6\2\62dfe84bba067883cadc54a6007d7935e25bb720
+?
+Files/Act/0.txt,a\6\a64effc6a4b7da22fe0baa0a384a0199d8d2cf5b
+@
+Files/Act/14.txt,a\6\a6730316bdf574a026412dc4617a9124c663dcb1
+D
+Files/Maps/test1.txt,3\1\3112d83b809bb80eb9a3644a6a16ef9494dc9a7b
+S
+#.idea/sonarlint/issuestore/index.pb,9\f\9fe84ebb15faf917b7def6236dba604453cc61e0
+]
+-.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
