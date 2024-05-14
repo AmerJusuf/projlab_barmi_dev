@@ -1,19 +1,19 @@
 
 Ÿ
-java:S1104p"]Make moveButtonClicked a static final constant or non-public and provide accessors if needed.(‘ïº	8ì»×ãö1J$0dd63ae0-1057-4b5d-b6cd-46c98da5156b
+java:S1104s"]Make moveButtonClicked a static final constant or non-public and provide accessors if needed.(‘ïº	8ì»×ãö1J$d7b87a58-87aa-4cad-80d5-6aff6b0a1c51
 y
-java:S1444p"7Make this "public static moveButtonClicked" field final(‘ïº	8í»×ãö1J$3cc2c2c4-def0-4b61-8f12-f7076f7cd4ed
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8ï»×ãö1J$ad62197b-cb26-4323-b765-776103c3aebb
-X	java:S125!"<This block of commented-out lines of code should be removed.(Íï¦“8®Û‡¸÷1
+java:S1444s"7Make this "public static moveButtonClicked" field final(‘ïº	8í»×ãö1J$d9c52281-8012-4f8a-9512-3af4717ef056
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8ï»×ãö1J$a14fadcf-ab61-41e0-812a-4359b1679777
+~	java:S125!"<This block of commented-out lines of code should be removed.(Íï¦“8®Û‡¸÷1J$d1bde7a1-81b9-49e2-b32a-e151ddd86226
 „
-java:S3252'"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ó±æÉ8…¼×ãö1J$9bea09a4-f5a4-48fe-987a-ca222b569817
+java:S3252'"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ó±æÉ8…¼×ãö1J$dfac0d10-8247-4138-b617-dde47dab85ae
 ‡
-java:S1124p"EReorder the modifiers to comply with the Java Language Specification.(‘ïº	8¼×ãö1J$1fca0ec9-e844-4384-9aa7-96ff9ec2bf5e
+java:S1124s"EReorder the modifiers to comply with the Java Language Specification.(‘ïº	8¼×ãö1J$936e8048-bec1-4f9c-8abd-d16d41b08700
 ˆ
-java:S1124r"EReorder the modifiers to comply with the Java Language Specification.(ÞäÅÖ8Ž¼×ãö1J$3c9136da-c36c-44f9-bf9e-9b76c9efda9b
-r	java:S106y"+Replace this use of System.out by a logger.(Û¯þÿÿÿÿ8¼×ãö1J$32c280fe-86f1-41ba-9b2e-50301b9d3137
+java:S1124u"EReorder the modifiers to comply with the Java Language Specification.(ÞäÅÖ8Ž¼×ãö1J$e52870c5-4c60-4a2e-81c7-f230d527e4b5
+r	java:S106|"+Replace this use of System.out by a logger.(Û¯þÿÿÿÿ8¼×ãö1J$1c20ca8f-6ae7-4522-bea4-2a3714316d21
 ~
-java:S2696{"6Make the enclosing method "static" or remove this set.(²íô þÿÿÿÿ8¼×ãö1J$c3e882a4-835c-4aef-b906-2275c7204197
-n	java:S106€"+Replace this use of System.out by a logger.(ÒÑŠ8¼×ãö1J$969e4bc0-5ea1-417d-af4f-430a64996fb0
-_
-java:S1128"=Remove this unused import 'View.CharacterView.CharacterView'.(Á–ðÕÿÿÿÿÿ8»Û‡¸÷1
+java:S2696~"6Make the enclosing method "static" or remove this set.(²íô þÿÿÿÿ8¼×ãö1J$59ccbf7f-1731-49ad-8b50-d47f3919290a
+n	java:S106ƒ"+Replace this use of System.out by a logger.(ÒÑŠ8¼×ãö1J$ae7d846c-4a99-4279-942e-ca7ad9b0e3fe
+…
+java:S1128"=Remove this unused import 'View.CharacterView.CharacterView'.(Á–ðÕÿÿÿÿÿ8îù¼º÷1J$4c4a950c-cbd8-4961-980d-07b8a9a67dbf

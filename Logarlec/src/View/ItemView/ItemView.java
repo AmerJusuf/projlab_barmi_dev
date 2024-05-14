@@ -21,7 +21,7 @@ public abstract class ItemView implements IView, ActionListener {
         this.item = item;
 
         panel = new JPanel();
-
+        panel.setBackground(java.awt.Color.LIGHT_GRAY);
         label = new JLabel();
         label.setIcon(icon);
         label.setVisible(true);

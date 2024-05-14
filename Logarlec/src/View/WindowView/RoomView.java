@@ -55,11 +55,13 @@ public class RoomView implements ActionListener, IView {
         stayButton.setVisible(false);
         stayButton.addActionListener(this);
 
+
         moveButton = new JButton("Move");
         moveButton.setFocusable(false);
         moveButton.setPreferredSize(new Dimension(80, 30));
         moveButton.setVisible(false);
         moveButton.addActionListener(this);
+
 
         if(Labyrinth.currentPlayer.getRoom() == room){
             stayButton.setVisible(true);
@@ -72,6 +74,7 @@ public class RoomView implements ActionListener, IView {
         JPanel buttonPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         buttonPanel.setBackground(Color.LIGHT_GRAY);
         buttonPanel.add(moveButton);
+        buttonPanel.add(stayButton);
         panel.add(buttonPanel);
     }
 
