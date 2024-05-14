@@ -29,6 +29,7 @@ public class Rag extends TemporaryItem {
         for(Character c: characters){
             c.disableInstructor();
         }
+        controller.notifyModelChanged();
         return true;
     }
 }

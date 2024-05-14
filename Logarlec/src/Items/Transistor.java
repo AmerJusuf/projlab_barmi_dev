@@ -70,6 +70,7 @@ public class Transistor extends Item{
         } else{
             //System.out.println("Cannot place: Transistor does not have a pair | Transistor: place()");
         }
+        controller.notifyModelChanged();
     }
 
     public void switchTransistor() {
@@ -104,6 +105,7 @@ public class Transistor extends Item{
             owner.getRoom().addItem(this);
             removeOwner();
         }
+        controller.notifyModelChanged();
     }
 
     @Override

@@ -4,18 +4,13 @@ import Characters.Instructor;
 
 import javax.swing.*;
 
-public class InstructorView {
+public class InstructorView extends CharacterView{
     Instructor instructor;
-
-    JPanel panel = new JPanel();
-
-    JLabel label;
 
     ImageIcon defIcon = new ImageIcon("Icons/instructor.png");
 
     public InstructorView(Instructor inst) {
         instructor = inst;
-
         panel.setBackground(java.awt.Color.LIGHT_GRAY);
         panel.setPreferredSize(new java.awt.Dimension(200, 60));
 
@@ -27,5 +22,4 @@ public class InstructorView {
         panel.setVisible(true);
     }
 
-    public JPanel getPanel() { return panel; }
 }

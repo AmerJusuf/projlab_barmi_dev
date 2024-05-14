@@ -20,6 +20,8 @@ public abstract class ItemView implements IView, ActionListener {
     public ItemView(Item item, ImageIcon icon) {
         this.item = item;
 
+        panel = new JPanel();
+
         label = new JLabel();
         label.setIcon(icon);
         label.setVisible(true);
@@ -83,5 +85,10 @@ public abstract class ItemView implements IView, ActionListener {
             setUniqueButtonsVisibility(true);
             updateItemIcon(item.getisActive());
         }
+    }
+
+    @Override
+    public JLabel getLabel() {
+        return label;
     }
 }

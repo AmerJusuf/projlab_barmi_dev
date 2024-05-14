@@ -4,9 +4,8 @@ import Characters.Character;
 import Items.Item;
 import Rooms.*;
 import Game.Labyrinth;
+import View.CharacterView.CharacterView;
 import View.IView;
-import View.ItemView.ItemView;
-import com.sun.tools.javac.Main;
 
 import javax.swing.*;
 import java.awt.*;
@@ -77,12 +76,14 @@ public class RoomView implements ActionListener, IView {
         JPanel playerListPanel = new JPanel();
         playerListPanel.setBackground(Color.LIGHT_GRAY);
         playerListPanel.setLayout(new BoxLayout(playerListPanel, BoxLayout.X_AXIS));
-        for( Character ch : room.getCharacters())
-        {
-            PlayerView player = new PlayerView(ch);
-            playerListPanel.add(player.getIcon());
+        for (Character ch : room.getCharacters()) {
+            IView player = MainWindow.viewsByObjects.get(ch);
+            if (player != null) {
+                playerListPanel.add(player.getLabel());
+            } else {
+                // Handle the case where the player view is not found for the character
+            }
         }
-
         JScrollPane scrollPane = new JScrollPane(playerListPanel);
         panel.add(scrollPane);
     }
@@ -102,7 +103,6 @@ public class RoomView implements ActionListener, IView {
     public void setRoom(IRoom room)
     {
         this.room = room;
-
     }
 
 
@@ -144,6 +144,11 @@ public class RoomView implements ActionListener, IView {
 
     public JPanel getPanel() {
         return panel;
+    }
+
+    @Override
+    public JLabel getLabel() {
+        return title;
     }
 
 }

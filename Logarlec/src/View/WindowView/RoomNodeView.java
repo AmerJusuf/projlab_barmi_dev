@@ -1,6 +1,8 @@
 package View.WindowView;
 
+import Controller.Notifiable;
 import Rooms.IRoom;
+import View.IView;
 
 import javax.swing.*;
 import java.awt.*;
@@ -9,8 +11,8 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.awt.geom.AffineTransform;
-public class RoomNodeView extends JPanel {
-
+public class RoomNodeView extends JPanel implements IView {
+    Notifiable controller;
     private IRoom room;
 
     private List<RoomNodeView> neighbourRooms = new ArrayList<>();
@@ -22,14 +24,16 @@ public class RoomNodeView extends JPanel {
     public int width;
     public int height;
 
-    public RoomNodeView(IRoom room) {
+    public static RoomNodeView lastClickedRoom = null;
+
+    public RoomNodeView(IRoom room, boolean poisoned, boolean cursed, boolean sticky) {
         this.room = room;
         this.setPreferredSize(new Dimension(100, 100)); // Adjust size as needed
         this.setBackground(Color.WHITE);
         this.setOpaque(false);
-        this.poisoned = true;
-        this.cursed = true;
-        this.sticky = true;
+        this.poisoned = poisoned;
+        this.cursed = cursed;
+        this.sticky = sticky;
 
 
         // Load circle image
@@ -38,9 +42,8 @@ public class RoomNodeView extends JPanel {
         this.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
-                // Handle room click event
-                // Example: show room information or perform some action
-                System.out.println("Room clicked!");
+                lastClickedRoom = RoomNodeView.this;
+                controller.notifyModelChanged();
             }
         });
 
@@ -61,6 +64,10 @@ public class RoomNodeView extends JPanel {
         add(stickyLabel);
         add(Box.createVerticalGlue());
         this.setVisible(true);
+    }
+
+    public void setController(Notifiable controller) {
+        this.controller = controller;
     }
     
     public void addNeighbourRoom(RoomNodeView neighbourRoom) {
@@ -106,9 +113,22 @@ public class RoomNodeView extends JPanel {
         }
     }
 
-
-
     public IRoom getRoom() {
         return room;
+    }
+
+    @Override
+    public void update() {
+        //empty
+    }
+
+    @Override
+    public JPanel getPanel() {
+        return null;
+    }
+
+    @Override
+    public JLabel getLabel() {
+        return null;
     }
 }

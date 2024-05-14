@@ -25,6 +25,7 @@ public abstract class TemporaryItem extends Item {
             owner.removeItem(this);
             removeOwner();
         }
+        controller.notifyModelChanged();
     }
     @Override
     public void setIsActive(boolean po){

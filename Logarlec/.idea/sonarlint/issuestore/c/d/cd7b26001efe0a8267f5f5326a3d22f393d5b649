@@ -1,17 +1,26 @@
 
 ”
-java:S1104"QMake width a static final constant or non-public and provide accessors if needed.(øÂ½8Ñòó1J$fa8e0094-d619-4583-b2c0-20c55bdd5421
+java:S1104"QMake width a static final constant or non-public and provide accessors if needed.(øÂ½8¾Á±çö1J$d7b3f7df-db26-45ac-9df2-7d25fec7e91b
 •
-java:S1104"RMake height a static final constant or non-public and provide accessors if needed.(ñ½8á¹òó1J$6a5b0762-e528-4895-9262-81f27103661c
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8Òòó1J$fd59aede-2816-4d76-bb02-7a9f2f78fd27
+java:S1104"RMake height a static final constant or non-public and provide accessors if needed.(ñ½8¾Á±çö1J$5c92ba5d-6fd3-47e6-af8f-1b8a0d7fe8ff
+£
+java:S1104"[Make lastClickedRoom a static final constant or non-public and provide accessors if needed.(Ó´æêúÿÿÿÿ8¾Á±çö1J$3d5545ad-8775-46b9-a2ff-bb75aa70443b
+}
+java:S1444"5Make this "public static lastClickedRoom" field final(Ó´æêúÿÿÿÿ8¿Á±çö1J$d3849472-483f-4fef-9eab-9834492bcbc4
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8ÁÁ±çö1J$3325fd72-26e7-47e8-a283-fa06672976dc
 q
-java:S2387"."width" is the name of a field in "Component".(øÂ½8İòó1J$589a52cb-5f9b-4579-9443-2798dea5bead
+java:S2387"."width" is the name of a field in "Component".(øÂ½8ñÁ±çö1J$c19893d9-e062-4278-9ad3-bb8bcdcbff80
 r
-java:S2387"/"height" is the name of a field in "Component".(ñ½8ğ¹òó1J$6965b2a5-8f57-47a7-8a8a-b54f7b53ca34
+java:S2387"/"height" is the name of a field in "Component".(ñ½8ñÁ±çö1J$5f6014ca-31f3-42e5-8c35-88b5b002e11e
 n
-java:S1948"&Make "room" transient or serializable.(²úŒ„øÿÿÿÿ8ô»êóó1J$4a5f5f48-a638-4327-b802-f0792c6e9189
+java:S1948",Make "controller" transient or serializable.(ğ½›8òÁ±çö1J$1df039e7-16a9-4878-aff0-125e79a84cb3
+n
+java:S1948"&Make "room" transient or serializable.(²úŒ„øÿÿÿÿ8òÁ±çö1J$67672e3e-3d69-4f79-bca6-07d7971434cb
 p
-java:S1948"-Make "circleImage" transient or serializable.(Ì§şê8Şòó1J$b0bde39f-1332-4898-ae41-4bad5719e49c
-r	java:S106+"+Replace this use of System.out by a logger.(å²È©ùÿÿÿÿ8áòó1J$8237b778-df57-4402-9bec-b485ff974f98
+java:S1948"-Make "circleImage" transient or serializable.(Ì§şê8óÁ±çö1J$c969a280-3955-4357-a056-43187e80bf95
+t
+java:S3010-",Remove this assignment of "lastClickedRoom".(£Ğ¼ƒÿÿÿÿÿ8öÁ±çö1J$c84b9548-a095-4eec-a197-d66e0326d116
+~
+java:S2696-"6Make the enclosing method "static" or remove this set.(£Ğ¼ƒÿÿÿÿÿ8ûÁ±çö1J$50414bc1-131e-43a4-bad8-cd394e57e42a
 ‚
-java:S1128":Remove this unused import 'java.awt.geom.AffineTransform'.(˜ÊÊ¡ıÿÿÿÿ8€ôÄ…ô1J$15a52774-6924-41f7-8928-7f3221382fec
+java:S1128":Remove this unused import 'java.awt.geom.AffineTransform'.(˜ÊÊ¡ıÿÿÿÿ8Öá¯êö1J$dee8a013-19f3-42ce-a513-e989e9cf30f6

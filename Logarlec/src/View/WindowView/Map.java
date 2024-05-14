@@ -3,6 +3,8 @@ package View.WindowView;
 import Characters.Student;
 import Game.Labyrinth;
 import Rooms.IRoom;
+import View.CharacterView.StudentView;
+import View.IView;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,7 +14,7 @@ import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Map extends JPanel {
+public class Map extends JPanel implements IView {
     private Labyrinth labyrinth;
 
     List<RoomNodeView> nodes;
@@ -30,6 +32,10 @@ int bottomBorder = 60;
         Student st4 = new Student();
         students = List.of(st, st2, st3, st4);
         labyrinth = new Labyrinth(students, this);
+        if(Labyrinth.currentPlayer == null) {
+            Labyrinth.currentPlayer = st;
+        }
+
 
         setPreferredSize(new Dimension(500, 500));
         setBackground(Color.LIGHT_GRAY);
@@ -46,11 +52,10 @@ int bottomBorder = 60;
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
 
-
         nodes = new ArrayList<>();
         System.out.println("nUMBER OF ROOMS" + labyrinth.getRooms().size());
         for (IRoom room : labyrinth.getRooms()) {
-            RoomNodeView roomNodeView = new RoomNodeView(room);
+            RoomNodeView roomNodeView = (RoomNodeView) MainWindow.viewsByObjects.get(room);
             nodes.add(roomNodeView);
             this.add(roomNodeView);
         }
@@ -127,5 +132,20 @@ int bottomBorder = 60;
     }
 
 
+    @Override
+    public void update() {
+        for(IRoom room: labyrinth.getRooms()){
+            MainWindow.viewsByObjects.get(room);
+        }
+    }
 
+    @Override
+    public JPanel getPanel() {
+        return null;
+    }
+
+    @Override
+    public JLabel getLabel() {
+        return null;
+    }
 }

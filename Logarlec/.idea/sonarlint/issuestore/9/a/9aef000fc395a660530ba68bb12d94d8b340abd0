@@ -39,6 +39,8 @@ java:S1192C"KDefine a constant instead of duplicating this literal "gameStatus"
 “
 java:S1192«"JDefine a constant instead of duplicating this literal "Result: " 28 times.(‡˜Ûãùÿÿÿÿ8Í¼ç³ò1J$58caca33-1746-4c9f-a173-31f698a968c3
 œ	java:S135œ"YReduce the total number of break and continue statements in this loop to use at most one.(É‚8Î¼ç³ò1J$162a9c42-8a01-4ed6-bfbb-8470bc527e42
+9
+java:S1643ä"Use a StringBuilder instead.(–Ñÿ8«—…êö1
 ¤
 java:S1488
 "[Immediately return this expression instead of assigning it to the temporary variable "res".(¾¨˜úûÿÿÿÿ8Ò¼ç³ò1J$f3da91e5-f07f-404b-9c55-b04ca5cc982c
@@ -81,10 +83,22 @@ java:S1479à"BReduce the number of non-empty switch cases from 40 to at most 30
 M	java:S106ğ"+Replace this use of System.out by a logger.(ÖËŞ­øÿÿÿÿ8´ÓãÈò1
 v
 java:S1135ƒ"2Complete the task associated to this TODO comment.(…ïœ†8ú¾ç³ò1J$68d1d6c1-e9c1-4259-ae46-0708f47a7f8c
+f
+java:S6201"HReplace this instanceof check and cast with 'instanceof Student student'(’èËñ8Ø…êö1
+l
+java:S6201 "NReplace this instanceof check and cast with 'instanceof Instructor instructor'(É©Íú8Ø…êö1
+k
+java:S6201¢"HReplace this instanceof check and cast with 'instanceof Cleaner cleaner'(Ù—ÛÏşÿÿÿÿ8Ù…êö1
 q
 java:S1481°"(Remove this unused "asd" local variable.(Ïº¡£úÿÿÿÿ8¿ç³ò1J$35ba8525-70da-4dfa-b9bb-fd968302c69c
 r
 java:S1481£")Remove this unused "room" local variable.(±ØÁÌÿÿÿÿÿ8•¿ç³ò1J$2fb64237-0562-440c-a480-a94215f2c53c
+h
+java:S6201á"EReplace this instanceof check and cast with 'instanceof Camembert cm'(œ–ëÒıÿÿÿÿ8ü…êö1
+f
+java:S6201ö"HReplace this instanceof check and cast with 'instanceof AirFreshener af'(¬ö”£8ş…êö1
+O
+java:S1905Ú",Remove this unnecessary cast to "Character".(¯Ñ™ãùÿÿÿÿ8‡Ÿ…êö1
 	java:S125…"<This block of commented-out lines of code should be removed.(­…­†8©¿ç³ò1J$a6b84038-f613-4fe8-8355-85ccd43aed83
 „	java:S125’"<This block of commented-out lines of code should be removed.(Ò¿©±úÿÿÿÿ8©¿ç³ò1J$c959d136-b1c4-4455-97ef-c4cd949fe552
 	java:S125Ÿ"<This block of commented-out lines of code should be removed.(èÑ‚8ª¿ç³ò1J$633c9ff1-57c7-4044-816c-055f975b91f9

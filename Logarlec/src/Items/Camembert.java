@@ -46,5 +46,6 @@ public class Camembert extends Item {
             for (Character ch : characters) {
                 ch.disable();
             }
+            controller.notifyModelChanged();
     }
 }

@@ -6,4 +6,6 @@ public interface IView {
     void update();
 
     JPanel getPanel();
+
+    JLabel getLabel();
 }

@@ -242,8 +242,6 @@ Q
 K
 src/View/MenuView/Menu.java,7\6\76cb1d21811dff8df9a1e316b8e42a8cef6e49c8
 S
-#src/View/WindowView/PlayerView.java,a\4\a43ab1fe358a15c57cd62b3452330f9f862f2a43
-S
 #src/View/WindowView/MainWindow.java,5\2\52ed610769ab8b78fc6b9654127f3009d4ce1790
 Q
 !src/View/WindowView/RoomView.java,1\8\18ac7b065538656d5415b4ee19d12ed8f27d8277
@@ -275,3 +273,11 @@ N
 src/Controller/Controller.java,8\4\843f8be76b6a227716374e2d5b795a714de3d8ad
 N
 src/Controller/Notifiable.java,b\7\b712d27855a7f03a2e8962e36d4de1e991637326
+W
+'src/View/CharacterView/CleanerView.java,3\8\3850c4c6061aa12948238c6ad0cb62208c892081
+W
+'src/View/CharacterView/StudentView.java,e\5\e51a78e083c5926465784d8eb546c2bb23a96d6b
+Y
+)src/View/CharacterView/CharacterView.java,7\9\79a2a1b11a3a1fbd302b7fb21763cef62cacbc73
+Z
+*src/View/CharacterView/InstructorView.java,6\2\62dfe84bba067883cadc54a6007d7935e25bb720

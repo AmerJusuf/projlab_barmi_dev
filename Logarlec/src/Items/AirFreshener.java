@@ -21,6 +21,8 @@ public class AirFreshener extends Item {
     @Override
     public IRoom unToxicateRoom(){
         System.out.println("AirFreshener used | AirFreshener: unToxicateRoom()");
-        return owner.getRoom().unToxicate();
+        IRoom room = owner.getRoom().unToxicate();
+        controller.notifyModelChanged();
+        return room;
     }
 }

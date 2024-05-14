@@ -26,5 +26,6 @@ public class Beer extends TemporaryItem {
             owner.removeItem(this);
             removeOwner();
         }
+        controller.notifyModelChanged();
     }
 }

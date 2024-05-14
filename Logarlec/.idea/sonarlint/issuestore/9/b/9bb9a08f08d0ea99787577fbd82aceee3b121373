@@ -1,12 +1,26 @@
 
 ˆ
-java:S2184u"ECast one of the operands of this subtraction operation to a "double".(¨êË¢8ÛñÕ¢ô1J$fe2be9a3-2fcd-4289-9c32-d0a8e83bac1b
+java:S2184z"ECast one of the operands of this subtraction operation to a "double".(¨êË¢8Íùç¶÷1J$a5eba9df-18dd-4404-9de4-ec4577ccc9ca
 ˆ
-java:S2184v"ECast one of the operands of this subtraction operation to a "double".(•ú…¸8ÛñÕ¢ô1J$e3262738-fe6e-4ab1-a46f-c36c5c4032e3
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8ÜñÕ¢ô1J$58d55323-fe1c-4979-8f06-c2c1dfbdf148
-r	java:S1063"+Replace this use of System.out by a logger.(é­úúÿÿÿÿ8´óÕ¢ô1J$dca2a356-e4f6-4334-a554-b01631a60d4d
-ƒ	java:S125S"<This block of commented-out lines of code should be removed.(œ˜ˆ—ıÿÿÿÿ8¶óÕ¢ô1J$3913b178-6ce9-4929-b77b-f86055899c6a
+java:S2184{"ECast one of the operands of this subtraction operation to a "double".(•ú…¸8Íùç¶÷1J$9cd32b30-5fe4-4b3c-9cbc-09a388758984
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8Îùç¶÷1J$26d9af5c-48f5-4b72-9c51-61d03d06c9d7
+s
+java:S1948"+Make "labyrinth" transient or serializable.(Ïşƒ‰ÿÿÿÿÿ8ûç¶÷1J$ff7928fa-08f1-48e3-935b-584e19f3ccf1
+j
+java:S1948""Make "nodes" private or transient.(¢ÈÈ‰ûÿÿÿÿ8ûç¶÷1J$43522903-f38a-4900-a6e4-52d829312e34
+r	java:S1068"+Replace this use of System.out by a logger.(é­úúÿÿÿÿ8˜ûç¶÷1J$c852f63b-705c-4e80-9838-322503c0969d
+ƒ	java:S125X"<This block of commented-out lines of code should be removed.(œ˜ˆ—ıÿÿÿÿ8›ûç¶÷1J$0505581e-3867-4c7c-8ab0-f9e0951ff684
 
-java:S1854x"7Remove this useless assignment to local variable "len".(È‡áúÿÿÿÿ8·óÕ¢ô1J$548850e9-b0b5-4e57-801f-722840ba0325
+java:S1854}"7Remove this useless assignment to local variable "len".(È‡áúÿÿÿÿ8œûç¶÷1J$6929ca40-19fd-49de-a664-1e01b6a85557
 p
-java:S1481x"(Remove this unused "len" local variable.(È‡áúÿÿÿÿ8ºóÕ¢ô1J$bc60ab27-c6ff-4123-9a79-0313ed65448e
+java:S1481}"(Remove this unused "len" local variable.(È‡áúÿÿÿÿ8ûç¶÷1J$1de6836d-91af-4756-ae12-7a5fbf3f38aa
+p
+java:S2201Š"'The return value of "get" must be used.(£í•¼üÿÿÿÿ8Ÿûç¶÷1J$6c8fbb7d-2bea-4609-8c32-fa13ea0ebc19
+]
+java:S1128";Remove this unused import 'View.CharacterView.StudentView'.(Ó…È™ÿÿÿÿÿ8ÖÄõ¶÷1
+t
+java:S1128"1Remove this unused import 'java.awt.geom.Line2D'.(ìôÆÆ8 ûç¶÷1J$36fb827d-9e76-4041-bc6b-0ee59de9f149
+y
+java:S1128"1Remove this unused import 'java.awt.geom.Path2D'.(ŠŒõ›øÿÿÿÿ8 ûç¶÷1J$c6fb66fd-e4e1-438b-9b5e-d96595425fd8
+u
+java:S1128"2Remove this unused import 'java.awt.geom.Point2D'.(ˆÕ­Ü8 ûç¶÷1J$380ba720-0274-4c3d-8f6d-9f2acb118d5d

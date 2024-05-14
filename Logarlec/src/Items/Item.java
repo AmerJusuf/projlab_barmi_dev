@@ -35,6 +35,7 @@ public abstract class Item {
         System.out.println("Item picked by student | Item: pickedByStudent(Student student)");
         this.setOwner(student);
         student.addItem(this);
+        controller.notifyModelChanged();
     }
 
     /**
@@ -47,6 +48,7 @@ public abstract class Item {
         System.out.println("Item picked by instructor | Item: pickedByInstructor(Instructor instructor)");
         this.setOwner(instructor);
         instructor.addItem(this);
+        controller.notifyModelChanged();
     }
 
     /**
@@ -123,6 +125,7 @@ public abstract class Item {
         setIsActive(false);
         owner.getRoom().addItem(this);
         removeOwner();
+        controller.notifyModelChanged();
     }
 
     /**

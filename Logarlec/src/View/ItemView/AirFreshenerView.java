@@ -41,4 +41,6 @@ public class AirFreshenerView extends ItemView {
     public void updateItemIcon(boolean isActive) {
         label.setIcon(icon);
     }
+
+
 }
