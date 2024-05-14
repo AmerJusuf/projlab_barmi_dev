@@ -10,6 +10,7 @@ public class CleanerView extends CharacterView{
 
     public CleanerView(Cleaner cl) {
         cleaner = cl;
+        panel = new JPanel();
         panel.setBackground(java.awt.Color.LIGHT_GRAY);
         panel.setPreferredSize(new java.awt.Dimension(200, 60));
 
@@ -21,6 +22,4 @@ public class CleanerView extends CharacterView{
         panel.setVisible(true);
     }
 
-    public JPanel getPanel() { return panel; }
-    public JLabel getLabel() { return label; }
 }

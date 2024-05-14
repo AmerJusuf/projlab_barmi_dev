@@ -515,14 +515,32 @@ public class Labyrinth {
             room.setLabyrinth(this);
         }
 
+
+//        AirFreshener airFreshener3 = new AirFreshener();
+//        students.get(0).addItem(airFreshener3);
+//        AirFreshenerView airFreshenerView2 = new AirFreshenerView(airFreshener3);
+//        MainWindow.viewsByObjects.put(airFreshener3, airFreshenerView2);
+        Labyrinth.currentPlayer = students.get(0);
         //add characters to rooms
         for(int i = 0; i < students.size(); i++){
-            MainWindow.viewsByObjects.put(students.get(i), new StudentView(students.get(i)));
+
+
+
+
+            StudentView studentView = new StudentView(students.get(i));
+            MainWindow.viewsByObjects.put(students.get(i), studentView);
             int j = i % 5;
             rooms.get(24-j).addCharacter(students.get(i));
             students.get(i).setRoom(rooms.get(24-j));
+
+            AirFreshener airFreshener3 = new AirFreshener();
+            students.get(i).addItem(airFreshener3);
+            AirFreshenerView airFreshenerView2 = new AirFreshenerView(airFreshener3);
+            MainWindow.viewsByObjects.put(airFreshener3, airFreshenerView2);
+            MainWindow.viewsByObjects.get(students.get(i)).update();
         }
-        Labyrinth.currentPlayer = students.get(0);
+
+
 
         for(int i = 0; i < instructors.size(); i++){
             MainWindow.viewsByObjects.put(instructors.get(i), new InstructorView(instructors.get(i)));

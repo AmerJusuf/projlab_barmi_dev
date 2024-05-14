@@ -11,6 +11,7 @@ public class InstructorView extends CharacterView{
 
     public InstructorView(Instructor inst) {
         instructor = inst;
+        panel = new JPanel();
         panel.setBackground(java.awt.Color.LIGHT_GRAY);
         panel.setPreferredSize(new java.awt.Dimension(200, 60));
 

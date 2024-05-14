@@ -6,9 +6,10 @@ import javax.swing.*;
 import java.awt.*;
 
 public abstract class CharacterView implements IView {
-    protected JPanel panel = new JPanel();
+    protected JPanel panel;
     protected JLabel label;
     protected JLabel title;
+
 
     public JLabel getLabel(){
         return label;

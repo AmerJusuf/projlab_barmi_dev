@@ -1,33 +1,33 @@
 
 
-java:S1104"ZMake viewsByObjects a static final constant or non-public and provide accessors if needed.(ñì‡¬8°ö¢¸÷1J$6dd57d09-69e3-4624-b9e1-bf7e36b18809
+java:S1104"ZMake viewsByObjects a static final constant or non-public and provide accessors if needed.(ñì‡¬8°ö¢¸÷1J$e142fcbc-98e8-4fa6-a154-3f79d4011f32
 w
-java:S1444"4Make this "public static viewsByObjects" field final(ñì‡¬8°ö¢¸÷1J$e7a388d2-cfff-4895-9138-65e7f1bf4c0c
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8±ö¢¸÷1J$581f795a-b057-48ca-8038-a42bf2a1e5f3
+java:S1444"4Make this "public static viewsByObjects" field final(ñì‡¬8°ö¢¸÷1J$9857caaf-b7b6-4657-8ad7-dc4f35d2cd76
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8±ö¢¸÷1J$b27184ea-7b49-4690-9243-5dad41326a67
 É
-java:S1186g"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(÷ĞÓÅÿÿÿÿÿ8½ö¢¸÷1J$869f9493-29cf-4e81-b290-2ec9a574db5d
+java:S1186a"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(÷ĞÓÅÿÿÿÿÿ8½ö¢¸÷1J$9c2a62a1-5aa4-4c60-8a0c-3e6620149fa4
 `
-java:S2386"Make this member "protected".(ñì‡¬8¿ö¢¸÷1J$2b0dc630-c929-4ac0-9eb5-b57156ddeba9
+java:S2386"Make this member "protected".(ñì‡¬8¿ö¢¸÷1J$33200b2d-0454-4ea3-a618-0e60e2ce8c58
 j
-java:S1948"'Make "views" transient or serializable.(ÿÿ«¾8Àö¢¸÷1J$813fa7fb-0429-4b25-bbad-65f0915634c5
-~	java:S125M"<This block of commented-out lines of code should be removed.(‹‘ä8Çö¢¸÷1J$a6968860-a918-4061-bf36-3d36755c12c8
+java:S1948"'Make "views" transient or serializable.(ÿÿ«¾8Àö¢¸÷1J$e91d3044-5642-4b0e-b9a3-a086648ee515
+~	java:S125G"<This block of commented-out lines of code should be removed.(‹‘ä8Çö¢¸÷1J$6076648a-d21f-4c79-8ebc-33d81786e188
 ‹
-java:S3252_"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(ºÀœx8Èö¢¸÷1J$2669b00b-be76-4ae1-b13e-6fa148b0828b
-~	java:S125a"<This block of commented-out lines of code should be removed.(‚”Ë8Éö¢¸÷1J$cd54d6b6-4499-449c-90b7-f4113fc41867
+java:S3252Y"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(ºÀœx8Èö¢¸÷1J$7f4aa29e-ddd8-4922-859b-51b99a411e06
+~	java:S125["<This block of commented-out lines of code should be removed.(‚”Ë8Éö¢¸÷1J$4c18304d-5dc7-4b92-97ad-67ae2e727caa
 w
-java:S1128"/Remove this unused import 'Characters.Cleaner'.(Ò±šîüÿÿÿÿ8†«¸÷1J$1a9d536c-4fd2-4234-b164-6bbdb31af28d
+java:S1128"/Remove this unused import 'Characters.Cleaner'.(Ò±šîüÿÿÿÿ8†«¸÷1J$80ca7e21-7401-4216-a2dd-02ac5e130b23
 z
-java:S1128"2Remove this unused import 'Characters.Instructor'.(Ğ±£¢úÿÿÿÿ8‘†«¸÷1J$c643f06b-6bac-433d-89e2-f6283c740dc5
+java:S1128"2Remove this unused import 'Characters.Instructor'.(Ğ±£¢úÿÿÿÿ8‘†«¸÷1J$d2fbbc90-69f8-4bba-9ae5-d94584c9cc51
 w
-java:S1128"/Remove this unused import 'Characters.Student'.(€•­ğùÿÿÿÿ8‘†«¸÷1J$395b2589-a530-4c37-9c31-737a59294238
+java:S1128"/Remove this unused import 'Characters.Student'.(€•­ğùÿÿÿÿ8‘†«¸÷1J$5ac285f6-ae9f-40d9-9530-311de2acba6e
 u
-java:S1128"-Remove this unused import 'Items.Transistor'.(¹ÖŒéşÿÿÿÿ8‘†«¸÷1J$99988f3c-6e4b-4c7d-8dc4-59191af6f835
+java:S1128"-Remove this unused import 'Items.Transistor'.(¹ÖŒéşÿÿÿÿ8‘†«¸÷1J$6fc2bbde-f836-45c1-b878-03a3af11318f
 t
-java:S1128",Remove this unused import 'Rooms.BasicRoom'.(Çêê½ÿÿÿÿÿ8‘†«¸÷1J$eca31d5b-e211-4b47-9881-674af46de80d
+java:S1128",Remove this unused import 'Rooms.BasicRoom'.(Çêê½ÿÿÿÿÿ8‘†«¸÷1J$b6e7bb9c-f24b-4075-ab23-1df9ca30d526
 k
-java:S1128	"(Remove this unused import 'Rooms.IRoom'.(ƒòç®8‘†«¸÷1J$28ac6564-61f5-42d8-962b-5057f5ed54fd
+java:S1128	"(Remove this unused import 'Rooms.IRoom'.(ƒòç®8‘†«¸÷1J$af3cdcd3-9c70-43ef-8489-7d8cac9d7173
 …
 java:S1128
-"=Remove this unused import 'View.CharacterView.CharacterView'.(Á–ğÕÿÿÿÿÿ8‘†«¸÷1J$7262e4cb-0577-4d1a-98ac-0d3861cab003
+"=Remove this unused import 'View.CharacterView.CharacterView'.(Á–ğÕÿÿÿÿÿ8‘†«¸÷1J$22fec334-86e5-478a-be13-91580d19055e
 |
-java:S1144g"4Remove this unused private "handleRoomViews" method.(÷ĞÓÅÿÿÿÿÿ8Ìö¢¸÷1J$1803632a-af21-4e94-98dd-8be25c39f24a
+java:S1144a"4Remove this unused private "handleRoomViews" method.(÷ĞÓÅÿÿÿÿÿ8Ìö¢¸÷1J$c554abbd-3a90-4eef-9e29-66d93cae86b5

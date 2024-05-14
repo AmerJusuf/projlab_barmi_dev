@@ -32,9 +32,9 @@ int bottomBorder = 60;
         Student st4 = new Student();
         students = List.of(st, st2, st3, st4);
         labyrinth = new Labyrinth(students, this);
-        if(Labyrinth.currentPlayer == null) {
-            Labyrinth.currentPlayer = st;
-        }
+//        if(Labyrinth.currentPlayer == null) {
+//            Labyrinth.currentPlayer = st;
+//        }
 
 
         setPreferredSize(new Dimension(500, 500));

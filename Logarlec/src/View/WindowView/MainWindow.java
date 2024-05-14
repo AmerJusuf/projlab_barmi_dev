@@ -42,12 +42,6 @@ public class MainWindow extends JFrame {
         gbc.insets = insets;
         this.add(map, gbc);
 
-        JPanel playerListPanel = new JPanel();
-        playerListPanel.setBackground(Color.DARK_GRAY);
-
-
-        playerListPanel.setLayout(new BoxLayout(playerListPanel, BoxLayout.X_AXIS));
-
         gbc.gridx = 1;
         gbc.gridy = 0;
         gbc.gridwidth = 1;
