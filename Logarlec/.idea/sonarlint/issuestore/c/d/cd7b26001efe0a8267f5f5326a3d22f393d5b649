@@ -7,7 +7,6 @@ java:S1104"RMake height a static final constant or non-public and provide acce
 java:S1104"[Make lastClickedRoom a static final constant or non-public and provide accessors if needed.(Ó´æêúÿÿÿÿ8¾Á±çö1J$3d5545ad-8775-46b9-a2ff-bb75aa70443b
 }
 java:S1444"5Make this "public static lastClickedRoom" field final(Ó´æêúÿÿÿÿ8¿Á±çö1J$d3849472-483f-4fef-9eab-9834492bcbc4
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8ÁÁ±çö1J$3325fd72-26e7-47e8-a283-fa06672976dc
 q
 java:S2387"."width" is the name of a field in "Component".(øÂ½8ñÁ±çö1J$c19893d9-e062-4278-9ad3-bb8bcdcbff80
 r

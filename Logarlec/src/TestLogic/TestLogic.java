@@ -19,6 +19,17 @@ public class TestLogic {
 
     private static final Map<String, Pattern> commandPatterns = new HashMap<>();
     public static boolean writeToFile = false;
+    public static boolean readMap = false;
+
+    static List<Integer> incorrectFiles = new ArrayList<>();
+
+    private static Scanner scanner;
+
+    private static Labyrinth labyrinth;
+    private static Map<String, Character> charactersMap = new HashMap<>();
+
+    private static Map<String, IRoom> roomsMap = new HashMap<>();
+    private static Map<String, Item> itemsMap = new HashMap<>();
 
     static {
         commandPatterns.put("runAllScripts", Pattern.compile("runAllScripts"));
@@ -95,9 +106,13 @@ public class TestLogic {
         scanner.close();
     }
 
-    static List<Integer> incorrectFiles = new ArrayList<>();
-
-    private static Scanner scanner;
+    public static Labyrinth getAndLoadLabyrinth(String fileName){
+        readMap = true;
+        writeToFile = false;
+        processCommandsFromFile(fileName);
+        readMap = false;
+        return labyrinth;
+    }
 
     public static String continueProcessCommandsFromFile(){
         return(processCommand(scanner.nextLine()) + "\n");
@@ -107,6 +122,32 @@ public class TestLogic {
         if (!writeToFile) {
             String output = processCommand(commandOrFileName);
             System.out.println(output); // Print output to console
+        }
+        else if(readMap){
+            System.out.println("Reading map from file: " + commandOrFileName);
+            String directory = System.getProperty("user.dir");
+
+            String fileName = commandOrFileName;
+            String fileInPath = directory + File.separator + "Files" + File.separator + "Maps" + File.separator + fileName + ".txt";
+            System.out.println(fileInPath);
+
+            try {
+                File file = new File(fileInPath);
+                if (!file.exists()) {
+                    System.out.println("File not found");
+                    throw new RuntimeException("File not found");
+                }
+
+                scanner = new Scanner(file);
+
+                String fileContent = "";
+                while (scanner.hasNextLine()) {
+                    fileContent = fileContent.concat(processCommand(scanner.nextLine()) + "\n");
+                }
+                scanner.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
         else {
             System.out.println("Processing commands from file: " + commandOrFileName);
@@ -194,11 +235,7 @@ public class TestLogic {
     }
 
 
-    private static Labyrinth labyrinth;
-    private static Map<String, Character> charactersMap = new HashMap<>();
 
-    private static Map<String, IRoom> roomsMap = new HashMap<>();
-    private static Map<String, Item> itemsMap = new HashMap<>();
 
 
 
@@ -256,7 +293,10 @@ public class TestLogic {
 
                     case "loadMap": {
                         String fileName = matcher.group(1);
-                        //TODO
+                        readMap = true;
+                        writeToFile = false;
+                        processCommandsFromFile(fileName);
+                        readMap = false;
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("file: ").append(fileName).append("\n");
                         outputBuilder.append("Result: Successful/Fail").append("\n");
