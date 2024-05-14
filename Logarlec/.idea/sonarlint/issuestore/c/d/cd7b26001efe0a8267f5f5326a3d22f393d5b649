@@ -1,0 +1,38 @@
+
+”
+java:S1104"QMake width a static final constant or non-public and provide accessors if needed.(øÂ½8ïïÍÀ÷1J$c9dcefc3-8097-4c22-98a7-e229375eee53
+•
+java:S1104"RMake height a static final constant or non-public and provide accessors if needed.(ñ½8ïïÍÀ÷1J$c9ef53b4-59c3-403a-9350-591b4f6602e8
+£
+java:S1104"[Make lastClickedRoom a static final constant or non-public and provide accessors if needed.(Ó´æêúÿÿÿÿ8ïïÍÀ÷1J$f0a790fa-ba65-4e10-9164-5a79eec04d65
+}
+java:S1444"5Make this "public static lastClickedRoom" field final(Ó´æêúÿÿÿÿ8ğïÍÀ÷1J$59128371-4522-4da6-89d3-9327b4e5d35c
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8ñïÍÀ÷1J$1ab9990d-8628-4f15-9328-d1f3bd4cc029
+q
+java:S2387"."width" is the name of a field in "Component".(øÂ½8 ğÍÀ÷1J$389288b3-88e1-4ce8-a75b-e486b1c08db0
+r
+java:S2387"/"height" is the name of a field in "Component".(ñ½8 ğÍÀ÷1J$4a1dd061-b6c5-4aac-8dd2-e97fca07b72c
+l
+java:S2387"*"x" is the name of a field in "Component".(Õÿ@8 ğÍÀ÷1J$22d0a4d5-de11-423f-97bb-17d46f317127
+m
+java:S2387 "*"y" is the name of a field in "Component".(ê¢Áú8 ğÍÀ÷1J$032a9b25-a32c-4488-9394-9c2e11467a1a
+n
+java:S1948",Make "controller" transient or serializable.(ğ½›8¡ğÍÀ÷1J$a3698d6f-2d8b-434c-8019-95ea762dd00e
+n
+java:S1948"&Make "room" transient or serializable.(²úŒ„øÿÿÿÿ8¡ğÍÀ÷1J$37664c07-2e64-4de3-ace2-1301c3cc635c
+w
+java:S1948"4Make "circleDefaultImage" transient or serializable.(—®ˆç8¡ğÍÀ÷1J$b209b2f3-bb40-49f4-a5dc-d0972f622170
+w
+java:S1948"4Make "circleCurrentImage" transient or serializable.(¹‚—ÿ8¡ğÍÀ÷1J$eb521326-511e-4cb8-8809-a0014aadf305
+t
+java:S30107",Remove this assignment of "lastClickedRoom".(£Ğ¼ƒÿÿÿÿÿ8£ğÍÀ÷1J$1b9b98b4-3a7e-4b3c-a277-9f78fd988bcb
+r	java:S1066"+Replace this use of System.out by a logger.(Šı‹úÿÿÿÿ8¥ğÍÀ÷1J$84c8bdaf-d9e0-4486-b63f-2b19a875dfb9
+~
+java:S26967"6Make the enclosing method "static" or remove this set.(£Ğ¼ƒÿÿÿÿÿ8¦ğÍÀ÷1J$ba4b2677-0dbe-48d2-8b42-f45691aa9fa7
+ƒ	java:S125{"<This block of commented-out lines of code should be removed.(ß¼’¨ùÿÿÿÿ8ªğÍÀ÷1J$99332eae-f229-4c97-a426-4d9dfdcb41a7
+~
+java:S1161£":Add the "@Override" annotation above this method signature(Äêñğ8¬ğÍÀ÷1J$5c8c5d04-d8b4-42e3-840f-790a8742fb85
+ƒ
+java:S1161§":Add the "@Override" annotation above this method signature(°¿´üÿÿÿÿ8Ü—ÎÀ÷1J$fa8d0ccb-bb35-4d8e-837d-722ba96a009b
+‚
+java:S1128":Remove this unused import 'java.awt.geom.AffineTransform'.(˜ÊÊ¡ıÿÿÿÿ8­ğÍÀ÷1J$e652b8ff-2794-4e62-85d5-bd71b2fdc2b2

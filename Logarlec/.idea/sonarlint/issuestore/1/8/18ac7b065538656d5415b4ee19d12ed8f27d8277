@@ -1,0 +1,22 @@
+
+Ÿ
+java:S1104o"]Make moveButtonClicked a static final constant or non-public and provide accessors if needed.(‘ïº	8Ã½”¼÷1J$bf70e6cf-3834-4e5f-9210-d9cb4ff5fa41
+y
+java:S1444o"7Make this "public static moveButtonClicked" field final(‘ïº	8Ã½”¼÷1J$9e89fef6-a925-4ca3-8c96-c4531b24b6cf
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8Ä½”¼÷1J$c2224564-1a18-4307-b5ee-2c844f3e89db
+„
+java:S3252""AUse static access with "javax.swing.SwingConstants" for "CENTER".(ó±æÉ8ã½”¼÷1J$22733059-837f-4887-b58c-50025324abb0
+T
+java:S1135V"2Complete the task associated to this TODO comment.(î–Î¨ûÿÿÿÿ8´ÊºÀ÷1
+‡
+java:S1124o"EReorder the modifiers to comply with the Java Language Specification.(‘ïº	8ß½”¼÷1J$bae81aee-be23-4a3d-8e0e-283b39956613
+ˆ
+java:S1124q"EReorder the modifiers to comply with the Java Language Specification.(ŞäÅÖ8ß½”¼÷1J$1dcd7499-ba5d-440a-8df8-cdad00cd8237
+r	java:S106x"+Replace this use of System.out by a logger.(Û¯şÿÿÿÿ8à½”¼÷1J$5cbab1ce-53e1-45c0-84b3-8b321ced1dfa
+~
+java:S2696z"6Make the enclosing method "static" or remove this set.(²íô şÿÿÿÿ8á½”¼÷1J$731438e4-3423-43c3-a227-3563c0380846
+m	java:S106"+Replace this use of System.out by a logger.(ÒÑŠ8â½”¼÷1J$a0ff3883-5527-40d5-b5c9-3443e4334b0b
+_
+java:S3252“"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ó±æÉ8ÁÊºÀ÷1
+…
+java:S1128"=Remove this unused import 'View.CharacterView.CharacterView'.(Á–ğÕÿÿÿÿÿ8å½”¼÷1J$5161f2a9-f2e9-4d28-9268-671bb7f2434c
