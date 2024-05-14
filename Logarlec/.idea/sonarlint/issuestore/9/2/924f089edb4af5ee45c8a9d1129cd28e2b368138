@@ -1,51 +1,11 @@
 
 V
-java:S1220""Move this file to a named package.J$3776021a-be1d-4a44-bc62-386691b4e2f6
+java:S1220""Move this file to a named package.J$bb8d3916-1551-40f4-a1fa-0d823428065f
 {
-java:S1854"8Remove this useless assignment to local variable "menu".(”œ¨ê8ÄÌ‰ ó1J$deac3b46-9f1a-4045-b1bc-64edee1c8414
+java:S1854"8Remove this useless assignment to local variable "menu".(”œ¨ê8•ÛÝ•÷1J$84a4364c-863d-439e-b579-001a63ac21f4
 l
-java:S1481")Remove this unused "menu" local variable.(”œ¨ê8ÅÌ‰ ó1J$d82e6ca6-b3f2-44fb-83be-ae55a9bb4f0b
+java:S1481")Remove this unused "menu" local variable.(”œ¨ê8˜ÛÝ•÷1J$aad0e764-4ca5-4b57-b063-06096c11bd4d
 X	java:S125
-"<This block of commented-out lines of code should be removed.(‹Éÿ¼8ò¶´·÷1
+"<This block of commented-out lines of code should be removed.(‹Éÿ¼8Ö²«¹÷1
 ~
-java:S1479"BReduce the number of non-empty switch cases from 38 to at most 30.(’ÎÁÄJ$ac659570-70ef-4bdf-a8cb-de497d52d1b7
-l	java:S106‹"+Replace this use of System.out by a logger.(½ë£åúÿÿÿÿJ$10091f2a-05ab-4614-ad80-e044b0630291
-l	java:S106‘"+Replace this use of System.out by a logger.(â§ô¾üÿÿÿÿJ$988602f8-2376-424d-9cbd-c72bc7518287
-g	java:S106’"+Replace this use of System.out by a logger.(ÎœJ$f7c23d8d-4b08-4c86-a921-14ece270d049
-g	java:S106“"+Replace this use of System.out by a logger.(Ö¾çJ$f07fca01-cdb1-4996-a3b8-a05195588976
-l	java:S106”"+Replace this use of System.out by a logger.(¥÷ˆêýÿÿÿÿJ$a25478c4-8544-4d73-ab8b-49a546b8ecc0
-f	java:S106•"+Replace this use of System.out by a logger.(®¿ô@J$084ff18e-c48c-4405-9082-8e64ee40f2cd
-l	java:S106–"+Replace this use of System.out by a logger.(äúåþúÿÿÿÿJ$b6cb5e1b-82e5-4288-bb2f-e2580c6fcc32
-g	java:S106—"+Replace this use of System.out by a logger.(¼â•îJ$cd272740-b541-4164-a020-21f40bf8a451
-l	java:S106˜"+Replace this use of System.out by a logger.(ïçËµýÿÿÿÿJ$9bc243b7-9f6f-43e5-836b-36d4a8caef89
-l	java:S106™"+Replace this use of System.out by a logger.(šü®÷üÿÿÿÿJ$aa76183f-3bba-4d5d-b8ab-2be1cc2e3545
-g	java:S106š"+Replace this use of System.out by a logger.(±Ù€âJ$f4366247-8d63-439d-8349-068a5a5584a8
-l	java:S106›"+Replace this use of System.out by a logger.(Ú™¦ÁÿÿÿÿÿJ$361071be-f970-4423-bd48-b458c1757083
-l	java:S106œ"+Replace this use of System.out by a logger.(Ÿ¹¥œúÿÿÿÿJ$74a980dc-21fb-4e0c-b943-c69507653f2a
-g	java:S106"+Replace this use of System.out by a logger.(íÌõžJ$434d1f99-2860-4c55-900f-98015b7099df
-l	java:S106ž"+Replace this use of System.out by a logger.(¶½ÁÿÿÿÿÿJ$d266fcbc-ac7f-49e8-aeeb-bddc36c94376
-l	java:S106Ÿ"+Replace this use of System.out by a logger.(£øúïþÿÿÿÿJ$c7a54828-c3a0-4f04-8044-e5dcdc3ee2b9
-l	java:S106 "+Replace this use of System.out by a logger.(íÜÚ£øÿÿÿÿJ$fa961474-9372-4b36-bcc2-b65287c40bdd
-l	java:S106¡"+Replace this use of System.out by a logger.(ÎçäÿÿÿÿÿJ$aaec3dcd-dcb2-4321-bc78-5558aaa115db
-f	java:S106¢"+Replace this use of System.out by a logger.(Óº°*J$4df73621-5709-401c-ac0e-b68877b5c3d9
-g	java:S106£"+Replace this use of System.out by a logger.(ýÈŽJ$e1651e82-a96a-4509-8a59-1b12c1969e73
-f	java:S106¤"+Replace this use of System.out by a logger.(Ñé»J$c2ba432f-8450-47bb-a0a5-375c0ecceb24
-l	java:S106¥"+Replace this use of System.out by a logger.(¦ÔðŸûÿÿÿÿJ$6629239c-0611-44e7-bd0c-0d8ca68dd22c
-g	java:S106¦"+Replace this use of System.out by a logger.(Œœï×J$c309b20b-ac3b-4329-85d0-0a6ac2593abd
-g	java:S106§"+Replace this use of System.out by a logger.(¼±¿ÍJ$e10e35fe-b77d-49f6-a3e6-949397d78dc7
-l	java:S106¨"+Replace this use of System.out by a logger.(„³Ç¸úÿÿÿÿJ$f4449bf7-f8e1-46fd-85a7-af8a70781131
-l	java:S106©"+Replace this use of System.out by a logger.(ÜÚÁûÿÿÿÿJ$8dbd1ac5-cc83-4387-816c-73ae4bbd6a5d
-l	java:S106ª"+Replace this use of System.out by a logger.(Ù¡­™ùÿÿÿÿJ$d5e3060f-c778-4035-a48d-fa2da44f0e84
-g	java:S106«"+Replace this use of System.out by a logger.(èì ’J$3e5a41ef-aa58-4c70-8371-f7401949a000
-g	java:S106¬"+Replace this use of System.out by a logger.(ä ß•J$1dccf76d-94ed-4d57-ae64-0d0984b15d9e
-g	java:S106­"+Replace this use of System.out by a logger.(Ñ­ÈÇJ$53c55ec5-318f-4262-a66d-7c72dba15f7b
-l	java:S106®"+Replace this use of System.out by a logger.(Ë§é§üÿÿÿÿJ$678446d5-f7ff-4921-9035-cf120fa802d9
-f	java:S106¯"+Replace this use of System.out by a logger.(¶ò‘J$18ca0a82-9ca4-4be4-a716-a4d0ba571cf4
-l	java:S106°"+Replace this use of System.out by a logger.(¿§ßªúÿÿÿÿJ$036715d4-1673-472d-8d6d-4010121b55e8
-l	java:S106±"+Replace this use of System.out by a logger.(Õ¢Ý…ùÿÿÿÿJ$95b3316e-2293-4c2b-abcf-e639411ba260
-m	java:S106²"+Replace this use of System.out by a logger.(±ßï 8»±ò³é1J$29f53f51-9c2d-4057-857e-573d133860b3
-s	java:S106³"+Replace this use of System.out by a logger.(óú×†üÿÿÿÿ8¶ÑÕší1J$8a74ce22-a9cb-4f42-8dd7-4f5a3e44eb1e
-n	java:S106´"+Replace this use of System.out by a logger.(ÉšÖÞ8êÌ‰ ó1J$f0a5b0a4-e450-41ef-9a18-fc49d4ec3903
-s	java:S106µ"+Replace this use of System.out by a logger.(˜û­æüÿÿÿÿ8ìÌ‰ ó1J$bb238f26-1021-464e-a9b4-a81d67fe56dd
-s	java:S106¶"+Replace this use of System.out by a logger.(—£Óùÿÿÿÿ8îÌ‰ ó1J$039f79dc-d3f7-4d51-b0bc-c9403009eb65
-s	java:S106·"+Replace this use of System.out by a logger.(›’ø©þÿÿÿÿ8ðÌ‰ ó1J$3d32387b-b05c-4a3f-be49-269a58bbf064
+java:S1479"BReduce the number of non-empty switch cases from 38 to at most 30.(’ÎÁÄJ$5cbe9d61-9bb6-4796-a7a9-007213500387
