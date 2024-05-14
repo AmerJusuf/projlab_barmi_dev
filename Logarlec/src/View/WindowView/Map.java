@@ -1,6 +1,7 @@
 package View.WindowView;
 
 import Characters.Student;
+import Controller.Notifiable;
 import Game.Labyrinth;
 import Rooms.IRoom;
 import TestLogic.TestLogic;
@@ -27,7 +28,7 @@ public class Map extends JPanel implements IView {
     int bottomBorder = 60;
 
 
-    public Map() {
+    public Map(Notifiable controller) {
         if(useBakedInData) {
             List<Student> students = new ArrayList<>();
             Student st = new Student();
@@ -35,7 +36,8 @@ public class Map extends JPanel implements IView {
             Student st3 = new Student();
             Student st4 = new Student();
             students = List.of(st, st2, st3, st4);
-            labyrinth = new Labyrinth(students, this);
+            labyrinth = new Labyrinth(students, this, controller);
+            labyrinth.setControllerToItems();
 //        if(Labyrinth.currentPlayer == null) {
 //            Labyrinth.currentPlayer = st;
 //        }
@@ -60,7 +62,6 @@ public class Map extends JPanel implements IView {
         super.paintComponent(g);
 
         nodes = new ArrayList<>();
-        System.out.println("nUMBER OF ROOMS" + labyrinth.getRooms().size());
         for (IRoom room : labyrinth.getRooms()) {
             RoomNodeView roomNodeView = (RoomNodeView) MainWindow.viewsByObjects.get(room);
             nodes.add(roomNodeView);
@@ -144,6 +145,10 @@ public class Map extends JPanel implements IView {
         for(IRoom room: labyrinth.getRooms()){
             MainWindow.viewsByObjects.get(room);
         }
+
+//        for (RoomNodeView node : nodes) {
+//            node.paintComponent(getGraphics());
+//        }
     }
 
     @Override

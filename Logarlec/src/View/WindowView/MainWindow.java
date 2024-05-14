@@ -3,6 +3,7 @@ package  View.WindowView;
 import Characters.Cleaner;
 import Characters.Instructor;
 import Characters.Student;
+import Controller.Notifiable;
 import Game.Labyrinth;
 import Items.Transistor;
 import Rooms.BasicRoom;
@@ -18,8 +19,11 @@ import java.util.List;
 public class MainWindow extends JFrame {
     List<IView> views;
     public static java.util.Map<Object, IView> viewsByObjects = new HashMap<>();
+    Map map;
+    RoomView roomSrc;
+    RoomView roomDest;
 
-    public MainWindow() {
+    public MainWindow(Notifiable controller) {
         this.setTitle("Best Game Ever");
         this.setLayout(new GridBagLayout());
         this.setResizable(true);
@@ -28,7 +32,7 @@ public class MainWindow extends JFrame {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         this.setSize(screenSize.width, screenSize.height - 50);
 
-        Map map = new Map();
+        map = new Map(controller);
 
 
         gbc.gridx = 0;
@@ -65,7 +69,7 @@ public class MainWindow extends JFrame {
         gbcRooms.weighty = 1.0;
         gbcRooms.insets = new Insets(0, 0, 0, 10);
         gbcRooms.fill = GridBagConstraints.BOTH;
-        RoomView roomSrc = new RoomView(Labyrinth.currentPlayer.getRoom());
+        roomSrc = new RoomView(Labyrinth.currentPlayer.getRoom());
         roomSrc.getPanel().setPreferredSize(new Dimension(350, 200));
         roomsPanel.add(roomSrc.getPanel(), gbcRooms);
         //roomV.panel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 40));
@@ -80,7 +84,7 @@ public class MainWindow extends JFrame {
         gbcRooms.weighty = 1.0;
         gbcRooms.insets = new Insets(0, 10, 0, 0);
         gbcRooms.fill = GridBagConstraints.BOTH;
-        RoomView roomDest = new RoomView(RoomNodeView.lastClickedRoom.getRoom());
+        roomDest = new RoomView(RoomNodeView.lastClickedRoom.getRoom());
         roomsPanel.add(roomDest.getPanel(), gbcRooms);
 
         this.add(roomsPanel, gbc);
@@ -91,7 +95,7 @@ public class MainWindow extends JFrame {
         //this.setSize(1000, 800);
         this.setVisible(true);
 
-
+        views = List.of(map,  roomSrc, roomDest, viewsByObjects.get(Labyrinth.currentPlayer));
     }
 
     private void handleRoomViews(){
@@ -107,6 +111,10 @@ public class MainWindow extends JFrame {
     }
 
     public void updateAllViews() {
+        roomSrc.setRoom(Labyrinth.currentPlayer.getRoom());
+        roomDest.setRoom(RoomNodeView.lastClickedRoom.getRoom());
+        roomSrc.update();
+        roomDest.update();
         for (IView view : views) {
             view.update();
         }

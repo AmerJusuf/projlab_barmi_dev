@@ -59,7 +59,8 @@ public class Labyrinth {
         generateMap();
     }
 
-    public Labyrinth(List<Student> students, Map map){
+    public Labyrinth(List<Student> students, Map map, Notifiable controller){
+        this.controller = controller;
         this.students = students;
         instructors = new ArrayList<>();
         for(int i = 0; i < (students.size()*2); i++){
@@ -289,91 +290,91 @@ public class Labyrinth {
 
         //Row1
         BasicRoom room1 = new BasicRoom(3);
-        MainWindow.viewsByObjects.put(room1, new RoomNodeView(room1, false ,false ,false));
+        MainWindow.viewsByObjects.put(room1, new RoomNodeView(room1, false ,false ,false, controller));
 
         CursedRoomDecorator room2 = new CursedRoomDecorator(new BasicRoom(4));
-        RoomNodeView roomNodeView2 = new RoomNodeView(room2, false ,true ,false);
+        RoomNodeView roomNodeView2 = new RoomNodeView(room2, false ,true ,false, controller);
         MainWindow.viewsByObjects.put(room2, roomNodeView2);
 
         BasicRoom room3 = new BasicRoom(5);
-        MainWindow.viewsByObjects.put(room3, new RoomNodeView(room3, false ,false ,false));
+        MainWindow.viewsByObjects.put(room3, new RoomNodeView(room3, false ,false ,false, controller));
 
 
         PoisonedRoomDecorator room4 = new PoisonedRoomDecorator(new BasicRoom(3));
-        MainWindow.viewsByObjects.put(room4, new RoomNodeView(room4, true ,false ,false));
+        MainWindow.viewsByObjects.put(room4, new RoomNodeView(room4, true ,false ,false, controller));
 
         BasicRoom room5 = new BasicRoom(2);
-        MainWindow.viewsByObjects.put(room5, new RoomNodeView(room5, false ,false ,false));
+        MainWindow.viewsByObjects.put(room5, new RoomNodeView(room5, false ,false ,false, controller));
 
         //Row2
         PoisonedRoomDecorator room6 = new PoisonedRoomDecorator(new BasicRoom(3));
-        MainWindow.viewsByObjects.put(room6, new RoomNodeView(room6, true ,false ,false));
+        MainWindow.viewsByObjects.put(room6, new RoomNodeView(room6, true ,false ,false, controller));
 
         BasicRoom room7 = new BasicRoom(4);
-        MainWindow.viewsByObjects.put(room7, new RoomNodeView(room7, false ,false ,false));
+        MainWindow.viewsByObjects.put(room7, new RoomNodeView(room7, false ,false ,false, controller));
 
         CursedRoomDecorator room8 = new CursedRoomDecorator(new BasicRoom(5));
-        MainWindow.viewsByObjects.put(room8, new RoomNodeView(room8, false ,true ,false));
+        MainWindow.viewsByObjects.put(room8, new RoomNodeView(room8, false ,true ,false, controller));
 
         BasicRoom room9 = new BasicRoom(3);
-        MainWindow.viewsByObjects.put(room9, new RoomNodeView(room9, false ,false ,false));
+        MainWindow.viewsByObjects.put(room9, new RoomNodeView(room9, false ,false ,false, controller));
 
         BasicRoom room10 = new BasicRoom(2);
-        MainWindow.viewsByObjects.put(room10, new RoomNodeView(room10, false ,false ,false));
+        MainWindow.viewsByObjects.put(room10, new RoomNodeView(room10, false ,false ,false, controller));
 
         //Row3
         BasicRoom room11 = new BasicRoom(3);
-        MainWindow.viewsByObjects.put(room11, new RoomNodeView(room11, false ,false ,false));
+        MainWindow.viewsByObjects.put(room11, new RoomNodeView(room11, false ,false ,false, controller));
 
         BasicRoom room12 = new BasicRoom(4);
-        MainWindow.viewsByObjects.put(room12, new RoomNodeView(room12, false ,false ,false));
+        MainWindow.viewsByObjects.put(room12, new RoomNodeView(room12, false ,false ,false, controller));
 
         CursedRoomDecorator room13 = new CursedRoomDecorator(new BasicRoom(5));
-        MainWindow.viewsByObjects.put(room13, new RoomNodeView(room13, false ,true ,false));
+        MainWindow.viewsByObjects.put(room13, new RoomNodeView(room13, false ,true ,false, controller));
 
         PoisonedRoomDecorator room14 = new PoisonedRoomDecorator(new BasicRoom(3));
-        MainWindow.viewsByObjects.put(room14, new RoomNodeView(room14, true ,false ,false));
+        MainWindow.viewsByObjects.put(room14, new RoomNodeView(room14, true ,false ,false, controller));
 
         BasicRoom room15 = new BasicRoom(2);
-        RoomNodeView roomNodeView15 = new RoomNodeView(room15, false ,false ,false);
-        MainWindow.viewsByObjects.put(room15, new RoomNodeView(room15, false ,false ,false));
+        RoomNodeView roomNodeView15 = new RoomNodeView(room15, false ,false ,false, controller);
+        MainWindow.viewsByObjects.put(room15, new RoomNodeView(room15, false ,false ,false, controller));
 
         //Row4
         BasicRoom room16 = new BasicRoom(3);
-        MainWindow.viewsByObjects.put(room16, new RoomNodeView(room16, false ,false ,false));
+        MainWindow.viewsByObjects.put(room16, new RoomNodeView(room16, false ,false ,false, controller));
 
         PoisonedRoomDecorator room17 = new PoisonedRoomDecorator(new BasicRoom(4));
-        MainWindow.viewsByObjects.put(room17, new RoomNodeView(room17, true ,false ,false));
+        MainWindow.viewsByObjects.put(room17, new RoomNodeView(room17, true ,false ,false, controller));
 
         BasicRoom room18 = new BasicRoom(5);
-        MainWindow.viewsByObjects.put(room18, new RoomNodeView(room18, false ,false ,false));
+        MainWindow.viewsByObjects.put(room18, new RoomNodeView(room18, false ,false ,false, controller));
 
         CursedRoomDecorator room19 = new CursedRoomDecorator(new BasicRoom(3));
-        MainWindow.viewsByObjects.put(room19, new RoomNodeView(room19, false ,true ,false));
+        MainWindow.viewsByObjects.put(room19, new RoomNodeView(room19, false ,true ,false, controller));
 
         BasicRoom room20 = new BasicRoom(2);
-        RoomNodeView roomNodeView20 = new RoomNodeView(room20, false ,false ,false);
+        RoomNodeView roomNodeView20 = new RoomNodeView(room20, false ,false ,false, controller);
         MainWindow.viewsByObjects.put(room20, roomNodeView20);
 
         //Row5
         BasicRoom room21 = new BasicRoom(3);
-        RoomNodeView roomNodeView21 = new RoomNodeView(room21, false ,false ,false);
+        RoomNodeView roomNodeView21 = new RoomNodeView(room21, false ,false ,false, controller);
         MainWindow.viewsByObjects.put(room21, roomNodeView21);
 
         BasicRoom room22 = new BasicRoom(4);
-        RoomNodeView roomNodeView22 = new RoomNodeView(room22, false ,false ,false);
+        RoomNodeView roomNodeView22 = new RoomNodeView(room22, false ,false ,false, controller);
         MainWindow.viewsByObjects.put(room22, roomNodeView22);
 
         CursedRoomDecorator room23 = new CursedRoomDecorator(new BasicRoom(5));
-        RoomNodeView roomNodeView23 = new RoomNodeView(room23, false ,true ,false);
+        RoomNodeView roomNodeView23 = new RoomNodeView(room23, false ,true ,false, controller);
         MainWindow.viewsByObjects.put(room23, roomNodeView23);
 
         BasicRoom room24 = new BasicRoom(3);
-        RoomNodeView roomNodeView24 = new RoomNodeView(room24, false ,false ,false);
+        RoomNodeView roomNodeView24 = new RoomNodeView(room24, false ,false ,false, controller);
         MainWindow.viewsByObjects.put(room24, roomNodeView24);
 
         PoisonedRoomDecorator room25 = new PoisonedRoomDecorator(new BasicRoom(2));
-        RoomNodeView roomNodeView25 = new RoomNodeView(room25, true ,false ,false);
+        RoomNodeView roomNodeView25 = new RoomNodeView(room25, true ,false ,false, controller);
         MainWindow.viewsByObjects.put(room25, roomNodeView25);
         RoomNodeView.lastClickedRoom = roomNodeView15;
 
@@ -537,11 +538,12 @@ public class Labyrinth {
             rooms.get(24-j).addCharacter(students.get(i));
             students.get(i).setRoom(rooms.get(24-j));
 
-            AirFreshener airFreshener3 = new AirFreshener();
-            students.get(i).addItem(airFreshener3);
-            AirFreshenerView airFreshenerView2 = new AirFreshenerView(airFreshener3);
-            MainWindow.viewsByObjects.put(airFreshener3, airFreshenerView2);
-            MainWindow.viewsByObjects.get(students.get(i)).update();
+//            AirFreshener airFreshener3 = new AirFreshener();
+//            students.get(i).addItem(airFreshener3);
+//            airFreshener3.setOwner(students.get(i));
+//            AirFreshenerView airFreshenerView2 = new AirFreshenerView(airFreshener3);
+//            MainWindow.viewsByObjects.put(airFreshener3, airFreshenerView2);
+//            MainWindow.viewsByObjects.get(students.get(i)).update();
         }
 
 
@@ -623,6 +625,17 @@ public class Labyrinth {
         Logarlec logarlecFake = new Logarlec(true);
         rooms.get(6).addItem(logarlecFake);
         MainWindow.viewsByObjects.put(logarlecFake, new LogarlecView(logarlecFake));
+    }
+
+    public void setControllerToItems(){
+        for (IRoom room : rooms){
+            for(Item item : room.getItems()){
+                item.setController(controller);
+            }
+        }
+        for ( Student student : students){
+            student.setController(controller);
+        }
     }
 
 }

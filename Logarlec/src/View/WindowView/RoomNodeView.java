@@ -1,6 +1,7 @@
 package View.WindowView;
 
 import Controller.Notifiable;
+import Game.Labyrinth;
 import Rooms.IRoom;
 import View.IView;
 
@@ -16,7 +17,8 @@ public class RoomNodeView extends JPanel implements IView {
     private IRoom room;
 
     private List<RoomNodeView> neighbourRooms = new ArrayList<>();
-    private Image circleImage;
+    private Image circleDefaultImage;
+    private Image circleCurrentImage;
     private boolean poisoned;
     private boolean cursed;
     private boolean sticky;
@@ -26,7 +28,8 @@ public class RoomNodeView extends JPanel implements IView {
 
     public static RoomNodeView lastClickedRoom = null;
 
-    public RoomNodeView(IRoom room, boolean poisoned, boolean cursed, boolean sticky) {
+
+    public RoomNodeView(IRoom room, boolean poisoned, boolean cursed, boolean sticky, Notifiable control) {
         this.room = room;
         this.setPreferredSize(new Dimension(100, 100)); // Adjust size as needed
         this.setBackground(Color.WHITE);
@@ -34,14 +37,16 @@ public class RoomNodeView extends JPanel implements IView {
         this.poisoned = poisoned;
         this.cursed = cursed;
         this.sticky = sticky;
-
+        this.controller = control;
 
         // Load circle image
-        circleImage = new ImageIcon("Icons/basicroom.png").getImage();
+        circleDefaultImage = new ImageIcon("Icons/basicroom.png").getImage();
+        circleCurrentImage = new ImageIcon("Icons/poisonedroom.png").getImage();
 
         this.addMouseListener(new MouseAdapter() {
             @Override
             public void mouseClicked(MouseEvent e) {
+                System.out.println("Clicked");
                 lastClickedRoom = RoomNodeView.this;
                 controller.notifyModelChanged();
             }
@@ -97,7 +102,11 @@ public class RoomNodeView extends JPanel implements IView {
         // Draw circle image
         int imageWidth = Math.min(maxSize, width);
         int imageHeight = Math.min(maxSize, height);
-        g.drawImage(circleImage, 0, 0, imageWidth, imageHeight, this);
+
+        if (Labyrinth.currentPlayer.getRoom() == room)
+            g.drawImage(circleCurrentImage, 0, 0, imageWidth, imageHeight, this);
+        else
+            g.drawImage(circleDefaultImage, 0, 0, imageWidth, imageHeight, this);
 
         // Draw room types underneath the circle
         int iconWidth = Math.min(maxSize, (width - 10) / 3) + 30; // Adjust position

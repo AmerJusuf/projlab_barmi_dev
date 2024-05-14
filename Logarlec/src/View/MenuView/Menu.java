@@ -1,5 +1,6 @@
 package View.MenuView;
 
+import Controller.Controller;
 import View.WindowView.MainWindow;
 
 import javax.swing.*;
@@ -17,6 +18,7 @@ public class Menu extends JFrame implements ActionListener {
     JButton descriptionButton;
     JButton controlButton;
     JButton exitButton;
+
 
     public Menu() {
         super("Best Game Ever");
@@ -69,7 +71,10 @@ public class Menu extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == startButton) {
             System.out.println("Start button clicked");
-            MainWindow mainWindow = new MainWindow();
+            Controller controller = new Controller();
+            MainWindow mainWindow = new MainWindow(controller);
+            controller.setMainWindow(mainWindow);
+
             this.dispose();
         } else if (e.getSource() == descriptionButton) {
             System.out.println("Description button clicked");

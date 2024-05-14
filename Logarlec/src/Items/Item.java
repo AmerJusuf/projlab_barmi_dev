@@ -125,7 +125,7 @@ public abstract class Item {
         setIsActive(false);
         owner.getRoom().addItem(this);
         removeOwner();
-        controller.notifyModelChanged();
+
     }
 
     /**

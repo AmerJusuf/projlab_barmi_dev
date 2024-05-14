@@ -6,7 +6,6 @@ import Rooms.IRoom;
 import View.WindowView.RoomView;
 
 public class Student extends Character{
-    private Notifiable controller;
     boolean moveButtonClicked = false;
     private boolean isCaught = false;
     /**

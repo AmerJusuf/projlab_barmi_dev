@@ -1,27 +1,0 @@
-
-‰
-java:S2184"ECast one of the operands of this subtraction operation to a "double".(¨êË¢8ï’Ì»÷1J$9ea53fe6-b764-4718-a392-c18fc02bb942
-‰
-java:S2184‚"ECast one of the operands of this subtraction operation to a "double".(•ú…¸8ğ’Ì»÷1J$c2fb2fdf-b5c7-40d9-ba12-ff299e5040b6
-s
-java:S1948"+Make "labyrinth" transient or serializable.(Ïşƒ‰ÿÿÿÿÿ8ğ‰ƒ¼÷1J$2fc89abd-7a9d-46fa-a00c-e8706e2c90f5
-j
-java:S1948""Make "nodes" private or transient.(¢ÈÈ‰ûÿÿÿÿ8é“Ì»÷1J$58a4fec1-0f75-4281-a2ea-35fa508fcf81
-ƒ	java:S125'"<This block of commented-out lines of code should be removed.(Ëùÿìüÿÿÿÿ8î“Ì»÷1J$8bb6c085-ac6b-4434-903d-0c451e7d7882
-ƒ	java:S125_"<This block of commented-out lines of code should be removed.(œ˜ˆ—ıÿÿÿÿ8ó“Ì»÷1J$0f2a8012-46a5-45a3-b241-89b086b5a1f7
-€
-java:S1854„"7Remove this useless assignment to local variable "len".(È‡áúÿÿÿÿ8ô“Ì»÷1J$1ecae6d7-3cf5-407e-a2c4-4b1f4eae034e
-q
-java:S1481„"(Remove this unused "len" local variable.(È‡áúÿÿÿÿ8ö“Ì»÷1J$4097ba9d-dcbe-478e-83e1-3c912bd81a97
-p
-java:S2201‘"'The return value of "get" must be used.(£í•¼üÿÿÿÿ8÷“Ì»÷1J$33f98493-8c00-4e13-a05e-1b714a142726
-ƒ
-java:S1128";Remove this unused import 'View.CharacterView.StudentView'.(Ó…È™ÿÿÿÿÿ8ş‰ƒ¼÷1J$9e5355ca-0f89-402b-93a0-359d54330148
-t
-java:S1128"1Remove this unused import 'java.awt.geom.Line2D'.(ìôÆÆ8ş‰ƒ¼÷1J$377a3827-0ab7-41da-9e13-f0daae3f8912
-y
-java:S1128"1Remove this unused import 'java.awt.geom.Path2D'.(ŠŒõ›øÿÿÿÿ8ÿ‰ƒ¼÷1J$af6f4750-2656-4962-a827-7e9d18590b83
-u
-java:S1128"2Remove this unused import 'java.awt.geom.Point2D'.(ˆÕ­Ü8ÿ‰ƒ¼÷1J$9b770688-ee9b-4adb-a27f-a5a032d6721a
-v
-java:S1128".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿ8ÿ‰ƒ¼÷1J$33baaa22-e9dd-412b-ae31-68f4fa540b1d

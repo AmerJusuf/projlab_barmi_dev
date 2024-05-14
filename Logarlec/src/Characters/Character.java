@@ -1,5 +1,6 @@
 package Characters;
 
+import Controller.Notifiable;
 import Items.Item;
 import Rooms.BasicRoom;
 import Rooms.IRoom;
@@ -11,6 +12,8 @@ public abstract class Character {
     protected List<Item> items;
     protected IRoom currentRoom;
     protected boolean isPoisoned;
+
+    Notifiable controller;
 
     public Character(IRoom currentRoom){
         this.items = new ArrayList<>();
@@ -39,6 +42,10 @@ public abstract class Character {
                 this.setRoom(nextRoom);
             }
         }
+    }
+
+    public void setController(Notifiable controller){
+        this.controller = controller;
     }
 
     public abstract void pickItem(Item item);
@@ -94,6 +101,7 @@ public abstract class Character {
             System.out.println("Item removed from character's inventory | Character: dropItem()");
             currentRoom.addItem(item);
         }
+        controller.notifyModelChanged();
     }
 
     /**

@@ -1,5 +1,6 @@
 package View.ItemView;
 
+import Game.Labyrinth;
 import Items.Transistor;
 
 import javax.swing.*;
@@ -27,16 +28,21 @@ public class TransistorView extends ItemView {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == activate) {
+        if (e.getSource() == pickButton) {
+            Labyrinth.currentPlayer.pickItem(item);
+        } else if (e.getSource() == dropButton) {
+            Labyrinth.currentPlayer.dropItem(item);
+        }
+        else if (e.getSource() == activate) {
             System.out.println("Button activevate clicked");
             transistor.setIsTurnedOn(true);
         }
-        if (e.getSource() == pair && transistor.getisActive()) {
+        else if (e.getSource() == pair && transistor.getisActive()) {
             System.out.println("Button pair clicked");
             //TODO: Studentnek fuggveny ami osszeparositja a nala levo ket aktiv transzisztort
 
         }
-        if (e.getSource() == place && transistor.getisActive() && transistor.getPairTransistor() != null) {
+        else if (e.getSource() == place && transistor.getisActive() && transistor.getPairTransistor() != null) {
             System.out.println("Button placed clicked");
             item.placeTransistor();
         }

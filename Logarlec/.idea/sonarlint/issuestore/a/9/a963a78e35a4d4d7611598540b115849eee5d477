@@ -1,19 +1,0 @@
-
-¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(† âöûÿÿÿÿ8òÂÏÏó1J$b654bf40-02fe-45c8-822a-0773d4b649f1
-š
-java:S1450"WRemove the "isCaught" field and declare it as a local variable in the relevant methods.(í¯¾Ÿ8ıÂÏÏó1J$a39f0278-f27a-40df-a7a4-a78862347357
-r	java:S106""+Replace this use of System.out by a logger.(³¡×—ıÿÿÿÿ8ÃÏÏó1J$66845c02-fb1a-448a-8f48-e12e662c1bf8
-r	java:S106-"+Replace this use of System.out by a logger.(Â±ßÑúÿÿÿÿ8ƒÃÏÏó1J$17085b2e-f420-450f-9a0f-040531e2b1fe
-m	java:S1069"+Replace this use of System.out by a logger.(Â‰ş8ƒÃÏÏó1J$dd7d633f-cef1-4083-99d9-7ee353d6354d
-}
-java:S1161@":Add the "@Override" annotation above this method signature(”×ºÆ8ºÄîæö1J$1ff98c46-6f71-4873-b67a-f765348a6a30
-ƒ	java:S125Q"<This block of commented-out lines of code should be removed.(äØ™ıÿÿÿÿ8‡ÃÏÏó1J$5238229f-2a7e-4514-842b-5852096cb4f4
-¡
-java:S2142}"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8„Ì¢Ôó1J$f6d252dc-4525-4891-a4ae-5c1c7272d58d
-
-java:S2696"6Make the enclosing method "static" or remove this set.(…ÉëÓşÿÿÿÿ8ÀÄîæö1J$d4a5d4ea-7c69-4cd3-8a5a-5a12c61379da
-s	java:S106‚"+Replace this use of System.out by a logger.(ªã²ûÿÿÿÿ8ùÃ‡ô1J$40ede5d5-d315-4631-add3-c3388beda61c
-{
-java:S1135ƒ"2Complete the task associated to this TODO comment.(ˆ…âùÿÿÿÿ8ˆÃÏÏó1J$371adf08-82b7-439f-a027-6ea330c8eb63
-o
-java:S1068",Remove this unused "isCaught" private field.(í¯¾Ÿ8‰ÃÏÏó1J$43cafb87-201f-4457-951f-12539542e5a9

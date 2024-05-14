@@ -20,8 +20,6 @@ public class RoomView implements ActionListener, IView {
     private JButton moveButton;
     private JButton stayButton;
 
-    //currentPLayer.getRoom() == room -> stayButton, amugymeg move
-
     public RoomView(IRoom room)
     {
         this.room = room;
@@ -30,9 +28,6 @@ public class RoomView implements ActionListener, IView {
         } else {
             title = new JLabel("DestinationRoom");
         }
-//        if(RoomNodeView.lastClickedRoom.getRoom() == room){
-//            title = new JLabel("DestinationRoom");
-//        }
         panel.setBackground(Color.LIGHT_GRAY);
         panel.setLayout(new GridLayout(4, 1, 0, 0));
 
@@ -88,6 +83,7 @@ public class RoomView implements ActionListener, IView {
                 playerListPanel.add(player.getLabel());
             } else {
                 // Handle the case where the player view is not found for the character
+                // TODO: ????
             }
         }
         JScrollPane scrollPane = new JScrollPane(playerListPanel);
@@ -136,6 +132,21 @@ public class RoomView implements ActionListener, IView {
     @Override
     public void update() {
         panel.removeAll();
+        for(Item item : room.getItems())
+        {
+            MainWindow.viewsByObjects.get(item).update();
+        }
+        if(Labyrinth.currentPlayer.getRoom() == room){
+            title = new JLabel("Current Room");
+        } else {
+            title = new JLabel("DestinationRoom");
+        }
+        panel.setBackground(Color.LIGHT_GRAY);
+        panel.setLayout(new GridLayout(4, 1, 0, 0));
+
+        title.setHorizontalAlignment(JLabel.CENTER);
+        title.setVisible(true);
+        panel.add(title);
         if(Labyrinth.currentPlayer.getRoom() == room){
             stayButton.setVisible(true);
             moveButton.setVisible(false);
@@ -143,9 +154,11 @@ public class RoomView implements ActionListener, IView {
             stayButton.setVisible(false);
             moveButton.setVisible(true);
         }
-        handleItemPanel();
+
         handlePlayerPanel();
+        handleItemPanel();
         initializeButtons();
+
     }
 
     public JPanel getPanel() {
