@@ -20,8 +20,6 @@ public class RoomView implements ActionListener, IView {
     private JButton moveButton;
     private JButton stayButton;
 
-    //currentPLayer.getRoom() == room -> stayButton, amugymeg move
-
     public RoomView(IRoom room)
     {
         this.room = room;
@@ -85,6 +83,7 @@ public class RoomView implements ActionListener, IView {
                 playerListPanel.add(player.getLabel());
             } else {
                 // Handle the case where the player view is not found for the character
+                // TODO: ????
             }
         }
         JScrollPane scrollPane = new JScrollPane(playerListPanel);
