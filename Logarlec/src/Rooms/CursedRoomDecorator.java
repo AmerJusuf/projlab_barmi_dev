@@ -47,6 +47,7 @@ public class CursedRoomDecorator extends RoomDecorator{
             }
             System.out.println("Hiding neighbour | CursedRoomDecorator: manageDoors");
         }
+
     }
 
     @Override

@@ -201,7 +201,9 @@ public class Labyrinth {
                     cleaner.nextRound();
                 }
            // Osszes szoba tarygara es osszes karakterek targyaira step() fuggveny meghivasa
-
+            for( IRoom room : rooms){
+                room.decorate();
+            }
            mergeAndSplitRandomly();
 
             stepItems();

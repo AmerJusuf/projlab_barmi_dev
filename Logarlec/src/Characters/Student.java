@@ -118,20 +118,22 @@ public class Student extends Character{
 
     @Override
     public String nextRound()  {
-        while (!RoomView.isMoveButtonClicked()){
+
+        while (!moved && !isPoisoned){
             try {
                 Thread.sleep(10);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
-        RoomView.moveButtonClicked = false;
+        moved = false;
+        isPoisoned = false;
         System.out.println("OVER | Student: nextRound()");
-        return ""; //TODO: void
+        return "";
     }
 
-    public void setMoveButtonClicked(boolean moveButtonClicked) {
-        this.moveButtonClicked = moveButtonClicked;
+    public void setStayButtonClicked() {
+        this.moved = true;
     }
 
 
