@@ -1,12 +1,14 @@
 package View.WindowView;
 
 import Characters.Student;
+import Controller.Controller;
 import Controller.Notifiable;
 import Game.Labyrinth;
 import Rooms.IRoom;
 import TestLogic.TestLogic;
 import View.CharacterView.StudentView;
 import View.IView;
+import jdk.incubator.vector.VectorOperators;
 
 import javax.swing.*;
 import java.awt.*;
@@ -37,14 +39,14 @@ public class Map extends JPanel implements IView {
             Student st4 = new Student();
             students = List.of(st, st2, st3, st4);
             labyrinth = new Labyrinth(students, this, controller);
-            labyrinth.setControllerToItems();
 //        if(Labyrinth.currentPlayer == null) {
 //            Labyrinth.currentPlayer = st;
 //        }
         }
         else{
-            loadMap("test1");
+            loadMap("test1", controller);
         }
+        labyrinth.setControllerToItems();
 
         setPreferredSize(new Dimension(1000, 1000));
         setBackground(Color.LIGHT_GRAY);
@@ -166,11 +168,13 @@ public class Map extends JPanel implements IView {
         return null;
     }
 
-    public void loadMap(String fileName){
+    public void loadMap(String fileName,  Notifiable controller){
         if(fileName == null){
             fileName = "default.map";
         }
+        TestLogic.setController(controller);
         labyrinth = TestLogic.getAndLoadLabyrinth(fileName);
         labyrinth.setMap(this);
+        labyrinth.setController(controller);
     }
 }
