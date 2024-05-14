@@ -28,15 +28,13 @@ public class RoomNodeView extends JPanel implements IView {
 
     public static RoomNodeView lastClickedRoom = null;
 
-    private int x = 0;
-    private int y = 0;
+    private int x;
+    private int y;
 
 
-    public RoomNodeView(IRoom room, boolean poisoned, boolean cursed, boolean sticky, int x, int y, Notifiable control) {
+    public RoomNodeView(IRoom room, boolean poisoned, boolean cursed, boolean sticky, Notifiable control) {
         this.room = room;
-        this.x = x;
-        this.y = y;
-        this.setPreferredSize(new Dimension(100, 100)); // Adjust size as needed
+       // this.setPreferredSize(new Dimension(100, 100)); // Adjust size as needed
         this.setBackground(Color.WHITE);
         this.setOpaque(false);
         this.poisoned = poisoned;
@@ -58,7 +56,51 @@ public class RoomNodeView extends JPanel implements IView {
         });
 
         // Use BoxLayout to stack components vertically
-        setLayout(null);
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+
+        // Create labels for room types
+        JLabel poisonedLabel = new JLabel(new ImageIcon("Icons/poisoned.jpg"));
+        JLabel cursedLabel = new JLabel(new ImageIcon("Icons/cursed.jpg"));
+        JLabel stickyLabel = new JLabel(new ImageIcon("Icons/sticky.jpg"));
+
+
+
+        // Add room type labels to the panel
+        add(Box.createVerticalGlue());
+        add(poisonedLabel);
+        add(cursedLabel);
+        add(stickyLabel);
+        add(Box.createVerticalGlue());
+        this.setVisible(true);
+    }
+
+    public RoomNodeView(IRoom room, boolean poisoned, boolean cursed, boolean sticky, int x, int y, Notifiable control) {
+        this.room = room;
+        this.x = x;
+        this.y = y;
+       // this.setPreferredSize(new Dimension(100, 100)); // Adjust size as needed
+        this.setBackground(Color.WHITE);
+        this.setOpaque(false);
+        this.poisoned = poisoned;
+        this.cursed = cursed;
+        this.sticky = sticky;
+        this.controller = control;
+
+        // Load circle image
+        circleDefaultImage = new ImageIcon("Icons/basicroom.png").getImage();
+        circleCurrentImage = new ImageIcon("Icons/poisonedroom.png").getImage();
+
+        this.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                System.out.println("Clicked");
+                lastClickedRoom = RoomNodeView.this;
+                controller.notifyModelChanged();
+            }
+        });
+
+        // Use BoxLayout to stack components vertically
+        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 
         // Create labels for room types
         JLabel poisonedLabel = new JLabel(new ImageIcon("Icons/poisoned.jpg"));
@@ -95,9 +137,18 @@ public class RoomNodeView extends JPanel implements IView {
         repaint(); // Redraw panel with updated room types
     }
 
+    public void setBounds(int x, int y){
+        this.x = x;
+        this.y = y;
+        super.setBounds(x, y, 220, 220);
+        this.setVisible(true);
+    }
+
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
+        this.setBounds(x, y, 220, 220);
+
         width = getWidth() / 3;
         height = getHeight() / 3;
 
@@ -108,11 +159,11 @@ public class RoomNodeView extends JPanel implements IView {
         int imageWidth = Math.min(maxSize, width);
         int imageHeight = Math.min(maxSize, height);
 
-        if (Labyrinth.currentPlayer.getRoom() == room)
-            g.drawImage(circleCurrentImage, x, y, imageWidth, imageHeight, this);
-        else
-            g.drawImage(circleDefaultImage, x, y, imageWidth, imageHeight, this);
-
+        if (Labyrinth.currentPlayer.getRoom() == room) {
+            g.drawImage(circleCurrentImage, 0, 0, imageWidth, imageHeight, this);
+        }else {
+            g.drawImage(circleDefaultImage, 0, 0, imageWidth, imageHeight, this);
+        }
 
         int iconSize = Math.min(maxSize / 3, 30); // Adjust icon size as needed
         int iconSpacing = 10; // Adjust spacing between icons as needed
@@ -147,7 +198,7 @@ public class RoomNodeView extends JPanel implements IView {
 
     @Override
     public void update() {
-        //empty
+        this.repaint();
     }
 
     @Override
@@ -166,5 +217,13 @@ public class RoomNodeView extends JPanel implements IView {
 
     public int getY() {
         return y;
+    }
+
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    public void setY(int y) {
+        this.y = y;
     }
 }

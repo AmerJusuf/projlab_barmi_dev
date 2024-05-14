@@ -516,8 +516,18 @@ public class Labyrinth {
         rooms.add(room25);
 
 
+        int x = 200;
+        int y = 100;
         for(IRoom room: rooms){
             room.setLabyrinth(this);
+            MainWindow.viewsByObjects.get(room).setBounds(x, y);
+
+            x += 220;
+            if(x >= 1200){
+                x = 200;
+                y += 200;
+            }
+            MainWindow.viewsByObjects.get(room).update();
         }
 
 
@@ -635,6 +645,12 @@ public class Labyrinth {
         }
         for ( Student student : students){
             student.setController(controller);
+        }
+        for ( Instructor instructor : instructors){
+            instructor.setController(controller);
+        }
+        for ( Cleaner cleaner : cleaners){
+            cleaner.setController(controller);
         }
     }
 

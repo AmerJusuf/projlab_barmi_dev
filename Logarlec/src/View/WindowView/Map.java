@@ -46,10 +46,10 @@ public class Map extends JPanel implements IView {
             loadMap("test1");
         }
 
-        setPreferredSize(new Dimension(500, 500));
+        setPreferredSize(new Dimension(1000, 1000));
         setBackground(Color.LIGHT_GRAY);
         setBorder(BorderFactory.createEmptyBorder(topBorder, borderToLeft, bottomBorder, borderToRight));
-        setLayout(new GridLayout(5, 5, 20, 20));
+        setLayout(null);
 
         //start labyrinth on thread
         Thread labyrinthThread = new Thread(() -> labyrinth.startGame());
@@ -64,8 +64,12 @@ public class Map extends JPanel implements IView {
         nodes = new ArrayList<>();
         for (IRoom room : labyrinth.getRooms()) {
             RoomNodeView roomNodeView = (RoomNodeView) MainWindow.viewsByObjects.get(room);
-            nodes.add(roomNodeView);
-            this.add(roomNodeView);
+
+            if(roomNodeView != null){
+                nodes.add(roomNodeView);
+                this.add(roomNodeView);
+            }
+
         }
 
         // Add neighbors to nodes
@@ -118,10 +122,15 @@ public class Map extends JPanel implements IView {
         int toRow = toIndex / 5;
 
         // Calculate coordinates of the center of the cells
-        int x1 = (fromCol * cellWidth) + borderToLeft + from.getWidth() + 30; // Adjusted for border
-        int y1 = (fromRow * cellHeight) + topBorder + from.getHeight() + 30; // Adjusted for border
-        int x2 = (toCol * cellWidth) + borderToLeft + from.getWidth() + 30; // Adjusted for border
-        int y2 = (toRow * cellHeight) + topBorder + from.getHeight() + 30; // Adjusted for border
+//        int x1 = (fromCol * cellWidth) + borderToLeft + from.getWidth() + 30; // Adjusted for border
+//        int y1 = (fromRow * cellHeight) + topBorder + from.getHeight() + 30; // Adjusted for border
+//        int x2 = (toCol * cellWidth) + borderToLeft + from.getWidth() + 30; // Adjusted for border
+//        int y2 = (toRow * cellHeight) + topBorder + from.getHeight() + 30; // Adjusted for border
+
+        int x1 = from.getX() + 35;
+        int y1 = from.getY() + 35;
+        int x2 = to.getX() + 35;
+        int y2 = to.getY() + 35;
 
         // Draw line
         g2d.drawLine(x1, y1, x2, y2);
@@ -142,13 +151,9 @@ public class Map extends JPanel implements IView {
 
     @Override
     public void update() {
-        for(IRoom room: labyrinth.getRooms()){
-            MainWindow.viewsByObjects.get(room);
+        for (RoomNodeView node : nodes) {
+            node.repaint();
         }
-
-//        for (RoomNodeView node : nodes) {
-//            node.paintComponent(getGraphics());
-//        }
     }
 
     @Override

@@ -42,6 +42,7 @@ public abstract class Character {
                 this.setRoom(nextRoom);
             }
         }
+        controller.notifyModelChanged();
     }
 
     public void setController(Notifiable controller){
