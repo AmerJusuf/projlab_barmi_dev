@@ -1,17 +1,21 @@
+import View.MenuView.Menu;
+
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        printTestCases();
-        int num;
-        while( (num = scanner.nextInt()) != 0){
-            callTest(num);
-            printTestCases();
-        }
-        System.out.println("Exiting test cases.");
-        scanner.close();
+        Menu menu = new Menu();
+
+//        Scanner scanner = new Scanner(System.in);
+//        printTestCases();
+//        int num;
+//        while( (num = scanner.nextInt()) != 0){
+//            callTest(num);
+//            printTestCases();
+//        }
+//        System.out.println("Exiting test cases.");
+//        scanner.close();
     }
 
     // test cases

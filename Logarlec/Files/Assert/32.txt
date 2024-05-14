@@ -84,6 +84,10 @@ SourceRoom: BR1
 DestRoom: BR2
 Result: Successful
 
+getCaught:
+Character: S1
+Result: Fail
+
 characterStatus:
 Character: I1
 CharacterType: Instructor
@@ -99,6 +103,6 @@ Items:
 Toxicated: true
 
 ID-s:
-L1
-BR1,BR2
-S1,I1,I2
+BR1, BR2
+I1, I2, S1
+RAG1

@@ -47,7 +47,7 @@ Result: Successful
 
 roomStatus:
 Room: CR1
-RoomType: CursedRoomDecorator
+RoomType: CursedRoom
 Characters: S1
 Items: 
 Capacity: 5

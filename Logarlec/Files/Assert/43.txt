@@ -1,33 +1,166 @@
+createLabyrinth:
+Labyrinth: L1
+Result: Successful
+
+createCharacter:
+Character: I1
+Type: Instructor
+Result: Successful
+
+createCharacter:
+Character: C1
+Type: Cleaner
+Result: Successful
+
 createCharacter:
 Character: S1
 Type: Student
 Result: Successful
 
-createItem:
-Item: B1
-Type: Beer
-Fake: false
+addCharacterToLabyrinth:
+Labyrinth: L1
+Character: I1
 Result: Successful
 
-toxicate:
+addCharacterToLabyrinth:
+Labyrinth: L1
+Character: C1
+Result: Successful
+
+addCharacterToLabyrinth:
+Labyrinth: L1
 Character: S1
 Result: Successful
 
-activate:
-Item: B1
+createRoom:
+Room: BR1
+Capacity: 2
+Type: BasicRoom
+Result: Successful
+
+createRoom:
+Room: BR2
+Capacity: 2
+Type: BasicRoom
+Result: Successful
+
+createRoom:
+Room: BR3
+Capacity: 2
+Type: BasicRoom
+Result: Successful
+
+createRoom:
+Room: BR4
+Capacity: 2
+Type: BasicRoom
+Result: Successful
+
+createRoom:
+Room: BR5
+Capacity: 2
+Type: BasicRoom
+Result: Successful
+
+createRoom:
+Room: BR6
+Capacity: 2
+Type: BasicRoom
+Result: Successful
+
+addNeighbour:
+Room: BR1
+Neighbour: BR2
+
+addNeighbour:
+Room: BR2
+Neighbour: BR1
+
+addNeighbour:
+Room: BR3
+Neighbour: BR4
+
+addNeighbour:
+Room: BR4
+Neighbour: BR3
+
+addNeighbour:
+Room: BR5
+Neighbour: BR6
+
+addNeighbour:
+Room: BR6
+Neighbour: BR5
+
+addRoomToLabyrinth:
+Labyrinth: L1
+Room: BR1
+Result: Successful
+
+addRoomToLabyrinth:
+Labyrinth: L1
+Room: BR2
+Result: Successful
+
+addRoomToLabyrinth:
+Labyrinth: L1
+Room: BR3
+Result: Successful
+
+addRoomToLabyrinth:
+Labyrinth: L1
+Room: BR4
+Result: Successful
+
+addRoomToLabyrinth:
+Labyrinth: L1
+Room: BR5
+Result: Successful
+
+addRoomToLabyrinth:
+Labyrinth: L1
+Room: BR6
+Result: Successful
+
+addCharacterToRoom:
+Character: I1
+Room: BR1
+Result: Successful
+
+addCharacterToRoom:
+Character: C1
+Room: BR3
+Result: Successful
+
+addCharacterToRoom:
+Character: S1
+Room: BR5
 Result: Successful
 
 nextRound:
+nextRound done!
+
+characterStatus:
+Character: I1
+CharacterType: Instructor
+Room: BR2
+Items: 
+Toxicated: false
+
+characterStatus:
+Character: C1
+CharacterType: Cleaner
+Room: BR4
+Items: 
+Toxicated: false
 
 characterStatus:
 Character: S1
 CharacterType: Student
-Room: 
-Items:
+Room: BR6
+Items: 
 Toxicated: false
 
-itemStatus:
-Item: B1
-ItemType: Beer
-Owner/Room:
-Fake: false
+ID-s:
+BR1, BR3, BR2, BR5, BR4, splitted7, BR6
+I1, C1, S1

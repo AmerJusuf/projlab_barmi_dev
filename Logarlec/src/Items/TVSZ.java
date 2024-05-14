@@ -30,21 +30,8 @@ public class TVSZ extends Item {
     public boolean protectStudent() {
         System.out.println("TVSZ protects student | TVSZ: protectStudent()");
         if(isFake){
-            System.out.println("TVSZ is fake - no effect!");
-            for(int i = 0; i < owner.getItems().size(); i++){
-                //karakter tárgyainak inaktiválása
-                owner.getItems().get(i).setIsActive(false);
-                //tárgyak tulajdonosának kivétele
-                owner.getItems().get(i).removeOwner();
-                //tulajdonos tárgyainak eltávolítása
-                owner.removeItem(owner.getItems().get(i));
-                //tulajdonos szobájában tárgyak letevése
-                owner.getRoom().addItem(owner.getItems().get(i));
-            }
-            owner.getRoom().getLabyrinth().removeCharacter(owner); //kell a removeCharacter függvény, mert nem tudjuk milyen a tvsz tulajdonosa
             return false;
-        }
-        else {
+        } else {
             decreaseSavesLeft();
             return true;
         }
@@ -54,6 +41,8 @@ public class TVSZ extends Item {
     public boolean getisActive() {
         return false;
     }
+
+    public int getSavesLeft() { return savesLeft; }
 
     /**
      * This method is used to decrease the number of saves left for the TVSZ.
@@ -66,5 +55,7 @@ public class TVSZ extends Item {
             owner.removeItem(this);
             removeOwner();
         }
+        controller.notifyModelChanged();
     }
+
 }

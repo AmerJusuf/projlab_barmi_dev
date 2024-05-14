@@ -12,6 +12,7 @@ public class Transistor extends Item{
         super(isFake);
         isTurnedOn = false;
         pairTransistor = null;
+        owner = null;
     }
 
     public Transistor() {
@@ -38,7 +39,8 @@ public class Transistor extends Item{
         return placeLocation;
     }
 
-    public void place(){
+    @Override
+    public void placeTransistor(){
         if(!isTurnedOn){
             //System.out.println("Transistor is not active: Cannot place | Transistor: place()");
             return;
@@ -69,6 +71,7 @@ public class Transistor extends Item{
         } else{
             //System.out.println("Cannot place: Transistor does not have a pair | Transistor: place()");
         }
+        controller.notifyModelChanged();
     }
 
     public void switchTransistor() {
@@ -78,6 +81,7 @@ public class Transistor extends Item{
             //System.out.println("Switch transistor OFF -> ON | Transistor: switchTransistor()");
         }
         isTurnedOn = !isTurnedOn;
+        controller.notifyModelChanged();
     }
 
     public void setIsTurnedOn(boolean isTurnedOn){
@@ -92,6 +96,7 @@ public class Transistor extends Item{
         } else{
             //System.out.println("Cannot pair: atleast one of them is already paired | Transistor: pairTransistor()");
         }
+        controller.notifyModelChanged();
     }
 
     @Override
@@ -103,6 +108,7 @@ public class Transistor extends Item{
             owner.getRoom().addItem(this);
             removeOwner();
         }
+        controller.notifyModelChanged();
     }
 
     @Override

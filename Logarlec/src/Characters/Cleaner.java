@@ -3,6 +3,7 @@ package Characters;
 import Items.Item;
 import Rooms.IRoom;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Cleaner extends Character{
@@ -53,30 +54,35 @@ public class Cleaner extends Character{
      * The characters are moved to a neighbouring room, if it has free space, if all
      * neighbouring rooms are full, the remaining characters stay in this room.
      */
-    public void moveCharacters(){
-        System.out.println("Cleaner moves characters ouf of the room | Cleaner: moveCharacters()");
-        List<Character> characters = currentRoom.getCharacters();
-        List<IRoom> neighbours = currentRoom.getNeighbours();
-        for(Character character: characters){
-            if(character != this && !character.isPoisoned){
-                boolean isAccepted = false;
-                for(IRoom room : neighbours){
-                    isAccepted = room.acceptCharacter(this);
-                    if(isAccepted){
-                        currentRoom.removeCharacter(character);
-                        character.setRoom(room);
-                        break;
-                    }
-                }
+    public void moveCharacters() {
+        System.out.println("Cleaner moves characters out of the room | Cleaner: moveCharacters()");
+        List<Character> characters = new ArrayList<>(currentRoom.getCharacters());
+        for (Character character : characters) {
+            if (character != this) {
+                character.moveToRandom();
             }
         }
     }
 
+
     /**
      * This method is used to clean the current room from poison.
      */
-    public void unToxicateRoom(){
+    public IRoom unToxicateRoom(){
         System.out.println("Cleaner ventilated room | Cleaner: unToxicateRoom()");
-        currentRoom.unToxicate();
+        return currentRoom.unToxicate();
+    }
+
+    /**
+     * This method implements the cleaners behaviour
+     * It gets called in every round
+     */
+    @Override
+    public String nextRound(){
+        System.out.println("Cleaner nextRound | Cleaner: nextRound()");
+        moveToRandom();
+        moveCharacters();
+        unToxicateRoom();
+        return "";
     }
 }

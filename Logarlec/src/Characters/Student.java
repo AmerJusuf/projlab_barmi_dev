@@ -1,10 +1,13 @@
 package Characters;
 
+import Controller.Notifiable;
 import Items.Item;
 import Rooms.IRoom;
+import View.WindowView.RoomView;
 
 public class Student extends Character{
-
+    boolean moveButtonClicked = false;
+    private boolean isCaught = false;
     /**
      * This constructor is used to create a Student object.
      *
@@ -51,26 +54,86 @@ public class Student extends Character{
      */
     public void getCaught(){
         System.out.println("Student is caught | Student: getCaught()");
+        isCaught = true;
+    }
+
+    /**
+     * A régi getCaught logikája ide lett kiszervezve, hogy egy körben csak egyszer fusson le
+     */
+    public void gotCaught(){
         for(Item item: items){
-           if(item.protectStudent()){
-               return;
-           }
+            if(item.protectStudent()){
+                return;
+            }
         }
         this.dropAllItem();
         currentRoom.removeCharacter(this);
         currentRoom.getLabyrinth().removeStudent(this);
+        controller.notifyModelChanged();
     }
+
+    public void setController(Notifiable controller){
+        this.controller = controller;
+    }
+
+//    @Override
+//    public String nextRound(){
+//        System.out.println("entering Student nextRound | Student: nextRound()");
+//        if(isCaught){
+//            gotCaught();
+//            isCaught = false;
+//        }
+//        String fileContent = "";
+//        boolean endTurn = false;
+//        do{
+//            System.out.println("nextRound while     Enter commands or 'runScript <filename>' to process commands from a file, or 'exit' to quit:");
+//
+//            if (TestLogic.writeToFile) {
+//                String input = TestLogic.continueProcessCommandsFromFile();
+//                if(input.equals("skipTurn:\n\n")){
+//                    endTurn = true;
+//                }
+//                fileContent = fileContent.concat(input);
+//            } else {
+//                Scanner scanner = new Scanner(System.in);
+//                String input = scanner.nextLine();
+//                if(input.equals("skipTurn")){
+//                    endTurn = true;
+//                }
+//                TestLogic.processCommandsFromFile(input); // Process command from console and write output to console
+//            }
+//        }
+//        while(!endTurn);
+//        //while !move
+//            // pickitem
+//            // pickItem
+//
+//            // dropitem
+//            // useItem
+//            // move -> round is over
+//
+//        System.out.println("Student next round | Student: nextRound()");
+//        return fileContent;
+//    }
 
     @Override
-    public void nextRound() {
-        //while !move
-            // pickitem
-            // pickItem
-
-            // dropitem
-            // useItem
-            // move -> round is over
-
-        System.out.println("Student next round | Student: nextRound()");
+    public String nextRound()  {
+        while (!RoomView.isMoveButtonClicked()){
+            try {
+                Thread.sleep(10);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        RoomView.moveButtonClicked = false;
+        System.out.println("OVER | Student: nextRound()");
+        return ""; //TODO: void
     }
+
+    public void setMoveButtonClicked(boolean moveButtonClicked) {
+        this.moveButtonClicked = moveButtonClicked;
+    }
+
+
+
 }

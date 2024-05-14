@@ -18,12 +18,13 @@ Result: Successful
 createItem:
 Item: AIR1
 Type: AirFreshener
+Fake: False
 Result: Successful
 
 addNeighbour:
 Room: BR1
 Neighbour: CR1
-	
+
 addNeighbour:
 Room: CR1
 Neighbour: BR1

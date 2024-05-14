@@ -65,12 +65,21 @@ public class Instructor extends Character{
         }
     }
 
-    public void nextRound(){
-        // dropItem
-        // pickitem
-        // Move to neighbour room (Lowest index)
-        // kickStudents
+    /**
+     * This method implements the instructors behaviour
+     * It gets called in every round
+     */
+    @Override
+    public String nextRound(){
         System.out.println("Instructor next round | Instructor: nextRound()");
+        kickStudents();
+        moveToRandom();
+        if(!items.isEmpty())
+            dropItem(items.get(0));
+        if(!currentRoom.getItems().isEmpty())
+            pickItem(currentRoom.getItems().get(0));
+        kickStudents();
+        return "";
     }
 
 }

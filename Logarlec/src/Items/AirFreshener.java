@@ -1,10 +1,14 @@
 package Items;
 
+import Rooms.IRoom;
+
 public class AirFreshener extends Item {
     /**
      * This constructor is used to create an AirFreshener object.
      */
-    public AirFreshener(boolean isFake){super(isFake);}
+    public AirFreshener() {}
+
+    //public AirFreshener(boolean isFake) { super(isFake); }
 
     @Override
     public boolean getisActive() {
@@ -14,8 +18,13 @@ public class AirFreshener extends Item {
     /**
      * This method is used to clean the current room from poison.
      */
-    public void unToxicateRoom(){
+    @Override
+    public IRoom unToxicateRoom(){
         System.out.println("AirFreshener used | AirFreshener: unToxicateRoom()");
-        owner.getRoom().unToxicate();
+        IRoom room = owner.getRoom().unToxicate();
+        owner.removeItem(this);
+        this.removeOwner();
+        controller.notifyModelChanged();
+        return room;
     }
 }

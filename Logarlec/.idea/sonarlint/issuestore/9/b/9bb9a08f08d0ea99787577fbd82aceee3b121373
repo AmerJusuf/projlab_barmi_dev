@@ -1,0 +1,17 @@
+
+b
+java:S2184~"ECast one of the operands of this subtraction operation to a "double".(¨êË¢8áËºÀ÷1
+b
+java:S2184"ECast one of the operands of this subtraction operation to a "double".(•ú…¸8áËºÀ÷1
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8Îùç¶÷1J$f9b6d30e-1e24-4c8b-98aa-3d2e6f746c3e
+s
+java:S1948"+Make "labyrinth" transient or serializable.(Ïþƒ‰ÿÿÿÿÿ8©éä¼÷1J$39849914-c7dd-49c8-b90e-63a0db0715c2
+]	java:S125("<This block of commented-out lines of code should be removed.(Ëùÿìüÿÿÿÿ8ðËºÀ÷1
+]	java:S125\"<This block of commented-out lines of code should be removed.(œ˜ˆ—ýÿÿÿÿ8øËºÀ÷1
+Z
+java:S1854"7Remove this useless assignment to local variable "len".(È‡žáúÿÿÿÿ8ùËºÀ÷1
+K
+java:S1481"(Remove this unused "len" local variable.(È‡žáúÿÿÿÿ8üËºÀ÷1
+J
+java:S2201Ž"'The return value of "get" must be used.(£í•¼üÿÿÿÿ8ýËºÀ÷1
+X	java:S125‘"<This block of commented-out lines of code should be removed.(ëÎ„m8ýËºÀ÷1

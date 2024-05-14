@@ -1,9 +1,0 @@
-
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ŞÄšË8Î«‘«ò1J$c6a3f6bf-757a-47a7-a869-e513b7825897
-m	java:S106"+Replace this use of System.out by a logger.(€¸Ï³8Œ¬‘«ò1J$f501743e-d5e8-46c9-a793-13547bba5d2e
-m	java:S106"+Replace this use of System.out by a logger.(ûôõÅ8¬‘«ò1J$a3045b3f-aa41-41fb-8962-71c437096637
-m	java:S106?"+Replace this use of System.out by a logger.(¸‘Õ¸8¬‘«ò1J$9a9558db-a778-4937-b1da-ad396748f5fe
-m	java:S106b"+Replace this use of System.out by a logger.(à¼£á8’¬‘«ò1J$e14e07cf-5e5e-4287-8333-3d0906548146
-r	java:S106m"+Replace this use of System.out by a logger.(ú©¢§üÿÿÿÿ8”¬‘«ò1J$20baa12a-fe12-42c7-922f-9d7ea36bb106
-t
-java:S1128"1Remove this unused import 'Characters.Character'.(ÛÑæ¦8š¬‘«ò1J$a4dfa91c-bf24-4308-8126-cb84c2147a84

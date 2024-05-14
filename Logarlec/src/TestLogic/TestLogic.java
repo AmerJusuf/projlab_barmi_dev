@@ -18,11 +18,22 @@ import java.util.regex.Pattern;
 public class TestLogic {
 
     private static final Map<String, Pattern> commandPatterns = new HashMap<>();
+    public static boolean writeToFile = false;
+    public static boolean readMap = false;
+
+    static List<Integer> incorrectFiles = new ArrayList<>();
+
+    private static Scanner scanner;
+
+    private static Labyrinth labyrinth;
+    private static Map<String, Character> charactersMap = new HashMap<>();
+
+    private static Map<String, IRoom> roomsMap = new HashMap<>();
+    private static Map<String, Item> itemsMap = new HashMap<>();
 
     static {
-        //JUSUF
         commandPatterns.put("runAllScripts", Pattern.compile("runAllScripts"));
-        commandPatterns.put("loadMap", Pattern.compile("loadMap\\s+-file\\s+(\\S+)"));              // NINCS IMPLEMENTÁLVA
+        commandPatterns.put("loadMap", Pattern.compile("loadMap\\s+-file\\s+(\\S+)"));
         commandPatterns.put("createLabyrinth", Pattern.compile("createLabyrinth\\s+-lab\\s+(\\S+)"));
         commandPatterns.put("addCharacterToLabyrinth", Pattern.compile("addCharacterToLabyrinth\\s+-lab\\s+(\\S+)\\s+-ch\\s+(\\S+)"));
         commandPatterns.put("addItemToCharacter", Pattern.compile("addItemToCharacter\\s+-it\\s+(\\S+)\\s+-ch\\s+(\\S+)"));
@@ -32,7 +43,7 @@ public class TestLogic {
         commandPatterns.put("createCharacter", Pattern.compile("createCharacter\\s+-ch\\s+(\\S+)\\s*(-type\\s+(\\S+))?"));
         commandPatterns.put("addRoomToLabyrinth", Pattern.compile("addRoomToLabyrinth\\s+-lab\\s+(\\S+)\\s+-r\\s+(\\S+)"));
 
-        commandPatterns.put("createItem", Pattern.compile("createItem\\s+-it\\s+(\\S+)\\s+-type\\s+(\\S+)(?:\\s+-fake)?(?:\\s+-life\\s+(\\d+))?"));     // Ez elég érdekes
+        commandPatterns.put("createItem", Pattern.compile("createItem\\s+-it\\s+(\\S+)\\s+-type\\s+(\\S+)(?:\\s+-fake)?(?:\\s+-life\\s+(\\d+))?"));
 
         commandPatterns.put("moveCharacter", Pattern.compile("moveCharacter\\s+-ch\\s+(\\S+)\\s+-r\\s+(\\S+)"));
         commandPatterns.put("pickItem", Pattern.compile("pickItem\\s+-ch\\s+(\\S+)\\s+-it\\s+(\\S+)"));
@@ -46,47 +57,28 @@ public class TestLogic {
         commandPatterns.put("openCamembert", Pattern.compile("openCamembert\\s+-it\\s+(\\S+)"));
         commandPatterns.put("unToxicateRoomAirFreshener", Pattern.compile("unToxicateRoomAirFreshener\\s+-it\\s+(\\S+)"));
         commandPatterns.put("activate", Pattern.compile("activate\\s+-it\\s+(\\S+)"));
-        //JUSUF VEGE
 
-        //ZOLI
+
         commandPatterns.put("createTransistor", Pattern.compile("createTransistor\\s+-it\\s+(\\S+)(\\s+-active)?(\\s+-paired)?"));
         commandPatterns.put("setPairTransistor", Pattern.compile("setPairTransistor\\s+-it\\s+(\\S+)\\s+-it\\s+(\\S+)"));
         commandPatterns.put("placeTransistor", Pattern.compile("placeTransistor\\s+-it\\s+(\\S+)"));
         commandPatterns.put("switchTransistor", Pattern.compile("switchTransistor\\s+-it\\s+(\\S+)"));
-        //ZOLI VEGE
 
-
-        //JUSUF
         commandPatterns.put("addNeighbour", Pattern.compile("addNeighbour\\s+-r\\s+(\\S+)\\s+-r\\s+(\\S+)"));
         commandPatterns.put("mergeRooms", Pattern.compile("mergeRooms\\s+-r\\s+(\\S+)\\s+-r\\s+(\\S+)"));
         commandPatterns.put("splitRoom", Pattern.compile("splitRoom\\s+-r\\s+(\\S+)"));
         commandPatterns.put("getNeighbours", Pattern.compile("getNeighbours\\s+-r\\s+(\\S+)"));
         commandPatterns.put("makeSticky", Pattern.compile("makeSticky\\s+-r\\s+(\\S+)"));
-        //JUSUF VEGE
 
-
-        //BOTI
         commandPatterns.put("list", Pattern.compile("list"));
         commandPatterns.put("roomStatus", Pattern.compile("roomStatus\\s+-r\\s+(\\S+)"));
         commandPatterns.put("characterStatus", Pattern.compile("characterStatus\\s+-ch\\s+(\\S+)"));
         commandPatterns.put("itemStatus", Pattern.compile("itemStatus\\s+-it\\s+(\\S+)"));
-        //BOTI VEGE
 
-
-        //GERI
         commandPatterns.put("gameStatus", Pattern.compile("gameStatus"));
         commandPatterns.put("nextRound", Pattern.compile("nextRound"));
         commandPatterns.put("skipTurn", Pattern.compile("skipTurn"));
         commandPatterns.put("startGame", Pattern.compile("startGame"));
-        //GERI VEGE
-
-
-        // AZ ELEJÉN A              loadMap NINCS IMPLEMENTÁLVA
-
-        // NINCS IMPLEMENTÁLVA:
-                    // NEXTROUND
-                    // SKIPTURN
-                    // STARTGAME
     }
 
     public static void main(String[] args) {
@@ -102,9 +94,11 @@ public class TestLogic {
                 itemsMap = new HashMap<>();
                 labyrinth = new Labyrinth();
                 String filename = input.substring(10).trim();
-                processCommandsFromFile(filename, true); // Process commands from file and write output to file
+                processCommandsFromFile(filename); // Process commands from file and write output to file
+                writeToFile = true;
             } else {
-                processCommandsFromFile(input, false); // Process command from console and write output to console
+                processCommandsFromFile(input); // Process command from console and write output to console
+                writeToFile = false;
             }
             System.out.println("\nEnter commands or 'runScript <filename>' to process commands from a file, or 'exit' to quit:");
             input = scanner.nextLine();
@@ -112,12 +106,48 @@ public class TestLogic {
         scanner.close();
     }
 
-    static List<Integer> incorrectFiles = new ArrayList<>();
+    public static Labyrinth getAndLoadLabyrinth(String fileName){
+        readMap = true;
+        writeToFile = false;
+        processCommandsFromFile(fileName);
+        readMap = false;
+        return labyrinth;
+    }
 
-    public static void processCommandsFromFile(String commandOrFileName, boolean writeToFile) {
+    public static String continueProcessCommandsFromFile(){
+        return(processCommand(scanner.nextLine()) + "\n");
+    }
+
+    public static void processCommandsFromFile(String commandOrFileName) {
         if (!writeToFile) {
             String output = processCommand(commandOrFileName);
             System.out.println(output); // Print output to console
+        }
+        else if(readMap){
+            System.out.println("Reading map from file: " + commandOrFileName);
+            String directory = System.getProperty("user.dir");
+
+            String fileName = commandOrFileName;
+            String fileInPath = directory + File.separator + "Files" + File.separator + "Maps" + File.separator + fileName + ".txt";
+            System.out.println(fileInPath);
+
+            try {
+                File file = new File(fileInPath);
+                if (!file.exists()) {
+                    System.out.println("File not found");
+                    throw new RuntimeException("File not found");
+                }
+
+                scanner = new Scanner(file);
+
+                String fileContent = "";
+                while (scanner.hasNextLine()) {
+                    fileContent = fileContent.concat(processCommand(scanner.nextLine()) + "\n");
+                }
+                scanner.close();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
         }
         else {
             System.out.println("Processing commands from file: " + commandOrFileName);
@@ -138,7 +168,7 @@ public class TestLogic {
                     throw new RuntimeException("File not found");
                 }
 
-                Scanner scanner = new Scanner(file);
+                scanner = new Scanner(file);
 
                 String fileContent = "";
                 while (scanner.hasNextLine()) {
@@ -181,7 +211,7 @@ public class TestLogic {
                 if (areEqual) {
                     System.out.println("Two files have same content.");
                 } else {
-                    incorrectFiles.add(Integer.parseInt(fileName));
+                    incorrectFiles.add(Integer.valueOf(fileName));
                     System.out.println("Two files have different content.");
                 }
 
@@ -205,11 +235,7 @@ public class TestLogic {
     }
 
 
-    private static Labyrinth labyrinth;
-    private static Map<String, Character> charactersMap = new HashMap<>();
 
-    private static Map<String, IRoom> roomsMap = new HashMap<>();
-    private static Map<String, Item> itemsMap = new HashMap<>();
 
 
 
@@ -235,23 +261,28 @@ public class TestLogic {
                 switch (commandName) {
                     case "runAllScripts": {
                         incorrectFiles = new ArrayList<>();
-                        for (int i = 2; i < 45; i++) {
+                        for (int i = 2; i <= 45; i++) {
                             String fileName = Integer.toString(i);
                             roomsMap = new HashMap<>();
                             charactersMap = new HashMap<>();
                             itemsMap = new HashMap<>();
                             labyrinth = new Labyrinth();
-                            processCommandsFromFile(fileName, true);
+                            writeToFile = true;
+                            processCommandsFromFile(fileName);
                         }
 
                         String directory = System.getProperty("user.dir");
-                        String fileName = "IncorrectFiles";
+                        String fileName = "AllScriptsResult";
                         String fileOutputPath = directory + File.separator + "Files" + File.separator + "Output" + File.separator + fileName + ".txt";
                         System.out.println(fileOutputPath);
                         try {
                             FileWriter writer = new FileWriter(fileOutputPath);
-                            for (int i : incorrectFiles) {
-                                writer.write(i + "\n");
+                            for (int i = 2; i <= 45; i++) {
+                                if (incorrectFiles.contains(i)){
+                                    writer.write(i + ": Incorrect\n");
+                                } else {
+                                    writer.write(i + ": Correct\n");
+                                }
                             }
                             writer.close();
                         } catch (IOException e) {
@@ -262,7 +293,10 @@ public class TestLogic {
 
                     case "loadMap": {
                         String fileName = matcher.group(1);
-                        //TODO
+                        readMap = true;
+                        writeToFile = false;
+                        processCommandsFromFile(fileName);
+                        readMap = false;
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("file: ").append(fileName).append("\n");
                         outputBuilder.append("Result: Successful/Fail").append("\n");
@@ -385,10 +419,11 @@ public class TestLogic {
                                 roomsMap.put(roomId, new PoisonedRoomDecorator(new BasicRoom(capacity)));
                             } else if (roomType.equalsIgnoreCase("StickyRoom")) {
                                 roomsMap.put(roomId, new StickyRoomDecorator(new BasicRoom(capacity)));
+                            } else if (roomType.equalsIgnoreCase("CursedRoom")){
+                                roomsMap.put(roomId, new CursedRoomDecorator(new BasicRoom(capacity)));
                             } else {
                                 roomsMap.put(roomId, new BasicRoom(capacity));
                             }
-
                         }
 
                         outputBuilder.append(commandName).append(":").append("\n");
@@ -469,7 +504,7 @@ public class TestLogic {
                             if (itemType.equalsIgnoreCase("TVSZ")) {
                                 itemsMap.put(itemId, new TVSZ(fake, life));
                             } else if (itemType.equalsIgnoreCase("AirFreshener")) {
-                                itemsMap.put(itemId, new AirFreshener(fake));
+                                itemsMap.put(itemId, new AirFreshener());
                             } else if (itemType.equalsIgnoreCase("Camembert")) {
                                 itemsMap.put(itemId, new Camembert(fake));
                             } else if (itemType.equalsIgnoreCase("Transistor")) {
@@ -562,6 +597,10 @@ public class TestLogic {
                             result = success;
 
                             character.pickItem(item);
+                            String asd = "";
+                            if(!character.getItems().contains(item)){
+                                result = fail;
+                            }
                         }
 
                         outputBuilder.append(commandName).append(":").append("\n");
@@ -635,7 +674,7 @@ public class TestLogic {
                             result = fail;
                         } else {
                             result = success;
-                            character.getCaught();
+                            character.gotCaught(); //Át lett írva getCaughtról
 
                             for(Map.Entry<String, Character> entryRow : charactersMap.entrySet()) {
                                 String chId = entryRow.getKey();
@@ -758,13 +797,23 @@ public class TestLogic {
                             result = success;
                             if (itemsMap.get(itemId) instanceof AirFreshener) {
                                 AirFreshener af = (AirFreshener) itemsMap.get(itemId);
-                                af.unToxicateRoom();
+                                IRoom oldRoom = af.getOwner().getRoom();
+                                IRoom newRoom = af.unToxicateRoom();
+                                String oldRoomID = "";
+                                for (Map.Entry<String, IRoom> entryRow : roomsMap.entrySet()) {
+                                    if (entryRow.getValue().equals(oldRoom)) {
+                                        oldRoomID = entryRow.getKey();
+                                        break;
+                                    }
+                                }
+                                roomsMap.remove(oldRoomID);
+                                roomsMap.put(oldRoomID, newRoom);
                             }
                         }
 
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Item: ").append(itemId).append("\n");
-                        outputBuilder.append("Result: Successful/Fail").append("\n");
+                        outputBuilder.append("Result: ").append(result).append("\n");
 
                         break;
                     }
@@ -853,7 +902,7 @@ public class TestLogic {
                             result = fail;
                         }
                         else {
-                            transistor.place();
+                            transistor.placeTransistor();
                             result = success;
                             if(character.getItems().contains(transistor)){
                                 result = fail;
@@ -1070,17 +1119,19 @@ public class TestLogic {
                         IRoom room = roomsMap.get(roomId);
 
                         // Szobatípus eldöntése - ha nem akarunk instanceof-ot, ez egy alternatív eldöntési módzser
-                        if (roomId.startsWith("B")) {
+
+                        if (room instanceof BasicRoom) {
                             roomType = "BasicRoom";
-                        } else if (roomId.startsWith("C")) {
-                            roomType = "CursedRoomDecorator";
-                        } else if (roomId.startsWith("P")) {
-                            roomType = "PoisonedRoomPoisonedRoomDecorator";
-                        } else if (roomId.startsWith("S")) {
-                            roomType = "StickyRoomDecorator";
+                        } else if (room instanceof CursedRoomDecorator) {
+                            roomType = "CursedRoom";
+                        } else if (room instanceof PoisonedRoomDecorator) {
+                            roomType = "PoisonedRoom";
+                        } else if (room instanceof StickyRoomDecorator) {
+                            roomType = "StickyRoom";
                         } else {
                             roomType = "Unknown";
                         }
+
 
                         //Szoba karaktereiből kivesszük az ID-t
                         List<Character> charactersInRoom = room.getCharacters();
@@ -1233,45 +1284,40 @@ public class TestLogic {
 
 
                     case "gameStatus":{
-                        Labyrinth l = new Labyrinth();
                         outputBuilder.append(commandName).append(":").append("\n");
-                        outputBuilder.append("Status: ").append(l.getGameState()).append("\n");
+                        outputBuilder.append("Status: ").append(labyrinth.getGameState()).append("\n");
 
                         break;}
                     case "nextRound": {
-                        Labyrinth l = new Labyrinth();
-                        l.nextRound();
+                        labyrinth.nextRound();
+                        for(IRoom room: labyrinth.getRooms()){
+                            if(!roomsMap.containsValue(room)){
+                                roomsMap.put("splitted".concat(String.valueOf(roomsMap.size()+1)), room);
+                            }
+                        }
 
                         outputBuilder.append(commandName).append(":").append("\n");
-                        outputBuilder.append("VALAMI KIÍRÁS XD").append("\n");
+                        outputBuilder.append("nextRound done!").append("\n");
 
                         break;
                     }
                     case "skipTurn":
+
                         outputBuilder.append(commandName).append(":").append("\n");
-                        outputBuilder.append("Character: ").append("KARAKTER ID-JA").append("\n");
+                        //outputBuilder.append("Character: ").append("KARAKTER ID-JA").append("\n");
 
                         break;
                     case "startGame":
+                        labyrinth.startGame();
                         outputBuilder.append(commandName).append(":").append("\n");
-                        outputBuilder.append("VALAMI KIÍRÁS XD").append("\n");
+                        outputBuilder.append("Game started!").append("\n");
                         break;
-
-
-
-                        // AZÉRT AZ ALJÁN LÉVŐT HASZNÁLOM MERT KELL EGY VISSZATÉRÉS MINDENKÉPPEN
-                        /*
-                    default:
-                        outputBuilder.append("Invalid command: ").append(inputCommand).append("\n");
-                        break;
-                         */
 
                 }
                 return outputBuilder.toString();
             }
         }
 
-        // If no matching command pattern is found
         String res = outputBuilder.append("Invalid command: ").append(inputCommand).append("\n").toString();
         return res;
     }

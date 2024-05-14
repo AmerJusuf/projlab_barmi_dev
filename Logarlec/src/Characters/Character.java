@@ -1,5 +1,6 @@
 package Characters;
 
+import Controller.Notifiable;
 import Items.Item;
 import Rooms.BasicRoom;
 import Rooms.IRoom;
@@ -11,6 +12,8 @@ public abstract class Character {
     protected List<Item> items;
     protected IRoom currentRoom;
     protected boolean isPoisoned;
+
+    Notifiable controller;
 
     public Character(IRoom currentRoom){
         this.items = new ArrayList<>();
@@ -39,6 +42,10 @@ public abstract class Character {
                 this.setRoom(nextRoom);
             }
         }
+    }
+
+    public void setController(Notifiable controller){
+        this.controller = controller;
     }
 
     public abstract void pickItem(Item item);
@@ -94,6 +101,7 @@ public abstract class Character {
             System.out.println("Item removed from character's inventory | Character: dropItem()");
             currentRoom.addItem(item);
         }
+        controller.notifyModelChanged();
     }
 
     /**
@@ -124,11 +132,7 @@ public abstract class Character {
         this.isPoisoned = isPoisoned;
     }
 
-    public void nextRound(){
-        //TODO: Implement nextRound
-        //handle the next round
-        //clickevent listener?
-    }
+    public abstract String nextRound() throws InterruptedException;
 
     public abstract void disableInstructor();
 
@@ -153,6 +157,8 @@ public abstract class Character {
 
     public abstract void getCaught();
 
+    public void gotCaught(){}
+
     public boolean getPoisoned(){
         if(this.isPoisoned){
             return true;
@@ -161,4 +167,23 @@ public abstract class Character {
             return false;
         }
     }
+
+    /**
+     * This method moves the character to a neighbouring room,
+     * if any of them have a space for this character,
+     * and if the character is not poisoned
+     */
+    public void moveToRandom(){
+        if(isPoisoned)
+            return;
+        List<IRoom> neighbours = currentRoom.getNeighbours();
+        for(IRoom neighbour : neighbours){
+            if(neighbour.acceptCharacter(this)){
+                currentRoom.removeCharacter(this);
+                this.setRoom(neighbour);
+                break;
+            }
+        }
+    }
+
 }

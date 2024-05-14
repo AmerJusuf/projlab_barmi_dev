@@ -65,6 +65,10 @@ SourceRoom: BR1
 DestRoom: BR2
 Result: Successful
 
+getCaught:
+Character: S1
+Result: Successful
+
 characterStatus:
 Character: I1
 CharacterType: Instructor

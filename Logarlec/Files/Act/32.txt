@@ -15,6 +15,7 @@ addCharacterToLabyrinth -lab L1 -ch I1
 addCharacterToLabyrinth -lab L1 -ch I2
 addItemToCharacter -it RAG1 -ch S1
 moveCharacter -ch S1 -r BR2
+getCaught -ch S1
 characterStatus -ch I1
 characterStatus -ch I2
 list
