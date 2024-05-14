@@ -28,9 +28,14 @@ public class RoomNodeView extends JPanel implements IView {
 
     public static RoomNodeView lastClickedRoom = null;
 
+    private int x = 0;
+    private int y = 0;
 
-    public RoomNodeView(IRoom room, boolean poisoned, boolean cursed, boolean sticky, Notifiable control) {
+
+    public RoomNodeView(IRoom room, boolean poisoned, boolean cursed, boolean sticky, int x, int y, Notifiable control) {
         this.room = room;
+        this.x = x;
+        this.y = y;
         this.setPreferredSize(new Dimension(100, 100)); // Adjust size as needed
         this.setBackground(Color.WHITE);
         this.setOpaque(false);
@@ -53,7 +58,7 @@ public class RoomNodeView extends JPanel implements IView {
         });
 
         // Use BoxLayout to stack components vertically
-        setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
+        setLayout(null);
 
         // Create labels for room types
         JLabel poisonedLabel = new JLabel(new ImageIcon("Icons/poisoned.jpg"));
@@ -104,22 +109,36 @@ public class RoomNodeView extends JPanel implements IView {
         int imageHeight = Math.min(maxSize, height);
 
         if (Labyrinth.currentPlayer.getRoom() == room)
-            g.drawImage(circleCurrentImage, 0, 0, imageWidth, imageHeight, this);
+            g.drawImage(circleCurrentImage, x, y, imageWidth, imageHeight, this);
         else
-            g.drawImage(circleDefaultImage, 0, 0, imageWidth, imageHeight, this);
+            g.drawImage(circleDefaultImage, x, y, imageWidth, imageHeight, this);
 
-        // Draw room types underneath the circle
-        int iconWidth = Math.min(maxSize, (width - 10) / 3) + 30; // Adjust position
-        int iconHeight = Math.min(maxSize, (height - 80)) + 30; // Adjust position
+
+        int iconSize = Math.min(maxSize / 3, 30); // Adjust icon size as needed
+        int iconSpacing = 10; // Adjust spacing between icons as needed
+        int iconX = (imageWidth - iconSize) / 2; // Center horizontally
+        int iconY = (imageHeight - iconSize) / 2; // Center vertically
         if (poisoned) {
-            g.drawImage(new ImageIcon("Icons/poison.png").getImage(), -10, 30, iconWidth, iconHeight, this);
+            g.drawImage(new ImageIcon("Icons/poison.png").getImage(), iconX - 20, iconY, iconSize, iconSize, this);
+            //iconX += iconSize + iconSpacing;
         }
         if (cursed) {
-            g.drawImage(new ImageIcon("Icons/cursed.png").getImage(), 20, 30, iconWidth, iconHeight, this);
+            g.drawImage(new ImageIcon("Icons/cursed.png").getImage(), iconX, iconY, iconSize, iconSize, this);
+            iconX += iconSize + iconSpacing;
         }
         if (sticky) {
-            g.drawImage(new ImageIcon("Icons/sticky.png").getImage(), 55, 30, iconWidth - 20, iconHeight, this);
+            g.drawImage(new ImageIcon("Icons/sticky.png").getImage(), iconX - 15, iconY, iconSize, iconSize, this);
         }
+
+        String text = room.getCharacters().size() + "/" + room.getCapacity();
+        FontMetrics fontMetrics = g.getFontMetrics();
+        int textWidth = fontMetrics.stringWidth(text);
+        int textHeight = fontMetrics.getHeight();
+        int textX = (getWidth() - textWidth) / 2; // Center horizontally
+        int textY = (getHeight() - imageHeight) / 2 - textHeight / 2; // Above the circle image
+
+
+        g.drawString(text, textX, textY);
     }
 
     public IRoom getRoom() {
@@ -139,5 +158,13 @@ public class RoomNodeView extends JPanel implements IView {
     @Override
     public JLabel getLabel() {
         return null;
+    }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
     }
 }
