@@ -21,10 +21,10 @@ public class Map extends JPanel implements IView {
     private Labyrinth labyrinth;
 
     List<RoomNodeView> nodes;
-int borderToLeft = 150;
-int borderToRight = 60;
-int topBorder = 150;
-int bottomBorder = 60;
+    int borderToLeft = 150;
+    int borderToRight = 60;
+    int topBorder = 150;
+    int bottomBorder = 60;
 
 
 
@@ -141,6 +141,10 @@ int bottomBorder = 60;
         for(IRoom room: labyrinth.getRooms()){
             MainWindow.viewsByObjects.get(room);
         }
+
+//        for (RoomNodeView node : nodes) {
+//            node.paintComponent(getGraphics());
+//        }
     }
 
     @Override
