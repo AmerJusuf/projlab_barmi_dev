@@ -9,6 +9,7 @@ import Items.Transistor;
 import Rooms.BasicRoom;
 import Rooms.IRoom;
 import View.CharacterView.CharacterView;
+import View.CharacterView.StudentView;
 import View.IView;
 
 import javax.swing.*;
@@ -23,11 +24,13 @@ public class MainWindow extends JFrame {
     RoomView roomSrc;
     RoomView roomDest;
 
+    GridBagConstraints gbc;
+
     public MainWindow(Notifiable controller) {
         this.setTitle("Best Game Ever");
         this.setLayout(new GridBagLayout());
         this.setResizable(true);
-        GridBagConstraints gbc = new GridBagConstraints();
+        gbc = new GridBagConstraints();
         Insets insets = new Insets(10, 10, 10, 10);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         this.setSize(screenSize.width, screenSize.height - 50);
@@ -87,6 +90,9 @@ public class MainWindow extends JFrame {
         roomDest = new RoomView(RoomNodeView.lastClickedRoom.getRoom());
         roomsPanel.add(roomDest.getPanel(), gbcRooms);
 
+
+        studentView = (StudentView) viewsByObjects.get(Labyrinth.currentPlayer);
+
         this.add(roomsPanel, gbc);
 
         // Azért a legvégén kell mert csak így jelennek meg az elemek rajta
@@ -110,14 +116,30 @@ public class MainWindow extends JFrame {
         views.remove(view);
     }
 
+    StudentView studentView;
+
     public void updateAllViews() {
         roomSrc.setRoom(Labyrinth.currentPlayer.getRoom());
         roomDest.setRoom(RoomNodeView.lastClickedRoom.getRoom());
         roomSrc.update();
         roomDest.update();
+        this.remove(studentView.getPanel());
+
+
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        gbc.gridwidth = 1;
+        gbc.gridheight = 1;
+        this.add(viewsByObjects.get(Labyrinth.currentPlayer).getPanel(), gbc);
+        studentView = (StudentView) viewsByObjects.get(Labyrinth.currentPlayer);
+        views = List.of(map,  roomSrc, roomDest, studentView);
+
+
         for (IView view : views) {
             view.update();
         }
+        this.revalidate();
+        this.repaint();
     }
 
 

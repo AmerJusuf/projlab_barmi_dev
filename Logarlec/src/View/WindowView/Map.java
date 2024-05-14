@@ -71,13 +71,11 @@ public class Map extends JPanel implements IView {
         List<RoomNodeView> viewsToAdd = new ArrayList<>();
         for (IRoom room : labyrinth.getRooms()) {
             RoomNodeView roomNodeView = (RoomNodeView) MainWindow.viewsByObjects.get(room);
-            if (roomNodeView != null) {
-                viewsToAdd.add(roomNodeView);
-            }
+            viewsToAdd.add(roomNodeView);
         }
         // Add the views after the loop
         nodes.addAll(viewsToAdd);
-        viewsToAdd.forEach(this::add);
+        nodes.forEach(component -> this.add(component));
 
         // Add neighbors to nodes
         for (int i = 0; i < nodes.size(); i++) {

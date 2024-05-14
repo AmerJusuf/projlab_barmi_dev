@@ -18,6 +18,6 @@ public class Controller implements Notifiable {
 
     @Override
     public void notifyModelChanged() {
-       mainWindow.updateAllViews();
+       if (mainWindow != null) {mainWindow.updateAllViews();}
     }
 }

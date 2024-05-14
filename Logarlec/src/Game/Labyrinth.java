@@ -116,8 +116,8 @@ public class Labyrinth {
             currentAttempts++; // Növeljük a próbálkozások számát
         }
 
-        currentAttempts = 0; // Visszaállítjuk a próbálkozások számát a split művelethez
-
+//        currentAttempts = 0; // Visszaállítjuk a próbálkozások számát a split művelethez
+//
 //        while (!splitDone && currentAttempts < maxAttempts) {
 //            if (rooms.get(idx2).getNumberOfCharacters() == 0) {
 //                split(idx2);
@@ -127,7 +127,7 @@ public class Labyrinth {
 //            }
 //            currentAttempts++; // Növeljük a próbálkozások számát
 //        }
-        //TODO: ha elfogytak az indexek break, fuggveny a mergelheto szobakra
+
     }
 
     private boolean hasEmptyNeighbour(IRoom room) {
@@ -191,6 +191,7 @@ public class Labyrinth {
         String fileContent = "";
             for (Student student : students) {
                 currentPlayer = student;
+                //controller.notifyModelChanged();
                 student.nextRound();
             }
             for (Instructor instructor : instructors) {

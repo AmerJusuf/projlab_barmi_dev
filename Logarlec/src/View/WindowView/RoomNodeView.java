@@ -137,6 +137,18 @@ public class RoomNodeView extends JPanel implements IView {
         repaint(); // Redraw panel with updated room types
     }
 
+    public void handleRoomTypes(RoomNodeView roomNodeView){
+        if(this.poisoned || roomNodeView.poisoned){
+            this.poisoned = true;
+        }
+        if(this.cursed || roomNodeView.cursed){
+            this.cursed = true;
+        }
+        if(this.sticky || roomNodeView.sticky){
+            this.sticky = true;
+        }
+    }
+
     public void setBounds(int x, int y){
         this.x = x;
         this.y = y;
@@ -225,5 +237,21 @@ public class RoomNodeView extends JPanel implements IView {
 
     public void setY(int y) {
         this.y = y;
+    }
+
+    public boolean getPoisoned(){
+        return poisoned;
+    }
+
+    public boolean getCursed(){
+        return cursed;
+    }
+
+    public boolean getSticky(){
+        return sticky;
+    }
+
+    public Notifiable getController(){
+        return controller;
     }
 }

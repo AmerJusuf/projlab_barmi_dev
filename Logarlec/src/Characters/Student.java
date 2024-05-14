@@ -118,7 +118,7 @@ public class Student extends Character{
 
     @Override
     public String nextRound()  {
-
+        System.out.println("Student next round | Student: nextRound()");
         while (!moved && !isPoisoned){
             try {
                 Thread.sleep(10);
