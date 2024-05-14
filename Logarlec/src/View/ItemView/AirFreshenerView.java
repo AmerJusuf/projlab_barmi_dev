@@ -9,10 +9,10 @@ import java.awt.event.ActionListener;
 
 public class AirFreshenerView extends ItemView {
     private JButton useButton;
-    private ImageIcon icon = new ImageIcon("src/Assets/airfreshener.png");
+    private ImageIcon icon = new ImageIcon("Icons/airfreshener.png");
 
     public AirFreshenerView(AirFreshener air) {
-       super(air, new ImageIcon("src/Assets/airfreshener.png"));
+       super(air, new ImageIcon("Icons/airfreshener.png"));
     }
 
     @Override
