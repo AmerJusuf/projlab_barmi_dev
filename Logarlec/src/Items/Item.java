@@ -123,7 +123,9 @@ public abstract class Item {
     public void drop() {
         System.out.println("Item will be dropped | Item: drop()");
         setIsActive(false);
-        owner.getRoom().addItem(this);
+        if(owner !=null) {
+            owner.getRoom().addItem(this);
+        }
         removeOwner();
 
     }

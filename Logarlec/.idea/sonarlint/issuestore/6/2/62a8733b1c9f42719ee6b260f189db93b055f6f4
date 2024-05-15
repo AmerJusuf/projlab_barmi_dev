@@ -1,16 +1,17 @@
 
-¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(† âöûÿÿÿÿ8˜ò÷¡ó1J$10f3c48b-e19a-42c2-8f7f-4b1a986c3d09
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(† âöûÿÿÿÿ8İøùÂ÷1J$5bcf41bd-3d2c-44b7-8a5f-d6cbec488cf7
 
-java:S5993"9Change the visibility of this constructor to "protected".(²Ëƒêıÿÿÿÿ8¢ò÷¡ó1J$a49832eb-6249-4885-b034-d8584abe20f6
+java:S5993"9Change the visibility of this constructor to "protected".(²Ëƒêıÿÿÿÿ8ãøùÂ÷1J$1f164112-184a-433c-a29d-04b2dbfe2b9e
 |
-java:S5993"9Change the visibility of this constructor to "protected".(ï·Ù€8¢ò÷¡ó1J$73f87e41-db86-43b8-ac60-53b2c9e74064
-r	java:S106%"+Replace this use of System.out by a logger.(°ŸÉÂüÿÿÿÿ8¦ò÷¡ó1J$e2aeb427-452b-4298-abdd-6a029b4767f9
-m	java:S106<"+Replace this use of System.out by a logger.(ßíÛÑ8§ò÷¡ó1J$3d80d2f4-98d6-4461-97c4-2fffbaf92563
-m	java:S106F"+Replace this use of System.out by a logger.(©Ç£¨8¨ò÷¡ó1J$e646775f-f2cb-41bd-85c1-c2ba889101af
-r	java:S106f"+Replace this use of System.out by a logger.(Ù÷ıÿÿÿÿ8ªò÷¡ó1J$1fcc5311-f511-4502-a321-856baf1f7a09
-m	java:S106r"+Replace this use of System.out by a logger.(ã•ùÀ8ªò÷¡ó1J$5a37607b-68bb-4dac-96a8-71e965f752e2
-m	java:S106™"+Replace this use of System.out by a logger.(¨ŞÛA8¬ò÷¡ó1J$ab41e64f-c160-48ab-bded-d3df095653ad
+java:S5993"9Change the visibility of this constructor to "protected".(ï·Ù€8ãøùÂ÷1J$83d93333-322e-40a6-b08c-5c762ad440e8
+r	java:S106'"+Replace this use of System.out by a logger.(°ŸÉÂüÿÿÿÿ8èøùÂ÷1J$8ff473f2-cc3c-4660-a161-27007436466e
+]	java:S1250"<This block of commented-out lines of code should be removed.(±–”Èùÿÿÿÿ8øÕ‘å÷1
+m	java:S106?"+Replace this use of System.out by a logger.(ßíÛÑ8êøùÂ÷1J$61cb6146-76dc-4307-90ca-351d9730ea02
+m	java:S106I"+Replace this use of System.out by a logger.(©Ç£¨8êøùÂ÷1J$dc672f22-4395-43f5-b22d-bf73db01d94a
+r	java:S106i"+Replace this use of System.out by a logger.(Ù÷ıÿÿÿÿ8íøùÂ÷1J$fe1f5fbb-a6be-4816-b6b2-b36688d8598c
+m	java:S106u"+Replace this use of System.out by a logger.(ã•ùÀ8ïøùÂ÷1J$c8cb9fec-a06c-49d0-b181-d2fe5511d99d
+m	java:S106œ"+Replace this use of System.out by a logger.(¨ŞÛA8ñøùÂ÷1J$12e6d5b3-d5e8-4751-b1f8-c79f092d3d3b
 …
-java:S1126¤"AReplace this if-then-else statement by a single return statement.(­ŒÇõ8­ò÷¡ó1J$80752694-a1ae-4049-8fa3-3ce81381f8fc
+java:S1126§"AReplace this if-then-else statement by a single return statement.(­ŒÇõ8òøùÂ÷1J$964bc693-8e0a-4a6a-a0b7-8c735280ff11
 t
-java:S1128",Remove this unused import 'Rooms.BasicRoom'.(Çêê½ÿÿÿÿÿ8åŸ¼÷1J$2233959c-1dc4-4489-ac34-35b6b072b4c3
+java:S1128",Remove this unused import 'Rooms.BasicRoom'.(Çêê½ÿÿÿÿÿ8óøùÂ÷1J$338dbc7c-fbe1-4de0-b9cf-dae9aeffab0c

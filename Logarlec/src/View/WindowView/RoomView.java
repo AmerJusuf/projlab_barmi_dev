@@ -22,12 +22,19 @@ public class RoomView implements ActionListener, IView {
 
     public RoomView(IRoom room)
     {
-        this.room = room;
+
+
         if(Labyrinth.currentPlayer.getRoom() == room){
             title = new JLabel("Current Room");
-        } else {
+            this.room = room;
+        } else if (room != null) {
             title = new JLabel("DestinationRoom");
+            this.room = room;
+        } else {
+            title = new JLabel("Click on a room to see its details");
         }
+
+
         panel.setBackground(Color.LIGHT_GRAY);
         panel.setLayout(new GridLayout(4, 1, 0, 0));
 
@@ -44,6 +51,9 @@ public class RoomView implements ActionListener, IView {
     }
 
     private void initializeButtons(){
+        if(room == null){
+            return;
+        }
         stayButton = new JButton("Stay");
         stayButton.setFocusable(false);
         stayButton.setPreferredSize(new Dimension(80, 30));
@@ -56,6 +66,7 @@ public class RoomView implements ActionListener, IView {
         moveButton.setPreferredSize(new Dimension(80, 30));
         moveButton.setVisible(false);
         moveButton.addActionListener(this);
+
 
 
         if(Labyrinth.currentPlayer.getRoom() == room){
@@ -74,6 +85,9 @@ public class RoomView implements ActionListener, IView {
     }
 
     private void handlePlayerPanel(){
+        if(room == null){
+            return;
+        }
         JPanel playerListPanel = new JPanel();
         playerListPanel.setBackground(Color.LIGHT_GRAY);
         playerListPanel.setLayout(new BoxLayout(playerListPanel, BoxLayout.X_AXIS));
@@ -91,6 +105,9 @@ public class RoomView implements ActionListener, IView {
     }
 
     private void handleItemPanel(){
+        if(room == null){
+            return;
+        }
         JPanel itemListPanel = new JPanel();
         itemListPanel.setBackground(Color.LIGHT_GRAY);
         itemListPanel.setLayout(new BoxLayout(itemListPanel, BoxLayout.X_AXIS));
@@ -108,30 +125,29 @@ public class RoomView implements ActionListener, IView {
     }
 
 
-    static public boolean moveButtonClicked = false;
-
-    static public boolean isMoveButtonClicked() {
-        return moveButtonClicked;
-    }
-
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == moveButton) {
             System.out.println("Move");
             SwingUtilities.invokeLater(() -> {
-                moveButtonClicked = true;
                 Labyrinth.currentPlayer.move(this.room);
             });
         }
         if (e.getSource() == stayButton) {
             System.out.println("Stay");
-            Labyrinth.currentPlayer.setMoveButtonClicked(true);
+            Labyrinth.currentPlayer.setStayButtonClicked();
         }
     }
 
     @Override
     public void update() {
         panel.removeAll();
+        if(room == null){
+            title = new JLabel("Click on a room to see its details");
+            title.setHorizontalAlignment(JLabel.CENTER);
+            panel.add(title);
+            return;
+        }
         for(Item item : room.getItems())
         {
             MainWindow.viewsByObjects.get(item).update();
@@ -147,6 +163,11 @@ public class RoomView implements ActionListener, IView {
         title.setHorizontalAlignment(JLabel.CENTER);
         title.setVisible(true);
         panel.add(title);
+
+
+        handlePlayerPanel();
+        handleItemPanel();
+        initializeButtons();
         if(Labyrinth.currentPlayer.getRoom() == room){
             stayButton.setVisible(true);
             moveButton.setVisible(false);
@@ -154,11 +175,6 @@ public class RoomView implements ActionListener, IView {
             stayButton.setVisible(false);
             moveButton.setVisible(true);
         }
-
-        handlePlayerPanel();
-        handleItemPanel();
-        initializeButtons();
-
     }
 
     public JPanel getPanel() {
@@ -168,6 +184,10 @@ public class RoomView implements ActionListener, IView {
     @Override
     public JLabel getLabel() {
         return title;
+    }
+
+    public IRoom getRoom() {
+        return room;
     }
 
 }

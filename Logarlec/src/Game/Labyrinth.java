@@ -93,35 +93,35 @@ public class Labyrinth {
     }
 
     public void mergeAndSplitRandomly() {
-        if(rooms.size() < 2) return; // Ha nincs elég szoba, akkor nem lehet mergelni és splittelni
+//        if(rooms.size() < 2) return; // Ha nincs elég szoba, akkor nem lehet mergelni és splittelni
+//
+//        // Merge and split rooms
+//        Random rand = new Random();
+//        int idx1 = rand.nextInt(rooms.size());
+//        int idx2 = rand.nextInt(rooms.size());
+//
+//        boolean mergeDone = false;
+//        boolean splitDone = false;
+//
+//        int maxAttempts = rooms.size() * 2; // Maximum próbálkozások száma
+//        int currentAttempts = 0;
+//
+//        while (!mergeDone && currentAttempts < maxAttempts) {
+//            if (canMergeAnyRoom()) {
+//                if (rooms.get(idx1).getNumberOfCharacters() == 0) {
+//                    IRoom neighbour = getAcceptableNeighbour(rooms.get(idx1));
+//                    if (neighbour != null) { // Biztosítjuk, hogy a szomszéd létezik
+//                        merge(idx1, rooms.indexOf(neighbour));
+//                        mergeDone = true;
+//                    }
+//                }
+//                idx1 = rand.nextInt(rooms.size()); // Új index, ha a korábbi nem volt megfelelő
+//            }
+//            currentAttempts++; // Növeljük a próbálkozások számát
+//        }
 
-        // Merge and split rooms
-        Random rand = new Random();
-        int idx1 = rand.nextInt(rooms.size());
-        int idx2 = rand.nextInt(rooms.size());
-
-        boolean mergeDone = false;
-        boolean splitDone = false;
-
-        int maxAttempts = rooms.size() * 2; // Maximum próbálkozások száma
-        int currentAttempts = 0;
-
-        while (!mergeDone && currentAttempts < maxAttempts) {
-            if (canMergeAnyRoom()) {
-                if (rooms.get(idx1).getNumberOfCharacters() == 0) {
-                    IRoom neighbour = getAcceptableNeighbour(rooms.get(idx1));
-                    if (neighbour != null) { // Biztosítjuk, hogy a szomszéd létezik
-                        merge(idx1, rooms.indexOf(neighbour));
-                        mergeDone = true;
-                    }
-                }
-                idx1 = rand.nextInt(rooms.size()); // Új index, ha a korábbi nem volt megfelelő
-            }
-            currentAttempts++; // Növeljük a próbálkozások számát
-        }
-
-        currentAttempts = 0; // Visszaállítjuk a próbálkozások számát a split művelethez
-
+//        currentAttempts = 0; // Visszaállítjuk a próbálkozások számát a split művelethez
+//
 //        while (!splitDone && currentAttempts < maxAttempts) {
 //            if (rooms.get(idx2).getNumberOfCharacters() == 0) {
 //                split(idx2);
@@ -131,7 +131,7 @@ public class Labyrinth {
 //            }
 //            currentAttempts++; // Növeljük a próbálkozások számát
 //        }
-        //TODO: ha elfogytak az indexek break, fuggveny a mergelheto szobakra
+
     }
 
     private boolean hasEmptyNeighbour(IRoom room) {
@@ -195,7 +195,9 @@ public class Labyrinth {
         String fileContent = "";
             for (Student student : students) {
                 currentPlayer = student;
+                //controller.notifyModelChanged();
                 student.nextRound();
+                controller.notifyModelChanged();
             }
             for (Instructor instructor : instructors) {
                 instructor.nextRound();
@@ -205,7 +207,9 @@ public class Labyrinth {
                     cleaner.nextRound();
                 }
            // Osszes szoba tarygara es osszes karakterek targyaira step() fuggveny meghivasa
-
+            for( IRoom room : rooms){
+                room.decorate();
+            }
            mergeAndSplitRandomly();
 
             stepItems();
@@ -227,7 +231,7 @@ public class Labyrinth {
         gameState = state;
     }
 
-    public GameState getGameState() {return gameState;}
+    public static GameState getGameState() {return gameState;}
 
     public void removeStudent(Student student) {
         if(students.contains(student)){
@@ -277,6 +281,10 @@ public class Labyrinth {
                 item.step();
             }
         }
+    }
+
+    public Notifiable getController(){
+        return controller;
     }
 
     //Only for testing
@@ -329,8 +337,8 @@ public class Labyrinth {
         BasicRoom room12 = new BasicRoom(4);
         MainWindow.viewsByObjects.put(room12, new RoomNodeView(room12, false ,false ,false, controller));
 
-        CursedRoomDecorator room13 = new CursedRoomDecorator(new BasicRoom(5));
-        MainWindow.viewsByObjects.put(room13, new RoomNodeView(room13, false ,true ,false, controller));
+        PoisonedRoomDecorator room13 = new PoisonedRoomDecorator(new BasicRoom(5));
+        MainWindow.viewsByObjects.put(room13, new RoomNodeView(room13, true ,false ,false, controller));
 
         PoisonedRoomDecorator room14 = new PoisonedRoomDecorator(new BasicRoom(3));
         MainWindow.viewsByObjects.put(room14, new RoomNodeView(room14, true ,false ,false, controller));

@@ -3,6 +3,7 @@ package Characters;
 import Controller.Notifiable;
 import Items.Item;
 import Rooms.IRoom;
+import View.WindowView.RoomNodeView;
 import View.WindowView.RoomView;
 
 public class Student extends Character{
@@ -118,20 +119,24 @@ public class Student extends Character{
 
     @Override
     public String nextRound()  {
-        while (!RoomView.isMoveButtonClicked()){
+        System.out.println("Student next round | Student: nextRound()");
+        while (!moved && !isPoisoned){
             try {
                 Thread.sleep(10);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
-        RoomView.moveButtonClicked = false;
+        moved = false;
+        isPoisoned = false;
         System.out.println("OVER | Student: nextRound()");
-        return ""; //TODO: void
+        RoomNodeView.lastClickedRoom = null;
+        return "";
     }
 
-    public void setMoveButtonClicked(boolean moveButtonClicked) {
-        this.moveButtonClicked = moveButtonClicked;
+    public void setStayButtonClicked() {
+        this.moved = true;
+        controller.notifyModelChanged();
     }
 
 

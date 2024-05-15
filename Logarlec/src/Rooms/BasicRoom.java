@@ -3,8 +3,12 @@ package Rooms;
 import Characters.Character;
 import Characters.Instructor;
 import Characters.Student;
+import Controller.Controller;
 import Game.Labyrinth;
 import Items.Item;
+import View.WindowView.MainWindow;
+import View.WindowView.RoomNodeView;
+import com.sun.tools.javac.Main;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -133,9 +137,16 @@ public class BasicRoom implements IRoom{
         DecoratorHandlerVisitor visitor = new DecoratorHandlerVisitor(room);
         IRoom newRoom = this.acceptMerge(visitor);
 
-        visitor.handleNeighboursWhenReplacing(this, newRoom);
+        //MainWindow.viewsByObjects.put(newRoom, new RoomNodeView(newRoom));
+
+        //visitor.handleNeighboursWhenReplacing(this, newRoom);
         getLabyrinth().removeRoom(room);
-        getLabyrinth().replaceRooms(this, newRoom);
+        //getLabyrinth().replaceRooms(this, newRoom);
+        RoomNodeView room1 = (RoomNodeView) MainWindow.viewsByObjects.get(this);
+        RoomNodeView room2 = (RoomNodeView) MainWindow.viewsByObjects.get(room);
+        room1.handleRoomTypes(room2);
+        MainWindow.viewsByObjects.put(newRoom, new RoomNodeView(newRoom, room1.getPoisoned(), room1.getCursed(), room1.getSticky(), room1.getController()));
+
         return newRoom; //It could be a void method, returning for test cases and prototype
     }
 

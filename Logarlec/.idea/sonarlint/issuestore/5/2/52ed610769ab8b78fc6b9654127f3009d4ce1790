@@ -1,0 +1,39 @@
+
+
+java:S1104"ZMake viewsByObjects a static final constant or non-public and provide accessors if needed.(ρμ‡¬8£‘άεχ1J$9bef3f89-d363-4ba6-b100-661c16f94650
+w
+java:S1444"4Make this "public static viewsByObjects" field final(ρμ‡¬8¤‘άεχ1J$9efcb2d1-1803-4447-9e0c-e45872f7438a
+	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ε•®Ò8¥‘άεχ1J$07e86eaf-dcdc-42a5-a462-219743866bb2
+Ι
+java:S1186o"€Add a nested comment explaining why this method is empty, throw an UnsupportedOperationException or complete the implementation.(χΠΣΕÿÿÿÿÿ8Ε‘άεχ1J$a5634110-9006-4077-a920-89bbb95c82e5
+`
+java:S2386"Make this member "protected".(ρμ‡¬8Ζ‘άεχ1J$9086a362-77ef-42f4-9af2-578147d0c780
+j
+java:S1948"'Make "views" transient or serializable.(ÿÿ«Ύ8Ζ‘άεχ1J$10a16a9a-4333-468d-bec7-1a5e2ecc6d47
+q
+java:S1948")Make "roomSrc" transient or serializable.(Γ”Ο½ÿÿÿÿÿ8Η‘άεχ1J$83d00889-d711-43bc-8bb8-0232152204d6
+r
+java:S1948"*Make "roomDest" transient or serializable.(Ωϊλ‡ωÿÿÿÿ8Η‘άεχ1J$b7a45d4a-cd3d-41fb-99ba-31c636641247
+p
+java:S1948{"-Make "studentView" transient or serializable.(ΥέΠ8Η‘άεχ1J$469b7597-7d70-491e-a5ac-2f2304ce570a
+~	java:S125P"<This block of commented-out lines of code should be removed.(‹‘δ8Μ‘άεχ1J$87291bfd-eb6f-46df-9be2-cf71964aa8d2
+‹
+java:S3252g"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(Ίΐx8Ξ‘άεχ1J$c786a384-58a7-4c89-81c4-3bc93b1079a1
+~	java:S125i"<This block of commented-out lines of code should be removed.(‚”Λ8Ξ‘άεχ1J$6127a186-247f-4474-aeff-e667273e238b
+w
+java:S1128"/Remove this unused import 'Characters.Cleaner'.(Ò±ξόÿÿÿÿ8Τ‘άεχ1J$ba1668be-62f1-4cff-b7f5-2e7cf0e2a83c
+z
+java:S1128"2Remove this unused import 'Characters.Instructor'.(Π±£Άϊÿÿÿÿ8Τ‘άεχ1J$0bce7a6d-132f-41a3-840c-a44691386701
+w
+java:S1128"/Remove this unused import 'Characters.Student'.(€•­πωÿÿÿÿ8Τ‘άεχ1J$346366b8-e4e1-46ea-9afa-0deaebeb6daa
+u
+java:S1128	"-Remove this unused import 'Items.Transistor'.(ΉΦιώÿÿÿÿ8Τ‘άεχ1J$92c6e83f-3376-4b1d-a6e0-bdc1c7a6442c
+t
+java:S1128
+",Remove this unused import 'Rooms.BasicRoom'.(Ηκκ½ÿÿÿÿÿ8Τ‘άεχ1J$83241602-30e0-467c-98f5-eed7c9fe8093
+k
+java:S1128"(Remove this unused import 'Rooms.IRoom'.(ƒςη®8Τ‘άεχ1J$25dada1b-6443-475e-9b36-d064f67cc7ff
+…
+java:S1128"=Remove this unused import 'View.CharacterView.CharacterView'.(Α–πΥÿÿÿÿÿ8Τ‘άεχ1J$0d435d08-0e73-4451-acb2-bf51e3df79b7
+|
+java:S1144o"4Remove this unused private "handleRoomViews" method.(χΠΣΕÿÿÿÿÿ8Υ‘άεχ1J$9e0565ae-0d05-40e2-972d-35acb8879888

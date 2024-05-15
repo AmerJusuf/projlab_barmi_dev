@@ -15,6 +15,8 @@ public abstract class Character {
 
     Notifiable controller;
 
+    boolean moved = false;
+
     public Character(IRoom currentRoom){
         this.items = new ArrayList<>();
         this.currentRoom = currentRoom;
@@ -40,9 +42,10 @@ public abstract class Character {
             if(isAccepted){
                 currentRoom.removeCharacter(this);
                 this.setRoom(nextRoom);
+                moved = true;
             }
         }
-        controller.notifyModelChanged();
+        //controller.notifyModelChanged();
     }
 
     public void setController(Notifiable controller){
