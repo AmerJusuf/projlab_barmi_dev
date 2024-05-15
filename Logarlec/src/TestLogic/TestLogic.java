@@ -1360,7 +1360,7 @@ public class TestLogic {
                             MainWindow.viewsByObjects.put(room, roomNodeView);
                             RoomNodeView.lastClickedRoom = roomNodeView;
                         }
-                        outputBuilder.append("Result: " + result).append("\n");
+                        outputBuilder.append("Result: ").append(result).append("\n");
                         outputBuilder.append("RoomView created! ").append(roomId).append("\n");
                         break;
                     }
@@ -1379,7 +1379,6 @@ public class TestLogic {
                         } else {
                             result = success;
                             Character character = charactersMap.get(characterId);
-                            RoomNodeView roomNodeView = null;
                             if (characterType.equalsIgnoreCase("Student")) {
                                 MainWindow.viewsByObjects.put(character, new StudentView((Student) character));
                                 Labyrinth.currentPlayer = (Student) character;
@@ -1392,7 +1391,7 @@ public class TestLogic {
                                 result = fail;
                             }
                         }
-                        outputBuilder.append("Result: " + result).append("\n");
+                        outputBuilder.append("Result: ").append(result).append("\n");
                         outputBuilder.append("CharacterView created! ").append(characterId).append("\n");
                         break;
                     }
