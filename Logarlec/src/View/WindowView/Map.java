@@ -44,7 +44,7 @@ public class Map extends JPanel implements IView {
 //        }
         }
         else{
-            loadMap("test1", controller);
+            loadMap("test2", controller);
         }
         labyrinth.setControllerToItems();
 
