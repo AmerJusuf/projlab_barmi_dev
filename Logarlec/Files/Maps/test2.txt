@@ -1,11 +1,25 @@
 createLabyrinth -lab L1
 createRoom -r BR1 -capacity 5 -type BasicRoom
 createRoom -r BR2 -capacity 5 -type BasicRoom
+createRoom -r BR3 -capacity 5 -type BasicRoom
+createRoom -r BR4 -capacity 5 -type BasicRoom
+addRoomToLabyrinth -lab L1 -r BR1
+addRoomToLabyrinth -lab L1 -r BR2
+addRoomToLabyrinth -lab L1 -r BR3
+addRoomToLabyrinth -lab L1 -r BR4
 addNeighbour -r BR1 -r BR2
 addNeighbour -r BR2 -r BR1
+addNeighbour -r BR3 -r BR4
+addNeighbour -r BR4 -r BR3
 roomView -r BR1 -type BasicRoom -x 100 -y 200
 roomView -r BR2 -type BasicRoom -x 200 -y 100
+roomView -r BR3 -type BasicRoom -x 300 -y 300
+roomView -r BR4 -type BasicRoom -x 300 -y 100
 createCharacter -ch S1 -type Student
 addCharacterToRoom -ch S1 -r BR1
 addCharacterToLabyrinth -lab L1 -ch S1
 characterView -ch S1 -type Student
+createCharacter -ch I1 -type Instructor
+addCharacterToRoom -ch I1 -r BR3
+addCharacterToLabyrinth -lab L1 -ch I1
+characterView -ch I1 -type Instructor
