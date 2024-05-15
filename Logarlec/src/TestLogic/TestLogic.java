@@ -8,6 +8,9 @@ import Controller.Notifiable;
 import Game.Labyrinth;
 import Items.*;
 import Rooms.*;
+import View.CharacterView.CleanerView;
+import View.CharacterView.InstructorView;
+import View.CharacterView.StudentView;
 import View.WindowView.MainWindow;
 import View.WindowView.RoomNodeView;
 
@@ -86,7 +89,7 @@ public class TestLogic {
         commandPatterns.put("startGame", Pattern.compile("startGame"));
 
         commandPatterns.put("roomView", Pattern.compile("roomView\\s+-r\\s+(\\S+)\\s-type\\s+(\\S+)\\s-x\\s+(\\S+)\\s-y\\s+(\\S+)"));
-        commandPatterns.put("characterView", Pattern.compile("characterView\\s+-r\\s+(\\S+)\\s-type\\s+(\\S+)\\s-x\\s+(\\S+)\\s-y\\s+(\\S+)"));
+        commandPatterns.put("characterView", Pattern.compile("characterView\\s+-ch\\s+(\\S+)\\s-type\\s+(\\S+)"));
     }
 
     public static void main(String[] args) {
@@ -1353,44 +1356,44 @@ public class TestLogic {
                                 roomNodeView = new RoomNodeView(room, false, true, false, x, y, controller);
                             } else {
                                 roomNodeView = new RoomNodeView(room, false, false, false, x, y, controller);
-                                ;
                             }
                             MainWindow.viewsByObjects.put(room, roomNodeView);
                             RoomNodeView.lastClickedRoom = roomNodeView;
                         }
+                        outputBuilder.append("Result: " + result).append("\n");
+                        outputBuilder.append("RoomView created! ").append(roomId).append("\n");
                         break;
                     }
                     case "characterView": {
-                        roomId = matcher.group(1);
-                        int x = Integer.parseInt(matcher.group(3));
-                        int y = Integer.parseInt(matcher.group(4));
-                        String roomType;
+                        characterId = matcher.group(1);
+                        String characterType;
                         if (matcher.group(2) == null)
-                            roomType = "BasicRoom";
+                            characterType = "Student";
                         else
-                            roomType = matcher.group(2);
+                            characterType = matcher.group(2);
 
-                        if (!roomsMap.containsKey(roomId)) {
+                        if (!charactersMap.containsKey(characterId)) {
                             result = fail;
-                            outputBuilder.append("Room not found").append("\n");
+                            outputBuilder.append("Character not found").append("\n");
                             break;
                         } else {
                             result = success;
-                            IRoom room = roomsMap.get(roomId);
+                            Character character = charactersMap.get(characterId);
                             RoomNodeView roomNodeView = null;
-                            if (roomType.equalsIgnoreCase("PoisonedRoom")) {
-                                roomNodeView = new RoomNodeView(room, true, false, false, x, y, controller);
-                            } else if (roomType.equalsIgnoreCase("StickyRoom")) {
-                                roomNodeView = new RoomNodeView(room, false, false, true, x, y, controller);
-                            } else if (roomType.equalsIgnoreCase("CursedRoom")) {
-                                roomNodeView = new RoomNodeView(room, false, true, false, x, y, controller);
-                            } else {
-                                roomNodeView = new RoomNodeView(room, false, false, false, x, y, controller);
-                                ;
+                            if (characterType.equalsIgnoreCase("Student")) {
+                                MainWindow.viewsByObjects.put(character, new StudentView((Student) character));
+                                Labyrinth.currentPlayer = (Student) character;
+                            } else if (characterType.equalsIgnoreCase("Cleaner")) {
+                                MainWindow.viewsByObjects.put(character, new CleanerView((Cleaner) character));
+                            } else if (characterType.equalsIgnoreCase("Instructor")) {
+                                MainWindow.viewsByObjects.put(character, new InstructorView((Instructor) character));
                             }
-                            MainWindow.viewsByObjects.put(room, roomNodeView);
-                            RoomNodeView.lastClickedRoom = roomNodeView;
+                            else{
+                                result = fail;
+                            }
                         }
+                        outputBuilder.append("Result: " + result).append("\n");
+                        outputBuilder.append("CharacterView created! ").append(characterId).append("\n");
                         break;
                     }
                 }
