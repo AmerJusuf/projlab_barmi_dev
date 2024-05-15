@@ -45,7 +45,7 @@ public abstract class Character {
                 moved = true;
             }
         }
-        controller.notifyModelChanged();
+        //controller.notifyModelChanged();
     }
 
     public void setController(Notifiable controller){

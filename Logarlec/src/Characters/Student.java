@@ -3,6 +3,7 @@ package Characters;
 import Controller.Notifiable;
 import Items.Item;
 import Rooms.IRoom;
+import View.WindowView.RoomNodeView;
 import View.WindowView.RoomView;
 
 public class Student extends Character{
@@ -129,11 +130,13 @@ public class Student extends Character{
         moved = false;
         isPoisoned = false;
         System.out.println("OVER | Student: nextRound()");
+        RoomNodeView.lastClickedRoom = null;
         return "";
     }
 
     public void setStayButtonClicked() {
         this.moved = true;
+        controller.notifyModelChanged();
     }
 
 

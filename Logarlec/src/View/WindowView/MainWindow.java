@@ -4,6 +4,7 @@ import Characters.Cleaner;
 import Characters.Instructor;
 import Characters.Student;
 import Controller.Notifiable;
+import Game.GameState;
 import Game.Labyrinth;
 import Items.Transistor;
 import Rooms.BasicRoom;
@@ -14,6 +15,7 @@ import View.IView;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowEvent;
 import java.util.HashMap;
 import java.util.List;
 
@@ -87,7 +89,9 @@ public class MainWindow extends JFrame {
         gbcRooms.weighty = 1.0;
         gbcRooms.insets = new Insets(0, 10, 0, 0);
         gbcRooms.fill = GridBagConstraints.BOTH;
-        roomDest = new RoomView(RoomNodeView.lastClickedRoom.getRoom());
+        roomDest = new RoomView(null);
+        roomDest.setRoom(null);
+
         roomsPanel.add(roomDest.getPanel(), gbcRooms);
 
 
@@ -119,8 +123,23 @@ public class MainWindow extends JFrame {
     StudentView studentView;
 
     public void updateAllViews() {
+        if (Labyrinth.getGameState() == GameState.WIN) {
+            JOptionPane.showMessageDialog(this, "You won!");
+            dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+        } else if (Labyrinth.getGameState() == GameState.LOSE) {
+            JOptionPane.showMessageDialog(this, "You lost!");
+            dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+        }
+
         roomSrc.setRoom(Labyrinth.currentPlayer.getRoom());
-        roomDest.setRoom(RoomNodeView.lastClickedRoom.getRoom());
+
+        if(RoomNodeView.lastClickedRoom == null){
+            roomDest.setRoom(null);
+        } else if(RoomNodeView.lastClickedRoom.getRoom() == Labyrinth.currentPlayer.getRoom()){
+            roomDest.setRoom(null);
+        }else {
+            roomDest.setRoom(RoomNodeView.lastClickedRoom.getRoom());
+        }
         roomSrc.update();
         roomDest.update();
         this.remove(studentView.getPanel());

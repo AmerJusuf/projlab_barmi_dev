@@ -2,6 +2,7 @@ package Rooms;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.Iterator;
 import java.util.List;
 
 public class CursedRoomDecorator extends RoomDecorator{
@@ -9,12 +10,14 @@ public class CursedRoomDecorator extends RoomDecorator{
      * The list, which contains the hidden adjacent rooms to the current room.
      */
     List<IRoom> hiddenNeighbours;
+    List<IRoom> doorsToThisRoom;
     /**
      * The list containing the actual neighbours of the current room.
      */
     public CursedRoomDecorator(IRoom decoratedRoom){
         super(decoratedRoom);
         hiddenNeighbours = new ArrayList<>();
+        doorsToThisRoom = new ArrayList<>();
     }
 
     /**
@@ -30,24 +33,61 @@ public class CursedRoomDecorator extends RoomDecorator{
      */
     public void manageDoors(){
         //szomszédok megjelenítése
-        if(decoratedRoom.getNeighbours().isEmpty()){
+        if(decoratedRoom.getNeighbours().isEmpty() && !isDoorToThisRoom()){
             System.out.println("Neighbours hidden currently| CursedRoomDecorator: manageDoors");
-            for(int i = 0; i < hiddenNeighbours.size(); i++){
-                decoratedRoom.addNeighbour(hiddenNeighbours.get(i));
-                this.hiddenNeighbours.remove(decoratedRoom.getNeighbours().get(i));
+            List<IRoom> neighboursToRemove = new ArrayList<>(hiddenNeighbours);
+            for (IRoom neighbour : neighboursToRemove) {
+                decoratedRoom.addNeighbour(neighbour);
+                hiddenNeighbours.remove(neighbour);
             }
+
+            // Copy doorsToThisRoom to avoid ConcurrentModificationException
+            List<IRoom> doorsToAddThisRoom = new ArrayList<>(doorsToThisRoom);
+            for (IRoom room : doorsToAddThisRoom) {
+                room.addNeighbour(this);
+            }
+            doorsToThisRoom = new ArrayList<>();
             System.out.println("Showing neighbours | CursedRoomDecorator: manageDoors");
         }
         //szomszédok elrejtése
         else{
             System.out.println("Neighbours shown currently | CursedRoomDecorator: manageDoors");
-            for(int i = 0; i < decoratedRoom.getNeighbours().size(); i++){
-                this.hiddenNeighbours.add(getNeighbours().get(i));
-                decoratedRoom.removeNeighbour(getNeighbours().get(i));
+
+            List<IRoom> neighboursToAdd = new ArrayList<>(decoratedRoom.getNeighbours());
+            for (IRoom neighbour : neighboursToAdd) {
+                this.hiddenNeighbours.add(neighbour);
+                decoratedRoom.removeNeighbour(neighbour);
+            }
+
+            List<IRoom> roomsToAdd = getRoomsThatHasDoorToThisRoom();
+            for (IRoom room : roomsToAdd) {
+                doorsToThisRoom.add(room);
+                room.removeNeighbour(this);
             }
             System.out.println("Hiding neighbour | CursedRoomDecorator: manageDoors");
         }
 
+
+
+    }
+
+    private List<IRoom> getRoomsThatHasDoorToThisRoom(){
+        List<IRoom> rooms = new ArrayList<>();
+        for(IRoom room: getLabyrinth().getRooms()){
+            if(room.getNeighbours().contains(this)){
+                rooms.add(room);
+            }
+        }
+        return rooms;
+    }
+
+    boolean isDoorToThisRoom(){
+        for( IRoom room: getLabyrinth().getRooms()){
+            if(room.getNeighbours().contains(this)){
+                return true;
+            }
+        }
+        return false;
     }
 
     @Override

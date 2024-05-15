@@ -35,3 +35,13 @@ L
 src/Rooms/RoomDecorator.java,0\c\0c3551fd3aecf3b0e686052ade141df9b5bd9897
 D
 src/Rooms/IRoom.java,8\6\86e51e302f304c76c655e5d431677d0e3f08b727
+K
+src/Characters/Cleaner.java,8\e\8e2b6c84c83116ba81361b9fc305d6c49367d835
+R
+"src/Rooms/StickyRoomDecorator.java,0\3\0330a22191dded32b0ea1fcceafc58b6c46ebe83
+C
+src/Items/Item.java,d\f\df83b11e482027e34a648472f26a4996ae8b9372
+N
+src/Characters/Instructor.java,3\9\39356a9c65f95831827ddc597ee498e8d4bc6fdc
+I
+src/Items/Transistor.java,4\3\434d727c994fda3f5449e171d14302a9dff20d8a

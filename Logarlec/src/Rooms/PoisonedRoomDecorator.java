@@ -64,6 +64,19 @@ public class PoisonedRoomDecorator extends RoomDecorator{
 
     @Override
     public IRoom acceptUnToxicate(DecoratorHandlerVisitor visitor) {
+//        BasicRoom basicRoom = new BasicRoom();
+//        basicRoom.setCapacity(this.getCapacity());
+//        basicRoom.setItems(this.getItems());
+//        basicRoom.setNeighbours(this.getNeighbours());
+//        for(Character ch : this.getCharacters()){
+//            basicRoom.addCharacter(ch);
+//
+//        }
+//        for( Character ch : this.getCharacters()){
+//            ch.setRoom(basicRoom);
+//        }
+
+
         return visitor.visitForUnToxicate(this);
     }
 

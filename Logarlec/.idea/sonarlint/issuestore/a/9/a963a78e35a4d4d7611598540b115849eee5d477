@@ -1,22 +1,22 @@
 
-¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(† âöûÿÿÿÿ8ªïÂ÷1J$4838ab1a-db61-4816-9742-a8e0a81b5e9e
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(† âöûÿÿÿÿ8…ºÖå÷1J$4b3cddca-4b8a-46df-89c1-1769d04af9b9
 š
-java:S1450
-"WRemove the "isCaught" field and declare it as a local variable in the relevant methods.(í¯¾Ÿ8—ªïÂ÷1J$1906ff04-78ae-4067-8637-c21f5a65d86d
-r	java:S106!"+Replace this use of System.out by a logger.(³¡×—ıÿÿÿÿ8™ªïÂ÷1J$39fbecb2-f057-45ab-9633-1be2ba6f08ed
-r	java:S106,"+Replace this use of System.out by a logger.(Â±ßÑúÿÿÿÿ8™ªïÂ÷1J$eab294d4-0fbd-4aeb-b3f4-2ca79b6abecf
-m	java:S1068"+Replace this use of System.out by a logger.(Â‰ş8šªïÂ÷1J$03c58479-75e9-4e0f-82fa-d19b862b4598
+java:S1450"WRemove the "isCaught" field and declare it as a local variable in the relevant methods.(í¯¾Ÿ8ºÖå÷1J$1e3a9b8c-7ebb-4ab9-830a-319910eebd19
+r	java:S106""+Replace this use of System.out by a logger.(³¡×—ıÿÿÿÿ8’ºÖå÷1J$3066ad66-68ad-461e-87f6-a445b676914d
+r	java:S106-"+Replace this use of System.out by a logger.(Â±ßÑúÿÿÿÿ8“ºÖå÷1J$85cb44fb-86ef-4929-a100-1506ea9168ae
+m	java:S1069"+Replace this use of System.out by a logger.(Â‰ş8“ºÖå÷1J$37b63323-b32c-4451-95dd-2e6d3ba87ed0
 }
-java:S1161?":Add the "@Override" annotation above this method signature(”×ºÆ8šªïÂ÷1J$a95552d2-0278-44eb-a2d4-86be8a45235e
+java:S1161@":Add the "@Override" annotation above this method signature(”×ºÆ8”ºÖå÷1J$506052e8-77b1-442a-b459-1e0ed89c7f47
 ‚
-java:S1161K":Add the "@Override" annotation above this method signature(¡ĞÓûÿÿÿÿ8›ªïÂ÷1J$db9dc42b-244f-41c8-87e3-a6bf36e111ce
-ƒ	java:S125P"<This block of commented-out lines of code should be removed.(äØ™ıÿÿÿÿ8›ªïÂ÷1J$b8c3ca4a-1dac-4590-9110-da6076d546f5
-r	java:S106y"+Replace this use of System.out by a logger.(ş®Üêüÿÿÿÿ8œªïÂ÷1J$8ea4b569-580f-47a0-b6a9-18fd8a53b21f
+java:S1161L":Add the "@Override" annotation above this method signature(¡ĞÓûÿÿÿÿ8•ºÖå÷1J$23fd28c2-49f7-4ea3-ae49-19331e53f809
+ƒ	java:S125Q"<This block of commented-out lines of code should be removed.(äØ™ıÿÿÿÿ8—ºÖå÷1J$2d6d6f1c-3d33-4dff-b400-5cc334d46822
+r	java:S106z"+Replace this use of System.out by a logger.(ş®Üêüÿÿÿÿ8—ºÖå÷1J$8c1de243-a6e8-43d7-a2d6-9d6fcf15d3ec
 ¡
-java:S2142}"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8œªïÂ÷1J$ac542571-ad0a-425f-bad2-51d9b51ab0e7
-M	java:S106ƒ"+Replace this use of System.out by a logger.(ªã²ûÿÿÿÿ8¶Ú‰È÷1
-x
-java:S1128"5Remove this unused import 'View.WindowView.RoomView'.(Ã‘²î8 Á…Ã÷1J$0efb9572-390e-44f8-b459-90a3da1d2599
+java:S2142~"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8˜ºÖå÷1J$9f0dcae0-a16d-493f-944f-3ab9e77a9252
+s	java:S106„"+Replace this use of System.out by a logger.(ªã²ûÿÿÿÿ8™ºÖå÷1J$f4e34cd6-90cb-40e3-8afc-88ed20ac6399
+T
+java:S2696…"6Make the enclosing method "static" or remove this set.(ÙĞ—©8ñõÖå÷1
+R
+java:S1128"5Remove this unused import 'View.WindowView.RoomView'.(Ã‘²î8òõÖå÷1
 o
-java:S1068
-",Remove this unused "isCaught" private field.(í¯¾Ÿ8ªïÂ÷1J$6f8b3434-6fb6-429a-9b3a-f0f93b3654c0
+java:S1068",Remove this unused "isCaught" private field.(í¯¾Ÿ8šºÖå÷1J$8b7f2c31-94be-49c2-85a4-ecd46da78647

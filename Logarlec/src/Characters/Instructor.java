@@ -74,10 +74,12 @@ public class Instructor extends Character{
         System.out.println("Instructor next round | Instructor: nextRound()");
         kickStudents();
         moveToRandom();
-        if(!items.isEmpty())
-            dropItem(items.get(0));
-        if(!currentRoom.getItems().isEmpty())
-            pickItem(currentRoom.getItems().get(0));
+        if(!items.isEmpty()) {
+            dropItem(items.getFirst());
+        }
+        if(!currentRoom.getItems().isEmpty()) {
+            pickItem(currentRoom.getItems().getFirst());
+        }
         kickStudents();
         return "";
     }
