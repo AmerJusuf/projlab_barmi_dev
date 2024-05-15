@@ -86,6 +86,7 @@ public class TestLogic {
         commandPatterns.put("startGame", Pattern.compile("startGame"));
 
         commandPatterns.put("roomView", Pattern.compile("roomView\\s+-r\\s+(\\S+)\\s-type\\s+(\\S+)\\s-x\\s+(\\S+)\\s-y\\s+(\\S+)"));
+        commandPatterns.put("characterView", Pattern.compile("characterView\\s+-r\\s+(\\S+)\\s-type\\s+(\\S+)\\s-x\\s+(\\S+)\\s-y\\s+(\\S+)"));
     }
 
     public static void main(String[] args) {
@@ -1298,7 +1299,8 @@ public class TestLogic {
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Status: ").append(labyrinth.getGameState()).append("\n");
 
-                        break;}
+                        break;
+                    }
                     case "nextRound": {
                         labyrinth.nextRound();
                         for(IRoom room: labyrinth.getRooms()){
@@ -1312,18 +1314,20 @@ public class TestLogic {
 
                         break;
                     }
-                    case "skipTurn":
+                    case "skipTurn": {
 
                         outputBuilder.append(commandName).append(":").append("\n");
                         //outputBuilder.append("Character: ").append("KARAKTER ID-JA").append("\n");
 
                         break;
-                    case "startGame":
+                    }
+                    case "startGame": {
                         labyrinth.startGame();
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Game started!").append("\n");
                         break;
-                    case "roomView":
+                    }
+                    case "roomView": {
                         roomId = matcher.group(1);
                         int x = Integer.parseInt(matcher.group(3));
                         int y = Integer.parseInt(matcher.group(4));
@@ -1342,18 +1346,53 @@ public class TestLogic {
                             IRoom room = roomsMap.get(roomId);
                             RoomNodeView roomNodeView = null;
                             if (roomType.equalsIgnoreCase("PoisonedRoom")) {
-                                roomNodeView = new RoomNodeView(room, true ,false ,false, x, y, controller);
+                                roomNodeView = new RoomNodeView(room, true, false, false, x, y, controller);
                             } else if (roomType.equalsIgnoreCase("StickyRoom")) {
-                                roomNodeView = new RoomNodeView(room, false ,false ,true, x, y, controller);
-                            } else if (roomType.equalsIgnoreCase("CursedRoom")){
-                                roomNodeView = new RoomNodeView(room, false ,true ,false, x, y, controller);
+                                roomNodeView = new RoomNodeView(room, false, false, true, x, y, controller);
+                            } else if (roomType.equalsIgnoreCase("CursedRoom")) {
+                                roomNodeView = new RoomNodeView(room, false, true, false, x, y, controller);
                             } else {
-                                roomNodeView = new RoomNodeView(room, false ,false ,false, x, y, controller);;
+                                roomNodeView = new RoomNodeView(room, false, false, false, x, y, controller);
+                                ;
                             }
                             MainWindow.viewsByObjects.put(room, roomNodeView);
                             RoomNodeView.lastClickedRoom = roomNodeView;
                         }
                         break;
+                    }
+                    case "characterView": {
+                        roomId = matcher.group(1);
+                        int x = Integer.parseInt(matcher.group(3));
+                        int y = Integer.parseInt(matcher.group(4));
+                        String roomType;
+                        if (matcher.group(2) == null)
+                            roomType = "BasicRoom";
+                        else
+                            roomType = matcher.group(2);
+
+                        if (!roomsMap.containsKey(roomId)) {
+                            result = fail;
+                            outputBuilder.append("Room not found").append("\n");
+                            break;
+                        } else {
+                            result = success;
+                            IRoom room = roomsMap.get(roomId);
+                            RoomNodeView roomNodeView = null;
+                            if (roomType.equalsIgnoreCase("PoisonedRoom")) {
+                                roomNodeView = new RoomNodeView(room, true, false, false, x, y, controller);
+                            } else if (roomType.equalsIgnoreCase("StickyRoom")) {
+                                roomNodeView = new RoomNodeView(room, false, false, true, x, y, controller);
+                            } else if (roomType.equalsIgnoreCase("CursedRoom")) {
+                                roomNodeView = new RoomNodeView(room, false, true, false, x, y, controller);
+                            } else {
+                                roomNodeView = new RoomNodeView(room, false, false, false, x, y, controller);
+                                ;
+                            }
+                            MainWindow.viewsByObjects.put(room, roomNodeView);
+                            RoomNodeView.lastClickedRoom = roomNodeView;
+                        }
+                        break;
+                    }
                 }
                 return outputBuilder.toString();
             }
