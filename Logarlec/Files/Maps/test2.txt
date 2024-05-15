@@ -5,3 +5,7 @@ addNeighbour -r BR1 -r BR2
 addNeighbour -r BR2 -r BR1
 roomView -r BR1 -type BasicRoom -x 100 -y 200
 roomView -r BR2 -type BasicRoom -x 200 -y 100
+createCharacter -ch S1 -type Student
+addCharacterToRoom -ch S1 -r BR1
+addCharacterToLabyrinth -lab L1 -ch S1
+characterView -ch S1 -type Student
