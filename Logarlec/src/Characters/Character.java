@@ -7,6 +7,7 @@ import Rooms.IRoom;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public abstract class Character {
     protected List<Item> items;
@@ -100,7 +101,7 @@ public abstract class Character {
      */
     public void dropItem(Item item){
         if(items.contains(item)){
-            item.drop();
+            item.drop(); //remove owner
             this.removeItem(item);
             System.out.println("Item removed from character's inventory | Character: dropItem()");
             currentRoom.addItem(item);
@@ -154,7 +155,7 @@ public abstract class Character {
            }
         }
         System.out.println("Character disabled | Character: disable()");
-        this.dropAllItem();
+        //this.dropAllItem();
         this.setPoisoned(true);
     }
 
@@ -178,15 +179,23 @@ public abstract class Character {
      * and if the character is not poisoned
      */
     public void moveToRandom(){
-        if(isPoisoned)
+        if(isPoisoned){
+            isPoisoned = false;
             return;
+            }
         List<IRoom> neighbours = currentRoom.getNeighbours();
-        for(IRoom neighbour : neighbours){
-            if(neighbour.acceptCharacter(this)){
+        int attempts = 0;
+        while(attempts < 10){
+            if(neighbours.isEmpty()){
+                return;
+            }
+            int randomIndex = new Random().nextInt(neighbours.size());
+            if(neighbours.get(randomIndex).acceptCharacter(this)){
                 currentRoom.removeCharacter(this);
-                this.setRoom(neighbour);
+                this.setRoom(neighbours.get(randomIndex));
                 break;
             }
+            attempts++;
         }
     }
 

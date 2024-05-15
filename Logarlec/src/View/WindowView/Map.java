@@ -34,7 +34,10 @@ public class Map extends JPanel implements IView {
         Student st2 = new Student();
         Student st3 = new Student();
         Student st4 = new Student();
-        students = List.of(st, st2, st3, st4);
+        students.add(st);
+        students.add(st2);
+        students.add(st3);
+        students.add(st4);
         labyrinth = new Labyrinth(students, this, controller);
         labyrinth.setControllerToItems();
 //        if(Labyrinth.currentPlayer == null) {

@@ -1,16 +1,16 @@
 
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8ñ¹å÷1J$e43a80fc-92ed-400a-8b04-c112316df478
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8ñ¹å÷1J$4ad357e2-2044-4440-a71b-7752f6d4ead7
 „
-java:S3252)"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ó±æÉ8·ñ¹å÷1J$c71a1291-a121-4601-90d9-3bfc0fe14e46
+java:S3252)"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ó±æÉ8·ñ¹å÷1J$4f9e0d6f-db17-45c4-a2d1-58c4a92a8f7d
 z
-java:S1135d"2Complete the task associated to this TODO comment.(î–Î¨ûÿÿÿÿ8¾ñ¹å÷1J$e88d4133-8736-4b40-bacb-493f1c88ad17
-s	java:S106ƒ"+Replace this use of System.out by a logger.(Û¯şÿÿÿÿ8Áñ¹å÷1J$a7705a0d-3630-4d30-8fc1-775e82122f69
-o
-java:S1602„",Remove useless curly braces around statement(°›ìU8Âñ¹å÷1J$dd23655e-0de1-4584-a88f-5d96d2bf4faa
-n	java:S106‰"+Replace this use of System.out by a logger.(ÒÑŠ8Âñ¹å÷1J$2f681898-d520-4a8b-a50d-af6241c0c081
+java:S1135d"2Complete the task associated to this TODO comment.(î–Î¨ûÿÿÿÿ8¾ñ¹å÷1J$0453bc1c-9ae4-4091-9c86-67dc492416d7
+s	java:S106ƒ"+Replace this use of System.out by a logger.(Û¯şÿÿÿÿ8Áñ¹å÷1J$8698e5fe-138a-4ef4-ae1b-540833a4f081
+^	java:S125„"<This block of commented-out lines of code should be removed.(Ğ€ÿİıÿÿÿÿ8‹òõî÷1
+^	java:S125†"<This block of commented-out lines of code should be removed.(×§ŠÕüÿÿÿÿ8‹òõî÷1
+n	java:S106‰"+Replace this use of System.out by a logger.(ÒÑŠ8Âñ¹å÷1J$c66afcbb-3d37-4021-ba06-1b14a55f191d
 …
-java:S3252“"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ó±æÉ8Äñ¹å÷1J$cdf79989-c88b-4da8-bd1f-96148d977a5b
-_
-java:S3252£"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ó±æÉ8–õÇå÷1
+java:S3252“"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ó±æÉ8Äñ¹å÷1J$8cb7c521-3972-4827-a0c1-dcd18e0f96ac
 …
-java:S1128"=Remove this unused import 'View.CharacterView.CharacterView'.(Á–ğÕÿÿÿÿÿ8Çñ¹å÷1J$a77d682f-2fbb-4209-acb1-e91ecef8d495
+java:S3252£"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ó±æÉ8–õÇå÷1J$3b416e5e-0285-47eb-ab9d-2ba9e5336328
+…
+java:S1128"=Remove this unused import 'View.CharacterView.CharacterView'.(Á–ğÕÿÿÿÿÿ8Çñ¹å÷1J$7751fb91-a9f8-486b-8308-f3f65e873597

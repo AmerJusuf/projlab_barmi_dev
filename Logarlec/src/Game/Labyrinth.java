@@ -187,14 +187,32 @@ public class Labyrinth {
         return round;
     }
 
+    public static List<Student> kickedStudents;
+    private Student asd;
     public String nextRound() {
         String fileContent = "";
+        kickedStudents = new ArrayList<>();
             for (Student student : students) {
+                if(asd != null && student == asd){
+                    int i = -1;
+                }
                 currentPlayer = student;
+                controller.notifyModelChanged();
                 //controller.notifyModelChanged();
                 student.nextRound();
+                for(Instructor instructor : instructors){
+                    if(instructor.getRoom() == student.getRoom()){
+                        student.getCaught();
+                    }
+                }
                 controller.notifyModelChanged();
             }
+            if(!kickedStudents.isEmpty()) {
+                students.removeAll(kickedStudents);
+                asd = kickedStudents.getFirst();
+            }
+            kickedStudents = new ArrayList<>();
+                controller.notifyModelChanged();
             for (Instructor instructor : instructors) {
                 instructor.nextRound();
             }
@@ -562,12 +580,17 @@ public class Labyrinth {
 
 
 
-        for(int i = 0; i < instructors.size(); i++){
-            MainWindow.viewsByObjects.put(instructors.get(i), new InstructorView(instructors.get(i)));
-            int j = i % 5;
-            rooms.get(j).addCharacter(instructors.get(i));
-            instructors.get(i).setRoom(rooms.get(j));
+        for(int i = 0; i < instructors.size()-1; i++){
+            if( i != 15) {
+                MainWindow.viewsByObjects.put(instructors.get(i), new InstructorView(instructors.get(i)));
+                int j = i % 5;
+                rooms.get(j).addCharacter(instructors.get(i));
+                instructors.get(i).setRoom(rooms.get(j));
+            }
         }
+        MainWindow.viewsByObjects.put(instructors.get(7), new InstructorView(instructors.get(7)));
+        rooms.get(15).addCharacter(instructors.get(7));
+        instructors.get(7).setRoom(rooms.get(15));
 
         for (int i = 0; i < cleaners.size(); i++) {
             MainWindow.viewsByObjects.put(cleaners.get(i), new CleanerView(cleaners.get(i)));

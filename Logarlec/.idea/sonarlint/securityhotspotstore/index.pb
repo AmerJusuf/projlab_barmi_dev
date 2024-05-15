@@ -45,3 +45,7 @@ N
 src/Characters/Instructor.java,3\9\39356a9c65f95831827ddc597ee498e8d4bc6fdc
 I
 src/Items/Transistor.java,4\3\434d727c994fda3f5449e171d14302a9dff20d8a
+U
+%src/View/ItemView/TransistorView.java,a\0\a00bac23e142720d5eace6b8dbfbaf422bb2424f
+W
+'src/View/CharacterView/CleanerView.java,3\8\3850c4c6061aa12948238c6ad0cb62208c892081
