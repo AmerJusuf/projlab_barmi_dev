@@ -8,7 +8,7 @@ import Rooms.IRoom;
 import TestLogic.TestLogic;
 import View.CharacterView.StudentView;
 import View.IView;
-import jdk.incubator.vector.VectorOperators;
+//import jdk.incubator.vector.VectorOperators;
 
 import javax.swing.*;
 import java.awt.*;
