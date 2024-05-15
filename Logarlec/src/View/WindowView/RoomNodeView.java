@@ -75,6 +75,7 @@ public class RoomNodeView extends JPanel implements IView {
         this.poisoned = true;
     }
 
+    //importing from file uses this
     public RoomNodeView(IRoom room, boolean poisoned, boolean cursed, boolean sticky, int x, int y, Notifiable control) {
         this.room = room;
         this.x = x;
@@ -118,6 +119,7 @@ public class RoomNodeView extends JPanel implements IView {
         add(Box.createVerticalGlue());
         this.setVisible(true);
         setBounds(x, y);
+        update();
     }
 
     public void setController(Notifiable controller) {
