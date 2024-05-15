@@ -1340,15 +1340,18 @@ public class TestLogic {
                         } else {
                             result = success;
                             IRoom room = roomsMap.get(roomId);
+                            RoomNodeView roomNodeView = null;
                             if (roomType.equalsIgnoreCase("PoisonedRoom")) {
-                                MainWindow.viewsByObjects.put(room, new RoomNodeView(room, true ,false ,false, x, y, controller));
+                                roomNodeView = new RoomNodeView(room, true ,false ,false, x, y, controller);
                             } else if (roomType.equalsIgnoreCase("StickyRoom")) {
-                                MainWindow.viewsByObjects.put(room, new RoomNodeView(room, false ,false ,true, x, y, controller));
+                                roomNodeView = new RoomNodeView(room, false ,false ,true, x, y, controller);
                             } else if (roomType.equalsIgnoreCase("CursedRoom")){
-                                MainWindow.viewsByObjects.put(room, new RoomNodeView(room, false ,true ,false, x, y, controller));
+                                roomNodeView = new RoomNodeView(room, false ,true ,false, x, y, controller);
                             } else {
-                                MainWindow.viewsByObjects.put(room, new RoomNodeView(room, false ,false ,false, x, y, controller));
+                                roomNodeView = new RoomNodeView(room, false ,false ,false, x, y, controller);;
                             }
+                            MainWindow.viewsByObjects.put(room, roomNodeView);
+                            RoomNodeView.lastClickedRoom = roomNodeView;
                         }
                         break;
                 }

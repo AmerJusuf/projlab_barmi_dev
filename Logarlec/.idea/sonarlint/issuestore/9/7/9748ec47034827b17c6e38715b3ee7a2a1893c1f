@@ -1,61 +1,69 @@
 
 ›
-java:S1104#"YMake currentPlayer a static final constant or non-public and provide accessors if needed.(º¨¶+8âáˆÁ÷1J$0ba4f6ef-0270-4a4a-b915-67407a0132c9
+java:S1104#"YMake currentPlayer a static final constant or non-public and provide accessors if needed.(º¨¶+8âáˆÁ÷1J$10eb14cb-ea70-4289-891f-cdb0d4267e6c
 u
-java:S1444#"3Make this "public static currentPlayer" field final(º¨¶+8âáˆÁ÷1J$17767503-a77d-4117-83ce-4daa688261f4
+java:S1444#"3Make this "public static currentPlayer" field final(º¨¶+8âáˆÁ÷1J$6acd23f8-c559-47be-b0e3-ac3e9f2b1647
 m
-java:S30100"*Remove this assignment of "currentPlayer".(’¶Õ‰8ŸâˆÁ÷1J$99365ecf-0106-441c-b93f-987bd1edd331
-{
-java:S1854e"8Remove this useless assignment to local variable "idx2".(Åë¸´8ÙÄ“Á÷1J$508d6a2f-ac60-42a5-b302-324721c8b814
-‹
-java:S1854{"CRemove this useless assignment to local variable "currentAttempts".(»‡†úÿÿÿÿ8ÙÄ“Á÷1J$6e7f6125-36e5-4ff1-a5ee-830617f70207
+java:S30100"*Remove this assignment of "currentPlayer".(’¶Õ‰8ŸâˆÁ÷1J$c9e828a8-2afe-4eaf-839f-a86b583ce23f
+U
+java:S1854e"8Remove this useless assignment to local variable "idx2".(Åë¸´8Ã¸İ÷1
+e
+java:S1854{"CRemove this useless assignment to local variable "currentAttempts".(»‡†úÿÿÿÿ8ŸÃ¸İ÷1
 f
-java:S2119c"Save and re-use this "Random".(šŸ«íøÿÿÿÿ8ÛÄ“Á÷1J$5fb07fae-8a3f-46be-a830-e6d779a590f0
-l
-java:S1481e")Remove this unused "idx2" local variable.(Åë¸´8ÜÄ“Á÷1J$0a0d1206-e93b-4628-a65b-c8d55febde2a
-v
-java:S1481h".Remove this unused "splitDone" local variable.(˜Ö€ıÿÿÿÿ8ÜÄ“Á÷1J$401da032-633e-480c-9cc2-82908e0ecd45
-~	java:S125}"<This block of commented-out lines of code should be removed.(ÜƒÉ8ŞÄ“Á÷1J$1ec1cffc-15e6-4113-b71b-4ce45cd30a5c
-v
-java:S1135†"2Complete the task associated to this TODO comment.(ÀÛÙ„8ßÄ“Á÷1J$22792b79-9d9a-43fc-aef9-d9b88445d558
+java:S2119c"Save and re-use this "Random".(šŸ«íøÿÿÿÿ8·ŞşÃ÷1J$ed9656ed-a09f-4408-9a46-80cd44f83763
+F
+java:S1481e")Remove this unused "idx2" local variable.(Åë¸´8£Ã¸İ÷1
+P
+java:S1481h".Remove this unused "splitDone" local variable.(˜Ö€ıÿÿÿÿ8¤Ã¸İ÷1
+X	java:S125}"<This block of commented-out lines of code should be removed.(ÜƒÉ8¥Ã¸İ÷1
+P
+java:S1135†"2Complete the task associated to this TODO comment.(ÀÛÙ„8§Ã¸İ÷1
 z
-java:S2696³"6Make the enclosing method "static" or remove this set.(Ê‡†Â8âÄ“Á÷1J$a557b8d3-386c-4972-907c-cb9db0f0c940
-
-java:S2696Å"6Make the enclosing method "static" or remove this set.(Ÿó£±ÿÿÿÿÿ8äÄ“Á÷1J$ade4cfb9-0617-4b1b-b7c3-a8d21d917ba8
+java:S2696³"6Make the enclosing method "static" or remove this set.(Ê‡†Â8× ¶İ÷1J$23b4961f-5bdb-4c5a-9029-1f2a0f5aeeeb
+Y
+java:S2696Å"6Make the enclosing method "static" or remove this set.(Ÿó£±ÿÿÿÿÿ8®Ã¸İ÷1
 s
-java:S1172ï"0Remove this unused method parameter "character".(¨¼ú08èÄ“Á÷1J$a4a42dc7-6d8e-46f4-90f0-5958774439cf
-	java:S125"<This block of commented-out lines of code should be removed.(‡â‹8õÄ“Á÷1J$bc67d27a-caeb-45af-b60d-b9a2ed116b59
-„	java:S125†"<This block of commented-out lines of code should be removed.(¿¤Ë™üÿÿÿÿ8õÄ“Á÷1J$d54c3b85-9372-47ab-b776-6eced46624a6
-„	java:S125‹"<This block of commented-out lines of code should be removed.(¤¨‘Çşÿÿÿÿ8öÄ“Á÷1J$6e530b5e-bf37-4826-90cb-a1c0ed92abb9
-~	java:S125”"<This block of commented-out lines of code should be removed.(Ù­œ*8öÄ“Á÷1J$f645c0fb-3f6f-4a08-a7d2-7bba76243def
-„	java:S125š"<This block of commented-out lines of code should be removed.(“½ãÎÿÿÿÿÿ8öÄ“Á÷1J$4e47c6e0-9270-4779-a681-9589c3ff69ed
-„	java:S125 "<This block of commented-out lines of code should be removed.(ú¯™°şÿÿÿÿ8÷Ä“Á÷1J$dfde0764-ec29-4c69-b6b7-86a681a4b489
-„	java:S125¥"<This block of commented-out lines of code should be removed.(¶ä–úÿÿÿÿ8÷Ä“Á÷1J$4494e4cc-4bcc-4923-968b-bc05ec522627
-„	java:S125©"<This block of commented-out lines of code should be removed.(´—éËüÿÿÿÿ8÷Ä“Á÷1J$8d3d104b-5a14-4bf3-b3c0-503667166369
-„	java:S125­"<This block of commented-out lines of code should be removed.(¡Š¬ëıÿÿÿÿ8øÄ“Á÷1J$9210ea73-c0e5-4c20-86b7-a852ae47d69d
-„	java:S125±"<This block of commented-out lines of code should be removed.(İÖäˆÿÿÿÿÿ8ùÄ“Á÷1J$a3fc3a5b-c2f8-4298-a3ad-6eea26fa2ca2
-	java:S125¸"<This block of commented-out lines of code should be removed.(õàâƒ8úÄ“Á÷1J$ee5a8531-2b80-479a-adc2-12e17e838672
-„	java:S125»"<This block of commented-out lines of code should be removed.(ŒÊıùÿÿÿÿ8úÄ“Á÷1J$808e96f5-c280-42c6-ab58-c4d7e1fe78bd
-„	java:S125¾"<This block of commented-out lines of code should be removed.(ÇĞ´æüÿÿÿÿ8úÄ“Á÷1J$b89ae245-de19-4e7b-8fe4-4221dbf03fc4
-~	java:S125Å"<This block of commented-out lines of code should be removed.(‚¾ƒI8úÄ“Á÷1J$56a5dae6-be9b-476a-a2f5-be2a305b0a14
-	java:S125È"<This block of commented-out lines of code should be removed.(ñüÀ—8ûÄ“Á÷1J$8a612494-5712-4d0a-aacc-35f87e3c75e2
-	java:S125Ï"<This block of commented-out lines of code should be removed.(…™Ñ¢8ûÄ“Á÷1J$182f4d18-9b20-4f69-810b-4b0693caf88e
-	java:S125Ò"<This block of commented-out lines of code should be removed.(ƒ³ÍÉ8ûÄ“Á÷1J$eb914b93-78ec-42b2-a677-63f595399541
-~	java:S125Ù"<This block of commented-out lines of code should be removed.(ñ±Ø8üÄ“Á÷1J$59b9e73e-cf76-46e2-bf93-6cd55218488c
-„	java:S125Ş"<This block of commented-out lines of code should be removed.(Ê”Â’ÿÿÿÿÿ8üÄ“Á÷1J$5a40901e-4678-48ff-af8f-2d7c227c992b
-„	java:S125á"<This block of commented-out lines of code should be removed.(èÆ©Íúÿÿÿÿ8üÄ“Á÷1J$03977d65-44d0-497d-a4e2-d2b08440707c
+java:S1172ï"0Remove this unused method parameter "character".(¨¼ú08èÄ“Á÷1J$b4956924-cc80-496c-b946-ebfc6044166d
 z
-java:S2696š"6Make the enclosing method "static" or remove this set.(âÛÑó8ó Ã÷1J$950cb737-c6ce-4135-96c8-1c0ca2cd5095
-	java:S125–"<This block of commented-out lines of code should be removed.(¢ĞÒË8ó Ã÷1J$99450695-f567-49e2-91bf-a0ab7c1f1cf4
-	java:S125§"<This block of commented-out lines of code should be removed.(¢ĞÒË8ó Ã÷1J$7ae5bcf9-069b-4eca-883a-0ce92af9455b
+java:S2696û"6Make the enclosing method "static" or remove this set.(Ùşí8şéŒÄ÷1J$7dbbcd67-ebac-4f3a-a62c-298fb69387f9
+	java:S125"<This block of commented-out lines of code should be removed.(‡â‹8õÄ“Á÷1J$59d17411-f841-4fff-a636-215bedf087d5
+„	java:S125†"<This block of commented-out lines of code should be removed.(¿¤Ë™üÿÿÿÿ8õÄ“Á÷1J$22916d66-77aa-4914-b1bb-4f892e3bf0fe
+„	java:S125‹"<This block of commented-out lines of code should be removed.(¤¨‘Çşÿÿÿÿ8öÄ“Á÷1J$f157c015-16aa-4a5c-a91a-0ec7d44c08eb
+~	java:S125”"<This block of commented-out lines of code should be removed.(Ù­œ*8öÄ“Á÷1J$3536092f-abe3-4562-900e-3355bf558b45
+„	java:S125š"<This block of commented-out lines of code should be removed.(“½ãÎÿÿÿÿÿ8öÄ“Á÷1J$ee4ca8f0-223e-4ed7-b336-d1f01ab6a09c
+„	java:S125 "<This block of commented-out lines of code should be removed.(ú¯™°şÿÿÿÿ8÷Ä“Á÷1J$a3fb9adf-dcdf-420c-81c1-8901e474ce27
+„	java:S125¥"<This block of commented-out lines of code should be removed.(¶ä–úÿÿÿÿ8÷Ä“Á÷1J$1b20da8a-9856-4e6e-837e-d8cc34d9f3a1
+„	java:S125©"<This block of commented-out lines of code should be removed.(´—éËüÿÿÿÿ8÷Ä“Á÷1J$fc880839-02d0-45c9-a613-8702df46fc26
+„	java:S125­"<This block of commented-out lines of code should be removed.(¡Š¬ëıÿÿÿÿ8øÄ“Á÷1J$c00187be-7dd9-40d8-9f98-c06ae36175bf
+„	java:S125±"<This block of commented-out lines of code should be removed.(İÖäˆÿÿÿÿÿ8ùÄ“Á÷1J$4b7b0232-e72d-4cd4-a021-ffa036505f21
+	java:S125¸"<This block of commented-out lines of code should be removed.(õàâƒ8úÄ“Á÷1J$883d6f12-0b68-488f-9c54-2836fbfc704b
+„	java:S125»"<This block of commented-out lines of code should be removed.(ŒÊıùÿÿÿÿ8úÄ“Á÷1J$c06f128e-22f0-41d4-8f5c-72d0d33829e9
+„	java:S125¾"<This block of commented-out lines of code should be removed.(ÇĞ´æüÿÿÿÿ8úÄ“Á÷1J$0aa54b16-caf3-4d48-96a2-15f0c01ee590
+~	java:S125Å"<This block of commented-out lines of code should be removed.(‚¾ƒI8úÄ“Á÷1J$a7620664-2645-4624-bf06-f2dc8e32df0d
+	java:S125È"<This block of commented-out lines of code should be removed.(ñüÀ—8ûÄ“Á÷1J$8449057c-8f83-41b6-8e1b-d57d494eb12a
+	java:S125Ï"<This block of commented-out lines of code should be removed.(…™Ñ¢8ûÄ“Á÷1J$2d7958e3-bbd0-478e-91fe-66eb47e86b76
+	java:S125Ò"<This block of commented-out lines of code should be removed.(ƒ³ÍÉ8ûÄ“Á÷1J$d548132b-0558-4972-8f5f-7e669eb8c354
+~	java:S125Ù"<This block of commented-out lines of code should be removed.(ñ±Ø8üÄ“Á÷1J$7ff1796e-e2d4-4d15-85ed-db535834ce53
+„	java:S125Ş"<This block of commented-out lines of code should be removed.(Ê”Â’ÿÿÿÿÿ8üÄ“Á÷1J$3c922ab1-8079-467f-b3bc-38f23268619a
+„	java:S125á"<This block of commented-out lines of code should be removed.(èÆ©Íúÿÿÿÿ8üÄ“Á÷1J$76e96f1f-1ee8-4851-9dff-a1d98cb3433f
+T
+java:S2696š"6Make the enclosing method "static" or remove this set.(âÛÑó8ÈÃ¸İ÷1
+	java:S125–"<This block of commented-out lines of code should be removed.(¢ĞÒË8ó Ã÷1J$305dcfae-b21e-4e9f-a82b-ee1db9b7a9e0
+	java:S125§"<This block of commented-out lines of code should be removed.(¢ĞÒË8ó Ã÷1J$a11048b2-8716-49b7-88b3-216aba0ede24
 b
-java:S2119º"Save and re-use this "Random".(äõ½ñ8ó Ã÷1J$4a27315a-eff1-498d-94bd-d11e52eca718
+java:S2119º"Save and re-use this "Random".(äõ½ñ8­êŒÄ÷1J$c401d7ef-c03f-402d-98ca-7fa7b36dde29
 b
-java:S2119Â"Save and re-use this "Random".(ş£û8‘ó Ã÷1J$6bcdab30-c609-4dec-b0fd-7d2519ad798e
-g
-java:S2119Ã"Save and re-use this "Random".(áöÿâùÿÿÿÿ8‘ó Ã÷1J$55f126f9-dc64-4380-b478-caf1fa31de52
-j	java:S131Ä""Add a default case to this switch.(Åİ¶Ìøÿÿÿÿ8‘ó Ã÷1J$9c877632-d225-4a36-b1f1-796bfba4cb92
+java:S2119Â"Save and re-use this "Random".(ş£û8ìÉ§İ÷1J$f1f5d33c-f7d0-44ff-9065-b644401711f3
+A
+java:S2119Ã"Save and re-use this "Random".(áöÿâùÿÿÿÿ8ÍÃ¸İ÷1
+j	java:S131Ä""Add a default case to this switch.(Åİ¶Ìøÿÿÿÿ8‘ó Ã÷1J$c10d9c17-e659-44cc-9921-79bdafa83b44
+x
+java:S1128"5Remove this unused import 'View.WindowView.RoomView'.(Ã‘²î8µêŒÄ÷1J$f2699b02-de36-408f-8845-3ca625a79e76
+}
+java:S1128"5Remove this unused import 'com.sun.tools.javac.Main'.( ƒ™şüÿÿÿÿ8µêŒÄ÷1J$f257d94e-1589-41f9-a255-5b145163b809
+r
+java:S1128"/Remove this unused import 'java.util.Iterator'.(¥ÍòÕ8µêŒÄ÷1J$ec67d44a-5ada-47d8-97c3-f5c1b94d79b7
 z
-java:S1068"8Remove this unused "starterNumberOfRooms" private field.(ö¨“G8÷âˆÁ÷1J$3d2a25d4-1aa2-41ac-8006-f2007c7c2e82
+java:S1068"8Remove this unused "starterNumberOfRooms" private field.(ö¨“G8÷âˆÁ÷1J$1bc4041d-e871-457c-a874-f8eb81b81587
 ‹
-java:S6541 "ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 243 to 64, Complexity from 15 to 14, Nesting Level from 3 to 2, Number of Variables from 63 to 6.(ÖÖßä8–ó Ã÷1J$78b07ced-54c6-45de-9d7f-8027c52f42c5
+java:S6541 "ÆA "Brain Method" was detected. Refactor it to reduce at least one of the following metrics: LOC from 243 to 64, Complexity from 15 to 14, Nesting Level from 3 to 2, Number of Variables from 63 to 6.(ÖÖßä8–ó Ã÷1J$c16952b2-c061-4c7d-8fce-3da36635be24
