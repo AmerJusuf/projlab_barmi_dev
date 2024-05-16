@@ -22,7 +22,7 @@ import java.util.Scanner;
 public class Map extends JPanel implements IView {
     private Labyrinth labyrinth;
     private boolean useBakedInData = false; //------------------------------- ezt kell átállítani true-ra, hogy a beégetett pályát használja, false-ra, ha az egy sorral lejjebb lévő file-t töltse be ---------------
-    private String mapFilename = "test2";  //------------------------------- a betöltendő map file neve -------------------------------------------------------------------------------------------------------------
+    private String mapFilename = "konzinKiadottKomplexMap";  //------------------------------- a betöltendő map file neve -------------------------------------------------------------------------------------------------------------
 
     List<RoomNodeView> nodes;
     int borderToLeft = 150;
