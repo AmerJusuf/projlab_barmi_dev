@@ -37,6 +37,14 @@ public class MainWindow extends JFrame {
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         this.setSize(screenSize.width, screenSize.height - 50);
 
+        // tray icon
+        ImageIcon image = new ImageIcon("Icons/logarlec.png");
+        this.setIconImage(image.getImage());
+
+        // custom cursor
+        Cursor customCursor = Toolkit.getDefaultToolkit().createCustomCursor(image.getImage(), new Point(0, 5), "HandCursor");
+        this.setCursor(customCursor);
+
         map = new Map(controller);
 
 
