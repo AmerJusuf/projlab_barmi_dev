@@ -70,7 +70,8 @@ public class Cleaner extends Character{
      */
     public IRoom unToxicateRoom(){
         System.out.println("Cleaner ventilated room | Cleaner: unToxicateRoom()");
-        return currentRoom.unToxicate();
+       // return currentRoom.unToxicate();
+        return null;
     }
 
     /**
@@ -80,6 +81,7 @@ public class Cleaner extends Character{
     @Override
     public String nextRound(){
         System.out.println("Cleaner nextRound | Cleaner: nextRound()");
+        isPoisoned = false;
         moveToRandom();
         moveCharacters();
         unToxicateRoom();

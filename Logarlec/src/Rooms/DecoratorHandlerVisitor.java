@@ -11,7 +11,7 @@ public class DecoratorHandlerVisitor implements RoomVisitor {
 
     public DecoratorHandlerVisitor(IRoom roomToMerge) {
         this.roomToHandle = roomToMerge;
-        roomToHandle.setLabyrinth(roomToMerge.getLabyrinth());
+       // roomToHandle.setLabyrinth(roomToMerge.getLabyrinth());
     }
 
     /**

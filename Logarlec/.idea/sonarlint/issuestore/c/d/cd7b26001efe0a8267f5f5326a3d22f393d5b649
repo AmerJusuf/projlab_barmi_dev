@@ -1,49 +1,46 @@
 
 ”
-java:S1104"QMake width a static final constant or non-public and provide accessors if needed.(øÂ½8ÂÒØÁ÷1J$26c53e4b-3b5e-42c8-ab4b-d2ff5783a8c5
+java:S1104"QMake width a static final constant or non-public and provide accessors if needed.(øÂ½8¨È™í÷1J$ca23dbb5-c6e4-4cd1-8b3b-4df23a9d4a17
 •
-java:S1104"RMake height a static final constant or non-public and provide accessors if needed.(ñ½8ÂÒØÁ÷1J$48df92c9-2f4a-4f98-b665-182004f8a1c3
+java:S1104"RMake height a static final constant or non-public and provide accessors if needed.(ñ½8¨È™í÷1J$8b943f15-71ec-4326-acdb-c47ada60d6c8
 £
-java:S1104"[Make lastClickedRoom a static final constant or non-public and provide accessors if needed.(Ó´æêúÿÿÿÿ8ÂÒØÁ÷1J$dfdf0692-ce3a-4c9e-aa5d-8bdb86065f56
+java:S1104"[Make lastClickedRoom a static final constant or non-public and provide accessors if needed.(Ó´æêúÿÿÿÿ8¨È™í÷1J$5c99d0fb-8d8b-478b-9b94-09b60126a681
 }
-java:S1444"5Make this "public static lastClickedRoom" field final(Ó´æêúÿÿÿÿ8ÂÒØÁ÷1J$e462fd41-4a45-4ea8-b2fc-c2eb0eb9979b
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8ÄÒØÁ÷1J$106d4718-0e6c-4b80-84e8-c17e3d47ac5d
+java:S1444"5Make this "public static lastClickedRoom" field final(Ó´æêúÿÿÿÿ8©È™í÷1J$dfe3ba0b-527b-4424-a5a0-8471eba08502
 q
-java:S2387"."width" is the name of a field in "Component".(øÂ½8ñÒØÁ÷1J$71aab511-fd0c-4eff-8251-38565dfbb3e3
+java:S2387"."width" is the name of a field in "Component".(øÂ½8‹É™í÷1J$94556697-16f3-43b3-92fb-a302b015eff2
 r
-java:S2387"/"height" is the name of a field in "Component".(ñ½8ñÒØÁ÷1J$dc7ec87c-1bf1-46f1-84a0-e54cdfddae95
+java:S2387"/"height" is the name of a field in "Component".(ñ½8‹É™í÷1J$fec50c72-c560-4d1f-87f1-c87e2401086f
 r
-java:S2387"*"x" is the name of a field in "Component".(ĞÇñüÿÿÿÿ8ñÒØÁ÷1J$ef16d95e-a50a-4c3b-b601-1ad2401e4251
+java:S2387"*"x" is the name of a field in "Component".(ĞÇñüÿÿÿÿ8ŒÉ™í÷1J$8655a118-3eb8-48bd-9b62-c1c4b9eb8fde
 r
-java:S2387 "*"y" is the name of a field in "Component".(Ê€ÄŒøÿÿÿÿ8ñÒØÁ÷1J$5296e840-0283-4be7-8115-f6b6bc07fe07
+java:S2387 "*"y" is the name of a field in "Component".(Ê€ÄŒøÿÿÿÿ8ŒÉ™í÷1J$72030b46-b54a-48c1-9a8d-9b31e96a382e
 n
-java:S1948",Make "controller" transient or serializable.(ğ½›8òÒØÁ÷1J$58e76efd-6684-44e9-8fb3-f6f810c036a8
+java:S1948",Make "controller" transient or serializable.(ğ½›8É™í÷1J$acdbaaa9-2ba8-4a43-8190-7883d60a17f6
 n
-java:S1948"&Make "room" transient or serializable.(²úŒ„øÿÿÿÿ8óÒØÁ÷1J$b072cbe7-5610-4820-9e38-04070adc8024
+java:S1948"&Make "room" transient or serializable.(²úŒ„øÿÿÿÿ8É™í÷1J$326d84f1-ead3-482b-ba38-f62de26dd6af
 w
-java:S1948"4Make "circleDefaultImage" transient or serializable.(—®ˆç8óÒØÁ÷1J$9c1ec0b2-6fa2-4ae6-adcb-c0d96241b3d9
+java:S1948"4Make "circleDefaultImage" transient or serializable.(—®ˆç8É™í÷1J$0bea5a51-0290-491e-bc0c-9f7897dad179
 w
-java:S1948"4Make "circleCurrentImage" transient or serializable.(¹‚—ÿ8óÒØÁ÷1J$9fe159fc-fce7-433d-9909-536b925b0736
+java:S1948"4Make "circleCurrentImage" transient or serializable.(¹‚—ÿ8É™í÷1J$1cd07384-75e5-4d3d-8632-a6db8d711820
 t
-java:S30105",Remove this assignment of "lastClickedRoom".(£Ğ¼ƒÿÿÿÿÿ8öÒØÁ÷1J$f6ae4c53-a74d-4a22-9652-13f73dbc3894
-r	java:S1064"+Replace this use of System.out by a logger.(Šı‹úÿÿÿÿ8ùÒØÁ÷1J$4c54da84-8754-4bba-91b6-f7ce8fbea69b
+java:S30104",Remove this assignment of "lastClickedRoom".(£Ğ¼ƒÿÿÿÿÿ8‘É™í÷1J$9e940b16-1187-4bb9-a5de-4f08267c2905
 ~
-java:S26965"6Make the enclosing method "static" or remove this set.(£Ğ¼ƒÿÿÿÿÿ8ùÒØÁ÷1J$07817996-192d-4f78-9d41-9537d4a6e519
+java:S26964"6Make the enclosing method "static" or remove this set.(£Ğ¼ƒÿÿÿÿÿ8”É™í÷1J$469ef462-77f9-4b30-996b-dd62cec8da76
 t
-java:S3010a",Remove this assignment of "lastClickedRoom".(£Ğ¼ƒÿÿÿÿÿ8úÒØÁ÷1J$7f614486-6702-4468-b1af-b852b33bc111
-r	java:S106`"+Replace this use of System.out by a logger.(Šı‹úÿÿÿÿ8üÒØÁ÷1J$00ca07a4-36a3-490f-b2ab-7c94626e075e
+java:S3010c",Remove this assignment of "lastClickedRoom".(£Ğ¼ƒÿÿÿÿÿ8–É™í÷1J$26c0b705-d062-459e-8746-e3c7a19b48fb
 ~
-java:S2696a"6Make the enclosing method "static" or remove this set.(£Ğ¼ƒÿÿÿÿÿ8üÒØÁ÷1J$c79e6b2a-c3e0-450e-ba95-c9a639230f4f
+java:S2696c"6Make the enclosing method "static" or remove this set.(£Ğ¼ƒÿÿÿÿÿ8—É™í÷1J$bb7b96fb-2d6b-44aa-911d-b3e33e671626
 ~
-java:S1161Œ":Add the "@Override" annotation above this method signature(İºÔÎ8ÿÒØÁ÷1J$b619477d-4a97-40f0-b8ed-912ce58befa6
-„	java:S125®"<This block of commented-out lines of code should be removed.(ß¼’¨ùÿÿÿÿ8ÓØÁ÷1J$456a74e0-f0c0-4491-b228-bff79feb057f
+java:S1161œ":Add the "@Override" annotation above this method signature(İºÔÎ8›É™í÷1J$37facf99-0893-46e2-b594-c3fd83168fb4
+„	java:S125¾"<This block of commented-out lines of code should be removed.(ß¼’¨ùÿÿÿÿ8ŸÉ™í÷1J$560052cc-8ce4-4b4a-9ce9-97b631703cb4
 ~
-java:S1161Ö":Add the "@Override" annotation above this method signature(Äêñğ8ƒÓØÁ÷1J$4ef2c018-b6bc-491c-9e87-01e06f1931e5
+java:S1161æ":Add the "@Override" annotation above this method signature(Äêñğ8¢É™í÷1J$2bf621d4-c4e4-467d-833a-04f9dd338754
 ƒ
-java:S1161Ú":Add the "@Override" annotation above this method signature(°¿´üÿÿÿÿ8ƒÓØÁ÷1J$40b40567-bdc9-4b8c-8fec-9de13e9f9918
+java:S1161ê":Add the "@Override" annotation above this method signature(°¿´üÿÿÿÿ8¢É™í÷1J$d55105c9-40df-4bf3-ae68-1fdeee851001
 ƒ
-java:S1161Ş":Add the "@Override" annotation above this method signature(ôÑ½şüÿÿÿÿ8ƒÓØÁ÷1J$d3112ef7-2e8e-4fb1-8714-93499693564b
+java:S1161î":Add the "@Override" annotation above this method signature(ôÑ½şüÿÿÿÿ8£É™í÷1J$613171c1-c9ba-43b4-a938-85cd942170e4
 ƒ
-java:S1161â":Add the "@Override" annotation above this method signature(‰§¸Êşÿÿÿÿ8ƒÓØÁ÷1J$802e1f64-edae-4f23-bf57-51e5f148054a
+java:S1161ò":Add the "@Override" annotation above this method signature(‰§¸Êşÿÿÿÿ8£É™í÷1J$731acfaa-d222-4151-ad0e-a9d3e3a08620
 ‚
-java:S1128":Remove this unused import 'java.awt.geom.AffineTransform'.(˜ÊÊ¡ıÿÿÿÿ8ª‰êÁ÷1J$6f694382-5c3d-4f5b-94aa-7056e1060a43
+java:S1128":Remove this unused import 'java.awt.geom.AffineTransform'.(˜ÊÊ¡ıÿÿÿÿ8¤É™í÷1J$76c24073-b552-4c19-b713-11f9f34ba69b

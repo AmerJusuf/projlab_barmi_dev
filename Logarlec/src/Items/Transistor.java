@@ -105,7 +105,9 @@ public class Transistor extends Item{
             //System.out.println("Transistor is active or has Pair: Cannot drop | Transistor: drop()");
         } else{
             //System.out.println("Transistor is dropped | Transistor: drop()");
-            owner.getRoom().addItem(this);
+//            owner.getRoom().addItem(this);
+//            removeOwner();
+            setIsActive(false);
             removeOwner();
         }
         controller.notifyModelChanged();

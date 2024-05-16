@@ -4,9 +4,16 @@ import Characters.Character;
 import Characters.Cleaner;
 import Characters.Instructor;
 import Characters.Student;
+import Controller.Notifiable;
 import Game.Labyrinth;
 import Items.*;
 import Rooms.*;
+import View.CharacterView.CleanerView;
+import View.CharacterView.InstructorView;
+import View.CharacterView.StudentView;
+import View.ItemView.*;
+import View.WindowView.MainWindow;
+import View.WindowView.RoomNodeView;
 
 import java.io.*;
 import java.util.*;
@@ -30,6 +37,8 @@ public class TestLogic {
 
     private static Map<String, IRoom> roomsMap = new HashMap<>();
     private static Map<String, Item> itemsMap = new HashMap<>();
+
+    private static Notifiable controller;
 
     static {
         commandPatterns.put("runAllScripts", Pattern.compile("runAllScripts"));
@@ -79,6 +88,10 @@ public class TestLogic {
         commandPatterns.put("nextRound", Pattern.compile("nextRound"));
         commandPatterns.put("skipTurn", Pattern.compile("skipTurn"));
         commandPatterns.put("startGame", Pattern.compile("startGame"));
+
+        commandPatterns.put("roomView", Pattern.compile("roomView\\s+-r\\s+(\\S+)\\s-type\\s+(\\S+)\\s-x\\s+(\\S+)\\s-y\\s+(\\S+)"));
+        commandPatterns.put("characterView", Pattern.compile("characterView\\s+-ch\\s+(\\S+)\\s-type\\s+(\\S+)"));
+        commandPatterns.put("itemViewToRoom", Pattern.compile("itemViewToRoom\\s+-it\\s+(\\S+)\\s-type\\s+(\\S+)"));
     }
 
     public static void main(String[] args) {
@@ -114,16 +127,16 @@ public class TestLogic {
         return labyrinth;
     }
 
+    public static void setController(Notifiable c){
+        controller = c;
+    }
+
     public static String continueProcessCommandsFromFile(){
         return(processCommand(scanner.nextLine()) + "\n");
     }
 
     public static void processCommandsFromFile(String commandOrFileName) {
-        if (!writeToFile) {
-            String output = processCommand(commandOrFileName);
-            System.out.println(output); // Print output to console
-        }
-        else if(readMap){
+        if(readMap){
             System.out.println("Reading map from file: " + commandOrFileName);
             String directory = System.getProperty("user.dir");
 
@@ -148,6 +161,10 @@ public class TestLogic {
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
+        }
+        else if (!writeToFile) {
+            String output = processCommand(commandOrFileName);
+            System.out.println(output); // Print output to console
         }
         else {
             System.out.println("Processing commands from file: " + commandOrFileName);
@@ -1287,7 +1304,8 @@ public class TestLogic {
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Status: ").append(labyrinth.getGameState()).append("\n");
 
-                        break;}
+                        break;
+                    }
                     case "nextRound": {
                         labyrinth.nextRound();
                         for(IRoom room: labyrinth.getRooms()){
@@ -1301,18 +1319,119 @@ public class TestLogic {
 
                         break;
                     }
-                    case "skipTurn":
+                    case "skipTurn": {
 
                         outputBuilder.append(commandName).append(":").append("\n");
                         //outputBuilder.append("Character: ").append("KARAKTER ID-JA").append("\n");
 
                         break;
-                    case "startGame":
+                    }
+                    case "startGame": {
                         labyrinth.startGame();
                         outputBuilder.append(commandName).append(":").append("\n");
                         outputBuilder.append("Game started!").append("\n");
                         break;
+                    }
+                    case "roomView": {
+                        roomId = matcher.group(1);
+                        int x = Integer.parseInt(matcher.group(3));
+                        int y = Integer.parseInt(matcher.group(4));
+                        String roomType;
+                        if (matcher.group(2) == null)
+                            roomType = "BasicRoom";
+                        else
+                            roomType = matcher.group(2);
 
+                        if (!roomsMap.containsKey(roomId)) {
+                            result = fail;
+                            outputBuilder.append("Room not found").append("\n");
+                            break;
+                        } else {
+                            result = success;
+                            IRoom room = roomsMap.get(roomId);
+                            RoomNodeView roomNodeView = null;
+                            if (roomType.equalsIgnoreCase("PoisonedRoom")) {
+                                roomNodeView = new RoomNodeView(room, true, false, false, x, y, controller);
+                            } else if (roomType.equalsIgnoreCase("StickyRoom")) {
+                                roomNodeView = new RoomNodeView(room, false, false, true, x, y, controller);
+                            } else if (roomType.equalsIgnoreCase("CursedRoom")) {
+                                roomNodeView = new RoomNodeView(room, false, true, false, x, y, controller);
+                            } else {
+                                roomNodeView = new RoomNodeView(room, false, false, false, x, y, controller);
+                            }
+                            MainWindow.viewsByObjects.put(room, roomNodeView);
+                            RoomNodeView.lastClickedRoom = roomNodeView;
+                        }
+                        outputBuilder.append("Result: ").append(result).append("\n");
+                        outputBuilder.append("RoomView created! ").append(roomId).append("\n");
+                        break;
+                    }
+                    case "characterView": {
+                        characterId = matcher.group(1);
+                        String characterType;
+                        if (matcher.group(2) == null)
+                            characterType = "Student";
+                        else
+                            characterType = matcher.group(2);
+
+                        if (!charactersMap.containsKey(characterId)) {
+                            result = fail;
+                            outputBuilder.append("Character not found").append("\n");
+                            break;
+                        } else {
+                            result = success;
+                            Character character = charactersMap.get(characterId);
+                            if (characterType.equalsIgnoreCase("Student")) {
+                                MainWindow.viewsByObjects.put(character, new StudentView((Student) character));
+                                Labyrinth.currentPlayer = (Student) character;
+                            } else if (characterType.equalsIgnoreCase("Cleaner")) {
+                                MainWindow.viewsByObjects.put(character, new CleanerView((Cleaner) character));
+                            } else if (characterType.equalsIgnoreCase("Instructor")) {
+                                MainWindow.viewsByObjects.put(character, new InstructorView((Instructor) character));
+                            }
+                            else{
+                                result = fail;
+                            }
+                        }
+                        outputBuilder.append("Result: ").append(result).append("\n");
+                        outputBuilder.append("CharacterView created! ").append(characterId).append("\n");
+                        break;
+                    }
+                    case "itemViewToRoom": {
+                        itemId = matcher.group(1);
+                        String itemType = matcher.group(2);
+
+                        if (!itemsMap.containsKey(itemId)) {
+                            result = fail;
+                            outputBuilder.append("Item not found").append("\n");
+                            break;
+                        } else {
+                            result = success;
+                            Item item = itemsMap.get(itemId);
+                            if (itemType.equalsIgnoreCase("Logarlec")) {
+                                MainWindow.viewsByObjects.put(item, new LogarlecView((Logarlec) item));
+                            } else if (itemType.equalsIgnoreCase("Camembert")) {
+                                MainWindow.viewsByObjects.put(item, new CamembertView((Camembert) item));
+                            } else if (itemType.equalsIgnoreCase("AirFreshener")) {
+                                MainWindow.viewsByObjects.put(item, new AirFreshenerView((AirFreshener) item));
+                            } else if (itemType.equalsIgnoreCase("TVSZ")) {
+                                MainWindow.viewsByObjects.put(item, new TVSZView((TVSZ) item));
+                            } else if (itemType.equalsIgnoreCase("FFP2")) {
+                                MainWindow.viewsByObjects.put(item, new FFP2View((FFP2) item));
+                            } else if (itemType.equalsIgnoreCase("Beer")) {
+                                MainWindow.viewsByObjects.put(item, new BeerView((Beer) item));
+                            } else if (itemType.equalsIgnoreCase("Rag")) {
+                                MainWindow.viewsByObjects.put(item, new RagView((Rag) item));
+                            }  else if (itemType.equalsIgnoreCase("Transistor")) {
+                                MainWindow.viewsByObjects.put(item, new TransistorView((Transistor) item));
+                            }else {
+                                result = fail;
+                            }
+                        }
+                        outputBuilder.append("Result: ").append(result).append("\n");
+                        outputBuilder.append("ItemView created! ").append(itemId).append("\n");
+                        break;
+                    }
                 }
                 return outputBuilder.toString();
             }

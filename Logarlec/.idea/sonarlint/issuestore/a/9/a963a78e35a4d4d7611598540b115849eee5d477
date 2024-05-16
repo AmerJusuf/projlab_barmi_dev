@@ -1,0 +1,19 @@
+
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(† âöûÿÿÿÿ8ıŸ¯ï÷1J$8aabb4a2-a324-4e6e-a1a7-37664c1ed710
+r	java:S106#"+Replace this use of System.out by a logger.(³¡×—ıÿÿÿÿ8› ¯ï÷1J$829de0ee-59a1-4ad7-877c-9f6b48fa0642
+r	java:S106."+Replace this use of System.out by a logger.(Â±ßÑúÿÿÿÿ8 ¯ï÷1J$3e94e648-ba92-43af-8064-58c921db72b6
+ƒ	java:S1259"<This block of commented-out lines of code should be removed.(ĞÃìüÿÿÿÿ8Áİ¥ğ÷1J$979f841f-b53b-456d-aedd-d9d29ec505a5
+ƒ	java:S125I"<This block of commented-out lines of code should be removed.(ºŒ«óşÿÿÿÿ8Ä³–ğ÷1J$50c604a3-a4fb-4ad3-817f-9fd9acea76d5
+‚
+java:S1161N":Add the "@Override" annotation above this method signature(¡ĞÓûÿÿÿÿ8¡ ¯ï÷1J$8b76d5b2-c4a2-4ee2-ba18-5b9b1146f2ef
+ƒ	java:S125S"<This block of commented-out lines of code should be removed.(äØ™ıÿÿÿÿ8¤ ¯ï÷1J$b991e8c2-df16-48e8-96ab-d0e37df7c482
+r	java:S106|"+Replace this use of System.out by a logger.(ş®Üêüÿÿÿÿ8¤ ¯ï÷1J$70a706b9-68a4-4761-aee1-565d51cd2c35
+¢
+java:S2142…"^Either re-interrupt this method or rethrow the "InterruptedException" that can be caught here.(ä ¹€8¦ ¯ï÷1J$8b880ab8-610d-4775-a26b-0987cfd52f63
+s	java:S106Š"+Replace this use of System.out by a logger.(ªã²ûÿÿÿÿ8¦ ¯ï÷1J$cbf97c04-9019-40cb-b206-81f53feb5aff
+z
+java:S2696‹"6Make the enclosing method "static" or remove this set.(ÙĞ—©8§ ¯ï÷1J$e0f9596c-5ec4-4495-8a60-02b241ad8c2b
+x
+java:S1128"5Remove this unused import 'View.WindowView.RoomView'.(Ã‘²î8ø¥ğ÷1J$b58db150-1714-446c-a7ab-6d45b71bb1e9
+o
+java:S1068",Remove this unused "isCaught" private field.(í¯¾Ÿ8Æ¯¦ğ÷1J$2a4d30ad-9e7d-41dc-9723-96a63d20d7d0

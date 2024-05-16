@@ -1,0 +1,20 @@
+
+t	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.( Ë½Íûÿÿÿÿ
+E
+java:S2387"*"title" is the name of a field in "Frame".(ñÕúŒþÿÿÿÿ
+^
+java:S3252"IUse static access with "javax.swing.WindowConstants" for "EXIT_ON_CLOSE".(ºÀœx
+[
+java:S1854Q"ERemove this useless assignment to local variable "descriptionWindow".(×ÚÄõ
+W
+java:S1854U"ARemove this useless assignment to local variable "controlWindow".(æ À›
+@	java:S106I"+Replace this use of System.out by a logger.(ÐÀ…Ô
+@	java:S106P"+Replace this use of System.out by a logger.(ƒÜ©Å
+L
+java:S1481Q"6Remove this unused "descriptionWindow" local variable.(×ÚÄõ
+V	java:S125R"<This block of commented-out lines of code should be removed.(Á’ëØúÿÿÿÿ
+@	java:S106T"+Replace this use of System.out by a logger.(Çß¹»
+H
+java:S1481U"2Remove this unused "controlWindow" local variable.(æ À›
+V	java:S125V"<This block of commented-out lines of code should be removed.(Á’ëØúÿÿÿÿ
+E	java:S106X"+Replace this use of System.out by a logger.(¬¶ÏÁúÿÿÿÿ

@@ -4,15 +4,18 @@ import Characters.Cleaner;
 import Characters.Instructor;
 import Characters.Student;
 import Controller.Notifiable;
+import Game.GameState;
 import Game.Labyrinth;
 import Items.Transistor;
 import Rooms.BasicRoom;
 import Rooms.IRoom;
 import View.CharacterView.CharacterView;
+import View.CharacterView.StudentView;
 import View.IView;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.WindowEvent;
 import java.util.HashMap;
 import java.util.List;
 
@@ -23,11 +26,13 @@ public class MainWindow extends JFrame {
     RoomView roomSrc;
     RoomView roomDest;
 
+    GridBagConstraints gbc;
+
     public MainWindow(Notifiable controller) {
         this.setTitle("Best Game Ever");
         this.setLayout(new GridBagLayout());
         this.setResizable(true);
-        GridBagConstraints gbc = new GridBagConstraints();
+        gbc = new GridBagConstraints();
         Insets insets = new Insets(10, 10, 10, 10);
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         this.setSize(screenSize.width, screenSize.height - 50);
@@ -84,8 +89,13 @@ public class MainWindow extends JFrame {
         gbcRooms.weighty = 1.0;
         gbcRooms.insets = new Insets(0, 10, 0, 0);
         gbcRooms.fill = GridBagConstraints.BOTH;
-        roomDest = new RoomView(RoomNodeView.lastClickedRoom.getRoom());
+        roomDest = new RoomView(null);
+        roomDest.setRoom(null);
+
         roomsPanel.add(roomDest.getPanel(), gbcRooms);
+
+
+        studentView = (StudentView) viewsByObjects.get(Labyrinth.currentPlayer);
 
         this.add(roomsPanel, gbc);
 
@@ -110,14 +120,45 @@ public class MainWindow extends JFrame {
         views.remove(view);
     }
 
+    StudentView studentView;
+
     public void updateAllViews() {
+        if (Labyrinth.getGameState() == GameState.WIN) {
+            JOptionPane.showMessageDialog(this, "You won!");
+            dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+        } else if (Labyrinth.getGameState() == GameState.LOSE) {
+            JOptionPane.showMessageDialog(this, "You lost!");
+            dispatchEvent(new WindowEvent(this, WindowEvent.WINDOW_CLOSING));
+        }
+
         roomSrc.setRoom(Labyrinth.currentPlayer.getRoom());
-        roomDest.setRoom(RoomNodeView.lastClickedRoom.getRoom());
+
+        if(RoomNodeView.lastClickedRoom == null){
+            roomDest.setRoom(null);
+        } else if(RoomNodeView.lastClickedRoom.getRoom() == Labyrinth.currentPlayer.getRoom()){
+            roomDest.setRoom(null);
+        }else {
+            roomDest.setRoom(RoomNodeView.lastClickedRoom.getRoom());
+        }
         roomSrc.update();
         roomDest.update();
+        this.remove(studentView.getPanel());
+
+
+        gbc.gridx = 1;
+        gbc.gridy = 0;
+        gbc.gridwidth = 1;
+        gbc.gridheight = 1;
+        this.add(viewsByObjects.get(Labyrinth.currentPlayer).getPanel(), gbc);
+        studentView = (StudentView) viewsByObjects.get(Labyrinth.currentPlayer);
+        views = List.of(map,  roomSrc, roomDest, studentView);
+
+
         for (IView view : views) {
             view.update();
         }
+        this.revalidate();
+        this.repaint();
     }
 
 

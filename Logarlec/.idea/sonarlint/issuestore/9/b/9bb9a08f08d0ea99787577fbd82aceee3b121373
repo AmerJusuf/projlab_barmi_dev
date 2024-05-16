@@ -1,52 +1,55 @@
 
 ‰
-java:S2184‡"ECast one of the operands of this subtraction operation to a "double".(¨êË¢8á£–Â÷1J$68989baa-60a3-439c-8f7c-8e6f6d67f6a6
+java:S2184—"ECast one of the operands of this subtraction operation to a "double".(¨êË¢8ä‰¶ğ÷1J$a2abecd6-0022-49e1-b68a-481ceff57620
 ‰
-java:S2184ˆ"ECast one of the operands of this subtraction operation to a "double".(•ú…¸8á£–Â÷1J$6a5aa244-4be1-4dd8-b24d-abeb3437c2ba
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8â£–Â÷1J$2ab93b33-39cb-4d32-828e-84f2832c6ce4
+java:S2184˜"ECast one of the operands of this subtraction operation to a "double".(•ú…¸8ä‰¶ğ÷1J$dacb3f1f-ebeb-44ed-b734-8758ede0886a
+ƒ	java:S125"<This block of commented-out lines of code should be removed.(¹¢Òİÿÿÿÿÿ8ÍŠ¶ğ÷1J$12c77ca9-9f83-4cd1-9862-4af071086fd4
 s
-java:S1948"+Make "labyrinth" transient or serializable.(Ïşƒ‰ÿÿÿÿÿ8ş¤–Â÷1J$47b1b403-3ffb-445d-8c94-a2edd7904ead
+java:S1948"+Make "labyrinth" transient or serializable.(Ïşƒ‰ÿÿÿÿÿ8ĞŠ¶ğ÷1J$d7d419fe-b6fd-463d-a249-a362fcf8676b
 j
-java:S1948""Make "nodes" private or transient.(¢ÈÈ‰ûÿÿÿÿ8ş¤–Â÷1J$523ba329-b8bb-4b33-95ea-830edb7199ec
-ƒ	java:S125("<This block of commented-out lines of code should be removed.(Ëùÿìüÿÿÿÿ8€¥–Â÷1J$fcaa1558-3873-4f8f-a8ba-2fdf4af9a1af
-•
-java:S37769"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(ÈÊ“À8ƒ¥–Â÷1J$9f2bc9ff-61cd-46b5-a5cc-c699fc69688c
-ƒ	java:S125`"<This block of commented-out lines of code should be removed.(œ˜ˆ—ıÿÿÿÿ8†¥–Â÷1J$5acec2f2-87fe-4c07-82ac-7a0e0077209e
-€
-java:S1854Š"7Remove this useless assignment to local variable "len".(È‡áúÿÿÿÿ8‡¥–Â÷1J$3bbc2341-5c76-4688-add2-04a675c5524a
-
-java:S1854v"9Remove this useless assignment to local variable "toRow".(²â³¶ıÿÿÿÿ8‡¥–Â÷1J$736b2309-8682-41b0-82af-5edf5487be51
-|
-java:S1854u"9Remove this useless assignment to local variable "toCol".(š8‡¥–Â÷1J$bb09d1e8-ce82-4321-9691-b1bd06fa1e9b
+java:S1948""Make "nodes" private or transient.(¢ÈÈ‰ûÿÿÿÿ8ĞŠ¶ğ÷1J$a463f6eb-81d0-4e7e-bd99-3ad1c9b77355
+ƒ	java:S125+"<This block of commented-out lines of code should be removed.(Ëùÿìüÿÿÿÿ8ÓŠ¶ğ÷1J$5afc0305-3650-4c42-abb4-e462ae3bda2f
+ƒ	java:S125C"<This block of commented-out lines of code should be removed.(â²ÛÁÿÿÿÿÿ8ÕŠ¶ğ÷1J$db6f21e8-0994-4fb7-ab37-bd2b71b3ef2d
 ~
-java:S1854t";Remove this useless assignment to local variable "fromRow".(¿üíİ8‡¥–Â÷1J$88d8448a-946c-4590-8158-13046bb74cc9
-}
-java:S1854s";Remove this useless assignment to local variable "fromCol".(ŒÌœ	8‡¥–Â÷1J$41ab7eaf-eb09-43d9-b1a4-d9ef49e0c89f
-†
-java:S1854j">Remove this useless assignment to local variable "cellHeight".(ÁÃá­øÿÿÿÿ8‡¥–Â÷1J$ac0a9953-8619-48fe-b7e3-21284dc7a2f7
+java:S1612U"6Replace this lambda with method reference 'this::add'.(ÚŞŞÃùÿÿÿÿ8ÖŠ¶ğ÷1J$12a5a3e3-87d2-4b19-86db-1b75097a4b00
+ƒ	java:S125p"<This block of commented-out lines of code should be removed.(œ˜ˆ—ıÿÿÿÿ8×Š¶ğ÷1J$ddc084ae-9944-4fe7-8b34-beb576f1cd07
 €
-java:S1854i"=Remove this useless assignment to local variable "cellWidth".(Ç»ŸŒ8‡¥–Â÷1J$daa5e32d-ae55-42fc-a92e-277ae5199e7d
+java:S1854š"7Remove this useless assignment to local variable "len".(È‡áúÿÿÿÿ8ØŠ¶ğ÷1J$01df1606-26da-4ef6-ba6c-7ceb04a44d32
+‚
+java:S1854†"9Remove this useless assignment to local variable "toRow".(²â³¶ıÿÿÿÿ8ØŠ¶ğ÷1J$525304af-7598-469a-8cc0-0829a4b057dc
+}
+java:S1854…"9Remove this useless assignment to local variable "toCol".(š8ØŠ¶ğ÷1J$4b7d7070-a878-47a4-a161-b77709023ea1
+
+java:S1854„";Remove this useless assignment to local variable "fromRow".(¿üíİ8ØŠ¶ğ÷1J$bcb0f205-7672-4e34-83d0-3da11ce213d7
+~
+java:S1854ƒ";Remove this useless assignment to local variable "fromCol".(ŒÌœ	8ØŠ¶ğ÷1J$21860289-dc4b-423b-adbf-bf66ee908023
+†
+java:S1854z">Remove this useless assignment to local variable "cellHeight".(ÁÃá­øÿÿÿÿ8ØŠ¶ğ÷1J$d2887d67-61de-4d02-acad-9fdc2ed23b6c
+€
+java:S1854y"=Remove this useless assignment to local variable "cellWidth".(Ç»ŸŒ8ØŠ¶ğ÷1J$fdc0c3a3-8248-4e15-9cd5-262ecff90d62
 q
-java:S1481i".Remove this unused "cellWidth" local variable.(Ç»ŸŒ8‡¥–Â÷1J$040a5217-c2d2-40f8-be4e-1b7e801dc5f9
+java:S1481y".Remove this unused "cellWidth" local variable.(Ç»ŸŒ8ÙŠ¶ğ÷1J$6db4cf99-942d-488a-af5f-95b92b3bd5a3
 w
-java:S1481j"/Remove this unused "cellHeight" local variable.(ÁÃá­øÿÿÿÿ8ˆ¥–Â÷1J$c82bd9d7-1b11-454b-9644-3860a61c259a
-n
-java:S1481s",Remove this unused "fromCol" local variable.(ŒÌœ	8ˆ¥–Â÷1J$fa05c45a-dd5f-4043-ba41-e95e4e9e59b7
+java:S1481z"/Remove this unused "cellHeight" local variable.(ÁÃá­øÿÿÿÿ8ÙŠ¶ğ÷1J$aba8f6ee-7979-418f-b574-fa2a5ebbcb6f
 o
-java:S1481t",Remove this unused "fromRow" local variable.(¿üíİ8ˆ¥–Â÷1J$83c8b8ef-ab3a-4022-bc69-b4510ac29ae7
-m
-java:S1481u"*Remove this unused "toCol" local variable.(š8ˆ¥–Â÷1J$b419d414-3004-4ae9-b6ef-af6d27e34669
-r
-java:S1481v"*Remove this unused "toRow" local variable.(²â³¶ıÿÿÿÿ8ˆ¥–Â÷1J$cf8f4cfd-1e14-474d-9abf-7e7ec155fe69
+java:S1481ƒ",Remove this unused "fromCol" local variable.(ŒÌœ	8ÙŠ¶ğ÷1J$639cdbba-fb42-4c97-9b46-277ed6c3038d
+p
+java:S1481„",Remove this unused "fromRow" local variable.(¿üíİ8ÙŠ¶ğ÷1J$c80756ca-e078-4e9c-a3a0-409bbe9cfb60
+n
+java:S1481…"*Remove this unused "toCol" local variable.(š8ÙŠ¶ğ÷1J$7fc2060a-388d-48a7-b791-c7815557ee50
+s
+java:S1481†"*Remove this unused "toRow" local variable.(²â³¶ıÿÿÿÿ8ÙŠ¶ğ÷1J$80f92f14-ac49-45d7-8d83-a3fbe76572b7
 q
-java:S1481Š"(Remove this unused "len" local variable.(È‡áúÿÿÿÿ8‰¥–Â÷1J$bc2f3178-49bd-4bd3-b2da-e65bb0ba6981
-ƒ
-java:S1128";Remove this unused import 'View.CharacterView.StudentView'.(Ó…È™ÿÿÿÿÿ8‹¥–Â÷1J$9290f7ae-f02f-49e0-8e29-d1182fe34eb0
-t
-java:S1128"1Remove this unused import 'java.awt.geom.Line2D'.(ìôÆÆ8‹¥–Â÷1J$f8cb24ce-55c1-4731-9371-c77ec05cae38
-y
-java:S1128"1Remove this unused import 'java.awt.geom.Path2D'.(ŠŒõ›øÿÿÿÿ8‹¥–Â÷1J$a81e8cd3-2a77-468c-a3ab-a7bab4a50778
+java:S1481š"(Remove this unused "len" local variable.(È‡áúÿÿÿÿ8ÚŠ¶ğ÷1J$6a3d15fa-07fe-4e52-ae1d-887280f3ae96
 u
-java:S1128"2Remove this unused import 'java.awt.geom.Point2D'.(ˆÕ­Ü8‹¥–Â÷1J$1c3df913-81a6-4470-8010-cd715a644a57
+java:S1128"2Remove this unused import 'Controller.Controller'.(÷¤Œƒ8¹ÂÅˆø1J$ca2a0fe1-7819-4af4-942a-1af8096ecb3b
+ƒ
+java:S1128	";Remove this unused import 'View.CharacterView.StudentView'.(Ó…È™ÿÿÿÿÿ8ºÂÅˆø1J$607b12d9-d38e-4656-b3f7-88ca5c8745e9
+t
+java:S1128"1Remove this unused import 'java.awt.geom.Line2D'.(ìôÆÆ8ºÂÅˆø1J$c2fd24e9-91f4-44ec-84e4-00d1ea7fb75e
+y
+java:S1128"1Remove this unused import 'java.awt.geom.Path2D'.(ŠŒõ›øÿÿÿÿ8ºÂÅˆø1J$43e4491f-4d72-478f-9294-a7d5c5c30fe0
+u
+java:S1128"2Remove this unused import 'java.awt.geom.Point2D'.(ˆÕ­Ü8ºÂÅˆø1J$ab790426-71bf-471b-a5f5-b4c01ff0e680
 v
-java:S1128".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿ8‹¥–Â÷1J$c8e0ea5f-c126-4a65-867f-c4420bfc937c
+java:S1128".Remove this unused import 'java.util.Scanner'.(ÒÜÅ¸úÿÿÿÿ8ºÂÅˆø1J$a8d354f0-30dd-4bc5-af69-c82a471da9ca

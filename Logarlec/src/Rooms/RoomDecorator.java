@@ -5,6 +5,9 @@ import Characters.Instructor;
 import Characters.Student;
 import Game.Labyrinth;
 import Items.Item;
+import View.WindowView.MainWindow;
+import View.WindowView.RoomNodeView;
+import com.sun.tools.javac.Main;
 
 import java.util.List;
 
@@ -146,8 +149,12 @@ public abstract class RoomDecorator implements IRoom{
         basicRoom.setCapacity(this.getCapacity());
         basicRoom.setItems(this.getItems());
         basicRoom.setNeighbours(this.getNeighbours());
+        basicRoom.setLabyrinth(this.getLabyrinth());
         for(Character ch : this.getCharacters()){
             basicRoom.addCharacter(ch);
+        }
+        for( Character ch : basicRoom.getCharacters()){
+            ch.setRoom(basicRoom);
         }
 
         DecoratorHandlerVisitor visitor = new DecoratorHandlerVisitor(basicRoom);
@@ -155,7 +162,16 @@ public abstract class RoomDecorator implements IRoom{
 
         visitor.handleNeighboursWhenReplacing(this, newUntoxicatedRoom);
         getLabyrinth().replaceRooms(this, newUntoxicatedRoom);
+        RoomNodeView roomNodeView = (RoomNodeView) MainWindow.viewsByObjects.get(this);
 
+        RoomNodeView newRoomNodeView = new RoomNodeView(newUntoxicatedRoom, false ,false, false,  basicRoom.getLabyrinth().getController());
+
+        newRoomNodeView.handleRoomTypes(roomNodeView);
+        newRoomNodeView.setPoisoned();
+
+        MainWindow.viewsByObjects.put(newUntoxicatedRoom, newRoomNodeView);
+        MainWindow.viewsByObjects.remove(this);
+        basicRoom.getLabyrinth().getController().notifyModelChanged();
         return newUntoxicatedRoom;
     }
 
