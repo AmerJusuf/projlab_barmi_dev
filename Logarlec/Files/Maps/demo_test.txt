@@ -1,0 +1,59 @@
+createLabyrinth -lab L1
+createRoom -r BR1 -capacity 2 -type BasicRoom
+createRoom -r BR2 -capacity 3 -type BasicRoom
+createRoom -r BR3 -capacity 4 -type BasicRoom
+createRoom -r CR1 -capacity 5 -type CursedRoom
+createRoom -r CR2 -capacity 3 -type CursedRoom
+createRoom -r PR1 -capacity 2 -type PosionedRoom
+roomView -r BR1 -type BasicRoom -x 300 -y 100
+roomView -r BR2 -type BasicRoom -x 500 -y 250
+roomView -r BR3 -type BasicRoom -x 100 -y 250
+roomView -r CR1 -type BasicRoom -x 100 -y 450
+roomView -r CR2 -type BasicRoom -x 500 -y 450
+roomView -r PR1 -type BasicRoom -x 300 -y 600
+addRoomToLabyrinth -lab L1 -r BR1
+addRoomToLabyrinth -lab L1 -r BR2
+addRoomToLabyrinth -lab L1 -r BR3
+addRoomToLabyrinth -lab L1 -r CR1
+addRoomToLabyrinth -lab L1 -r CR2
+addRoomToLabyrinth -lab L1 -r PR1
+addNeighbour -r BR1 -r BR2
+addNeighbour -r BR1 -r BR3
+addNeighbour -r BR1 -r CR1
+addNeighbour -r BR1 -r CR2
+addNeighbour -r BR1 -r PR1
+addNeighbour -r BR2 -r BR1
+addNeighbour -r BR2 -r BR3
+addNeighbour -r BR2 -r CR1
+addNeighbour -r BR2 -r PR1
+addNeighbour -r BR3 -r BR1
+addNeighbour -r BR3 -r PR1
+addNeighbour -r BR3 -r CR1
+addNeighbour -r CR1 -r BR3
+addNeighbour -r CR1 -r PR1
+addNeighbour -r CR2 -r BR2
+addNeighbour -r CR1 -r CR1
+addNeighbour -r CR2 -r PR1
+addNeighbour -r PR1 -r BR1
+addNeighbour -r PR1 -r BR3
+addNeighbour -r PR1 -r CR1
+createCharacter -ch I1 -type Instructor
+createCharacter -ch S1 -type Student
+createCharacter -ch S2 -type Student
+createCharacter -ch S3 -type Student
+createCharacter -ch C1 -type Cleaner
+addCharacterToRoom -ch I1 -r CR1
+addCharacterToRoom -ch S1 -r BR1
+addCharacterToRoom -ch S2 -r BR2
+addCharacterToRoom -ch S3 -r BR2
+addCharacterToRoom -ch C1 -r BR3
+addCharacterToLabyrinth -lab L1 -ch I1
+addCharacterToLabyrinth -lab L1 -ch S1
+addCharacterToLabyrinth -lab L1 -ch S2
+addCharacterToLabyrinth -lab L1 -ch S3
+addCharacterToLabyrinth -lab L1 -ch C1
+characterView -ch I1 -type Instructor
+characterView -ch S1 -type Student
+characterView -ch S2 -type Student
+characterView -ch S3 -type Student
+characterView -ch C1 -type Cleaner
