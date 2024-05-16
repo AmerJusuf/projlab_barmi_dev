@@ -173,6 +173,11 @@ public class Labyrinth {
         room.splitRoom();
     }
 
+    public void redrawMap(){
+        map.removeAll();
+        map.repaint();
+    }
+
 
 
     public void startGame() {
@@ -180,8 +185,7 @@ public class Labyrinth {
         while (gameState == GameState.PLAYING) {
             nextRound();
             System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-            map.removeAll();
-            map.repaint();
+            redrawMap();
         }
         endGame();
     }
@@ -202,7 +206,6 @@ public class Labyrinth {
                 }
                 currentPlayer = student;
                 controller.notifyModelChanged();
-                //controller.notifyModelChanged();
                 student.nextRound();
                 for(Instructor instructor : instructors){
                     if(instructor.getRoom() == student.getRoom()){

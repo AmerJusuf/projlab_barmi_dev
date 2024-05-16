@@ -4,7 +4,7 @@ createRoom -r BR2 -capacity 3 -type BasicRoom
 createRoom -r BR3 -capacity 4 -type BasicRoom
 createRoom -r CR1 -capacity 5 -type CursedRoom
 createRoom -r CR2 -capacity 3 -type CursedRoom
-createRoom -r PR1 -capacity 2 -type PosionedRoom
+createRoom -r PR1 -capacity 2 -type PoisonedRoom
 roomView -r BR1 -type BasicRoom -x 300 -y 100
 roomView -r BR2 -type BasicRoom -x 500 -y 250
 roomView -r BR3 -type BasicRoom -x 100 -y 250
@@ -57,8 +57,8 @@ characterView -ch S1 -type Student
 characterView -ch S2 -type Student
 characterView -ch S3 -type Student
 characterView -ch C1 -type Cleaner
-createItem -it TVSZ1 -type TVSZ
-createItem -it TVSZ2 -type TVSZ
+createItem -it TVSZ1 -type TVSZ -life 3
+createItem -it TVSZ2 -type TVSZ -life 2
 createItem -it TVSZ3 -type TVSZ -fake
 createItem -it AIR1 -type AirFreshener
 createItem -it BEER1 -type Beer
@@ -79,7 +79,7 @@ createItem -it TR4 -type Transistor
 addItemToRoom -it TVSZ1 -r BR1
 addItemToRoom -it TVSZ2 -r BR2
 addItemToRoom -it TVSZ3 -r BR3
-addItemToRoomm -it AIR1 -r BR1
+addItemToRoom -it AIR1 -r BR1
 addItemToRoom -it BEER1 -r BR2
 addItemToRoom -it BEER2 -r BR3
 addItemToRoom -it CAM1 -r PR1

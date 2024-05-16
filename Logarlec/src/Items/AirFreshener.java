@@ -22,6 +22,7 @@ public class AirFreshener extends Item {
     public IRoom unToxicateRoom(){
         System.out.println("AirFreshener used | AirFreshener: unToxicateRoom()");
         IRoom room = owner.getRoom().unToxicate();
+        room.cleanPoisonedRoom();
         owner.removeItem(this);
         this.removeOwner();
         controller.notifyModelChanged();

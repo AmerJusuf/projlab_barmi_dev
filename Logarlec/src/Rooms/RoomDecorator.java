@@ -139,9 +139,17 @@ public abstract class RoomDecorator implements IRoom{
     }
 
     @Override
+    public void cleanPoisonedRoom(){}
+
+    @Override
+    public boolean isPoisonedRoomCleaned(){return false;}
+
+    @Override
     public IRoom getChild(){
         return decoratedRoom;
     }
+
+
 
     @Override
     public IRoom unToxicate(){
@@ -163,15 +171,17 @@ public abstract class RoomDecorator implements IRoom{
         visitor.handleNeighboursWhenReplacing(this, newUntoxicatedRoom);
         getLabyrinth().replaceRooms(this, newUntoxicatedRoom);
         RoomNodeView roomNodeView = (RoomNodeView) MainWindow.viewsByObjects.get(this);
+        roomNodeView.setPoisoned(false);
 
-        RoomNodeView newRoomNodeView = new RoomNodeView(newUntoxicatedRoom, false ,false, false,  basicRoom.getLabyrinth().getController());
+        RoomNodeView newRoomNodeView = new RoomNodeView(newUntoxicatedRoom, false ,false, false, roomNodeView.getX(), roomNodeView.getY(),  basicRoom.getLabyrinth().getController());
 
         newRoomNodeView.handleRoomTypes(roomNodeView);
-        newRoomNodeView.setPoisoned();
+
 
         MainWindow.viewsByObjects.put(newUntoxicatedRoom, newRoomNodeView);
         MainWindow.viewsByObjects.remove(this);
         basicRoom.getLabyrinth().getController().notifyModelChanged();
+        basicRoom.getLabyrinth().redrawMap();
         return newUntoxicatedRoom;
     }
 

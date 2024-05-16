@@ -65,6 +65,10 @@ public interface IRoom {
 
      IRoom makeSticky();
 
+     void cleanPoisonedRoom();
+
+     boolean isPoisonedRoomCleaned();
+
      //for testing
     IRoom getChild();
 }

@@ -392,6 +392,16 @@ public class BasicRoom implements IRoom{
        return stickyRoom; //It could be a void method, it returns the newRoom for testing
     }
 
+    @Override
+    public void cleanPoisonedRoom() {
+        // Intentionally empty
+    }
+
+    @Override
+    public boolean isPoisonedRoomCleaned() {
+        return false;
+    }
+
     //for testing
     public IRoom getChild(){
         return null;

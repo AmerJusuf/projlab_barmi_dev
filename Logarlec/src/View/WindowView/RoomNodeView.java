@@ -3,6 +3,7 @@ package View.WindowView;
 import Controller.Notifiable;
 import Game.Labyrinth;
 import Rooms.IRoom;
+import Rooms.PoisonedRoomDecorator;
 import View.IView;
 
 import javax.swing.*;
@@ -71,8 +72,8 @@ public class RoomNodeView extends JPanel implements IView {
         this.setVisible(true);
     }
 
-    public void setPoisoned(){
-        this.poisoned = true;
+    public void setPoisoned(boolean p){
+        this.poisoned = p;
     }
 
     //importing from file uses this
@@ -179,6 +180,10 @@ public class RoomNodeView extends JPanel implements IView {
             g.drawImage(circleCurrentImage, 0, 0, imageWidth, imageHeight, this);
         }else {
             g.drawImage(circleDefaultImage, 0, 0, imageWidth, imageHeight, this);
+        }
+
+        if(poisoned && room.isPoisonedRoomCleaned()){
+            poisoned = false;
         }
 
         int iconSize = Math.min(maxSize / 3, 30); // Adjust icon size as needed
