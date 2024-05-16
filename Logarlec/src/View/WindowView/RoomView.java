@@ -129,9 +129,9 @@ public class RoomView implements ActionListener, IView {
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == moveButton) {
             System.out.println("Move");
-            SwingUtilities.invokeLater(() -> {
+         //   SwingUtilities.invokeLater(() -> {
                 Labyrinth.currentPlayer.move(this.room);
-            });
+//});
         }
         if (e.getSource() == stayButton) {
             System.out.println("Stay");

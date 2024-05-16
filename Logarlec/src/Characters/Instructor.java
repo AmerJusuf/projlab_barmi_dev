@@ -72,7 +72,7 @@ public class Instructor extends Character{
     @Override
     public String nextRound(){
         System.out.println("Instructor next round | Instructor: nextRound()");
-        kickStudents();
+      //  kickStudents();
         moveToRandom();
         if(!items.isEmpty()) {
             dropItem(items.getFirst());

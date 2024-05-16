@@ -81,6 +81,7 @@ public class Cleaner extends Character{
     @Override
     public String nextRound(){
         System.out.println("Cleaner nextRound | Cleaner: nextRound()");
+        isPoisoned = false;
         moveToRandom();
         moveCharacters();
         unToxicateRoom();

@@ -1,6 +1,7 @@
 package Characters;
 
 import Controller.Notifiable;
+import Game.Labyrinth;
 import Items.Item;
 import Rooms.IRoom;
 import View.WindowView.RoomNodeView;
@@ -53,15 +54,15 @@ public class Student extends Character{
      * If the student does not have an item that can protect him, the student drops all items,
      * is removed from the current room and the labyrinth.
      */
-    public void getCaught(){
-        System.out.println("Student is caught | Student: getCaught()");
-        isCaught = true;
-    }
+//    public void getCaught(){
+//        System.out.println("Student is caught | Student: getCaught()");
+//        isCaught = true;
+//    }
 
     /**
      * A régi getCaught logikája ide lett kiszervezve, hogy egy körben csak egyszer fusson le
      */
-    public void gotCaught(){
+    public void getCaught(){
         for(Item item: items){
             if(item.protectStudent()){
                 return;
@@ -69,8 +70,9 @@ public class Student extends Character{
         }
         this.dropAllItem();
         currentRoom.removeCharacter(this);
-        currentRoom.getLabyrinth().removeStudent(this);
-        controller.notifyModelChanged();
+        //currentRoom.getLabyrinth().removeStudent(this);
+        Labyrinth.kickedStudents.add(this);
+       controller.notifyModelChanged();
     }
 
     public void setController(Notifiable controller){
@@ -120,15 +122,19 @@ public class Student extends Character{
     @Override
     public String nextRound()  {
         System.out.println("Student next round | Student: nextRound()");
+        if(isPoisoned){
+            this.dropAllItem();
+            isPoisoned = false;
+            return "";
+        }
         while (!moved && !isPoisoned){
             try {
-                Thread.sleep(10);
+                Thread.sleep(100);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
         moved = false;
-        isPoisoned = false;
         System.out.println("OVER | Student: nextRound()");
         RoomNodeView.lastClickedRoom = null;
         return "";

@@ -1,9 +1,10 @@
 
-΅	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(† βφϋÿÿÿÿ8Η‰κεχ1J$4e84bd4b-38fc-4fef-b1d6-9afac772976d
-m	java:S106 "+Replace this use of System.out by a logger.(δηλ›8Ο‰κεχ1J$cc2eb2b2-77ba-4872-9918-ad82d6046533
-r	java:S106+"+Replace this use of System.out by a logger.(»ΨΗσÿÿÿÿÿ8Π‰κεχ1J$c161e6a0-da2f-4314-af39-2dad462365a0
-m	java:S1065"+Replace this use of System.out by a logger.(€„ζς8Π‰κεχ1J$ff4e86c2-d04a-4e85-b95d-8b1e0ed006c5
-r	java:S106="+Replace this use of System.out by a logger.(ά™“—ϊÿÿÿÿ8Ρ‰κεχ1J$bcb6edc1-2245-4e1d-a5f8-77b500a15282
-r	java:S106J"+Replace this use of System.out by a logger.(Ό²”Θϊÿÿÿÿ8Ò‰κεχ1J$89e2ced5-40f1-49c1-b2bc-288959e7c6fc
+΅	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(† βφϋÿÿÿÿ8Η‰κεχ1J$d30e0295-5ef4-4bdd-95cb-ae18762295d4
+m	java:S106 "+Replace this use of System.out by a logger.(δηλ›8Ο‰κεχ1J$ef752bf9-f4f4-490c-81f4-102ecf20e3e9
+r	java:S106+"+Replace this use of System.out by a logger.(»ΨΗσÿÿÿÿÿ8Π‰κεχ1J$fef81fb1-0b04-432e-93e3-52da1f7ecf86
+m	java:S1065"+Replace this use of System.out by a logger.(€„ζς8Π‰κεχ1J$37b4ff3e-07ae-424c-b556-ebd526fb9bb9
+r	java:S106="+Replace this use of System.out by a logger.(ά™“—ϊÿÿÿÿ8Ρ‰κεχ1J$070ad9d2-5d45-474c-ad4d-463f1a51b2ec
+r	java:S106J"+Replace this use of System.out by a logger.(Ό²”Θϊÿÿÿÿ8Ò‰κεχ1J$c8d2d40b-206a-4074-a2b1-9db51ecdb589
+X	java:S125K"<This block of commented-out lines of code should be removed.(ΡΗλ8α―πχ1
 t
-java:S1128",Remove this unused import 'Rooms.BasicRoom'.(Ηκκ½ÿÿÿÿÿ8Τ‰κεχ1J$f145b27c-dad1-4c86-bb70-8c6f14555a48
+java:S1128",Remove this unused import 'Rooms.BasicRoom'.(Ηκκ½ÿÿÿÿÿ8Τ‰κεχ1J$72fc3644-5eb1-4e31-b166-41458b0082df
