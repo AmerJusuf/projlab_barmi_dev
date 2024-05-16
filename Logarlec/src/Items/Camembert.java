@@ -46,6 +46,8 @@ public class Camembert extends Item {
             for (Character ch : characters) {
                 ch.disable();
             }
+            owner.removeItem(this);
+            removeOwner();
             controller.notifyModelChanged();
     }
 }
