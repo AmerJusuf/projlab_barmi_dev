@@ -4,7 +4,7 @@ createRoom -r BR2 -capacity 3 -type BasicRoom
 createRoom -r BR3 -capacity 4 -type BasicRoom
 createRoom -r CR1 -capacity 5 -type CursedRoom
 createRoom -r CR2 -capacity 3 -type CursedRoom
-createRoom -r PR1 -capacity 2 -type PosionedRoom
+createRoom -r PR1 -capacity 2 -type PoisonedRoom
 roomView -r BR1 -type BasicRoom -x 300 -y 100
 roomView -r BR2 -type BasicRoom -x 500 -y 250
 roomView -r BR3 -type BasicRoom -x 100 -y 250
