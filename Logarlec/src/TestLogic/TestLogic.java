@@ -91,7 +91,7 @@ public class TestLogic {
 
         commandPatterns.put("roomView", Pattern.compile("roomView\\s+-r\\s+(\\S+)\\s-type\\s+(\\S+)\\s-x\\s+(\\S+)\\s-y\\s+(\\S+)"));
         commandPatterns.put("characterView", Pattern.compile("characterView\\s+-ch\\s+(\\S+)\\s-type\\s+(\\S+)"));
-        commandPatterns.put("itemViewToRoom", Pattern.compile("itemViewToRoom\\s+-it\\s+(\\S+)\\s-type\\s+(\\S+)\\s-r\\s+(\\S+)"));
+        commandPatterns.put("itemViewToRoom", Pattern.compile("itemViewToRoom\\s+-it\\s+(\\S+)\\s-type\\s+(\\S+)"));
     }
 
     public static void main(String[] args) {
@@ -1400,15 +1400,13 @@ public class TestLogic {
                     case "itemViewToRoom": {
                         itemId = matcher.group(1);
                         String itemType = matcher.group(2);
-                        roomId = matcher.group(3);
 
-                        if (!roomsMap.containsKey(roomId) || !itemsMap.containsKey(itemId)) {
+                        if (!itemsMap.containsKey(itemId)) {
                             result = fail;
-                            outputBuilder.append("Room or item not found").append("\n");
+                            outputBuilder.append("Item not found").append("\n");
                             break;
                         } else {
                             result = success;
-                            IRoom room = roomsMap.get(roomId);
                             Item item = itemsMap.get(itemId);
                             if (itemType.equalsIgnoreCase("Logarlec")) {
                                 MainWindow.viewsByObjects.put(item, new LogarlecView((Logarlec) item));

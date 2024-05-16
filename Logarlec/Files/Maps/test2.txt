@@ -29,6 +29,6 @@ createItem -it LOG1 -type Logarlec
 addItemToRoom -it TVSZ1 -r BR1
 addItemToRoom -it FFP21 -r BR3
 addItemToRoom -it LOG1 -r BR2
-itemViewToRoom -it TVSZ1 -type TVSZ -r BR1
-itemViewToRoom -it FFP21 -type FFP2 -r BR3
-itemViewToRoom -it LOG1 -type Logarlec -r BR2
+itemViewToRoom -it TVSZ1 -type TVSZ
+itemViewToRoom -it FFP21 -type FFP2
+itemViewToRoom -it LOG1 -type Logarlec
