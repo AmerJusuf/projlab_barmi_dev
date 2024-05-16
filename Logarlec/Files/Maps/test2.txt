@@ -14,7 +14,7 @@ addNeighbour -r BR4 -r BR3
 roomView -r BR1 -type BasicRoom -x 100 -y 200
 roomView -r BR2 -type BasicRoom -x 200 -y 100
 roomView -r BR3 -type BasicRoom -x 300 -y 300
-roomView -r BR4 -type BasicRoom -x 300 -y 100
+roomView -r BR4 -type BasicRoom -x 300 -y 600
 createCharacter -ch S1 -type Student
 addCharacterToRoom -ch S1 -r BR1
 addCharacterToLabyrinth -lab L1 -ch S1
@@ -23,3 +23,12 @@ createCharacter -ch I1 -type Instructor
 addCharacterToRoom -ch I1 -r BR3
 addCharacterToLabyrinth -lab L1 -ch I1
 characterView -ch I1 -type Instructor
+createItem -it TVSZ1 -type TVSZ -life 1
+createItem -it FFP21 -type FFP2
+createItem -it LOG1 -type Logarlec
+addItemToRoom -it TVSZ1 -r BR1
+addItemToRoom -it FFP21 -r BR3
+addItemToRoom -it LOG1 -r BR2
+itemViewToRoom -it TVSZ1 -type TVSZ -r BR1
+itemViewToRoom -it FFP21 -type FFP2 -r BR3
+itemViewToRoom -it LOG1 -type Logarlec -r BR2

@@ -11,6 +11,7 @@ import Rooms.*;
 import View.CharacterView.CleanerView;
 import View.CharacterView.InstructorView;
 import View.CharacterView.StudentView;
+import View.ItemView.*;
 import View.WindowView.MainWindow;
 import View.WindowView.RoomNodeView;
 
@@ -90,6 +91,7 @@ public class TestLogic {
 
         commandPatterns.put("roomView", Pattern.compile("roomView\\s+-r\\s+(\\S+)\\s-type\\s+(\\S+)\\s-x\\s+(\\S+)\\s-y\\s+(\\S+)"));
         commandPatterns.put("characterView", Pattern.compile("characterView\\s+-ch\\s+(\\S+)\\s-type\\s+(\\S+)"));
+        commandPatterns.put("itemViewToRoom", Pattern.compile("itemViewToRoom\\s+-it\\s+(\\S+)\\s-type\\s+(\\S+)\\s-r\\s+(\\S+)"));
     }
 
     public static void main(String[] args) {
@@ -1393,6 +1395,43 @@ public class TestLogic {
                         }
                         outputBuilder.append("Result: ").append(result).append("\n");
                         outputBuilder.append("CharacterView created! ").append(characterId).append("\n");
+                        break;
+                    }
+                    case "itemViewToRoom": {
+                        itemId = matcher.group(1);
+                        String itemType = matcher.group(2);
+                        roomId = matcher.group(3);
+
+                        if (!roomsMap.containsKey(roomId) || !itemsMap.containsKey(itemId)) {
+                            result = fail;
+                            outputBuilder.append("Room or item not found").append("\n");
+                            break;
+                        } else {
+                            result = success;
+                            IRoom room = roomsMap.get(roomId);
+                            Item item = itemsMap.get(itemId);
+                            if (itemType.equalsIgnoreCase("Logarlec")) {
+                                MainWindow.viewsByObjects.put(item, new LogarlecView((Logarlec) item));
+                            } else if (itemType.equalsIgnoreCase("Camembert")) {
+                                MainWindow.viewsByObjects.put(item, new CamembertView((Camembert) item));
+                            } else if (itemType.equalsIgnoreCase("AirFreshener")) {
+                                MainWindow.viewsByObjects.put(item, new AirFreshenerView((AirFreshener) item));
+                            } else if (itemType.equalsIgnoreCase("TVSZ")) {
+                                MainWindow.viewsByObjects.put(item, new TVSZView((TVSZ) item));
+                            } else if (itemType.equalsIgnoreCase("FFP2")) {
+                                MainWindow.viewsByObjects.put(item, new FFP2View((FFP2) item));
+                            } else if (itemType.equalsIgnoreCase("Beer")) {
+                                MainWindow.viewsByObjects.put(item, new BeerView((Beer) item));
+                            } else if (itemType.equalsIgnoreCase("Rag")) {
+                                MainWindow.viewsByObjects.put(item, new RagView((Rag) item));
+                            }  else if (itemType.equalsIgnoreCase("Transistor")) {
+                                MainWindow.viewsByObjects.put(item, new TransistorView((Transistor) item));
+                            }else {
+                                result = fail;
+                            }
+                        }
+                        outputBuilder.append("Result: ").append(result).append("\n");
+                        outputBuilder.append("ItemView created! ").append(itemId).append("\n");
                         break;
                     }
                 }
