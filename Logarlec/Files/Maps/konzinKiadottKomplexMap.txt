@@ -1,0 +1,62 @@
+createLabyrinth -lab L1
+createRoom -r BR1 -capacity 5 -type BasicRoom
+createRoom -r BR2 -capacity 5 -type BasicRoom
+createRoom -r BR3 -capacity 5 -type BasicRoom
+createRoom -r BR4 -capacity 5 -type BasicRoom
+createRoom -r BR5 -capacity 5 -type BasicRoom
+createRoom -r BR6 -capacity 5 -type BasicRoom
+createRoom -r BR7 -capacity 5 -type BasicRoom
+createRoom -r BR8 -capacity 5 -type BasicRoom
+roomView -r BR1 -type BasicRoom -x 600 -y 600
+roomView -r BR2 -type BasicRoom -x 500 -y 400
+roomView -r BR3 -type BasicRoom -x 100 -y 300
+roomView -r BR4 -type BasicRoom -x 300 -y 200
+roomView -r BR5 -type BasicRoom -x 400 -y 0
+roomView -r BR6 -type BasicRoom -x 100 -y 0
+roomView -r BR7 -type BasicRoom -x 300 -y 400
+roomView -r BR8 -type BasicRoom -x 300 -y 600
+addRoomToLabyrinth -lab L1 -r BR1
+addRoomToLabyrinth -lab L1 -r BR2
+addRoomToLabyrinth -lab L1 -r BR3
+addRoomToLabyrinth -lab L1 -r BR4
+addRoomToLabyrinth -lab L1 -r BR5
+addRoomToLabyrinth -lab L1 -r BR6
+addRoomToLabyrinth -lab L1 -r BR7
+addRoomToLabyrinth -lab L1 -r BR8
+addNeighbour -r BR1 -r BR2
+addNeighbour -r BR2 -r BR1
+addNeighbour -r BR2 -r BR3
+addNeighbour -r BR2 -r BR5
+addNeighbour -r BR2 -r BR6
+addNeighbour -r BR2 -r BR7
+addNeighbour -r BR3 -r BR2
+addNeighbour -r BR3 -r BR4
+addNeighbour -r BR4 -r BR3
+addNeighbour -r BR4 -r BR5
+addNeighbour -r BR4 -r BR6
+addNeighbour -r BR5 -r BR2
+addNeighbour -r BR5 -r BR4
+addNeighbour -r BR5 -r BR6
+addNeighbour -r BR6 -r BR2
+addNeighbour -r BR6 -r BR4
+addNeighbour -r BR6 -r BR5
+addNeighbour -r BR7 -r BR2
+addNeighbour -r BR7 -r BR8
+addNeighbour -r BR8 -r BR7
+createCharacter -ch I1 -type Instructor
+createCharacter -ch S1 -type Student
+addCharacterToRoom -ch I1 -r BR1
+addCharacterToRoom -ch S1 -r BR7
+addCharacterToLabyrinth -lab L1 -ch I1
+addCharacterToLabyrinth -lab L1 -ch S1
+characterView -ch S1 -type Student
+characterView -ch I1 -type Instructor
+createItem -it TVSZ1 -type TVSZ -life 1
+createItem -it FFP21 -type FFP2
+createItem -it LOG1 -type Logarlec
+addItemToRoom -it TVSZ1 -r BR7
+addItemToRoom -it FFP21 -r BR2
+addItemToRoom -it LOG1 -r BR3
+itemViewToRoom -it TVSZ1 -type TVSZ
+itemViewToRoom -it FFP21 -type FFP2
+itemViewToRoom -it LOG1 -type Logarlec
