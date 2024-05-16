@@ -70,8 +70,7 @@ public class Cleaner extends Character{
      */
     public IRoom unToxicateRoom(){
         System.out.println("Cleaner ventilated room | Cleaner: unToxicateRoom()");
-       // return currentRoom.unToxicate();
-        return null;
+        return currentRoom.unToxicate();
     }
 
     /**

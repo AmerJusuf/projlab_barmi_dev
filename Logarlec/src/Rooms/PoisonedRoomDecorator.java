@@ -8,18 +8,6 @@ import java.util.List;
 
 public class PoisonedRoomDecorator extends RoomDecorator{
 
-    private boolean cleaned = false;
-
-    @Override
-    public void cleanPoisonedRoom(){
-        cleaned = true;
-    }
-
-    @Override
-    public boolean isPoisonedRoomCleaned(){
-        return cleaned;
-    }
-
     public PoisonedRoomDecorator(IRoom decoratedRoom){
         super(decoratedRoom);
     }
@@ -103,7 +91,7 @@ public class PoisonedRoomDecorator extends RoomDecorator{
     @Override
     public boolean acceptCharacter(Character ch){
         boolean isAccepted = decoratedRoom.acceptCharacter(ch);
-        if(isAccepted && !cleaned){
+        if(isAccepted){
             toxicate(ch);
         }
         return isAccepted;
