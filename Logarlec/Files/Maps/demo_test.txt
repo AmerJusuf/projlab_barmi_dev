@@ -57,8 +57,8 @@ characterView -ch S1 -type Student
 characterView -ch S2 -type Student
 characterView -ch S3 -type Student
 characterView -ch C1 -type Cleaner
-createItem -it TVSZ1 -type TVSZ
-createItem -it TVSZ2 -type TVSZ
+createItem -it TVSZ1 -type TVSZ -life 3
+createItem -it TVSZ2 -type TVSZ -life 2
 createItem -it TVSZ3 -type TVSZ -fake
 createItem -it AIR1 -type AirFreshener
 createItem -it BEER1 -type Beer
@@ -79,7 +79,7 @@ createItem -it TR4 -type Transistor
 addItemToRoom -it TVSZ1 -r BR1
 addItemToRoom -it TVSZ2 -r BR2
 addItemToRoom -it TVSZ3 -r BR3
-addItemToRoomm -it AIR1 -r BR1
+addItemToRoom -it AIR1 -r BR1
 addItemToRoom -it BEER1 -r BR2
 addItemToRoom -it BEER2 -r BR3
 addItemToRoom -it CAM1 -r PR1
