@@ -8,9 +8,9 @@ createRoom -r PR1 -capacity 2 -type PosionedRoom
 roomView -r BR1 -type BasicRoom -x 300 -y 100
 roomView -r BR2 -type BasicRoom -x 500 -y 250
 roomView -r BR3 -type BasicRoom -x 100 -y 250
-roomView -r CR1 -type BasicRoom -x 100 -y 450
-roomView -r CR2 -type BasicRoom -x 500 -y 450
-roomView -r PR1 -type BasicRoom -x 300 -y 600
+roomView -r CR1 -type CursedRoom -x 100 -y 450
+roomView -r CR2 -type CursedRoom -x 500 -y 450
+roomView -r PR1 -type PoisonedRoom -x 300 -y 600
 addRoomToLabyrinth -lab L1 -r BR1
 addRoomToLabyrinth -lab L1 -r BR2
 addRoomToLabyrinth -lab L1 -r BR3
@@ -57,3 +57,60 @@ characterView -ch S1 -type Student
 characterView -ch S2 -type Student
 characterView -ch S3 -type Student
 characterView -ch C1 -type Cleaner
+createItem -it TVSZ1 -type TVSZ
+createItem -it TVSZ2 -type TVSZ
+createItem -it TVSZ3 -type TVSZ -fake
+createItem -it AIR1 -type AirFreshener
+createItem -it BEER1 -type Beer
+createItem -it BEER2 -type Beer
+createItem -it CAM1 -type Camembert
+createItem -it CAM2 -type Camembert
+createItem -it FFP21 -type FFP2
+createItem -it FFP22 -type FFP2
+createItem -it FFP23 -type FFP2 -fake
+createItem -it RAG1 -type Rag
+createItem -it RAG2 -type Rag
+createItem -it LOG1 -type Logarlec
+createItem -it LOG2 -type Logarlec -fake
+createItem -it TR1 -type Transistor
+createItem -it TR2 -type Transistor
+createItem -it TR3 -type Transistor
+createItem -it TR4 -type Transistor
+addItemToRoom -it TVSZ1 -r BR1
+addItemToRoom -it TVSZ2 -r BR2
+addItemToRoom -it TVSZ3 -r BR3
+addItemToRoomm -it AIR1 -r BR1
+addItemToRoom -it BEER1 -r BR2
+addItemToRoom -it BEER2 -r BR3
+addItemToRoom -it CAM1 -r PR1
+addItemToRoom -it CAM2 -r CR1
+addItemToRoom -it FFP21 -r CR1
+addItemToRoom -it FFP22 -r CR2
+addItemToRoom -it FFP23 -r PR1
+addItemToRoom -it RAG1 -r BR1
+addItemToRoom -it RAG2 -r CR1
+addItemToRoom -it LOG1 -r CR2
+addItemToRoom -it LOG2 -r PR1
+addItemToRoom -it TR1 -r BR1
+addItemToRoom -it TR2 -r BR2
+addItemToRoom -it TR3 -r BR3
+addItemToRoom -it TR4 -r CR1
+itemViewToRoom -it TVSZ1 -type TVSZ
+itemViewToRoom -it TVSZ2 -type TVSZ
+itemViewToRoom -it TVSZ3 -type TVSZ
+itemViewToRoom -it AIR1 -type AirFreshener
+itemViewToRoom -it BEER1 -type Beer
+itemViewToRoom -it BEER2 -type Beer
+itemViewToRoom -it CAM1 -type Camembert
+itemViewToRoom -it CAM2 -type Camembert
+itemViewToRoom -it FFP21 -type FFP2
+itemViewToRoom -it FFP22 -type FFP2
+itemViewToRoom -it FFP23 -type FFP2
+itemViewToRoom -it RAG1 -type Rag
+itemViewToRoom -it RAG2 -type Rag
+itemViewToRoom -it LOG1 -type Logarlec
+itemViewToRoom -it LOG2 -type Logarlec
+itemViewToRoom -it TR1 -type Transistor
+itemViewToRoom -it TR2 -type Transistor
+itemViewToRoom -it TR3 -type Transistor
+itemViewToRoom -it TR4 -type Transistor
