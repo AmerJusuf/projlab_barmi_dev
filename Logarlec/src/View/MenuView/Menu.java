@@ -27,8 +27,13 @@ public class Menu extends JFrame implements ActionListener {
         this.setResizable(false);
         this.setLayout(null);
 
-        ImageIcon image = new ImageIcon("Icons/Icon.png");
+        // tray icon
+        ImageIcon image = new ImageIcon("Icons/logarlec.png");
         this.setIconImage(image.getImage());
+
+        // custom cursor
+        Cursor customCursor = Toolkit.getDefaultToolkit().createCustomCursor(image.getImage(), new Point(0, 5), "HandCursor");
+        this.setCursor(customCursor);
 
         title = new JLabel();
         title.setText("Logarlec");

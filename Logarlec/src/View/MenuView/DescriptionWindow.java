@@ -8,6 +8,14 @@ public class DescriptionWindow extends JFrame {
         super("Description");
         setSize(700, 500); // Ablak mérete 500x500 pixel
 
+        // tray icon
+        ImageIcon image = new ImageIcon("Icons/logarlec.png");
+        this.setIconImage(image.getImage());
+
+        // custom cursor
+        Cursor customCursor = Toolkit.getDefaultToolkit().createCustomCursor(image.getImage(), new Point(0, 5), "HandCursor");
+        this.setCursor(customCursor);
+
         // Szöveg létrehozása
         String text = "A Műegyetem Központi épületének alagsora alatt egy elátkozott labirintus rejtőzik. A mérnökhallgatók dolga fellelni a Logarléc nevű mágikus képességű ereklyét. A labirintus szobáit ajtók választják el egymástól, ezeken átlépve lehet az egyik szobából a másikba átjutni. Egy-egy szobából legalább egy, de esetenként sok másik szobába is nyílhat ajtó. Vannak ráadásul ajtók, amelyek csak egy irányban használhatók.\n" +
                 "\n" +
