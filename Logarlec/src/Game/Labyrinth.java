@@ -186,6 +186,10 @@ public class Labyrinth {
             nextRound();
             System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
             redrawMap();
+            if(students.isEmpty()){
+                Labyrinth.setGameState(GameState.LOSE);
+                controller.notifyModelChanged();
+            }
         }
         endGame();
     }
