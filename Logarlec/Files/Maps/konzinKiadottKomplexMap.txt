@@ -8,13 +8,13 @@ createRoom -r BR6 -capacity 5 -type BasicRoom
 createRoom -r BR7 -capacity 5 -type BasicRoom
 createRoom -r BR8 -capacity 5 -type BasicRoom
 roomView -r BR1 -type BasicRoom -x 600 -y 600
-roomView -r BR2 -type BasicRoom -x 500 -y 400
+roomView -r BR2 -type BasicRoom -x 300 -y 400
 roomView -r BR3 -type BasicRoom -x 100 -y 500
-roomView -r BR4 -type BasicRoom -x 150 -y 300
+roomView -r BR4 -type BasicRoom -x 50 -y 300
 roomView -r BR5 -type BasicRoom -x 400 -y 0
 roomView -r BR6 -type BasicRoom -x 100 -y 0
-roomView -r BR7 -type BasicRoom -x 800 -y 400
-roomView -r BR8 -type BasicRoom -x 800 -y 200
+roomView -r BR7 -type BasicRoom -x 550 -y 400
+roomView -r BR8 -type BasicRoom -x 550 -y 200
 addRoomToLabyrinth -lab L1 -r BR1
 addRoomToLabyrinth -lab L1 -r BR2
 addRoomToLabyrinth -lab L1 -r BR3
