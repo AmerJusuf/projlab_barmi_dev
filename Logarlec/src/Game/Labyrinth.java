@@ -76,6 +76,10 @@ public class Labyrinth {
         generateMap();
     }
 
+    public void setMap(Map map) {
+        this.map = map;
+    }
+
     public void setController(Notifiable controller){
         this.controller = controller;
     }

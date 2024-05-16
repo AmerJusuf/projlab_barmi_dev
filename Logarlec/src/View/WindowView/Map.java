@@ -1,12 +1,14 @@
 package View.WindowView;
 
 import Characters.Student;
+import Controller.Controller;
 import Controller.Notifiable;
 import Game.Labyrinth;
 import Rooms.IRoom;
 import TestLogic.TestLogic;
 import View.CharacterView.StudentView;
 import View.IView;
+//import jdk.incubator.vector.VectorOperators;
 
 import javax.swing.*;
 import java.awt.*;
@@ -19,6 +21,8 @@ import java.util.Scanner;
 
 public class Map extends JPanel implements IView {
     private Labyrinth labyrinth;
+    private boolean useBakedInData = false; //------------------------------- ezt kell átállítani true-ra, hogy a beégetett pályát használja, false-ra, ha az egy sorral lejjebb lévő file-t töltse be ---------------
+    private String mapFilename = "test2";  //------------------------------- a betöltendő map file neve -------------------------------------------------------------------------------------------------------------
 
     List<RoomNodeView> nodes;
     int borderToLeft = 150;
@@ -27,23 +31,26 @@ public class Map extends JPanel implements IView {
     int bottomBorder = 60;
 
 
-
     public Map(Notifiable controller) {
-        List<Student> students = new ArrayList<>();
-        Student st = new Student();
-        Student st2 = new Student();
-        Student st3 = new Student();
-        Student st4 = new Student();
-        students.add(st);
-        students.add(st2);
-        students.add(st3);
-        students.add(st4);
-        labyrinth = new Labyrinth(students, this, controller);
-        labyrinth.setControllerToItems();
+        if(useBakedInData) {
+            List<Student> students = new ArrayList<>();
+            Student st = new Student();
+            Student st2 = new Student();
+            Student st3 = new Student();
+            Student st4 = new Student();
+            students.add(st);
+            students.add(st2);
+            students.add(st3);
+            students.add(st4);
+            labyrinth = new Labyrinth(students, this, controller);
 //        if(Labyrinth.currentPlayer == null) {
 //            Labyrinth.currentPlayer = st;
 //        }
-
+        }
+        else{
+            loadMap(mapFilename, controller);
+        }
+        labyrinth.setControllerToItems();
 
         setPreferredSize(new Dimension(1000, 1000));
         setBackground(Color.LIGHT_GRAY);
@@ -174,10 +181,13 @@ public class Map extends JPanel implements IView {
         return null;
     }
 
-    public void loadMap(String fileName){
+    public void loadMap(String fileName,  Notifiable controller){
         if(fileName == null){
             fileName = "default.map";
         }
+        TestLogic.setController(controller);
         labyrinth = TestLogic.getAndLoadLabyrinth(fileName);
+        labyrinth.setMap(this);
+        labyrinth.setController(controller);
     }
 }
