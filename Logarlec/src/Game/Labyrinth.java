@@ -186,7 +186,7 @@ public class Labyrinth {
             nextRound();
             System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
             redrawMap();
-            if(students.isEmpty()){
+            if(students.isEmpty() || round >= 20){
                 Labyrinth.setGameState(GameState.LOSE);
                 controller.notifyModelChanged();
             }
