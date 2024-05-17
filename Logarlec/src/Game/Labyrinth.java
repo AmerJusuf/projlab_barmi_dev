@@ -231,11 +231,12 @@ public class Labyrinth {
                 for (Cleaner cleaner : cleaners) {
                     cleaner.nextRound();
                 }
-           // Osszes szoba tarygara es osszes karakterek targyaira step() fuggveny meghivasa
             for( IRoom room : rooms){
                 room.decorate();
             }
-           mergeAndSplitRandomly();
+
+            // Osszes szoba tarygara es osszes karakterek targyaira step() fuggveny meghivasa
+            mergeAndSplitRandomly();
 
             stepItems();
             round++;
