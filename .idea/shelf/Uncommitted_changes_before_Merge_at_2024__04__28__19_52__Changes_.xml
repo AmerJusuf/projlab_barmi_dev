@@ -1,0 +1,39 @@
+<changelist name="Uncommitted_changes_before_Merge_at_2024__04__28__19_52_[Changes]" date="1714326768442" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2024__04__28__19_52_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Merge at 2024. 04. 28. 19:52 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Logarlec/Rooms/DecoratorHandlerVisitor.class" />
+    <option name="AFTER_PATH" value="out/production/Logarlec/Rooms/DecoratorHandlerVisitor.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2024__04__28__19_52_[Changes]/DecoratorHandlerVisitor.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Logarlec/Items/Camembert.class" />
+    <option name="AFTER_PATH" value="out/production/Logarlec/Items/Camembert.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2024__04__28__19_52_[Changes]/Camembert.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Logarlec/Game/Labyrinth.class" />
+    <option name="AFTER_PATH" value="out/production/Logarlec/Game/Labyrinth.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2024__04__28__19_52_[Changes]/Labyrinth.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Logarlec/Items/Transistor.class" />
+    <option name="AFTER_PATH" value="out/production/Logarlec/Items/Transistor.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2024__04__28__19_52_[Changes]/Transistor.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Logarlec/Items/Item.class" />
+    <option name="AFTER_PATH" value="out/production/Logarlec/Items/Item.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2024__04__28__19_52_[Changes]/Item.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Logarlec/TestLogic/TestLogic.class" />
+    <option name="AFTER_PATH" value="out/production/Logarlec/TestLogic/TestLogic.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2024__04__28__19_52_[Changes]/TestLogic.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Logarlec/Rooms/BasicRoom.class" />
+    <option name="AFTER_PATH" value="out/production/Logarlec/Rooms/BasicRoom.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2024__04__28__19_52_[Changes]/BasicRoom.class" />
+  </binary>
+</changelist>
