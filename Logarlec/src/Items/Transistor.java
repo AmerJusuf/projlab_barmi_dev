@@ -47,7 +47,7 @@ public class Transistor extends Item{
             return;
         }
         System.out.println("Trying to place transistor | Transistor: place()");
-        if(pairTransistor != null) {
+        if(pairTransistor != null && pairTransistor.getisActive()) {
             System.out.println("Transistor does have a pair | Transistor: place()");
             IRoom pl = pairTransistor.getPlaceLocation();
             IRoom currRoom = owner.getRoom();
