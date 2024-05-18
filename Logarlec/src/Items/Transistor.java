@@ -62,6 +62,7 @@ public class Transistor extends Item{
                     owner.moveAnywhere(pl);
                     owner.addItem(pairTransistor);
                     removeOwner();
+                    setIsTurnedOn(false);
                 } else {
                     System.out.println("Cannot place: The room is full | Transistor: place()");
 
