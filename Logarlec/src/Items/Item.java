@@ -44,11 +44,12 @@ public abstract class Item {
      *
      * @param instructor The instructor who picked the item.
      */
-    public void pickedByInstructor(Instructor instructor) {
+    public boolean pickedByInstructor(Instructor instructor) {
         System.out.println("Item picked by instructor | Item: pickedByInstructor(Instructor instructor)");
         this.setOwner(instructor);
         instructor.addItem(this);
         controller.notifyModelChanged();
+        return true;
     }
 
     /**

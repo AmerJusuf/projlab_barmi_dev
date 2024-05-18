@@ -302,8 +302,9 @@ public class BasicRoom implements IRoom{
     @Override
     public void acceptPickByInstructor(Instructor inst, Item item){
         System.out.println("Item pick accepted by room | BasicRoom: acceptPickByInstructor");
-        item.pickedByInstructor(inst);
-        items.remove(item);
+        if(item.pickedByInstructor(inst)) {
+            items.remove(item);
+        }
     }
 
     /**
