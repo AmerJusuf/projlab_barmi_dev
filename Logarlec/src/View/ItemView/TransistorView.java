@@ -98,7 +98,7 @@ public class TransistorView extends ItemView {
     //TODO mindkét transistor lerakása után, miután a játékost átviszi a másik szobába, pick helyett drop van
     @Override
     public void update() {
-        if((item.getOwner() == null && Labyrinth.currentPlayer.getRoom().getItems().contains(item)) || (item.getOwner() == null && transistor.getPairTransistor() != null && transistor.getPairTransistor().getOwner().getRoom().getItems().contains(item))){
+        if((item.getOwner() == null && Labyrinth.currentPlayer.getRoom().getItems().contains(item))){
             pickButton.setVisible(true);
             dropButton.setVisible(false);
             setUniqueButtonsVisibility(false);
