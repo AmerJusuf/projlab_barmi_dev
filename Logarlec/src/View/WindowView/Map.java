@@ -92,7 +92,10 @@ public class Map extends JPanel implements IView {
         }
         // Add the views after the loop
         nodes.addAll(viewsToAdd);
-        nodes.forEach(component -> this.add(component));
+        //nodes.forEach(component -> this.add(component));
+        for(RoomNodeView roomNodeView : nodes){
+            this.add(roomNodeView);
+        }
 
         // Add neighbors to nodes
         for (int i = 0; i < nodes.size(); i++) {
