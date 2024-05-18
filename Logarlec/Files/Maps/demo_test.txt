@@ -30,12 +30,12 @@ addNeighbour -r BR3 -r BR1
 addNeighbour -r BR3 -r PR1
 addNeighbour -r BR3 -r CR1
 addNeighbour -r CR1 -r BR3
-addNeighbour -r CR1 -r PR1
+addNeighbour -r CR1 -r CR2
 addNeighbour -r CR2 -r BR2
-addNeighbour -r CR2 -r PR1
+addNeighbour -r CR2 -r CR1
 addNeighbour -r PR1 -r BR1
+addNeighbour -r PR1 -r BR2
 addNeighbour -r PR1 -r BR3
-addNeighbour -r PR1 -r CR1
 createCharacter -ch I1 -type Instructor
 createCharacter -ch S1 -type Student
 createCharacter -ch S2 -type Student
@@ -57,7 +57,7 @@ characterView -ch S2 -type Student
 characterView -ch S3 -type Student
 characterView -ch C1 -type Cleaner
 createItem -it TVSZ1 -type TVSZ -life 3
-createItem -it TVSZ2 -type TVSZ -life 2
+createItem -it TVSZ2 -type TVSZ -life 3
 createItem -it TVSZ3 -type TVSZ -fake
 createItem -it AIR1 -type AirFreshener
 createItem -it BEER1 -type Beer
