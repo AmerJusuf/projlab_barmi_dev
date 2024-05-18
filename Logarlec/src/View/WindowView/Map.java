@@ -22,7 +22,7 @@ import java.util.Scanner;
 public class Map extends JPanel implements IView {
     private Labyrinth labyrinth;
     private boolean useBakedInData = false; //------------------------------- ezt kell átállítani true-ra, hogy a beégetett pályát használja, false-ra, ha az egy sorral lejjebb lévő file-t töltse be ---------------
-    private String mapFilename = "transitortest";  //------------------------------- a betöltendő map file neve -------------------------------------------------------------------------------------------------------------
+    private String mapFilename = "demo_test";  //------------------------------- a betöltendő map file neve -------------------------------------------------------------------------------------------------------------
 
     /*
     Command examples for creating Views:

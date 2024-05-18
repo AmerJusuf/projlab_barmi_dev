@@ -509,7 +509,7 @@ public class TestLogic {
                         if (inputCommand.contains("-fake"))
                             fake = true;
 
-                        int life = 0;
+                        int life = 3;
                         if (matcher.group(3) != null)
                             life = Integer.parseInt(matcher.group(3));
 

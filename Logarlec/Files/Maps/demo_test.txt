@@ -32,7 +32,6 @@ addNeighbour -r BR3 -r CR1
 addNeighbour -r CR1 -r BR3
 addNeighbour -r CR1 -r PR1
 addNeighbour -r CR2 -r BR2
-addNeighbour -r CR1 -r CR1
 addNeighbour -r CR2 -r PR1
 addNeighbour -r PR1 -r BR1
 addNeighbour -r PR1 -r BR3
