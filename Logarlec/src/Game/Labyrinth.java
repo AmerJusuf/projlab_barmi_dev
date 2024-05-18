@@ -293,8 +293,8 @@ public class Labyrinth {
 
     public void stepItems(){
         for(Student student : students){
-            for(Item item : student.getItems()){
-                item.step();
+            for(int i = student.getItems().size()-1; i >= 0; i--){
+                student.getItems().get(i).step();
             }
         }
         for ( Instructor instructor : instructors){
