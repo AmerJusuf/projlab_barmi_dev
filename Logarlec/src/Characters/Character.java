@@ -50,6 +50,22 @@ public abstract class Character {
         //controller.notifyModelChanged();
     }
 
+    /** This method is used to move the character to the next room.
+     * If the move is accepted, the character is removed from the current room
+     *
+     * @param nextRoom The room to move to.
+     */
+    public void moveAnywhere(IRoom nextRoom){
+        System.out.println("Character is trying to move anywhere | Character: moveAnywhere(BasicRoom nextRoom)");
+        boolean isAccepted = nextRoom.acceptCharacter(this);
+        if (isAccepted) {
+            currentRoom.removeCharacter(this);
+            this.setRoom(nextRoom);
+            moved = true;
+        }
+        //controller.notifyModelChanged();
+    }
+
     public void setController(Notifiable controller){
         this.controller = controller;
     }
