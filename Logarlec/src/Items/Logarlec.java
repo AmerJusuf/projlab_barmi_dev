@@ -38,8 +38,8 @@ public class Logarlec extends Item {
         }
         else {
             Labyrinth.setGameState(GameState.WIN);
-            controller.notifyModelChanged();
         }
+        controller.notifyModelChanged();
     }
 
     /**
