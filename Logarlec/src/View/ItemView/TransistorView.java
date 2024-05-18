@@ -78,20 +78,19 @@ public class TransistorView extends ItemView {
 
     @Override
     void updateItemIcon(boolean isActive) {
+        if(isActive && transistor.getPairTransistor() != null){
+            label.setIcon(pairedIcon);
+            return;
+        }
         if(isActive){
-            if(transistor.getPairTransistor() != null){
-                label.setIcon(pairedIcon);
-            }
-            else if(transistor.getPlaceLocation() != null){
-                label.setIcon(placedIcon);
-            }
-            else {
-                label.setIcon(activeIcon);
-            }
+            label.setIcon(activeIcon);
+            return;
         }
-        else {
-            label.setIcon(defIcon);
+        if(transistor.getPairTransistor() != null){
+            label.setIcon(placedIcon);
+            return;
         }
+        label.setIcon(defIcon);
     }
 
 
