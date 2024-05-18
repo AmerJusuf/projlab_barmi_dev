@@ -2,7 +2,7 @@ package Characters;
 
 import Controller.Notifiable;
 import Items.Item;
-import Rooms.BasicRoom;
+import Items.Transistor;
 import Rooms.IRoom;
 
 import java.util.ArrayList;
@@ -13,6 +13,7 @@ public abstract class Character {
     protected List<Item> items;
     protected IRoom currentRoom;
     protected boolean isPoisoned;
+    protected Transistor transistorReadyToPair;
 
     Notifiable controller;
 
@@ -100,11 +101,10 @@ public abstract class Character {
      * @param item The item to be dropped from the character's collection.
      */
     public void dropItem(Item item){
-        if(items.contains(item)){
-            item.drop(); //remove owner
-            this.removeItem(item);
-            System.out.println("Item removed from character's inventory | Character: dropItem()");
-            currentRoom.addItem(item);
+        if(items.contains(item) && item.drop()) { //remove owner
+                this.removeItem(item);
+                System.out.println("Item removed from character's inventory | Character: dropItem()");
+                currentRoom.addItem(item);
         }
         controller.notifyModelChanged();
     }
@@ -197,6 +197,14 @@ public abstract class Character {
             }
             attempts++;
         }
+    }
+
+    public Transistor getTransistorReadyToPair(){
+        return transistorReadyToPair;
+    }
+
+    public void setTransistorReadyToPair(Transistor t){
+        transistorReadyToPair = t;
     }
 
 }

@@ -184,7 +184,7 @@ public class Labyrinth {
         currentPlayer = students.get(0);
         while (gameState == GameState.PLAYING) {
             nextRound();
-            System.out.println("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+            System.out.println("NextRound done! XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
             redrawMap();
             if(students.isEmpty() || round >= 20){
                 Labyrinth.setGameState(GameState.LOSE);
@@ -200,49 +200,49 @@ public class Labyrinth {
     }
 
     public static List<Student> kickedStudents;
-    private Student asd;
+    private Student asd; // ez nem csinál semmit, mire van?
     public String nextRound() {
         String fileContent = "";
         kickedStudents = new ArrayList<>();
-            for (Student student : students) {
-                if(asd != null && student == asd){
-                    int i = -1;
-                }
-                currentPlayer = student;
-                controller.notifyModelChanged();
-                student.nextRound();
-                for(Instructor instructor : instructors){
-                    if(instructor.getRoom() == student.getRoom()){
-                        student.getCaught();
-                    }
-                }
-                controller.notifyModelChanged();
+        for (Student student : students) {
+            if (asd != null && student == asd) {
+                int i = -1;
             }
-            if(!kickedStudents.isEmpty()) {
-                students.removeAll(kickedStudents);
-                asd = kickedStudents.getFirst();
-            }
-            kickedStudents = new ArrayList<>();
-                controller.notifyModelChanged();
-            for (Instructor instructor : instructors) {
-                instructor.nextRound();
-            }
-            if(cleaners != null)
-                for (Cleaner cleaner : cleaners) {
-                    cleaner.nextRound();
-                }
-            for( IRoom room : rooms){
-                room.decorate();
-            }
-
-            // Osszes szoba tarygara es osszes karakterek targyaira step() fuggveny meghivasa
-            mergeAndSplitRandomly();
-
-            stepItems();
-            round++;
+            currentPlayer = student;
             controller.notifyModelChanged();
+            student.nextRound();
+            for (Instructor instructor : instructors) {
+                if (instructor.getRoom() == student.getRoom()) {
+                    student.getCaught();
+                }
+            }
+            controller.notifyModelChanged();
+        }
+        if (!kickedStudents.isEmpty()) {
+            students.removeAll(kickedStudents);
+            asd = kickedStudents.getFirst();
+        }
+        kickedStudents = new ArrayList<>();
+        controller.notifyModelChanged();
+        for (Instructor instructor : instructors) {
+            instructor.nextRound();
+        }
+        if (cleaners != null)
+            for (Cleaner cleaner : cleaners) {
+                cleaner.nextRound();
+            }
+        for (IRoom room : rooms) {
+            room.decorate();
+        }
 
-            return fileContent;
+        // Osszes szoba tarygara es osszes karakterek targyaira step() fuggveny meghivasa
+        mergeAndSplitRandomly();
+
+        stepItems();
+        round++;
+        controller.notifyModelChanged();
+
+        return fileContent;
     }
 
     public void endGame() {

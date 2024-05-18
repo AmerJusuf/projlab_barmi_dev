@@ -34,18 +34,18 @@ public class TransistorView extends ItemView {
             Labyrinth.currentPlayer.dropItem(item);
         }
         else if (e.getSource() == activate) {
-            System.out.println("Button activevate clicked");
-            transistor.setIsTurnedOn(true);
+            System.out.println("Button activate clicked");
+            transistor.setIsTurnedOn(!transistor.getisActive());
         }
         else if (e.getSource() == pair && transistor.getisActive()) {
             System.out.println("Button pair clicked");
-            //TODO: Studentnek fuggveny ami osszeparositja a nala levo ket aktiv transzisztort
-
+            transistor.pairAutomatically();
         }
         else if (e.getSource() == place && transistor.getisActive() && transistor.getPairTransistor() != null) {
             System.out.println("Button placed clicked");
             item.placeTransistor();
         }
+        updateItemIcon(transistor.getisActive());
     }
 
     @Override
@@ -79,14 +79,41 @@ public class TransistorView extends ItemView {
     @Override
     void updateItemIcon(boolean isActive) {
         if(isActive){
-            label.setIcon(activeIcon);
-        } else if(transistor.getPairTransistor() != null){
-            label.setIcon(pairedIcon);
-        } else if(transistor.getPlaceLocation() != null){
-            label.setIcon(placedIcon);
-        } else {
+            if(transistor.getPairTransistor() != null){
+                label.setIcon(pairedIcon);
+            }
+            else if(transistor.getPlaceLocation() != null){
+                label.setIcon(placedIcon);
+            }
+            else {
+                label.setIcon(activeIcon);
+            }
+        }
+        else {
             label.setIcon(defIcon);
         }
+    }
+
+
+    //TODO mindkét transistor lerakása után, miután a játékost átviszi a másik szobába, pick helyett drop van
+    @Override
+    public void update() {
+        if((item.getOwner() == null && Labyrinth.currentPlayer.getRoom().getItems().contains(item)) || (item.getOwner() == null && transistor.getPairTransistor() != null && transistor.getPairTransistor().getOwner().getRoom().getItems().contains(item))){
+            pickButton.setVisible(true);
+            dropButton.setVisible(false);
+            setUniqueButtonsVisibility(false);
+        } else if (item.getOwner() == null && !Labyrinth.currentPlayer.getRoom().getItems().contains(item)){
+            pickButton.setVisible(false);
+            dropButton.setVisible(false);
+            setUniqueButtonsVisibility(false);
+            updateItemIcon(item.getisActive());
+        }else if(item.getOwner() != null){
+            pickButton.setVisible(false);
+            dropButton.setVisible(true);
+            setUniqueButtonsVisibility(true);
+            updateItemIcon(item.getisActive());
+        }
+        panel.updateUI();
     }
 
 }
