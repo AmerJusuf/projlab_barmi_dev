@@ -101,11 +101,10 @@ public abstract class Character {
      * @param item The item to be dropped from the character's collection.
      */
     public void dropItem(Item item){
-        if(items.contains(item)){
-            item.drop(); //remove owner
-            this.removeItem(item);
-            System.out.println("Item removed from character's inventory | Character: dropItem()");
-            currentRoom.addItem(item);
+        if(items.contains(item) && item.drop()) { //remove owner
+                this.removeItem(item);
+                System.out.println("Item removed from character's inventory | Character: dropItem()");
+                currentRoom.addItem(item);
         }
         controller.notifyModelChanged();
     }
