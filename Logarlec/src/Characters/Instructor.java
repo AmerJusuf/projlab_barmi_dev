@@ -60,9 +60,12 @@ public class Instructor extends Character{
     public void kickStudents(){
         System.out.println("Instructor kicks student | Instructor: kickStudent()");
         List<Character> characters = currentRoom.getCharacters();
-        for(Character character: characters){
-           character.getCaught();
+        for(int i = characters.size() - 1; i >= 0; i--){
+            characters.get(i).getCaught();
         }
+//        for(Character character: characters){
+//           character.getCaught();
+//        }
     }
 
     /**

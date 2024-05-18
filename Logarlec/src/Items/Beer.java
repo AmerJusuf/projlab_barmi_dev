@@ -20,7 +20,7 @@ public class Beer extends TemporaryItem {
     public void decreaseRoundsLeft() {
         System.out.println("Rounds left decreased | Beer: decreaseRoundsLeft()");
         roundsLeft--;
-        dropItemAt(0);
+        owner.dropNotBeer(this);
         if(roundsLeft == 0) {
             System.out.println("Rounds left is 0, destroying item | TemporaryItem: decreaseRoundsLeft()");
             owner.removeItem(this);

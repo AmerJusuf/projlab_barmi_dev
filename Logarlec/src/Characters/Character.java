@@ -109,6 +109,16 @@ public abstract class Character {
         controller.notifyModelChanged();
     }
 
+    public void dropNotBeer(Item caller){
+        System.out.println("Item will be dropped not beer | Character: dropNotBeer()");
+        for(Item item : items){
+            if(item != caller){
+                dropItem(item);
+                break;
+            }
+        }
+    }
+
     /**
      * This method is used to set the room of the character.
      *
