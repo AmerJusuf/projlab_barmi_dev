@@ -1,7 +1,8 @@
 package Items;
 
-import Rooms.BasicRoom;
 import Rooms.IRoom;
+
+import java.util.List;
 
 public class Transistor extends Item{
     private boolean isTurnedOn;
@@ -22,7 +23,7 @@ public class Transistor extends Item{
     }
 
     public void setPairTransistor(Transistor transistor){
-        //System.out.println("Pair transistor set | Transistor: setPairTransistor(Transistor transistor)");
+        System.out.println("Pair transistor set | Transistor: setPairTransistor(Transistor transistor)");
         pairTransistor = transistor;
     }
 
@@ -90,11 +91,27 @@ public class Transistor extends Item{
 
     public void pairTransistor(Transistor pair){
         if(pairTransistor == null && pair.getPairTransistor() == null){
-            //System.out.println("None of them are paired yet | Transistor: pairTransistor()");
+            System.out.println("None of them are paired yet | Transistor: pairTransistor()");
             setPairTransistor(pair);
             pair.setPairTransistor(this);
         } else{
-            //System.out.println("Cannot pair: atleast one of them is already paired | Transistor: pairTransistor()");
+            System.out.println("Cannot pair: atleast one of them is already paired | Transistor: pairTransistor()");
+        }
+        controller.notifyModelChanged();
+    }
+
+    public void pairAutomatically(){
+        System.out.println("start | Transistor: pairAutomatically()");
+        if(pairTransistor == null){
+            Transistor other = owner.getTransistorReadyToPair();
+            if(other != null){
+                System.out.println("pairing | Transistor: pairAutomatically()");
+                pairTransistor(other);
+            }
+            else {
+                System.out.println("adding to character | Transistor: pairAutomatically()");
+                owner.setTransistorReadyToPair(this);
+            }
         }
         controller.notifyModelChanged();
     }

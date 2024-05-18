@@ -2,7 +2,7 @@ package Characters;
 
 import Controller.Notifiable;
 import Items.Item;
-import Rooms.BasicRoom;
+import Items.Transistor;
 import Rooms.IRoom;
 
 import java.util.ArrayList;
@@ -13,6 +13,7 @@ public abstract class Character {
     protected List<Item> items;
     protected IRoom currentRoom;
     protected boolean isPoisoned;
+    protected Transistor transistorReadyToPair;
 
     Notifiable controller;
 
@@ -197,6 +198,14 @@ public abstract class Character {
             }
             attempts++;
         }
+    }
+
+    public Transistor getTransistorReadyToPair(){
+        return transistorReadyToPair;
+    }
+
+    public void setTransistorReadyToPair(Transistor t){
+        transistorReadyToPair = t;
     }
 
 }

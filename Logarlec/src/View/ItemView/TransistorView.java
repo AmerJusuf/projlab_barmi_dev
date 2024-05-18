@@ -34,11 +34,12 @@ public class TransistorView extends ItemView {
             Labyrinth.currentPlayer.dropItem(item);
         }
         else if (e.getSource() == activate) {
-            System.out.println("Button activevate clicked");
+            System.out.println("Button activate clicked");
             transistor.setIsTurnedOn(true);
         }
         else if (e.getSource() == pair && transistor.getisActive()) {
             System.out.println("Button pair clicked");
+            transistor.pairAutomatically();
             //TODO: Studentnek fuggveny ami osszeparositja a nala levo ket aktiv transzisztort
 
         }
@@ -46,6 +47,7 @@ public class TransistorView extends ItemView {
             System.out.println("Button placed clicked");
             item.placeTransistor();
         }
+        updateItemIcon(transistor.getisActive());
     }
 
     @Override
@@ -79,12 +81,17 @@ public class TransistorView extends ItemView {
     @Override
     void updateItemIcon(boolean isActive) {
         if(isActive){
-            label.setIcon(activeIcon);
-        } else if(transistor.getPairTransistor() != null){
-            label.setIcon(pairedIcon);
-        } else if(transistor.getPlaceLocation() != null){
-            label.setIcon(placedIcon);
-        } else {
+            if(transistor.getPairTransistor() != null){
+                label.setIcon(pairedIcon);
+            }
+            else if(transistor.getPlaceLocation() != null){
+                label.setIcon(placedIcon);
+            }
+            else {
+                label.setIcon(activeIcon);
+            }
+        }
+        else {
             label.setIcon(defIcon);
         }
     }
