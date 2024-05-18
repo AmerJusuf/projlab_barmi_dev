@@ -43,34 +43,36 @@ public class Transistor extends Item{
     @Override
     public void placeTransistor(){
         if(!isTurnedOn){
-            //System.out.println("Transistor is not active: Cannot place | Transistor: place()");
+            System.out.println("Transistor is not active: Cannot place | Transistor: place()");
             return;
         }
-        //System.out.println("Trying to place transistor | Transistor: place()");
+        System.out.println("Trying to place transistor | Transistor: place()");
         if(pairTransistor != null) {
-            //System.out.println("Transistor does have a pair | Transistor: place()");
+            System.out.println("Transistor does have a pair | Transistor: place()");
             IRoom pl = pairTransistor.getPlaceLocation();
             IRoom currRoom = owner.getRoom();
             if (pl != null) {
-                //System.out.println("Transistor's pair is placed in a room | Transistor: place()");
+                System.out.println("Transistor's pair is placed in a room | Transistor: place()");
                 if (pl.hasPlace()) {
-                    //System.out.println("Pair transistor's room has space | Transistor: place()");
-                    //System.out.println("Placing second transistor, and moving Student | Transistor: place()");
+                    System.out.println("Pair transistor's room has space | Transistor: place()");
+                    System.out.println("Placing second transistor, and moving Student | Transistor: place()");
                     setPlaceLocation(currRoom);
+                    owner.removeItem(this);
+                    currRoom.addItem(this);
                     owner.move(pl);
                     owner.addItem(pairTransistor);
-                    owner.removeItem(this);
                 } else {
-                    //System.out.println("Cannot place: The room is full | Transistor: place()");
+                    System.out.println("Cannot place: The room is full | Transistor: place()");
 
                 }
             }
             else {
                 owner.removeItem(this);
+                //currRoom.addItem(this);
                 setPlaceLocation(currRoom);
             }
         } else{
-            //System.out.println("Cannot place: Transistor does not have a pair | Transistor: place()");
+            System.out.println("Cannot place: Transistor does not have a pair | Transistor: place()");
         }
         controller.notifyModelChanged();
     }
@@ -104,9 +106,10 @@ public class Transistor extends Item{
         System.out.println("start | Transistor: pairAutomatically()");
         if(pairTransistor == null){
             Transistor other = owner.getTransistorReadyToPair();
-            if(other != null){
+            if(other != null && other != this){
                 System.out.println("pairing | Transistor: pairAutomatically()");
                 pairTransistor(other);
+                owner.setTransistorReadyToPair(null);
             }
             else {
                 System.out.println("adding to character | Transistor: pairAutomatically()");
@@ -117,17 +120,17 @@ public class Transistor extends Item{
     }
 
     @Override
-    public void drop(){
+    public boolean drop(){
         if(isTurnedOn || pairTransistor != null){
-            //System.out.println("Transistor is active or has Pair: Cannot drop | Transistor: drop()");
+            System.out.println("Transistor is active of has Pair: Cannot drop | Transistor: drop()");
+            return false;
         } else{
-            //System.out.println("Transistor is dropped | Transistor: drop()");
-//            owner.getRoom().addItem(this);
-//            removeOwner();
-            setIsActive(false);
+            System.out.println("Transistor is dropped | Transistor: drop()");
             removeOwner();
+            setIsActive(false);
         }
         controller.notifyModelChanged();
+        return true;
     }
 
     @Override

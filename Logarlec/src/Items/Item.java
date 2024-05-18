@@ -120,11 +120,11 @@ public abstract class Item {
      * This method is used to drop the item.
      * The transistor overrides this method, hence it cannot be dropped while active or paired
      */
-    public void drop() {
+    public boolean drop() {
         System.out.println("Item will be dropped | Item: drop()");
         setIsActive(false);
         removeOwner();
-
+        return true;
     }
 
     /**
