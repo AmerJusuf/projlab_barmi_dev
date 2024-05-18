@@ -1,0 +1,29 @@
+<changelist name="Uncommitted_changes_before_Merge_at_2024__04__28__19_07_[Changes]" date="1714324041063" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2024__04__28__19_07_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Merge at 2024. 04. 28. 19:07 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Logarlec/Items/Camembert.class" />
+    <option name="AFTER_PATH" value="out/production/Logarlec/Items/Camembert.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2024__04__28__19_07_[Changes]/Camembert.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Logarlec/Game/Labyrinth.class" />
+    <option name="AFTER_PATH" value="out/production/Logarlec/Game/Labyrinth.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2024__04__28__19_07_[Changes]/Labyrinth.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Logarlec/Items/Item.class" />
+    <option name="AFTER_PATH" value="out/production/Logarlec/Items/Item.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2024__04__28__19_07_[Changes]/Item.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Logarlec/TestLogic/TestLogic.class" />
+    <option name="AFTER_PATH" value="out/production/Logarlec/TestLogic/TestLogic.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2024__04__28__19_07_[Changes]/TestLogic.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Logarlec/Rooms/BasicRoom.class" />
+    <option name="AFTER_PATH" value="out/production/Logarlec/Rooms/BasicRoom.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Merge_at_2024__04__28__19_07_[Changes]/BasicRoom.class" />
+  </binary>
+</changelist>

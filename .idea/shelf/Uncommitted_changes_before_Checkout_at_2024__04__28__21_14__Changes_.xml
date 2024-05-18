@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Checkout_at_2024__04__28__21_14_[Changes]" date="1714331670283" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024__04__28__21_14_[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 2024. 04. 28. 21:14 [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Logarlec/Game/Labyrinth.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Logarlec/TestLogic/TestLogic.class" />
+    <option name="AFTER_PATH" />
+    <option name="SHELVED_PATH" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="out/production/Logarlec/Rooms/BasicRoom.class" />
+    <option name="AFTER_PATH" value="out/production/Logarlec/Rooms/BasicRoom.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_2024__04__28__21_14_[Changes]/BasicRoom.class" />
+  </binary>
+</changelist>
