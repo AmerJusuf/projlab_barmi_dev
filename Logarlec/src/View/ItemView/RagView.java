@@ -7,6 +7,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * A view, to store a rag entity.
+ */
 public class RagView extends ItemView {
 
     ImageIcon defIcon = new ImageIcon("Icons/rag.png");;

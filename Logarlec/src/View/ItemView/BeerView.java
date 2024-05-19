@@ -7,6 +7,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * A view, to store a beer object.
+ */
 public class BeerView extends ItemView {
     private ImageIcon icon = new ImageIcon("Icons/beer.png");
     private ImageIcon activeIcon = new ImageIcon("Icons/beeractive.png");

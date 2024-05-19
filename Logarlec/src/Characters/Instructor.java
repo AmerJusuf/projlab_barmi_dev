@@ -78,10 +78,10 @@ public class Instructor extends Character{
       //  kickStudents(); --- moved to Labyrinth nextRound()
         moveToRandom();
         if(!items.isEmpty()) {
-            dropItem(items.getFirst());
+            dropItem(items.get(0));
         }
         if(!currentRoom.getItems().isEmpty()) {
-            pickItem(currentRoom.getItems().getFirst());
+            pickItem(currentRoom.getItems().get(0));
         }
         kickStudents();
         return "";

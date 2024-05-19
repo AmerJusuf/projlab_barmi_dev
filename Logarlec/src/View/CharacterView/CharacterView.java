@@ -5,6 +5,9 @@ import View.IView;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * A view connected to the characters inside the labyrinth.
+ */
 public abstract class CharacterView implements IView {
     protected JPanel panel;
     protected JLabel label;

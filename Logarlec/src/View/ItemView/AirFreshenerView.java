@@ -7,6 +7,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * A view, to store an airfreshener object.
+ */
 public class AirFreshenerView extends ItemView {
     private JButton useButton;
     private ImageIcon icon = new ImageIcon("Icons/airfreshener.png");
@@ -24,6 +27,9 @@ public class AirFreshenerView extends ItemView {
         }
     }
 
+    /**
+     * Stores a use button to the airfeshener entity.
+     */
     @Override
     void uniqueButtons() {
         useButton = new JButton("Use");

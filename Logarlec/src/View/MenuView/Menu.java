@@ -8,7 +8,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-
+/**
+ * The menu class, which opens up and shows options, when the user starts the game.
+ */
 public class Menu extends JFrame implements ActionListener {
 
 

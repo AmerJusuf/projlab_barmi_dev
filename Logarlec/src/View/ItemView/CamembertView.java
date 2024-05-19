@@ -8,6 +8,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * A view, to a camembert item entity.
+ */
 public class CamembertView extends ItemView {
     ImageIcon defIcon = new ImageIcon("Icons/camembert.png");
 
@@ -29,6 +32,9 @@ public class CamembertView extends ItemView {
         }
     }
 
+    /**
+     * Stores an open button related to the camembert entity.
+     */
     @Override
     void uniqueButtons() {
         openButton = new JButton("Open");

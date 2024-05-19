@@ -2,6 +2,9 @@ import View.MenuView.Menu;
 
 import java.util.Scanner;
 
+/**
+ * Launches the menu upon pressing run.
+ */
 public class Main {
 
     public static void main(String[] args) {

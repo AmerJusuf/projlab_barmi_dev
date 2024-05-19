@@ -8,12 +8,27 @@ import com.sun.tools.javac.Main;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * A view, which is connected to a student entity - controlled by a player.
+ */
 public class StudentView extends CharacterView {
+    /**
+     * The concrete student.
+     */
     Student student;
+    /**
+     * The icon of the student.
+     */
     ImageIcon defIcon = new ImageIcon("Icons/student.png");
-
+    /**
+     * The title of the view.
+     */
     JLabel title = new JLabel("Student");
 
+    /**
+     * Creates a view, to show the properties of a student entity.
+     * @param st The stored student entity.
+     */
     public StudentView(Student st) {
         student = st;
 
@@ -34,6 +49,9 @@ public class StudentView extends CharacterView {
         panel.setVisible(true);
     }
 
+    /**
+     * After the student has finished his round, this function is called, to show the next student on the screen.
+     */
     @Override
     public void update() {
         panel.removeAll();
@@ -54,6 +72,9 @@ public class StudentView extends CharacterView {
         panel.setVisible(true);
     }
 
+    /**
+     * If the student picked, dropped or activated an item, this function is called to update his view.
+     */
     public void updateItemsList() {
         for(Item item : student.getItems()) {
             MainWindow.viewsByObjects.get(item).update();

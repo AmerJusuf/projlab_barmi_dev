@@ -7,6 +7,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * A view, to store a TVSZView entity.
+ */
 public class TVSZView extends ItemView {
 
     private final TVSZ tvsz; //TVSZ is stored for savesLeft

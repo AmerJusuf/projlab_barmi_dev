@@ -3,6 +3,9 @@ package View.MenuView;
 import javax.swing.*;
 import java.awt.*;
 
+/**
+ * Provides a description to the situation of the game.
+ */
 public class DescriptionWindow extends JFrame {
     public DescriptionWindow() {
         super("Description");
