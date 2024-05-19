@@ -4,6 +4,9 @@ import Characters.Cleaner;
 
 import javax.swing.*;
 
+/**
+ * A view, which is connected to a cleaner entity.
+ */
 public class CleanerView extends CharacterView{
     private Cleaner cleaner;
     private ImageIcon defIcon = new ImageIcon("Icons/cleaner.png");

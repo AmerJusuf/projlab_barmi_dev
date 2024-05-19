@@ -13,6 +13,10 @@ import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 import java.util.List;
 import java.awt.geom.AffineTransform;
+
+/**
+ * A view to symbolize rooms on the map of the game.
+ */
 public class RoomNodeView extends JPanel implements IView {
     Notifiable controller;
     private IRoom room;
@@ -32,7 +36,14 @@ public class RoomNodeView extends JPanel implements IView {
     private int x;
     private int y;
 
-
+    /**
+     * Creates a new roomnodeview.
+     * @param room The stored IRoom object.
+     * @param poisoned Stores whether the room is poisoned or not.
+     * @param cursed Stores whether the room is cursed or not.
+     * @param sticky Stores whether the room is sticky or not.
+     * @param control Makes the roomnodeview notifiable, when something happens.
+     */
     public RoomNodeView(IRoom room, boolean poisoned, boolean cursed, boolean sticky, Notifiable control) {
         this.room = room;
         this.setBackground(Color.WHITE);
@@ -42,7 +53,10 @@ public class RoomNodeView extends JPanel implements IView {
         this.sticky = sticky;
         this.controller = control;
 
-        // Load circle image
+        /**
+         * Load images to represent current and not current roomviewnodes.
+         */
+
         circleDefaultImage = new ImageIcon("Icons/basicroom.png").getImage();
         circleCurrentImage = new ImageIcon("Icons/poisonedroom.png").getImage();
 
@@ -154,6 +168,11 @@ public class RoomNodeView extends JPanel implements IView {
         }
     }
 
+    /**
+     * Sets the place and the size of a roomnodeview.
+     * @param x
+     * @param y
+     */
     public void setBounds(int x, int y){
         this.x = x;
         this.y = y;
@@ -161,6 +180,10 @@ public class RoomNodeView extends JPanel implements IView {
         this.setVisible(true);
     }
 
+    /**
+     * Draws the roomnodeview together with the actual characters/capacity text.
+     * @param g the <code>Graphics</code> object to protect
+     */
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);

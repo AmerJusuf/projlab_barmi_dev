@@ -19,6 +19,11 @@ import java.awt.event.WindowEvent;
 import java.util.HashMap;
 import java.util.List;
 
+/**
+ * The main frame, which can be reached from the menu.
+ * It has four main parts, one of them representing the map, two for showing informations about rooms
+ * and one for showing the current items of the player, whose round is on.
+ */
 public class MainWindow extends JFrame {
     List<IView> views;
     public static java.util.Map<Object, IView> viewsByObjects = new HashMap<>();

@@ -45,7 +45,7 @@ public class Labyrinth {
 
     public Labyrinth(List<Student> students){
         this.students = students;
-        currentPlayer = students.getFirst();
+        currentPlayer = students.get(0);
         instructors = new ArrayList<>();
         for(int i = 0; i < (students.size()*2); i++){
             Instructor instructor = new Instructor();
@@ -200,7 +200,7 @@ public class Labyrinth {
     }
 
     public static List<Student> kickedStudents;
-    private Student asd; // ez nem csinál semmit, mire van?
+    private Student asd; // ez nem csinál semmit, mire van? -> kirúgott hallgató átmeneti eltárolása
     public String nextRound() {
         String fileContent = "";
         kickedStudents = new ArrayList<>();
@@ -220,7 +220,7 @@ public class Labyrinth {
         }
         if (!kickedStudents.isEmpty()) {
             students.removeAll(kickedStudents);
-            asd = kickedStudents.getFirst();
+            asd = kickedStudents.get(0);
         }
         kickedStudents = new ArrayList<>();
         controller.notifyModelChanged();
@@ -318,7 +318,9 @@ public class Labyrinth {
         return students;
     }
 
-
+    /**
+     * Generates a default map with 25 rooms.
+     */
     public void generateMap() {
         rooms = new ArrayList<>();
 

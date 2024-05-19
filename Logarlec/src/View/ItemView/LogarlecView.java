@@ -6,6 +6,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * A view, to store a logarlec entity.
+ */
 public class LogarlecView extends ItemView{
     ImageIcon defIcon = new ImageIcon("Icons/logarlec.png");;
     ImageIcon fakeIcon = new ImageIcon("Icons/logarlecfake.png");

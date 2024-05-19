@@ -19,6 +19,9 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * The view of the labyrinth, where rooms are shown as nodes and their connections as arrows.
+ */
 public class Map extends JPanel implements IView {
     private Labyrinth labyrinth;
     private boolean useBakedInData = false; //------------------------------- ezt kell átállítani true-ra, hogy a beégetett pályát használja, false-ra, ha az egy sorral lejjebb lévő file-t töltse be ---------------
@@ -131,7 +134,7 @@ public class Map extends JPanel implements IView {
         g2d.setColor(Color.BLACK);
 
         // Calculate cell size
-        int cellWidth = (getWidth() - borderToLeft - borderToRight + 20) / 5; // Considering the gaps in the GridLayout
+        int cellWidth = (getWidth() - borderToLeft - borderToRight + 20) / 5; // Considering the gaps
         int cellHeight = (getHeight() - topBorder - bottomBorder + 20) / 5;
 
         // Calculate positions of the centers of the cells

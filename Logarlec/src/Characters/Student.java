@@ -35,6 +35,7 @@ public class Student extends Character{
         System.out.println("Student picks item | Student: pickItem(Item item)");
         if (item != null && items.size() < 5) {
             currentRoom.acceptPickByStudent(this, item);
+            //controller.notifyModelChanged();
         }
     }
 

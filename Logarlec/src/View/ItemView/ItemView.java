@@ -8,6 +8,9 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * A view, to store an item.
+ */
 public abstract class ItemView implements IView, ActionListener {
     protected Item item;
     protected JPanel panel;
@@ -17,6 +20,11 @@ public abstract class ItemView implements IView, ActionListener {
 
     protected JButton dropButton;
 
+    /**
+     * Creates a new itemview with the corresponding imageicon.
+     * @param item The stored item.
+     * @param icon The look of the item.
+     */
     public ItemView(Item item, ImageIcon icon) {
         this.item = item;
 
@@ -67,6 +75,10 @@ public abstract class ItemView implements IView, ActionListener {
 
     }
 
+    /**
+     * Function to handle interactions with buttons - connected to the items.
+     * @param e the event to be processed
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == pickButton) {
@@ -80,9 +92,21 @@ public abstract class ItemView implements IView, ActionListener {
         this.label = label;
     }
 
+    /**
+     * If the item has special actions, then the corresponding activation buttons are stored in this inherited function.
+     */
     abstract void uniqueButtons();
+
+    /**
+     * Makes the special buttons visible, if the icon has an owner.
+     * @param visibility
+     */
     abstract void setUniqueButtonsVisibility(boolean visibility);
 
+    /**
+     * Changes the icon of the current item.
+     * @param isActive
+     */
     abstract void updateItemIcon(boolean isActive);
 
     @Override
@@ -90,6 +114,10 @@ public abstract class ItemView implements IView, ActionListener {
         return panel;
     }
 
+    /**
+     * Updates the state of the item.
+     * Checks whether it has an owner and sets the look and buttons based on that information.
+     */
     @Override
     public void update() {
         if(item.getOwner() == null && Labyrinth.currentPlayer.getRoom().getItems().contains(item)){
@@ -110,6 +138,10 @@ public abstract class ItemView implements IView, ActionListener {
         panel.updateUI();
     }
 
+    /**
+     * Returns the label of the item.
+     * @return The label.
+     */
     @Override
     public JLabel getLabel() {
         return label;

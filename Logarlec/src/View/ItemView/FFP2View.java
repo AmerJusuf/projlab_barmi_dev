@@ -9,6 +9,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * A view, to store an FFP2 mask entity.
+ */
 public class FFP2View extends ItemView {
     ImageIcon defIcon = new ImageIcon("Icons/ffp2.png");
     ImageIcon activeIcon = new ImageIcon("Icons/ffp2active.png");

@@ -3,6 +3,9 @@ package Controller;
 
 import View.WindowView.MainWindow;
 
+/**
+ * A class, which can send notifications to the game to update views, when soemthing changes in the model.
+ */
 public class Controller implements Notifiable {
     MainWindow mainWindow;
 

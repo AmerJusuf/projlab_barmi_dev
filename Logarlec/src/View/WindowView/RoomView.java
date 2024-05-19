@@ -12,6 +12,11 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * A view, which stores an IRoom object.
+ * There are two of these views on the map, one of them shows the current students room
+ * and the other, the last clicked room, where the student may try to move.
+ */
 public class RoomView implements ActionListener, IView {
     private IRoom room;
 
@@ -84,6 +89,9 @@ public class RoomView implements ActionListener, IView {
         panel.add(buttonPanel);
     }
 
+    /**
+     * The function, which updates the current characters part in a room.
+     */
     private void handlePlayerPanel(){
         if(room == null){
             return;
@@ -104,6 +112,9 @@ public class RoomView implements ActionListener, IView {
         panel.add(scrollPane);
     }
 
+    /**
+     * The function, which updates the current items inside the room. (on the ground)
+     */
     private void handleItemPanel(){
         if(room == null){
             return;
@@ -124,18 +135,23 @@ public class RoomView implements ActionListener, IView {
         this.room = room;
     }
 
-
+    /**
+     * Handles the movement of characters.
+     * @param e the event to be processed
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == moveButton) {
             System.out.println("Move");
          //   SwingUtilities.invokeLater(() -> {
                 Labyrinth.currentPlayer.move(this.room);
+
 //});
         }
         if (e.getSource() == stayButton) {
             System.out.println("Stay");
             Labyrinth.currentPlayer.setStayButtonClicked();
+
         }
     }
 

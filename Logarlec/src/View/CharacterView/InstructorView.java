@@ -4,6 +4,9 @@ import Characters.Instructor;
 
 import javax.swing.*;
 
+/**
+ * A view, which is connected to an instructor entity.
+ */
 public class InstructorView extends CharacterView{
     Instructor instructor;
 

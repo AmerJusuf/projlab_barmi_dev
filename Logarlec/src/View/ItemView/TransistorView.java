@@ -8,6 +8,9 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+/**
+ * A view to store a transistor entity.
+ */
 public class TransistorView extends ItemView {
     private final Transistor transistor; //Only the transistor
 
@@ -25,7 +28,10 @@ public class TransistorView extends ItemView {
         transistor = tr;
     }
 
-
+    /**
+     * Handles the interactions with transistors.
+     * @param e the event to be processed
+     */
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource() == pickButton) {
@@ -48,6 +54,10 @@ public class TransistorView extends ItemView {
         updateItemIcon(transistor.getisActive());
     }
 
+    /**
+     * The special buttons related to a transistor object.
+     * Pair, activate, place.
+     */
     @Override
     void uniqueButtons() {
         activate = new JButton("Activate");
@@ -76,6 +86,10 @@ public class TransistorView extends ItemView {
         place.setVisible(visibility);
     }
 
+    /**
+     * Updates the icon of the transistor object based on its current state.
+     * @param isActive
+     */
     @Override
     void updateItemIcon(boolean isActive) {
         if(isActive && transistor.getPairTransistor() != null){
@@ -93,7 +107,9 @@ public class TransistorView extends ItemView {
         label.setIcon(defIcon);
     }
 
-
+    /**
+     * Updates the state and icon of the transistor object.
+     */
     //TODO mindkét transistor lerakása után, miután a játékost átviszi a másik szobába, pick helyett drop van
     @Override
     public void update() {
