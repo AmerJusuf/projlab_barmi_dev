@@ -4,6 +4,7 @@ import Characters.Character;
 import Characters.Cleaner;
 import Characters.Instructor;
 import Characters.Student;
+import Controller.Controller;
 import Controller.Notifiable;
 import Items.*;
 import Rooms.*;
@@ -181,11 +182,14 @@ public class Labyrinth {
 
 
     public void startGame() {
-        currentPlayer = students.get(0);
+        currentPlayer = students.getFirst();
+        controller.notifyModelChanged();
+        ((Controller) controller).labyrinthReady = true;
         while (gameState == GameState.PLAYING) {
             nextRound();
             System.out.println("NextRound done! XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
-            redrawMap();
+            //redrawMap();
+            controller.notifyModelChanged();
             if(students.isEmpty() || round >= 20){
                 Labyrinth.setGameState(GameState.LOSE);
                 controller.notifyModelChanged();
@@ -200,13 +204,13 @@ public class Labyrinth {
     }
 
     public static List<Student> kickedStudents;
-    private Student asd; // ez nem csinál semmit, mire van? -> kirúgott hallgató átmeneti eltárolása
+    private Student asd; // ez nem csinál semmit, mire van? -> kirúgott hallgató átmeneti eltárolása -> de nincs semmire használva az értéke
     public String nextRound() {
         String fileContent = "";
         kickedStudents = new ArrayList<>();
         for (Student student : students) {
             if (asd != null && student == asd) {
-                int i = -1;
+                int i = -1; // ez is minek van?
             }
             currentPlayer = student;
             controller.notifyModelChanged();
@@ -220,7 +224,7 @@ public class Labyrinth {
         }
         if (!kickedStudents.isEmpty()) {
             students.removeAll(kickedStudents);
-            asd = kickedStudents.get(0);
+            asd = kickedStudents.get(0); // itt megkap egy hallgatót, de nem csinál vele semmit
         }
         kickedStudents = new ArrayList<>();
         controller.notifyModelChanged();

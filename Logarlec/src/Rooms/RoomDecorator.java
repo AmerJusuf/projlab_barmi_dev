@@ -181,7 +181,7 @@ public abstract class RoomDecorator implements IRoom{
         MainWindow.viewsByObjects.put(newUntoxicatedRoom, newRoomNodeView);
         MainWindow.viewsByObjects.remove(this);
         basicRoom.getLabyrinth().getController().notifyModelChanged();
-        basicRoom.getLabyrinth().redrawMap();
+        //basicRoom.getLabyrinth().redrawMap();
         return newUntoxicatedRoom;
     }
 

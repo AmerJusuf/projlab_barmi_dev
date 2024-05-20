@@ -8,6 +8,7 @@ import View.WindowView.MainWindow;
  */
 public class Controller implements Notifiable {
     MainWindow mainWindow;
+    public boolean labyrinthReady = false;
 
     public Controller(){}
 
