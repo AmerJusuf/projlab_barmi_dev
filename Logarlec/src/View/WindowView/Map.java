@@ -183,7 +183,9 @@ public class Map extends JPanel implements IView {
     @Override
     public void update() {
         for (RoomNodeView node : nodes) {
-            node.repaint();
+            if(node != null) {
+                node.repaint();
+            }
         }
     }
 

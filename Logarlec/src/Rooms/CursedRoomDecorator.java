@@ -33,7 +33,7 @@ public class CursedRoomDecorator extends RoomDecorator{
      */
     public void manageDoors(){
         //szomszédok megjelenítése
-        if(decoratedRoom.getNeighbours().isEmpty() && !isDoorToThisRoom()){
+        if(decoratedRoom.getNeighbours().isEmpty()){
             System.out.println("Neighbours hidden currently| CursedRoomDecorator: manageDoors");
             List<IRoom> neighboursToRemove = new ArrayList<>(hiddenNeighbours);
             for (IRoom neighbour : neighboursToRemove) {
@@ -66,6 +66,7 @@ public class CursedRoomDecorator extends RoomDecorator{
             }
             System.out.println("Hiding neighbour | CursedRoomDecorator: manageDoors");
         }
+        decoratedRoom.getLabyrinth().getController().notifyModelChanged();
 
 
 
