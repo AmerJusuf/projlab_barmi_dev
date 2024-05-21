@@ -183,14 +183,14 @@ public abstract class RoomDecorator implements IRoom{
             MainWindow.viewsByObjects.put(newMergedRoom, newRoomNodeView);
 
             getLabyrinth().getController().notifyModelChanged();
-
-            RoomNodeView room1 = (RoomNodeView) MainWindow.viewsByObjects.get(this);
-            RoomNodeView room2 = (RoomNodeView) MainWindow.viewsByObjects.get(room);
-
-            room1.handleRoomTypes(room2);
-
-            MainWindow.viewsByObjects.put(newMergedRoom, new RoomNodeView(newMergedRoom, room1.getPoisoned(), room1.getCursed(), room1.getSticky(), (room1.getX() + room2.getX()) / 2 + 100, (room1.getY() + room2.getY()) / 2, room1.getController()));
-            newMergedRoom.getLabyrinth().getController().notifyModelChanged();
+//
+//            RoomNodeView room1 = (RoomNodeView) MainWindow.viewsByObjects.get(this);
+//            RoomNodeView room2 = (RoomNodeView) MainWindow.viewsByObjects.get(room);
+//
+//            room1.handleRoomTypes(room2);
+//
+//            MainWindow.viewsByObjects.put(newMergedRoom, new RoomNodeView(newMergedRoom, room1.getPoisoned(), room1.getCursed(), room1.getSticky(), (room1.getX() + room2.getX()) / 2 + 100, (room1.getY() + room2.getY()) / 2, room1.getController()));
+//            newMergedRoom.getLabyrinth().getController().notifyModelChanged();
 
             return newMergedRoom; //It could be a void method, returning for test cases and prototype
         } else {
