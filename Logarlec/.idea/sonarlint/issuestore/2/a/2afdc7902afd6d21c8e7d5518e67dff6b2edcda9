@@ -18,16 +18,16 @@ n	java:S106‡"+Replace this use of System.out by a logger.(œ²·³8ãÅªÉ÷1J$33e04
 s	java:S106™"+Replace this use of System.out by a logger.(óÒ¢™úÿÿÿÿ8äÅªÉ÷1J$4d52fb08-c53a-4956-aa30-984318eed719
 n	java:S106¤"+Replace this use of System.out by a logger.(°ÑæÇ8åÅªÉ÷1J$94091b6c-d3ab-4614-9ed3-7ec1ff0b6e8c
 n	java:S106°"+Replace this use of System.out by a logger.(ëí½Ü8åÅªÉ÷1J$fa568221-3b29-4962-833c-9d279fcbe63e
-s	java:S106»"+Replace this use of System.out by a logger.(ıÚäÃøÿÿÿÿ8æÅªÉ÷1J$f395c208-4d52-4fd9-bd9b-9e6c53cdb1d2
-s	java:S106Æ"+Replace this use of System.out by a logger.(…ÛßÀşÿÿÿÿ8æÅªÉ÷1J$4d2ea7a4-8f0a-4eb9-9733-b87eb0d99d58
-s	java:S106Ğ"+Replace this use of System.out by a logger.(±Øùÿÿÿÿ8çÅªÉ÷1J$3958b6c9-462c-46cc-884e-8842e44ca423
-s	java:S106Ú"+Replace this use of System.out by a logger.(ËğÊ¾şÿÿÿÿ8çÅªÉ÷1J$f9e0f9e4-8eda-4d04-a0e4-2fcd56fe0699
-s	java:S106í"+Replace this use of System.out by a logger.(­®°¢şÿÿÿÿ8èÅªÉ÷1J$c46d920d-3275-4dcc-9bce-b14177a379b3
-	java:S125"<This block of commented-out lines of code should be removed.(Ñ»€ÿ8éÅªÉ÷1J$31479446-ae84-470e-949a-89245e92d86a
+s	java:S106¼"+Replace this use of System.out by a logger.(ıÚäÃøÿÿÿÿ8æÅªÉ÷1J$f395c208-4d52-4fd9-bd9b-9e6c53cdb1d2
+s	java:S106Ç"+Replace this use of System.out by a logger.(…ÛßÀşÿÿÿÿ8æÅªÉ÷1J$4d2ea7a4-8f0a-4eb9-9733-b87eb0d99d58
+s	java:S106Ñ"+Replace this use of System.out by a logger.(±Øùÿÿÿÿ8çÅªÉ÷1J$3958b6c9-462c-46cc-884e-8842e44ca423
+s	java:S106Û"+Replace this use of System.out by a logger.(ËğÊ¾şÿÿÿÿ8çÅªÉ÷1J$f9e0f9e4-8eda-4d04-a0e4-2fcd56fe0699
+s	java:S106î"+Replace this use of System.out by a logger.(­®°¢şÿÿÿÿ8èÅªÉ÷1J$c46d920d-3275-4dcc-9bce-b14177a379b3
+	java:S125‚"<This block of commented-out lines of code should be removed.(Ñ»€ÿ8éÅªÉ÷1J$31479446-ae84-470e-949a-89245e92d86a
 v
-java:S1135ƒ"2Complete the task associated to this TODO comment.(é²‡˜8éÅªÉ÷1J$a9cbe2dd-9043-4363-b552-ff04fc8328d9
+java:S1135„"2Complete the task associated to this TODO comment.(é²‡˜8éÅªÉ÷1J$a9cbe2dd-9043-4363-b552-ff04fc8328d9
 {
-java:S1135…"2Complete the task associated to this TODO comment.(Ïí€şÿÿÿÿ8éÅªÉ÷1J$5236f068-cfd9-4289-9fdb-9a798f436f75
+java:S1135†"2Complete the task associated to this TODO comment.(Ïí€şÿÿÿÿ8éÅªÉ÷1J$5236f068-cfd9-4289-9fdb-9a798f436f75
 u
 java:S1128"2Remove this unused import 'Controller.Controller'.(÷¤Œƒ8­Í¯É÷1J$3ea64254-6d07-4d3d-958f-8dfea02490a4
 }

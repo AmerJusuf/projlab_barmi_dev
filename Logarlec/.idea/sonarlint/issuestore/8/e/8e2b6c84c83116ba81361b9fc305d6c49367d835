@@ -5,5 +5,4 @@ f	java:S106'"+Replace this use of System.out by a logger.(ùÑéÕJ$228ccb34-609c
 f	java:S1060"+Replace this use of System.out by a logger.(ñ›ÆÒJ$1fc0ba0c-682e-4fed-8c16-39158fe3a0fc
 f	java:S106:"+Replace this use of System.out by a logger.(‡Û¢áJ$d2621ee9-0633-4486-bb7b-a2f0959f11d0
 f	java:S106H"+Replace this use of System.out by a logger.(Û‚†¢J$606204d0-07f1-4119-9e6c-4e9edc6ca657
-~	java:S125I"<This block of commented-out lines of code should be removed.(ë·∆À8¯Œ°„˜1J$e7439216-36d3-49e1-b73e-bb303c1c644e
-f	java:S106S"+Replace this use of System.out by a logger.(íºˆÉJ$6e2b7712-0e62-4993-b8a4-caa6bf2670ba
+f	java:S106R"+Replace this use of System.out by a logger.(íºˆÉJ$6e2b7712-0e62-4993-b8a4-caa6bf2670ba

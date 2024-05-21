@@ -154,9 +154,9 @@ public abstract class RoomDecorator implements IRoom{
     @Override
     public IRoom unToxicate(){
         BasicRoom basicRoom = new BasicRoom();
-        basicRoom.setCapacity(this.getCapacity());
-        basicRoom.setItems(this.getItems());
-        basicRoom.setNeighbours(this.getNeighbours());
+//        basicRoom.setCapacity(this.getCapacity());
+//        basicRoom.setItems(this.getItems());
+//        basicRoom.setNeighbours(this.getNeighbours());
         basicRoom.setLabyrinth(this.getLabyrinth());
         for(Character ch : this.getCharacters()){
             basicRoom.addCharacter(ch);

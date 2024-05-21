@@ -76,7 +76,6 @@ public class PoisonedRoomDecorator extends RoomDecorator{
 //            ch.setRoom(basicRoom);
 //        }
 
-
         return visitor.visitForUnToxicate(this);
     }
 
