@@ -140,12 +140,20 @@ public class BasicRoom implements IRoom{
         //MainWindow.viewsByObjects.put(newRoom, new RoomNodeView(newRoom));
 
         //visitor.handleNeighboursWhenReplacing(this, newRoom);
-        getLabyrinth().removeRoom(room);
+        //getLabyrinth().removeRoom(room);
         //getLabyrinth().replaceRooms(this, newRoom);
         RoomNodeView room1 = (RoomNodeView) MainWindow.viewsByObjects.get(this);
         RoomNodeView room2 = (RoomNodeView) MainWindow.viewsByObjects.get(room);
-        room1.handleRoomTypes(room2);
-        MainWindow.viewsByObjects.put(newRoom, new RoomNodeView(newRoom, room1.getPoisoned(), room1.getCursed(), room1.getSticky(), room1.getController()));
+
+        labyrinth.removeRoom(this);
+        labyrinth.removeRoom(room);
+        labyrinth.addRoom(newRoom);
+
+        MainWindow.viewsByObjects.put(newRoom, new RoomNodeView(newRoom, room2.getPoisoned(), room2.getCursed(), room2.getSticky(), (room1.getX()+room2.getX())/2,(room1.getY()+room2.getY())/2, room2.getController()));
+        MainWindow.viewsByObjects.remove(this);
+        MainWindow.viewsByObjects.remove(room);
+
+        labyrinth.getController().notifyModelChanged();
 
         return newRoom; //It could be a void method, returning for test cases and prototype
     }

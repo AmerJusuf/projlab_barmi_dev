@@ -193,8 +193,23 @@ public abstract class RoomDecorator implements IRoom{
 
             visitor.handleNeighboursWhenReplacing(this, newMergedRoom);
             visitor.handleNeighboursWhenReplacing(room, newMergedRoom);
-            getLabyrinth().replaceRooms(this, newMergedRoom);
-            getLabyrinth().getRooms().remove(room);
+
+            RoomNodeView oldRoomView1 = (RoomNodeView) MainWindow.viewsByObjects.get(this);
+            RoomNodeView oldRoomView2 = (RoomNodeView) MainWindow.viewsByObjects.get(room);
+            RoomNodeView newRoomNodeView = new RoomNodeView(newMergedRoom, false,false,false, (oldRoomView1.getX() + oldRoomView2.getX())/2, (oldRoomView1.getY() + oldRoomView2.getY())/2, getLabyrinth().getController());
+            newRoomNodeView.handleRoomTypes(oldRoomView1);
+            newRoomNodeView.handleRoomTypes(oldRoomView2);
+
+            getLabyrinth().removeRoom(room);
+            getLabyrinth().removeRoom(this);
+            getLabyrinth().addRoom(newMergedRoom);
+
+            MainWindow.viewsByObjects.put(newMergedRoom, newRoomNodeView);
+            MainWindow.viewsByObjects.remove(this);
+            MainWindow.viewsByObjects.remove(room);
+
+
+            getLabyrinth().getController().notifyModelChanged();
 
             return newMergedRoom; //It could be a void method, returning for test cases and prototype
         } else {

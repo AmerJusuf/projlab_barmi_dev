@@ -33,6 +33,7 @@ public class MainWindow extends JFrame {
     RoomView roomDest;
 
     GridBagConstraints gbc;
+    Notifiable controller;
 
     public MainWindow(Notifiable controller) {
         this.setTitle("Best Game Ever");
@@ -52,6 +53,7 @@ public class MainWindow extends JFrame {
         this.setCursor(customCursor);
 
         map = new Map(controller);
+        this.controller = controller;
         try {
             while(!((Controller) controller).labyrinthReady)
                 Thread.sleep(100);
@@ -173,12 +175,16 @@ public class MainWindow extends JFrame {
         gbc.gridheight = 1;
         this.add(viewsByObjects.get(Labyrinth.currentPlayer).getPanel(), gbc);
         studentView = (StudentView) viewsByObjects.get(Labyrinth.currentPlayer);
+       // map = new Map(controller);
+
         views = List.of(map,  roomSrc, roomDest, studentView);
 
 
         for (IView view : views) {
             view.update();
         }
+        map.removeAll();
+        map.repaint();
         this.revalidate();
         this.repaint();
     }
