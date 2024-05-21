@@ -108,7 +108,6 @@ public class DecoratorHandlerVisitor implements RoomVisitor {
         System.out.println("Finding max capacity | DecoratorHandlerVisitor: visit(BasicRoom)");
         int newCapacity = Math.max(room.getCapacity(), roomToHandle.getCapacity());
         List<Item> newItems = new ArrayList<>(room.getItems());
-        newItems.addAll(room.getItems());
         List<IRoom> newNeighbours = mergeNeighbours(room.getNeighbours(), roomToHandle.getNeighbours());
         roomToHandle.setCapacity(newCapacity);
         roomToHandle.setItems(newItems);

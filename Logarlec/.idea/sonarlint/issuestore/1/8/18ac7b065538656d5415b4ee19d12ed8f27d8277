@@ -1,13 +1,16 @@
 
+v	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8†²ÔÒù1
 „
-java:S3252)"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ó±æÉ8·ñ¹å÷1J$c71a1291-a121-4601-90d9-3bfc0fe14e46
+java:S3252."AUse static access with "javax.swing.SwingConstants" for "CENTER".(ó±æÉ8·ñ¹å÷1J$c71a1291-a121-4601-90d9-3bfc0fe14e46
 z
-java:S1135d"2Complete the task associated to this TODO comment.(î–Î¨ûÿÿÿÿ8¾ñ¹å÷1J$e88d4133-8736-4b40-bacb-493f1c88ad17
-o
-java:S1602„",Remove useless curly braces around statement(°›ìU8Âñ¹å÷1J$dd23655e-0de1-4584-a88f-5d96d2bf4faa
-…
-java:S3252“"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ó±æÉ8Äñ¹å÷1J$cdf79989-c88b-4da8-bd1f-96148d977a5b
+java:S1135l"2Complete the task associated to this TODO comment.(î–Î¨ûÿÿÿÿ8¾ñ¹å÷1J$e88d4133-8736-4b40-bacb-493f1c88ad17
+M	java:S106‘"+Replace this use of System.out by a logger.(Û¯şÿÿÿÿ8º²ÔÒù1
+^	java:S125’"<This block of commented-out lines of code should be removed.(Ğ€ÿİıÿÿÿÿ8»²ÔÒù1
+^	java:S125•"<This block of commented-out lines of code should be removed.(×§ŠÕüÿÿÿÿ8»²ÔÒù1
+H	java:S106˜"+Replace this use of System.out by a logger.(ÒÑŠ8»²ÔÒù1
 _
 java:S3252£"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ó±æÉ8–õÇå÷1
+…
+java:S3252³"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ó±æÉ8Äñ¹å÷1J$cdf79989-c88b-4da8-bd1f-96148d977a5b
 …
 java:S1128"=Remove this unused import 'View.CharacterView.CharacterView'.(Á–ğÕÿÿÿÿÿ8Çñ¹å÷1J$a77d682f-2fbb-4209-acb1-e91ecef8d495

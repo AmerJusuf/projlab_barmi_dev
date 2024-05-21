@@ -67,3 +67,5 @@ S
 -.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
 =
 src/Main.java,9\2\924f089edb4af5ee45c8a9d1129cd28e2b368138
+X
+(src/View/MenuView/DescriptionWindow.java,1\6\16846698496798c9aa6f17bc46c623c0a6c0bf39

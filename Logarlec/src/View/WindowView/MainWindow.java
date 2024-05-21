@@ -44,7 +44,7 @@ public class MainWindow extends JFrame {
         this.setSize(screenSize.width, screenSize.height - 50);
 
         // tray icon
-        ImageIcon image = new ImageIcon("Icons/logarlec.png");
+        ImageIcon image = new ImageIcon("Icons/cursor.jpg");
         this.setIconImage(image.getImage());
 
         // custom cursor
