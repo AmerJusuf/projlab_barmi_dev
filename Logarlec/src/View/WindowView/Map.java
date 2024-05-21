@@ -25,16 +25,10 @@ import java.util.Scanner;
 public class Map extends JPanel implements IView {
     private Labyrinth labyrinth;
 
-    private boolean useBakedInData = true; //------------------------------- ezt kell átállítani true-ra, hogy a beégetett pályát használja, false-ra, ha az egy sorral lejjebb lévő file-t töltse be ---------------
-    private String mapFilename = "sticky_test";  //------------------------------- a betöltendő map file neve -------------------------------------------------------------------------------------------------------------
+    private boolean useBakedInData = false; //------------------------------- ezt kell átállítani true-ra, hogy a beégetett pályát használja, false-ra, ha az egy sorral lejjebb lévő file-t töltse be ---------------
+    private String mapFilename = "demo_test";  //------------------------------- a betöltendő map file neve -------------------------------------------------------------------------------------------------------------
 
 
-    /*
-    Command examples for creating Views:
-        roomView -r BR1 -type BasicRoom -x 600 -y 600
-        characterView -ch S1 -type Student
-        itemViewToRoom -it TVSZ1 -type TVSZ
-     */
 
     List<RoomNodeView> nodes;
     int borderToLeft = 150;
