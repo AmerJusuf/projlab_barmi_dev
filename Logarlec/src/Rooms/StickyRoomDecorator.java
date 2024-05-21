@@ -5,6 +5,8 @@ import Characters.Instructor;
 import Characters.Student;
 import Items.Item;
 
+import java.util.ArrayList;
+
 public class StickyRoomDecorator extends RoomDecorator{
 
     private int entries = 0;
@@ -36,7 +38,7 @@ public class StickyRoomDecorator extends RoomDecorator{
         }
         else{
             System.out.println("Item cannot be picked from stickyRoom | StickyRoomDecorator: acceptPickByStudent");
-            decoratedRoom.setItems(null);
+            decoratedRoom.setItems(new ArrayList<>());
         }
     }
 
@@ -47,7 +49,7 @@ public class StickyRoomDecorator extends RoomDecorator{
         }
         else{
             System.out.println("Item cannot be picked from stickyRoom | StickyRoomDecorator: acceptPickByInstructor");
-            decoratedRoom.setItems(null);
+            decoratedRoom.setItems(new ArrayList<>());
         }
     }
 
