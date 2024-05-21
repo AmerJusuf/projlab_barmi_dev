@@ -123,6 +123,7 @@ public class Student extends Character{
     @Override
     public String nextRound()  {
         System.out.println("Student next round | Student: nextRound()");
+        controller.notifyModelChanged();
         if(isPoisoned){
             this.dropAllItem();
             isPoisoned = false;

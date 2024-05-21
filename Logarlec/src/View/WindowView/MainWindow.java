@@ -3,6 +3,7 @@ package  View.WindowView;
 import Characters.Cleaner;
 import Characters.Instructor;
 import Characters.Student;
+import Controller.Controller;
 import Controller.Notifiable;
 import Game.GameState;
 import Game.Labyrinth;
@@ -51,6 +52,13 @@ public class MainWindow extends JFrame {
         this.setCursor(customCursor);
 
         map = new Map(controller);
+        try {
+            while(!((Controller) controller).labyrinthReady)
+                Thread.sleep(100);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+
 
 
         gbc.gridx = 0;
@@ -119,6 +127,7 @@ public class MainWindow extends JFrame {
         this.setVisible(true);
 
         views = List.of(map,  roomSrc, roomDest, viewsByObjects.get(Labyrinth.currentPlayer));
+        controller.notifyModelChanged();
     }
 
     private void handleRoomViews(){
