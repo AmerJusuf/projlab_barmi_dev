@@ -204,10 +204,9 @@ public abstract class RoomDecorator implements IRoom{
             getLabyrinth().removeRoom(this);
             getLabyrinth().addRoom(newMergedRoom);
 
-            MainWindow.viewsByObjects.put(newMergedRoom, newRoomNodeView);
             MainWindow.viewsByObjects.remove(this);
             MainWindow.viewsByObjects.remove(room);
-
+            MainWindow.viewsByObjects.put(newMergedRoom, newRoomNodeView);
 
             getLabyrinth().getController().notifyModelChanged();
 

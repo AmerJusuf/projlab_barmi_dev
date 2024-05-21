@@ -144,14 +144,15 @@ public class BasicRoom implements IRoom{
         //getLabyrinth().replaceRooms(this, newRoom);
         RoomNodeView room1 = (RoomNodeView) MainWindow.viewsByObjects.get(this);
         RoomNodeView room2 = (RoomNodeView) MainWindow.viewsByObjects.get(room);
+        room2.handleRoomTypes(room1);
 
         labyrinth.removeRoom(this);
         labyrinth.removeRoom(room);
         labyrinth.addRoom(newRoom);
 
-        MainWindow.viewsByObjects.put(newRoom, new RoomNodeView(newRoom, room2.getPoisoned(), room2.getCursed(), room2.getSticky(), (room1.getX()+room2.getX())/2,(room1.getY()+room2.getY())/2, room2.getController()));
         MainWindow.viewsByObjects.remove(this);
         MainWindow.viewsByObjects.remove(room);
+        MainWindow.viewsByObjects.put(newRoom, new RoomNodeView(newRoom, room2.getPoisoned(), room2.getCursed(), room2.getSticky(), (room1.getX()+room2.getX())/2,(room1.getY()+room2.getY())/2, room2.getController()));
 
         labyrinth.getController().notifyModelChanged();
 

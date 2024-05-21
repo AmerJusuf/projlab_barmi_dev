@@ -112,8 +112,10 @@ public class Labyrinth {
                 if (rooms.get(idx1).getNumberOfCharacters() == 0) {
                     IRoom neighbour = getAcceptableNeighbour(rooms.get(idx1));
                     if (neighbour != null) { // Biztosítjuk, hogy a szomszéd létezik
-                        merge(idx1, rooms.indexOf(neighbour));
-                        mergeDone = true;
+                        if( rooms.indexOf(neighbour) != -1) {
+                            merge(idx1, rooms.indexOf(neighbour));
+                            mergeDone = true;
+                        }
                     }
                 }
                 idx1 = rand.nextInt(rooms.size()); // Új index, ha a korábbi nem volt megfelelő

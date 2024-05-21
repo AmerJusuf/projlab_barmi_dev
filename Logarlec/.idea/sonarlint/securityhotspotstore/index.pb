@@ -71,3 +71,5 @@ X
 (src/View/MenuView/DescriptionWindow.java,1\6\16846698496798c9aa6f17bc46c623c0a6c0bf39
 H
 Files/Maps/demo_test.txt,7\6\7618ce857cc34d27a75acb62e5d57207956f3280
+S
+#src/View/WindowView/PlayerView.java,a\4\a43ab1fe358a15c57cd62b3452330f9f862f2a43
