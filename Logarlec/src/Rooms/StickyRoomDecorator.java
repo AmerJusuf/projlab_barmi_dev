@@ -1,10 +1,13 @@
 package Rooms;
 
+import Characters.Character;
 import Characters.Instructor;
 import Characters.Student;
 import Items.Item;
 
 public class StickyRoomDecorator extends RoomDecorator{
+
+    private int entries = 0;
 
     public StickyRoomDecorator(IRoom decoratedRoom){
         super(decoratedRoom);
@@ -28,12 +31,31 @@ public class StickyRoomDecorator extends RoomDecorator{
 
     @Override
     public void acceptPickByStudent(Student st, Item item){
-        System.out.println("Item cannot be picked from stickyRoom | StickyRoomDecorator: acceptPickByStudent");
+        if(entries < 5){
+            decoratedRoom.acceptPickByStudent(st, item);
+        }
+        else{
+            System.out.println("Item cannot be picked from stickyRoom | StickyRoomDecorator: acceptPickByStudent");
+            decoratedRoom.setItems(null);
+        }
     }
 
     @Override
     public void acceptPickByInstructor(Instructor inst, Item item){
-        System.out.println("Item cannot be picked from stickyRoom | StickyRoomDecorator: acceptPickByInstructor");
+        if(entries < 5){
+            decoratedRoom.acceptPickByInstructor(inst, item);
+        }
+        else{
+            System.out.println("Item cannot be picked from stickyRoom | StickyRoomDecorator: acceptPickByInstructor");
+            decoratedRoom.setItems(null);
+        }
+    }
+
+
+    @Override
+    public boolean acceptCharacter(Character ch){
+        entries++;
+        return decoratedRoom.acceptCharacter(ch);
     }
 
 }

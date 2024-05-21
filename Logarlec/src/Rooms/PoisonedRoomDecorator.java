@@ -1,6 +1,8 @@
 package Rooms;
 
 import Characters.Character;
+import View.WindowView.MainWindow;
+import View.WindowView.RoomNodeView;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -94,6 +96,41 @@ public class PoisonedRoomDecorator extends RoomDecorator{
             toxicate(ch);
         }
         return isAccepted;
+    }
+
+    @Override
+    public IRoom unToxicate(){
+        BasicRoom basicRoom = new BasicRoom();
+        basicRoom.setCapacity(this.getCapacity());
+//        basicRoom.setItems(this.getItems());
+//        basicRoom.setNeighbours(this.getNeighbours());
+        basicRoom.setLabyrinth(this.getLabyrinth());
+        for(Character ch : this.getCharacters()){
+            basicRoom.addCharacter(ch);
+        }
+        for( Character ch : basicRoom.getCharacters()){
+            ch.setRoom(basicRoom);
+        }
+
+        DecoratorHandlerVisitor visitor = new DecoratorHandlerVisitor(basicRoom);
+        IRoom newUntoxicatedRoom = new StickyRoomDecorator(acceptUnToxicate(visitor));
+
+        visitor.handleNeighboursWhenReplacing(this, newUntoxicatedRoom);
+        getLabyrinth().replaceRooms(this, newUntoxicatedRoom);
+        RoomNodeView roomNodeView = (RoomNodeView) MainWindow.viewsByObjects.get(this);
+        roomNodeView.setPoisoned(false);
+
+        RoomNodeView newRoomNodeView = new RoomNodeView(newUntoxicatedRoom, false ,false, true, roomNodeView.getX() , roomNodeView.getY(),  basicRoom.getLabyrinth().getController());
+
+        newRoomNodeView.handleRoomTypes(roomNodeView);
+
+
+        MainWindow.viewsByObjects.put(newUntoxicatedRoom, newRoomNodeView);
+        MainWindow.viewsByObjects.remove(this);
+        basicRoom.getLabyrinth().getController().notifyModelChanged();
+        basicRoom.getLabyrinth().redrawMap();
+
+        return newUntoxicatedRoom;
     }
 
 }
