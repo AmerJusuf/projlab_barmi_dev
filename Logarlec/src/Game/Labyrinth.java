@@ -372,8 +372,8 @@ public class Labyrinth {
         PoisonedRoomDecorator room6 = new PoisonedRoomDecorator(new BasicRoom(3));
         MainWindow.viewsByObjects.put(room6, new RoomNodeView(room6, true ,false ,false, controller));
 
-        BasicRoom room7 = new BasicRoom(4);
-        MainWindow.viewsByObjects.put(room7, new RoomNodeView(room7, false ,false ,false, controller));
+        StickyRoomDecorator room7 = new StickyRoomDecorator(new BasicRoom(4));
+        MainWindow.viewsByObjects.put(room7, new RoomNodeView(room7, false ,false ,true, controller));
 
         CursedRoomDecorator room8 = new CursedRoomDecorator(new BasicRoom(5));
         MainWindow.viewsByObjects.put(room8, new RoomNodeView(room8, false ,true ,false, controller));
