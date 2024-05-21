@@ -94,24 +94,28 @@ public class Labyrinth {
     }
 
     public void mergeAndSplitRandomly() {
-//        if(rooms.size() < 2) return; // Ha nincs elég szoba, akkor nem lehet mergelni és splittelni
-//
-//        // Merge and split rooms
-//        Random rand = new Random();
-//        int idx1 = rand.nextInt(rooms.size());
-//        int idx2 = rand.nextInt(rooms.size());
-//
-//        boolean mergeDone = false;
-//        boolean splitDone = false;
-//
-//        int maxAttempts = rooms.size() * 2; // Maximum próbálkozások száma
-//        int currentAttempts = 0;
-//
+        if(rooms.size() < 2) return; // Ha nincs elég szoba, akkor nem lehet mergelni és splittelni
+
+        System.out.println("Merging " + rooms.size() + " rooms");
+        // Merge and split rooms
+        Random rand = new Random();
+        int idx1 = rand.nextInt(rooms.size());
+        int idx2 = rand.nextInt(rooms.size());
+
+        boolean mergeDone = false;
+        boolean splitDone = false;
+
+        int maxAttempts = rooms.size() * 2; // Maximum próbálkozások száma
+        int currentAttempts = 0;
+
 //        while (!mergeDone && currentAttempts < maxAttempts) {
 //            if (canMergeAnyRoom()) {
 //                if (rooms.get(idx1).getNumberOfCharacters() == 0) {
+//                    System.out.println("Merging " + rooms.get(idx1));
 //                    IRoom neighbour = getAcceptableNeighbour(rooms.get(idx1));
+//                    System.out.println("Merging " + neighbour);
 //                    if (neighbour != null) { // Biztosítjuk, hogy a szomszéd létezik
+//                        System.out.println("Merged " + idx1 + " to " + rooms.indexOf(neighbour));
 //                        merge(idx1, rooms.indexOf(neighbour));
 //                        mergeDone = true;
 //                    }
@@ -121,18 +125,19 @@ public class Labyrinth {
 //            currentAttempts++; // Növeljük a próbálkozások számát
 //        }
 
-//        currentAttempts = 0; // Visszaállítjuk a próbálkozások számát a split művelethez
-//
-//        while (!splitDone && currentAttempts < maxAttempts) {
-//            if (rooms.get(idx2).getNumberOfCharacters() == 0) {
-//                split(idx2);
-//                splitDone = true;
-//            } else {
-//                idx2 = rand.nextInt(rooms.size()); // Új index, ha a korábbi nem volt megfelelő
-//            }
-//            currentAttempts++; // Növeljük a próbálkozások számát
-//        }
 
+        currentAttempts = 0; // Visszaállítjuk a próbálkozások számát a split művelethez
+
+        while (!splitDone && currentAttempts < maxAttempts) {
+            if (rooms.get(idx2).getNumberOfCharacters() == 0) {
+                split(idx2);
+                splitDone = true;
+            } else {
+                idx2 = rand.nextInt(rooms.size()); // Új index, ha a korábbi nem volt megfelelő
+            }
+            currentAttempts++; // Növeljük a próbálkozások számát
+        }
+            controller.notifyModelChanged();
     }
 
     private boolean hasEmptyNeighbour(IRoom room) {

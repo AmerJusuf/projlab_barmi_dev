@@ -9,6 +9,7 @@ import View.WindowView.MainWindow;
 import View.WindowView.RoomNodeView;
 import com.sun.tools.javac.Main;
 
+import java.lang.reflect.AccessibleObject;
 import java.util.List;
 
 public abstract class RoomDecorator implements IRoom{
@@ -195,6 +196,14 @@ public abstract class RoomDecorator implements IRoom{
             visitor.handleNeighboursWhenReplacing(room, newMergedRoom);
             getLabyrinth().replaceRooms(this, newMergedRoom);
             getLabyrinth().getRooms().remove(room);
+
+            RoomNodeView room1 = (RoomNodeView) MainWindow.viewsByObjects.get(this);
+            RoomNodeView room2 = (RoomNodeView) MainWindow.viewsByObjects.get(room);
+
+            room1.handleRoomTypes(room2);
+
+            MainWindow.viewsByObjects.put(newMergedRoom, new RoomNodeView(newMergedRoom, room1.getPoisoned(), room1.getCursed(), room1.getSticky(), (room1.getX() + room2.getX()) / 2, (room1.getY() + room2.getY()) / 2, room1.getController()));
+
 
             return newMergedRoom; //It could be a void method, returning for test cases and prototype
         } else {

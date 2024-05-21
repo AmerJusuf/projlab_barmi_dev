@@ -145,7 +145,7 @@ public class BasicRoom implements IRoom{
         RoomNodeView room1 = (RoomNodeView) MainWindow.viewsByObjects.get(this);
         RoomNodeView room2 = (RoomNodeView) MainWindow.viewsByObjects.get(room);
         room1.handleRoomTypes(room2);
-        MainWindow.viewsByObjects.put(newRoom, new RoomNodeView(newRoom, room1.getPoisoned(), room1.getCursed(), room1.getSticky(), room1.getController()));
+        MainWindow.viewsByObjects.put(newRoom, new RoomNodeView(newRoom, room1.getPoisoned(), room1.getCursed(), room1.getSticky(), (room1.getX() + room2.getX()) / 2, (room1.getY() + room2.getY()) / 2, room1.getController()));
 
         return newRoom; //It could be a void method, returning for test cases and prototype
     }
