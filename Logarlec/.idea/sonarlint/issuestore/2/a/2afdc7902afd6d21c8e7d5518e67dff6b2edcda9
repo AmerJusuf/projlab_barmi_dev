@@ -1,33 +1,28 @@
 
-œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ŞÄšË8ÜúÅæù1J$30ea1b13-7c9c-48fa-8196-0894f438d591
-r	java:S106P"+Replace this use of System.out by a logger.(Ëá¸øÿÿÿÿ8÷úÅæù1J$8619b7ae-d9ff-470a-aa4e-b5f5c5bf24e8
-r	java:S106S"+Replace this use of System.out by a logger.(ÆÂ¿™úÿÿÿÿ8÷úÅæù1J$a9b9b658-b4e2-4d0f-a468-fa9ee3450e6f
-r	java:S106`"+Replace this use of System.out by a logger.(İ¡öÛıÿÿÿÿ8øúÅæù1J$983ea21e-1c17-4e03-9a88-1f295d414861
-r	java:S106e"+Replace this use of System.out by a logger.(”üÓÑøÿÿÿÿ8øúÅæù1J$d08a72db-9ae4-421c-8c4a-88b3bd0010ca
-r	java:S106p"+Replace this use of System.out by a logger.(Èé£—ıÿÿÿÿ8ûúÅæù1J$a2b9377f-8c33-4064-b350-f98557e9f476
-~	java:S125Œ"<This block of commented-out lines of code should be removed.(€¡E8ıúÅæù1J$cea26e81-9912-4b82-ba57-931086f971d3
-„	java:S125"<This block of commented-out lines of code should be removed.(Ÿ ±âùÿÿÿÿ8‚ûÅæù1J$72b510cd-5730-4512-837c-5d91ececab77
-s	java:S106¿"+Replace this use of System.out by a logger.(‰Øšïøÿÿÿÿ8‡ûÅæù1J$61fbe223-1c4b-4b3d-92d1-c4a9864d108a
-s	java:S106Á"+Replace this use of System.out by a logger.(¥°Üßûÿÿÿÿ8ˆûÅæù1J$1520f32b-bf60-48f9-948d-af2cb2251c09
-	java:S125Î"<This block of commented-out lines of code should be removed.(›Õ¨8ŠûÅæù1J$4286e920-f9c5-4117-a97b-273cbb2918fe
-s	java:S106Ø"+Replace this use of System.out by a logger.(Œƒäşÿÿÿÿ8ŠûÅæù1J$de3a224a-ea9e-4e54-a241-dbcbd3b1d1ee
-m	java:S106ã"+Replace this use of System.out by a logger.(´ñïi8‹ûÅæù1J$f99e16da-7f52-45c4-9a3d-ecfec29c4ac6
-n	java:S106ç"+Replace this use of System.out by a logger.(§×»ï8‹ûÅæù1J$0230031c-4e5f-4a6e-bff1-b2ee92cf2796
-n	java:S106’"+Replace this use of System.out by a logger.(œ²·³8ŒûÅæù1J$8312535e-1ae0-4c09-bd75-6a076868454f
-s	java:S106¤"+Replace this use of System.out by a logger.(óÒ¢™úÿÿÿÿ8ŒûÅæù1J$d4a34a80-e748-4529-afe7-125baf2fb132
-n	java:S106¯"+Replace this use of System.out by a logger.(°ÑæÇ8ûÅæù1J$b6268cac-1004-453a-be11-72b7184b1e40
-n	java:S106»"+Replace this use of System.out by a logger.(ëí½Ü8ûÅæù1J$f71c53c7-8cf2-4f9d-810e-31f5b9f413b8
-s	java:S106Ç"+Replace this use of System.out by a logger.(ıÚäÃøÿÿÿÿ8ûÅæù1J$282d7b1f-1cfc-4461-b0dc-8b3511ff34a7
-s	java:S106Ò"+Replace this use of System.out by a logger.(…ÛßÀşÿÿÿÿ8ûÅæù1J$27e9a88a-cf6f-4a05-9c96-e580f2f5c66b
-s	java:S106Ü"+Replace this use of System.out by a logger.(±Øùÿÿÿÿ8ûÅæù1J$0b71ac63-3f11-448b-83b1-f8718e3e5061
-s	java:S106æ"+Replace this use of System.out by a logger.(ËğÊ¾şÿÿÿÿ8‘ûÅæù1J$222b87d2-2ca7-4572-9070-db21da2cebfa
-s	java:S106ù"+Replace this use of System.out by a logger.(­®°¢şÿÿÿÿ8’ûÅæù1J$d79bac2b-bda4-43ad-a537-67b7841f14c8
-	java:S125"<This block of commented-out lines of code should be removed.(Ñ»€ÿ8•ûÅæù1J$397d59c7-4410-4af4-a259-5675220d9345
-v
-java:S1135"2Complete the task associated to this TODO comment.(é²‡˜8–ûÅæù1J$65fbee57-22ed-4b1f-867f-357a058570c6
-{
-java:S1135‘"2Complete the task associated to this TODO comment.(Ïí€şÿÿÿÿ8˜ûÅæù1J$6c4ce06b-f6e3-44c4-b38f-cc63636b4ec5
-O
-java:S1128"2Remove this unused import 'Controller.Controller'.(÷¤Œƒ8·ûÆæù1
-W
-java:S1128"5Remove this unused import 'com.sun.tools.javac.Main'.( ƒ™şüÿÿÿÿ8·ûÆæù1
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(ŞÄšË8ÜúÅæù1J$24385034-9f91-4a77-92d0-a2da4cab1b7d
+r	java:S106P"+Replace this use of System.out by a logger.(Ëá¸øÿÿÿÿ8÷úÅæù1J$cdaa6ebd-714d-476d-bf3d-15a86124a953
+r	java:S106S"+Replace this use of System.out by a logger.(ÆÂ¿™úÿÿÿÿ8÷úÅæù1J$cdb2afb8-ed2a-4802-8f20-52048c763188
+r	java:S106`"+Replace this use of System.out by a logger.(İ¡öÛıÿÿÿÿ8øúÅæù1J$4927c6e1-1da4-4c7c-a8ac-fcdfcd235826
+r	java:S106e"+Replace this use of System.out by a logger.(”üÓÑøÿÿÿÿ8øúÅæù1J$aad78b28-e535-49be-85e4-c79039696a80
+r	java:S106p"+Replace this use of System.out by a logger.(Èé£—ıÿÿÿÿ8ûúÅæù1J$5bcdd675-0dec-425e-a1ac-91355f949922
+~	java:S125Œ"<This block of commented-out lines of code should be removed.(€¡E8ıúÅæù1J$6468c559-63ed-4eb8-9c9c-228fdf7b1b32
+„	java:S125"<This block of commented-out lines of code should be removed.(Ÿ ±âùÿÿÿÿ8‚ûÅæù1J$0273c7a4-42cd-4011-9a6e-df2738e07f61
+s	java:S106¿"+Replace this use of System.out by a logger.(‰Øšïøÿÿÿÿ8‡ûÅæù1J$eaabd0df-d368-4195-ad5b-62ee60023f19
+s	java:S106Á"+Replace this use of System.out by a logger.(¥°Üßûÿÿÿÿ8ˆûÅæù1J$bd4669dc-7922-4905-98d1-dc820bbdc115
+	java:S125Î"<This block of commented-out lines of code should be removed.(›Õ¨8ŠûÅæù1J$9d75a9df-0cc4-405e-8935-3a51a17854f2
+s	java:S106Ø"+Replace this use of System.out by a logger.(Œƒäşÿÿÿÿ8ŠûÅæù1J$ea17b5c9-2f94-460a-8dde-bafe07373ef1
+m	java:S106ã"+Replace this use of System.out by a logger.(´ñïi8‹ûÅæù1J$8c47323b-79ae-4f6a-ad4f-e45b52f1552f
+n	java:S106ç"+Replace this use of System.out by a logger.(§×»ï8‹ûÅæù1J$dd3ad5e9-0f2c-41b2-b5ee-0156eeff516c
+n	java:S106’"+Replace this use of System.out by a logger.(œ²·³8ŒûÅæù1J$ee8635d0-1b1b-4b84-9eb1-c0636f6b0a91
+s	java:S106¤"+Replace this use of System.out by a logger.(óÒ¢™úÿÿÿÿ8ŒûÅæù1J$5bb1631a-73f5-48f6-a864-c2573c80a32d
+n	java:S106¯"+Replace this use of System.out by a logger.(°ÑæÇ8ûÅæù1J$6b39abc1-5f21-41f3-be1f-2069c020aa7f
+n	java:S106»"+Replace this use of System.out by a logger.(ëí½Ü8ûÅæù1J$c641c3be-c98b-4efd-9823-cb17361d8e2d
+s	java:S106Ç"+Replace this use of System.out by a logger.(ıÚäÃøÿÿÿÿ8ûÅæù1J$d3a0ed51-5351-4f55-a452-3cff8d9a5015
+s	java:S106Ò"+Replace this use of System.out by a logger.(…ÛßÀşÿÿÿÿ8ûÅæù1J$85dab78c-1329-4e8e-9547-b30e8cc7fb5a
+s	java:S106Ü"+Replace this use of System.out by a logger.(±Øùÿÿÿÿ8ûÅæù1J$cfa512b8-bfa2-4da1-9adf-9ec57f03abf8
+s	java:S106æ"+Replace this use of System.out by a logger.(ËğÊ¾şÿÿÿÿ8‘ûÅæù1J$408cf91a-9e14-4f7c-afd2-6d404f893456
+s	java:S106ù"+Replace this use of System.out by a logger.(­®°¢şÿÿÿÿ8’ûÅæù1J$1da6ecc0-daca-4a5c-a035-a222dba04233
+u
+java:S1128"2Remove this unused import 'Controller.Controller'.(÷¤Œƒ8·ûÆæù1J$dc5dddb9-a84a-4280-8024-0d1c540042c1
+}
+java:S1128"5Remove this unused import 'com.sun.tools.javac.Main'.( ƒ™şüÿÿÿÿ8·ûÆæù1J$c50bcf1c-9897-4ff3-a370-70761cb59b68

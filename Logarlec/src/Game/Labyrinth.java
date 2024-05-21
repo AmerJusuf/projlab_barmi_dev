@@ -227,12 +227,10 @@ public class Labyrinth {
     }
 
     public static List<Student> kickedStudents;
-    private Student asd; // ez nem csinál semmit, mire van? -> kirúgott hallgató átmeneti eltárolása -> de nincs semmire használva az értéke
     public String nextRound() {
         String fileContent = "";
         if (kickedStudents!=null && !kickedStudents.isEmpty()) {
             students.removeAll(kickedStudents);
-            asd = kickedStudents.get(0); // itt megkap egy hallgatót, de nem csinál vele semmit
             if(students.isEmpty()){
                 Labyrinth.setGameState(GameState.LOSE);
                 return "";
@@ -241,9 +239,6 @@ public class Labyrinth {
         controller.notifyModelChanged();
         kickedStudents = new ArrayList<>();
         for (Student student : students) {
-            if (asd != null && student == asd) {
-                int i = -1; // ez is minek van?
-            }
             currentPlayer = student;
             controller.notifyModelChanged();
             student.nextRound();
@@ -256,7 +251,6 @@ public class Labyrinth {
         }
         if (!kickedStudents.isEmpty()) {
             students.removeAll(kickedStudents);
-            asd = kickedStudents.get(0); // itt megkap egy hallgatót, de nem csinál vele semmit
             if(students.isEmpty()){
                 Labyrinth.setGameState(GameState.LOSE);
                 return "";

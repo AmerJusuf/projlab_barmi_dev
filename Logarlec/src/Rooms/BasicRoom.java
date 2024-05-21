@@ -394,11 +394,6 @@ public class BasicRoom implements IRoom{
     @Override
     public IRoom makeSticky() {
        StickyRoomDecorator stickyRoom = new StickyRoomDecorator(this);
-       //DecoratorHandlerVisitor mergeRoomsVisitor = new DecoratorHandlerVisitor(this);
-       //IRoom newRoom = stickyRoom.acceptMerge(mergeRoomsVisitor);
-       //TODO: nem basicroomot kéne mergelni hanem kulso decoratorral
-
-        //TODO: Itt eleg lenne egy " new StickyRoomDecorator(this)", merge helyett?? xd
        labyrinth.removeRoom(this);
        labyrinth.addRoom(stickyRoom);
        return stickyRoom; //It could be a void method, it returns the newRoom for testing

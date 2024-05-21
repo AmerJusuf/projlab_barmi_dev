@@ -103,9 +103,6 @@ public class RoomView implements ActionListener, IView {
             IView player = MainWindow.viewsByObjects.get(ch);
             if (player != null) {
                 playerListPanel.add(player.getLabel());
-            } else {
-                // Handle the case where the player view is not found for the character
-                // TODO: ????
             }
         }
         JScrollPane scrollPane = new JScrollPane(playerListPanel);
