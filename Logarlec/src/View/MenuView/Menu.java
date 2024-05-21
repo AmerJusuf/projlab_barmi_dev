@@ -8,68 +8,77 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-/**
- * The menu class, which opens up and shows options, when the user starts the game.
- */
 public class Menu extends JFrame implements ActionListener {
 
-
     JLabel title;
-
     JButton startButton;
     JButton descriptionButton;
     JButton controlButton;
     JButton exitButton;
-
+    private Image backgroundImage;
 
     public Menu() {
         super("Best Game Ever");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.getContentPane().setBackground(java.awt.Color.DARK_GRAY);
         this.setResizable(false);
-        this.setLayout(null);
 
-        // tray icon
+        // Load the background image
+        backgroundImage = Toolkit.getDefaultToolkit().getImage("Icons/gergo.png");
+
+        // Custom panel to handle background image
+        JPanel backgroundPanel = new JPanel() {
+            @Override
+            protected void paintComponent(Graphics g) {
+                super.paintComponent(g);
+                if (backgroundImage != null) {
+                    g.drawImage(backgroundImage, 0, 0, getWidth(), getHeight(), this);
+                }
+            }
+        };
+
+        backgroundPanel.setLayout(null);
+        backgroundPanel.setBackground(Color.DARK_GRAY);
+
+        // Tray icon
         ImageIcon image = new ImageIcon("Icons/logarlec.png");
         this.setIconImage(image.getImage());
 
-        // custom cursor
+        // Custom cursor
         Cursor customCursor = Toolkit.getDefaultToolkit().createCustomCursor(image.getImage(), new Point(0, 5), "HandCursor");
         this.setCursor(customCursor);
 
-        title = new JLabel();
-        title.setText("Logarlec");
+        title = new JLabel("Logarlec");
         title.setFont(new Font("Arial", Font.BOLD, 24));
-        title.setForeground(Color.WHITE);
-        title.setBounds(200, 40, 100, 50);
-        this.add(title);
+        title.setForeground(Color.RED);
+        title.setBounds(470, 40, 100, 50);
+        backgroundPanel.add(title);
 
         startButton = new JButton("Start");
-        startButton.setBounds(200, 100, 100, 50);
+        startButton.setBounds(40, 70, 100, 50);
         startButton.setFocusable(false);
         startButton.addActionListener(this);
-        this.add(startButton);
+        backgroundPanel.add(startButton);
 
         descriptionButton = new JButton("Description");
-        descriptionButton.setBounds(200, 160, 100, 50);
+        descriptionButton.setBounds(230, 70, 100, 50);
         descriptionButton.setFocusable(false);
         descriptionButton.addActionListener(this);
-        this.add(descriptionButton);
+        backgroundPanel.add(descriptionButton);
 
         controlButton = new JButton("Control");
-        controlButton.setBounds(200, 220, 100, 50);
+        controlButton.setBounds(710, 70, 100, 50);
         controlButton.setFocusable(false);
         controlButton.addActionListener(this);
-        this.add(controlButton);
+        backgroundPanel.add(controlButton);
 
         exitButton = new JButton("Exit");
-        exitButton.setBounds(200, 280, 100, 50);
+        exitButton.setBounds(865, 70, 100, 50);
         exitButton.setFocusable(false);
         exitButton.addActionListener(this);
-        this.add(exitButton);
+        backgroundPanel.add(exitButton);
 
-
-        this.setSize(500, 500);
+        this.add(backgroundPanel);
+        this.setSize(1000, 500);
         this.setLocationRelativeTo(null);
         this.setVisible(true);
     }
@@ -81,19 +90,21 @@ public class Menu extends JFrame implements ActionListener {
             Controller controller = new Controller();
             MainWindow mainWindow = new MainWindow(controller);
             controller.setMainWindow(mainWindow);
-
             this.dispose();
         } else if (e.getSource() == descriptionButton) {
             System.out.println("Description button clicked");
-            DescriptionWindow descriptionWindow = new DescriptionWindow();
-            //this.dispose();
+            new DescriptionWindow();
         } else if (e.getSource() == controlButton) {
             System.out.println("Control button clicked");
-            ControlWindow controlWindow = new ControlWindow();
-            //this.dispose();
+            new ControlWindow();
         } else if (e.getSource() == exitButton) {
             System.out.println("Exit button clicked");
             this.dispose();
         }
     }
+
+    public static void main(String[] args) {
+        new Menu();
+    }
 }
+
