@@ -49,6 +49,10 @@ public class StudentView extends CharacterView {
         panel.setVisible(true);
     }
 
+    public Student getStudent() {
+        return student;
+    }
+
     /**
      * After the student has finished his round, this function is called, to show the next student on the screen.
      */

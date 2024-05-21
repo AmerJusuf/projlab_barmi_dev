@@ -96,6 +96,7 @@ public class Labyrinth {
     public void mergeAndSplitRandomly() {
         if(rooms.size() < 2) return; // Ha nincs elég szoba, akkor nem lehet mergelni és splittelni
 
+
         System.out.println("Merging " + rooms.size() + " rooms");
         // Merge and split rooms
         Random rand = new Random();
@@ -111,20 +112,21 @@ public class Labyrinth {
         while (!mergeDone && currentAttempts < maxAttempts) {
             if (canMergeAnyRoom()) {
                 if (rooms.get(idx1).getNumberOfCharacters() == 0) {
+
                     System.out.println("Merging " + rooms.get(idx1));
                     IRoom neighbour = getAcceptableNeighbour(rooms.get(idx1));
-                    System.out.println("Merging " + neighbour);
                     if (neighbour != null) { // Biztosítjuk, hogy a szomszéd létezik
-                        System.out.println("Merged " + idx1 + " to " + rooms.indexOf(neighbour));
-                        merge(idx1, rooms.indexOf(neighbour));
-                        mergeDone = true;
+                        System.out.println("Merging " + neighbour);
+                        if( rooms.indexOf(neighbour) != -1) {
+                            merge(idx1, rooms.indexOf(neighbour));
+                            mergeDone = true;
+                        }
                     }
                 }
                 idx1 = rand.nextInt(rooms.size()); // Új index, ha a korábbi nem volt megfelelő
             }
             currentAttempts++; // Növeljük a próbálkozások számát
         }
-
 
 //        currentAttempts = 0; // Visszaállítjuk a próbálkozások számát a split művelethez
 //

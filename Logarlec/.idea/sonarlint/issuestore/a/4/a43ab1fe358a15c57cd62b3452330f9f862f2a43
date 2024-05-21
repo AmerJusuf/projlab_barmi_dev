@@ -1,0 +1,10 @@
+
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(å•®Ò8«Áİ¢ó1J$f7cf0a9d-44a6-424a-a304-1d52eb9a38f1
+	java:S116&"WRename this field "STUDENT_ICON" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(°…šÂıÿÿÿÿ8µÁİ¢ó1J$62c8880e-e04f-4ec7-bdd4-fb6f4a3a26a0
+¡	java:S116'"ZRename this field "INSTRUCTOR_ICON" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(·ÎÁıÿÿÿÿ8µÁİ¢ó1J$d5711420-7388-4516-90c7-fa1b422ffbd9
+™	java:S116("WRename this field "CLEANER_ICON" to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(ışçÏ8µÁİ¢ó1J$ac265001-8f97-435d-bb69-881c3a79b121
+X	java:S125"<This block of commented-out lines of code should be removed.(Ş£¿â8Í®òäù1
+„
+java:S32522"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ó±æÉ8ºÁİ¢ó1J$9ec2df3c-bbcc-40b0-9609-68f405c0c998
+]	java:S1258"<This block of commented-out lines of code should be removed.(“ïèÿÿÿÿÿ8Ğ®òäù1
+]	java:S125;"<This block of commented-out lines of code should be removed.(ùŞû‚ùÿÿÿÿ8Ğ®òäù1

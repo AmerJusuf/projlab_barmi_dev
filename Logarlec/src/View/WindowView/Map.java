@@ -24,8 +24,10 @@ import java.util.Scanner;
  */
 public class Map extends JPanel implements IView {
     private Labyrinth labyrinth;
+
     private boolean useBakedInData = false; //------------------------------- ezt kell átállítani true-ra, hogy a beégetett pályát használja, false-ra, ha az egy sorral lejjebb lévő file-t töltse be ---------------
     private String mapFilename = "sticky_test";  //------------------------------- a betöltendő map file neve -------------------------------------------------------------------------------------------------------------
+
 
     /*
     Command examples for creating Views:
@@ -89,42 +91,48 @@ public class Map extends JPanel implements IView {
 //        }
         nodes = new ArrayList<>();
         List<RoomNodeView> viewsToAdd = new ArrayList<>();
+        if(labyrinth.getRooms().size() < 25){
+            int i  = 0;
+        }
         for (IRoom room : labyrinth.getRooms()) {
             RoomNodeView roomNodeView = (RoomNodeView) MainWindow.viewsByObjects.get(room);
             if(roomNodeView == null){
-                int i = 0;
-                 //throw new RuntimeException("HIÁNYZIK!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+                roomNodeView = (RoomNodeView) MainWindow.viewsByObjects.get(room.getDecoratedRoom());
             }
+
+            if(roomNodeView != null){
                 viewsToAdd.add(roomNodeView);
-            //System.out.println("---------Repaint: roomnodeview");
+            }
+
         }
         // Add the views after the loop
         nodes.addAll(viewsToAdd);
         //nodes.forEach(component -> this.add(component));
         for(RoomNodeView roomNodeView : nodes){
-            this.add(roomNodeView);
+            if(roomNodeView != null) {
+                this.add(roomNodeView);
+            }
         }
 
 
         // Add neighbors to nodes
         for (int i = 0; i < nodes.size(); i++) {
             RoomNodeView currentNode = nodes.get(i);
+            if(currentNode != null){
+
+
             List<IRoom> neighbors = currentNode.getRoom().getNeighbours();
             for (IRoom neighbor : neighbors) {
-                int neighborIndex = labyrinth.getRooms().indexOf(neighbor); //safety i guess
-                for (int j = 0; j < nodes.size(); j++) {
-                    if(nodes.get(j).getRoom().equals(neighbor)) {
-                        neighborIndex = j;
-                        break;
+                for(RoomNodeView neighborNode : nodes){
+                    if(neighborNode != null && neighborNode.getRoom() == neighbor){
+                        currentNode.getNeighbourRooms().add(neighborNode);
+                        if(currentNode != neighborNode) {
+                            drawArrowBetweenRooms(currentNode, neighborNode, g);
+                        }
                     }
                 }
-                if(neighborIndex != -1) {
-                    RoomNodeView neighborNode = nodes.get(neighborIndex);
-                    currentNode.addNeighbourRoom(neighborNode);
-                    drawArrowBetweenRooms(currentNode, neighborNode, g);
-                }
 
-
+            }
                 // Draw line and arrow from currentNode to neighborNode
 
             }
