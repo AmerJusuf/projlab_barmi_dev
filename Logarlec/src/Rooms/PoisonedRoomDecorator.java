@@ -113,8 +113,9 @@ public class PoisonedRoomDecorator extends RoomDecorator{
         newRoomNodeView.handleRoomTypes(roomNodeView);
 
 
-        MainWindow.viewsByObjects.put(newUntoxicatedRoom, newRoomNodeView);
+
         MainWindow.viewsByObjects.remove(this);
+        MainWindow.viewsByObjects.put(newUntoxicatedRoom, newRoomNodeView);
         basicRoom.getLabyrinth().getController().notifyModelChanged();
         basicRoom.getLabyrinth().redrawMap();
 
