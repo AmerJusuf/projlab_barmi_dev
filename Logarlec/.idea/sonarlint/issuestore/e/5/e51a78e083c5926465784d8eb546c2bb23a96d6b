@@ -1,10 +1,10 @@
 
-¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(®êÇšþÿÿÿÿ8½žÐãù1J$25587217-483d-4405-a75a-254299beca33
+¡	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(®êÇšþÿÿÿÿ8½žÐãù1J$c0d8d99b-5e9a-4d01-96aa-a4e9570ba196
 m
-java:S2387"2"title" is the name of a field in "CharacterView".(ðÓ×4J$2e3409a6-971e-4157-9ca0-6e83832cee72
+java:S2387"2"title" is the name of a field in "CharacterView".(ðÓ×4J$7dbccd5f-215c-4a80-bcd5-7349cefd81f9
 }
-java:S3252'"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ó±æÉJ$5b6a7657-ced3-4b9b-bbdf-8951e81a8508
-|	java:S125>"<This block of commented-out lines of code should be removed.(ä„×§ÿÿÿÿÿJ$0bd2bf94-2de0-4314-a2fb-c9b3846c851e
-w	java:S125E"<This block of commented-out lines of code should be removed.(ú²ªñJ$acfb143b-f18c-4e16-bdc0-271838cecb27
+java:S3252'"AUse static access with "javax.swing.SwingConstants" for "CENTER".(ó±æÉJ$1ec83f79-4520-4b4a-b055-0d3bfacbbdff
+|	java:S125>"<This block of commented-out lines of code should be removed.(ä„×§ÿÿÿÿÿJ$f89b10cb-aa36-486c-b0ab-584ccd7c2c22
+w	java:S125E"<This block of commented-out lines of code should be removed.(ú²ªñJ$bef8ecc4-469b-461d-9af1-0fe764d0bdf8
 v
-java:S1128"5Remove this unused import 'com.sun.tools.javac.Main'.( ƒ™þüÿÿÿÿJ$e6979976-d2c5-4192-8b7c-34a2890c8930
+java:S1128"5Remove this unused import 'com.sun.tools.javac.Main'.( ƒ™þüÿÿÿÿJ$6420ec51-313a-4cc2-b346-29443bdd2f60

@@ -24,8 +24,10 @@ import java.util.Scanner;
  */
 public class Map extends JPanel implements IView {
     private Labyrinth labyrinth;
+
     private boolean useBakedInData = true; //------------------------------- ezt kell átállítani true-ra, hogy a beégetett pályát használja, false-ra, ha az egy sorral lejjebb lévő file-t töltse be ---------------
-    private String mapFilename = "demo_test";  //------------------------------- a betöltendő map file neve -------------------------------------------------------------------------------------------------------------
+    private String mapFilename = "sticky_test";  //------------------------------- a betöltendő map file neve -------------------------------------------------------------------------------------------------------------
+
 
     /*
     Command examples for creating Views:
@@ -112,6 +114,7 @@ public class Map extends JPanel implements IView {
             }
         }
 
+
         // Add neighbors to nodes
         for (int i = 0; i < nodes.size(); i++) {
             RoomNodeView currentNode = nodes.get(i);
@@ -133,6 +136,7 @@ public class Map extends JPanel implements IView {
                 // Draw line and arrow from currentNode to neighborNode
 
             }
+
         }
 
 

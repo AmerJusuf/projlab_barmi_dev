@@ -3,12 +3,14 @@ package Rooms;
 import Characters.Character;
 import Characters.Instructor;
 import Characters.Student;
+import Controller.Controller;
 import Game.Labyrinth;
 import Items.Item;
 import View.WindowView.MainWindow;
 import View.WindowView.RoomNodeView;
 import com.sun.tools.javac.Main;
 
+import java.lang.reflect.AccessibleObject;
 import java.util.List;
 
 public abstract class RoomDecorator implements IRoom{
@@ -153,36 +155,8 @@ public abstract class RoomDecorator implements IRoom{
 
     @Override
     public IRoom unToxicate(){
-        BasicRoom basicRoom = new BasicRoom();
-        basicRoom.setCapacity(this.getCapacity());
-//        basicRoom.setItems(this.getItems());
-//        basicRoom.setNeighbours(this.getNeighbours());
-        basicRoom.setLabyrinth(this.getLabyrinth());
-        for(Character ch : this.getCharacters()){
-            basicRoom.addCharacter(ch);
-        }
-        for( Character ch : basicRoom.getCharacters()){
-            ch.setRoom(basicRoom);
-        }
-
-        DecoratorHandlerVisitor visitor = new DecoratorHandlerVisitor(basicRoom);
-        IRoom newUntoxicatedRoom = acceptUnToxicate(visitor);
-
-        visitor.handleNeighboursWhenReplacing(this, newUntoxicatedRoom);
-        getLabyrinth().replaceRooms(this, newUntoxicatedRoom);
-        RoomNodeView roomNodeView = (RoomNodeView) MainWindow.viewsByObjects.get(this);
-        roomNodeView.setPoisoned(false);
-
-        RoomNodeView newRoomNodeView = new RoomNodeView(newUntoxicatedRoom, false ,false, false, roomNodeView.getX(), roomNodeView.getY(),  basicRoom.getLabyrinth().getController());
-
-        newRoomNodeView.handleRoomTypes(roomNodeView);
-
-
-        MainWindow.viewsByObjects.put(newUntoxicatedRoom, newRoomNodeView);
-        MainWindow.viewsByObjects.remove(this);
-        basicRoom.getLabyrinth().getController().notifyModelChanged();
-        //basicRoom.getLabyrinth().redrawMap();
-        return newUntoxicatedRoom;
+        // do nothing, only in poisoned
+        return this;
     }
 
     @Override
@@ -209,6 +183,14 @@ public abstract class RoomDecorator implements IRoom{
             MainWindow.viewsByObjects.put(newMergedRoom, newRoomNodeView);
 
             getLabyrinth().getController().notifyModelChanged();
+
+            RoomNodeView room1 = (RoomNodeView) MainWindow.viewsByObjects.get(this);
+            RoomNodeView room2 = (RoomNodeView) MainWindow.viewsByObjects.get(room);
+
+            room1.handleRoomTypes(room2);
+
+            MainWindow.viewsByObjects.put(newMergedRoom, new RoomNodeView(newMergedRoom, room1.getPoisoned(), room1.getCursed(), room1.getSticky(), (room1.getX() + room2.getX()) / 2 + 100, (room1.getY() + room2.getY()) / 2, room1.getController()));
+            newMergedRoom.getLabyrinth().getController().notifyModelChanged();
 
             return newMergedRoom; //It could be a void method, returning for test cases and prototype
         } else {

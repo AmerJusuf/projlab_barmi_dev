@@ -96,6 +96,8 @@ public class Labyrinth {
     public void mergeAndSplitRandomly() {
         if(rooms.size() < 2) return; // Ha nincs elég szoba, akkor nem lehet mergelni és splittelni
 
+
+        System.out.println("Merging " + rooms.size() + " rooms");
         // Merge and split rooms
         Random rand = new Random();
         int idx1 = rand.nextInt(rooms.size());
@@ -110,8 +112,11 @@ public class Labyrinth {
         while (!mergeDone && currentAttempts < maxAttempts) {
             if (canMergeAnyRoom()) {
                 if (rooms.get(idx1).getNumberOfCharacters() == 0) {
+
+                    System.out.println("Merging " + rooms.get(idx1));
                     IRoom neighbour = getAcceptableNeighbour(rooms.get(idx1));
                     if (neighbour != null) { // Biztosítjuk, hogy a szomszéd létezik
+                        System.out.println("Merging " + neighbour);
                         if( rooms.indexOf(neighbour) != -1) {
                             merge(idx1, rooms.indexOf(neighbour));
                             mergeDone = true;
@@ -134,7 +139,7 @@ public class Labyrinth {
 //            }
 //            currentAttempts++; // Növeljük a próbálkozások számát
 //        }
-
+//            controller.notifyModelChanged();
     }
 
     private boolean hasEmptyNeighbour(IRoom room) {
@@ -367,8 +372,8 @@ public class Labyrinth {
         PoisonedRoomDecorator room6 = new PoisonedRoomDecorator(new BasicRoom(3));
         MainWindow.viewsByObjects.put(room6, new RoomNodeView(room6, true ,false ,false, controller));
 
-        BasicRoom room7 = new BasicRoom(4);
-        MainWindow.viewsByObjects.put(room7, new RoomNodeView(room7, false ,false ,false, controller));
+        StickyRoomDecorator room7 = new StickyRoomDecorator(new BasicRoom(4));
+        MainWindow.viewsByObjects.put(room7, new RoomNodeView(room7, false ,false ,true, controller));
 
         CursedRoomDecorator room8 = new CursedRoomDecorator(new BasicRoom(5));
         MainWindow.viewsByObjects.put(room8, new RoomNodeView(room8, false ,true ,false, controller));
