@@ -92,9 +92,10 @@ public class Labyrinth {
     public void removeRoom(IRoom room) {
         rooms.remove(room);
     }
+    boolean isMerging = true;
 
     public void mergeAndSplitRandomly() {
-        if(rooms.size() < 2) return; // Ha nincs elég szoba, akkor nem lehet mergelni és splittelni
+        if (rooms.size() < 2) return; // Ha nincs elég szoba, akkor nem lehet mergelni és splittelni
 
 
         System.out.println("Merging " + rooms.size() + " rooms");
@@ -108,38 +109,40 @@ public class Labyrinth {
 
         int maxAttempts = rooms.size() * 2; // Maximum próbálkozások száma
         int currentAttempts = 0;
+        if (isMerging) {
+            while (!mergeDone && currentAttempts < maxAttempts) {
+                if (canMergeAnyRoom()) {
+                    if (rooms.get(idx1).getNumberOfCharacters() == 0) {
 
-        while (!mergeDone && currentAttempts < maxAttempts) {
-            if (canMergeAnyRoom()) {
-                if (rooms.get(idx1).getNumberOfCharacters() == 0) {
-
-                    System.out.println("Merging " + rooms.get(idx1));
-                    IRoom neighbour = getAcceptableNeighbour(rooms.get(idx1));
-                    if (neighbour != null) { // Biztosítjuk, hogy a szomszéd létezik
-                        System.out.println("Merging " + neighbour);
-                        if( rooms.indexOf(neighbour) != -1) {
-                            merge(idx1, rooms.indexOf(neighbour));
-                            mergeDone = true;
+                        System.out.println("Merging " + rooms.get(idx1));
+                        IRoom neighbour = getAcceptableNeighbour(rooms.get(idx1));
+                        if (neighbour != null) { // Biztosítjuk, hogy a szomszéd létezik
+                            System.out.println("Merging " + neighbour);
+                            if (rooms.indexOf(neighbour) != -1) {
+                                merge(idx1, rooms.indexOf(neighbour));
+                                mergeDone = true;
+                            }
                         }
                     }
+                    idx1 = rand.nextInt(rooms.size()); // Új index, ha a korábbi nem volt megfelelő
                 }
-                idx1 = rand.nextInt(rooms.size()); // Új index, ha a korábbi nem volt megfelelő
+                currentAttempts++; // Növeljük a próbálkozások számát
             }
-            currentAttempts++; // Növeljük a próbálkozások számát
-        }
+        } else {
 
-//        currentAttempts = 0; // Visszaállítjuk a próbálkozások számát a split művelethez
-//
-//        while (!splitDone && currentAttempts < maxAttempts) {
-//            if (rooms.get(idx2).getNumberOfCharacters() == 0) {
-//                split(idx2);
-//                splitDone = true;
-//            } else {
-//                idx2 = rand.nextInt(rooms.size()); // Új index, ha a korábbi nem volt megfelelő
-//            }
-//            currentAttempts++; // Növeljük a próbálkozások számát
-//        }
-//            controller.notifyModelChanged();
+            while (!splitDone && currentAttempts < maxAttempts) {
+                if (rooms.get(idx2).getNumberOfCharacters() == 0) {
+                    split(idx2);
+                    splitDone = true;
+                } else {
+                    idx2 = rand.nextInt(rooms.size()); // Új index, ha a korábbi nem volt megfelelő
+                }
+                currentAttempts++; // Növeljük a próbálkozások számát
+            }
+            controller.notifyModelChanged();
+
+        }
+        isMerging = !isMerging;
     }
 
     private boolean hasEmptyNeighbour(IRoom room) {
@@ -178,7 +181,20 @@ public class Labyrinth {
 
     public void split(int idx) {
         IRoom room = rooms.get(idx);
-        room.splitRoom();
+        List<IRoom> newRooms = room.splitRoom();
+        RoomNodeView originalNode = (RoomNodeView) MainWindow.viewsByObjects.get(room);
+        MainWindow.viewsByObjects.put(newRooms.getFirst(), new RoomNodeView(newRooms.getFirst(), false,false,false, originalNode.getX() + 100, originalNode.getY() + 100 , controller));
+
+
+        RoomNodeView roomNodeView1 = (RoomNodeView) MainWindow.viewsByObjects.get(newRooms.getFirst());
+        RoomNodeView roomNodeView2 = (RoomNodeView) MainWindow.viewsByObjects.get(newRooms.getLast());
+
+
+
+        roomNodeView1.handleRoomTypes(roomNodeView2);
+        roomNodeView2.handleRoomTypes(roomNodeView1);
+
+        controller.notifyModelChanged();
     }
 
     public void redrawMap(){
