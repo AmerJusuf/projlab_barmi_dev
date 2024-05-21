@@ -52,7 +52,8 @@ public class RoomNodeView extends JPanel implements IView {
         this.cursed = cursed;
         this.sticky = sticky;
         this.controller = control;
-
+        x = 0;
+        y = 0;
         /**
          * Load images to represent current and not current roomviewnodes.
          */

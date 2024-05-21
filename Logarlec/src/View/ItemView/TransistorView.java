@@ -110,7 +110,6 @@ public class TransistorView extends ItemView {
     /**
      * Updates the state and icon of the transistor object.
      */
-    //TODO mindkét transistor lerakása után, miután a játékost átviszi a másik szobába, pick helyett drop van
     @Override
     public void update() {
         if((item.getOwner() == null && Labyrinth.currentPlayer.getRoom().getItems().contains(item))){

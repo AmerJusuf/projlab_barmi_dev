@@ -614,7 +614,6 @@ public class TestLogic {
                             result = success;
 
                             character.pickItem(item);
-                            String asd = "";
                             if(!character.getItems().contains(item)){
                                 result = fail;
                             }

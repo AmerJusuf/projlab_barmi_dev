@@ -154,8 +154,9 @@ public class BasicRoom implements IRoom{
         MainWindow.viewsByObjects.remove(room);
         MainWindow.viewsByObjects.put(newRoom, new RoomNodeView(newRoom, room2.getPoisoned(), room2.getCursed(), room2.getSticky(), (room1.getX()+room2.getX())/2,(room1.getY()+room2.getY())/2, room2.getController()));
 
-        labyrinth.getController().notifyModelChanged();
-
+        if(labyrinth.getController() != null) {
+            labyrinth.getController().notifyModelChanged();
+        }
         return newRoom; //It could be a void method, returning for test cases and prototype
     }
 
@@ -185,13 +186,14 @@ public class BasicRoom implements IRoom{
                 this.removeItem(this.getItems().get(i));
             }
             this.getLabyrinth().addRoom(newRoom);
-            newRooms.add(this);
             newRooms.add(newRoom);
+            newRooms.add(this);
             System.out.println("Room splitted succesfully | BasicRoom: splitRoom");
         }else {
             System.out.println("Can not split room, because it contains characters | BasicRoom: splitRoom");
             return Collections.emptyList();
         }
+
         return newRooms; //It could be a void method, returning for test cases and prototype
     }
 
@@ -392,11 +394,6 @@ public class BasicRoom implements IRoom{
     @Override
     public IRoom makeSticky() {
        StickyRoomDecorator stickyRoom = new StickyRoomDecorator(this);
-       //DecoratorHandlerVisitor mergeRoomsVisitor = new DecoratorHandlerVisitor(this);
-       //IRoom newRoom = stickyRoom.acceptMerge(mergeRoomsVisitor);
-       //TODO: nem basicroomot kéne mergelni hanem kulso decoratorral
-
-        //TODO: Itt eleg lenne egy " new StickyRoomDecorator(this)", merge helyett?? xd
        labyrinth.removeRoom(this);
        labyrinth.addRoom(stickyRoom);
        return stickyRoom; //It could be a void method, it returns the newRoom for testing
