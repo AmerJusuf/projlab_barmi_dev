@@ -10,21 +10,47 @@ import java.util.List;
 import java.util.Random;
 
 public abstract class Character {
+    /**
+     * Stores the items of the character
+     */
     protected List<Item> items;
+    /**
+     * Stores the current room of the charachter
+     */
     protected IRoom currentRoom;
+    /**
+     * Stores the poisoned status of the character
+     */
     protected boolean isPoisoned;
+    /**
+     * Stores a transistor temporarily, as part of the pairing process
+     */
     protected Transistor transistorReadyToPair;
 
+    /**
+     * Stores the controller
+     */
     Notifiable controller;
 
+    /**
+     * Stores whether the character has moved or not
+     */
     boolean moved = false;
 
+    /**
+     * A Character osztály konstruktora, egyből be is állítja a szobáját
+     *
+     * @param currentRoom A Character jelenlegi szobája
+     */
     public Character(IRoom currentRoom){
         this.items = new ArrayList<>();
         this.currentRoom = currentRoom;
         this.isPoisoned = false;
     }
 
+    /**
+     * A Character osztály konstruktora
+     */
     public Character(){
         this.items = new ArrayList<>();
         this.isPoisoned = false;
@@ -66,10 +92,20 @@ public abstract class Character {
         //controller.notifyModelChanged();
     }
 
+    /**
+     * Egyszerű értékbeállítás a controllerhez
+     *
+     * @param controller A felület frissítését végző kontroller
+     */
     public void setController(Notifiable controller){
         this.controller = controller;
     }
 
+    /**
+     * Tárgyak felvétele, a különböző karakterekben van implementálva
+     *
+     * @param item a felvevendő item
+     */
     public abstract void pickItem(Item item);
 
     /**
@@ -125,6 +161,12 @@ public abstract class Character {
         controller.notifyModelChanged();
     }
 
+    /**
+     * This method is used to drop all items from the character's items list, except the method caller
+     * It is used by the Beer class
+     *
+     * @param caller The item that called the method, isn't droppped
+     */
     public void dropNotBeer(Item caller){
         System.out.println("Item will be dropped not beer | Character: dropNotBeer()");
         for(Item item : items){
@@ -163,8 +205,16 @@ public abstract class Character {
         this.isPoisoned = isPoisoned;
     }
 
+    /**
+     * This method is used for the characters logic for its next round
+     *
+     * @return The actions it has done, used for testing
+     */
     public abstract String nextRound() throws InterruptedException;
 
+    /**
+     * This method is used to disable an Instructor
+     */
     public abstract void disableInstructor();
 
     /**
@@ -186,8 +236,13 @@ public abstract class Character {
     }
 
 
+    /**
+     * This method is used to catch students by instructors
+     */
     public abstract void getCaught();
-
+    /**
+     * This method gets called once every round, if the student got caught
+     */
     public void gotCaught(){}
 
     public boolean getPoisoned(){

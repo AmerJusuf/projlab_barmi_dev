@@ -23,20 +23,44 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Represents the labyrinth in the game.
+ */
 public class Labyrinth {
+    /**
+     * The controller of the game.
+     */
     private Notifiable controller;
+    /**
+     * The current state of the game.
+     */
     private static GameState gameState = GameState.PLAYING;
-    private int starterNumberOfRooms;
+    /**
+     * List of rooms in the labyrinth.
+     */
     private List<IRoom> rooms;
+    /**
+     * List of students in the labyrinth.
+     */
     private List<Student> students;
+    /**
+     * List of instructors in the labyrinth.
+     */
     private List<Instructor> instructors;
-
+    /**
+     * List of cleaners in the labyrinth.
+     */
     private List<Cleaner> cleaners;
-
+    /**
+     * The current player.
+     */
     public static Student currentPlayer;
 
     private Map map;
 
+    /**
+     * Constructor for the Labyrinth class.
+     */
     public Labyrinth() {
         rooms = new ArrayList<>();
         students = new ArrayList<>();
@@ -44,6 +68,11 @@ public class Labyrinth {
         cleaners = new ArrayList<>();
     }
 
+    /**
+     * Constructor for the Labyrinth class.
+     *
+     * @param students Initialises students
+     */
     public Labyrinth(List<Student> students){
         this.students = students;
         currentPlayer = students.get(0);
@@ -60,6 +89,13 @@ public class Labyrinth {
         generateMap();
     }
 
+    /**
+     * Constructor for the Labyrinth class.
+     *
+     * @param students Initialises students
+     * @param map initialises map
+     * @param controller The controller of the game.
+     */
     public Labyrinth(List<Student> students, Map map, Notifiable controller){
         this.controller = controller;
         this.students = students;
@@ -85,15 +121,31 @@ public class Labyrinth {
         this.controller = controller;
     }
 
+    /**
+     * Adds a room to the labyrinth
+     *
+     * @param room room to add
+     */
     public void addRoom(IRoom room) {
         rooms.add(room);
     }
 
+    /**
+     * Removes a room from the labyrinth
+     *
+     * @param room room to remove
+     */
     public void removeRoom(IRoom room) {
         rooms.remove(room);
     }
+    /**
+     * A boolean flag wheter the labyrinth should merge or split
+     */
     boolean isMerging = true;
 
+    /**
+     * Merges or splits the labyrinth randomly in each round
+     */
     public void mergeAndSplitRandomly() {
         if (rooms.size() < 2) return; // Ha nincs elég szoba, akkor nem lehet mergelni és splittelni
 
@@ -145,6 +197,12 @@ public class Labyrinth {
         isMerging = !isMerging;
     }
 
+    /**
+     * Returns whenever a room has an empty neighbour
+     *
+     * @param room room to check
+     * @return whether it has a neighbour or not
+     */
     private boolean hasEmptyNeighbour(IRoom room) {
         for (IRoom neighbour : room.getNeighbours()) {
             if (neighbour.getNumberOfCharacters() == 0) {
@@ -154,6 +212,11 @@ public class Labyrinth {
         return false;
     }
 
+    /**
+     * Checks if there are eligible rooms to merge or not
+     *
+     * @return  if there are or not
+     */
     private boolean canMergeAnyRoom() {
         for (IRoom room : rooms) {
             if (room.getNumberOfCharacters() == 0 && hasEmptyNeighbour(room)) {
@@ -163,6 +226,12 @@ public class Labyrinth {
         return false;
     }
 
+    /**
+     * Returns whenever a room has a neighbour which can accept a character
+     *
+     * @param room room to check
+     * @return the acceptable neighbour
+     */
     private IRoom getAcceptableNeighbour(IRoom room) {
         List<IRoom> neighbours = room.getNeighbours();
         for (IRoom neighbour : neighbours) {
@@ -173,12 +242,23 @@ public class Labyrinth {
         return null;
     }
 
+    /**
+     * Merges two rooms
+     *
+     * @param idx1 id of a room to merge
+     * @param idx2 id of a room to merge
+     */
     public void merge(int idx1, int idx2) {
         IRoom room1 = rooms.get(idx1);
         IRoom room2 = rooms.get(idx2);
         room1.mergeRooms(room2);
     }
 
+    /**
+     * Splits a room
+     *
+     * @param idx id of a room to split
+     */
     public void split(int idx) {
         IRoom room = rooms.get(idx);
         List<IRoom> newRooms = room.splitRoom();
@@ -197,13 +277,18 @@ public class Labyrinth {
         controller.notifyModelChanged();
     }
 
+    /**
+     * Redraws the map.
+     */
     public void redrawMap(){
         map.removeAll();
         map.repaint();
     }
 
 
-
+    /**
+     * Starts the game.
+     */
     public void startGame() {
         currentPlayer = students.getFirst();
         controller.notifyModelChanged();
@@ -221,12 +306,20 @@ public class Labyrinth {
         endGame();
     }
 
+    /**
+     * The current round number.
+     */
     private int round = 0;
-    public int getRound() {
-        return round;
-    }
 
+    /**
+     * Stores the students to be kicked
+     */
     public static List<Student> kickedStudents;
+    /**
+     * Advances to the next round.
+     *
+     * @return The file content after the round.
+     */
     public String nextRound() {
         String fileContent = "";
         if (kickedStudents!=null && !kickedStudents.isEmpty()) {
@@ -281,6 +374,9 @@ public class Labyrinth {
         return fileContent;
     }
 
+    /**
+     * Gets called, when the game ends, decides if won or lost
+     */
     public void endGame() {
         if(gameState == GameState.WIN) {
             System.out.println("Students won!");
@@ -295,38 +391,51 @@ public class Labyrinth {
 
     public static GameState getGameState() {return gameState;}
 
-    public void removeStudent(Student student) {
-        if(students.contains(student)){
-            students.remove(student);
-            System.out.println("Student removed from labyrinth | Labyrinth: removeStudent(Student student)");
-        }
-    }
-    //szükség lesz rá, mert például a tvsz tulajdonosa hallgató vagy oktató is lehet (a removeStudent helyett)
-    public void removeCharacter(Character character){
-        System.out.println("Character removed from labyrinth | Labyrinth: removeCharacter(Character character)");
-    }
-
     public List<IRoom> getRooms() {
         return rooms;
     }
 
+    /**
+     * Replaces a room in the labyrinth with another room
+     *
+     * @param roomToRemove room to be removed
+     * @param roomToAdd room to be added
+     */
     public void replaceRooms(IRoom roomToRemove, IRoom roomToAdd) {
         rooms.remove(roomToRemove);
         rooms.add(roomToAdd);
     }
 
+    /**
+     * Adds a student to the labyrinth
+     *
+     * @param ch student to be added
+     */
     public void addStudent(Student ch) {
         students.add(ch);
     }
 
+    /**
+     * Adds an instructor to the labyrinth
+     *
+     * @param ch instructor to be added
+     */
     public void addInstructor(Instructor ch) {
         instructors.add(ch);
     }
 
+    /**
+     * Adds a cleaner to the labyrinth
+     *
+     * @param ch cleaner to be added
+     */
     public void addCleaner(Cleaner ch) {
         cleaners.add(ch);
     }
 
+    /**
+     * Steps the steppable items in each round
+     */
     public void stepItems(){
         for(Student student : students){
             for(int i = student.getItems().size()-1; i >= 0; i--){
@@ -714,6 +823,9 @@ public class Labyrinth {
         MainWindow.viewsByObjects.put(logarlecFake, new LogarlecView(logarlecFake));
     }
 
+    /**
+     * Sets the controller for each item
+     */
     public void setControllerToItems(){
         for (IRoom room : rooms){
             for(Item item : room.getItems()){

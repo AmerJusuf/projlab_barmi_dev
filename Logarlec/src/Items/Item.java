@@ -5,22 +5,44 @@ import Characters.Student;
 import Characters.Instructor;
 import Controller.Notifiable;
 import Rooms.IRoom;
-
+/**
+ * Abstract class representing an item in the game.
+ */
 public abstract class Item {
+    /**
+     * The owner of the item.
+     */
     protected Character owner;
+    /**
+     * Indicates if the item is fake.
+     */
     protected boolean isFake;
+    /**
+     * The controller to notify changes.
+     */
     protected Notifiable controller;
 
+    /**
+     * Default constructor for the Item class.
+     */
     Item(){
         this.owner = null;
         this.isFake = false;
     }
-
+    /**
+     * Constructor for the Item class with a fake status.
+     *
+     * @param isFake Indicates if the item is fake.
+     */
     Item(boolean isFake){
         this.owner = null;
         this.isFake = isFake;
     }
-
+    /**
+     * Sets the controller to notify changes.
+     *
+     * @param controller The controller to notify.
+     */
     public void setController(Notifiable controller){
         this.controller = controller;
     }

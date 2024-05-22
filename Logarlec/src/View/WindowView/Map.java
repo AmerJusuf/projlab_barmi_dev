@@ -23,20 +23,45 @@ import java.util.Scanner;
  * The view of the labyrinth, where rooms are shown as nodes and their connections as arrows.
  */
 public class Map extends JPanel implements IView {
+    /**
+     * The labyrinth instance associated with this map.
+     */
     private Labyrinth labyrinth;
+    /**
+     * Flag to determine if baked-in data should be used.
+     */
 
     private boolean useBakedInData = false; //------------------------------- ezt kell átállítani true-ra, hogy a beégetett pályát használja, false-ra, ha az egy sorral lejjebb lévő file-t töltse be ---------------
+    /**
+     * Filename of the map to load.
+     */
     private String mapFilename = "demo_test";  //------------------------------- a betöltendő map file neve -------------------------------------------------------------------------------------------------------------
-
-
-
+    /**
+     * List of room node views.
+     */
     List<RoomNodeView> nodes;
+    /**
+     * Border spacing to the left.
+     */
     int borderToLeft = 150;
+    /**
+     * Border spacing to the right.
+     */
     int borderToRight = 60;
+    /**
+     * Top border spacing.
+     */
     int topBorder = 150;
+    /**
+     * Bottom border spacing.
+     */
     int bottomBorder = 60;
 
-
+    /**
+     * Constructor for the Map class.
+     *
+     * @param controller The controller of the game.
+     */
     public Map(Notifiable controller) {
         if(useBakedInData) {
             List<Student> students = new ArrayList<>();
@@ -69,6 +94,11 @@ public class Map extends JPanel implements IView {
 
     }
 
+    /**
+     * Paints the components of the map, including rooms and connections.
+     *
+     * @param g The graphics object used for drawing.
+     */
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
@@ -185,7 +215,9 @@ public class Map extends JPanel implements IView {
 
     }
 
-
+    /**
+     * Updates the view of the map.
+     */
     @Override
     public void update() {
         for (RoomNodeView node : nodes) {
@@ -194,17 +226,31 @@ public class Map extends JPanel implements IView {
             }
         }
     }
-
+    /**
+     * Gets the panel component of the map.
+     *
+     * @return The JPanel component.
+     */
     @Override
     public JPanel getPanel() {
         return null;
     }
-
+    /**
+     * Gets the label component of the map.
+     *
+     * @return The JLabel component.
+     */
     @Override
     public JLabel getLabel() {
         return null;
     }
 
+    /**
+     * Loads the map from a file.
+     *
+     * @param fileName   The name of the file to load.
+     * @param controller The controller of the game.
+     */
     public void loadMap(String fileName,  Notifiable controller){
         if(fileName == null){
             fileName = "default.map";
