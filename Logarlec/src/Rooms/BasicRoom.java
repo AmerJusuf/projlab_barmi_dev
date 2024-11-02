@@ -3,12 +3,10 @@ package Rooms;
 import Characters.Character;
 import Characters.Instructor;
 import Characters.Student;
-import Controller.Controller;
 import Game.Labyrinth;
 import Items.Item;
 import View.WindowView.MainWindow;
 import View.WindowView.RoomNodeView;
-import com.sun.tools.javac.Main;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -137,11 +135,6 @@ public class BasicRoom implements IRoom{
         DecoratorHandlerVisitor visitor = new DecoratorHandlerVisitor(room);
         IRoom newRoom = this.acceptMerge(visitor);
 
-        //MainWindow.viewsByObjects.put(newRoom, new RoomNodeView(newRoom));
-
-        //visitor.handleNeighboursWhenReplacing(this, newRoom);
-        //getLabyrinth().removeRoom(room);
-        //getLabyrinth().replaceRooms(this, newRoom);
         RoomNodeView room1 = (RoomNodeView) MainWindow.viewsByObjects.get(this);
         RoomNodeView room2 = (RoomNodeView) MainWindow.viewsByObjects.get(room);
         room2.handleRoomTypes(room1);
@@ -203,7 +196,6 @@ public class BasicRoom implements IRoom{
      */
     @Override
     public int getCapacity(){
-        //System.out.println("Capacity is queryed | BasicRoom: getCapacity");
         return capacity;
     }
 

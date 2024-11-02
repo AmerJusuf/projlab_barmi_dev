@@ -43,7 +43,7 @@ public class DescriptionWindow extends JFrame {
         scrollPane.setPreferredSize(new Dimension(700, 500)); // Méret beállítása a scroll panelnek
 
         getContentPane().add(scrollPane, BorderLayout.CENTER); // Panel hozzáadása az ablak közepére
-        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+        setDefaultCloseOperation(WindowConstants.DISPOSE_ON_CLOSE);
 
         pack(); // Az ablak méretének automatikus beállítása az elemekhez
         setLocationRelativeTo(null); // Az ablak középre helyezése

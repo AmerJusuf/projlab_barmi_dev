@@ -1,6 +1,5 @@
 package Game;
 
-import Characters.Character;
 import Characters.Cleaner;
 import Characters.Instructor;
 import Characters.Student;
@@ -15,11 +14,8 @@ import View.ItemView.*;
 import View.WindowView.MainWindow;
 import View.WindowView.Map;
 import View.WindowView.RoomNodeView;
-import View.WindowView.RoomView;
-import com.sun.tools.javac.Main;
 
 import java.util.ArrayList;
-import java.util.Iterator;
 import java.util.List;
 import java.util.Random;
 
@@ -58,6 +54,8 @@ public class Labyrinth {
 
     private Map map;
 
+    private final Random rand = new Random();
+
     /**
      * Constructor for the Labyrinth class.
      */
@@ -75,7 +73,7 @@ public class Labyrinth {
      */
     public Labyrinth(List<Student> students){
         this.students = students;
-        currentPlayer = students.get(0);
+        currentPlayer = students.getFirst();
         instructors = new ArrayList<>();
         for(int i = 0; i < (students.size()*2); i++){
             Instructor instructor = new Instructor();
@@ -149,52 +147,51 @@ public class Labyrinth {
     public void mergeAndSplitRandomly() {
         if (rooms.size() < 2) return; // Ha nincs elég szoba, akkor nem lehet mergelni és splittelni
 
+        // Randomly select a room for merging or splitting
+        int selectedIndex = rand.nextInt(rooms.size());
 
-        System.out.println("Merging " + rooms.size() + " rooms");
-        // Merge and split rooms
-        Random rand = new Random();
-        int idx1 = rand.nextInt(rooms.size());
-        int idx2 = rand.nextInt(rooms.size());
-
-        boolean mergeDone = false;
-        boolean splitDone = false;
-
-        int maxAttempts = rooms.size() * 2; // Maximum próbálkozások száma
-        int currentAttempts = 0;
-        if (isMerging) {
-            while (!mergeDone && currentAttempts < maxAttempts) {
-                if (canMergeAnyRoom()) {
-                    if (rooms.get(idx1).getNumberOfCharacters() == 0) {
-
-                        System.out.println("Merging " + rooms.get(idx1));
-                        IRoom neighbour = getAcceptableNeighbour(rooms.get(idx1));
-                        if (neighbour != null) { // Biztosítjuk, hogy a szomszéd létezik
-                            System.out.println("Merging " + neighbour);
-                            if (rooms.indexOf(neighbour) != -1) {
-                                merge(idx1, rooms.indexOf(neighbour));
-                                mergeDone = true;
-                            }
-                        }
-                    }
-                    idx1 = rand.nextInt(rooms.size()); // Új index, ha a korábbi nem volt megfelelő
-                }
-                currentAttempts++; // Növeljük a próbálkozások számát
+        // Attempt to merge or split the selected room, with multiple attempts
+        boolean operationSuccessful = false;
+        int maxAttempts = rooms.size() * 2;
+        for (int i = 0; i < maxAttempts; i++) {
+            if (isMerging) {
+                operationSuccessful = mergeRoom(selectedIndex);
+            } else {
+                operationSuccessful = splitRoom(selectedIndex);
             }
-        } else {
 
-            while (!splitDone && currentAttempts < maxAttempts) {
-                if (rooms.get(idx2).getNumberOfCharacters() == 0) {
-                    split(idx2);
-                    splitDone = true;
-                } else {
-                    idx2 = rand.nextInt(rooms.size()); // Új index, ha a korábbi nem volt megfelelő
-                }
-                currentAttempts++; // Növeljük a próbálkozások számát
+            // If successful, break out of the loop
+            if (operationSuccessful) {
+                break;
             }
-            controller.notifyModelChanged();
 
+            // Otherwise, choose a new random room for the next attempt
+            selectedIndex = rand.nextInt(rooms.size());
         }
+
         isMerging = !isMerging;
+        controller.notifyModelChanged();
+    }
+
+    private boolean mergeRoom(int roomIndex) {
+        IRoom room = rooms.get(roomIndex);
+        if (room.getNumberOfCharacters() == 0 && canMergeAnyRoom()) {
+            IRoom neighbor = getAcceptableNeighbour(room);
+            if (neighbor != null && rooms.contains(neighbor)) {
+                merge(roomIndex, rooms.indexOf(neighbor));
+                return true; // Merge successful
+            }
+        }
+        return false; // Merge unsuccessful
+    }
+
+    private boolean splitRoom(int roomIndex) {
+        IRoom room = rooms.get(roomIndex);
+        if (room.getNumberOfCharacters() == 0) {
+            split(roomIndex);
+            return true; // Split successful
+        }
+        return false; // Split unsuccessful
     }
 
     /**
@@ -716,7 +713,7 @@ public class Labyrinth {
 //        students.get(0).addItem(airFreshener3);
 //        AirFreshenerView airFreshenerView2 = new AirFreshenerView(airFreshener3);
 //        MainWindow.viewsByObjects.put(airFreshener3, airFreshenerView2);
-        Labyrinth.currentPlayer = students.get(0);
+        Labyrinth.currentPlayer = students.getFirst();
         //add characters to rooms
         for(int i = 0; i < students.size(); i++){
 
@@ -752,8 +749,8 @@ public class Labyrinth {
         instructors.get(7).setRoom(rooms.get(15));
 
         for (int i = 0; i < cleaners.size(); i++) {
-            MainWindow.viewsByObjects.put(cleaners.get(i), new CleanerView(cleaners.get(i)));
-            int j = new Random().nextInt(0,24);
+            MainWindow.viewsByObjects.put(cleaners.get(i), new CleanerView());
+            int j = rand.nextInt(0,24);
             rooms.get(j).addCharacter(cleaners.get(i));
             cleaners.get(i).setRoom(rooms.get(j));
         }
@@ -761,8 +758,8 @@ public class Labyrinth {
         //add items to rooms
         for (IRoom room : rooms) {
             for(int i = 0; i < 5; i++){
-                int j = new Random().nextInt(0, 6);
-                boolean isFake = new Random().nextBoolean();
+                int j = rand.nextInt(0, 6);
+                boolean isFake = rand.nextBoolean();
                 switch (j){
                     case 0: {
                         AirFreshener airFreshener = new AirFreshener();
@@ -806,7 +803,7 @@ public class Labyrinth {
                         MainWindow.viewsByObjects.put(transistor, transistorView);
                         break;
                     }
-                    case 6: {
+                    default: {
                         TVSZ tvsz = new TVSZ(isFake,3);
                         room.addItem(tvsz);
                         TVSZView tvszView = new TVSZView(tvsz);

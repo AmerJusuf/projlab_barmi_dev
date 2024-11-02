@@ -16,7 +16,7 @@ public abstract class TemporaryItem extends Item {
      *
      * @param isFake Indicates if the item is fake.
      */
-    public TemporaryItem(boolean isFake) {
+    protected TemporaryItem(boolean isFake) {
         super(isFake);
         roundsLeft = 3;
         isActive = false;

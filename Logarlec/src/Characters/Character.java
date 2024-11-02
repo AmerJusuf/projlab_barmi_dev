@@ -38,11 +38,26 @@ public abstract class Character {
     boolean moved = false;
 
     /**
+     * Stores a random for moving to a random Room
+     */
+    Random rand = new Random();
+
+    /**
+     * The number of Items the character can carry
+     */
+    protected static final int CAPACITY = 5;
+
+    /**
+     * The number of attempts the character will make to move to another room
+     */
+    protected static final int ATTEMPTS = 10;
+
+    /**
      * A Character osztály konstruktora, egyből be is állítja a szobáját
      *
      * @param currentRoom A Character jelenlegi szobája
      */
-    public Character(IRoom currentRoom){
+    protected Character(IRoom currentRoom){
         this.items = new ArrayList<>();
         this.currentRoom = currentRoom;
         this.isPoisoned = false;
@@ -51,7 +66,7 @@ public abstract class Character {
     /**
      * A Character osztály konstruktora
      */
-    public Character(){
+    protected Character(){
         this.items = new ArrayList<>();
         this.isPoisoned = false;
     }
@@ -73,7 +88,6 @@ public abstract class Character {
                 moved = true;
             }
         }
-        //controller.notifyModelChanged();
     }
 
     /** This method is used to move the character to the next room.
@@ -89,7 +103,6 @@ public abstract class Character {
             this.setRoom(nextRoom);
             moved = true;
         }
-        //controller.notifyModelChanged();
     }
 
     /**
@@ -231,7 +244,6 @@ public abstract class Character {
            }
         }
         System.out.println("Character disabled | Character: disable()");
-        //this.dropAllItem();
         this.setPoisoned(true);
     }
 
@@ -246,12 +258,7 @@ public abstract class Character {
     public void gotCaught(){}
 
     public boolean getPoisoned(){
-        if(this.isPoisoned){
-            return true;
-        }
-        else{
-            return false;
-        }
+        return this.isPoisoned;
     }
 
     /**
@@ -265,18 +272,16 @@ public abstract class Character {
             return;
             }
         List<IRoom> neighbours = currentRoom.getNeighbours();
-        int attempts = 0;
-        while(attempts < 10){
+        for(int i = 0; i < ATTEMPTS; i++){
             if(neighbours.isEmpty()){
                 return;
             }
-            int randomIndex = new Random().nextInt(neighbours.size());
+            int randomIndex = rand.nextInt(neighbours.size());
             if(neighbours.get(randomIndex).acceptCharacter(this)){
                 currentRoom.removeCharacter(this);
                 this.setRoom(neighbours.get(randomIndex));
                 break;
             }
-            attempts++;
         }
     }
 

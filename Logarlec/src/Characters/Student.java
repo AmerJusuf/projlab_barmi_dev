@@ -1,15 +1,11 @@
 package Characters;
 
-import Controller.Notifiable;
 import Game.Labyrinth;
 import Items.Item;
 import Rooms.IRoom;
 import View.WindowView.RoomNodeView;
-import View.WindowView.RoomView;
 
 public class Student extends Character{
-    boolean moveButtonClicked = false;
-    private boolean isCaught = false;
     /**
      * This constructor is used to create a Student object.
      *
@@ -33,9 +29,8 @@ public class Student extends Character{
      */
     public void pickItem(Item item) {
         System.out.println("Student picks item | Student: pickItem(Item item)");
-        if (item != null && items.size() < 5) {
+        if (item != null && items.size() < CAPACITY) {
             currentRoom.acceptPickByStudent(this, item);
-            //controller.notifyModelChanged();
         }
     }
 
@@ -49,18 +44,6 @@ public class Student extends Character{
 
 
     /**
-     * This method is used to get caught by the instructor.
-     * It checks if the student has an item that can protect him.
-     * If the student has an item that can protect him, the method returns.
-     * If the student does not have an item that can protect him, the student drops all items,
-     * is removed from the current room and the labyrinth.
-     */
-//    public void getCaught(){
-//        System.out.println("Student is caught | Student: getCaught()");
-//        isCaught = true;
-//    }
-
-    /**
      * A régi getCaught logikája ide lett kiszervezve, hogy egy körben csak egyszer fusson le
      */
     public void getCaught(){
@@ -71,54 +54,10 @@ public class Student extends Character{
         }
         this.dropAllItem();
         currentRoom.removeCharacter(this);
-        //currentRoom.getLabyrinth().removeStudent(this);
         Labyrinth.kickedStudents.add(this);
-       controller.notifyModelChanged();
+        controller.notifyModelChanged();
     }
 
-    public void setController(Notifiable controller){
-        this.controller = controller;
-    }
-
-//    @Override
-//    public String nextRound(){
-//        System.out.println("entering Student nextRound | Student: nextRound()");
-//        if(isCaught){
-//            gotCaught();
-//            isCaught = false;
-//        }
-//        String fileContent = "";
-//        boolean endTurn = false;
-//        do{
-//            System.out.println("nextRound while     Enter commands or 'runScript <filename>' to process commands from a file, or 'exit' to quit:");
-//
-//            if (TestLogic.writeToFile) {
-//                String input = TestLogic.continueProcessCommandsFromFile();
-//                if(input.equals("skipTurn:\n\n")){
-//                    endTurn = true;
-//                }
-//                fileContent = fileContent.concat(input);
-//            } else {
-//                Scanner scanner = new Scanner(System.in);
-//                String input = scanner.nextLine();
-//                if(input.equals("skipTurn")){
-//                    endTurn = true;
-//                }
-//                TestLogic.processCommandsFromFile(input); // Process command from console and write output to console
-//            }
-//        }
-//        while(!endTurn);
-//        //while !move
-//            // pickitem
-//            // pickItem
-//
-//            // dropitem
-//            // useItem
-//            // move -> round is over
-//
-//        System.out.println("Student next round | Student: nextRound()");
-//        return fileContent;
-//    }
 
     @Override
     public String nextRound()  {

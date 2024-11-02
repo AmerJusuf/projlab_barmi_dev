@@ -1,9 +1,6 @@
 package Items;
 
-import Rooms.BasicRoom;
 import Characters.Character;
-import Characters.Student;
-import Characters.Instructor;
 import Rooms.IRoom;
 
 import java.util.List;
@@ -11,9 +8,7 @@ import java.util.List;
 public class Camembert extends Item {
 
 
-    /*public Camembert() {
-        super();
-    }*/
+
     /**
      * This constructor is used to create a Camembert object.
      */

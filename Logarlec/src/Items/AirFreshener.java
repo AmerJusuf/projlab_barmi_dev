@@ -6,9 +6,9 @@ public class AirFreshener extends Item {
     /**
      * This constructor is used to create an AirFreshener object.
      */
-    public AirFreshener() {}
+    public AirFreshener() {super();}
 
-    //public AirFreshener(boolean isFake) { super(isFake); }
+
 
     @Override
     public boolean getisActive() {

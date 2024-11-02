@@ -1384,7 +1384,7 @@ public class TestLogic {
                                 MainWindow.viewsByObjects.put(character, new StudentView((Student) character));
                                 Labyrinth.currentPlayer = (Student) character;
                             } else if (characterType.equalsIgnoreCase("Cleaner")) {
-                                MainWindow.viewsByObjects.put(character, new CleanerView((Cleaner) character));
+                                MainWindow.viewsByObjects.put(character, new CleanerView());
                             } else if (characterType.equalsIgnoreCase("Instructor")) {
                                 MainWindow.viewsByObjects.put(character, new InstructorView((Instructor) character));
                             }

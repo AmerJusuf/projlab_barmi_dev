@@ -3,14 +3,10 @@ package Rooms;
 import Characters.Character;
 import Characters.Instructor;
 import Characters.Student;
-import Controller.Controller;
 import Game.Labyrinth;
 import Items.Item;
 import View.WindowView.MainWindow;
 import View.WindowView.RoomNodeView;
-import com.sun.tools.javac.Main;
-
-import java.lang.reflect.AccessibleObject;
 import java.util.List;
 
 public abstract class RoomDecorator implements IRoom{

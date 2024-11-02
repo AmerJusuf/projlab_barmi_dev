@@ -1,23 +1,16 @@
 package View.WindowView;
 
 import Characters.Student;
-import Controller.Controller;
 import Controller.Notifiable;
 import Game.Labyrinth;
 import Rooms.IRoom;
 import TestLogic.TestLogic;
-import View.CharacterView.StudentView;
 import View.IView;
-//import jdk.incubator.vector.VectorOperators;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.geom.Line2D;
-import java.awt.geom.Path2D;
-import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 /**
  * The view of the labyrinth, where rooms are shown as nodes and their connections as arrows.
@@ -74,9 +67,6 @@ public class Map extends JPanel implements IView {
             students.add(st3);
             students.add(st4);
             labyrinth = new Labyrinth(students, this, controller);
-//        if(Labyrinth.currentPlayer == null) {
-//            Labyrinth.currentPlayer = st;
-//        }
         }
         else{
             loadMap(mapFilename, controller);
@@ -102,22 +92,8 @@ public class Map extends JPanel implements IView {
     @Override
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-
-//        nodes = new ArrayList<>();
-//        for (IRoom room : labyrinth.getRooms()) {
-//            RoomNodeView roomNodeView = (RoomNodeView) MainWindow.viewsByObjects.get(room);
-//
-//            if(roomNodeView != null){
-//                nodes.add(roomNodeView);
-//                this.add(roomNodeView);
-//            }
-//
-//        }
         nodes = new ArrayList<>();
         List<RoomNodeView> viewsToAdd = new ArrayList<>();
-        if(labyrinth.getRooms().size() < 25){
-            int i  = 0;
-        }
         for (IRoom room : labyrinth.getRooms()) {
             RoomNodeView roomNodeView = (RoomNodeView) MainWindow.viewsByObjects.get(room);
             if(roomNodeView == null){
@@ -131,7 +107,6 @@ public class Map extends JPanel implements IView {
         }
         // Add the views after the loop
         nodes.addAll(viewsToAdd);
-        //nodes.forEach(component -> this.add(component));
         for(RoomNodeView roomNodeView : nodes){
             if(roomNodeView != null) {
                 this.add(roomNodeView);
@@ -162,9 +137,6 @@ public class Map extends JPanel implements IView {
             }
 
         }
-
-
-        //drawArrowBetweenRooms(nodes.getFirst(), nodes.getFirst().getNeighbourRooms().get(1), g);
     }
 
     // Helper method to draw arrow between rooms

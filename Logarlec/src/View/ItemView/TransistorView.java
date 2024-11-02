@@ -4,9 +4,7 @@ import Game.Labyrinth;
 import Items.Transistor;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * A view to store a transistor entity.
@@ -15,9 +13,9 @@ public class TransistorView extends ItemView {
     private final Transistor transistor; //Only the transistor
 
     ImageIcon defIcon = new ImageIcon("Icons/transistor.png");
-    ImageIcon activeIcon = new ImageIcon("Icons/transistoractive.png");;
-    ImageIcon pairedIcon = new ImageIcon("Icons/transistorpaired.png");;
-    ImageIcon placedIcon = new ImageIcon("Icons/transistorplaced.png");;
+    ImageIcon activeIcon = new ImageIcon("Icons/transistoractive.png");
+    ImageIcon pairedIcon = new ImageIcon("Icons/transistorpaired.png");
+    ImageIcon placedIcon = new ImageIcon("Icons/transistorplaced.png");
 
     JButton activate;
     JButton pair;

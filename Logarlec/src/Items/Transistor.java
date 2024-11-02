@@ -2,8 +2,6 @@ package Items;
 
 import Rooms.IRoom;
 
-import java.util.List;
-
 public class Transistor extends Item{
     private boolean isTurnedOn;
     Transistor pairTransistor;
@@ -32,7 +30,6 @@ public class Transistor extends Item{
     }
 
     public void setPlaceLocation(IRoom room){
-        //System.out.println("Transistor place location set | Transistor: setPlaceLocation(BasicRoom basicRoom)");
         placeLocation = room;
     }
 
@@ -70,7 +67,6 @@ public class Transistor extends Item{
             }
             else {
                 owner.removeItem(this);
-                //currRoom.addItem(this);
                 setPlaceLocation(currRoom);
             }
         } else{
@@ -80,11 +76,6 @@ public class Transistor extends Item{
     }
 
     public void switchTransistor() {
-        if(isTurnedOn){
-            //System.out.println("Switch transistor ON -> OFF | Transistor: switchTransistor()");
-        } else {
-            //System.out.println("Switch transistor OFF -> ON | Transistor: switchTransistor()");
-        }
         isTurnedOn = !isTurnedOn;
         controller.notifyModelChanged();
     }

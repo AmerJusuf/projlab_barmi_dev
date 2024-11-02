@@ -1,10 +1,9 @@
 package  View.WindowView;
 
 import Characters.Character;
-import Items.Item;
-import Rooms.*;
 import Game.Labyrinth;
-import View.CharacterView.CharacterView;
+import Items.Item;
+import Rooms.IRoom;
 import View.IView;
 
 import javax.swing.*;

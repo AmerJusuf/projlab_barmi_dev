@@ -3,7 +3,6 @@ package View.CharacterView;
 import View.IView;
 
 import javax.swing.*;
-import java.awt.*;
 
 /**
  * A view connected to the characters inside the labyrinth.

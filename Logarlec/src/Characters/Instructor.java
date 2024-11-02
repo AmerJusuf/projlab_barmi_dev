@@ -1,7 +1,6 @@
 package Characters;
 
 import Items.Item;
-import Rooms.BasicRoom;
 import Rooms.IRoom;
 
 import java.util.List;
@@ -30,7 +29,7 @@ public class Instructor extends Character{
      */
     public void pickItem(Item item){
         System.out.println("Instructor picks item | Instructor: pickItem(Item item)");
-        if(item != null && items.size() < 5){
+        if(item != null && items.size() < CAPACITY){
             currentRoom.acceptPickByInstructor(this, item);
         }
     }

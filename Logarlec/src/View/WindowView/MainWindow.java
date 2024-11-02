@@ -1,16 +1,9 @@
 package  View.WindowView;
 
-import Characters.Cleaner;
-import Characters.Instructor;
-import Characters.Student;
 import Controller.Controller;
 import Controller.Notifiable;
 import Game.GameState;
 import Game.Labyrinth;
-import Items.Transistor;
-import Rooms.BasicRoom;
-import Rooms.IRoom;
-import View.CharacterView.CharacterView;
 import View.CharacterView.StudentView;
 import View.IView;
 
@@ -100,7 +93,6 @@ public class MainWindow extends JFrame {
         roomSrc = new RoomView(Labyrinth.currentPlayer.getRoom());
         roomSrc.getPanel().setPreferredSize(new Dimension(350, 200));
         roomsPanel.add(roomSrc.getPanel(), gbcRooms);
-        //roomV.panel.setBorder(BorderFactory.createEmptyBorder(0, 0, 0, 40));
 
 
 
@@ -123,18 +115,15 @@ public class MainWindow extends JFrame {
         this.add(roomsPanel, gbc);
 
         // Azért a legvégén kell mert csak így jelennek meg az elemek rajta
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-        //this.setSize(1000, 800);
+
         this.setVisible(true);
 
         views = List.of(map,  roomSrc, roomDest, viewsByObjects.get(Labyrinth.currentPlayer));
         controller.notifyModelChanged();
     }
 
-    private void handleRoomViews(){
-
-    }
 
     public void addView(IView view) {
         views.add(view);
@@ -175,7 +164,6 @@ public class MainWindow extends JFrame {
         gbc.gridheight = 1;
         this.add(viewsByObjects.get(Labyrinth.currentPlayer).getPanel(), gbc);
         studentView = (StudentView) viewsByObjects.get(Labyrinth.currentPlayer);
-       // map = new Map(controller);
 
         views = List.of(map,  roomSrc, roomDest, studentView);
 

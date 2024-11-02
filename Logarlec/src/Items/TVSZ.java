@@ -3,11 +3,6 @@ package Items;
 public class TVSZ extends Item {
     private int savesLeft;
 
-    //módosítás előtti konstruktor
-    /*public TVSZ(int savesLeft) {
-        super();
-        this.savesLeft = savesLeft;
-    }*/
     /**
      * This constructor is used to create a TVSZ object with a specified number of saves left.
      *
@@ -27,6 +22,7 @@ public class TVSZ extends Item {
      * If the tvsz is fake, then it does not protect its owner, resulting in removing him from the game.
      * @return true if the student is protected successfully, false otherwise.
      */
+    @Override
     public boolean protectStudent() {
         System.out.println("TVSZ protects student | TVSZ: protectStudent()");
         if(isFake){

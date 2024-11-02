@@ -2,12 +2,7 @@ package View.ItemView;
 
 import Items.FFP2;
 
-import Items.FFP2;
-
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * A view, to store an FFP2 mask entity.

@@ -1,23 +1,19 @@
 package View.CharacterView;
 
-import Characters.Cleaner;
-
 import javax.swing.*;
 
 /**
  * A view, which is connected to a cleaner entity.
  */
 public class CleanerView extends CharacterView{
-    private Cleaner cleaner;
-    private ImageIcon defIcon = new ImageIcon("Icons/cleaner.png");
 
-    public CleanerView(Cleaner cl) {
-        cleaner = cl;
+    public CleanerView() {
         panel = new JPanel();
         panel.setBackground(java.awt.Color.LIGHT_GRAY);
         panel.setPreferredSize(new java.awt.Dimension(200, 60));
 
         label = new JLabel();
+        ImageIcon defIcon = new ImageIcon("Icons/cleaner.png");
         label.setIcon(defIcon);
         label.setVisible(true);
         panel.add(label);

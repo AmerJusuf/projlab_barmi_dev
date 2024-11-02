@@ -174,6 +174,7 @@ public class RoomNodeView extends JPanel implements IView {
      * @param x
      * @param y
      */
+    @Override
     public void setBounds(int x, int y){
         this.x = x;
         this.y = y;
@@ -256,18 +257,22 @@ public class RoomNodeView extends JPanel implements IView {
         return null;
     }
 
+    @Override
     public int getX() {
         return x;
     }
 
+    @Override
     public int getY() {
         return y;
     }
 
+    @Override
     public void setX(int x) {
         this.x = x;
     }
 
+    @Override
     public void setY(int y) {
         this.y = y;
     }

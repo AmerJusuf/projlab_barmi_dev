@@ -25,7 +25,7 @@ public abstract class ItemView implements IView, ActionListener {
      * @param item The stored item.
      * @param icon The look of the item.
      */
-    public ItemView(Item item, ImageIcon icon) {
+    protected ItemView(Item item, ImageIcon icon) {
         this.item = item;
 
         panel = new JPanel();
@@ -49,13 +49,6 @@ public abstract class ItemView implements IView, ActionListener {
 
         uniqueButtons();
 
-//        if(item.getOwner() == null && Labyrinth.currentPlayer.getRoom().getItems().contains(item)){
-//            pickButton.setVisible(true);
-//        } else {
-//            dropButton.setVisible(true);
-//            setUniqueButtonsVisibility(true);
-//        }
-//        update();
         if(item.getOwner() == null && Labyrinth.currentPlayer.getRoom().getItems().contains(item)){
             pickButton.setVisible(true);
             dropButton.setVisible(false);
@@ -64,12 +57,10 @@ public abstract class ItemView implements IView, ActionListener {
             pickButton.setVisible(false);
             dropButton.setVisible(false);
             setUniqueButtonsVisibility(false);
-           // updateItemIcon(item.getisActive());
         }else if(item.getOwner() != null){
             pickButton.setVisible(false);
             dropButton.setVisible(true);
             setUniqueButtonsVisibility(true);
-           // updateItemIcon(item.getisActive());
         }
         panel.setVisible(true);
 

@@ -1,17 +1,11 @@
 package Items;
 
-import Characters.Character;
 import Characters.Instructor;
 import Characters.Student;
 import Game.GameState;
 import Game.Labyrinth;
 
 public class Logarlec extends Item {
-
-
-    /*public Logarlec() {
-        super();
-    }*/
     /**
      * This constructor is used to create a Logarlec object.
      * @param fake Determines whether a Logarlec object is fake or real.
@@ -29,6 +23,7 @@ public class Logarlec extends Item {
      *
      * @param student The student who picked Logarlec.
      */
+    @Override
     public void pickedByStudent(Student student) {
         System.out.println("Logarlec picked by student | Logarlec: pickedByStudent(Student student)");
         this.setOwner(student);
@@ -47,6 +42,7 @@ public class Logarlec extends Item {
      *
      * @param instructor The instructor who cannot pick the Logarlec.
      */
+    @Override
     public boolean pickedByInstructor(Instructor instructor) {
         System.out.println("Logarlec cannot be picked by instructor | Logarlec: pickedByInstructor(Instructor instructor)");
         return false;

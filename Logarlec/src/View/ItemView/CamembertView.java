@@ -4,9 +4,7 @@ import Game.Labyrinth;
 import Items.Camembert;
 
 import javax.swing.*;
-import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 /**
  * A view, to a camembert item entity.

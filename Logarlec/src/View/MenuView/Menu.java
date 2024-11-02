@@ -14,7 +14,7 @@ import java.awt.event.ActionListener;
 public class Menu extends JFrame implements ActionListener {
 
 
-    JLabel title;
+    JLabel gameTitle;
 
     JButton startButton;
     JButton descriptionButton;
@@ -24,7 +24,7 @@ public class Menu extends JFrame implements ActionListener {
 
     public Menu() {
         super("Best Game Ever");
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         this.getContentPane().setBackground(java.awt.Color.DARK_GRAY);
         this.setResizable(false);
         this.setLayout(null);
@@ -37,12 +37,12 @@ public class Menu extends JFrame implements ActionListener {
         Cursor customCursor = Toolkit.getDefaultToolkit().createCustomCursor(image.getImage(), new Point(0, 5), "HandCursor");
         this.setCursor(customCursor);
 
-        title = new JLabel();
-        title.setText("Logarlec");
-        title.setFont(new Font("Arial", Font.BOLD, 24));
-        title.setForeground(Color.WHITE);
-        title.setBounds(200, 40, 100, 50);
-        this.add(title);
+        gameTitle = new JLabel();
+        gameTitle.setText("Logarlec");
+        gameTitle.setFont(new Font("Arial", Font.BOLD, 24));
+        gameTitle.setForeground(Color.WHITE);
+        gameTitle.setBounds(200, 40, 100, 50);
+        this.add(gameTitle);
 
         startButton = new JButton("Start");
         startButton.setBounds(200, 100, 100, 50);
@@ -85,12 +85,10 @@ public class Menu extends JFrame implements ActionListener {
             this.dispose();
         } else if (e.getSource() == descriptionButton) {
             System.out.println("Description button clicked");
-            DescriptionWindow descriptionWindow = new DescriptionWindow();
-            //this.dispose();
+            new DescriptionWindow();
         } else if (e.getSource() == controlButton) {
             System.out.println("Control button clicked");
-            ControlWindow controlWindow = new ControlWindow();
-            //this.dispose();
+            new ControlWindow();
         } else if (e.getSource() == exitButton) {
             System.out.println("Exit button clicked");
             this.dispose();

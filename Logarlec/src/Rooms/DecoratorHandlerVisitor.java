@@ -1,6 +1,5 @@
 package Rooms;
 
-import Characters.Character;
 import Items.Item;
 
 import java.util.*;
@@ -11,7 +10,6 @@ public class DecoratorHandlerVisitor implements RoomVisitor {
 
     public DecoratorHandlerVisitor(IRoom roomToMerge) {
         this.roomToHandle = roomToMerge;
-       // roomToHandle.setLabyrinth(roomToMerge.getLabyrinth());
     }
 
     /**
